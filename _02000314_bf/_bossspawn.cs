@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000314_bf {
             internal State보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003140, textID: 20003140, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20003140, textID: 20003140, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.AddBuff(arg1: new int[] {102}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);

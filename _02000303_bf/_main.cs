@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000303_bf {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CreateMonster(arg1: new int[] {1001, 1002, 1003, 1004, 1005, 1006, 1007}, arg2: false);
-                context.ShowGuideSummary(entityID: 20003031, textID: 20003031, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003031, textID: 20003031, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 

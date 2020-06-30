@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52000125_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
                 context.CreateMonster(arg1: new int[] {201}, arg2: true);
                 context.MoveUser(arg1: 52000125, arg2: 6001);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Clap_A");
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal Statescene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003205, msg: "$52000125_QD__MAIN_01__3$", duration: 3000,
                     align: "center");
             }
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal Statescene_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003, 4004, 4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003, 4004, 4005}, arg2: false);
             }
 
             public override void Execute() {

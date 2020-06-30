@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000314_bf {
             internal State타이어가이드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003141, textID: 20003141, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003141, textID: 20003141, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000314_bf {
             internal State타이어가이드2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003141, textID: 20003141, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003141, textID: 20003141, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 

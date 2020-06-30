@@ -50,7 +50,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Ending_Popup_01");
                 context.SetTimer(arg1: "10", arg2: 10, arg4: true);
-                context.CameraSelectPath(arg1: new int[] {8800}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8800}, arg2: false);
                 context.ArcadeBoomBoomOcean(type: "EndGame");
                 context.SetUserValue(triggerID: 991104, key: "Reset", value: 1);
                 context.SetUserValue(triggerID: 991105, key: "Reset", value: 1);

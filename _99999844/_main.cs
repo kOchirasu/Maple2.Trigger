@@ -275,7 +275,7 @@ namespace Maple2.Trigger._99999844 {
             internal State기믹2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1001}, agr2: false);
+                context.CreateMonster(arg1: new int[] {1001}, arg2: false);
                 context.SetMesh(arg1: new int[] {4001, 4002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new int[] {4004, 4005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new int[] {4008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);

@@ -33,7 +33,7 @@ namespace Maple2.Trigger._52100109_qd {
                 context.CreateMonster(arg1: new int[] {101});
                 context.CreateMonster(arg1: new int[] {102});
                 context.CreateMonster(arg1: new int[] {103});
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -69,7 +69,7 @@ namespace Maple2.Trigger._52100109_qd {
             internal State삼자대면(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4005, 4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005, 4002}, arg2: false);
             }
 
             public override void Execute() {
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._52100109_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 19000f);
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004615, msg: "$52100109_QD__MAIN__8$", align: "left",
                     illustID: "siman_normal", duration: 4000);
             }
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._52100109_qd {
             internal State삼자대면_03_00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004615, msg: "$52100109_QD__MAIN__9$", align: "left",
                     illustID: "siman_normal", duration: 5000);
                 context.AddCinematicTalk(npcID: 11004615, msg: "$52100109_QD__MAIN__10$", align: "left",

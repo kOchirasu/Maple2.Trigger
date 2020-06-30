@@ -214,7 +214,7 @@ namespace Maple2.Trigger._02000390_bf {
             public override void OnEnter() {
                 context.SetSkip(arg1: "Ending_04");
                 context.DestroyMonster(arg1: new int[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
-                context.CameraSelectPath(arg1: new int[] {8101, 8102, 8103}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8101, 8102, 8103}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Stun_A", arg3: 9000000f);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2008");

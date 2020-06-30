@@ -138,7 +138,7 @@ namespace Maple2.Trigger._52010030_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {4004, 4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004, 4001}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003391, msg: "$52010030_QD__MAIN__5$", duration: 3000, align: "Left");
             }
 
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._52010030_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Attack_Idle_A", arg3: 200000f);
                 context.AddCinematicTalk(npcID: 11003391, msg: "$52010030_QD__MAIN__8$", duration: 2000, align: "Left");
-                context.CameraSelectPath(arg1: new int[] {4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002}, arg2: false);
             }
 
             public override void Execute() {
@@ -211,7 +211,7 @@ namespace Maple2.Trigger._52010030_qd {
             internal State뮤테라피온_등장_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2002, 4003}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003470, msg: "$52010030_QD__MAIN__10$", duration: 3000,
                     align: "Left");
             }

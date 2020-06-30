@@ -62,7 +62,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State제단보여주기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4005, 4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005, 4001}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.ShowCaption(type: "VerticalCaption", title: "천공의 제단", desc: "천공의 심장의 보관소", align: "centerLeft",
                     offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State다음스타트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3001");
                 context.AddCinematicTalk(npcID: 0, msg: "이곳이 천공의 심장이 보관되어 있다는 곳이구나.", duration: 3000);
             }
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._52020031_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {4005, 4009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005, 4009}, arg2: false);
             }
 
             public override void Execute() {
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State제단관찰_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4011}, arg2: false);
                 context.AddCinematicTalk(npcID: 0, msg: "...어라? 천공의 심장으로 보이는 물건이 없는 것 같은데... ", duration: 3000);
             }
 
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State제단관찰_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3004");
             }
 
@@ -245,7 +245,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State하렌발견01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4006, 4007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4006, 4007}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003756, msg: "설마 했는데... 너였구나?", duration: 3000);
             }
 
@@ -316,7 +316,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State하렌발견03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4010}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "하렌", desc: "흑성회의 제 3 간부", align: "centerLeft",
                     offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
@@ -355,7 +355,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State하렌등장2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.FaceEmotion(spawnPointID: 0, emotionName: "Music_Cello_Play_03_A");
                 context.SetPcEmotionLoop(arg1: "Attack_Idle_A", arg2: 3000f);
                 context.AddCinematicTalk(npcID: 0, msg: "어떻게 여기에... 네가?", duration: 3000);

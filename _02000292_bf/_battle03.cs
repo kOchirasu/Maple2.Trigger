@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000292_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20002921, textID: 20002921, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20002921, textID: 20002921, duration: 5000);
                 context.SetInteractObject(arg1: new int[] {10001062}, arg2: 1);
             }
 

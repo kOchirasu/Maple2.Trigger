@@ -60,7 +60,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new int[] {999}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
             }
 
             public override void Execute() {
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 999, arg2: "MS2PatrolData_3008");
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
             }
 
             public override void Execute() {

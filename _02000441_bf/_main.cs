@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000441_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
                 context.CreateMonster(arg1: new int[] {102}, arg2: true);
             }
 
@@ -551,7 +551,7 @@ namespace Maple2.Trigger._02000441_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {7104}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {8003, 8004, 8005, 8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003, 8004, 8005, 8006}, arg2: false);
             }
 
             public override void Execute() {

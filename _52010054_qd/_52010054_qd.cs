@@ -51,7 +51,7 @@ namespace Maple2.Trigger._52010054_qd {
                 context.SetSceneSkip(arg1: "quit02", arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {4000, 4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4000, 4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._52010054_qd {
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.AddCinematicTalk(npcID: 11003793, msg: "$52010054_QD__52010054_QD__0$", duration: 7000,
                     align: "right");
-                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: false);
                 context.SetProductionUI(arg1: 3);
             }
 
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._52010054_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcID: 11003793, msg: "$52010054_QD__52010054_QD__1$", duration: 5000,
                     align: "right");
-                context.CameraSelectPath(arg1: new int[] {4004, 4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004, 4005}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 2001, arg2: "Attack_01_C,Attack_Idle_A");
             }
 
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._52010054_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcID: 11003793, msg: "$52010054_QD__52010054_QD__2$", duration: 4000,
                     align: "right");
-                context.CameraSelectPath(arg1: new int[] {4006, 4007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4006, 4007}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 2002, arg2: "Attack_01_B,Attack_Idle_A");
             }
 
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._52010054_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcID: 11003793, msg: "$52010054_QD__52010054_QD__3$", duration: 4000,
                     align: "right");
-                context.CameraSelectPath(arg1: new int[] {4008, 4009, 4013, 4014}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4008, 4009, 4013, 4014}, arg2: false);
             }
 
             public override void Execute() {
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._52010054_qd {
                 context.SetOnetimeEffect(id: 3, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
-                context.CameraSelectPath(arg1: new int[] {4010, 4011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4010, 4011}, arg2: false);
                 context.SetTimeScale(enable: true, startScale: 1.0f, endScale: 0.1f, duration: 12.0f, interpolator: 1);
             }
 
@@ -264,7 +264,7 @@ namespace Maple2.Trigger._52010054_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 2000, arg2: "Attack_01_B,Attack_01_B");
                 context.SetTimeScale(enable: true, startScale: 0.5f, endScale: 0.1f, duration: 12.0f, interpolator: 1);
-                context.CameraSelectPath(arg1: new int[] {4012, 4015}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4012, 4015}, arg2: false);
             }
 
             public override void Execute() {

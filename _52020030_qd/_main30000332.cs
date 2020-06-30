@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {4008, 4010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4008, 4010}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "천공의 탑", desc: "크리티아스 마법 연구소", align: "centerLeft",
                     offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);
             }

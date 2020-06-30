@@ -320,7 +320,7 @@ namespace Maple2.Trigger._99999884 {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CameraSelectPath(arg1: new int[] {302}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {302}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 

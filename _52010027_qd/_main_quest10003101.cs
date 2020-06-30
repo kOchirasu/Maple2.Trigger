@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal State집에서나옴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4011}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3006");
                 context.CreateMonster(arg1: new int[] {801}, arg2: true);
                 context.AddBalloonTalk(spawnPointID: 0, msg: "$52010027_QD__MAIN_QUEST10003101__0$", duration: 3000,
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal State집에나와서대사침02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4012}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4012}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003431, msg: "$52010027_QD__MAIN_QUEST10003101__3$", duration: 3000);
             }
 
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal State집에나와서대사침03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4011}, arg2: false);
                 context.SetPcEmotionLoop(arg1: "Attack_Idle_A", arg2: 10000f);
                 context.AddCinematicTalk(npcID: 0, msg: "$52010027_QD__MAIN_QUEST10003101__4$", duration: 2000);
             }
@@ -141,7 +141,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal State집에나와서대사침04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4012}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4012}, arg2: false);
                 context.MoveNpc(arg1: 801, arg2: "MS2PatrolData_3005");
                 context.SetEffect(arg1: new int[] {5005}, arg2: true);
                 context.AddCinematicTalk(npcID: 11003431, msg: "$52010027_QD__MAIN_QUEST10003101__5$", duration: 3000);

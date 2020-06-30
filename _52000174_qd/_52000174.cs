@@ -63,8 +63,8 @@ namespace Maple2.Trigger._52000174_qd {
                 context.CreateWidget(arg1: "SceneMovie");
                 context.PlaySceneMovie(fileName: "jobChangeStory.swf", movieID: 1);
                 context.MoveUser(arg1: 52000174, arg2: 1);
-                context.CreateMonster(arg1: new int[] {101}, agr2: false);
-                context.CreateMonster(arg1: new int[] {102}, agr2: false);
+                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new int[] {102}, arg2: false);
             }
 
             public override void Execute() {
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._52000174_qd {
             internal State숙소도착_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52000174_QD__52000174__0$", align: "bottomLeft",
                     offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2.5f);
                 context.MoveUserPath(arg1: "MS2PatrolData_3003");
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._52000174_qd {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.ShowGuideSummary(entityID: 25201741, textID: 25201741, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 25201741, textID: 25201741, duration: 3000);
             }
 
             public override void Execute() {
@@ -276,8 +276,8 @@ namespace Maple2.Trigger._52000174_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {103}, agr2: false);
-                context.CreateMonster(arg1: new int[] {104}, agr2: false);
+                context.CreateMonster(arg1: new int[] {103}, arg2: false);
+                context.CreateMonster(arg1: new int[] {104}, arg2: false);
                 context.MoveUser(arg1: 52000174, arg2: 2);
             }
 
@@ -314,7 +314,7 @@ namespace Maple2.Trigger._52000174_qd {
             internal State깨어났다_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: false);
                 context.SetPcEmotionLoop(arg1: "Down_Idle_A", arg2: 6000f);
             }
 
@@ -444,7 +444,7 @@ namespace Maple2.Trigger._52000174_qd {
             internal State비젼생성_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {105}, agr2: false);
+                context.CreateMonster(arg1: new int[] {105}, arg2: false);
             }
 
             public override void Execute() {

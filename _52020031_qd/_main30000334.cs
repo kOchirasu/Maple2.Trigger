@@ -43,7 +43,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State세번째전투끝나고1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetEffect(arg1: new int[] {5001}, arg2: true);
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State세번째전투끝나고3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4010}, arg2: false);
                 context.SetEffect(arg1: new int[] {5001}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003756, msg: "크윽...", duration: 3000);
             }
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State세번째전투끝나고4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.AddCinematicTalk(npcID: 0, msg: "오늘 있었던 일은, 라딘에게도 전하겠어.", duration: 3000);
                 context.AddCinematicTalk(npcID: 0, msg: "흑성회와의 동맹은 여기까지야.", duration: 3000);
             }

@@ -299,7 +299,7 @@ namespace Maple2.Trigger._52100302_qd {
                 context.SetSceneSkip(arg1: "카메라종료", arg2: "exit");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {100001, 100002, 100003, 100004, 100005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {100001, 100002, 100003, 100004, 100005}, arg2: false);
             }
 
             public override void Execute() {
@@ -361,11 +361,11 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.CreateMonster(arg1: new int[] {1101}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1101}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020},
-                        agr2: false);
+                        arg2: false);
                     context.State = new StateLineStart(context);
                     return;
                 }
@@ -389,14 +389,14 @@ namespace Maple2.Trigger._52100302_qd {
                     context.SetInteractObject(arg1: new int[] {12000501}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000502}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000503}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1104}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1105}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1106}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1104}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1105}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1106}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1150, 1151, 1152, 1153, 1154, 1155, 1156, 1157, 1158, 1159},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(
                         arg1: new int[] {1160, 1161, 1162, 1163, 1164, 1165, 1166, 1167, 1168, 1169, 1170, 1171, 1172},
-                        agr2: false);
+                        arg2: false);
                     context.State = new StateCableOn_01(context);
                     return;
                 }

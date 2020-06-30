@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02000194_bf {
             internal State던전시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20001941, textID: 20001941, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20001941, textID: 20001941, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetInteractObject(arg1: new int[] {10001054}, arg2: 1);
                 context.SetInteractObject(arg1: new int[] {10001055}, arg2: 1);
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._02000194_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20001942, textID: 20001942, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20001942, textID: 20001942, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
@@ -151,7 +151,7 @@ namespace Maple2.Trigger._02000194_bf {
 
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new int[] {10001057}, arg2: 0)) {
-                    context.ShowGuideSummary(entityID: 20001944, textID: 20001944, durationTime: 5000);
+                    context.ShowGuideSummary(entityID: 20001944, textID: 20001944, duration: 5000);
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.SetMesh(arg1: new int[] {3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);

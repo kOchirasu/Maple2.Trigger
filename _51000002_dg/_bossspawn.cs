@@ -29,7 +29,7 @@ namespace Maple2.Trigger._51000002_dg {
                         5017, 5018, 5019, 5020
                     }, isVisible: "true");
                 context.ArcadeBoomBoomOcean(type: "StartGame", lifeCount: 20);
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.CreateMonster(arg1: new int[] {99}, arg2: false);
                 context.SetTimer(arg1: "6100", arg2: 6100);

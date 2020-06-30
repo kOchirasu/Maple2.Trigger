@@ -97,7 +97,7 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetUserValue(triggerID: 99990017, key: "JumpFloor", value: 1);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {611, 612}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {611, 612}, arg2: false);
             }
 
             public override void Execute() {

@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02000334_bf {
                 context.AddBuff(arg1: new int[] {90001}, arg2: 70000068, arg3: 1);
                 context.MoveNpc(arg1: 199, arg2: "MS2PatrolData_3502");
                 context.SetConversation(arg1: 1, arg2: 199, arg3: "$02000334_BF__WAVE__3$", arg4: 3);
-                context.CameraSelectPath(arg1: new int[] {8017}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8017}, arg2: false);
                 context.SetTimer(arg1: "15", arg2: 15);
             }
 
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._02000334_bf {
                 context.AddBuff(arg1: new int[] {90001}, arg2: 70000068, arg3: 1);
                 context.MoveNpc(arg1: 199, arg2: "MS2PatrolData_3502");
                 context.SetConversation(arg1: 1, arg2: 199, arg3: "$02000334_BF__WAVE__5$", arg4: 3);
-                context.CameraSelectPath(arg1: new int[] {8017}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8017}, arg2: false);
             }
 
             public override void Execute() { }

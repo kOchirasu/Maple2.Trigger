@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02000300_bf {
             internal State연출종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {301}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {301}, arg2: true);
             }
 
             public override void Execute() {

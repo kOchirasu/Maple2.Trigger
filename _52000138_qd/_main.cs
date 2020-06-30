@@ -459,7 +459,7 @@ namespace Maple2.Trigger._52000138_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CreateMonster(arg1: new int[] {122});
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.SetSceneSkip(arg1: "endready", arg2: "exit");
             }
 
@@ -541,7 +541,7 @@ namespace Maple2.Trigger._52000138_qd {
             }
 
             public override void OnExit() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
         }
 

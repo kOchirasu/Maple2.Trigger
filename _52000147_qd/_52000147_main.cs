@@ -106,7 +106,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State목격_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
             }
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State목격_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -249,7 +249,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
             }
 
             public override void Execute() {
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
             }
 
             public override void Execute() {
@@ -372,7 +372,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
             }
 
             public override void Execute() {
@@ -555,7 +555,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
             }
 
             public override void Execute() {

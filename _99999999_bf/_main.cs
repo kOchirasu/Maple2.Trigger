@@ -43,7 +43,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: false);
-                context.CameraSelectPath(arg1: new int[] {7000, 7001}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {7000, 7001}, arg2: true);
             }
 
             public override void Execute() {

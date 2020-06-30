@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02000304_bf {
             internal State전투시작대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003041, textID: 20003041, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20003041, textID: 20003041, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);

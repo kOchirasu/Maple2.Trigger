@@ -141,7 +141,7 @@ namespace Maple2.Trigger._52000050_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.MoveNpc(arg1: 111, arg2: "MS2PatrolData_1101");
-                context.CameraSelectPath(arg1: new int[] {8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000050_QD__MAIN_01__1$", arg4: 4);
                 context.MoveNpc(arg1: 122, arg2: "MS2PatrolData_1205");
             }
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._52000050_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.MoveNpc(arg1: 111, arg2: "MS2PatrolData_1101");
-                context.CameraSelectPath(arg1: new int[] {8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000050_QD__MAIN_01__2$", arg4: 4);
                 context.MoveNpc(arg1: 122, arg2: "MS2PatrolData_1205");
             }
@@ -240,7 +240,7 @@ namespace Maple2.Trigger._52000050_qd {
             internal Statestart_02_e(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.SetBreakable(arg1: new int[] {9001, 9002, 9003, 9004, 9005}, arg2: true);
                 context.SetVisibleBreakableObject(arg1: new int[] {9001, 9002, 9003, 9004, 9005}, arg2: true);
             }
@@ -278,7 +278,7 @@ namespace Maple2.Trigger._52000050_qd {
             internal Statestart_02_g(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 122, arg2: "Talk_A", arg3: 3000f);
             }
 
@@ -335,7 +335,7 @@ namespace Maple2.Trigger._52000050_qd {
             internal Statestart_02_j(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: true);
                 context.DestroyMonster(arg1: new int[] {111});
                 context.CreateMonster(arg1: new int[] {121}, arg2: false);
                 context.SetProductionUI(arg1: 0);

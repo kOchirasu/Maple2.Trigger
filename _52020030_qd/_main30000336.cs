@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52020030_qd {
             internal State세번째연출대화진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4017}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4017}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcID: 11003753, msg: @"... 왔나.\n바보같은 행동을 했더군.", duration: 3000);
             }
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52020030_qd {
             internal State세번째연출대화진행02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4022}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4022}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 108, arg2: "Bore_A");
                 context.AddCinematicTalk(npcID: 11003756, msg: @"... 할말 없어.\n그래서, 이제 어쩔 셈이지?", duration: 3000);
             }
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._52020030_qd {
             internal State세번째연출대화진행03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4017}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4017}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003753, msg: @"훗. 바보같이.\n이제 흑성회가 움직이긴 어렵겠군.", duration: 3000);
             }
 
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._52020030_qd {
             internal State세번째연출대화진행03_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4040}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4040}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003753, msg: "또 다른 계획을 준비해야겠어.", duration: 5000);
             }
 
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._52020030_qd {
             internal State세번째연출대화진행04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4022}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4022}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 108, arg2: "Talk_A");
                 context.AddCinematicTalk(npcID: 11003753, msg: @"그 새로운 계획, 흑성회에도 당연히 전달해 주겠지?\n기대할께.", duration: 5000);
             }

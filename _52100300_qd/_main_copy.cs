@@ -43,7 +43,7 @@ namespace Maple2.Trigger._52100300_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetSkip(arg1: "시작_03");
-                context.CameraSelectPath(arg1: new int[] {80001, 80002}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {80001, 80002}, arg2: true);
             }
 
             public override void Execute() {
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._52100300_qd {
             internal State시작_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {80003}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {80003}, arg2: true);
                 context.SetEventUI(arg1: 1, arg2: "$02010086_BF__MAIN__0$", arg3: new int[] {3000});
                 context.SetActor(arg1: 1001, arg2: true, arg3: "Opened");
                 context.SetMesh(arg1: new int[] {1002}, arg2: false, arg4: 0, arg5: 10f);
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 106, textID: 20003362, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 106, textID: 20003362, duration: 3000);
                 context.SetActor(arg1: 1003, arg2: true, arg3: "Opened");
                 context.SetActor(arg1: 5001, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 5002, arg2: true, arg3: "sf_quest_light_A01_Off");
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._52100300_qd {
                 context.SetActor(arg1: 5005, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.SetEffect(arg1: new int[] {7021}, arg2: false);
-                context.ShowGuideSummary(entityID: 106, textID: 20003362, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 106, textID: 20003362, duration: 3000);
             }
 
             public override void Execute() {
@@ -218,7 +218,7 @@ namespace Maple2.Trigger._52100300_qd {
                 context.EnableSpawnPointPc(spawnPointID: 0, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointID: 991, isEnable: true);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 106, textID: 20003362, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 106, textID: 20003362, duration: 3000);
             }
 
             public override void Execute() {
@@ -260,7 +260,7 @@ namespace Maple2.Trigger._52100300_qd {
                 context.SetMesh(arg1: new int[] {1007}, arg2: false, arg4: 0, arg5: 10f);
                 context.SetEffect(arg1: new int[] {7022}, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 106, textID: 20003362, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 106, textID: 20003362, duration: 3000);
             }
 
             public override void Execute() {
@@ -306,7 +306,7 @@ namespace Maple2.Trigger._52100300_qd {
                 context.EnableSpawnPointPc(spawnPointID: 992, isEnable: true);
                 context.SetActor(arg1: 5008, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 5009, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.ShowGuideSummary(entityID: 106, textID: 20003362, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 106, textID: 20003362, duration: 3000);
             }
 
             public override void Execute() {
@@ -364,7 +364,7 @@ namespace Maple2.Trigger._52100300_qd {
                 context.CreateMonster(arg1: new int[] {161, 162, 163, 164, 165, 166, 167, 168, 169}, arg2: true);
                 context.SetMesh(arg1: new int[] {2014, 2015, 2016}, arg2: false, arg4: 30, arg5: 0f);
                 context.SetMesh(arg1: new int[] {2011, 2012, 2013}, arg2: false, arg4: 0, arg5: 10f);
-                context.ShowGuideSummary(entityID: 106, textID: 20003362, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 106, textID: 20003362, duration: 3000);
             }
 
             public override void Execute() {
@@ -403,7 +403,7 @@ namespace Maple2.Trigger._52100300_qd {
                 context.EnableSpawnPointPc(spawnPointID: 992, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointID: 993, isEnable: true);
                 context.SetMesh(arg1: new int[] {2021, 2022, 2023}, arg2: false, arg4: 0, arg5: 0f);
-                context.ShowGuideSummary(entityID: 106, textID: 20003362, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 106, textID: 20003362, duration: 3000);
             }
 
             public override void Execute() {

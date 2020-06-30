@@ -146,7 +146,7 @@ namespace Maple2.Trigger._52100105_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new int[] {500}, arg2: false);
                 context.SetSceneSkip(arg1: "컷신3_1", arg2: "nextState");
-                context.CameraSelectPath(arg1: new int[] {700, 701}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {700, 701}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004430, illustID: "Turka_normal",
                     msg: "$52100105_QD__52100105_03__0$", duration: 6000, align: "Right");
                 context.AddCinematicTalk(npcID: 11004430, illustID: "Turka_normal",
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 500, arg2: "PatrolData_500_1");
-                context.CameraSelectPath(arg1: new int[] {703, 704}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {703, 704}, arg2: false);
             }
 
             public override void Execute() {

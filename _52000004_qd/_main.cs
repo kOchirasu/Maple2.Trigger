@@ -101,7 +101,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {602}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {301}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {301}, arg2: true);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }

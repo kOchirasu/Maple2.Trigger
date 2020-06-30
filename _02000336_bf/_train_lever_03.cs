@@ -32,7 +32,7 @@ namespace Maple2.Trigger._02000336_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 113, textID: 20003363, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 113, textID: 20003363, duration: 3000);
             }
 
             public override void Execute() {
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000336_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 106, textID: 20003362, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 106, textID: 20003362, duration: 3000);
                 context.SetMesh(arg1: new int[] {8064, 8065, 8066, 8067, 8068}, arg2: false, arg4: 0, arg5: 10f);
                 context.SetSkill(arg1: new int[] {5808}, arg2: true);
                 context.SetMesh(arg1: new int[] {8069}, arg2: false, arg4: 30, arg5: 0f);

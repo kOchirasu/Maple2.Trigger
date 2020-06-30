@@ -27,7 +27,7 @@ namespace Maple2.Trigger._03000039_bf {
             internal State엘리트등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 23000002, textID: 23000002, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 23000002, textID: 23000002, duration: 5000);
             }
 
             public override void Execute() {

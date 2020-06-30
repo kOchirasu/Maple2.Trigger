@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000315_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 20031501, textID: 20031501, durationTime: 8000);
+                context.ShowGuideSummary(entityID: 20031501, textID: 20031501, duration: 8000);
             }
 
             public override void Execute() {
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000315_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 20031502, textID: 20031502, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20031502, textID: 20031502, duration: 5000);
             }
 
             public override void Execute() {
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._02000315_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 20031501, textID: 20031501, durationTime: 8000);
+                context.ShowGuideSummary(entityID: 20031501, textID: 20031501, duration: 8000);
             }
 
             public override void Execute() {
@@ -111,7 +111,7 @@ namespace Maple2.Trigger._02000315_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 20031502, textID: 20031502, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20031502, textID: 20031502, duration: 5000);
             }
 
             public override void Execute() {
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._02000315_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 20031501, textID: 20031501, durationTime: 8000);
+                context.ShowGuideSummary(entityID: 20031501, textID: 20031501, duration: 8000);
             }
 
             public override void Execute() {
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._02000315_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 20031502, textID: 20031502, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20031502, textID: 20031502, duration: 5000);
             }
 
             public override void Execute() {

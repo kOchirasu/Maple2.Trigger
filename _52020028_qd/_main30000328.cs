@@ -52,7 +52,7 @@ namespace Maple2.Trigger._52020028_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.ShowCaption(type: "VerticalCaption", title: "아크로폴리스", desc: "고대 크리티아스 지식의 안식처",
                     align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
-                context.CameraSelectPath(arg1: new int[] {4002, 4003, 4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002, 4003, 4004}, arg2: false);
                 context.AddCinematicTalk(npcID: 0, msg: "여기가 아크로폴리스...", duration: 3000);
             }
 
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._52020028_qd {
             internal State유저이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4012, 4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4012, 4001}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3001");
                 context.AddCinematicTalk(npcID: 0, msg: "생각보다 조용하군.", duration: 3000);
                 context.AddCinematicTalk(npcID: 0, msg: "수호자 때문에 안에 들어갈 수가 없다니, 얼마나 대단한 녀석인거지.", duration: 3000);
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._52020028_qd {
             internal State유저자격확인하기전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4009}, arg2: false);
                 context.SetEffect(arg1: new int[] {5003}, arg2: true);
                 context.FaceEmotion(spawnPointID: 0, emotionName: "Trigger_panic");
                 context.SetPcEmotionLoop(arg1: "Idle_A", arg2: 6000f);
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._52020028_qd {
             internal State유저자격확인3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4010}, arg2: false);
                 context.AddBalloonTalk(spawnPointID: 0, msg: "잠시 이야기를 들어줘!", duration: 3000, delayTick: 4000);
                 context.AddCinematicTalk(npcID: 22000117, msg: "결과를 확인한다.", duration: 3000);
                 context.AddCinematicTalk(npcID: 22000117, msg: @"결과, 부적합.\n전투 시스템 가동.", duration: 3000);
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {4007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4007}, arg2: false);
                 context.AddBalloonTalk(spawnPointID: 0, msg: "아니 대화가 전혀 안 통하잖아!", duration: 2000, delayTick: 0);
                 context.SetOnetimeEffect(id: 1000, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1000, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
                 context.SetEffect(arg1: new int[] {5001}, arg2: true);
                 context.CreateMonster(arg1: new int[] {101}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "아르케온", desc: "아크로폴리스의 수호자", align: "centerLeft",
@@ -371,7 +371,7 @@ namespace Maple2.Trigger._52020028_qd {
             internal State진리의문확인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004, 4003}, arg2: false);
                 context.SetEffect(arg1: new int[] {5002}, arg2: false);
                 context.AddCinematicTalk(npcID: 0, msg: "아무래도 저기가 진리의 문인가 보군.", duration: 3000);
                 context.AddCinematicTalk(npcID: 0, msg: "아르망에게 전달해야겠어. 알케이나 고원으로 돌아가자.", duration: 3000);
@@ -429,7 +429,7 @@ namespace Maple2.Trigger._52020028_qd {
             internal State이오네독백(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4011, 4008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4011, 4008}, arg2: false);
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.ShowCaption(type: "VerticalCaption", title: "이오네", desc: "크리티아스의 왕녀", align: "centerLeft",
                     offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);

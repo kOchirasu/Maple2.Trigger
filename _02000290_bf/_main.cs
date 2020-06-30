@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02000290_bf {
                 context.SetEffect(arg1: new int[] {5000}, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {802, 800}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {802, 800}, arg2: false);
                 context.SetSkip(arg1: "CameraWalk01");
             }
 
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02000290_bf {
             internal StateCameraWalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {800, 802}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {800, 802}, arg2: true);
                 context.SetSkip();
             }
 

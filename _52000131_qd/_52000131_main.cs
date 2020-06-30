@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52000131_qd {
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Sit_Ground_Idle_A", arg2: 80000f);
                 context.FaceEmotion(spawnPointID: 0, emotionName: "Think_A");
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_0sec.xml");
             }
 
@@ -97,7 +97,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State카메라이동1_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.SetProductionUI(arg1: 3);
             }
 
@@ -202,7 +202,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.FaceEmotion(spawnPointID: 0);
             }
 
@@ -238,7 +238,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
             }
 
             public override void Execute() {
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
             }
 
             public override void Execute() {
@@ -308,7 +308,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
             }
 
             public override void Execute() {
@@ -343,7 +343,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
             }
 
             public override void Execute() {
@@ -378,7 +378,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005}, arg2: false);
             }
 
             public override void Execute() {
@@ -511,7 +511,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
             }
 
             public override void Execute() {

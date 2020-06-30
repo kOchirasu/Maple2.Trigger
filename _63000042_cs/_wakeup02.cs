@@ -263,7 +263,7 @@ namespace Maple2.Trigger._63000042_cs {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcID: 11003165, msg: "$63000042_CS__WAKEUP02__10$", duration: 3000);
-                context.CameraSelectPath(arg1: new int[] {502}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {502}, arg2: false);
             }
 
             public override void Execute() {
@@ -281,8 +281,8 @@ namespace Maple2.Trigger._63000042_cs {
 
             public override void OnEnter() {
                 context.ShowCaption(scale: 2.5f, type: "NameCaption", title: "$63000042_CS__WAKEUP02__11$",
-                    desc: "$63000042_CS__WAKEUP02__12$", align: "centerRight", offestRateX: 0.5f, duration: 4000);
-                context.CameraSelectPath(arg1: new int[] {502, 503}, arg2: 0);
+                    desc: "$63000042_CS__WAKEUP02__12$", align: "centerRight", offsetRateX: 0.5f, duration: 4000);
+                context.CameraSelectPath(arg1: new int[] {502, 503}, arg2: false);
                 context.SetSceneSkip();
             }
 

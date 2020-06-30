@@ -1381,7 +1381,7 @@ namespace Maple2.Trigger._63000038_cs {
             internal State포털생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26300381, textID: 26300381, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 26300381, textID: 26300381, duration: 3000);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 

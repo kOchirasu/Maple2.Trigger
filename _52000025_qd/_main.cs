@@ -157,7 +157,7 @@ namespace Maple2.Trigger._52000025_qd {
                 context.SetProductionUI(arg1: 3);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_2001");
                 context.MoveUserPath(arg1: "MS2PatrolData_2002");
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
             }
 
             public override void Execute() {

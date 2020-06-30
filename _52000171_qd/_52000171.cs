@@ -57,7 +57,7 @@ namespace Maple2.Trigger._52000171_qd {
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetPcEmotionLoop(arg1: "Push_A", arg2: 10000f, arg3: true);
                 context.SetNpcEmotionLoop(arg1: 401, arg2: "Down_Idle_A", arg3: 10000f);
-                context.CameraSelectPath(arg1: new int[] {4000, 4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4000, 4001}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._52000171_qd {
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_basara");
-                context.ShowGuideSummary(entityID: 52001702, textID: 52001702, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 52001702, textID: 52001702, duration: 10000);
             }
 
             public override void Execute() {

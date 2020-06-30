@@ -132,7 +132,7 @@ namespace Maple2.Trigger._52000193_qd {
             internal StateCameraEffect03_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52000193_QD__52000193__1$", align: "bottomLeft",
                     offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }

@@ -42,7 +42,7 @@ namespace Maple2.Trigger._52000119_qd {
                 context.SetProductionUI(arg1: 4);
                 context.DestroyMonster(arg1: new int[] {104, 105});
                 context.CreateMonster(arg1: new int[] {101, 102, 103}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {4010, 4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4010, 4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._52000119_qd {
             internal Stateeventscene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001, 4003}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk");
                 context.SetConversation(arg1: 2, arg2: 11000173, arg3: "$52000119_QD__MAIN__3$", arg4: 3, arg5: 0);
             }
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._52000119_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 0, arg3: "$52000119_QD__MAIN__11$", arg4: 3, arg5: 0);
             }
 
@@ -375,7 +375,7 @@ namespace Maple2.Trigger._52000119_qd {
             internal Statebossscene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4011}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 104, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11003187, arg3: "$52000119_QD__MAIN__15$", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 105, arg3: "$52000119_QD__MAIN__16$", arg4: 3, arg5: 1);
@@ -395,7 +395,7 @@ namespace Maple2.Trigger._52000119_qd {
             internal Statebossscene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4013, 4014, 4015}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4013, 4014, 4015}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 104, arg2: "Bore_A");
                 context.SetConversation(arg1: 2, arg2: 11003187, arg3: "$52000119_QD__MAIN__17$", arg4: 3, arg5: 0);
             }
@@ -414,7 +414,7 @@ namespace Maple2.Trigger._52000119_qd {
             internal Statebossscene_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4010}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 104, arg2: "Talk_A");
                 context.FaceEmotion(spawnPointID: 0, emotionName: "Object_React_A");
                 context.SetConversation(arg1: 2, arg2: 11003187, arg3: "$52000119_QD__MAIN__18$", arg4: 3, arg5: 0);
@@ -434,7 +434,7 @@ namespace Maple2.Trigger._52000119_qd {
             internal Statebossscene_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4010}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3004");
                 context.SetNpcEmotionSequence(arg1: 106, arg2: "Attack_01_C");
                 context.MoveNpc(arg1: 106, arg2: "MS2PatrolData_3001");
@@ -456,7 +456,7 @@ namespace Maple2.Trigger._52000119_qd {
             internal Statebossscene_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 106, arg2: "Bore_A");
                 context.SetPcEmotionLoop(arg1: "Attack_Idle_A", arg2: 4000f);
                 context.FaceEmotion(spawnPointID: 0, emotionName: "Object_React_A");

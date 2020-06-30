@@ -5458,7 +5458,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateFireworks_Lose(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {902, 903}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {902, 903}, arg2: true);
                 context.SetUserValue(triggerID: 9, key: "Fireworks", value: 1);
             }
 
@@ -5513,7 +5513,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateFireworks_Win(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {902, 903}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {902, 903}, arg2: true);
                 context.SetUserValue(triggerID: 9, key: "Fireworks", value: 2);
             }
 

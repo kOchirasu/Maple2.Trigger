@@ -113,7 +113,7 @@ namespace Maple2.Trigger._52100102_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {1, 2}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1, 2}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52100102_QD__MAIN__1$",
                     desc: "$52100102_QD__MAIN__2$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 3000, scale: 2.5f);
@@ -151,7 +151,7 @@ namespace Maple2.Trigger._52100102_qd {
             internal State카메라무브1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {3, 4}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {3, 4}, arg2: false);
                 context.MoveNpc(arg1: 202, arg2: "PatrolData_01");
             }
 
@@ -207,7 +207,7 @@ namespace Maple2.Trigger._52100102_qd {
             internal State투르카등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {6, 7, 9}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {6, 7, 9}, arg2: false);
                 context.SetEffect(arg1: new int[] {600}, arg2: true);
                 context.CreateMonster(arg1: new int[] {300}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004430, msg: "$52100102_QD__MAIN__6$", duration: 3000, align: "left");
@@ -482,7 +482,7 @@ namespace Maple2.Trigger._52100102_qd {
             internal State투르카공격14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {11, 12}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {11, 12}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 301, arg2: "Attack_02_B", arg3: 1400f);
                 context.SetEffect(arg1: new int[] {602}, arg2: true);
                 context.SetEffect(arg1: new int[] {603}, arg2: true);
@@ -636,7 +636,7 @@ namespace Maple2.Trigger._52100102_qd {
                 context.DestroyMonster(arg1: new int[] {301});
                 context.CreateMonster(arg1: new int[] {302});
                 context.SetOnetimeEffect(id: 100, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_3sec.xml");
-                context.CameraSelectPath(arg1: new int[] {15, 16}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15, 16}, arg2: false);
             }
 
             public override void Execute() {

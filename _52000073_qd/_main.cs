@@ -35,7 +35,7 @@ namespace Maple2.Trigger._52000073_qd {
                 context.SetProductionUI(arg1: 3);
                 context.CreateMonster(arg1: new int[] {302});
                 context.CreateMonster(arg1: new int[] {301});
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
                 context.SetSceneSkip(arg1: "다크윈드통로", arg2: "exit");
             }
 
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._52000073_qd {
             internal State계단이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: false);
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_2001");
                 context.SetConversation(arg1: 1, arg2: 301, arg3: "$52000073_QD__MAIN__0$", arg4: 3, arg5: 0);
             }
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 301, arg3: "$52000073_QD__MAIN__1$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_2002");
-                context.CameraSelectPath(arg1: new int[] {8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005}, arg2: false);
             }
 
             public override void Execute() {
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 7002, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8006}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 301, arg3: "$52000073_QD__MAIN__3$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 301, arg2: "Sit_down_A", arg3: 5000f);
             }
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52000073_qd {
             internal State현장목격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8007}, arg2: false);
                 context.CreateMonster(arg1: new int[] {303});
                 context.CreateMonster(arg1: new int[] {304});
                 context.SetConversation(arg1: 1, arg2: 303, arg3: "$52000073_QD__MAIN__4$", arg4: 3, arg5: 0);
@@ -317,7 +317,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {8008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8008}, arg2: false);
             }
 
             public override void Execute() {

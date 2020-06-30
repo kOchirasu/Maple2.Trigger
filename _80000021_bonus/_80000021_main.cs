@@ -30,7 +30,7 @@ namespace Maple2.Trigger._80000021_bonus {
             internal State안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 1, textID: 26300734, durationTime: 10);
+                context.ShowGuideSummary(entityID: 1, textID: 26300734, duration: 10);
             }
 
             public override void Execute() {
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._80000021_bonus {
             internal State몬스터체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 1, textID: 26300734, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 1, textID: 26300734, duration: 10000);
             }
 
             public override void Execute() {
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._80000021_bonus {
             internal State문열기00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 2, textID: 26300735, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 2, textID: 26300735, duration: 10000);
                 context.SetMesh(arg1: new int[] {198}, arg2: false);
             }
 

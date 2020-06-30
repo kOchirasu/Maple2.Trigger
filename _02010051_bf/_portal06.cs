@@ -201,7 +201,7 @@ namespace Maple2.Trigger._02010051_bf {
             internal State가이드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20105101, textID: 20105101, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20105101, textID: 20105101, duration: 4000);
                 context.SetInteractObject(arg1: new int[] {10000914}, arg2: 1);
             }
 

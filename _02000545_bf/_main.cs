@@ -141,7 +141,7 @@ namespace Maple2.Trigger._02000545_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.CameraSelectPath(arg1: new int[] {7001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {7001}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004687, msg: "$02000545_BF__MAIN__6$", align: "left", duration: 4000);
                 context.SetEffect(arg1: new int[] {5001}, arg2: true);
                 context.SetSceneSkip(arg1: "몬스터웨이브1", arg2: "nextState");
@@ -307,7 +307,7 @@ namespace Maple2.Trigger._02000545_bf {
                 context.SetProductionUI(arg1: 3);
                 context.MoveUser(arg1: 02000545, arg2: 3);
                 context.SetSceneSkip(arg1: "거미여왕기어올라오기", arg2: "nextState");
-                context.CameraSelectPath(arg1: new int[] {7004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {7004}, arg2: false);
             }
 
             public override void Execute() {
@@ -409,7 +409,7 @@ namespace Maple2.Trigger._02000545_bf {
             internal State거미여왕기어올라오기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {7004, 7005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {7004, 7005}, arg2: false);
                 context.SetEffect(arg1: new int[] {5011}, arg2: true);
                 context.CreateMonster(arg1: new int[] {102}, arg2: true);
                 context.AddCinematicTalk(npcID: 23300010, msg: "$02000545_BF__MAIN__16$", align: "left",

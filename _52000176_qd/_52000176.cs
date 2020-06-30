@@ -75,7 +75,7 @@ namespace Maple2.Trigger._52000176_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveUserPath(arg1: "MS2PatrolData_pc");
-                context.CameraSelectPath(arg1: new int[] {4000, 4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4000, 4002, 4003}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -175,7 +175,7 @@ namespace Maple2.Trigger._52000176_qd {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.AddBalloonTalk(spawnPointID: 0, msg: "$52000176_QD__52000176__2$", duration: 6000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 52001761, textID: 52001761, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 52001761, textID: 52001761, duration: 10000);
                 context.CreateMonster(arg1: new int[] {400}, arg2: false);
             }
 

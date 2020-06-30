@@ -27,7 +27,7 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnEnter() {
                 context.AddBalloonTalk(spawnPointID: 102, msg: "$84000006_WD__84000006_WD_WAIT__0$", duration: 5000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 28500001, textID: 28500001, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 28500001, textID: 28500001, duration: 5000);
             }
 
             public override void Execute() {
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnEnter() {
                 context.AddBalloonTalk(spawnPointID: 102, msg: "$84000006_WD__84000006_WD_WAIT__1$", duration: 5000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 28500002, textID: 28500002, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 28500002, textID: 28500002, duration: 5000);
             }
 
             public override void Execute() {

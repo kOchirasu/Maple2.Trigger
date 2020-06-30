@@ -193,7 +193,7 @@ namespace Maple2.Trigger._52100051_qd {
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$52100051_QD__01_ENTER__4$", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 202, arg3: "$52100051_QD__01_ENTER__5$", arg4: 2, arg5: 1);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039501, textID: 20039501, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20039501, textID: 20039501, duration: 4000);
                 context.SetInteractObject(arg1: new int[] {10002078}, arg2: 1);
             }
 
@@ -212,7 +212,7 @@ namespace Maple2.Trigger._52100051_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039502, textID: 20039502, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20039502, textID: 20039502, duration: 4000);
                 context.SetMesh(arg1: new int[] {3300, 3301, 3302, 3303}, arg2: false, arg3: 500, arg4: 0, arg5: 0f);
                 context.SetBreakable(arg1: new int[] {4000, 4001, 4002, 4003}, arg2: true);
                 context.SetVisibleBreakableObject(arg1: new int[] {4000, 4001, 4002, 4003}, arg2: true);
@@ -271,7 +271,7 @@ namespace Maple2.Trigger._52100051_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039503, textID: 20039503, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20039503, textID: 20039503, duration: 4000);
                 context.CreateMonster(arg1: new int[] {920}, arg2: false);
             }
 
@@ -307,7 +307,7 @@ namespace Maple2.Trigger._52100051_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039504, textID: 20039504, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20039504, textID: 20039504, duration: 4000);
             }
 
             public override void Execute() { }

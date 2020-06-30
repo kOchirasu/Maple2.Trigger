@@ -116,7 +116,7 @@ namespace Maple2.Trigger._52000132_qd {
             internal State아이들과만남_연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUserPath(arg1: "MS2PatrolData_PC00");
                 context.SetSceneSkip(arg1: "아이들과인사_스킵완료", arg2: "exit");
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._52000132_qd {
             internal StatePC인사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.AddCinematicTalk(npcID: 0, illustID: "0", msg: "$52000132_QD__MAIN__2$", duration: 3000,
                     align: "right");
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 3000f);
@@ -257,7 +257,7 @@ namespace Maple2.Trigger._52000132_qd {
             internal StatePC대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
                 context.AddCinematicTalk(npcID: 0, illustID: "0", msg: "$52000132_QD__MAIN__6$", duration: 3000,
                     align: "right");
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 1000f);
@@ -318,7 +318,7 @@ namespace Maple2.Trigger._52000132_qd {
             internal State아이들이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_boy01");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_girl01");
             }
@@ -414,7 +414,7 @@ namespace Maple2.Trigger._52000132_qd {
             internal State아이들이동02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_boy02");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_girl02");
             }
@@ -550,7 +550,7 @@ namespace Maple2.Trigger._52000132_qd {
             internal State아이들이동03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_boy03");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_girl03");
             }
@@ -646,7 +646,7 @@ namespace Maple2.Trigger._52000132_qd {
             internal State아이들이동04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_boy04");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_girl04");
                 context.MoveUserPath(arg1: "MS2PatrolData_PC04");
@@ -666,7 +666,7 @@ namespace Maple2.Trigger._52000132_qd {
             internal State리안대사08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8006}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003253, illustID: "0", msg: "$52000132_QD__MAIN__20$", duration: 3000,
                     align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3200f);

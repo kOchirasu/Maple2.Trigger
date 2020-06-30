@@ -134,7 +134,7 @@ namespace Maple2.Trigger._52000013_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetTimer(arg1: "12", arg2: 6);
-                context.CameraSelectPath(arg1: new int[] {901}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {901}, arg2: false);
             }
 
             public override void Execute() {
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._52000013_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "13", arg2: 12);
                 context.SetActor(arg1: 6000, arg2: true, arg3: "Idle_A");
-                context.CameraSelectPath(arg1: new int[] {902, 903}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {902, 903}, arg2: false);
             }
 
             public override void Execute() {
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._52000013_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.MoveNpc(arg1: 6001, arg2: "MS2PatrolData_2001");
-                context.CameraSelectPath(arg1: new int[] {904, 905}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {904, 905}, arg2: false);
             }
 
             public override void Execute() {

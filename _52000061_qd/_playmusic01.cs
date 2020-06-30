@@ -111,7 +111,7 @@ namespace Maple2.Trigger._52000061_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {601, 602}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {601, 602}, arg2: true);
             }
 
             public override void Execute() {

@@ -54,7 +54,7 @@ namespace Maple2.Trigger._02000380_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8001, 8002, 8003}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002, 8003}, arg2: true);
                 context.CreateMonster(arg1: new int[] {101});
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000380_BF__MAIN__0$", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 2, arg2: 11001836, arg3: "$02000380_BF__MAIN__1$", arg4: 3);
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02000380_bf {
             internal StateStart_03_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003801, textID: 20003801, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003801, textID: 20003801, duration: 5000);
                 context.SetMesh(arg1: new int[] {2001, 2002, 2003, 2004}, arg2: false, arg3: 0, arg4: 10, arg5: 10f);
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000380_BF__MAIN__4$", arg4: 2, arg5: 0);
             }

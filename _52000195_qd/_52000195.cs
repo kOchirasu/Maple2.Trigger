@@ -52,7 +52,7 @@ namespace Maple2.Trigger._52000195_qd {
                 context.VisibleMyPc(isVisible: false);
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 52000195, arg2: 5001);
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
             }
 
             public override void Execute() {
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._52000195_qd {
             internal StateCameraEffect03_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52000195_QD__52000195__0$", align: "bottomLeft",
                     offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
@@ -254,7 +254,7 @@ namespace Maple2.Trigger._52000195_qd {
             internal State과거장면_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
                 context.CreateMonster(arg1: new int[] {201});
                 context.CreateMonster(arg1: new int[] {202});
                 context.CreateMonster(arg1: new int[] {203});
@@ -295,7 +295,7 @@ namespace Maple2.Trigger._52000195_qd {
             internal State과거장면_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
                 context.SetProductionUI(arg1: 3);
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Talk_A", arg3: 4000f);
                 context.AddCinematicTalk(npcID: 11004787, msg: "$52000195_QD__52000195__4$", duration: 5000);
@@ -315,7 +315,7 @@ namespace Maple2.Trigger._52000195_qd {
             internal State과거장면_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4007}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 201, arg2: "Talk_A", arg3: 8000f);
                 context.AddCinematicTalk(npcID: 11004778, msg: "$52000195_QD__52000195__5$", align: "right",
                     illustID: "Karl_normal", duration: 4000);
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._52000195_qd {
             internal State과거장면_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4008}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Talk_A", arg3: 4000f);
                 context.AddCinematicTalk(npcID: 11004787, msg: "$52000195_QD__52000195__7$", align: "right",
                     illustID: "Baron_normal", duration: 4000);
@@ -357,7 +357,7 @@ namespace Maple2.Trigger._52000195_qd {
             internal State과거장면_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
                 context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_3001");
             }
 
@@ -395,7 +395,7 @@ namespace Maple2.Trigger._52000195_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new int[] {202});
-                context.CameraSelectPath(arg1: new int[] {4009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4009}, arg2: false);
             }
 
             public override void Execute() {

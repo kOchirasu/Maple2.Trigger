@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52000020_qd {
             internal Statescene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Bore_C");
                 context.AddCinematicTalk(npcID: 29000266, msg: "$52000020_QD__MAIN_01__0$", duration: 3709,
                     align: "center");
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._52000020_qd {
             internal Statescene_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.AddBalloonTalk(spawnPointID: 401, msg: "$52000020_QD__MAIN_01__5$", duration: 1000,
                     delayTick: 0);
                 context.AddBalloonTalk(spawnPointID: 402, msg: "$52000020_QD__MAIN_01__6$", duration: 1000,

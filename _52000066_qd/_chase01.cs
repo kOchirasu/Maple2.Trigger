@@ -242,7 +242,7 @@ namespace Maple2.Trigger._52000066_qd {
                 context.DestroyMonster(arg1: new int[] {102});
                 context.SetUserValue(triggerID: 2, key: "TrapLeverOn", value: 1);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 25200661, textID: 25200661, durationTime: 6000);
+                context.ShowGuideSummary(entityID: 25200661, textID: 25200661, duration: 6000);
             }
 
             public override void Execute() {

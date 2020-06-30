@@ -77,12 +77,12 @@ namespace Maple2.Trigger._52100302_qd {
                         additionalEffectID: 73000005);
                     context.CreateMonster(
                         arg1: new int[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(
                         arg1: new int[] {10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018, 10019, 10020},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(
-                        arg1: new int[] {10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029}, agr2: false);
+                        arg1: new int[] {10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029}, arg2: false);
                     context.State = new StateArcheon_Arrive(context);
                     return;
                 }
@@ -192,7 +192,7 @@ namespace Maple2.Trigger._52100302_qd {
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
                 context.CreateMonster(arg1: new int[] {999}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.MoveUser(arg1: 52100302, arg2: 6001);
             }
 
@@ -212,7 +212,7 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002}, arg2: false);
             }
 
             public override void Execute() {
@@ -249,7 +249,7 @@ namespace Maple2.Trigger._52100302_qd {
             internal State마를레네_연출_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 999, arg2: "Talk_A", arg3: 8000f);
                 context.AddCinematicTalk(npcID: 11004680, illustID: "Eone_normal", align: "right",
                     msg: "$52100302_QD__FIELD_5__4$", duration: 4000);

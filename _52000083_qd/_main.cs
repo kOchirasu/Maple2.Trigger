@@ -360,7 +360,7 @@ namespace Maple2.Trigger._52000083_qd {
             internal State검사대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 1012, arg2: "Talk_A", arg3: 3000f);
                 context.AddCinematicTalk(npcID: 11004022, illustID: "11004022", msg: "$52000083_QD__MAIN__5$",
                     align: "left", duration: 3000);
@@ -574,7 +574,7 @@ namespace Maple2.Trigger._52000083_qd {
             internal State시점이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 1012, arg2: "Bore_B", arg3: 2000f);
             }
 

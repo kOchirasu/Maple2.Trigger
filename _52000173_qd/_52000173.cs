@@ -42,9 +42,9 @@ namespace Maple2.Trigger._52000173_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {101}, agr2: false);
+                context.CreateMonster(arg1: new int[] {101}, arg2: false);
                 context.MoveUser(arg1: 52000173, arg2: 1);
-                context.CameraSelectPath(arg1: new int[] {401, 402}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {401, 402}, arg2: false);
             }
 
             public override void Execute() {

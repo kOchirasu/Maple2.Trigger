@@ -102,7 +102,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State정황설명(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20002990, textID: 20002990, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20002990, textID: 20002990, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State시간반응대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20002992, textID: 20002992, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20002992, textID: 20002992, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetInteractObject(arg1: new int[] {10000494, 10000495}, arg2: 1);
             }

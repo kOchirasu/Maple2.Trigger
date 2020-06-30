@@ -31,7 +31,7 @@ namespace Maple2.Trigger._52010032_qd {
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.MoveUser(arg1: 52010032, arg2: 7001);
                 context.CreateMonster(arg1: new int[] {101}, arg2: true);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Dead_Idle_A", arg3: 100000000f);
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._52010032_qd {
             internal State치유의식_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3002");
                 context.SetNpcEmotionSequence(arg1: 401, arg2: "Bore_A");
                 context.AddCinematicTalk(npcID: 11003389, msg: "$52010032_QD__MAIN_QUEST10003095__2$", duration: 3000);
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {4003, 4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003, 4001}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Bore_B");
                 context.SetEffect(arg1: new int[] {5001}, arg2: false);
                 context.SetEffect(arg1: new int[] {5002}, arg2: false);

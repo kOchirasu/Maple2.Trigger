@@ -101,7 +101,7 @@ namespace Maple2.Trigger._02000355_bf {
                     arg1: new int[] {
                         3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.CameraSelectPath(arg1: new int[] {301}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {301}, arg2: true);
             }
 
             public override void Execute() {
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02000355_bf {
                     context.SetProductionUI(arg1: 0);
                     context.SetProductionUI(arg1: 2);
                     context.CameraSelect(arg1: 301, arg2: false);
-                    context.ShowGuideSummary(entityID: 20003552, textID: 20003552, durationTime: 4000);
+                    context.ShowGuideSummary(entityID: 20003552, textID: 20003552, duration: 4000);
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                     context.State = new State카트반소멸(context);
                     return;

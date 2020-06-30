@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52010066_qd {
 
             public override void OnEnter() {
                 context.SetTimeScale(enable: true, startScale: 0.8f, endScale: 0.8f, duration: 8.0f, interpolator: 1);
-                context.CameraSelectPath(arg1: new int[] {2000, 2001, 2002, 2003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000, 2001, 2002, 2003}, arg2: false);
             }
 
             public override void Execute() {

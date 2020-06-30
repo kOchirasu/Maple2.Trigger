@@ -28,7 +28,7 @@ namespace Maple2.Trigger._63000071_cs {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
-                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: false);
                 context.CreateMonster(arg1: new int[] {101}, arg2: false);
                 context.SetEffect(arg1: new int[] {5000}, arg2: true);
                 context.SetSceneSkip(arg1: "openingskip_1", arg2: "exit");
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._63000071_cs {
             public override void OnExit() {
                 context.CreateMonster(arg1: new int[] {102}, arg2: false);
                 context.SetEffect(arg1: new int[] {5001}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
             }
         }
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._63000071_cs {
             }
 
             public override void OnExit() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_marien3");
             }
         }
@@ -250,7 +250,7 @@ namespace Maple2.Trigger._63000071_cs {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
-                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: false);
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.SetSceneSkip(arg1: "endingskip_1", arg2: "exit");
                 context.SetEffect(arg1: new int[] {5004}, arg2: false);
@@ -302,7 +302,7 @@ namespace Maple2.Trigger._63000071_cs {
             internal Stateendingscene_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004310, msg: "$63000071_CS__63000071_MAIN__15$", duration: 6000);
             }
 
@@ -322,7 +322,7 @@ namespace Maple2.Trigger._63000071_cs {
             internal Stateendingscene_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
             }
 
             public override void Execute() {

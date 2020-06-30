@@ -111,7 +111,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal State1단계_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8013, 8015}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8013, 8015}, arg2: false);
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 

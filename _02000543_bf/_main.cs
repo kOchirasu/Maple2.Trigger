@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State게임안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {7000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {7000}, arg2: false);
                 context.SideNpcTalk(npcID: 11004644, illust: "SlaveMan3_normal", duration: 3000,
                     script: "$02000543_BF__MAIN__1$");
                 context.LockMyPc(isLock: true);
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State게임안내2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {7000}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {7000}, arg2: true);
                 context.LockMyPc(isLock: false);
                 context.AddBalloonTalk(spawnPointID: 104, msg: "$02000543_BF__MAIN__2$", duration: 3500, delayTick: 0);
                 context.AddBalloonTalk(spawnPointID: 105, msg: "$02000543_BF__MAIN__3$", duration: 3500,

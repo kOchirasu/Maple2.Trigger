@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52020029_qd {
             internal State연출시작_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.MoveUser(arg1: 52020029, arg2: 6001);
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52020029_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3001");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_3002");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_3003");
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._52020029_qd {
             internal State진리의문유례(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003755, msg: "아아. 저 두개의 큰 화면. 저것이 바로 진리의 문입니다.", duration: 3000);
                 context.AddCinematicTalk(npcID: 11003755, msg: "듣기론 세상의 모든 정보를 찾을 수 있는 기계라더군요.", duration: 3000);
                 context.SetSceneSkip(arg1: "마무리", arg2: "exit");
@@ -141,7 +141,7 @@ namespace Maple2.Trigger._52020029_qd {
             internal State감탄(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Bore_B");
                 context.AddCinematicTalk(npcID: 11003717, msg: "아아... 저것을 직접 만져볼 수 있다니 황홀하군!", duration: 3000);
                 context.AddCinematicTalk(npcID: 11003755, msg: "자, 시간이 없으니 빨리 원하는 정보를 검색해 보죠.", duration: 3000);

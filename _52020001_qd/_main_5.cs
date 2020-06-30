@@ -130,7 +130,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 4);
-                context.CameraSelectPath(arg1: new int[] {2000009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000009}, arg2: false);
             }
 
             public override void Execute() {
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 1);
-                context.CameraSelectPath(arg1: new int[] {2000013}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000013}, arg2: false);
             }
 
             public override void Execute() {

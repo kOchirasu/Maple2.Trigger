@@ -188,7 +188,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal State앤등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_ann01");
                 context.AddCinematicTalk(npcID: 11003432, illustID: "Ann_normal", msg: "$02000065_BF__MAIN__0$",
                     duration: 3000, align: "left");
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal State앤등장2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
                 context.AddBalloonTalk(spawnPointID: 101, msg: "$02000065_BF__MAIN__1$", duration: 3000, delayTick: 0);
             }
 
@@ -265,7 +265,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal State앤대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8010, 8011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8010, 8011}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003432, msg: "$02000065_BF__MAIN__2$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 3000f);
                 context.SetSceneSkip(arg1: "칼과앤_스킵완료", arg2: "nextState");
@@ -559,7 +559,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal State앤대사05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003432, arg3: "$02000065_BF__MAIN__10$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 2000f);
             }
@@ -578,7 +578,7 @@ namespace Maple2.Trigger._02000065_bf {
             internal State카메라아웃(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: false);
                 context.VisibleMyPc(isVisible: true);
             }
 

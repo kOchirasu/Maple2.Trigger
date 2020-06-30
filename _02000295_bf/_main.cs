@@ -278,7 +278,7 @@ namespace Maple2.Trigger._02000295_bf {
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 600, arg2: false);
                 context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20002952, textID: 20002952, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20002952, textID: 20002952, duration: 3000);
                 context.SetEffect(arg1: new int[] {5000}, arg2: true);
                 context.SetEffect(arg1: new int[] {5001}, arg2: true);
                 context.SetEffect(arg1: new int[] {5002}, arg2: true);
@@ -299,7 +299,7 @@ namespace Maple2.Trigger._02000295_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20002951, textID: 20002951, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20002951, textID: 20002951, duration: 5000);
             }
 
             public override void Execute() {

@@ -34,7 +34,7 @@ namespace Maple2.Trigger._52000169_qd {
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {4000, 4001, 4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4000, 4001, 4002}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._52000169_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.ShowGuideSummary(entityID: 52001691, textID: 52001691, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 52001691, textID: 52001691, duration: 10000);
             }
 
             public override void Execute() {

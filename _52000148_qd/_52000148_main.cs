@@ -47,7 +47,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State잠시대기_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.MoveUser(arg1: 52000148, arg2: 99);
                 context.CreateMonster(arg1: new int[] {101}, arg2: false);
             }
@@ -272,7 +272,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -309,7 +309,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005}, arg2: false);
             }
 
             public override void Execute() {
@@ -535,7 +535,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State독백_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -571,7 +571,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State독백_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.SetEffect(arg1: new int[] {5001}, arg2: true);
             }
 
@@ -607,7 +607,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State독백_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {

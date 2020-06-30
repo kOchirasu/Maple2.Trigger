@@ -122,7 +122,7 @@ namespace Maple2.Trigger._52000050_qd {
                 context.SetMeshAnimation(arg1: new int[] {6026, 6027, 6028, 6029, 6030}, arg2: true, arg3: 0, arg4: 0);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8010, 8011, 8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8010, 8011, 8001}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_9902");
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000050_QD__MAIN_02__0$", arg4: 3, arg5: 0);
             }
@@ -198,7 +198,7 @@ namespace Maple2.Trigger._52000050_qd {
                 context.SetEffect(arg1: new int[] {7011}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: true);
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "FlyingBirds");
             }
 

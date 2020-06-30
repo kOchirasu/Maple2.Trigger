@@ -39,7 +39,7 @@ namespace Maple2.Trigger._52020019_qd {
                 context.CreateMonster(arg1: new int[] {101}, arg2: true);
                 context.CreateMonster(arg1: new int[] {102}, arg2: true);
                 context.MoveUser(arg1: 52020019, arg2: 6001);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
             }
 
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52020019_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: false);
                 context.SetSceneSkip(arg2: "nextState");
             }
 
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._52020019_qd {
             internal StateCamera_Work_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
             }
 
             public override void Execute() {

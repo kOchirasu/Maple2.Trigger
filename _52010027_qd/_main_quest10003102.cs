@@ -63,7 +63,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal State엔피씨와말을걸면(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4013}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4013}, arg2: false);
             }
 
             public override void Execute() {
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal State보스몬스터는소멸준비01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4014}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4014}, arg2: false);
                 context.AddCinematicTalk(npcID: 0, msg: "$52010027_QD__MAIN_QUEST10003102__2$", duration: 3000);
                 context.AddCinematicTalk(npcID: 0, msg: "$52010027_QD__MAIN_QUEST10003102__3$", duration: 3000);
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 10000f);
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal State보스몬스터는소멸준비02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4013}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4013}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003469, msg: "$52010027_QD__MAIN_QUEST10003102__4$", duration: 4000);
                 context.AddCinematicTalk(npcID: 11003469, msg: "$52010027_QD__MAIN_QUEST10003102__5$", duration: 3000);
                 context.AddCinematicTalk(npcID: 11003469, msg: "$52010027_QD__MAIN_QUEST10003102__6$", duration: 4000);
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal State전투종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4014}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4014}, arg2: false);
                 context.AddCinematicTalk(npcID: 0, msg: "$52010027_QD__MAIN_QUEST10003102__7$", duration: 2000);
                 context.AddCinematicTalk(npcID: 0, msg: "$52010027_QD__MAIN_QUEST10003102__8$", duration: 4000);
                 context.AddCinematicTalk(npcID: 0, msg: "$52010027_QD__MAIN_QUEST10003102__9$", duration: 3000);

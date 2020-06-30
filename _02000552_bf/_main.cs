@@ -146,7 +146,7 @@ namespace Maple2.Trigger._02000552_bf {
             internal State메시지출력(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 29200008, textID: 29200008, durationTime: 6200);
+                context.ShowGuideSummary(entityID: 29200008, textID: 29200008, duration: 6200);
                 context.SetUserValue(key: "VacuumMessage", value: 0);
             }
 

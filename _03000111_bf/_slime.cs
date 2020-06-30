@@ -23,7 +23,7 @@ namespace Maple2.Trigger._03000111_bf {
             internal State알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 23000005, textID: 23000005, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 23000005, textID: 23000005, duration: 5000);
             }
 
             public override void Execute() {

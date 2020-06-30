@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02010070_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20100706, textID: 20100706, durationTime: 7000);
+                context.ShowGuideSummary(entityID: 20100706, textID: 20100706, duration: 7000);
                 context.MoveNpc(arg1: 2108, arg2: "MS2PatrolData0");
                 context.SetConversation(arg1: 1, arg2: 2108, arg3: "$02010070_BF__MAIN__1$", arg4: 4);
             }

@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000357_bf {
             internal State종료체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20001945, textID: 20001945, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20001945, textID: 20001945, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 

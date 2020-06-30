@@ -160,7 +160,7 @@ namespace Maple2.Trigger._52020036_qd {
                     duration: 7000, scale: 2.5f);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {3000, 3001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {3000, 3001}, arg2: false);
             }
 
             public override void Execute() {
@@ -177,7 +177,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State피그밍그부족의제단원경신2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {3013, 3014}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {3013, 3014}, arg2: false);
                 context.SetSceneSkip(arg1: "콘대르소환", arg2: "nextState");
             }
 
@@ -435,7 +435,7 @@ namespace Maple2.Trigger._52020036_qd {
                 context.SetQuestAccept(questID: 91000048);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {3005, 3006}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {3005, 3006}, arg2: true);
             }
 
             public override void Execute() {
@@ -1498,7 +1498,7 @@ namespace Maple2.Trigger._52020036_qd {
             internal State엔딩카메라2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {3007, 3016}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {3007, 3016}, arg2: false);
                 context.SetSceneSkip();
             }
 

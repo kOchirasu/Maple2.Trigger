@@ -542,7 +542,7 @@ namespace Maple2.Trigger._02000338_bf {
                 context.SetAgent(arg1: "8004", arg2: false);
                 context.SetAgent(arg1: "8005", arg2: false);
                 context.HideGuideSummary(entityID: 20003382);
-                context.ShowGuideSummary(entityID: 20003386, textID: 20003386, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003386, textID: 20003386, duration: 5000);
                 context.PlaySystemSoundInBox(arg1: new int[] {102}, arg2: "System_ShowGuideSummary_01");
                 context.SetEffect(arg1: new int[] {73002}, arg2: false);
                 context.SetMesh(arg1: new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19},
@@ -766,7 +766,7 @@ namespace Maple2.Trigger._02000338_bf {
                 context.SetMesh(arg1: new int[] {56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66}, arg2: true, arg3: 100,
                     arg4: 50, arg5: 2f);
                 context.PlaySystemSoundInBox(arg1: new int[] {102}, arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20003381, textID: 20003381, durationTime: 7000);
+                context.ShowGuideSummary(entityID: 20003381, textID: 20003381, duration: 7000);
                 context.SetEffect(arg1: new int[] {73007}, arg2: false);
             }
 

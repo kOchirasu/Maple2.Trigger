@@ -52,7 +52,7 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "GuildRaid_Laboratory_DungeonOpen_01");
-                context.ShowGuideSummary(entityID: 25100206, textID: 25100206, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 25100206, textID: 25100206, duration: 3000);
                 context.SetActor(arg1: 4002, arg2: false, arg3: "Interaction_vrmachine_A01_on");
             }
 
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "GuildRaid_Laboratory_DungeonOpen_01");
-                context.ShowGuideSummary(entityID: 25100206, textID: 25100206, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 25100206, textID: 25100206, duration: 3000);
             }
 
             public override void Execute() {
@@ -126,7 +126,7 @@ namespace Maple2.Trigger._50000006_dl {
             internal StateWaitDungeon01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100204, textID: 25100204, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 25100204, textID: 25100204, duration: 3000);
             }
 
             public override void Execute() {
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._50000006_dl {
             internal StateWaitDungeon03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100205, textID: 25100205, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 25100205, textID: 25100205, duration: 3000);
             }
 
             public override void Execute() {
@@ -200,7 +200,7 @@ namespace Maple2.Trigger._50000006_dl {
             internal StateWaitDungeon05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100204, textID: 25100204, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 25100204, textID: 25100204, duration: 3000);
             }
 
             public override void Execute() {
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._50000006_dl {
             internal StateWaitDungeon07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100205, textID: 25100205, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 25100205, textID: 25100205, duration: 3000);
             }
 
             public override void Execute() {
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._50000006_dl {
             internal StateWaitDungeon09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100204, textID: 25100204, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 25100204, textID: 25100204, duration: 3000);
             }
 
             public override void Execute() {
@@ -311,7 +311,7 @@ namespace Maple2.Trigger._50000006_dl {
             internal StateWaitDungeon11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100205, textID: 25100205, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 25100205, textID: 25100205, duration: 3000);
             }
 
             public override void Execute() {

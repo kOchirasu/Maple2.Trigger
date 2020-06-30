@@ -73,10 +73,10 @@ namespace Maple2.Trigger._84000006_wd {
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001442}, ar2: 2)
-                    && context.ObjectInteracted(arg1: new int[] {10001443}, ar2: 2)
-                    && context.ObjectInteracted(arg1: new int[] {10001444}, ar2: 2)
-                    && context.ObjectInteracted(arg1: new int[] {10001445}, ar2: 2)) {
+                if (context.ObjectInteracted(arg1: new int[] {10001442}, arg2: 2)
+                    && context.ObjectInteracted(arg1: new int[] {10001443}, arg2: 2)
+                    && context.ObjectInteracted(arg1: new int[] {10001444}, arg2: 2)
+                    && context.ObjectInteracted(arg1: new int[] {10001445}, arg2: 2)) {
                     context.AddBuff(arg1: new int[] {9002}, arg2: 99940046, arg3: 1, arg4: false, arg5: true);
                     context.SetUserValue(triggerID: 1001, key: "Steal", value: 1);
                     context.State = new StateStandby(context);
@@ -111,9 +111,9 @@ namespace Maple2.Trigger._84000006_wd {
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001442}, ar2: 2)
-                    && context.ObjectInteracted(arg1: new int[] {10001443}, ar2: 2)
-                    && context.ObjectInteracted(arg1: new int[] {10001445}, ar2: 2)) {
+                if (context.ObjectInteracted(arg1: new int[] {10001442}, arg2: 2)
+                    && context.ObjectInteracted(arg1: new int[] {10001443}, arg2: 2)
+                    && context.ObjectInteracted(arg1: new int[] {10001445}, arg2: 2)) {
                     context.AddBuff(arg1: new int[] {9002}, arg2: 99940045, arg3: 1, arg4: false, arg5: true);
                     context.SetUserValue(triggerID: 1001, key: "Steal", value: 1);
                     context.State = new StateStandby(context);
@@ -147,8 +147,8 @@ namespace Maple2.Trigger._84000006_wd {
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001442}, ar2: 2)
-                    && context.ObjectInteracted(arg1: new int[] {10001445}, ar2: 2)) {
+                if (context.ObjectInteracted(arg1: new int[] {10001442}, arg2: 2)
+                    && context.ObjectInteracted(arg1: new int[] {10001445}, arg2: 2)) {
                     context.AddBuff(arg1: new int[] {9002}, arg2: 99940043, arg3: 1, arg4: false, arg5: true);
                     context.SetUserValue(triggerID: 1001, key: "Steal", value: 1);
                     context.State = new StateStandby(context);

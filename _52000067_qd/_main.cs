@@ -102,7 +102,7 @@ namespace Maple2.Trigger._52000067_qd {
                 context.CreateMonster(arg1: new int[] {121, 121, 123}, arg2: false);
                 context.CreateMonster(arg1: new int[] {752, 753, 754}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_1002");
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Statescene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
             }
 
             public override void Execute() {
@@ -349,7 +349,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Statescene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005}, arg2: false);
             }
 
             public override void Execute() {
@@ -418,7 +418,7 @@ namespace Maple2.Trigger._52000067_qd {
 
             public override void OnEnter() {
                 context.SetTimeScale(enable: true, startScale: 0.1f, endScale: 1f, duration: 1f, interpolator: 2);
-                context.CameraSelectPath(arg1: new int[] {8099, 8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8099, 8005}, arg2: false);
             }
 
             public override void Execute() {
@@ -436,7 +436,7 @@ namespace Maple2.Trigger._52000067_qd {
 
             public override void OnEnter() {
                 context.SetTimeScale(enable: false, startScale: 1f, endScale: 1f, duration: 1f, interpolator: 0);
-                context.CameraSelectPath(arg1: new int[] {8005, 8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005, 8006}, arg2: false);
                 context.SetActor(arg1: 4001, arg2: true, arg3: "Idle_A");
             }
 
@@ -473,7 +473,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Statescene_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8006, 8007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8006, 8007}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000067_QD__MAIN__5$", arg4: 3);
             }
@@ -554,7 +554,7 @@ namespace Maple2.Trigger._52000067_qd {
                 context.CreateMonster(arg1: new int[] {121, 121, 123}, arg2: false);
                 context.CreateMonster(arg1: new int[] {752, 753, 754}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_1002");
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
                 context.SetActor(arg1: 4001, arg2: true, arg3: "Regen_A");
                 context.SetEffect(arg1: new int[] {7001}, arg2: true);
                 context.SetEffect(arg1: new int[] {7010}, arg2: true);
@@ -691,7 +691,7 @@ namespace Maple2.Trigger._52000067_qd {
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000067, arg2: 2);
                 context.SetEffect(arg1: new int[] {7005}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {8008, 8009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8008, 8009}, arg2: false);
                 context.DestroyMonster(arg1: new int[] {
                     101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 121,
                     122, 123
@@ -738,7 +738,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Stateboss_event_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8010, 8011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8010, 8011}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 999, arg2: "AttackReady_A");
                 context.SetSceneSkip();
             }
@@ -774,7 +774,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Stateboss_event_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8012}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8012}, arg2: false);
                 context.SetEffect(arg1: new int[] {7005}, arg2: true);
             }
 
@@ -912,7 +912,7 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetConversation(arg1: 1, arg2: 862, arg3: "$52000067_QD__MAIN__15$", arg4: 3, arg5: 2);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8014, 8015}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8014, 8015}, arg2: false);
                 context.SetEffect(arg1: new int[] {7005}, arg2: false);
             }
 
@@ -951,7 +951,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Stateending_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8016, 8017}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8016, 8017}, arg2: false);
             }
 
             public override void Execute() {
@@ -1021,7 +1021,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Stateending_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8018}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8018}, arg2: false);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_2004");
             }
 
@@ -1142,7 +1142,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Stateending_14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8019}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8019}, arg2: false);
             }
 
             public override void Execute() {
@@ -1176,7 +1176,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Stateending_16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8020}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8020}, arg2: false);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_1006");
             }
 

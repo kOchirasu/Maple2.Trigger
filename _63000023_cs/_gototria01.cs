@@ -789,7 +789,7 @@ namespace Maple2.Trigger._63000023_cs {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_1002");
-                context.CameraSelectPath(arg1: new int[] {701, 702}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {701, 702}, arg2: false);
             }
 
             public override void Execute() {

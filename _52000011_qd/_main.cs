@@ -109,7 +109,7 @@ namespace Maple2.Trigger._52000011_qd {
             internal State오스칼01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {302}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {302}, arg2: true);
                 context.SetTimer(arg1: "5", arg2: 5);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52000011_QD__MAIN__0$", arg4: 4);
             }

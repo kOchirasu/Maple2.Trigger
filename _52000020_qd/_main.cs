@@ -93,7 +93,7 @@ namespace Maple2.Trigger._52000020_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: true);
             }
 
             public override void Execute() {
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._52000020_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.CameraSelectPath(arg1: new int[] {8005, 8006}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8005, 8006}, arg2: true);
             }
 
             public override void Execute() {

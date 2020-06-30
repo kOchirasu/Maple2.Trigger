@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000177_bf {
                 context.CreateMonster(arg1: new int[] {999}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: true);
                 context.SetMesh(arg1: new int[] {1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110},
                     arg2: false, arg3: 0, arg4: 0, arg5: 10f);
             }
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._02000177_bf {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000177_BF__MAIN__0$", arg3: new int[] {3000}, arg4: "0");
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20001773, textID: 20001773, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20001773, textID: 20001773, duration: 4000);
                 context.MoveNpc(arg1: 999, arg2: "MS2PatrolData_2001");
             }
 

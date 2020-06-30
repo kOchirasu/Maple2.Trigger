@@ -39,7 +39,7 @@ namespace Maple2.Trigger._52000157_qd {
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
                 context.PlaySceneMovie(fileName: "jobChange_thief.swf", movieID: 1);
-                context.CreateMonster(arg1: new int[] {107}, agr2: false);
+                context.CreateMonster(arg1: new int[] {107}, arg2: false);
             }
 
             public override void Execute() {
@@ -151,9 +151,9 @@ namespace Maple2.Trigger._52000157_qd {
                 context.DestroyMonster(arg1: new int[] {107});
                 context.DestroyMonster(arg1: new int[] {105});
                 context.DestroyMonster(arg1: new int[] {106});
-                context.CreateMonster(arg1: new int[] {110}, agr2: false);
-                context.CreateMonster(arg1: new int[] {109}, agr2: false);
-                context.CreateMonster(arg1: new int[] {108}, agr2: false);
+                context.CreateMonster(arg1: new int[] {110}, arg2: false);
+                context.CreateMonster(arg1: new int[] {109}, arg2: false);
+                context.CreateMonster(arg1: new int[] {108}, arg2: false);
                 context.MoveUser(arg1: 52000157, arg2: 6002);
             }
 

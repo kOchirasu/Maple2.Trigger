@@ -42,7 +42,7 @@ namespace Maple2.Trigger._65000002_bd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {601}, arg2: true);
                 context.PlaySystemSoundInBox(arg2: "BD_Buffskill_00");
-                context.ShowGuideSummary(entityID: 26500202, textID: 26500202, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 26500202, textID: 26500202, duration: 3000);
             }
 
             public override void Execute() {

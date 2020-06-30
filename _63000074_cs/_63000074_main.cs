@@ -136,7 +136,7 @@ namespace Maple2.Trigger._63000074_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004354, msg: "$63000074_CS__63000074_MAIN__2$", duration: 4000,
                     illustID: "Evelyn_sad", align: "right");
             }
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._63000074_cs {
             internal StateEvelyn_monologue_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004354, msg: "$63000074_CS__63000074_MAIN__3$", duration: 5000,
                     illustID: "Evelyn_sad", align: "right");
             }
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._63000074_cs {
             internal StateEvelyn_monologue_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004354, msg: "$63000074_CS__63000074_MAIN__4$", duration: 3500);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData");
             }
@@ -229,7 +229,7 @@ namespace Maple2.Trigger._63000074_cs {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 9, arg2: "$63000074_CS__63000074_MAIN__6$");
                 context.SetMesh(arg1: new int[] {4001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -247,7 +247,7 @@ namespace Maple2.Trigger._63000074_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
             }

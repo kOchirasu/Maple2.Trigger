@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02020025_bf {
             internal State카메라_캡션(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {5001, 5002}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {5001, 5002}, arg2: true);
                 context.ShowCaption(type: "VerticalCaption", title: "$02020025_BF__main__3$",
                     desc: "$02020025_BF__main__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 5000, scale: 2f);

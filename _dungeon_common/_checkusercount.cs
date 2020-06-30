@@ -76,7 +76,7 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 40012, textID: 40012, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 40012, textID: 40012, duration: 4000);
             }
 
             public override void Execute() {
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 40012, textID: 40012, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 40012, textID: 40012, duration: 4000);
             }
 
             public override void Execute() {
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 40012, textID: 40012, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 40012, textID: 40012, duration: 4000);
             }
 
             public override void Execute() {
@@ -182,7 +182,7 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 40012, textID: 40012, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 40012, textID: 40012, duration: 4000);
             }
 
             public override void Execute() {
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 40012, textID: 40012, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 40012, textID: 40012, duration: 4000);
             }
 
             public override void Execute() {
@@ -236,7 +236,7 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 40012, textID: 40012, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 40012, textID: 40012, duration: 4000);
             }
 
             public override void Execute() {
@@ -288,7 +288,7 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 40012, textID: 40012, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 40012, textID: 40012, duration: 4000);
             }
 
             public override void Execute() {
@@ -315,7 +315,7 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 40012, textID: 40012, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 40012, textID: 40012, duration: 4000);
             }
 
             public override void Execute() {
@@ -342,7 +342,7 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 40012, textID: 40012, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 40012, textID: 40012, duration: 4000);
             }
 
             public override void Execute() {

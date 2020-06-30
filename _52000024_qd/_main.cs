@@ -56,7 +56,7 @@ namespace Maple2.Trigger._52000024_qd {
                 context.CreateMonster(arg1: new int[] {101}, arg2: false);
                 context.CreateMonster(arg1: new int[] {102}, arg2: false);
                 context.CreateMonster(arg1: new int[] {103}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {8001, 8002, 8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002, 8003}, arg2: false);
             }
 
             public override void Execute() {
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._52000024_qd {
             internal StatestartB_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8005, 8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005, 8006}, arg2: false);
                 context.SetEffect(arg1: new int[] {7003}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000024_QD__MAIN__1$", arg4: 3);
             }
@@ -229,7 +229,7 @@ namespace Maple2.Trigger._52000024_qd {
             internal StatestartB_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8007, 8008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8007, 8008}, arg2: false);
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_2006");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2005");
                 context.MoveUserPath(arg1: "MS2PatrolData_2102");

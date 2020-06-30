@@ -78,7 +78,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4101, 4102}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4101, 4102}, arg2: false);
                 context.SetSceneSkip(arg1: "MobSpawn_A", arg2: "nextState");
             }
 
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4105}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4105}, arg2: false);
             }
 
             public override void Execute() {
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4104, 4103}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4104, 4103}, arg2: false);
             }
 
             public override void Execute() {
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4201}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4201}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Down_Idle_A", arg3: 10000f);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Down_Idle_A", arg3: 10000f);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Down_Idle_A", arg3: 10000f);
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4202}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4202}, arg2: false);
             }
 
             public override void Execute() {
@@ -202,7 +202,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4204}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4204}, arg2: false);
             }
 
             public override void Execute() {
@@ -219,7 +219,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4202}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4202}, arg2: false);
                 context.SetSceneSkip();
             }
 
@@ -304,7 +304,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.SetSceneSkip(arg1: "End", arg2: "Exit");
             }
 

@@ -26,7 +26,7 @@ namespace Maple2.Trigger._52000163_qd {
                 context.CreateWidget(arg1: "SceneMovie");
                 context.PlaySceneMovie(fileName: "jobChange_berserker.swf", movieID: 1);
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {102}, agr2: false);
+                context.CreateMonster(arg1: new int[] {102}, arg2: false);
             }
 
             public override void Execute() {
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52000163_qd {
             internal State리엔원경_01_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: false);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
 

@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000485_bf {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new int[] {100}, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039904, textID: 20039904, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20039904, textID: 20039904, duration: 3000);
             }
 
             public override void Execute() {
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02000485_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039905, textID: 20039905, durationTime: 2000);
+                context.ShowGuideSummary(entityID: 20039905, textID: 20039905, duration: 2000);
             }
 
             public override void Execute() {

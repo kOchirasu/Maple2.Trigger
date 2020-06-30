@@ -47,7 +47,7 @@ namespace Maple2.Trigger._52010028_qd {
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: true);
-                context.CameraSelectPath(arg1: new int[] {4007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4007}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetPcEmotionSequence(arg1: "Damg_C");
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._52010028_qd {
             internal State웰컴문구3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003387, msg: "$52010028_QD__MAIN__6$", duration: 3000);
             }
 
@@ -247,7 +247,7 @@ namespace Maple2.Trigger._52010028_qd {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new int[] {101}, arg2: true);
                 context.CreateMonster(arg1: new int[] {201}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.MoveUser(arg1: 52010028, arg2: 7001);
@@ -294,7 +294,7 @@ namespace Maple2.Trigger._52010028_qd {
             internal State연출_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003387, msg: "$52010028_QD__MAIN__12$", duration: 3000);
                 context.FaceEmotion(spawnPointID: 101, emotionName: "Trigger_Danger");
             }
@@ -313,7 +313,7 @@ namespace Maple2.Trigger._52010028_qd {
             internal State연출_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4010}, arg2: false);
             }
 
             public override void Execute() {
@@ -362,7 +362,7 @@ namespace Maple2.Trigger._52010028_qd {
                 context.AddCinematicTalk(npcID: 11003390, msg: "$52010028_QD__MAIN__19$", duration: 3000, illustID: "0",
                     align: "Left");
                 context.SetNpcEmotionLoop(arg1: 201, arg2: "Idle_A", arg3: 10000f);
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
             }
 
             public override void Execute() {
@@ -380,7 +380,7 @@ namespace Maple2.Trigger._52010028_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_3001");
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003387, msg: "$52010028_QD__MAIN__20$", duration: 3000, illustID: "0",
                     align: "Left");
                 context.AddCinematicTalk(npcID: 0, msg: "$52010028_QD__MAIN__21$", duration: 3000);
@@ -614,7 +614,7 @@ namespace Maple2.Trigger._52010028_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Dead_Idle_A", arg3: 1500000f);
                 context.FaceEmotion(spawnPointID: 101, emotionName: "Trigger_Dead");
-                context.CameraSelectPath(arg1: new int[] {4012}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4012}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Dead_Idle_A", arg3: 150000f);
             }
 
@@ -651,7 +651,7 @@ namespace Maple2.Trigger._52010028_qd {
             internal State찾으러왔어02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4008}, arg2: false);
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_3004");
                 context.AddBalloonTalk(spawnPointID: 301, msg: "$52010028_QD__MAIN__25$", duration: 2000,
                     delayTick: 1000);
@@ -724,7 +724,7 @@ namespace Maple2.Trigger._52010028_qd {
             internal State어서와(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4009}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Dead_Idle_A", arg3: 1500000f);
                 context.FaceEmotion(spawnPointID: 101, emotionName: "Trigger_Dead");
                 context.AddCinematicTalk(npcID: 0, msg: "$52010028_QD__MAIN__30$", duration: 3000);
@@ -745,7 +745,7 @@ namespace Maple2.Trigger._52010028_qd {
             internal State어서와02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4008}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 305, arg2: "Bore_A");
                 context.SetNpcEmotionSequence(arg1: 304, arg2: "Talk_A");
                 context.AddBalloonTalk(spawnPointID: 305, msg: "$52010028_QD__MAIN__32$", duration: 2000, delayTick: 0);

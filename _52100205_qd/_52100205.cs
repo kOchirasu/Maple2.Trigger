@@ -42,7 +42,7 @@ namespace Maple2.Trigger._52100205_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new int[] {201});
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 52100205, arg2: 5001);
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52100205_qd {
             internal StateCameraEffect03_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: false);
             }
 
             public override void Execute() {
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._52100205_qd {
             internal StateCameraEffect03_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52100205_QD__52100205__1$", align: "bottomLeft",
                     offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
@@ -249,7 +249,7 @@ namespace Maple2.Trigger._52100205_qd {
             internal State제시카_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
                 context.CreateMonster(arg1: new int[] {101});
             }
 
@@ -285,7 +285,7 @@ namespace Maple2.Trigger._52100205_qd {
             internal State제시카_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
             }
 
             public override void Execute() {

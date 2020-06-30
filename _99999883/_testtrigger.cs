@@ -9,7 +9,7 @@ namespace Maple2.Trigger._99999883 {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20000661, textID: 20000661, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20000661, textID: 20000661, duration: 3000);
             }
 
             public override void Execute() {

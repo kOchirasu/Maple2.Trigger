@@ -71,7 +71,7 @@ namespace Maple2.Trigger._52000118_qd {
             internal Statesuspiciousmask(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001, 4002, 4003}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.AddCinematicTalk(npcID: 11003167, msg: "$52000118_QD__MAIN__0$", duration: 3000,
                     align: "center");
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._52000118_qd {
             internal Statejordyspawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003186, msg: "$52000118_QD__MAIN__1$", duration: 3000,
                     illustID: "Jordy_normal", align: "Left");
             }
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._52000118_qd {
             internal Statejordyhello(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4007}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Talk_A");
                 context.AddCinematicTalk(npcID: 11003186, msg: "$52000118_QD__MAIN__4$", duration: 1000,
                     illustID: "Jordy_normal", align: "Left");
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._52000118_qd {
             internal Statecamera_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
@@ -356,7 +356,7 @@ namespace Maple2.Trigger._52000118_qd {
             internal Statecamera_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
                 context.SetOnetimeEffect(id: 2, enable: true,
                     path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
@@ -393,7 +393,7 @@ namespace Maple2.Trigger._52000118_qd {
             internal Statetalk_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4007}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Talk_A");
                 context.AddCinematicTalk(npcID: 11003186, msg: "$52000118_QD__MAIN__16$", duration: 3000,
                     illustID: "Jordy_normal", align: "Left");

@@ -688,7 +688,7 @@ namespace Maple2.Trigger._63000021_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {7003}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {701, 702}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {701, 702}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_102");
             }
 

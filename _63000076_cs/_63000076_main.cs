@@ -138,7 +138,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State요정잡담_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State요정잡담_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002, 8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002, 8003}, arg2: false);
             }
 
             public override void Execute() {
@@ -372,7 +372,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State보보스등장_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.CreateMonster(arg1: new int[] {141}, arg2: false);
                 context.CreateMonster(arg1: new int[] {142}, arg2: false);
                 context.SetMesh(arg1: new int[] {4001}, arg2: false);
@@ -468,7 +468,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State보보스등장_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004, 8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004, 8006}, arg2: false);
             }
 
             public override void Execute() {
@@ -635,7 +635,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State사라진케이크_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
             }
@@ -760,7 +760,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new int[] {141});
-                context.CameraSelectPath(arg1: new int[] {8008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8008}, arg2: false);
                 context.MoveUser(arg1: 63000076, arg2: 2);
                 context.MoveNpc(arg1: 142, arg2: "MS2PatrolData_2002");
             }

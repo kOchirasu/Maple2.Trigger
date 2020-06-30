@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52010040_qd {
                     duration: 7000, scale: 2.5f);
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {2000, 2001, 2002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000, 2001, 2002}, arg2: false);
             }
 
             public override void Execute() {
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._52010040_qd {
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.AddCinematicTalk(npcID: 11003536, illustID: "Neirin_normal", msg: "$52010040_QD__52010040__2$",
                     duration: 6200, align: "right");
-                context.CameraSelectPath(arg1: new int[] {2012, 2013}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2012, 2013}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_blicheCome");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_bliche_front");
             }
@@ -207,7 +207,7 @@ namespace Maple2.Trigger._52010040_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcID: 11003533, illustID: "Bliche_normal", msg: "$52010040_QD__52010040__4$",
                     duration: 5400, align: "right");
-                context.CameraSelectPath(arg1: new int[] {2010, 2011, 2014}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2010, 2011, 2014}, arg2: false);
             }
 
             public override void Execute() {

@@ -52,7 +52,7 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetEffect(arg1: new int[] {7998}, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8100, 8101, 8104, 8106, 8103, 8105, 8107, 8108}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8100, 8101, 8104, 8106, 8103, 8105, 8107, 8108}, arg2: false);
             }
 
             public override void Execute() {
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.MoveUser(arg1: 51000003, arg2: 1, arg3: 701);
                 context.SetEffect(arg1: new int[] {7998}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {8005, 8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005, 8001, 8002}, arg2: false);
                 context.SetUserValue(triggerID: 991109, key: "Tutorial", value: 0);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
@@ -233,7 +233,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002, 8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002, 8003}, arg2: false);
                 context.SetEffect(arg1: new int[] {7999}, arg2: true);
                 context.SetUserValue(triggerID: 991120, key: "Round_01", value: 1);
                 context.SetUserValue(triggerID: 991107, key: "Round_04", value: 1);
@@ -387,7 +387,7 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 9);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 10, roundDuration: 20000, timeScoreRate: 2583);
                 context.SetEffect(arg1: new int[] {7999}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: false);
                 context.SetUserValue(triggerID: 991106, key: "Round_01", value: 1);
             }
 

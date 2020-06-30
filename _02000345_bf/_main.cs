@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000345_bf {
                 context.MoveRandomUser(arg1: 02000345, arg2: 98, arg3: 60005, arg4: 1);
                 context.MoveRandomUser(arg1: 02000345, arg2: 97, arg3: 60005, arg4: 1);
                 context.MoveRandomUser(arg1: 02000345, arg2: 96, arg3: 60005, arg4: 1);
-                context.CameraSelectPath(arg1: new int[] {8801, 8802}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8801, 8802}, arg2: false);
             }
 
             public override void Execute() {
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02000345_bf {
             internal Statestart_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8802, 8803}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8802, 8803}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000345_BF__MAIN__0$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 2, arg2: 11001376, arg3: "$02000345_BF__MAIN__1$", arg4: 3);
             }
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._02000345_bf {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new int[] {702}, arg2: 70000106, arg3: 1);
-                context.CameraSelectPath(arg1: new int[] {8804, 8805, 8806, 8807}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8804, 8805, 8806, 8807}, arg2: false);
             }
 
             public override void Execute() {
@@ -219,7 +219,7 @@ namespace Maple2.Trigger._02000345_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CameraSelectPath(arg1: new int[] {8808}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8808}, arg2: true);
                 context.ShowCountUI(text: "$02000345_BF__MAIN__10$", stage: 0, count: 3);
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
             }
@@ -258,7 +258,7 @@ namespace Maple2.Trigger._02000345_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8809, 8810}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8809, 8810}, arg2: false);
             }
 
             public override void Execute() {
@@ -325,7 +325,7 @@ namespace Maple2.Trigger._02000345_bf {
             public override void OnExit() {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CameraSelectPath(arg1: new int[] {8808}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8808}, arg2: true);
             }
         }
 
@@ -454,7 +454,7 @@ namespace Maple2.Trigger._02000345_bf {
             internal State오브젝티브_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: true);
                 context.CreateMonster(arg1: new int[] {101}, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3, arg2: "$02000345_BF__MAIN1__0$");

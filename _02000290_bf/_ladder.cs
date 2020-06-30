@@ -81,7 +81,7 @@ namespace Maple2.Trigger._02000290_bf {
             internal State사다리생김(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20002907, textID: 20002907, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20002907, textID: 20002907, duration: 5000);
                 context.SetEffect(arg1: new int[] {5000}, arg2: true);
                 context.SetEffect(arg1: new int[] {5100}, arg2: true);
                 context.SetLadder(arg1: 511, arg2: true, arg3: true);

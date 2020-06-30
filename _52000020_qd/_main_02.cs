@@ -105,7 +105,7 @@ namespace Maple2.Trigger._52000020_qd {
             internal Statescene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: false);
                 context.MoveUser(arg1: 52000020, arg2: 6001);
             }
 
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._52000020_qd {
             internal Statescene_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 404, arg2: "ChatUp_A");
                 context.SetNpcEmotionSequence(arg1: 405, arg2: "ChatUp_A");
                 context.SetNpcEmotionSequence(arg1: 406, arg2: "ChatUp_A");

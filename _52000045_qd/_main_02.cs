@@ -47,7 +47,7 @@ namespace Maple2.Trigger._52000045_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.MoveUserPath(arg1: "MS2PatrolData_2010");
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
             }
 
             public override void Execute() {
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._52000045_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 902, arg2: "MS2PatrolData_2004");
                 context.MoveUserPath(arg1: "MS2PatrolData_2003");
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8010}, arg2: false);
             }
 
             public override void Execute() {
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal Statestart_A_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8010, 8013}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8010, 8013}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000045_QD__MAIN_02__3$", arg4: 3);
                 context.SetConversation(arg1: 1, arg2: 902, arg3: "$52000045_QD__MAIN_02__4$", arg4: 3);
             }
@@ -156,7 +156,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal Statestart_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8014}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8014}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000045_QD__MAIN_02__6$", arg4: 1);
             }
 
@@ -195,7 +195,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal Statestart_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8014, 8015}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8014, 8015}, arg2: false);
                 context.CreateMonster(arg1: new int[] {871, 876}, arg2: false);
                 context.SetPcEmotionLoop(arg1: "Down_Idle_A", arg2: 80000f);
             }

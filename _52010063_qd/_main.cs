@@ -215,7 +215,7 @@ namespace Maple2.Trigger._52010063_qd {
             internal State인페르녹줌인01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000, 8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000, 8001, 8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._52010063_qd {
             internal StatePC놀람01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
             }
 
             public override void Execute() {
@@ -266,7 +266,7 @@ namespace Maple2.Trigger._52010063_qd {
             internal State인페르녹줌인02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003832, illustID: "infernog_nomal", msg: "$52010063_QD__main__1$",
                     duration: 5000, align: "right");
                 context.SetEffect(arg1: new int[] {6000, 6003}, arg2: false);
@@ -306,7 +306,7 @@ namespace Maple2.Trigger._52010063_qd {
             internal State인페르녹줌인04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003832, illustID: "infernog_nomal", msg: "$52010063_QD__main__3$",
                     duration: 5000, align: "right");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_Infernog_goforward");
@@ -326,7 +326,7 @@ namespace Maple2.Trigger._52010063_qd {
             internal State부하대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8011}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003839, msg: "$52010063_QD__main__4$", duration: 3000,
                     align: "right");
                 context.SetNpcEmotionSequence(arg1: 114, arg2: "Attack_01_A");
@@ -346,7 +346,7 @@ namespace Maple2.Trigger._52010063_qd {
             internal State부하대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8012}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8012}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003839, msg: "$52010063_QD__main__5$", duration: 3000,
                     align: "right");
                 context.SetNpcEmotionSequence(arg1: 115, arg2: "Attack_01_A");
@@ -366,7 +366,7 @@ namespace Maple2.Trigger._52010063_qd {
             internal State인페르녹대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003832, illustID: "infernog_nomal", msg: "$52010063_QD__main__6$",
                     duration: 4000, align: "right");
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Attack_02_F");
@@ -386,7 +386,7 @@ namespace Maple2.Trigger._52010063_qd {
             internal State인페르녹대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003, 8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003, 8005}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003832, illustID: "infernog_nomal", msg: "$52010063_QD__main__7$",
                     duration: 6000, align: "right");
             }
@@ -443,7 +443,7 @@ namespace Maple2.Trigger._52010063_qd {
             internal State인페르녹대사05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004, 8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004, 8000}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003832, illustID: "infernog_nomal", msg: "$52010063_QD__main__10$",
                     duration: 5000, align: "right");
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Leave_01_A,Leave_02_A");
@@ -463,7 +463,7 @@ namespace Maple2.Trigger._52010063_qd {
             internal State부하들준비00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003839, msg: "$52010063_QD__main__11$", duration: 3000,
                     align: "right");
                 context.SetEffect(arg1: new int[] {6010}, arg2: true);
@@ -683,7 +683,7 @@ namespace Maple2.Trigger._52010063_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "전투후스킵완료", arg2: "nextState");
-                context.CameraSelectPath(arg1: new int[] {8003, 8013, 8014}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003, 8013, 8014}, arg2: false);
                 context.SetOnetimeEffect(id: 2, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Dead_A", arg3: 5000f);
@@ -725,7 +725,7 @@ namespace Maple2.Trigger._52010063_qd {
             internal State트리스탄구출04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8022, 8021}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8022, 8021}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003825, illustID: "Tristan_normal", msg: "$52010063_QD__main__13$",
                     duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "ChatUp_A", arg3: 3000f);

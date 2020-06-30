@@ -583,7 +583,7 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetTimer(arg1: "21", arg2: 2);
-                context.CameraSelectPath(arg1: new int[] {601, 602}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {601, 602}, arg2: false);
             }
 
             public override void Execute() {
@@ -991,7 +991,7 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {2002, 2003, 2004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2002, 2003, 2004}, arg2: false);
             }
 
             public override void Execute() {
@@ -1142,7 +1142,7 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {2005, 2006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2005, 2006}, arg2: false);
             }
 
             public override void Execute() {

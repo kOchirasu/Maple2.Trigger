@@ -52,7 +52,7 @@ namespace Maple2.Trigger._52100206_qd {
             internal StateCameraEffect02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1006}, arg2: false);
             }
 
             public override void Execute() {
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._52100206_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {1006, 1002, 1005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1006, 1002, 1005}, arg2: false);
             }
 
             public override void Execute() {
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._52100206_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {1005, 1003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1005, 1003}, arg2: false);
             }
 
             public override void Execute() {
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._52100206_qd {
             internal StateCameraEffect05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1004}, arg2: false);
                 context.CreateMonster(arg1: new int[] {2002}, arg2: false);
             }
 
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._52100206_qd {
                 context.DestroyMonster(arg1: new int[] {2002});
                 context.AddBuff(arg1: new int[] {101}, arg2: 99910280, arg3: 1, arg4: false, arg5: true);
                 context.AddBuff(arg1: new int[] {101}, arg2: 99910280, arg3: 1, arg4: false, arg5: false);
-                context.ShowGuideSummary(entityID: 25201503, textID: 25201503, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 25201503, textID: 25201503, duration: 10000);
             }
 
             public override void Execute() {

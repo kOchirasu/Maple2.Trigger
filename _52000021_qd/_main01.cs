@@ -99,7 +99,7 @@ namespace Maple2.Trigger._52000021_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 6);
-                context.CameraSelectPath(arg1: new int[] {600, 601, 602}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {600, 601, 602}, arg2: false);
             }
 
             public override void Execute() {

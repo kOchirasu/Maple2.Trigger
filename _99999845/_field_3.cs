@@ -55,9 +55,9 @@ namespace Maple2.Trigger._99999845 {
                 if (context.MonsterDead(arg1: new int[] {1110})) {
                     context.SetVisibleBreakableObject(arg1: new int[] {1013}, arg2: true);
                     context.SetInteractObject(arg1: new int[] {12000313}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1114}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1115}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1116}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1114}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1115}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1116}, arg2: false);
                     context.State = new StateCableOn_13(context);
                     return;
                 }
@@ -77,9 +77,9 @@ namespace Maple2.Trigger._99999845 {
                     context.SetVisibleBreakableObject(arg1: new int[] {1015}, arg2: true);
                     context.SetInteractObject(arg1: new int[] {12000314}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000315}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1114}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1115}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1116}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1114}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1115}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1116}, arg2: false);
                     context.State = new StateCableOn_14_15(context);
                     return;
                 }
@@ -99,9 +99,9 @@ namespace Maple2.Trigger._99999845 {
                     context.SetVisibleBreakableObject(arg1: new int[] {1017}, arg2: true);
                     context.SetInteractObject(arg1: new int[] {12000316}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000317}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1114}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1115}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1116}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1114}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1115}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1116}, arg2: false);
                     context.State = new StateCableOn_16_17(context);
                     return;
                 }
@@ -119,9 +119,9 @@ namespace Maple2.Trigger._99999845 {
                 if (context.MonsterDead(arg1: new int[] {1113})) {
                     context.SetVisibleBreakableObject(arg1: new int[] {1018}, arg2: true);
                     context.SetInteractObject(arg1: new int[] {12000318}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1114}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1115}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1116}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1114}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1115}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1116}, arg2: false);
                     context.State = new StateCableOn_18(context);
                     return;
                 }

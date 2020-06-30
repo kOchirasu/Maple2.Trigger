@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetSkip(arg1: "start");
-                context.CameraSelectPath(arg1: new int[] {8100, 8101, 8102}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8100, 8101, 8102}, arg2: false);
                 context.SetAmbientLight(arg1: new Vector3(120f, 120f, 120f));
                 context.SetDirectionalLight(arg1: new Vector3(10f, 10f, 10f), arg2: new Vector3(0f, 0f, 0f));
                 context.AddBuff(arg1: new int[] {701}, arg2: 71000009, arg3: 1, arg4: false, arg5: false);
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {8006, 8007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8006, 8007}, arg2: false);
             }
 
             public override void Execute() {

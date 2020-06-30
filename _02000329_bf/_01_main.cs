@@ -32,7 +32,7 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetSkip(arg1: "scene_02");
-                context.CameraSelectPath(arg1: new int[] {80001, 80002, 80003, 80004}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {80001, 80002, 80003, 80004}, arg2: true);
             }
 
             public override void Execute() {
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 7);
-                context.CameraSelectPath(arg1: new int[] {80005}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {80005}, arg2: true);
                 context.SetEventUI(arg1: 1, arg2: "$02000329_BF__01_MAIN__1$", arg3: new int[] {3000}, arg4: "0");
                 context.CreateMonster(arg1: new int[] {2001, 2002, 2003, 2004, 2005}, arg2: false);
                 context.SetMesh(arg1: new int[] {10000, 11001, 11002, 11003, 19999}, arg2: false);

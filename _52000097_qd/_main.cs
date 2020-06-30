@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52000097_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52000097_qd {
             internal Statescene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003084, arg3: "$52000097_QD__MAIN__0$", arg4: 5);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._52000097_qd {
             internal Statescene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8006}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003085, arg3: "$52000097_QD__MAIN__1$", arg4: 5);
             }
 
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._52000097_qd {
             internal Statescene_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8007}, arg2: false);
                 context.SetPcEmotionSequence(arg1: "Talk_A");
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000097_QD__MAIN__4$", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000097_QD__MAIN__5$", arg4: 3, arg5: 3);
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._52000097_qd {
             internal Statescene_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8008}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003086, arg3: "$52000097_QD__MAIN__6$", arg4: 5);
             }
 
@@ -260,7 +260,7 @@ namespace Maple2.Trigger._52000097_qd {
             internal Statescene_12_ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8009}, arg2: false);
                 context.SetPcEmotionSequence(arg1: "Emotion_Failure_Idle_A");
             }
 
@@ -303,7 +303,7 @@ namespace Maple2.Trigger._52000097_qd {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2001");
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000097_QD__MAIN__10$", arg4: 2, arg5: 1);
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000097_QD__MAIN__11$", arg4: 2, arg5: 0);
-                context.CameraSelectPath(arg1: new int[] {8008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8008}, arg2: false);
                 context.SetPcEmotionSequence(arg1: "Emotion_Failure_Idle_A");
                 context.SetConversation(arg1: 2, arg2: 11003086, arg3: "$52000097_QD__MAIN__12$", arg4: 5);
             }
@@ -322,7 +322,7 @@ namespace Maple2.Trigger._52000097_qd {
             internal Statescene_14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8010}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000097_QD__MAIN__13$", arg4: 3, arg5: 1);
                 context.MoveUserPath(arg1: "MS2PatrolData_2003");
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_2004");
@@ -430,7 +430,7 @@ namespace Maple2.Trigger._52000097_qd {
             internal Statescene_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8011}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2006");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2007");
             }

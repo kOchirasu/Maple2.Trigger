@@ -56,7 +56,7 @@ namespace Maple2.Trigger._52000115_qd {
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
                 context.CreateMonster(arg1: new int[] {200}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {2000, 2001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000, 2001}, arg2: false);
             }
 
             public override void Execute() {
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._52000115_qd {
             internal Statecamera01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2002, 2003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2002, 2003}, arg2: false);
             }
 
             public override void Execute() {
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._52000115_qd {
             internal Statecamera02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2004, 2005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2004, 2005}, arg2: false);
             }
 
             public override void Execute() {
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._52000115_qd {
             internal Statecamera03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2006, 2007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2006, 2007}, arg2: false);
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_BlackMage");
             }
 
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._52000115_qd {
             internal Statecamera05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2008, 2009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2008, 2009}, arg2: false);
             }
 
             public override void Execute() {
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._52000115_qd {
             internal Statecamera06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2010, 2011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2010, 2011}, arg2: false);
             }
 
             public override void Execute() {
@@ -159,7 +159,7 @@ namespace Maple2.Trigger._52000115_qd {
             internal Statecamera07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2012, 2013}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2012, 2013}, arg2: false);
             }
 
             public override void Execute() {
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._52000115_qd {
             internal Statecamera08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2014, 2015}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2014, 2015}, arg2: false);
                 context.DestroyMonster(arg1: new int[] {200});
                 context.CreateMonster(arg1: new int[] {203}, arg2: false);
             }
@@ -195,7 +195,7 @@ namespace Maple2.Trigger._52000115_qd {
             internal Statecamera08b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2016, 2017}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2016, 2017}, arg2: false);
             }
 
             public override void Execute() {
@@ -229,7 +229,7 @@ namespace Maple2.Trigger._52000115_qd {
             internal Statecamera09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2018}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2018}, arg2: false);
             }
 
             public override void Execute() {
@@ -246,7 +246,7 @@ namespace Maple2.Trigger._52000115_qd {
             internal Statecamera10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2020, 2019}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2020, 2019}, arg2: false);
             }
 
             public override void Execute() {
@@ -283,7 +283,7 @@ namespace Maple2.Trigger._52000115_qd {
                 context.SetOnetimeEffect(id: 3, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_blackfast.xml");
                 context.SetEffect(arg1: new int[] {9001}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {2022, 2023}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2022, 2023}, arg2: false);
             }
 
             public override void Execute() {
@@ -319,7 +319,7 @@ namespace Maple2.Trigger._52000115_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
-                context.CameraSelectPath(arg1: new int[] {2024, 2025}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2024, 2025}, arg2: false);
                 context.SetMesh(
                     arg1: new int[] {
                         4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015,
@@ -384,7 +384,7 @@ namespace Maple2.Trigger._52000115_qd {
                         4026, 4027, 4028, 4029, 4030, 4031, 4032, 4033, 4034, 4035, 4036, 4037, 4038, 4039, 4040, 4041,
                         4042, 4043, 4044, 4045, 4046, 4047, 4048, 4049, 4050, 4051, 4052
                     }, arg2: false, arg3: 0, arg4: 800, arg5: 1000f);
-                context.CameraSelectPath(arg1: new int[] {2026, 2027}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2026, 2027}, arg2: false);
                 context.DestroyMonster(arg1: new int[] {204});
                 context.CreateMonster(arg1: new int[] {205}, arg2: false);
             }
@@ -413,7 +413,7 @@ namespace Maple2.Trigger._52000115_qd {
                         4026, 4027, 4028, 4029, 4030, 4031, 4032, 4033, 4034, 4035, 4036, 4037, 4038, 4039, 4040, 4041,
                         4042, 4043, 4044, 4045, 4046, 4047, 4048, 4049, 4050, 4051, 4052
                     }, arg2: true, arg3: 0, arg4: 800, arg5: 1000f);
-                context.CameraSelectPath(arg1: new int[] {2028, 2029, 2030, 2031}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2028, 2029, 2030, 2031}, arg2: false);
             }
 
             public override void Execute() {
@@ -440,7 +440,7 @@ namespace Maple2.Trigger._52000115_qd {
                         4026, 4027, 4028, 4029, 4030, 4031, 4032, 4033, 4034, 4035, 4036, 4037, 4038, 4039, 4040, 4041,
                         4042, 4043, 4044, 4045, 4046, 4047, 4048, 4049, 4050, 4051, 4052
                     }, arg2: false, arg3: 0, arg4: 800, arg5: 1000f);
-                context.CameraSelectPath(arg1: new int[] {2032, 2033}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2032, 2033}, arg2: false);
             }
 
             public override void Execute() {

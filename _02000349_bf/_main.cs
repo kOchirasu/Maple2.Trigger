@@ -418,7 +418,7 @@ namespace Maple2.Trigger._02000349_bf {
             internal State레논구출종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {301}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {301}, arg2: true);
             }
 
             public override void Execute() {
@@ -439,7 +439,7 @@ namespace Maple2.Trigger._02000349_bf {
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 301, arg2: false);
                 context.MoveNpc(arg1: 2002, arg2: "MS2PatrolData2002_AB");
-                context.ShowGuideSummary(entityID: 20003501, textID: 20003501, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20003501, textID: 20003501, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
@@ -825,7 +825,7 @@ namespace Maple2.Trigger._02000349_bf {
             internal State카드반연출종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003502, textID: 20003502, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20003502, textID: 20003502, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.DestroyMonster(arg1: new int[] {1025, 1026});
                 context.DestroyMonster(arg1: new int[] {1099});
@@ -835,7 +835,7 @@ namespace Maple2.Trigger._02000349_bf {
                 context.SetAgent(arg1: "904", arg2: false);
                 context.DestroyMonster(arg1: new int[] {2007});
                 context.CreateMonster(arg1: new int[] {2006});
-                context.CameraSelectPath(arg1: new int[] {302}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {302}, arg2: true);
             }
 
             public override void Execute() {

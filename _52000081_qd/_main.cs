@@ -145,7 +145,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State검사등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.CreateMonster(arg1: new int[] {1002}, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_NPC_01");
             }
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal StatePC구출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_NPC_02_1");
             }
 
@@ -295,7 +295,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal StatePC말풍선04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004, 8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004, 8005}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000081_QD__MAIN__6$", arg4: 3, arg5: 0);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_02");
             }
@@ -455,7 +455,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State검사퇴장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_NPC_05");
             }
 

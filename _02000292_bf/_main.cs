@@ -144,7 +144,7 @@ namespace Maple2.Trigger._02000292_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20002922, textID: 20002922, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20002922, textID: 20002922, duration: 5000);
                 context.SetActor(arg1: 101, arg2: false, arg3: "Opened");
                 context.SetMesh(arg1: new int[] {105, 106, 107, 108}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }

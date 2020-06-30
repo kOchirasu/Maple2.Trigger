@@ -51,7 +51,7 @@ namespace Maple2.Trigger._52020011_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52020011, arg2: 6001);
-                context.CameraSelectPath(arg1: new int[] {4009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4009}, arg2: false);
                 context.SetActor(arg1: 8001, arg2: true, arg3: "Attack_Idle_A");
             }
 

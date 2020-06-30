@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52020016_qd {
             }
 
             public override void OnExit() {
-                context.CameraSelectPath(arg1: new int[] {2000001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000001}, arg2: false);
             }
         }
 
@@ -156,7 +156,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnExit() {
                 context.DestroyMonster(arg1: new int[] {4000401}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {2000001}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {2000001}, arg2: true);
             }
         }
 
@@ -338,7 +338,7 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CameraSelectPath(arg1: new int[] {2000005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000005}, arg2: false);
             }
 
             public override void Execute() {
@@ -396,7 +396,7 @@ namespace Maple2.Trigger._52020016_qd {
             internal State마지막_연출_4_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000006}, arg2: false);
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 1);
             }

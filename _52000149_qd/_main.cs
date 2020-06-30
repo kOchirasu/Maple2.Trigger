@@ -125,7 +125,7 @@ namespace Maple2.Trigger._52000149_qd {
             internal State전경_연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000, 8010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000, 8010}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_pc");
                 context.SetSceneSkip(arg1: "아노스아파_스킵완료", arg2: "nextState");
             }
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._52000149_qd {
             internal State카메라_아노스줌인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003436, msg: "$52000149_QD__MAIN__0$", duration: 3000);
                 context.SetSkip(arg1: "아노스아파_스킵완료");
             }
@@ -178,7 +178,7 @@ namespace Maple2.Trigger._52000149_qd {
             internal State카메라_케이틀린01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002, 8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002, 8004}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003436, msg: "$52000149_QD__MAIN__1$", duration: 3000);
                 context.SetSkip(arg1: "아노스아파_스킵완료");
             }
@@ -212,7 +212,7 @@ namespace Maple2.Trigger._52000149_qd {
             internal State카메라_케이틀린02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Idle_A", arg3: 3000f);
                 context.AddCinematicTalk(npcID: 11003436, msg: "$52000149_QD__MAIN__2$", duration: 3000);
                 context.AddBalloonTalk(spawnPointID: 102, msg: "$52000149_QD__MAIN__3$", duration: 3000, delayTick: 0);
@@ -234,7 +234,7 @@ namespace Maple2.Trigger._52000149_qd {
             internal State호르헤이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Jorge");
             }
 

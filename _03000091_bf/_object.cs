@@ -27,7 +27,7 @@ namespace Maple2.Trigger._03000091_bf {
             internal State몬스터생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 23000004, textID: 23000004, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 23000004, textID: 23000004, duration: 5000);
             }
 
             public override void Execute() {

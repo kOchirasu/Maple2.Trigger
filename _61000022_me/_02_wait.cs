@@ -25,7 +25,7 @@ namespace Maple2.Trigger._61000022_me {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100001, textID: 26100001, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26100001, textID: 26100001, duration: 5000);
             }
 
             public override void Execute() {
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._61000022_me {
             internal State대기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100002, textID: 26100002, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26100002, textID: 26100002, duration: 5000);
             }
 
             public override void Execute() {

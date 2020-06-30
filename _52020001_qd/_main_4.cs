@@ -43,7 +43,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State카메리이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000010}, arg2: false);
             }
 
             public override void Execute() {
@@ -146,7 +146,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State연출끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000010}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {2000010}, arg2: true);
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 0);
             }
@@ -312,7 +312,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000009}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {2000009}, arg2: true);
                 context.SetEffect(arg1: new int[] {10090}, arg2: true);
                 context.SetEffect(arg1: new int[] {10091}, arg2: true);
                 context.SetEffect(arg1: new int[] {10092}, arg2: true);

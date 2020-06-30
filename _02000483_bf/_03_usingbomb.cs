@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000483_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039703, textID: 20039703, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20039703, textID: 20039703, duration: 4000);
                 context.SetEffect(arg1: new int[] {5100, 5101, 5102, 5103}, arg2: true);
                 context.SetEffect(arg1: new int[] {5200, 5201, 5202, 5203}, arg2: true);
             }

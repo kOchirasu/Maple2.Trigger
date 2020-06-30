@@ -72,7 +72,7 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.AddBuff(arg1: new int[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
-                context.ShowGuideSummary(entityID: 20002991, textID: 20002991, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20002991, textID: 20002991, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new int[] {3221, 3222, 3223}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new int[] {10000372}, arg2: 1);
-                context.ShowGuideSummary(entityID: 20002980, textID: 20002980, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20002980, textID: 20002980, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.CameraSelect(arg1: 301, arg2: true);
             }
@@ -145,7 +145,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State던전안내02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20002981, textID: 20002981, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20002981, textID: 20002981, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 

@@ -98,7 +98,7 @@ namespace Maple2.Trigger._02000252_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8801, 8802}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8801, 8802}, arg2: false);
                 context.CreateMonster(arg1: new int[] {1001});
             }
 
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._02000252_bf {
             internal State예고이펙트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8804}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8804}, arg2: true);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetAchievement(arg1: 999, arg2: "trigger", arg3: "Bellafirst");

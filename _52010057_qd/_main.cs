@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52010057_qd {
 
             public override void OnEnter() {
                 context.SetTimeScale(enable: true, startScale: 0.8f, endScale: 0.8f, duration: 8.0f, interpolator: 1);
-                context.CameraSelectPath(arg1: new int[] {2000, 2001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000, 2001}, arg2: false);
             }
 
             public override void Execute() {
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._52010057_qd {
             internal State연출05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2002, 2003, 2004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2002, 2003, 2004}, arg2: false);
             }
 
             public override void Execute() {

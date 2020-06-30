@@ -484,7 +484,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal State일어나07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcID: 11003572, illustID: "Eone_normal", msg: "…눈을 떴군.", duration: 2000);
                 context.SetPcEmotionLoop(arg1: "Emotion_Surprise_A", arg2: 3000f);
@@ -565,7 +565,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal StatePC내보내기연출_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_Walkout");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
@@ -603,7 +603,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal State공주와기사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Eone");
                 context.AddCinematicTalk(npcID: 11003667, illustID: "Krantz_normal", msg: "그렇다. 제작 중이다.",
                     duration: 3000);
@@ -624,7 +624,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal State공주와기사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_Krantz_promise");
                 context.AddCinematicTalk(npcID: 11003572, illustID: "Eone_normal", msg: "기다려 달라.", duration: 3000);
             }
@@ -661,7 +661,7 @@ namespace Maple2.Trigger._52020005_qd {
             internal State마무리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003572, illustID: "Eone_normal", msg: "1월까지 완료될 것이다.",
                     duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);

@@ -14,7 +14,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 if (context.UserValue(key: "MainStart", value: 1)) {
                     context.SetUserValue(triggerID: 900001, key: "MainStart", value: 0);
                     context.DestroyMonster(arg1: new int[] {203});
-                    context.CreateMonster(arg1: new int[] {202}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {202}, arg2: false);
                     context.State = new StateWaitRound1(context);
                     return;
                 }
@@ -22,7 +22,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 if (context.UserValue(key: "MainStart", value: 2)) {
                     context.SetUserValue(triggerID: 900001, key: "MainStart", value: 0);
                     context.DestroyMonster(arg1: new int[] {203});
-                    context.CreateMonster(arg1: new int[] {202}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {202}, arg2: false);
                     context.State = new StateContinuePlayDelay(context);
                     return;
                 }

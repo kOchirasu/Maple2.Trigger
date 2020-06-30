@@ -32,7 +32,7 @@ namespace Maple2.Trigger._52000096_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.CreateMonster(arg1: new int[] {1001}, arg2: false);
                 context.CreateMonster(arg1: new int[] {1002}, arg2: false);
                 context.CreateMonster(arg1: new int[] {1003}, arg2: false);
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._52000096_qd {
             internal State시점이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {

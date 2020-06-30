@@ -229,7 +229,7 @@ namespace Maple2.Trigger._63000024_cs {
             internal StateLookAround01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {501, 502}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {501, 502}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
             }
 

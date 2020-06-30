@@ -28,20 +28,19 @@ namespace Maple2.Trigger {
             int uiDuration = default, bool round = default, byte resultDirection = default);
         public void ChangeBackground(string dds = default);
         public void ChangeMonster(int arg1 = default, int arg2 = default);
-        public void CameraReset(float interpolationTime = default, string arg1 = default, float arg2 = default);
+        public void CameraReset(float interpolationTime = default);
         public void CameraSelect(int arg1 = default, bool arg2 = default);
-        public void CameraSelectPath(int[] arg1 = default, int arg2 = default);
+        public void CameraSelectPath(int[] arg1 = default, bool arg2 = default);
         public void CloseCinematic();
         public void CreateFieldGame(string type = default, bool reset = default);
         public void CreateItem(int[] arg1 = default, int arg2 = default, int arg3 = default, int arg5 = default);
-        public void CreateMonster(int[] arg1 = default, bool arg2 = default, int arg3 = default, bool agr2 = default,
-            bool arg = default);
+        public void CreateMonster(int[] arg1 = default, bool arg2 = default, int arg3 = default);
         public void CreateWidget(string arg1 = default);
         public void DarkStream(string type = default, byte round = default, int uiDuration = default,
             byte damagePenalty = default, int[] spawnID = default, int score = default);
         public void DebugString(string value = default, string feature = default, string @string = default,
             string arg1 = default);
-        public void DestroyMonster(int[] arg1 = default, bool arg2 = default, bool agr2 = default);
+        public void DestroyMonster(int[] arg1 = default, bool arg2 = default);
         public void DungeonClear(string uiType = default);
         public void DungeonClearRound(byte round = default);
         public void DungeonCloseTimer();
@@ -153,7 +152,7 @@ namespace Maple2.Trigger {
         public void SetPcRotation(Vector3 rotation = default);
         public void SetPhotoStudio(bool isEnable = default);
         public void SetPortal(int arg1 = default, bool arg2 = default, bool arg3 = default, bool arg4 = default,
-            bool arg5 = default, bool arg = default);
+            bool arg5 = default);
         public void SetProductionUI(byte arg1 = default, string arg2 = default, bool arg3 = default);
         public void SetPvpZone(byte arg1 = default, byte arg2 = default, int arg3 = default, int arg4 = default,
             byte arg5 = default, byte[] arg6 = default);
@@ -169,7 +168,7 @@ namespace Maple2.Trigger {
         public void SetSound(int arg1 = default, bool arg2 = default);
         public void SetState(byte arg1 = default, string arg2 = default, bool arg3 = default);
         public void SetTimer(string arg1 = default, int arg2 = default, bool arg3 = default, bool arg4 = default,
-            int arg5 = default, bool ara3 = default, string arg6 = default, string desc = default);
+            int arg5 = default, string arg6 = default, string desc = default);
         public void SetTimeScale(bool enable = default, float startScale = default, float endScale = default,
             float duration = default, byte interpolator = default);
         public void SetUserValue(int triggerID = default, string key = default, int value = default);
@@ -182,13 +181,12 @@ namespace Maple2.Trigger {
         public void ShadowExpedition(string type = default, int maxGaugePoint = default, string title = default);
         public void ShowCaption(string type = default, string title = default, string desc = default,
             string align = default, float offsetRateX = default, float offsetRateY = default, int duration = default,
-            float scale = default, float offestRateX = default);
+            float scale = default);
         public void ShowCountUI(string text = default, byte stage = default, byte count = default,
-            byte soundType = default);
+            byte soundType = 1);
         public void ShowEventResult(string type = default, string text = default, int duration = default,
             int userTagID = default, int triggerBoxID = default, bool isOutSide = default);
-        public void ShowGuideSummary(int entityID = default, int textID = default, int durationTime = default,
-            int duration = default);
+        public void ShowGuideSummary(int entityID = default, int textID = default, int duration = default);
         public void ShowRoundUI(byte round = default, int duration = default);
         public void SideNpcTalk(int npcID = default, string illust = default, int duration = default,
             string script = default, string voice = default, string type = default, string usm = default);
@@ -265,7 +263,7 @@ namespace Maple2.Trigger {
         public bool MonsterInCombat(int[] arg1 = default);
         public bool NpcDetected(int arg1 = default, int[] arg2 = default);
         public bool NpcIsDeadByStringID(string stringID = default);
-        public bool ObjectInteracted(int[] arg1 = default, byte arg2 = default, byte ar2 = default);
+        public bool ObjectInteracted(int[] arg1 = default, byte arg2 = default);
         public bool PvpZoneEnded(byte arg1 = default);
         public bool QuestUserDetected(int[] arg1 = default, int[] arg2 = default, byte[] arg3 = default,
             byte arg4 = default);

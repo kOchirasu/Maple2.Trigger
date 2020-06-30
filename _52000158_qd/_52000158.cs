@@ -91,7 +91,7 @@ namespace Maple2.Trigger._52000158_qd {
             internal State커닝시티전경_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52000158_QD__52000158__0$",
                     desc: "$52000158_QD__52000158__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 5000, scale: 2.5f);
@@ -111,7 +111,7 @@ namespace Maple2.Trigger._52000158_qd {
             internal State어쌔신_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
             }
 
             public override void Execute() {
@@ -188,7 +188,7 @@ namespace Maple2.Trigger._52000158_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {5001}, arg2: false);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.CreateMonster(arg1: new int[] {101}, agr2: false);
+                context.CreateMonster(arg1: new int[] {101}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._52000158_qd {
             internal State퀘스트가이드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25201581, textID: 25201581, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 25201581, textID: 25201581, duration: 10000);
             }
 
             public override void Execute() {
@@ -300,7 +300,7 @@ namespace Maple2.Trigger._52000158_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000158, arg2: 6001);
-                context.CreateMonster(arg1: new int[] {102}, agr2: false);
+                context.CreateMonster(arg1: new int[] {102}, arg2: false);
             }
 
             public override void Execute() {

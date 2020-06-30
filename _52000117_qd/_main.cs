@@ -145,7 +145,7 @@ namespace Maple2.Trigger._52000117_qd {
             internal Statescene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003166, msg: "$52000117_QD__MAIN__7$", duration: 3000);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetPcEmotionLoop(arg1: "Emotion_Dance_S", arg2: 3000f);

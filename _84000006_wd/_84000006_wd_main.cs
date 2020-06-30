@@ -57,7 +57,7 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
-                context.CameraSelectPath(arg1: new int[] {5004, 5003}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {5004, 5003}, arg2: true);
             }
 
             public override void Execute() {
@@ -261,7 +261,7 @@ namespace Maple2.Trigger._84000006_wd {
                 context.StartMiniGame(boxId: 9001, round: 1, isShowResultUI: "False", gameName: "PinataWD");
                 context.AddBalloonTalk(spawnPointID: 201, msg: "$84000006_WD__84000006_WD_MAIN__11$", duration: 8000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 28500010, textID: 28500010, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 28500010, textID: 28500010, duration: 5000);
             }
 
             public override void Execute() {
@@ -423,7 +423,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StatePinata_Fireworks(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {5002, 5001}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {5002, 5001}, arg2: true);
                 context.SetUserValue(triggerID: 1002, key: "Fireworks", value: 1);
             }
 

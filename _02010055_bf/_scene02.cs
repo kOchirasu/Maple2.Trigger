@@ -223,7 +223,7 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetTimer(arg1: "21", arg2: 10);
-                context.CameraSelectPath(arg1: new int[] {601, 602}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {601, 602}, arg2: false);
             }
 
             public override void Execute() {

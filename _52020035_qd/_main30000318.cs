@@ -55,7 +55,7 @@ namespace Maple2.Trigger._52020035_qd {
                 context.CreateMonster(arg1: new int[] {119}, arg2: false, arg3: 0);
                 context.CreateMonster(arg1: new int[] {120}, arg2: false, arg3: 0);
                 context.CreateMonster(arg1: new int[] {121}, arg2: false, arg3: 0);
-                context.CameraSelectPath(arg1: new int[] {4026}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4026}, arg2: false);
             }
 
             public override void Execute() {
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State뒷이야기_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4028}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4028}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003753, msg: "...", duration: 3000);
             }
 
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State뒷이야기01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4030}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4030}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 119, arg2: "Bore_A");
                 context.AddCinematicTalk(npcID: 11003756, msg: "훗. 생각보다 잘 넘어간 것 같군요.", duration: 3000);
                 context.AddCinematicTalk(npcID: 11003759, msg: "쳇, 복잡하게 만들지 말고 그냥 죽어버리면 되잖아?", duration: 4000);
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State뒷이야기02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4026}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4026}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003754, msg: "하렌. 그럼 우리도 다음 작전을 이야기 해 볼까.", duration: 3000);
             }
 
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State뒷이야기02_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4031}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4031}, arg2: false);
                 context.MoveNpc(arg1: 119, arg2: "MS2PatrolData_3008");
                 context.AddCinematicTalk(npcID: 11003756, msg: "...후훗.", duration: 3000);
             }

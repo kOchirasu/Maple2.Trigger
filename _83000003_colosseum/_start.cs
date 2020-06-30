@@ -29,7 +29,7 @@ namespace Maple2.Trigger._83000003_colosseum {
                 context.SetProductionUI(arg1: 1);
                 context.DestroyMonster(arg1: new int[] {202});
                 context.DestroyMonster(arg1: new int[] {203});
-                context.CreateMonster(arg1: new int[] {203}, agr2: false);
+                context.CreateMonster(arg1: new int[] {203}, arg2: false);
             }
 
             public override void Execute() {
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal State연출_01_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
 
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal State연출_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: false);
             }
 
             public override void Execute() {
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {4005, 4006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005, 4006}, arg2: false);
             }
 
             public override void Execute() {
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             internal State연출_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4007, 4008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4007, 4008}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$83000002_COLOSSEUM__START__0$",
                     align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
                 context.SetSceneSkip();
@@ -162,7 +162,7 @@ namespace Maple2.Trigger._83000003_colosseum {
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 2, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {4009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4009}, arg2: false);
             }
 
             public override void Execute() {

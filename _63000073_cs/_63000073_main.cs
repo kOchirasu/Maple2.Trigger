@@ -108,7 +108,7 @@ namespace Maple2.Trigger._63000073_cs {
             internal State잠시대기_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
             }
 
             public override void Execute() {
@@ -295,7 +295,7 @@ namespace Maple2.Trigger._63000073_cs {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_2002");
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -330,7 +330,7 @@ namespace Maple2.Trigger._63000073_cs {
             internal State에이든대화_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 122, arg2: "Idle_A");
             }
 
@@ -366,7 +366,7 @@ namespace Maple2.Trigger._63000073_cs {
             internal State에이든대화_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
             }
 
             public override void Execute() {
@@ -421,7 +421,7 @@ namespace Maple2.Trigger._63000073_cs {
             internal State에이든대화_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
             }
 
             public override void Execute() {

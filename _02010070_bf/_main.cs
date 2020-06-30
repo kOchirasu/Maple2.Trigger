@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02010070_bf {
                 context.SetEffect(arg1: new int[] {7012}, arg2: true);
                 context.CreateMonster(arg1: new int[] {22201, 22202, 22203, 22204}, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20100701, textID: 20100701, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20100701, textID: 20100701, duration: 5000);
             }
 
             public override void Execute() {
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02010070_bf {
                 context.SetEffect(arg1: new int[] {7011}, arg2: false);
                 context.SetEffect(arg1: new int[] {7012}, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20100702, textID: 20100702, durationTime: 7000);
+                context.ShowGuideSummary(entityID: 20100702, textID: 20100702, duration: 7000);
             }
 
             public override void Execute() {

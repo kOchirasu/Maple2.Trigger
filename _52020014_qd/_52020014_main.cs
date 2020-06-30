@@ -8,7 +8,7 @@ namespace Maple2.Trigger._52020014_qd {
             internal State감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPortal(arg1: 1, arg2: false, arg3: false, arg: false);
+                context.SetPortal(arg1: 1, arg2: false, arg3: false);
                 context.SetEffect(arg1: new int[] {5001}, arg2: false);
                 context.SetMesh(arg1: new int[] {9101}, arg2: true);
                 context.SetMesh(arg1: new int[] {9102}, arg2: true);

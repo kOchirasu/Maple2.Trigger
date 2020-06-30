@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.CreateMonster(arg1: new int[] {301}, arg2: true);
                 context.CreateMonster(arg1: new int[] {302}, arg2: true);
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal Statescene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
             }
 
             public override void Execute() {
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal Statescene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4009}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003214, msg: "$52000125_QD__MAIN__1$", duration: 3000, align: "left");
             }
 
@@ -169,7 +169,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal Statescene_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4008}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003213, msg: "$52000125_QD__MAIN__3$", duration: 3000, align: "left");
             }
 
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal Statescene_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4010}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003212, msg: "$52000125_QD__MAIN__5$", duration: 3000, align: "left");
             }
 
@@ -223,7 +223,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal Statescene_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4009}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003205, msg: "$52000125_QD__MAIN__6$", duration: 3000,
                     align: "center");
                 context.SetSceneSkip();
@@ -343,7 +343,7 @@ namespace Maple2.Trigger._52000125_qd {
                 context.DestroyMonster(arg1: new int[] {601, 602, 603});
                 context.CreateMonster(arg1: new int[] {304, 305, 306}, arg2: true);
                 context.MoveUser(arg1: 52000125, arg2: 6001);
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                 context.SetSceneSkip(arg1: "end", arg2: "exit");
             }
@@ -418,7 +418,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal Statethanks(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4007}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Clap_A");
                 context.AddCinematicTalk(npcID: 11003205, msg: "$52000125_QD__MAIN__12$", duration: 2000,
                     align: "center");

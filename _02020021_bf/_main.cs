@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02020021_bf {
             internal State카메라_캡션(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {501, 502}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {501, 502}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$02020021_BF__main__3$",
                     desc: "$02020021_BF__main__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 4000, scale: 2f);
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02020021_bf {
             internal State카메라_샤텐대사1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {503, 504}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {503, 504}, arg2: false);
                 context.AddCinematicTalk(npcID: 23200085, illustID: "Schatten_normal", msg: "$02020021_BF__main__0$",
                     duration: 4000, align: "left");
             }
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._02020021_bf {
             internal State카메라_샤텐대사3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {505, 506}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {505, 506}, arg2: false);
                 context.AddCinematicTalk(npcID: 23200085, illustID: "Schatten_normal", msg: "$02020021_BF__main__2$",
                     duration: 4000, align: "left");
             }
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._02020021_bf {
             internal State카메라_샤텐대사4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {507, 508}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {507, 508}, arg2: false);
                 context.AddCinematicTalk(npcID: 23200085, illustID: "Schatten_normal", msg: "$02020021_BF__main__5$",
                     duration: 4000, align: "left");
                 context.SetSceneSkip();

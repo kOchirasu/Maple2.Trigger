@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000401_bf {
             internal State던전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20040101, textID: 20040101, durationTime: 3500);
+                context.ShowGuideSummary(entityID: 20040101, textID: 20040101, duration: 3500);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetInteractObject(arg1: new int[] {12000021}, arg2: 1);
                 context.SetInteractObject(arg1: new int[] {12000022}, arg2: 1);
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000401_bf {
             internal State퀘스트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20040101, textID: 20040101, durationTime: 3500);
+                context.ShowGuideSummary(entityID: 20040101, textID: 20040101, duration: 3500);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetInteractObject(arg1: new int[] {12000037}, arg2: 1);
             }

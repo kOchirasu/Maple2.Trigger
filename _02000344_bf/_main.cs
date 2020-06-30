@@ -313,7 +313,7 @@ namespace Maple2.Trigger._02000344_bf {
                 context.MoveRandomUser(arg1: 02000344, arg2: 98, arg3: 60005, arg4: 1);
                 context.MoveRandomUser(arg1: 02000344, arg2: 97, arg3: 60005, arg4: 1);
                 context.MoveRandomUser(arg1: 02000344, arg2: 96, arg3: 60005, arg4: 1);
-                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: false);
             }
 
             public override void Execute() {
@@ -330,7 +330,7 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004, 8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004, 8005}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000344_BF__MAIN__0$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 2, arg2: 11001376, arg3: "$02000344_BF__MAIN__1$", arg4: 3);
                 context.SetSkip(arg1: "start_game");
@@ -405,7 +405,7 @@ namespace Maple2.Trigger._02000344_bf {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new int[] {702}, arg2: 70000106, arg3: 1);
-                context.CameraSelectPath(arg1: new int[] {8006, 8007, 8008, 8009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8006, 8007, 8008, 8009}, arg2: false);
             }
 
             public override void Execute() {
@@ -459,7 +459,7 @@ namespace Maple2.Trigger._02000344_bf {
                 context.AddBuff(arg1: new int[] {702}, arg2: 70000106, arg3: 1);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8010}, arg2: true);
                 context.ShowCountUI(text: "$02000344_BF__MAIN__10$", stage: 0, count: 3);
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
             }
@@ -670,7 +670,7 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_game_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003442, textID: 20003442, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003442, textID: 20003442, duration: 5000);
                 context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__12$", arg3: new int[] {3000});
                 context.CreateMonster(arg1: new int[] {201, 202, 203, 204}, arg2: true);
             }
@@ -704,7 +704,7 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_game_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003442, textID: 20003442, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003442, textID: 20003442, duration: 5000);
                 context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__13$", arg3: new int[] {3000});
                 context.SetMesh(
                     arg1: new int[] {
@@ -1092,7 +1092,7 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_game_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003443, textID: 20003443, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003443, textID: 20003443, duration: 5000);
                 context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__15$", arg3: new int[] {3000});
                 context.CreateMonster(arg1: new int[] {220}, arg2: true);
             }
@@ -1317,7 +1317,7 @@ namespace Maple2.Trigger._02000344_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8004, 8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004, 8005}, arg2: false);
                 context.SetMesh(arg1: new int[] {6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109}, arg2: true,
                     arg4: 0, arg5: 10f);
                 context.SetMesh(arg1: new int[] {6110}, arg2: false, arg4: 0, arg5: 0f);
@@ -1383,7 +1383,7 @@ namespace Maple2.Trigger._02000344_bf {
                 context.SetAchievement(arg2: "trigger", arg3: "ClearTVProgram");
                 context.SetDungeonVariable(varID: 2, value: true);
                 context.ShowGuideSummary(entityID: 110, textID: 40009);
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8010}, arg2: true);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }

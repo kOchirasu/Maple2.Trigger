@@ -136,7 +136,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200002, textID: 28200002, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 28200002, textID: 28200002, duration: 4000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__0$");
             }
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__1$");
             }
@@ -220,7 +220,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__1$");
             }
@@ -261,7 +261,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__1$");
             }
@@ -302,7 +302,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__1$");
             }
@@ -343,7 +343,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__1$");
             }
@@ -381,7 +381,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
@@ -417,7 +417,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
@@ -453,7 +453,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
@@ -489,7 +489,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
@@ -525,7 +525,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
@@ -561,7 +561,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
@@ -597,7 +597,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
@@ -633,7 +633,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
@@ -669,7 +669,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
@@ -705,7 +705,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
@@ -738,7 +738,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
@@ -769,7 +769,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
@@ -800,7 +800,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
@@ -831,7 +831,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
@@ -862,7 +862,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
@@ -893,7 +893,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
@@ -924,7 +924,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
@@ -955,7 +955,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
@@ -986,7 +986,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
@@ -1017,7 +1017,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
@@ -1045,7 +1045,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__4$");
             }
@@ -1071,7 +1071,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__4$");
             }
@@ -1097,7 +1097,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__4$");
             }
@@ -1123,7 +1123,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__4$");
             }
@@ -1149,7 +1149,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, duration: 3000);
                 context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__4$");
             }
@@ -1204,7 +1204,7 @@ namespace Maple2.Trigger._82000002_survival {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
-                context.ShowGuideSummary(entityID: 28200007, textID: 28200007, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 28200007, textID: 28200007, duration: 4000);
                 context.WriteLog(arg1: "Survival", arg3: "MokumEventStart");
             }
 

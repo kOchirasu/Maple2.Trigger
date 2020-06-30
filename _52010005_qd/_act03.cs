@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "21", arg2: 5);
-                context.CameraSelectPath(arg1: new int[] {2001, 2002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2001, 2002}, arg2: false);
             }
 
             public override void Execute() {
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "22", arg2: 4);
                 context.MoveNpc(arg1: 601, arg2: "MS2PatrolData_6011");
-                context.CameraSelectPath(arg1: new int[] {2002, 2001}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {2002, 2001}, arg2: true);
             }
 
             public override void Execute() {

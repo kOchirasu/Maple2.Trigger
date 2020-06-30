@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000346_bf {
             internal State오브젝티브_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.CreateMonster(arg1: new int[] {101}, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$02000346_BF__MAIN1__0$");

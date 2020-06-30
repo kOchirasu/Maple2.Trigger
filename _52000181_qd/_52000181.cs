@@ -43,8 +43,8 @@ namespace Maple2.Trigger._52000181_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 520001781, arg2: 1);
-                context.CreateMonster(arg1: new int[] {101}, agr2: false);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -159,8 +159,8 @@ namespace Maple2.Trigger._52000181_qd {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CreateMonster(arg1: new int[] {102}, agr2: false);
-                context.DestroyMonster(arg1: new int[] {101}, agr2: false);
+                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.DestroyMonster(arg1: new int[] {101}, arg2: false);
                 context.MoveUser(arg1: 52000181, arg2: 2);
             }
 

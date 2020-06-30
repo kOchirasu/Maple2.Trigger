@@ -85,7 +85,7 @@ namespace Maple2.Trigger._52000162_qd {
             internal State리스항구전경_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004, 4003}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52000162_QD__52000162__0$", align: "bottomLeft",
                     offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2.5f);
             }
@@ -165,8 +165,8 @@ namespace Maple2.Trigger._52000162_qd {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CreateMonster(arg1: new int[] {102}, agr2: false);
-                context.ShowGuideSummary(entityID: 25201621, textID: 25201621, durationTime: 10000);
+                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.ShowGuideSummary(entityID: 25201621, textID: 25201621, duration: 10000);
             }
 
             public override void Execute() {
@@ -203,8 +203,8 @@ namespace Maple2.Trigger._52000162_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {101}, agr2: false);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -223,7 +223,7 @@ namespace Maple2.Trigger._52000162_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
             }
 
             public override void Execute() {
@@ -240,7 +240,7 @@ namespace Maple2.Trigger._52000162_qd {
             internal State리린등장_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_3001");
                 context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
             }

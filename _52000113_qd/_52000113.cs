@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52000113_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {1000, 1001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1000, 1001}, arg2: false);
             }
 
             public override void Execute() {
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._52000113_qd {
             internal Statecamera02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: false);
             }
 
             public override void Execute() {
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._52000113_qd {
             internal Statecamera03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1004, 1005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1004, 1005}, arg2: false);
                 context.MoveNpc(arg1: 208, arg2: "MS2PatrolData_Rogues_come");
             }
 
@@ -111,7 +111,7 @@ namespace Maple2.Trigger._52000113_qd {
             internal Statecamera04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1006, 1007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1006, 1007}, arg2: false);
                 context.SetProductionUI(arg1: 3);
                 context.AddCinematicTalk(npcID: 11003338, illustID: "0", msg: "$52000113_QD__52000113__0$",
                     duration: 4000, align: "right");
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._52000113_qd {
             internal Statecamera05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1008, 1009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1008, 1009}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003185, illustID: "0", msg: "$52000113_QD__52000113__1$",
                     duration: 4000, align: "right");
             }
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._52000113_qd {
             internal Statecamera06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1010}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003185, illustID: "0", msg: "$52000113_QD__52000113__2$",
                     duration: 4000, align: "right");
                 context.MoveNpc(arg1: 208, arg2: "MS2PatrolData_Rogues_out");
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._52000113_qd {
             internal Statecamera07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1011, 1012}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1011, 1012}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003185, illustID: "0", msg: "$52000113_QD__52000113__3$",
                     duration: 5000, align: "right");
             }

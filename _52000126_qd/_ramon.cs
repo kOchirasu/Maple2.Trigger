@@ -44,7 +44,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "end", arg2: "exit");
-                context.CameraSelectPath(arg1: new int[] {4101}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4101}, arg2: false);
             }
 
             public override void Execute() {
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Idle_A");
-                context.CameraSelectPath(arg1: new int[] {4101, 4102}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4101, 4102}, arg2: false);
             }
 
             public override void Execute() {
@@ -97,7 +97,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Idle_A");
-                context.CameraSelectPath(arg1: new int[] {4102, 4103}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4102, 4103}, arg2: false);
             }
 
             public override void Execute() {

@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02000389_bf {
                 context.SetSkip(arg1: "start_ready");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Walk_A", arg3: 9999999999999999f);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Walk_A", arg3: 9999999999999999f);
-                context.CameraSelectPath(arg1: new int[] {8001, 8002, 8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002, 8003}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
@@ -220,7 +220,7 @@ namespace Maple2.Trigger._02000389_bf {
                 context.SetSkip(arg1: "scene_07_ready");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8004, 8005, 8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004, 8005, 8006}, arg2: false);
             }
 
             public override void Execute() {
@@ -714,7 +714,7 @@ namespace Maple2.Trigger._02000389_bf {
                 context.SetActor(arg1: 3102, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 3103, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 3104, arg2: true, arg3: "Idle_A");
-                context.CameraSelectPath(arg1: new int[] {8007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8007}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetConversation(arg1: 1, arg2: 104, arg3: "$02000389_BF__MAIN__12$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 103, arg3: "$02000389_BF__MAIN__13$", arg4: 2, arg5: 1);

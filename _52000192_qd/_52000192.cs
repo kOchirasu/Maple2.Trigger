@@ -61,7 +61,7 @@ namespace Maple2.Trigger._52000192_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 52000192, arg2: 5001);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.CreateMonster(arg1: new int[] {101});
                 context.CreateMonster(arg1: new int[] {102});
             }
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._52000192_qd {
                 context.SetProductionUI(arg1: 3);
                 context.AddCinematicTalk(npcID: 11004785, msg: "$52000192_QD__52000192__0$", align: "left",
                     illustID: "Ereb_surprise", duration: 4000);
-                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: false);
                 context.SetPcEmotionLoop(arg1: "Attack_Idle_A", arg2: 5000f);
             }
 

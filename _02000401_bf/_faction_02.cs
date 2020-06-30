@@ -111,7 +111,7 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.ShowGuideSummary(entityID: 20040102, textID: 20040102, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20040102, textID: 20040102, duration: 3000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
                 context.SetProductionUI(arg1: 0);
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._02000401_bf {
             internal State2차안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20040105, textID: 20040105, durationTime: 3500);
+                context.ShowGuideSummary(entityID: 20040105, textID: 20040105, duration: 3500);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
             }

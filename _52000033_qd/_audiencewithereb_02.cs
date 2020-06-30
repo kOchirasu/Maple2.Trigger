@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52000033_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {700}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {700}, arg2: false);
                 context.AddCinematicTalk(npcID: 11001663, msg: "$52000033_QD__AUDIENCEWITHEREB_02__0$", duration: 5000);
                 context.SetSceneSkip(arg1: "end", arg2: "nextState");
             }
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {901}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {901}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.AddCinematicTalk(npcID: 11001663, msg: "$52000033_QD__AUDIENCEWITHEREB_02__1$", duration: 3000);
             }
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000033_QD__AUDIENCEWITHEREB_02__18$",
-                    desc: "$52000033_QD__AUDIENCEWITHEREB_02__19$", align: "centerLeft", offestRateX: -0.15f,
+                    desc: "$52000033_QD__AUDIENCEWITHEREB_02__19$", align: "centerLeft", offsetRateX: -0.15f,
                     duration: 3000);
             }
 
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateKaltalk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {902}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {902}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Talk_A");
                 context.AddCinematicTalk(npcID: 11001665, msg: "$52000033_QD__AUDIENCEWITHEREB_02__5$", duration: 3000);
                 context.AddCinematicTalk(npcID: 11001665, msg: "$52000033_QD__AUDIENCEWITHEREB_02__6$", duration: 3000);
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000033_QD__AUDIENCEWITHEREB_02__20$",
-                    desc: "$52000033_QD__AUDIENCEWITHEREB_02__21$", align: "centerLeft", offestRateX: -0.15f,
+                    desc: "$52000033_QD__AUDIENCEWITHEREB_02__21$", align: "centerLeft", offsetRateX: -0.15f,
                     duration: 3000);
             }
 
@@ -197,7 +197,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal Statetalk_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {601}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {601}, arg2: false);
                 context.AddCinematicTalk(npcID: 11001663, illustID: "Ereb_normal",
                     msg: "$52000033_QD__AUDIENCEWITHEREB_02__7$", duration: 1000, delayTick: 0, align: "left");
                 context.AddCinematicTalk(npcID: 11001665, illustID: "Karl_normal",

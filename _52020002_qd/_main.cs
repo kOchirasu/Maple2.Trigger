@@ -144,7 +144,7 @@ namespace Maple2.Trigger._52020002_qd {
             internal State연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
                 context.SetSceneSkip(arg1: "제이든보고_스킵완료", arg2: "nextState");
             }
 

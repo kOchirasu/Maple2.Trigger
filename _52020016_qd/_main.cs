@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 1);
-                context.CameraSelectPath(arg1: new int[] {2000004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000004}, arg2: false);
             }
 
             public override void Execute() {
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._52020016_qd {
             internal State시작_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000004}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {2000004}, arg2: true);
             }
 
             public override void Execute() {
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._52020016_qd {
             internal State미카엘등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000001}, arg2: false);
                 context.CreateMonster(arg1: new int[] {300001}, arg2: false);
             }
 
@@ -226,7 +226,7 @@ namespace Maple2.Trigger._52020016_qd {
             internal State카메라리셋_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000001}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {2000001}, arg2: true);
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 0);
                 context.DestroyMonster(arg1: new int[] {300001});
@@ -352,7 +352,7 @@ namespace Maple2.Trigger._52020016_qd {
             internal State미카엘등장_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000002}, arg2: false);
                 context.CreateMonster(arg1: new int[] {300002}, arg2: false);
                 context.MoveNpc(arg1: 300002, arg2: "MS2PatrolData0_300002_1");
             }
@@ -460,7 +460,7 @@ namespace Maple2.Trigger._52020016_qd {
             internal State카메라리셋_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000002}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {2000002}, arg2: true);
             }
 
             public override void Execute() {
@@ -641,7 +641,7 @@ namespace Maple2.Trigger._52020016_qd {
             internal State불꺼짐_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000003}, arg2: false);
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 1);
             }
@@ -686,7 +686,7 @@ namespace Maple2.Trigger._52020016_qd {
             internal State카메라리셋_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000003}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {2000003}, arg2: true);
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 0);
             }

@@ -78,7 +78,7 @@ namespace Maple2.Trigger._52000182_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_Walk");
-                context.CameraSelectPath(arg1: new int[] {4000, 4001, 4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4000, 4001, 4002, 4003}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._52000182_qd {
             internal State병원전경씬02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004, 4005, 4006, 4007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004, 4005, 4006, 4007}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52000182_QD__52000182__0$",
                     desc: "$52000182_QD__52000182__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 5000, scale: 2.5f);
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._52000182_qd {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.AddBalloonTalk(spawnPointID: 0, msg: "$52000182_QD__52000182__2$", duration: 6000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 52001821, textID: 52001821, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 52001821, textID: 52001821, duration: 10000);
                 context.CreateMonster(arg1: new int[] {2000}, arg2: false);
             }
 

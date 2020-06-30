@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000403_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.DestroyMonster(arg1: new int[] {101, 102, 103, 104});
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._02000403_bf {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "scene_06_ready");
-                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: false);
                 context.SetMesh(arg1: new int[] {1002}, arg2: true, arg3: 0, arg4: 200, arg5: 35f);
                 context.SetMesh(
                     arg1: new int[] {
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02000403_bf {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "scene_06_ready");
-                context.CameraSelectPath(arg1: new int[] {8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 199, arg2: "Bore_B");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$02000403_BF__EVENT_02__3$", arg4: 5);
             }

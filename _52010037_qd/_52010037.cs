@@ -106,7 +106,7 @@ namespace Maple2.Trigger._52010037_qd {
                 context.SetSceneSkip(arg1: "Quit01", arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {3000, 3001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {3000, 3001}, arg2: false);
             }
 
             public override void Execute() {
@@ -123,7 +123,7 @@ namespace Maple2.Trigger._52010037_qd {
             internal State지하기지전경씬02_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {3002, 3003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {3002, 3003}, arg2: false);
             }
 
             public override void Execute() {
@@ -140,7 +140,7 @@ namespace Maple2.Trigger._52010037_qd {
             internal State지하기지전경씬02_c(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {3004, 3005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {3004, 3005}, arg2: false);
             }
 
             public override void Execute() {
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._52010037_qd {
                 context.ShowCaption(type: "VerticalCaption", title: "$52010037_QD__52010037__0$",
                     desc: "$52010037_QD__52010037__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 7000, scale: 2.5f);
-                context.CameraSelectPath(arg1: new int[] {3006, 3007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {3006, 3007}, arg2: false);
             }
 
             public override void Execute() {

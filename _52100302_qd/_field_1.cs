@@ -46,15 +46,15 @@ namespace Maple2.Trigger._52100302_qd {
                     context.SideNpcTalk(type: "talk", npcID: 11004582, illust: "Eone_serious",
                         script: "$52100302_QD__FIELD_1__0$", duration: 5000);
                     context.SetInteractObject(arg1: new int[] {12000504}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1107}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1108}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1109}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1107}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1108}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1109}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1221, 1222, 1223, 1224}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1221, 1222, 1223, 1224}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 102, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 103, isEnable: true);
                     context.State = new StateCableOn_04(context);
@@ -75,15 +75,15 @@ namespace Maple2.Trigger._52100302_qd {
                     context.SideNpcTalk(type: "talk", npcID: 11004582, illust: "Eone_serious",
                         script: "$52100302_QD__FIELD_1__1$", duration: 5000);
                     context.SetInteractObject(arg1: new int[] {12000505}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1107}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1108}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1109}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1107}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1108}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1109}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1221, 1222, 1223, 1224}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1221, 1222, 1223, 1224}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 102, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 104, isEnable: true);
                     context.State = new StateCableOn_05(context);
@@ -104,15 +104,15 @@ namespace Maple2.Trigger._52100302_qd {
                     context.SideNpcTalk(type: "talk", npcID: 11004582, illust: "Eone_serious",
                         script: "$52100302_QD__FIELD_1__2$", duration: 5000);
                     context.SetInteractObject(arg1: new int[] {12000506}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1107}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1108}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1109}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1107}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1108}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1109}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1221, 1222, 1223, 1224}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1221, 1222, 1223, 1224}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 102, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 105, isEnable: true);
                     context.State = new StateCableOn_06(context);
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._52100302_qd {
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new int[] {12000504}, arg2: 0)) {
                     context.SetInteractObject(arg1: new int[] {12000504}, arg2: 0);
-                    context.DestroyMonster(arg1: new int[] {30003, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {30003, 30004}, arg2: false);
                     context.SetMesh(
                         arg1: new int[]
                             {1100101, 1100102, 1100103, 1100104, 1100105, 1100106, 1100107, 1100108, 1100109, 1100110},
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._52100302_qd {
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new int[] {12000505}, arg2: 0)) {
                     context.SetInteractObject(arg1: new int[] {12000505}, arg2: 0);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30004}, arg2: false);
                     context.SetMesh(
                         arg1: new int[]
                             {1100201, 1100202, 1100203, 1100204, 1100205, 1100206, 1100207, 1100208, 1100209, 1100210},
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._52100302_qd {
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new int[] {12000506}, arg2: 0)) {
                     context.SetInteractObject(arg1: new int[] {12000506}, arg2: 0);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003}, arg2: false);
                     context.SetMesh(
                         arg1: new int[]
                             {1100301, 1100302, 1100303, 1100304, 1100305, 1100306, 1100307, 1100308, 1100309, 1100310},

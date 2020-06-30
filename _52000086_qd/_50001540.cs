@@ -423,7 +423,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new int[] {2001}, arg2: false);
-                context.ShowGuideSummary(entityID: 25200861, textID: 25200861, durationTime: 3500);
+                context.ShowGuideSummary(entityID: 25200861, textID: 25200861, duration: 3500);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
@@ -501,7 +501,7 @@ namespace Maple2.Trigger._52000086_qd {
                 context.CreateMonster(arg1: new int[] {1006}, arg2: false);
                 context.SetActor(arg1: 4005, arg2: true, arg3: "Opened");
                 context.SetMesh(arg1: new int[] {3105}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.ShowGuideSummary(entityID: 25200862, textID: 25200862, durationTime: 3500);
+                context.ShowGuideSummary(entityID: 25200862, textID: 25200862, duration: 3500);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 

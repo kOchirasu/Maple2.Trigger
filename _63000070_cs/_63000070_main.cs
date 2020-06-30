@@ -169,7 +169,7 @@ namespace Maple2.Trigger._63000070_cs {
             internal Statescene1_start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: false);
                 context.SetSceneSkip(arg1: "sceneskip_1", arg2: "exit");
                 context.AddCinematicTalk(npcID: 11004289, illustID: "Rue_Halloween",
                     msg: "$63000070_CS__63000070_MAIN__0$", duration: 3000);
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._63000070_cs {
             internal Statescene1_ladymonologue2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004289, illustID: "Rue_Halloween",
                     msg: "$63000070_CS__63000070_MAIN__2$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
@@ -229,7 +229,7 @@ namespace Maple2.Trigger._63000070_cs {
             internal Statescene1_ladyzoomin(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8005, 8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005, 8006}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcID: 11004289, msg: "$63000070_CS__63000070_MAIN__3$", duration: 4000);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Idle_A", arg3: 4000f);
@@ -249,7 +249,7 @@ namespace Maple2.Trigger._63000070_cs {
             internal Statescene1_ladygoback1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8006, 8007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8006, 8007}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "Patrol_lady_backward_01");
                 context.AddCinematicTalk(npcID: 11004289, illustID: "Rue_Halloween", align: "right",
                     msg: "$63000070_CS__63000070_MAIN__4$", duration: 5000);
@@ -269,7 +269,7 @@ namespace Maple2.Trigger._63000070_cs {
             internal Statescene1_ladygoback2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8008}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004289, illustID: "Rue_Halloween", align: "right",
                     msg: "$63000070_CS__63000070_MAIN__5$", duration: 3000);
             }
@@ -288,7 +288,7 @@ namespace Maple2.Trigger._63000070_cs {
             internal Statescene1_ladygoback3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8010}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "Patrol_lady_backward_02");
                 context.AddCinematicTalk(npcID: 11004289, illustID: "Rue_Halloween", align: "right",
                     msg: "$63000070_CS__63000070_MAIN__6$", duration: 4000);
@@ -327,7 +327,7 @@ namespace Maple2.Trigger._63000070_cs {
             internal Statescene1_robottroops(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8011}, arg2: false);
                 context.MoveNpc(arg1: 111, arg2: "Patrol_bot_01");
                 context.MoveNpc(arg1: 112, arg2: "Patrol_bot_02");
                 context.MoveNpc(arg1: 113, arg2: "Patrol_bot_03");
@@ -577,7 +577,7 @@ namespace Maple2.Trigger._63000070_cs {
             internal Statescene2_marienneappears_set(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8020}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8020}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetInteractObject(arg1: new int[] {32000015}, arg2: 1);
                 context.SetMesh(arg1: new int[] {529}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -598,7 +598,7 @@ namespace Maple2.Trigger._63000070_cs {
             internal Statescene2_start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8021}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8021}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetEffect(arg1: new int[] {604}, arg2: true);
                 context.MoveNpc(arg1: 105, arg2: "Patrol_girl");
@@ -619,7 +619,7 @@ namespace Maple2.Trigger._63000070_cs {
             internal Statescene2_girltalk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8022}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8022}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004308, msg: "$63000070_CS__63000070_MAIN__10$", duration: 2000);
                 context.SetNpcEmotionLoop(arg1: 105, arg2: "Talk_A", arg3: 3000f);
             }
@@ -767,7 +767,7 @@ namespace Maple2.Trigger._63000070_cs {
             internal Statescene3_girltalk0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8021}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8021}, arg2: false);
             }
 
             public override void Execute() {
@@ -820,7 +820,7 @@ namespace Maple2.Trigger._63000070_cs {
             internal Statescene3_girlgoout(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8022}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8022}, arg2: false);
                 context.MoveNpc(arg1: 105, arg2: "Patrol_girl_out");
             }
 

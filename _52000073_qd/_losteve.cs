@@ -159,7 +159,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_pcTurn");
-                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: false);
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_2001");
                 context.AddCinematicTalk(npcID: 11003446, illustID: "0", msg: "$52000073_QD__LOSTEVE__0$",
                     duration: 4000, align: "right");

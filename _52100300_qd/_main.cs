@@ -56,7 +56,7 @@ namespace Maple2.Trigger._52100300_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {4004, 4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004, 4005}, arg2: false);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
 
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._52100300_qd {
             internal State연출시작_2_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4006, 4007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4006, 4007}, arg2: false);
             }
 
             public override void Execute() {
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52100300_QD__MAIN__12$", align: "bottomLeft",
                     offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2.5f);
             }
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52100300_qd {
             internal State연출시작_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.SetProductionUI(arg1: 3);
                 context.AddCinematicTalk(npcID: 0, msg: "$52100300_QD__MAIN__13$", duration: 3500);
                 context.AddCinematicTalk(npcID: 11004682, illustID: "11004022", align: "right",

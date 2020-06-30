@@ -92,7 +92,7 @@ namespace Maple2.Trigger._52010021_qd {
             internal StateEnding(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2012");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2014");
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2013");

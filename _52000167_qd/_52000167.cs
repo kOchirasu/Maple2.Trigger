@@ -75,7 +75,7 @@ namespace Maple2.Trigger._52000167_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveUserPath(arg1: "MS2PatrolData_pc");
-                context.CameraSelectPath(arg1: new int[] {4000, 4001, 4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4000, 4001, 4002, 4003}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._52000167_qd {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.AddBalloonTalk(spawnPointID: 0, msg: "$52000167_QD__52000167__2$", duration: 6000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 52001671, textID: 52001671, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 52001671, textID: 52001671, duration: 10000);
                 context.CreateMonster(arg1: new int[] {400}, arg2: false);
             }
 
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._52000167_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 20, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {5000, 5001, 5002, 5003, 5004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {5000, 5001, 5002, 5003, 5004}, arg2: false);
                 context.MoveNpc(arg1: 402, arg2: "MS2PatrolData_402_hol");
                 context.MoveNpc(arg1: 403, arg2: "MS2PatrolData_403");
                 context.MoveNpc(arg1: 404, arg2: "MS2PatrolData_404");
@@ -265,7 +265,7 @@ namespace Maple2.Trigger._52000167_qd {
             internal State홀슈타트등장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 52001672, textID: 52001672, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 52001672, textID: 52001672, duration: 10000);
                 context.SetOnetimeEffect(id: 40, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 0);

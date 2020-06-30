@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02010052_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {80010, 80011}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {80010, 80011}, arg2: true);
                 context.SetMesh(
                     arg1: new int[] {
                         22201, 22202, 22203, 22204, 22205, 22206, 22207, 22208, 22209, 22210, 22211, 22212, 22213,

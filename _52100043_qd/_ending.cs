@@ -26,7 +26,7 @@ namespace Maple2.Trigger._52100043_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 500, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {500, 501}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {500, 501}, arg2: false);
                 context.SetEffect(arg1: new int[] {5000}, arg2: false);
                 context.SetEffect(arg1: new int[] {5001}, arg2: false);
                 context.SetEffect(arg1: new int[] {5002}, arg2: false);
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._52100043_qd {
                         4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4006, 4007, 4008, 4006, 4007, 4005, 4006,
                         4007, 4008, 4006, 4007, 4008, 4006, 4007, 4008, 4006, 4007, 4008, 4008, 4006, 4007, 4008, 4006,
                         4007, 4008, 4006, 4007, 4008
-                    }, arg2: 1);
+                    }, arg2: true);
                 context.AddCinematicTalk(npcID: 11001567, illustID: "11001567", msg: "$52100043_QD__ENDING__3$",
                     duration: 2000, align: "left");
                 context.DestroyMonster(arg1: new int[] {601, 602}, arg2: false);
@@ -184,7 +184,7 @@ namespace Maple2.Trigger._52100043_qd {
             internal StateEnding_Talk_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {7000, 7001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {7000, 7001}, arg2: false);
                 context.SetEffect(arg1: new int[] {5001}, arg2: true);
                 context.AddCinematicTalk(npcID: 11001568, illustID: "11001568", msg: "$52100043_QD__ENDING__5$",
                     duration: 2000, align: "left");
@@ -251,7 +251,7 @@ namespace Maple2.Trigger._52100043_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {5001}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {3000, 3001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {3000, 3001}, arg2: false);
             }
 
             public override void Execute() {

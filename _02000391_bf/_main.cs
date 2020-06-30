@@ -450,7 +450,7 @@ namespace Maple2.Trigger._02000391_bf {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016
                     }, isAutoTargeting: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039101, textID: 20039101, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20039101, textID: 20039101, duration: 3000);
             }
 
             public override void Execute() {
@@ -475,7 +475,7 @@ namespace Maple2.Trigger._02000391_bf {
                     rangeID: new int[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016
                     }, isAutoTargeting: false);
-                context.ShowGuideSummary(entityID: 20039101, textID: 20039101, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20039101, textID: 20039101, duration: 3000);
             }
 
             public override void Execute() {
@@ -538,7 +538,7 @@ namespace Maple2.Trigger._02000391_bf {
                 context.SetSkip();
                 context.CameraReset(interpolationTime: 0.0f);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039102, textID: 20039102, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20039102, textID: 20039102, duration: 3000);
             }
 
             public override void Execute() {

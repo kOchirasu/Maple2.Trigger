@@ -19,7 +19,7 @@ namespace Maple2.Trigger._99999886 {
             }
 
             public override void OnExit() {
-                context.CameraSelectPath(arg1: new int[] {101, 102}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {101, 102}, arg2: false);
             }
         }
 

@@ -31,7 +31,7 @@ namespace Maple2.Trigger._52010032_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.MoveUser(arg1: 52010032, arg2: 7001);
                 context.CreateMonster(arg1: new int[] {201}, arg2: true);
             }
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._52010032_qd {
             internal State치유의식_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: false);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_3001");
                 context.MoveUserPath(arg1: "MS2PatrolData_3002");
                 context.AddCinematicTalk(npcID: 11003389, msg: "$52010032_QD__MAIN__1$", duration: 3000, illustID: "0",

@@ -341,7 +341,7 @@ namespace Maple2.Trigger._02000296_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20002963, textID: 20002963, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20002963, textID: 20002963, duration: 5000);
             }
 
             public override void Execute() {
@@ -398,7 +398,7 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateReadyToMove03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20002962, textID: 20002962, durationTime: 6000);
+                context.ShowGuideSummary(entityID: 20002962, textID: 20002962, duration: 6000);
             }
 
             public override void Execute() {

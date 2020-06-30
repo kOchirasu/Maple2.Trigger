@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52000180_qd {
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {101}, agr2: false);
+                context.CreateMonster(arg1: new int[] {101}, arg2: false);
                 context.MoveUser(arg1: 52000180, arg2: 1);
             }
 
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._52000180_qd {
             internal State숲전경_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
             }
 
             public override void Execute() {

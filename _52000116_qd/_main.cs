@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52000116_qd {
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/Sound/Eff_Object_Castle_Door_Open_01.xml");
                 context.CreateMonster(arg1: new int[] {102}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
             }
 
             public override void Execute() {
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._52000116_qd {
             internal Statecamera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._52000116_qd {
             internal Statecamera_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_3005");
             }
 
@@ -325,7 +325,7 @@ namespace Maple2.Trigger._52000116_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 105, arg2: "Talk_A");
-                context.CameraSelectPath(arg1: new int[] {4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003164, msg: "$52000116_QD__MAIN__7$", duration: 2000);
                 context.SetSceneSkip(arg1: "end", arg2: "nextState");
             }
@@ -345,7 +345,7 @@ namespace Maple2.Trigger._52000116_qd {
 
             public override void OnEnter() {
                 context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000116_QD__MAIN__8$",
-                    desc: "$52000116_QD__MAIN__9$", align: "centerLeft", offestRateX: -0.15f, duration: 4000);
+                    desc: "$52000116_QD__MAIN__9$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
                 context.SetSceneSkip();
             }
 

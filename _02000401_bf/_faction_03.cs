@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000401_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new int[] {2903});
                 context.AddBuff(arg1: new int[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
-                context.ShowGuideSummary(entityID: 20040103, textID: 20040103, durationTime: 3500);
+                context.ShowGuideSummary(entityID: 20040103, textID: 20040103, duration: 3500);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.CreateMonster(arg1: new int[] {1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208}, arg2: false);
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.ShowGuideSummary(entityID: 20040106, textID: 20040106, durationTime: 3500);
+                context.ShowGuideSummary(entityID: 20040106, textID: 20040106, duration: 3500);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
                 context.SetProductionUI(arg1: 0);

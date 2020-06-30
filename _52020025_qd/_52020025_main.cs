@@ -110,7 +110,7 @@ namespace Maple2.Trigger._52020025_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new int[] {101});
-                context.CameraReset(arg1: "0.1");
+                context.CameraReset(interpolationTime: 0.1f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetAgent(arg1: "9001", arg2: false);

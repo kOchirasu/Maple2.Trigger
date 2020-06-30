@@ -151,7 +151,7 @@ namespace Maple2.Trigger._02000328_bf {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new int[] {999998}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
-                context.ShowGuideSummary(entityID: 20003285, textID: 20003285, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003285, textID: 20003285, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.CameraSelect(arg1: 60000, arg2: true);
                 context.SetMesh(
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._02000328_bf {
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                    context.ShowGuideSummary(entityID: 20003286, textID: 20003286, durationTime: 5000);
+                    context.ShowGuideSummary(entityID: 20003286, textID: 20003286, duration: 5000);
                     context.RemoveBuff(arg1: 999998, arg2: 70000107);
                     context.CameraSelect(arg1: 60001, arg2: false);
                     context.State = new State웨폰오브젝트대기(context);
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._02000328_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20003286, textID: 20003286, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003286, textID: 20003286, duration: 5000);
             }
 
             public override void Execute() {
@@ -316,7 +316,7 @@ namespace Maple2.Trigger._02000328_bf {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityID: 20003282);
-                context.ShowGuideSummary(entityID: 20003283, textID: 20003283, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003283, textID: 20003283, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.AddBuff(arg1: new int[] {999998}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 60003, arg2: true);

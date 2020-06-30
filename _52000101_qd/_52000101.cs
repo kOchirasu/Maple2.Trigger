@@ -74,7 +74,7 @@ namespace Maple2.Trigger._52000101_qd {
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {1100, 1101}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1100, 1101}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._52000101_qd {
                 context.SetEffect(arg1: new int[] {5322}, arg2: true);
                 context.AddBalloonTalk(spawnPointID: 0, msg: "$52000101_QD__52000101__2$", duration: 6000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 25201011, textID: 25201011, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 25201011, textID: 25201011, duration: 10000);
             }
 
             public override void Execute() {
@@ -234,7 +234,7 @@ namespace Maple2.Trigger._52000101_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_caitCome");
-                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: false);
             }
 
             public override void Execute() {
@@ -251,7 +251,7 @@ namespace Maple2.Trigger._52000101_qd {
             internal State케이틀린등장씬03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1004, 1005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1004, 1005}, arg2: false);
             }
 
             public override void Execute() {
@@ -364,7 +364,7 @@ namespace Maple2.Trigger._52000101_qd {
                 context.SetEffect(arg1: new int[] {5321}, arg2: false);
                 context.SetEffect(arg1: new int[] {5322}, arg2: false);
                 context.FaceEmotion(spawnPointID: 200);
-                context.ShowGuideSummary(entityID: 25201012, textID: 25201012, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 25201012, textID: 25201012, duration: 10000);
             }
 
             public override void Execute() {
@@ -413,7 +413,7 @@ namespace Maple2.Trigger._52000101_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.AddCinematicTalk(npcID: 0, msg: "$52000101_QD__52000101__5$", duration: 4000, align: "right");
-                context.CameraSelectPath(arg1: new int[] {1006, 1007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1006, 1007}, arg2: false);
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_caitTurn");
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_Run");
             }
@@ -453,7 +453,7 @@ namespace Maple2.Trigger._52000101_qd {
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointID: 200, emotionName: "UpSet");
-                context.CameraSelectPath(arg1: new int[] {1008, 1009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1008, 1009}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003146, msg: "$52000101_QD__52000101__7$", duration: 4000,
                     align: "right");
                 context.SetOnetimeEffect(id: 3000947, enable: true,
@@ -474,7 +474,7 @@ namespace Maple2.Trigger._52000101_qd {
             internal State케이틀린화남05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1200}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1200}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003146, msg: "$52000101_QD__52000101__8$", duration: 4000,
                     align: "right");
                 context.SetOnetimeEffect(id: 3000948, enable: true,

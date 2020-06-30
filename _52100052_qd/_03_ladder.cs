@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateCameraWalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {601, 600}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {601, 600}, arg2: true);
                 context.SetSkip();
             }
 

@@ -484,7 +484,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 0);
-                context.CameraSelectPath(arg1: new int[] {2000002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000002}, arg2: false);
             }
 
             public override void Execute() {
@@ -646,7 +646,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 15, arg2: true, arg3: true, arg4: false);
-                context.CameraReset(arg1: "interpolationTime", arg2: 0.5f);
+                context.CameraReset(interpolationTime: 0.5f);
             }
 
             public override void Execute() {

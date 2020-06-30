@@ -47,7 +47,7 @@ namespace Maple2.Trigger._52020031_qd {
                 context.SetProductionUI(arg1: 3);
                 context.DestroyMonster(arg1: new int[] {102});
                 context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
             }
 
             public override void Execute() {
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째연출_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4010}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
             }
 
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._52020031_qd {
             internal State두번째연출_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4012}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4012}, arg2: false);
             }
 
             public override void Execute() {

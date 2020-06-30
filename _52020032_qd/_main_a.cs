@@ -111,7 +111,7 @@ namespace Maple2.Trigger._52020032_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.SetSceneSkip(arg1: "Battle_B", arg2: "nextState");
             }
 
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: false);
             }
 
             public override void Execute() {
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._52020032_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_3001");
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
             }
 
             public override void Execute() {

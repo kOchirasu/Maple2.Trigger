@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02010049_bf {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new int[] {102, 103, 104, 105, 107, 108}, arg2: false);
                 context.CreateMonster(arg1: new int[] {201, 202, 203, 204, 205, 206}, arg2: false);
-                context.ShowGuideSummary(entityID: 20104901, textID: 20104901, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20104901, textID: 20104901, duration: 3000);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
             }
 
@@ -146,7 +146,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 20104902, textID: 20104902, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20104902, textID: 20104902, duration: 5000);
             }
 
             public override void Execute() {
@@ -169,7 +169,7 @@ namespace Maple2.Trigger._02010049_bf {
                         2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 20104903, textID: 20104903, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20104903, textID: 20104903, duration: 5000);
             }
 
             public override void Execute() {
@@ -187,7 +187,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 20104902, textID: 20104902, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20104902, textID: 20104902, duration: 5000);
             }
 
             public override void Execute() {
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 20104904, textID: 20104904, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20104904, textID: 20104904, duration: 5000);
             }
 
             public override void Execute() {
@@ -228,7 +228,7 @@ namespace Maple2.Trigger._02010049_bf {
                         3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 20104903, textID: 20104903, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20104903, textID: 20104903, duration: 5000);
             }
 
             public override void Execute() {
@@ -249,7 +249,7 @@ namespace Maple2.Trigger._02010049_bf {
                 context.CreateMonster(arg1: new int[] {302, 303, 304, 305, 306, 307}, arg2: false);
                 context.CreateMonster(arg1: new int[] {309}, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 20104902, textID: 20104902, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20104902, textID: 20104902, duration: 5000);
             }
 
             public override void Execute() {
@@ -267,7 +267,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 20104904, textID: 20104904, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20104904, textID: 20104904, duration: 5000);
             }
 
             public override void Execute() {
@@ -346,7 +346,7 @@ namespace Maple2.Trigger._02010049_bf {
                 context.SetMesh(arg1: new int[] {30000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetRandomMesh(arg1: new int[] {7000, 7001, 7002, 7003}, arg2: true, arg3: 4, arg4: 100,
                     arg5: 100);
-                context.ShowGuideSummary(entityID: 20104905, textID: 20104905, durationTime: 6000);
+                context.ShowGuideSummary(entityID: 20104905, textID: 20104905, duration: 6000);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
             }
 

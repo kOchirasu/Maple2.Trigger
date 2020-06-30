@@ -42,7 +42,7 @@ namespace Maple2.Trigger._52000200_qd {
 
             public override void OnEnter() {
                 context.SetQuestAccept(arg1: 10003419);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
                 context.SetProductionUI(arg1: 1);
                 context.CreateMonster(arg1: new int[] {101});
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._52000200_qd {
             internal StateCameraEffect03_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_3001");
             }
 
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._52000200_qd {
             internal State여제알현_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004, 4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004, 4005}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004778, msg: "$52000200_QD__52000200__4$", align: "right",
                     illustID: "Karl_normal", duration: 4000);
                 context.AddCinematicTalk(npcID: 11004785, msg: "$52000200_QD__52000200__5$", illustID: "Ereb_normal",
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._52000200_qd {
             internal State여제알현_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_3002");
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_3003");
             }
@@ -236,7 +236,7 @@ namespace Maple2.Trigger._52000200_qd {
             internal State여제알현_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4007, 4008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4007, 4008}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004785, msg: "$52000200_QD__52000200__16$", align: "left",
                     illustID: "Ereb_surprise", duration: 4500);
                 context.AddCinematicTalk(npcID: 11004778, msg: "$52000200_QD__52000200__17$", align: "right",
@@ -267,7 +267,7 @@ namespace Maple2.Trigger._52000200_qd {
             internal State음모(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4009}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 

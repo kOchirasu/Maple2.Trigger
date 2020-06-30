@@ -1338,7 +1338,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new int[] {102}, arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 25101203, textID: 25101203, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 25101203, textID: 25101203, duration: 5000);
             }
 
             public override void Execute() {
@@ -1373,7 +1373,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new int[] {102}, arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 25101204, textID: 25101204, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 25101204, textID: 25101204, duration: 5000);
                 context.CreateMonster(arg1: new int[] {913, 914}, arg2: false);
             }
 

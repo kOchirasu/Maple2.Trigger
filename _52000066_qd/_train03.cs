@@ -88,7 +88,7 @@ namespace Maple2.Trigger._52000066_qd {
                 context.SetLocalCamera(cameraId: 700, enable: true);
                 context.HideGuideSummary(entityID: 25200664);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 25200665, textID: 25200665, durationTime: 2000);
+                context.ShowGuideSummary(entityID: 25200665, textID: 25200665, duration: 2000);
             }
 
             public override void Execute() {

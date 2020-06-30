@@ -26,7 +26,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 26620112, textID: 26620112, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620112, textID: 26620112, duration: 5000);
             }
 
             public override void Execute() {
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateNotice_till75sec_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26620106, textID: 26620106, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620106, textID: 26620106, duration: 5000);
             }
 
             public override void Execute() {
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateNotice_till75sec_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26620107, textID: 26620107, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620107, textID: 26620107, duration: 5000);
             }
 
             public override void Execute() {
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 26620113, textID: 26620113, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620113, textID: 26620113, duration: 5000);
             }
 
             public override void Execute() {
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateNotice_till60sec_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26620106, textID: 26620106, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620106, textID: 26620106, duration: 5000);
             }
 
             public override void Execute() {
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateNotice_till60sec_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26620107, textID: 26620107, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620107, textID: 26620107, duration: 5000);
             }
 
             public override void Execute() {
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 26620108, textID: 26620108, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620108, textID: 26620108, duration: 5000);
             }
 
             public override void Execute() {
@@ -182,7 +182,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateNotice_till45sec_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26620106, textID: 26620106, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620106, textID: 26620106, duration: 5000);
             }
 
             public override void Execute() {
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateNotice_till45sec_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26620107, textID: 26620107, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620107, textID: 26620107, duration: 5000);
             }
 
             public override void Execute() {
@@ -227,7 +227,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 26620109, textID: 26620109, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620109, textID: 26620109, duration: 5000);
             }
 
             public override void Execute() {
@@ -249,7 +249,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateNotice_till30sec_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26620106, textID: 26620106, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620106, textID: 26620106, duration: 5000);
             }
 
             public override void Execute() {
@@ -271,7 +271,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateNotice_till30sec_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26620107, textID: 26620107, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620107, textID: 26620107, duration: 5000);
             }
 
             public override void Execute() {
@@ -294,7 +294,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 26620110, textID: 26620110, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620110, textID: 26620110, duration: 5000);
             }
 
             public override void Execute() {
@@ -316,7 +316,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateNotice_till15sec_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26620106, textID: 26620106, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620106, textID: 26620106, duration: 5000);
             }
 
             public override void Execute() {
@@ -338,7 +338,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateNotice_till15sec_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26620107, textID: 26620107, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620107, textID: 26620107, duration: 5000);
             }
 
             public override void Execute() {
@@ -361,7 +361,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 26620111, textID: 26620111, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620111, textID: 26620111, duration: 5000);
             }
 
             public override void Execute() {
@@ -383,7 +383,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateNotice_till0sec_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26620106, textID: 26620106, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620106, textID: 26620106, duration: 5000);
             }
 
             public override void Execute() {
@@ -405,7 +405,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateNotice_till0sec_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26620107, textID: 26620107, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 26620107, textID: 26620107, duration: 5000);
             }
 
             public override void Execute() {

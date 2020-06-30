@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52020035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State라딘이야기01_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4013}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4013}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003753, msg: "흠… 크리티아스가 다시 나타난 것은 어둠의 세력과 관련이 있을지도 모르겠군…",
                     duration: 5000);
             }
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State라딘이야기01_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003753, msg: "수고했네. 덕분에 중요한 정보를 얻게 되었군.", duration: 4000);
                 context.AddCinematicTalk(npcID: 11003750, msg: "이런 상황을 예측하신 라딘님께서 미리 지시해주신 덕분입니다.", duration: 3000);
             }
@@ -157,7 +157,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State라딘이야기02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4013}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4013}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
                 context.AddCinematicTalk(npcID: 11003753, msg: "가질, 아무래도 그 자들과 다시 한번 거래를 해야할 것 같으니 연락 좀 해주게.",
                     duration: 4000);
@@ -177,7 +177,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State라딘이야기02_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4015}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4015}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "ChatUP_A");
                 context.AddCinematicTalk(npcID: 11003750, msg: "그 자들이라면… 설마 흑성회 녀석들과 다시 거래하실 생각이신겁니까?", duration: 4000);
             }
@@ -196,7 +196,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State라딘이야기02_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4013}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4013}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003753,
                     msg: @"분명 신뢰할 수 없는 자들이지만 아직은 이용할 가치가 있어.\n원하는 것을 손에 넣을때까지는 장단을 맞춰줘야지.", duration: 5000);
             }
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State라딘이야기02_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4016}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4016}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003753, msg: "짓밟아버리는 것은 그 이후에 해도 늦지 않아.", duration: 3000);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Bore_A");
                 context.AddCinematicTalk(npcID: 11003750, msg: "넵, 분부대로 하겠습니다.", duration: 4000);
@@ -314,7 +314,7 @@ namespace Maple2.Trigger._52020035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {4032}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4032}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003754, msg: "이런곳까지 불러내다니... 다시봤구만, 나으리.", duration: 5000);
             }
 
@@ -349,7 +349,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State손님맞이_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003758, msg: @"이곳이 바로 역사에서 사라졌던 크리티아스…\n빨리 구경해보고 싶어요!",
                     duration: 3000);
             }
@@ -385,7 +385,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State손님맞이_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4033}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4033}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003757, msg: @"우린 여기 놀러온게 아니야.\n흑성회의 간부답게 행동해라.", duration: 3000);
             }
 
@@ -403,7 +403,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State손님맞이_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4017}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4017}, arg2: false);
             }
 
             public override void Execute() {
@@ -439,7 +439,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작01_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4020}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4020}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003753, msg: @"하하, 흑성회가 자랑하는 천재 전략가가 이런 어린 소년일줄이야.\n과연 웨이 홍이 자랑할만하군.",
                     duration: 3000);
                 context.SetNpcRotation(arg1: 109, arg2: -360);
@@ -459,7 +459,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4018}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4018}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 109, arg2: "Bore_B");
                 context.AddCinematicTalk(npcID: 11003758,
                     msg: @"칭찬해주셔서 감사합니다. 당신이 바로 라딘님이시군요.\n과거 트라이아의 검은 사자라고 불리웠던 제1왕위계승자…", duration: 4000);
@@ -497,7 +497,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작02_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4020}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4020}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003753,
                     msg: @"이런, 거기에 루델리 아레나 최강의 챔피언 바사라 첸이라니.\n이런 귀빈들이 올 줄 알았다면 좀 더 손님맞이를 잘 준비했을텐데.", duration: 4000);
             }
@@ -516,7 +516,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 104, arg2: "Bore_A");
                 context.AddCinematicTalk(npcID: 11003754, msg: "능구렁이 같은 모습은 여전하시군. 그 덕에 이번에 뒷통수를 거하게 맞았지.",
                     duration: 4000);
@@ -540,7 +540,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작03_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4023}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4023}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003754, msg: "도대체 무슨 꿍꿍이 속인거지?", duration: 3000);
                 context.DestroyMonster(arg1: new int[] {109});
             }
@@ -559,7 +559,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003753, msg: "자네의 그 경박한 언사는 도저히 고칠 수가 없나 보군.", duration: 3000);
                 context.AddCinematicTalk(npcID: 11003753,
                     msg: @"아무튼 더 큰 일을 위해서라면 사소한 오해 정도는 아량을 베풀 수 있는 법이니…\n지난 일은 조용히 넘어가주도록 하겠네.", duration: 5000);
@@ -580,7 +580,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작04_라딘과웨이홍(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4021}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4021}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 104, arg2: "Talk_A", arg3: 5000f);
                 context.AddCinematicTalk(npcID: 11003754,
                     msg: @"장사 한 두 번 하는 것도 아니고, 그런 말에 내가 속아 넘어갈 것으로 보이시나 보지?\n두 번이나 당할 정도로 이 웨이 홍이 어리석진 않은데 말이야.",
@@ -601,7 +601,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작04_라딘과웨이홍_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4020}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4020}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 18000f);
                 context.AddCinematicTalk(npcID: 11003753, msg: "자네의 리소스를 활용하여 우리 연구원들의 안전한 자료 수집 및 조사를 지원한다.",
                     duration: 4000);
@@ -627,7 +627,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작04_라딘과웨이홍_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4021}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4021}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 104, arg2: "Talk_A", arg3: 10000f);
                 context.AddBalloonTalk(spawnPointID: 123, msg: "건방진..", duration: 3000);
                 context.AddBalloonTalk(spawnPointID: 122, msg: "감히!", duration: 3000);
@@ -652,7 +652,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작04_라딘과웨이홍_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4020}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4020}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Bore_A");
                 context.AddCinematicTalk(npcID: 11003753, msg: "훗, 이거이거 내가 이 정도로 신용도가 없는 사람인가 보군.", duration: 3000);
                 context.AddCinematicTalk(npcID: 11003753,
@@ -676,7 +676,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작04_라딘과웨이홍_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4021}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4021}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 104, arg2: "Talk_A", arg3: 7000f);
                 context.AddCinematicTalk(npcID: 11003754, msg: "오호~ 그러신가?", duration: 2000);
                 context.AddCinematicTalk(npcID: 11003754,
@@ -697,7 +697,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작04_라딘과웨이홍_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4020}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4020}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003753,
                     msg: @"진정하고 크게 생각하세나.\n이렇게 서로 싸우기만 하다간 우리 모두 아무런 이득을 보지 못할걸세.", duration: 4000);
                 context.AddCinematicTalk(npcID: 11003753,
@@ -720,7 +720,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작04_라딘과웨이홍_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4021}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4021}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 104, arg2: "Talk_A", arg3: 8000f);
                 context.AddCinematicTalk(npcID: 11003754,
                     msg: @"서로 언제 뒤통수를 칠 지 모르는데도 어쩔 수 없는 동맹이라…\n크큭. 왕족 나리께서 제법 모험도 하시는군.", duration: 4000);
@@ -741,7 +741,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회와이야기시작04_라딘과웨이홍_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4022}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4022}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003753, msg: "훗, 이제서야 말이 통하는군.", duration: 2000);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Bore_A");
                 context.AddCinematicTalk(npcID: 11003753, msg: "그럼, 계획에 대해서 이야기해 보도록 하지…", duration: 3000);

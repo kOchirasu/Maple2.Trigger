@@ -197,7 +197,7 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() {
                 context.SetMesh(arg1: new int[] {8001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1012");
-                context.CameraSelectPath(arg1: new int[] {600, 601}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {600, 601}, arg2: true);
             }
 
             public override void Execute() {
@@ -668,7 +668,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키이동20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25200273, textID: 25200273, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 25200273, textID: 25200273, duration: 4000);
                 context.SetActor(arg1: 7001, arg2: true, arg3: "Opened");
                 context.SetEffect(arg1: new int[] {6300}, arg2: true);
                 context.SetMesh(arg1: new int[] {8003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);

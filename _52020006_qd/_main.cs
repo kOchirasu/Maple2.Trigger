@@ -339,7 +339,7 @@ namespace Maple2.Trigger._52020006_qd {
             internal State세리하와아르망_연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003548, illustID: "Seriha_normal", msg: "연출 보강 예정", duration: 3000);
             }
 
@@ -357,7 +357,7 @@ namespace Maple2.Trigger._52020006_qd {
             internal State세리하와아르망_연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003658, illustID: "Armand_normal", msg: "조금만 기다려 주세요",
                     duration: 3000);
                 context.VisibleMyPc(isVisible: true);
@@ -377,7 +377,7 @@ namespace Maple2.Trigger._52020006_qd {
             internal State세리하와아르망_연출03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003548, illustID: "Seriha_normal", msg: "죄송합니다", duration: 3000);
             }
 
@@ -518,7 +518,7 @@ namespace Maple2.Trigger._52020006_qd {
             internal State세리하와함께전투_연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003548, illustID: "Seriha_normal", msg: "그럼 누가 먼저 저것들을 쓸어버리나 내기하자고.",
                     duration: 3000);
             }
@@ -537,7 +537,7 @@ namespace Maple2.Trigger._52020006_qd {
             internal State세리하와함께전투_연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
                 context.AddCinematicTalk(npcID: 0, msg: "임시연출이라 몬스터가 허약할 거야.", duration: 3000);
             }
 
@@ -557,7 +557,7 @@ namespace Maple2.Trigger._52020006_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new int[] {101});
                 context.CreateMonster(arg1: new int[] {111}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8010}, arg2: false);
                 context.AddCinematicTalk(npcID: 29000335, illustID: "Seriha_normal", msg: "간다!", duration: 3000);
                 context.SetSceneSkip();
             }
@@ -631,7 +631,7 @@ namespace Maple2.Trigger._52020006_qd {
             internal State전투끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8040}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8040}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
             }
@@ -688,7 +688,7 @@ namespace Maple2.Trigger._52020006_qd {
                 context.DestroyMonster(arg1: new int[] {111});
                 context.CreateMonster(arg1: new int[] {110}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {8020}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8020}, arg2: false);
                 context.SetSceneSkip(arg1: "전투후제이든등장_스킵완료", arg2: "exit");
             }
 

@@ -161,7 +161,7 @@ namespace Maple2.Trigger._52010055_qd {
                 });
                 context.VisibleMyPc(isVisible: true);
                 context.MoveUser(arg1: 52010055, arg2: 2);
-                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 2, arg2: "Talk_A");
                 context.AddCinematicTalk(npcID: 11003536, illustID: "Neirin_surprise",
                     msg: "$52010055_QD__52010055__3$", duration: 3000, align: "left");
@@ -358,7 +358,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new int[] {10002, 10003, 10004, 10005}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {4003, 4019}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003, 4019}, arg2: false);
                 context.VisibleMyPc(isVisible: true);
                 context.CameraReset(interpolationTime: 0f);
                 context.MoveUser(arg1: 52010055, arg2: 3);
@@ -708,7 +708,7 @@ namespace Maple2.Trigger._52010055_qd {
                 context.ChangeMonster(arg1: 2002, arg2: 2003);
                 context.SetNpcEmotionSequence(arg1: 2003, arg2: "Dead_01_A");
                 context.SetSceneSkip(arg1: "맵이동", arg2: "nextState");
-                context.CameraSelectPath(arg1: new int[] {4007, 4008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4007, 4008}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
                 context.SetNpcEmotionSequence(arg1: 13,
                     arg2: "Attack_Idle_A,Attack_Idle_A,Attack_Idle_A,Attack_Idle_A");
@@ -740,7 +740,7 @@ namespace Maple2.Trigger._52010055_qd {
                 context.SetNpcEmotionSequence(arg1: 15, arg2: "Attack_Idle_A");
                 context.AddCinematicTalk(npcID: 11003584, illustID: "Schatten_normal",
                     msg: "$52010055_QD__52010055__24$", duration: 3000, align: "Reft");
-                context.CameraSelectPath(arg1: new int[] {4009, 4010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4009, 4010}, arg2: false);
                 context.CameraSelect(arg1: 4010, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 15, arg2: "Attack_Idle_A,Attack_01_A");
             }
@@ -762,7 +762,7 @@ namespace Maple2.Trigger._52010055_qd {
                 context.AddCinematicTalk(npcID: 11003586, illustID: "Mason_closeEye",
                     msg: "$52010055_QD__52010055__25$", duration: 1500, align: "Reft");
                 context.CameraSelect(arg1: 4014, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {4014, 4015}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4014, 4015}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 13, arg2: "Attack_Idle_A");
                 context.SetNpcEmotionSequence(arg1: 14, arg2: "Attack_Idle_A,Attack_01_A");
             }
@@ -785,7 +785,7 @@ namespace Maple2.Trigger._52010055_qd {
                 context.SetEffect(arg1: new int[] {501}, arg2: true);
                 context.AddCinematicTalk(npcID: 11003776, illustID: "Conder_normal", msg: "$52010055_QD__52010055__26$",
                     duration: 3000, align: "Reft");
-                context.CameraSelectPath(arg1: new int[] {4016, 4017}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4016, 4017}, arg2: false);
                 context.MoveNpc(arg1: 13, arg2: "PatrolDataCondorAttack1");
             }
 

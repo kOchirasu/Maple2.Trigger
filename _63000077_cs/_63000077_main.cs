@@ -189,7 +189,7 @@ namespace Maple2.Trigger._63000077_cs {
             internal State보보스의오해_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -224,7 +224,7 @@ namespace Maple2.Trigger._63000077_cs {
             internal State보보스의오해_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
             }
 
             public override void Execute() {
@@ -530,7 +530,7 @@ namespace Maple2.Trigger._63000077_cs {
             internal State보보스의오해_21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8007}, arg2: false);
             }
 
             public override void Execute() {
@@ -936,7 +936,7 @@ namespace Maple2.Trigger._63000077_cs {
             internal State다시만난가족_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8009}, arg2: false);
             }
 
             public override void Execute() {
@@ -1224,7 +1224,7 @@ namespace Maple2.Trigger._63000077_cs {
             internal State다시만난가족_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8013}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8013}, arg2: false);
             }
 
             public override void Execute() {

@@ -180,7 +180,7 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
             }
 
             public override void Execute() {
@@ -216,7 +216,7 @@ namespace Maple2.Trigger._02000026_in {
             internal State아노스이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_01");
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__1$", arg4: 3, arg5: 0);
             }
@@ -307,7 +307,7 @@ namespace Maple2.Trigger._02000026_in {
             internal State카메라이동_라딘01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.DestroyMonster(arg1: new int[] {101});
                 context.CreateMonster(arg1: new int[] {102}, arg2: false);
             }
@@ -363,7 +363,7 @@ namespace Maple2.Trigger._02000026_in {
             internal State아노스대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 4000f);
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__5$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "아노스대사02_skip");
@@ -438,7 +438,7 @@ namespace Maple2.Trigger._02000026_in {
             internal State카메라이동_아노스01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
             }
 
             public override void Execute() {
@@ -529,7 +529,7 @@ namespace Maple2.Trigger._02000026_in {
             internal State라딘대사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 4000f);
                 context.SetConversation(arg1: 2, arg2: 11000264, arg3: "$02000026_IN__MAIN__9$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "라딘대사03_skip");
@@ -584,7 +584,7 @@ namespace Maple2.Trigger._02000026_in {
             internal State아노스대사05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 3000f);
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__10$", arg4: 3, arg5: 0);
                 context.SetSkip(arg1: "아노스대사05_skip");

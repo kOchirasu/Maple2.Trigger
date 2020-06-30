@@ -236,7 +236,7 @@ namespace Maple2.Trigger._52000044_qd {
             internal State1차전투시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25200441, textID: 25200441, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 25200441, textID: 25200441, duration: 4000);
             }
 
             public override void Execute() {

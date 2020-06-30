@@ -30,7 +30,7 @@ namespace Maple2.Trigger._52000143_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.AddBuff(arg1: new int[] {701}, arg2: 70000124, arg3: 1, arg4: false, arg5: false);
             }
 
@@ -283,7 +283,7 @@ namespace Maple2.Trigger._52000143_qd {
                 context.AddCinematicTalk(npcID: 11003404, msg: "$52000143_QD__52000143_MAIN__9$", duration: 2500,
                     align: "center");
                 context.MoveUser(arg1: 52000143, arg2: 99);
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._52000143_qd {
             internal State3자대화_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002, 8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002, 8003}, arg2: false);
             }
 
             public override void Execute() {
@@ -493,7 +493,7 @@ namespace Maple2.Trigger._52000143_qd {
             internal State3자대화_10_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005}, arg2: false);
             }
 
             public override void Execute() {
@@ -529,7 +529,7 @@ namespace Maple2.Trigger._52000143_qd {
             internal State3자대화_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_2005");
             }
 

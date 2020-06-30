@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000177_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20001772, textID: 20001772, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20001772, textID: 20001772, duration: 5000);
             }
 
             public override void Execute() {
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._02000177_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20001772, textID: 20001772, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20001772, textID: 20001772, duration: 5000);
                 context.CreateMonster(arg1: new int[] {998}, arg2: false);
             }
 
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._02000177_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20001772, textID: 20001772, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20001772, textID: 20001772, duration: 5000);
                 context.CreateMonster(arg1: new int[] {997}, arg2: false);
             }
 

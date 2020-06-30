@@ -180,7 +180,7 @@ namespace Maple2.Trigger._52000005_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetTimer(arg1: "21", arg2: 3);
-                context.CameraSelectPath(arg1: new int[] {601, 602}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {601, 602}, arg2: false);
             }
 
             public override void Execute() {

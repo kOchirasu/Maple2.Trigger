@@ -136,7 +136,7 @@ namespace Maple2.Trigger._52000142_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
             }
 
             public override void Execute() {
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._52000142_qd {
             internal State구보훈련_01_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003, 8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003, 8005}, arg2: false);
             }
 
             public override void Execute() {
@@ -187,7 +187,7 @@ namespace Maple2.Trigger._52000142_qd {
             internal State구보훈련_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_2001");
             }
 
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._52000142_qd {
             internal State구보훈련_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8007}, arg2: false);
                 context.AddCinematicTalk(npcID: 0, msg: "$52000142_QD__52000142_MAIN__0$", duration: 3500,
                     align: "right");
             }
@@ -849,7 +849,7 @@ namespace Maple2.Trigger._52000142_qd {
             internal State벌칙_04_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -1174,7 +1174,7 @@ namespace Maple2.Trigger._52000142_qd {
             internal State란스구하기_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 8000f);
             }
 
@@ -1250,7 +1250,7 @@ namespace Maple2.Trigger._52000142_qd {
             internal State란스구하기_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -1321,7 +1321,7 @@ namespace Maple2.Trigger._52000142_qd {
             internal State란스구하기_10_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8006}, arg2: false);
             }
 
             public override void Execute() {

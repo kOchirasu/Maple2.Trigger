@@ -73,7 +73,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal Statewaitng(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.MoveUser(arg1: 52000037, arg2: 1);
                 context.CreateMonster(arg1: new int[] {604}, arg2: true);
                 context.CreateMonster(arg1: new int[] {602}, arg2: true);
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {4001, 4002, 4003, 4004, 4005, 4006, 4007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001, 4002, 4003, 4004, 4005, 4006, 4007}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_2101");
             }
 
@@ -275,7 +275,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal Statescene_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4008}, arg2: false);
                 context.SetOnetimeEffect(id: 3, enable: true,
                     path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
@@ -294,7 +294,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal Statescene_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4009}, arg2: false);
                 context.SetOnetimeEffect(id: 4, enable: true,
                     path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
@@ -313,7 +313,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal Statescene_12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4008}, arg2: false);
                 context.SetOnetimeEffect(id: 5, enable: true,
                     path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
@@ -332,7 +332,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal Statescene_13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4009}, arg2: false);
                 context.SetOnetimeEffect(id: 6, enable: true,
                     path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
@@ -351,7 +351,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal Statescene_14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4010}, arg2: false);
             }
 
             public override void Execute() {

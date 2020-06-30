@@ -154,7 +154,7 @@ namespace Maple2.Trigger._02010054_bf {
                 context.SetSkip();
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20105407, textID: 20105407, durationTime: 3500);
+                context.ShowGuideSummary(entityID: 20105407, textID: 20105407, duration: 3500);
                 context.SetEffect(arg1: new int[] {600}, arg2: false);
                 context.SetEffect(arg1: new int[] {601}, arg2: false);
                 context.SetEffect(arg1: new int[] {602}, arg2: false);

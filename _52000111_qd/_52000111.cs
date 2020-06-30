@@ -157,7 +157,7 @@ namespace Maple2.Trigger._52000111_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
-                context.CameraSelectPath(arg1: new int[] {1000, 1001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1000, 1001}, arg2: false);
             }
 
             public override void Execute() {
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._52000111_qd {
             internal State커닝시티전경씬01_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: false);
             }
 
             public override void Execute() {
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._52000111_qd {
             internal State커닝시티전경씬02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1004, 1005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1004, 1005}, arg2: false);
             }
 
             public override void Execute() {
@@ -320,7 +320,7 @@ namespace Maple2.Trigger._52000111_qd {
                 context.SetEffect(arg1: new int[] {5315}, arg2: true);
                 context.AddBalloonTalk(spawnPointID: 0, msg: "$52000111_QD__52000111__2$", duration: 6000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 25201111, textID: 25201111, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 25201111, textID: 25201111, duration: 10000);
             }
 
             public override void Execute() {
@@ -364,7 +364,7 @@ namespace Maple2.Trigger._52000111_qd {
                 context.AddBalloonTalk(spawnPointID: 0, msg: "$52000111_QD__52000111__3$", duration: 6000,
                     delayTick: 1000);
                 context.SetPcEmotionLoop(arg1: "Assassin_Bore_A", arg2: 25000f);
-                context.CameraSelectPath(arg1: new int[] {1006, 1007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1006, 1007}, arg2: false);
                 context.MoveUser(arg1: 52000111, arg2: 10);
                 context.SetEffect(arg1: new int[] {5300}, arg2: false);
                 context.SetEffect(arg1: new int[] {5301}, arg2: false);
@@ -401,7 +401,7 @@ namespace Maple2.Trigger._52000111_qd {
                 context.SetPcEmotionSequence(arg1: "Assassin_Bore_A");
                 context.AddBalloonTalk(spawnPointID: 0, msg: "$52000111_QD__52000111__4$", duration: 6000,
                     delayTick: 1000);
-                context.CameraSelectPath(arg1: new int[] {1012, 1013}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1012, 1013}, arg2: false);
             }
 
             public override void Execute() {
@@ -428,7 +428,7 @@ namespace Maple2.Trigger._52000111_qd {
                 context.SetEffect(arg1: new int[] {8007}, arg2: true);
                 context.SetEffect(arg1: new int[] {8008}, arg2: true);
                 context.SetEffect(arg1: new int[] {8009}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {1014, 1015}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1014, 1015}, arg2: false);
                 context.SpawnNpcRange(rangeID: new int[] {202, 203, 204, 205, 206, 207, 208, 209, 210, 211},
                     isAutoTargeting: false);
             }
@@ -449,7 +449,7 @@ namespace Maple2.Trigger._52000111_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {8010}, arg2: true);
                 context.CreateMonster(arg1: new int[] {200}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {1016, 1017}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1016, 1017}, arg2: false);
             }
 
             public override void Execute() {
@@ -467,7 +467,7 @@ namespace Maple2.Trigger._52000111_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 200, arg2: "Sit_Down_A", arg3: 4000f);
-                context.CameraSelectPath(arg1: new int[] {1018, 1019}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1018, 1019}, arg2: false);
             }
 
             public override void Execute() {
@@ -485,7 +485,7 @@ namespace Maple2.Trigger._52000111_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 200, arg2: "Bore_A");
-                context.CameraSelectPath(arg1: new int[] {1020, 1021}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1020, 1021}, arg2: false);
             }
 
             public override void Execute() {
@@ -502,7 +502,7 @@ namespace Maple2.Trigger._52000111_qd {
             internal State쉐도우클로등장씬11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1022, 1023}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1022, 1023}, arg2: false);
                 context.ShowCaption(type: "NameCaption", title: "$52000111_QD__52000111__5$",
                     desc: "$52000111_QD__52000111__6$", align: "center", offsetRateX: -0.15f, offsetRateY: 0.15f,
                     duration: 10000, scale: 2.0f);
@@ -612,7 +612,7 @@ namespace Maple2.Trigger._52000111_qd {
                 context.SetEffect(arg1: new int[] {5314}, arg2: false);
                 context.DestroyMonster(arg1: new int[] {200});
                 context.CreateMonster(arg1: new int[] {201}, arg2: false);
-                context.ShowGuideSummary(entityID: 25201112, textID: 25201112, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 25201112, textID: 25201112, duration: 10000);
             }
 
             public override void Execute() {
@@ -631,7 +631,7 @@ namespace Maple2.Trigger._52000111_qd {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
-                context.ShowGuideSummary(entityID: 25201113, textID: 25201113, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 25201113, textID: 25201113, duration: 5000);
             }
 
             public override void Execute() { }
@@ -668,7 +668,7 @@ namespace Maple2.Trigger._52000111_qd {
                 context.SetSceneSkip(arg1: "Skip_3", arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {1008, 1009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1008, 1009}, arg2: false);
                 context.SetPcEmotionLoop(arg1: "Push_A", arg2: 8000f);
                 context.FaceEmotion(spawnPointID: 0, emotionName: "PC_Pain_86000");
                 context.SetNpcEmotionLoop(arg1: 300, arg2: "Sit_Down_A", arg3: 17500f);
@@ -691,7 +691,7 @@ namespace Maple2.Trigger._52000111_qd {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_GO");
-                context.CameraSelectPath(arg1: new int[] {1010, 1011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1010, 1011}, arg2: false);
             }
 
             public override void Execute() {
@@ -751,7 +751,7 @@ namespace Maple2.Trigger._52000111_qd {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.AddBalloonTalk(spawnPointID: 0, msg: "$52000111_QD__52000111__7$", duration: 6000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 25201114, textID: 25201114, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 25201114, textID: 25201114, duration: 10000);
             }
 
             public override void Execute() {

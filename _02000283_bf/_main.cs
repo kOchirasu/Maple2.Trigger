@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000283_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new int[] {2001}, arg2: false);
-                context.ShowGuideSummary(entityID: 20002818, textID: 20002818, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20002818, textID: 20002818, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetRandomMesh(
                     arg1: new int[] {

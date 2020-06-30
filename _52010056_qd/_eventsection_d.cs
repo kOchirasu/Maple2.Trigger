@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52010056_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
             }
 
             public override void Execute() {
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52010056_qd {
             internal State크림슨스피어_출동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4007}, arg2: false);
             }
 
             public override void Execute() {

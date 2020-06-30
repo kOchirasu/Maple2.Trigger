@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02000401_bf {
                 context.SetSkip();
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.ShowGuideSummary(entityID: 20040104, textID: 20040104, durationTime: 2500);
+                context.ShowGuideSummary(entityID: 20040104, textID: 20040104, duration: 2500);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
                 context.SetProductionUI(arg1: 0);
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._02000401_bf {
             internal State보스소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20040107, textID: 20040107, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20040107, textID: 20040107, duration: 3000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.CreateMonster(arg1: new int[] {2099}, arg2: false);
                 context.SetUserValue(triggerID: 99999100, key: "bossSpawn", value: 1);

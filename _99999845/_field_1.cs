@@ -46,9 +46,9 @@ namespace Maple2.Trigger._99999845 {
                 if (context.MonsterDead(arg1: new int[] {1104})) {
                     context.SetVisibleBreakableObject(arg1: new int[] {1004}, arg2: true);
                     context.SetInteractObject(arg1: new int[] {12000304}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1107}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1108}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1109}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1107}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1108}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1109}, arg2: false);
                     context.State = new StateCableOn_04(context);
                     return;
                 }
@@ -66,9 +66,9 @@ namespace Maple2.Trigger._99999845 {
                 if (context.MonsterDead(arg1: new int[] {1105})) {
                     context.SetVisibleBreakableObject(arg1: new int[] {1005}, arg2: true);
                     context.SetInteractObject(arg1: new int[] {12000305}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1107}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1108}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1109}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1107}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1108}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1109}, arg2: false);
                     context.State = new StateCableOn_05(context);
                     return;
                 }
@@ -86,9 +86,9 @@ namespace Maple2.Trigger._99999845 {
                 if (context.MonsterDead(arg1: new int[] {1106})) {
                     context.SetVisibleBreakableObject(arg1: new int[] {1006}, arg2: true);
                     context.SetInteractObject(arg1: new int[] {12000306}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1107}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1108}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1109}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1107}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1108}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1109}, arg2: false);
                     context.State = new StateCableOn_06(context);
                     return;
                 }

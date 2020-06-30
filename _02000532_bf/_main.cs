@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000532_bf {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "목표", arg2: "nextState");
-                context.CameraSelectPath(arg1: new int[] {604, 603}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {604, 603}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.ShowCaption(type: "VerticalCaption", title: "$02000532_BF__MAIN__0$",
                     desc: "$02000532_BF__MAIN__1$", align: "centerRight", offsetRateX: 0f, offsetRateY: 0f,
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._02000532_bf {
             internal State통신을받은제이부하(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {602}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {602}, arg2: false);
             }
 
             public override void Execute() {

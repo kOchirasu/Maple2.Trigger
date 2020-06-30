@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02000356_bf {
                         {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013},
                     arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.AddBuff(arg1: new int[] {102}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
-                context.ShowGuideSummary(entityID: 20003563, textID: 20003563, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20003563, textID: 20003563, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.CameraSelect(arg1: 303, arg2: true);
             }
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02000356_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 305, arg2: true);
-                context.ShowGuideSummary(entityID: 20003562, textID: 20003562, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20003562, textID: 20003562, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._02000356_bf {
                 context.CreateMonster(arg1: new int[] {1099});
                 context.CameraSelect(arg1: 306, arg2: true);
                 context.AddBuff(arg1: new int[] {102}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
-                context.ShowGuideSummary(entityID: 20003561, textID: 20003561, durationTime: 6000);
+                context.ShowGuideSummary(entityID: 20003561, textID: 20003561, duration: 6000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 

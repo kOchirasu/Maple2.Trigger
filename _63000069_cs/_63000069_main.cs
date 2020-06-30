@@ -134,7 +134,7 @@ namespace Maple2.Trigger._63000069_cs {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(arg1: "sceneskip", arg2: "exit");
-                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: false);
             }
 
             public override void Execute() {
@@ -225,7 +225,7 @@ namespace Maple2.Trigger._63000069_cs {
             internal Statescene1_girlrealize0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004308, msg: "$63000069_CS__63000069_MAIN__3$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 150, arg2: "Damg_A", arg3: 100f);
             }
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._63000069_cs {
             internal Statescene1_girlrealize1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004308, msg: "$63000069_CS__63000069_MAIN__4$", duration: 4000);
                 context.MoveUser(arg1: 63000069, arg2: 10);
                 context.MoveNpc(arg1: 150, arg2: "MS2PatrolData_51_marienne1");
@@ -282,7 +282,7 @@ namespace Maple2.Trigger._63000069_cs {
             internal Statescene1_girlmonologue5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004308, msg: "$63000069_CS__63000069_MAIN__6$", duration: 3500);
                 context.SetEffect(arg1: new int[] {602}, arg2: true);
             }

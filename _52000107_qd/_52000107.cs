@@ -94,7 +94,7 @@ namespace Maple2.Trigger._52000107_qd {
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {1000, 1001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1000, 1001}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._52000107_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {1002, 1003, 1004, 1005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1002, 1003, 1004, 1005}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -255,7 +255,7 @@ namespace Maple2.Trigger._52000107_qd {
                 context.SetEffect(arg1: new int[] {5326}, arg2: true);
                 context.AddBalloonTalk(spawnPointID: 0, msg: "$52000107_QD__52000107__2$", duration: 6000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 25201071, textID: 25201071, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 25201071, textID: 25201071, duration: 10000);
             }
 
             public override void Execute() {
@@ -296,7 +296,7 @@ namespace Maple2.Trigger._52000107_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveNpc(arg1: 2000, arg2: "MS2PatrolData_Ayesha_go");
-                context.CameraSelectPath(arg1: new int[] {1006, 1007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1006, 1007}, arg2: false);
             }
 
             public override void Execute() {
@@ -401,7 +401,7 @@ namespace Maple2.Trigger._52000107_qd {
                 context.SetEffect(arg1: new int[] {5325}, arg2: false);
                 context.SetEffect(arg1: new int[] {5326}, arg2: false);
                 context.FaceEmotion(spawnPointID: 200);
-                context.ShowGuideSummary(entityID: 25201071, textID: 25201071, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 25201071, textID: 25201071, duration: 10000);
             }
 
             public override void Execute() {
@@ -424,7 +424,7 @@ namespace Maple2.Trigger._52000107_qd {
                 context.SetOnetimeEffect(id: 3000971, enable: true,
                     path: @"BG/Common/Sound/Eff_Ayesha_IntroMovie_03000971.xml");
                 context.MoveNpc(arg1: 2000, arg2: "MS2PatrolData_Ayesga_out");
-                context.ShowGuideSummary(entityID: 25201072, textID: 25201072, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 25201072, textID: 25201072, duration: 5000);
             }
 
             public override void Execute() {

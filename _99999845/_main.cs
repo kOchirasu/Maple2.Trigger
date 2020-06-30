@@ -72,13 +72,13 @@ namespace Maple2.Trigger._99999845 {
             internal StateLineStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1101}, agr2: false);
-                context.CreateMonster(arg1: new int[] {1102}, agr2: false);
-                context.CreateMonster(arg1: new int[] {1103}, agr2: false);
+                context.CreateMonster(arg1: new int[] {1101}, arg2: false);
+                context.CreateMonster(arg1: new int[] {1102}, arg2: false);
+                context.CreateMonster(arg1: new int[] {1103}, arg2: false);
                 context.CreateMonster(arg1: new int[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010},
-                    agr2: false);
+                    arg2: false);
                 context.CreateMonster(arg1: new int[] {1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020},
-                    agr2: false);
+                    arg2: false);
             }
 
             public override void Execute() {
@@ -107,9 +107,9 @@ namespace Maple2.Trigger._99999845 {
                     context.SetInteractObject(arg1: new int[] {12000301}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000302}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000303}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1104}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1105}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1106}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1104}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1105}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1106}, arg2: false);
                     context.State = new StateCableOn_01(context);
                     return;
                 }

@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52010033_qd {
                 context.SetSceneSkip(arg1: "나메드들어옴02", arg2: "exit");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003420, msg: "$52010033_QD__MAIN_QUEST10003078__0$", duration: 4000);
                 context.AddCinematicTalk(npcID: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__1$", duration: 3000);
                 context.AddCinematicTalk(npcID: 11003420, msg: "$52010033_QD__MAIN_QUEST10003078__2$", duration: 2000);
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._52010033_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CreateMonster(arg1: new int[] {201}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {4002, 4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002, 4001}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.ShowCaption(type: "VerticalCaption", title: "$52010033_QD__MAIN_QUEST10003078__3$",
                     desc: "$52010033_QD__MAIN_QUEST10003078__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f,

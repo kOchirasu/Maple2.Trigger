@@ -78,7 +78,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() {
                 context.SetCube(IDs: new int[] {5000, 5001, 5002, 5003}, randomCount: 4, isVisible: "true");
-                context.ShowGuideSummary(entityID: 25100101, textID: 25100101, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 25100101, textID: 25100101, duration: 3000);
             }
 
             public override void Execute() {
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._51000001_dg {
             internal State튜토리얼02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100102, textID: 25100102, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 25100102, textID: 25100102, duration: 3000);
             }
 
             public override void Execute() {
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._51000001_dg {
             internal State튜토리얼03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100103, textID: 25100103, durationTime: 2500);
+                context.ShowGuideSummary(entityID: 25100103, textID: 25100103, duration: 2500);
             }
 
             public override void Execute() {
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._51000001_dg {
             internal State튜토리얼04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100104, textID: 25100104, durationTime: 2500);
+                context.ShowGuideSummary(entityID: 25100104, textID: 25100104, duration: 2500);
             }
 
             public override void Execute() {

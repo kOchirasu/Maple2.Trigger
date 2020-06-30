@@ -69,7 +69,7 @@ namespace Maple2.Trigger._02000483_bf {
             public override void OnEnter() {
                 context.SetUserValue(triggerID: 5, key: "MobWave", value: 1);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039704, textID: 20039704, durationTime: 2000);
+                context.ShowGuideSummary(entityID: 20039704, textID: 20039704, duration: 2000);
             }
 
             public override void Execute() {

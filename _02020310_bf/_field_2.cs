@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: "9001")) {
-                    context.CreateMonster(arg1: new int[] {2001}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {2001}, arg2: false);
                     context.State = new StateArriveBlock_Delay_1(context);
                     return;
                 }
@@ -70,22 +70,22 @@ namespace Maple2.Trigger._02020310_bf {
 
                 if (context.MonsterDead(arg1: new int[] {1107, 1203, 1204, 1213, 1214, 1215, 1216, 1217, 1218})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.DestroyMonster(arg1: new int[] {1000001}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {1000002}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {1000001}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {1000002}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(arg1: new int[] {12000307}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000308}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1110}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1111}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1112}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1113}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1110}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1111}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1112}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1113}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1331, 1332}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1331, 1332}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 103, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 106, isEnable: true);
                     context.State = new StateCableOn_07_08(context);
@@ -103,29 +103,29 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5167)) {
-                    context.CreateMonster(arg1: new int[] {1000001}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1000001}, arg2: false);
                     context.State = new StateBlock_1_02(context);
                     return;
                 }
 
                 if (context.MonsterDead(arg1: new int[] {1107, 1203, 1204, 1213, 1214, 1215, 1216, 1217, 1218})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.DestroyMonster(arg1: new int[] {1000001}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {1000002}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {1000001}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {1000002}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(arg1: new int[] {12000307}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000308}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1110}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1111}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1112}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1113}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1110}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1111}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1112}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1113}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1331, 1332}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1331, 1332}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 103, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 106, isEnable: true);
                     context.State = new StateCableOn_07_08(context);
@@ -143,29 +143,29 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 4067)) {
-                    context.CreateMonster(arg1: new int[] {1000002}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1000002}, arg2: false);
                     context.State = new StateBlock_1(context);
                     return;
                 }
 
                 if (context.MonsterDead(arg1: new int[] {1107, 1203, 1204, 1213, 1214, 1215, 1216, 1217, 1218})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.DestroyMonster(arg1: new int[] {1000001}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {1000002}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {1000001}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {1000002}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(arg1: new int[] {12000307}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000308}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1110}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1111}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1112}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1113}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1110}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1111}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1112}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1113}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1331, 1332}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1331, 1332}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 103, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 106, isEnable: true);
                     context.State = new StateCableOn_07_08(context);
@@ -184,22 +184,22 @@ namespace Maple2.Trigger._02020310_bf {
             public override void Execute() {
                 if (context.MonsterDead(arg1: new int[] {1107, 1203, 1204, 1213, 1214, 1215, 1216, 1217, 1218})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.DestroyMonster(arg1: new int[] {1000001}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {1000002}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {1000001}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {1000002}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(arg1: new int[] {12000307}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000308}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1110}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1111}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1112}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1113}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1110}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1111}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1112}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1113}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1331, 1332}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1331, 1332}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 103, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 106, isEnable: true);
                     context.State = new StateCableOn_07_08(context);
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: "9002")) {
-                    context.CreateMonster(arg1: new int[] {2002}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {2002}, arg2: false);
                     context.State = new StateArriveBlock_Delay_2(context);
                     return;
                 }
@@ -241,22 +241,22 @@ namespace Maple2.Trigger._02020310_bf {
 
                 if (context.MonsterDead(arg1: new int[] {1108, 1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.DestroyMonster(arg1: new int[] {1000003}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {1000004}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {1000003}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {1000004}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(arg1: new int[] {12000309}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000310}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1110}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1111}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1112}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1113}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1110}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1111}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1112}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1113}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1331, 1332}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1331, 1332}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 104, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 107, isEnable: true);
                     context.State = new StateCableOn_09_10(context);
@@ -274,29 +274,29 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5167)) {
-                    context.CreateMonster(arg1: new int[] {1000003}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1000003}, arg2: false);
                     context.State = new StateBlock_2_02(context);
                     return;
                 }
 
                 if (context.MonsterDead(arg1: new int[] {1108, 1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.DestroyMonster(arg1: new int[] {1000003}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {1000004}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {1000003}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {1000004}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(arg1: new int[] {12000309}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000310}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1110}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1111}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1112}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1113}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1110}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1111}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1112}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1113}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1331, 1332}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1331, 1332}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 104, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 107, isEnable: true);
                     context.State = new StateCableOn_09_10(context);
@@ -314,29 +314,29 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 4067)) {
-                    context.CreateMonster(arg1: new int[] {1000004}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1000004}, arg2: false);
                     context.State = new StateBlock_2(context);
                     return;
                 }
 
                 if (context.MonsterDead(arg1: new int[] {1108, 1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.DestroyMonster(arg1: new int[] {1000003}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {1000004}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {1000003}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {1000004}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(arg1: new int[] {12000309}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000310}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1110}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1111}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1112}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1113}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1110}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1111}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1112}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1113}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1331, 1332}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1331, 1332}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 104, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 107, isEnable: true);
                     context.State = new StateCableOn_09_10(context);
@@ -355,22 +355,22 @@ namespace Maple2.Trigger._02020310_bf {
             public override void Execute() {
                 if (context.MonsterDead(arg1: new int[] {1108, 1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.DestroyMonster(arg1: new int[] {1000003}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {1000004}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {1000003}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {1000004}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(arg1: new int[] {12000309}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000310}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1110}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1111}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1112}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1113}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1110}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1111}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1112}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1113}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1331, 1332}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1331, 1332}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 104, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 107, isEnable: true);
                     context.State = new StateCableOn_09_10(context);
@@ -388,7 +388,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: "9003")) {
-                    context.CreateMonster(arg1: new int[] {2003}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {2003}, arg2: false);
                     context.State = new StateArriveBlock_Delay_3(context);
                     return;
                 }
@@ -412,22 +412,22 @@ namespace Maple2.Trigger._02020310_bf {
 
                 if (context.MonsterDead(arg1: new int[] {1109, 1201, 1202, 1219, 1220, 1221, 1222, 1223, 1224})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.DestroyMonster(arg1: new int[] {1000005}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {1000006}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {1000005}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {1000006}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(arg1: new int[] {12000311}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000312}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1110}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1111}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1112}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1113}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1110}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1111}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1112}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1113}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1331, 1332}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1331, 1332}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 105, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 108, isEnable: true);
                     context.State = new StateCableOn_11_12(context);
@@ -445,29 +445,29 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5167)) {
-                    context.CreateMonster(arg1: new int[] {1000005}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1000005}, arg2: false);
                     context.State = new StateBlock_3_02(context);
                     return;
                 }
 
                 if (context.MonsterDead(arg1: new int[] {1109, 1201, 1202, 1219, 1220, 1221, 1222, 1223, 1224})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.DestroyMonster(arg1: new int[] {1000005}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {1000006}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {1000005}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {1000006}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(arg1: new int[] {12000311}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000312}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1110}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1111}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1112}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1113}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1110}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1111}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1112}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1113}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1331, 1332}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1331, 1332}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 105, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 108, isEnable: true);
                     context.State = new StateCableOn_11_12(context);
@@ -485,29 +485,29 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 4067)) {
-                    context.CreateMonster(arg1: new int[] {1000006}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1000006}, arg2: false);
                     context.State = new StateBlock_3(context);
                     return;
                 }
 
                 if (context.MonsterDead(arg1: new int[] {1109, 1201, 1202, 1219, 1220, 1221, 1222, 1223, 1224})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.DestroyMonster(arg1: new int[] {1000005}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {1000006}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {1000005}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {1000006}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(arg1: new int[] {12000311}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000312}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1110}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1111}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1112}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1113}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1110}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1111}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1112}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1113}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1331, 1332}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1331, 1332}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 105, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 108, isEnable: true);
                     context.State = new StateCableOn_11_12(context);
@@ -526,22 +526,22 @@ namespace Maple2.Trigger._02020310_bf {
             public override void Execute() {
                 if (context.MonsterDead(arg1: new int[] {1109, 1201, 1202, 1219, 1220, 1221, 1222, 1223, 1224})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.DestroyMonster(arg1: new int[] {1000005}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {1000006}, agr2: false);
-                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {1000005}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {1000006}, arg2: false);
+                    context.DestroyMonster(arg1: new int[] {30001, 30002, 30003, 30004}, arg2: false);
                     context.SetInteractObject(arg1: new int[] {12000311}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000312}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1110}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1111}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1112}, agr2: false);
-                    context.CreateMonster(arg1: new int[] {1113}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {1110}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1111}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1112}, arg2: false);
+                    context.CreateMonster(arg1: new int[] {1113}, arg2: false);
                     context.CreateMonster(arg1: new int[] {1301, 1302, 1304, 1305, 1306, 1307, 1308, 1309, 1310},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1311, 1312, 1314, 1315, 1316, 1317, 1318, 1319, 1320},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(arg1: new int[] {1321, 1322, 1324, 1325, 1326, 1327, 1328, 1329, 1330},
-                        agr2: false);
-                    context.CreateMonster(arg1: new int[] {1331, 1332}, agr2: false);
+                        arg2: false);
+                    context.CreateMonster(arg1: new int[] {1331, 1332}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointID: 105, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 108, isEnable: true);
                     context.State = new StateCableOn_11_12(context);
@@ -561,7 +561,7 @@ namespace Maple2.Trigger._02020310_bf {
                 if (context.ObjectInteracted(arg1: new int[] {12000307}, arg2: 0)) {
                     context.SetInteractObject(arg1: new int[] {12000307}, arg2: 0);
                     context.SetInteractObject(arg1: new int[] {12000308}, arg2: 0);
-                    context.CreateMonster(arg1: new int[] {30005}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {30005}, arg2: false);
                     context.SetMesh(
                         arg1: new int[]
                             {1101001, 1101002, 1101003, 1101004, 1101005, 1101006, 1101007, 1101008, 1101009, 1101010},
@@ -573,7 +573,7 @@ namespace Maple2.Trigger._02020310_bf {
                 if (context.ObjectInteracted(arg1: new int[] {12000308}, arg2: 0)) {
                     context.SetInteractObject(arg1: new int[] {12000307}, arg2: 0);
                     context.SetInteractObject(arg1: new int[] {12000308}, arg2: 0);
-                    context.CreateMonster(arg1: new int[] {30006, 30007}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {30006, 30007}, arg2: false);
                     context.SetMesh(
                         arg1: new int[]
                             {1102001, 1102002, 1102003, 1102004, 1102005, 1102006, 1102007, 1102008, 1102009, 1102010},
@@ -595,7 +595,7 @@ namespace Maple2.Trigger._02020310_bf {
                 if (context.ObjectInteracted(arg1: new int[] {12000309}, arg2: 0)) {
                     context.SetInteractObject(arg1: new int[] {12000309}, arg2: 0);
                     context.SetInteractObject(arg1: new int[] {12000310}, arg2: 0);
-                    context.CreateMonster(arg1: new int[] {30008}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {30008}, arg2: false);
                     context.SetMesh(
                         arg1: new int[]
                             {1103001, 1103002, 1103003, 1103004, 1103005, 1103006, 1103007, 1103008, 1103009, 1103010},
@@ -607,7 +607,7 @@ namespace Maple2.Trigger._02020310_bf {
                 if (context.ObjectInteracted(arg1: new int[] {12000310}, arg2: 0)) {
                     context.SetInteractObject(arg1: new int[] {12000309}, arg2: 0);
                     context.SetInteractObject(arg1: new int[] {12000310}, arg2: 0);
-                    context.CreateMonster(arg1: new int[] {30009}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {30009}, arg2: false);
                     context.SetMesh(
                         arg1: new int[]
                             {1104001, 1104002, 1104003, 1104004, 1104005, 1104006, 1104007, 1104008, 1104009, 1104010},
@@ -629,7 +629,7 @@ namespace Maple2.Trigger._02020310_bf {
                 if (context.ObjectInteracted(arg1: new int[] {12000311}, arg2: 0)) {
                     context.SetInteractObject(arg1: new int[] {12000311}, arg2: 0);
                     context.SetInteractObject(arg1: new int[] {12000312}, arg2: 0);
-                    context.CreateMonster(arg1: new int[] {30010, 30011}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {30010, 30011}, arg2: false);
                     context.SetMesh(
                         arg1: new int[]
                             {1105001, 1105002, 1105003, 1105004, 1105005, 1105006, 1105007, 1105008, 1105009, 1105010},
@@ -641,7 +641,7 @@ namespace Maple2.Trigger._02020310_bf {
                 if (context.ObjectInteracted(arg1: new int[] {12000312}, arg2: 0)) {
                     context.SetInteractObject(arg1: new int[] {12000311}, arg2: 0);
                     context.SetInteractObject(arg1: new int[] {12000312}, arg2: 0);
-                    context.CreateMonster(arg1: new int[] {30012}, agr2: false);
+                    context.CreateMonster(arg1: new int[] {30012}, arg2: false);
                     context.SetMesh(
                         arg1: new int[]
                             {1106001, 1106002, 1106003, 1106004, 1106005, 1106006, 1106007, 1106008, 1106009, 1106010},

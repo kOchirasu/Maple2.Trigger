@@ -37,7 +37,7 @@ namespace Maple2.Trigger._51000006_dg {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "셋둘하나_스킵완료", arg2: "nextState");
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 1000f);
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._51000006_dg {
             internal State인트로00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3, arg2: "$51000006_DG__51000006_MAIN__0$");
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Walk_A", arg3: 2500);
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._51000006_dg {
             internal State인트로01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8005, 8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005, 8006}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3, arg2: "$51000006_DG__51000006_MAIN__1$");
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Event_Bore_A", arg3: 2900);
@@ -97,7 +97,7 @@ namespace Maple2.Trigger._51000006_dg {
             internal State인트로02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002, 8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002, 8001}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3, arg2: "$51000006_DG__51000006_MAIN__2$");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Event_Eat_A", arg3: 3000f);
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._51000006_dg {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.CameraSelectPath(arg1: new int[] {8003, 8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003, 8006}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3, arg2: "$51000006_DG__51000006_MAIN__3$");
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Attack_01_G", arg3: 3200);
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._51000006_dg {
             internal State게임시작_대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "BlackbeanThreeTwoOne_start");
                 context.WriteLog(arg1: "ThreeTwoOne_log", arg2: 9000, arg3: "char_event",
                     arg5: "BlackbeanThreeTwoOnegamestart");
@@ -220,7 +220,7 @@ namespace Maple2.Trigger._51000006_dg {
             internal State라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 1, textID: 26300736, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 1, textID: 26300736, duration: 3000);
                 context.ArcadeThreeTwoOne3(type: "StartRound", uiDuration: 4, round: true);
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_ArrowPopup_01");
             }

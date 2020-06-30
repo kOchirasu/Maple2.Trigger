@@ -452,8 +452,8 @@ namespace Maple2.Trigger._02010052_bf {
                         6681, 6682, 6683, 6684, 6685, 6686, 6687, 6688, 6689, 6690, 6691, 6692, 6693, 6694, 6695, 6696,
                         6697, 6698, 6699
                     }, arg2: false, arg3: 80, arg4: 10, arg5: 0f);
-                context.CameraSelectPath(arg1: new int[] {80004, 80005}, arg2: 1);
-                context.SetTimer(arg1: "6", arg2: 6, ara3: true, arg4: false);
+                context.CameraSelectPath(arg1: new int[] {80004, 80005}, arg2: true);
+                context.SetTimer(arg1: "6", arg2: 6, arg3: true, arg4: false);
                 context.CreateMonster(arg1: new int[] {998}, arg2: false);
                 context.MoveNpc(arg1: 998, arg2: "MS2PatrolData_1008");
             }
@@ -530,7 +530,7 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetEffect(arg1: new int[] {7998}, arg2: true);
                 context.MoveNpc(arg1: 9998, arg2: "MS2PatrolData_1009");
                 context.SetConversation(arg1: 2, arg2: 21800073, arg3: "$02010052_BF__BOSS__8$", arg4: 4);
-                context.SetTimer(arg1: "5", arg2: 5, ara3: true, arg4: false);
+                context.SetTimer(arg1: "5", arg2: 5, arg3: true, arg4: false);
             }
 
             public override void Execute() {

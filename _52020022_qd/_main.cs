@@ -243,7 +243,7 @@ namespace Maple2.Trigger._52020022_qd {
             internal State레지스탕스_준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._52020022_qd {
             internal State레지스탕스_체키01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003661, illustID: "Checky_normal", msg: "여기 뭐가 있긴 있는 거야?",
                     duration: 3000);
             }
@@ -299,7 +299,7 @@ namespace Maple2.Trigger._52020022_qd {
             internal State레지스탕스_헨리테01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003662, illustID: "henritte_normal",
                     msg: "여기 뭔가 있다는 소문도 사실은 거짓 정보 아니야?", duration: 3000);
             }
@@ -318,7 +318,7 @@ namespace Maple2.Trigger._52020022_qd {
             internal State레지스탕스_지그문트01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003663, illustID: "sigmund_normal",
                     msg: @"아니야. 연출이 있는 건 사실이지만 보강 예정이라고.\n1월 마감 이전에 업데이트한대.", duration: 4000);
             }
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._52020022_qd {
             internal State레지스탕스_이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8006}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_Goingout_Checky");
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_Goingout_Henritte");
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_Goingout_Sigmund");
@@ -524,7 +524,7 @@ namespace Maple2.Trigger._52020022_qd {
             internal State아르망_준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8010}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -560,7 +560,7 @@ namespace Maple2.Trigger._52020022_qd {
             internal State아르망_연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8010, 8011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8010, 8011}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Armand_comingout");
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_Surprised");
                 context.AddCinematicTalk(npcID: 11003672, illustID: "Armand_normal", msg: "연출 추가 예정입니다.",
@@ -646,7 +646,7 @@ namespace Maple2.Trigger._52020022_qd {
             internal State세리하_준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8014}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8014}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.VisibleMyPc(isVisible: false);
             }
@@ -683,7 +683,7 @@ namespace Maple2.Trigger._52020022_qd {
             internal State세리하_연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8021}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8021}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003660, illustID: "Seriha_normal", msg: "1월 중 연출 보강 예정",
                     duration: 4000);
             }
@@ -702,7 +702,7 @@ namespace Maple2.Trigger._52020022_qd {
             internal State세리하_연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8014}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8014}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003672, illustID: "Armand_normal", msg: "대사 위주 보강 예정",
                     duration: 4000);
                 context.VisibleMyPc(isVisible: true);

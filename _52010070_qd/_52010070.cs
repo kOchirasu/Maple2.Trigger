@@ -61,7 +61,7 @@ namespace Maple2.Trigger._52010070_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
                 context.SetProductionUI(arg1: 1);
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
                 context.MoveUser(arg1: 52010070, arg2: 6001);
             }
 
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._52010070_qd {
             internal State룬블즈_일어남_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 107, arg2: "Bore_A", arg3: 4000f);
                 context.SetNpcEmotionLoop(arg1: 109, arg2: "Attack_01_A", arg3: 4000f);
             }
@@ -191,13 +191,13 @@ namespace Maple2.Trigger._52010070_qd {
                 context.SetOnetimeEffect(id: 30, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
                 context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.CreateMonster(arg1: new int[] {104}, arg2: false);
                 context.CreateMonster(arg1: new int[] {105}, arg2: false);
                 context.CreateMonster(arg1: new int[] {106}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {101}, agr2: false);
-                context.DestroyMonster(arg1: new int[] {102}, agr2: false);
-                context.DestroyMonster(arg1: new int[] {103}, agr2: false);
+                context.DestroyMonster(arg1: new int[] {101}, arg2: false);
+                context.DestroyMonster(arg1: new int[] {102}, arg2: false);
+                context.DestroyMonster(arg1: new int[] {103}, arg2: false);
                 context.SetEffect(arg1: new int[] {5001}, arg2: false);
             }
 
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._52010070_qd {
             internal State룬블즈_일어남_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002}, arg2: false);
             }
 
             public override void Execute() {
@@ -308,7 +308,7 @@ namespace Maple2.Trigger._52010070_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new int[] {108}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {109}, agr2: false);
+                context.DestroyMonster(arg1: new int[] {109}, arg2: false);
             }
 
             public override void Execute() {
@@ -346,7 +346,7 @@ namespace Maple2.Trigger._52010070_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
             }
 
             public override void Execute() {

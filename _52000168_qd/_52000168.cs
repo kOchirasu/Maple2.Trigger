@@ -66,7 +66,7 @@ namespace Maple2.Trigger._52000168_qd {
                 context.SetNpcEmotionLoop(arg1: 404, arg2: "Dead_A", arg3: 800000f);
                 context.SetNpcEmotionLoop(arg1: 405, arg2: "Dead_A", arg3: 800000f);
                 context.SetNpcEmotionLoop(arg1: 406, arg2: "Dead_A", arg3: 800000f);
-                context.CameraSelectPath(arg1: new int[] {4000, 4001, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4000, 4001, 4003}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -145,7 +145,7 @@ namespace Maple2.Trigger._52000168_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.ShowGuideSummary(entityID: 52001681, textID: 52001681, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 52001681, textID: 52001681, duration: 10000);
             }
 
             public override void Execute() {

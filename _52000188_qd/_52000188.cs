@@ -73,7 +73,7 @@ namespace Maple2.Trigger._52000188_qd {
             internal State동굴도착_01_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3001");
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }

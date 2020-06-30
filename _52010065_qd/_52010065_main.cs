@@ -47,7 +47,7 @@ namespace Maple2.Trigger._52010065_qd {
             internal State준비_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.SetVisibleUI(uiName: "MessengerBrowser,GroupMessengerBrowser", visible: false);
                 context.AddBuff(arg1: new int[] {701}, arg2: 99910320, arg3: 1, arg4: false, arg5: true);
                 context.AddBuff(arg1: new int[] {701}, arg2: 99910320, arg3: 1, arg4: false, arg5: false);
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._52010065_qd {
             internal State검마등장_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._52010065_qd {
             internal State저멀리발록_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
                 context.SetSceneSkip(arg1: "스킵1_01", arg2: "nextState");
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -246,7 +246,7 @@ namespace Maple2.Trigger._52010065_qd {
             internal State다리끊기_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005}, arg2: false);
             }
 
             public override void Execute() {
@@ -399,7 +399,7 @@ namespace Maple2.Trigger._52010065_qd {
             internal State비웃는검마_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -592,7 +592,7 @@ namespace Maple2.Trigger._52010065_qd {
             internal State검마퇴장_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8006}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
                 context.DestroyMonster(arg1: new int[] {103});
                 context.CreateMonster(arg1: new int[] {106}, arg2: false);
@@ -650,7 +650,7 @@ namespace Maple2.Trigger._52010065_qd {
             internal State검마퇴장_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8006, 8007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8006, 8007}, arg2: false);
             }
 
             public override void Execute() {
@@ -667,7 +667,7 @@ namespace Maple2.Trigger._52010065_qd {
             internal State검마퇴장_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8007, 8008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8007, 8008}, arg2: false);
             }
 
             public override void Execute() {

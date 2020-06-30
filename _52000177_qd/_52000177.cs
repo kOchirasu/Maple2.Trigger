@@ -93,7 +93,7 @@ namespace Maple2.Trigger._52000177_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetPcEmotionLoop(arg1: "Sword_Attack_Idle_A", arg2: 10000f, arg3: true);
-                context.CameraSelectPath(arg1: new int[] {4000, 4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4000, 4001}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._52000177_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.ShowGuideSummary(entityID: 52001771, textID: 52001771, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 52001771, textID: 52001771, duration: 10000);
             }
 
             public override void Execute() {

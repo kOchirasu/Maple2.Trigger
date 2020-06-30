@@ -90,7 +90,7 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
             }
 
             public override void Execute() {
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8010}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003842, illustID: "Tristan_normal", msg: "$52010064_QD__main__0$",
                     duration: 3000, align: "right");
             }
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄대사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003842, illustID: "Tristan_normal", msg: "$52010064_QD__main__2$",
                     duration: 3000, align: "right");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Tristan_walking");
@@ -182,7 +182,7 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄대사05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003842, illustID: "Tristan_normal", msg: "$52010064_QD__main__4$",
                     duration: 3000, align: "right");
             }
@@ -219,7 +219,7 @@ namespace Maple2.Trigger._52010064_qd {
             internal State마무리줌아웃(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetSceneSkip();
             }

@@ -161,7 +161,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000007}, arg2: false);
             }
 
             public override void Execute() {
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State카메라연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {2000008}, arg2: false);
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 0);
                 context.DestroyMonster(arg1: new int[] {6000018});
@@ -271,7 +271,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 17, arg2: true, arg3: true, arg4: false);
-                context.CameraReset(arg1: "interpolationTime", arg2: 0.8f);
+                context.CameraReset(interpolationTime: 0.8f);
             }
 
             public override void Execute() {

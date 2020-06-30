@@ -62,7 +62,7 @@ namespace Maple2.Trigger._52000033_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {700}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {700}, arg2: false);
                 context.AddCinematicTalk(npcID: 11001663, illustID: "Ereb_normal",
                     msg: "$52000033_QD__AUDIENCEWITHEREB_03__0$", duration: 3000, delayTick: 0, align: "left");
             }
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {901}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {901}, arg2: false);
                 context.AddCinematicTalk(npcID: 11001663, msg: "$52000033_QD__AUDIENCEWITHEREB_03__1$", duration: 3000,
                     delayTick: 0, align: "left");
             }
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {601}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {601}, arg2: false);
             }
 
             public override void Execute() {

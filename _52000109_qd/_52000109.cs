@@ -74,7 +74,7 @@ namespace Maple2.Trigger._52000109_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {1000}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1000}, arg2: false);
                 context.SetOnetimeEffect(id: 40, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.AddBalloonTalk(spawnPointID: 0, msg: "$52000109_QD__52000109__2$", duration: 5000,
                     delayTick: 1000);
@@ -231,7 +231,7 @@ namespace Maple2.Trigger._52000109_qd {
             internal State에델슈타인전경씬10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1001}, arg2: false);
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_Isha");
                 context.MoveUserPath(arg1: "MS2PatrolData_PC");
             }
@@ -286,7 +286,7 @@ namespace Maple2.Trigger._52000109_qd {
             internal State에델슈타인전경씬13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: false);
                 context.AddBalloonTalk(spawnPointID: 0, msg: "$52000109_QD__52000109__13$", duration: 5000,
                     delayTick: 1000);
                 context.AddBalloonTalk(spawnPointID: 200, msg: "$52000109_QD__52000109__14$", duration: 6000,
@@ -348,7 +348,7 @@ namespace Maple2.Trigger._52000109_qd {
                 context.CameraReset(interpolationTime: 1.0f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.ShowGuideSummary(entityID: 25201091, textID: 25201091, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 25201091, textID: 25201091, duration: 5000);
             }
 
             public override void Execute() {
@@ -408,7 +408,7 @@ namespace Maple2.Trigger._52000109_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveNpc(arg1: 2002, arg2: "MS2PatrolData_radin");
-                context.CameraSelectPath(arg1: new int[] {1004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1004}, arg2: false);
             }
 
             public override void Execute() {

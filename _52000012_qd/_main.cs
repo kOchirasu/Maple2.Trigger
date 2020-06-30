@@ -145,7 +145,7 @@ namespace Maple2.Trigger._52000012_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetTimer(arg1: "8", arg2: 3);
-                context.CameraSelectPath(arg1: new int[] {901, 902}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {901, 902}, arg2: false);
             }
 
             public override void Execute() {
@@ -183,7 +183,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "14", arg2: 1);
-                context.CameraSelectPath(arg1: new int[] {906}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {906}, arg2: true);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._52000012_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetTimer(arg1: "13", arg2: 6);
-                context.CameraSelectPath(arg1: new int[] {904, 905}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {904, 905}, arg2: false);
                 context.CreateMonster(arg1: new int[] {301}, arg2: false);
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_301");
             }
@@ -355,7 +355,7 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "15", arg2: 4);
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000012_QD__MAIN__4$", arg4: 3);
-                context.CameraSelectPath(arg1: new int[] {905, 903}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {905, 903}, arg2: false);
             }
 
             public override void Execute() {

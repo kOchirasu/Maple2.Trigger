@@ -43,7 +43,7 @@ namespace Maple2.Trigger._52000201_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.MoveUser(arg1: 52000201, arg2: 5001);
             }
 
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._52000201_qd {
             internal StateCameraEffect04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002}, arg2: false);
             }
 
             public override void Execute() {

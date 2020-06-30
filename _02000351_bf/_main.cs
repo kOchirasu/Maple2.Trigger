@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000351_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetSkip(arg1: "Start");
-                context.CameraSelectPath(arg1: new int[] {80001, 80002}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {80001, 80002}, arg2: true);
             }
 
             public override void Execute() {
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._02000351_bf {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000351_BF__MAIN__0$", arg3: new int[] {3000});
-                context.CameraSelectPath(arg1: new int[] {80003}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {80003}, arg2: true);
                 context.SetMesh(arg1: new int[] {6900}, arg2: false, arg4: 0, arg5: 10f);
             }
 

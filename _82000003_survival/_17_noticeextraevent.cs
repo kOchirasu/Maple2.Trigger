@@ -25,7 +25,7 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateNoticeExtraEvent01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 28200000, textID: 28200000, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 28200000, textID: 28200000, duration: 3000);
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
             }
 
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateNoticeExtraEvent03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 28200001, textID: 28200001, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 28200001, textID: 28200001, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
             }
 

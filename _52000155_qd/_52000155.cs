@@ -57,11 +57,11 @@ namespace Maple2.Trigger._52000155_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {108}, agr2: false);
-                context.CreateMonster(arg1: new int[] {109}, agr2: false);
-                context.CreateMonster(arg1: new int[] {110}, agr2: false);
+                context.CreateMonster(arg1: new int[] {108}, arg2: false);
+                context.CreateMonster(arg1: new int[] {109}, arg2: false);
+                context.CreateMonster(arg1: new int[] {110}, arg2: false);
                 context.MoveUser(arg1: 52000155, arg2: 6001);
-                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: false);
             }
 
             public override void Execute() {
@@ -194,8 +194,8 @@ namespace Maple2.Trigger._52000155_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {105}, agr2: false);
-                context.CreateMonster(arg1: new int[] {106}, agr2: false);
+                context.CreateMonster(arg1: new int[] {105}, arg2: false);
+                context.CreateMonster(arg1: new int[] {106}, arg2: false);
                 context.DestroyMonster(arg1: new int[] {108});
                 context.DestroyMonster(arg1: new int[] {109});
                 context.SetNpcEmotionLoop(arg1: 105, arg2: "Down_Idle_A", arg3: 90000000f);
@@ -257,8 +257,8 @@ namespace Maple2.Trigger._52000155_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {5001, 5002}, arg2: true);
                 context.DestroyMonster(arg1: new int[] {110});
-                context.CreateMonster(arg1: new int[] {107}, agr2: false);
-                context.ShowGuideSummary(entityID: 25201551, textID: 25201551, durationTime: 10000);
+                context.CreateMonster(arg1: new int[] {107}, arg2: false);
+                context.ShowGuideSummary(entityID: 25201551, textID: 25201551, duration: 10000);
             }
 
             public override void Execute() {

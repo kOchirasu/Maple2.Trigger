@@ -298,7 +298,7 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CameraSelectPath(arg1: new int[] {302}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {302}, arg2: true);
                 context.DestroyMonster(arg1: new int[] {202});
                 context.DestroyMonster(arg1: new int[] {203});
                 context.DestroyMonster(arg1: new int[] {204});

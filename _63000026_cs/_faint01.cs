@@ -390,7 +390,7 @@ namespace Maple2.Trigger._63000026_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.CameraSelectPath(arg1: new int[] {700, 701}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {700, 701}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_102");
             }
 
@@ -600,7 +600,7 @@ namespace Maple2.Trigger._63000026_cs {
             public override void OnEnter() {
                 context.SetAgent(arg1: "8100", arg2: true);
                 context.SetAgent(arg1: "8101", arg2: true);
-                context.CameraSelectPath(arg1: new int[] {720, 721}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {720, 721}, arg2: true);
             }
 
             public override void Execute() {

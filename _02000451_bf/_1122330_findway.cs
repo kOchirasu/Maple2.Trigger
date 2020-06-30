@@ -221,7 +221,7 @@ namespace Maple2.Trigger._02000451_bf {
             internal StateGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20038101, textID: 20038101, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20038101, textID: 20038101, duration: 4000);
                 context.SetActor(arg1: 4000, arg2: false, arg3: "ic_fi_funct_icedoor_A01_on");
                 context.SetMesh(
                     arg1: new int[] {

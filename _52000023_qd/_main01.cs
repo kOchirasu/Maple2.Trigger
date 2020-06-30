@@ -136,7 +136,7 @@ namespace Maple2.Trigger._52000023_qd {
             internal State유저이동03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {601, 602}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {601, 602}, arg2: false);
             }
 
             public override void Execute() {

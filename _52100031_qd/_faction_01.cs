@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52100031_qd {
             internal State퀘스트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20040101, textID: 20040101, durationTime: 3500);
+                context.ShowGuideSummary(entityID: 20040101, textID: 20040101, duration: 3500);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetInteractObject(arg1: new int[] {10002067}, arg2: 1);
             }

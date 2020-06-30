@@ -106,7 +106,7 @@ namespace Maple2.Trigger._02020141_bf {
             internal State경고메시지출력(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 29200006, textID: 29200006, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 29200006, textID: 29200006, duration: 4000);
                 context.AddUserValue(key: "MessageAlarm", value: -11);
             }
 

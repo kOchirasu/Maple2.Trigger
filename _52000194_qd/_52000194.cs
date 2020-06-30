@@ -86,7 +86,7 @@ namespace Maple2.Trigger._52000194_qd {
             internal State시공의균열_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52000194_QD__52000194__0$",
                     desc: "$52000194_QD__52000194__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 5000, scale: 2.5f);

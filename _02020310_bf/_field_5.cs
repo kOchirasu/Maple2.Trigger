@@ -88,20 +88,20 @@ namespace Maple2.Trigger._02020310_bf {
                         additionalEffectID: 73000008);
                     context.CreateMonster(
                         arg1: new int[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(
                         arg1: new int[] {10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018, 10019, 10020},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(
-                        arg1: new int[] {10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029}, agr2: false);
+                        arg1: new int[] {10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029}, arg2: false);
                     context.CreateMonster(
                         arg1: new int[] {11001, 11002, 11003, 11004, 11005, 11006, 11007, 11008, 11009, 11010},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(
                         arg1: new int[] {11011, 11012, 11013, 11014, 11015, 11016, 11017, 11018, 11019, 11020},
-                        agr2: false);
+                        arg2: false);
                     context.CreateMonster(
-                        arg1: new int[] {11021, 11022, 11023, 11024, 11025, 11026, 11027, 11028, 11029}, agr2: false);
+                        arg1: new int[] {11021, 11022, 11023, 11024, 11025, 11026, 11027, 11028, 11029}, arg2: false);
                     context.State = new StateArcheon_Arrive(context);
                     return;
                 }

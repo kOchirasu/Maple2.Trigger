@@ -36,7 +36,7 @@ namespace Maple2.Trigger._02000099_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20000991, textID: 20000991, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20000991, textID: 20000991, duration: 5000);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(arg1: new int[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 2000}, arg2: false);
                 context.AddBuff(arg1: new int[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02000099_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20000992, textID: 20000992, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20000992, textID: 20000992, duration: 3000);
                 context.SetMesh(arg1: new int[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
             }
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._02000099_bf {
                 if (context.MonsterDead(arg1: new int[] {2000})) {
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                    context.ShowGuideSummary(entityID: 20000993, textID: 20000993, durationTime: 5000);
+                    context.ShowGuideSummary(entityID: 20000993, textID: 20000993, duration: 5000);
                     context.SetMesh(arg1: new int[] {3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311},
                         arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new State엘리트처치(context);
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._02000099_bf {
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                    context.ShowGuideSummary(entityID: 20000994, textID: 20000994, durationTime: 3000);
+                    context.ShowGuideSummary(entityID: 20000994, textID: 20000994, duration: 3000);
                     context.State = new State종료(context);
                     return;
                 }

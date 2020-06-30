@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000431_bf {
             internal StateMaxCount04_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 40012, textID: 40012, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 40012, textID: 40012, duration: 3000);
             }
 
             public override void Execute() {

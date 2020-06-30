@@ -92,7 +92,7 @@ namespace Maple2.Trigger._84000016_wd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {8002, 8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002, 8001}, arg2: false);
             }
 
             public override void Execute() {
@@ -161,7 +161,7 @@ namespace Maple2.Trigger._84000016_wd {
             internal StateUI테스트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8007}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._84000016_wd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {8009}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8009}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._84000016_wd {
             internal State입장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004, 8005, 8011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004, 8005, 8011}, arg2: false);
                 context.WeddingUserToPatrol(patrolName: "MS2PatrolData_2001", entryType: "Groom", patrolIndex: 1);
                 context.WeddingUserToPatrol(patrolName: "MS2PatrolData_2002", entryType: "Bride", patrolIndex: 2);
             }
@@ -432,7 +432,7 @@ namespace Maple2.Trigger._84000016_wd {
             internal State환호성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8010}, arg2: false);
                 context.WeddingSetUserEmotion(entryType: "Bride", id: 4);
                 context.WeddingSetUserEmotion(entryType: "Groom", id: 4);
                 context.PlaySystemSoundInBox(arg2: "System_WeddingAudience_01");

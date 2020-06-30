@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000398_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039801, textID: 20039801, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20039801, textID: 20039801, duration: 4000);
                 context.SetEffect(arg1: new int[] {5100, 5101, 5102, 5103, 5104, 5105, 5106}, arg2: true);
             }
 
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._02000398_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039802, textID: 20039802, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20039802, textID: 20039802, duration: 4000);
                 context.SetEffect(arg1: new int[] {5200, 5201, 5202, 5203}, arg2: true);
             }
 
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._02000398_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039803, textID: 20039803, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20039803, textID: 20039803, duration: 3000);
                 context.CreateMonster(arg1: new int[] {920, 921, 922, 923}, arg2: false);
             }
 
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._02000398_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039804, textID: 20039804, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20039804, textID: 20039804, duration: 3000);
                 context.SetLadder(arg1: 510, arg2: true, arg3: true, arg4: 1);
                 context.SetLadder(arg1: 511, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 512, arg2: true, arg3: true, arg4: 3);
@@ -235,7 +235,7 @@ namespace Maple2.Trigger._02000398_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039803, textID: 20039803, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20039803, textID: 20039803, duration: 3000);
             }
 
             public override void Execute() {
@@ -254,7 +254,7 @@ namespace Maple2.Trigger._02000398_bf {
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: true, arg4: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039804, textID: 20039804, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20039804, textID: 20039804, duration: 3000);
                 context.SetLadder(arg1: 530, arg2: true, arg3: true, arg4: 1);
                 context.SetLadder(arg1: 531, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 532, arg2: true, arg3: true, arg4: 3);

@@ -104,7 +104,7 @@ namespace Maple2.Trigger._52100103_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_3sec.xml");
-                context.CameraSelectPath(arg1: new int[] {1000, 1001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1000, 1001}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 2000, arg2: "Bore_A", arg3: 1333f);
                 context.AddCinematicTalk(npcID: 11004419, msg: "$52100103_QD__MAIN__0$", duration: 3000, align: "left");
             }
@@ -558,7 +558,7 @@ namespace Maple2.Trigger._52100103_qd {
             internal State마를레네엔딩대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1005, 1006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1005, 1006}, arg2: false);
                 context.AddCinematicTalk(npcID: 11004395, msg: "$52100103_QD__MAIN__19$", duration: 2000,
                     align: "left");
             }

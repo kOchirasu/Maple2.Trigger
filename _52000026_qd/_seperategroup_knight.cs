@@ -131,7 +131,7 @@ namespace Maple2.Trigger._52000026_qd {
                 context.SetEffect(arg1: new int[] {5001}, arg2: true);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
-                context.CameraSelectPath(arg1: new int[] {3003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {3003}, arg2: false);
             }
 
             public override void Execute() {
@@ -757,7 +757,7 @@ namespace Maple2.Trigger._52000026_qd {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.SetSound(arg1: 10000, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {3400, 3401, 3402, 3403}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {3400, 3401, 3402, 3403}, arg2: false);
             }
 
             public override void Execute() {

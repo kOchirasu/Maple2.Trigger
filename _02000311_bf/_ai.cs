@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02000311_bf {
             internal StatePhase_02_c(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003111, textID: 20003111, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003111, textID: 20003111, duration: 5000);
                 context.SetEffect(arg1: new int[] {7001}, arg2: true);
                 context.SetEffect(arg1: new int[] {7002}, arg2: true);
                 context.SetUserValue(triggerID: 9999994, key: "Buff_01", value: 1);

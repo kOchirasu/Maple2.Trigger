@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
-                context.CameraSelectPath(arg1: new int[] {15000, 15001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15000, 15001}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001966, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE_02__0$",
                     arg4: 7);
                 context.SetSkip(arg1: "연출페이즈2대사01스킵");
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15002, 15003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15002, 15003}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001901, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE_02__2$",
                     arg4: 7);
                 context.SetSkip(arg1: "연출페이즈2대사03스킵");
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15004}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001961, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE_02__3$",
                     arg4: 7);
                 context.SetSkip(arg1: "연출페이즈2대사04스킵");
@@ -210,7 +210,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사04b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15005, 15006}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15005, 15006}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001972, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE_02__4$",
                     arg4: 7);
                 context.SetSkip(arg1: "연출페이즈2대사04b스킵");
@@ -248,7 +248,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15007}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15007}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001972, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE_02__5$",
                     arg4: 7);
                 context.SetSkip(arg1: "연출페이즈2대사05스킵");
@@ -286,7 +286,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사05b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15100, 15101}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15100, 15101}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001970, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE_02__17$",
                     arg4: 7);
                 context.SetSkip(arg1: "연출페이즈2대사05b스킵");
@@ -324,7 +324,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15102, 15103}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15102, 15103}, arg2: false);
                 context.AddCinematicTalk(npcID: 11000075, illustID: "Ereb_serious",
                     msg: "$52000068_QD__TRIA_SEIGE_MOVIE_02__6$", duration: 7000, align: "center");
                 context.SetSkip(arg1: "연출페이즈2대사06스킵");
@@ -362,7 +362,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15104, 15105}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15104, 15105}, arg2: false);
                 context.MoveNpc(arg1: 13000, arg2: "MS2PatrolData_top_ereb_go");
                 context.AddCinematicTalk(npcID: 11000075, illustID: "Ereb_serious",
                     msg: "$52000068_QD__TRIA_SEIGE_MOVIE_02__7$", duration: 7000, align: "center");
@@ -401,7 +401,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15106}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15106}, arg2: false);
                 context.AddCinematicTalk(npcID: 11000075, illustID: "Ereb_sad",
                     msg: "$52000068_QD__TRIA_SEIGE_MOVIE_02__8$", duration: 7000, align: "center");
                 context.SetSkip(arg1: "연출페이즈2대사08스킵");
@@ -439,7 +439,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15107, 15108}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15107, 15108}, arg2: false);
                 context.AddCinematicTalk(npcID: 11000075, illustID: "Ereb_closeEye",
                     msg: "$52000068_QD__TRIA_SEIGE_MOVIE_02__9$", duration: 7000, align: "center");
                 context.SetSkip(arg1: "연출페이즈2대사09스킵");
@@ -514,7 +514,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15109}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15109}, arg2: false);
                 context.AddCinematicTalk(npcID: 11000075, illustID: "Ereb_closeEye",
                     msg: "$52000068_QD__TRIA_SEIGE_MOVIE_02__11$", duration: 7000, align: "center");
                 context.SetSkip(arg1: "연출페이즈2대사11스킵");
@@ -552,7 +552,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15110}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15110}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001973, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE_02__18$",
                     arg4: 7);
                 context.SetSkip(arg1: "연출페이즈2대사12스킵");
@@ -590,7 +590,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15111, 15112}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15111, 15112}, arg2: false);
                 context.AddCinematicTalk(npcID: 11000075, illustID: "Ereb_serious",
                     msg: "$52000068_QD__TRIA_SEIGE_MOVIE_02__12$", duration: 7000, align: "center");
                 context.SetSkip(arg1: "연출페이즈2대사13스킵");
@@ -665,7 +665,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15113, 15114}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15113, 15114}, arg2: false);
                 context.MoveNpc(arg1: 13000, arg2: "MS2PatrolData_top_ereb_back");
                 context.AddCinematicTalk(npcID: 11000075, illustID: "Ereb_closeEye",
                     msg: "$52000068_QD__TRIA_SEIGE_MOVIE_02__14$", duration: 7000, align: "center");
@@ -741,7 +741,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출페이즈2대사17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {15115, 15116}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {15115, 15116}, arg2: false);
                 context.AddCinematicTalk(npcID: 11000075, illustID: "Ereb_serious",
                     msg: "$52000068_QD__TRIA_SEIGE_MOVIE_02__16$", duration: 7000, align: "center");
             }

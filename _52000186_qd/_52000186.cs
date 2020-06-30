@@ -53,7 +53,7 @@ namespace Maple2.Trigger._52000186_qd {
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {8000, 8001, 8002, 8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000, 8001, 8002, 8003}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._52000186_qd {
             internal State묘지전경씬02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004, 8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8004, 8005}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52000186_QD__52000186__0$",
                     desc: "$52000186_QD__52000186__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 7000, scale: 2.5f);
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._52000186_qd {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.AddBalloonTalk(spawnPointID: 0, msg: "$52000186_QD__52000186__2$", duration: 6000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 25201861, textID: 25201861, durationTime: 10000);
+                context.ShowGuideSummary(entityID: 25201861, textID: 25201861, duration: 10000);
                 context.CreateMonster(arg1: new int[] {4000}, arg2: false);
                 context.CreateMonster(arg1: new int[] {4001}, arg2: false);
                 context.CreateMonster(arg1: new int[] {4002}, arg2: false);

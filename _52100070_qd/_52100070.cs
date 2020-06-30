@@ -74,7 +74,7 @@ namespace Maple2.Trigger._52100070_qd {
             internal StateCamera_Move_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {400, 401}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {400, 401}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52100070_QD__52100070__1$",
                     desc: "$52100070_QD__52100070__2$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 5000, scale: 2.5f);
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._52100070_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 600, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {600, 601}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {600, 601}, arg2: false);
             }
 
             public override void Execute() {
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._52100070_qd {
             internal State이슈라카메라1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {402, 403}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {402, 403}, arg2: false);
             }
 
             public override void Execute() {
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._52100070_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 500, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {500, 501}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {500, 501}, arg2: false);
             }
 
             public override void Execute() {
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._52100070_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 404, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {404, 405}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {404, 405}, arg2: false);
             }
 
             public override void Execute() {
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._52100070_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 406, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {406, 407}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {406, 407}, arg2: false);
             }
 
             public override void Execute() {

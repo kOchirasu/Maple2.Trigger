@@ -517,7 +517,7 @@ namespace Maple2.Trigger._52000016_qd {
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "연출종료01_skip", arg2: "nextState");
                 context.SetTimer(arg1: "16", arg2: 1);
-                context.CameraSelectPath(arg1: new int[] {602, 603}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {602, 603}, arg2: false);
             }
 
             public override void Execute() {

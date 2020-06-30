@@ -279,7 +279,7 @@ namespace Maple2.Trigger._52100201_qd {
             internal State기믹2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1001, 1002, 1003, 1004, 1005}, agr2: false);
+                context.CreateMonster(arg1: new int[] {1001, 1002, 1003, 1004, 1005}, arg2: false);
                 context.SetMesh(arg1: new int[] {4001, 4002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new int[] {4004, 4005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new int[] {4008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -319,7 +319,7 @@ namespace Maple2.Trigger._52100201_qd {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: "9005")) {
-                    context.DestroyMonster(arg1: new int[] {1001, 1002, 1003, 1004, 1005}, agr2: false);
+                    context.DestroyMonster(arg1: new int[] {1001, 1002, 1003, 1004, 1005}, arg2: false);
                     context.State = new State대기(context);
                     return;
                 }

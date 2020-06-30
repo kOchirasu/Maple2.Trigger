@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02000348_bf {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003441, textID: 20003441, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003441, textID: 20003441, duration: 5000);
             }
 
             public override void Execute() {
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02000348_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new int[] {2001, 2002}, arg2: false, arg3: 0, arg4: 200);
-                context.ShowGuideSummary(entityID: 20003444, textID: 20003444, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20003444, textID: 20003444, duration: 5000);
             }
 
             public override void Execute() { }

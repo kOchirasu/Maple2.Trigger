@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02000281_bf {
             internal State카메라대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20002810, textID: 20002810, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 20002810, textID: 20002810, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
@@ -116,13 +116,13 @@ namespace Maple2.Trigger._02000281_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new int[] {2002}, arg2: false);
-                context.ShowGuideSummary(entityID: 20002816, textID: 20002816, durationTime: 4000);
+                context.ShowGuideSummary(entityID: 20002816, textID: 20002816, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
             public override void Execute() {
                 if (context.MonsterDead(arg1: new int[] {2002})) {
-                    context.ShowGuideSummary(entityID: 20002812, textID: 20002812, durationTime: 5000);
+                    context.ShowGuideSummary(entityID: 20002812, textID: 20002812, duration: 5000);
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                     context.SetLadder(arg1: 321, arg2: true, arg3: true);
                     context.SetLadder(arg1: 322, arg2: true, arg3: true);

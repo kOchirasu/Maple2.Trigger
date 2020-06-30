@@ -303,7 +303,7 @@ namespace Maple2.Trigger._52100052_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039601, textID: 20039601, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20039601, textID: 20039601, duration: 3000);
             }
 
             public override void Execute() {
@@ -367,7 +367,7 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039602, textID: 20039602, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 20039602, textID: 20039602, duration: 3000);
             }
 
             public override void Execute() {

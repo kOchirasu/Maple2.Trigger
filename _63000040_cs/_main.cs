@@ -80,7 +80,7 @@ namespace Maple2.Trigger._63000040_cs {
                 context.SetProductionUI(arg1: 3);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2001");
                 context.MoveUserPath(arg1: "MS2PatrolData_2002");
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000040_CS__MAIN__0$", arg4: 5);
             }
 
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._63000040_cs {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.CameraSelectPath(arg1: new int[] {8003}, arg2: 0);
+                    context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
                     context.State = new Statestart_07(context);
                     return;
                 }
@@ -183,7 +183,7 @@ namespace Maple2.Trigger._63000040_cs {
             internal Stateend(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: 1);
+                context.CameraSelectPath(arg1: new int[] {8003}, arg2: true);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }

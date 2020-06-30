@@ -32,7 +32,7 @@ namespace Maple2.Trigger._03000137_bf {
             internal State1차웨이브대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 23000003, textID: 23000003, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 23000003, textID: 23000003, duration: 5000);
                 context.SetEffect(arg1: new int[] {602}, arg2: true);
                 context.SetEffect(arg1: new int[] {603}, arg2: true);
             }

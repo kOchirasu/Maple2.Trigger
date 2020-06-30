@@ -285,7 +285,7 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnEnter() {
                 context.AddUserValue(key: "TubeLeveStep", value: -9);
                 context.AddBuff(arg1: new int[] {102}, arg2: 50000348, arg3: 2, arg4: true, arg5: true);
-                context.ShowGuideSummary(entityID: 29200005, textID: 29200005, durationTime: 5000);
+                context.ShowGuideSummary(entityID: 29200005, textID: 29200005, duration: 5000);
             }
 
             public override void Execute() {

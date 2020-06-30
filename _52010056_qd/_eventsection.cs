@@ -120,7 +120,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 9, arg2: "$52010056_QD__EventSection__52$", arg3: false);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -344,7 +344,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 9, arg2: "$52010056_QD__EventSection__53$", arg3: false);
-                context.CameraSelectPath(arg1: new int[] {4002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002}, arg2: false);
                 context.CreateMonster(arg1: new int[] {101}, arg2: false);
             }
 
@@ -425,7 +425,7 @@ namespace Maple2.Trigger._52010056_qd {
             internal State트리스탄_마무리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
                 context.SetEffect(arg1: new int[] {5004}, arg2: true);
             }
 
@@ -592,7 +592,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 2001, arg2: 99910300);
-                context.CameraSelectPath(arg1: new int[] {4008}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4008}, arg2: false);
                 context.MoveUser(arg1: 52010056, arg2: 6002);
             }
 
@@ -632,7 +632,7 @@ namespace Maple2.Trigger._52010056_qd {
                 context.SetEffect(arg1: new int[] {5005}, arg2: true);
                 context.SetEffect(arg1: new int[] {5008}, arg2: true);
                 context.CreateMonster(arg1: new int[] {801}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {4009, 4010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4009, 4010}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003812, msg: "$52010056_QD__EventSection__19$", duration: 2800);
                 context.SetSceneSkip(arg1: "각성_전투준비", arg2: "nextState");
             }
@@ -784,7 +784,7 @@ namespace Maple2.Trigger._52010056_qd {
             internal State크림슨발록대사_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4011}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003817, msg: "$52010056_QD__EventSection__25$", duration: 2800,
                     illustID: "balrog_normal", align: "Center");
                 context.SetEffect(arg1: new int[] {5011}, arg2: true);
@@ -824,7 +824,7 @@ namespace Maple2.Trigger._52010056_qd {
             internal State인페르녹의혼_흡수연출_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4012}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4012}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003812, msg: "$52010056_QD__EventSection__27$", duration: 2800);
             }
 
@@ -1036,7 +1036,7 @@ namespace Maple2.Trigger._52010056_qd {
             internal State인페르녹의혼_흡수연출_N(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4013}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4013}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003821, msg: "$52010056_QD__EventSection__38$", duration: 2800);
                 context.SetSceneSkip();
             }
@@ -1503,7 +1503,7 @@ namespace Maple2.Trigger._52010056_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {4014}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4014}, arg2: false);
                 context.SetSceneSkip(arg1: "트리거업적", arg2: "nextState");
             }
 
@@ -1521,7 +1521,7 @@ namespace Maple2.Trigger._52010056_qd {
             internal State카메라_온B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4015}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4015}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003817, msg: "$52010056_QD__EventSection__42$", duration: 2800);
             }
 
@@ -1539,7 +1539,7 @@ namespace Maple2.Trigger._52010056_qd {
             internal State카메라_온C(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4016}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4016}, arg2: false);
             }
 
             public override void Execute() {

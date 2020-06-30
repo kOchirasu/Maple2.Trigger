@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02000317_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 100, textID: 20031701, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 100, textID: 20031701, duration: 3000);
             }
 
             public override void Execute() {
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._02000317_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 100, textID: 20031701, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 100, textID: 20031701, duration: 3000);
             }
 
             public override void Execute() {
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._02000317_bf {
             internal StateStep_1_D(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 100, textID: 20031701, durationTime: 3000);
+                context.ShowGuideSummary(entityID: 100, textID: 20031701, duration: 3000);
             }
 
             public override void Execute() {

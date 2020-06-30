@@ -110,7 +110,7 @@ namespace Maple2.Trigger._52020017_qd {
             internal StateEvent_A_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
                 context.AddCinematicTalk(npcID: 0, msg: "!?", duration: 1800, illustID: "0", align: "left");
             }
 
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52020017_qd {
             internal StateEvent_A_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003624, msg: "그래. 바로 너. 네가 주인공이야.", duration: 2800, align: "left");
             }
 
@@ -182,7 +182,7 @@ namespace Maple2.Trigger._52020017_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new int[] {5002}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003624, msg: "여기서 죽는 거야.", duration: 2800, align: "left");
             }
 

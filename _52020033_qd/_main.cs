@@ -263,7 +263,7 @@ namespace Maple2.Trigger._52020033_qd {
             internal State소개_세로줌인01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: false);
                 context.ShowCaption(type: "NameCaption", title: "$map:52020033$", desc: "크리티아스 정찰 임무 지원 중",
                     align: "centerLeft", offsetRateX: -0.05f, offsetRateY: 0.15f, duration: 12000, scale: 2.0f);
                 context.SetSceneSkip(arg1: "소개_스킵완료", arg2: "nextState");
@@ -283,7 +283,7 @@ namespace Maple2.Trigger._52020033_qd {
             internal State소개_가로줌인01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002, 8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002, 8003}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_Walking");
                 context.AddBalloonTalk(spawnPointID: 0, msg: "흠…", duration: 2000, delayTick: 0);
                 context.AddBalloonTalk(spawnPointID: 101, msg: "…네, 현재까지 이상 없습니다.", duration: 2000, delayTick: 5);
@@ -379,7 +379,7 @@ namespace Maple2.Trigger._52020033_qd {
             internal State부유도_탐색01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002, 8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002, 8003}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_Walking");
                 context.AddCinematicTalk(npcID: 0,
                     msg: @"(함선 아래서부터 들려오는 요란한 소리.\n침입자를 막기 위한 결계, 그리고 방어군과의 전투가 벌어진 듯하다.)", duration: 4000);
@@ -400,7 +400,7 @@ namespace Maple2.Trigger._52020033_qd {
             internal State부유도_탐색02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8005}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8005}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003650, illustID: "Neirin_serious", msg: @"…네, 함장님.\n알겠습니다.",
                     duration: 3000);
             }
@@ -419,7 +419,7 @@ namespace Maple2.Trigger._52020033_qd {
             internal State부유도_탐색03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8010}, arg2: false);
                 context.AddCinematicTalk(npcID: 11003650, illustID: "Neirin_serious",
                     msg: @"$MyPCName$님. 함장님께서는 더 이상의 접근은 어렵다고 판단하셨습니다.\n스카이 포트리스로는요.", duration: 3000);
             }
@@ -509,7 +509,7 @@ namespace Maple2.Trigger._52020033_qd {
             internal State자막구간_00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8011}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8011}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
             }
 

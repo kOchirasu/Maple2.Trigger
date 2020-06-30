@@ -544,7 +544,7 @@ namespace Maple2.Trigger._52000091_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {1000, 1001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1000, 1001}, arg2: false);
             }
 
             public override void Execute() {
@@ -561,7 +561,7 @@ namespace Maple2.Trigger._52000091_qd {
             internal State마드라칸연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: false);
                 context.SetPcEmotionSequence(arg1: "Jump_Damg_A");
             }
 
@@ -579,7 +579,7 @@ namespace Maple2.Trigger._52000091_qd {
             internal State마드라칸연출03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1004, 1008, 1009, 1010}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {1004, 1008, 1009, 1010}, arg2: false);
             }
 
             public override void Execute() {

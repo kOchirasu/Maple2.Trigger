@@ -92,7 +92,7 @@ namespace Maple2.Trigger._52010020_qd {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.CreateMonster(arg1: new int[] {103});
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2003");
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
                 context.SetTimer(arg1: "4", arg2: 4);
             }
 

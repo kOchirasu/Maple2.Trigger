@@ -65,7 +65,7 @@ namespace Maple2.Trigger._52000129_qd {
             internal State카메라이동_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
             }
 
             public override void Execute() {
@@ -225,7 +225,7 @@ namespace Maple2.Trigger._52000129_qd {
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000129, arg2: 99);
                 context.CreateMonster(arg1: new int[] {105}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._52000129_qd {
             internal State감시_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002, 8003}, arg2: 0);
+                context.CameraSelectPath(arg1: new int[] {8002, 8003}, arg2: false);
             }
 
             public override void Execute() {
