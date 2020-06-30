@@ -1,0 +1,66 @@
+using System;
+
+namespace Maple2.Trigger._02000118_bf {
+    public static class _earthquake01 {
+        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State레버당기기(context);
+
+        private class State레버당기기 : TriggerState {
+            internal State레버당기기(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetInteractObject(arg1: new int[] {10000290}, arg2: 1);
+            }
+
+            public override void Execute() {
+                if (context.ObjectInteracted(arg1: new int[] {10000290}, arg2: 0)) {
+                    context.State = new State스킬동작(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class State스킬동작 : TriggerState {
+            internal State스킬동작(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetTimer(arg1: "1", arg2: 1);
+                context.SetSkill(arg1: new int[] {2001}, arg2: true);
+                context.SetSkill(arg1: new int[] {2002}, arg2: true);
+                context.SetSkill(arg1: new int[] {2003}, arg2: true);
+                context.SetSkill(arg1: new int[] {2004}, arg2: true);
+            }
+
+            public override void Execute() {
+                if (context.TimeExpired(arg1: "1")) {
+                    context.State = new State종료(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class State종료 : TriggerState {
+            internal State종료(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetTimer(arg1: "2", arg2: 10);
+                context.SetSkill(arg1: new int[] {2001}, arg2: false);
+                context.SetSkill(arg1: new int[] {2002}, arg2: false);
+                context.SetSkill(arg1: new int[] {2003}, arg2: false);
+                context.SetSkill(arg1: new int[] {2004}, arg2: false);
+            }
+
+            public override void Execute() {
+                if (context.TimeExpired(arg1: "2")) {
+                    context.State = new State레버당기기(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+    }
+}

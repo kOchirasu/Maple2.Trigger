@@ -1,0 +1,279 @@
+using System;
+
+namespace Maple2.Trigger._52020010_qd {
+    public static class _main_b {
+        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateIdle(context);
+
+        private class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() { }
+
+            public override void Execute() {
+                if (context.QuestUserDetected(arg1: new int[] {2006}, arg2: new int[] {60200055},
+                    arg3: new byte[] {1})) {
+                    context.State = new StateObject_Check(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateObject_Check : TriggerState {
+            internal StateObject_Check(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() { }
+
+            public override void Execute() {
+                if (context.ObjectInteracted(arg1: new int[] {10001276}, arg2: 0)) {
+                    context.State = new StateReady(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.SetProductionUI(arg1: 4);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateMove_6001(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateMove_6001 : TriggerState {
+            internal StateMove_6001(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.MoveUser(arg1: 52020010, arg2: 6002);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateEvent_01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateEvent_01 : TriggerState {
+            internal StateEvent_01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.SetPcEmotionSequence(arg1: "Object_React_H");
+                context.AddCinematicTalk(npcID: 0, msg: "왜 아무일도 일어나지 않는거지?", duration: 2800);
+                context.SetSceneSkip(arg1: "Next", arg2: "nextState");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 3500)) {
+                    context.State = new StateEvent_02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateEvent_02 : TriggerState {
+            internal StateEvent_02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetPcEmotionSequence(arg1: "Object_React_G");
+                context.AddCinematicTalk(npcID: 0, msg: "두들겨 볼까?", duration: 2800);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 3000)) {
+                    context.State = new StateEvent_03(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateEvent_03 : TriggerState {
+            internal StateEvent_03(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.AddCinematicTalk(npcID: 11003610, msg: "으으으.... 시끄럽구나!", duration: 2800);
+                context.AddBalloonTalk(spawnPointID: 0, msg: "!!!", duration: 2000, delayTick: 1000);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 3000)) {
+                    context.State = new StateEvent_04(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateEvent_04 : TriggerState {
+            internal StateEvent_04(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CreateMonster(arg1: new int[] {501}, arg2: true);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateEvent_05(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateEvent_05 : TriggerState {
+            internal StateEvent_05(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.AddCinematicTalk(npcID: 11003610, msg: "네 놈이냐! 내 잠을 깨운 녀석이!", duration: 2800);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 3000)) {
+                    context.State = new StateEvent_06(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateEvent_06 : TriggerState {
+            internal StateEvent_06(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.AddCinematicTalk(npcID: 11003610, msg: "감히 내 시간을 방해하다니 가만두지 않겠다!", duration: 2800);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 3000)) {
+                    context.State = new StateNext(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateNext : TriggerState {
+            internal StateNext(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.DestroyMonster(arg1: new int[] {501});
+                context.CreateMonster(arg1: new int[] {601}, arg2: true);
+            }
+
+            public override void Execute() {
+                if (true) {
+                    context.State = new StateBattle(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateBattle : TriggerState {
+            internal StateBattle(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 0);
+                context.SetProductionUI(arg1: 2);
+            }
+
+            public override void Execute() {
+                if (context.MonsterDead(arg1: new int[] {601})) {
+                    context.State = new StateMission_Clear(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateMission_Clear : TriggerState {
+            internal StateMission_Clear(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetAchievement(arg2: "trigger", arg3: "ClockDevil");
+            }
+
+            public override void Execute() {
+                if (context.QuestUserDetected(arg1: new int[] {2006}, arg2: new int[] {60200050},
+                    arg3: new byte[] {1})) {
+                    context.State = new StateMission_Clear(context);
+                    return;
+                }
+
+                if (context.QuestUserDetected(arg1: new int[] {2006}, arg2: new int[] {60200055},
+                    arg3: new byte[] {2})) {
+                    context.State = new StateEvent_07(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateEvent_07 : TriggerState {
+            internal StateEvent_07(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.AddCinematicTalk(npcID: 11003603, illustID: "0", msg: "인간! 파편이 돌아왔다! 어서 이리 와라!", duration: 2800,
+                    align: "Left");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 3000)) {
+                    context.State = new StateEvent_End(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateEvent_End : TriggerState {
+            internal StateEvent_End(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 0);
+                context.SetProductionUI(arg1: 2);
+            }
+
+            public override void Execute() { }
+
+            public override void OnExit() { }
+        }
+    }
+}

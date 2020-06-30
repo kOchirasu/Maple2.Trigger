@@ -1,0 +1,1368 @@
+using System;
+
+namespace Maple2.Trigger._63000028_cs {
+    public static class _battle01 {
+        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
+
+        private class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CreateWidget(arg1: "Guide");
+                context.SetEffect(arg1: new int[] {5000}, arg2: false);
+                context.SetEffect(arg1: new int[] {5100}, arg2: false);
+                context.SetEffect(arg1: new int[] {6000}, arg2: false);
+                context.SetEffect(arg1: new int[] {6001}, arg2: false);
+                context.SetEffect(arg1: new int[] {6002}, arg2: false);
+                context.SetEffect(arg1: new int[] {6003}, arg2: false);
+                context.SetEffect(arg1: new int[] {6004}, arg2: false);
+                context.SetEffect(arg1: new int[] {6100}, arg2: false);
+                context.SetEffect(arg1: new int[] {6101}, arg2: false);
+                context.SetEffect(arg1: new int[] {6102}, arg2: false);
+                context.SetAgent(arg1: "8000", arg2: true);
+                context.SetAgent(arg1: "8001", arg2: true);
+                context.SetAgent(arg1: "8002", arg2: true);
+                context.SetAgent(arg1: "8003", arg2: true);
+                context.SetAgent(arg1: "8004", arg2: true);
+                context.SetAgent(arg1: "8005", arg2: true);
+                context.SetAgent(arg1: "8100", arg2: false);
+                context.SetAgent(arg1: "8101", arg2: false);
+                context.SetAgent(arg1: "8102", arg2: false);
+                context.SetAgent(arg1: "8103", arg2: false);
+                context.SetAgent(arg1: "8104", arg2: false);
+                context.SetAgent(arg1: "8105", arg2: false);
+                context.SetAgent(arg1: "8106", arg2: false);
+                context.SetAgent(arg1: "8107", arg2: false);
+                context.SetAgent(arg1: "8108", arg2: false);
+                context.SetAgent(arg1: "8109", arg2: false);
+                context.SetAgent(arg1: "8110", arg2: false);
+                context.SetAgent(arg1: "8111", arg2: false);
+                context.SetAgent(arg1: "8112", arg2: false);
+                context.SetAgent(arg1: "8113", arg2: false);
+                context.SetAgent(arg1: "8114", arg2: false);
+                context.SetAgent(arg1: "8115", arg2: false);
+                context.SetSkill(arg1: new int[] {7000}, arg2: false);
+            }
+
+            public override void Execute() {
+                if (context.UserDetected(arg1: "9000")) {
+                    context.State = new StateEnter01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateEnter01 : TriggerState {
+            internal StateEnter01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() { }
+
+            public override void Execute() {
+                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000452},
+                    arg3: new byte[] {1})) {
+                    context.State = new StateQuestOnGoing21(context);
+                    return;
+                }
+
+                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000451},
+                    arg3: new byte[] {3})) {
+                    context.State = new StateQuestOnGoing11(context);
+                    return;
+                }
+
+                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000451},
+                    arg3: new byte[] {2})) {
+                    context.State = new StateQuestOnGoing01(context);
+                    return;
+                }
+
+                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000451},
+                    arg3: new byte[] {1})) {
+                    context.State = new StatePCWakeUp01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateQuestOnGoing01 : TriggerState {
+            internal StateQuestOnGoing01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CreateMonster(arg1: new int[] {103, 202}, arg2: false);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateFirstQuestEnd01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateQuestOnGoing11 : TriggerState {
+            internal StateQuestOnGoing11(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CreateMonster(arg1: new int[] {103, 202}, arg2: false);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateSecondQuestStart01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateQuestOnGoing21 : TriggerState {
+            internal StateQuestOnGoing21(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.SetProductionUI(arg1: 4);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 300)) {
+                    context.State = new StateQuestOnGoing22(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateQuestOnGoing22 : TriggerState {
+            internal StateQuestOnGoing22(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.MoveUser(arg1: 63000028, arg2: 11, arg3: 9900);
+                context.CreateMonster(arg1: new int[] {104, 203}, arg2: false);
+                context.CameraSelect(arg1: 600, arg2: true);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 300)) {
+                    context.State = new StateQuestOnGoing23(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateQuestOnGoing23 : TriggerState {
+            internal StateQuestOnGoing23(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 400)) {
+                    context.State = new StateShadowWaveAgain02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StatePCWakeUp01 : TriggerState {
+            internal StatePCWakeUp01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.SetProductionUI(arg1: 4);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StatePCWakeUp02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StatePCWakeUp02 : TriggerState {
+            internal StatePCWakeUp02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CameraSelect(arg1: 500, arg2: true);
+                context.SetSceneSkip(arg1: "TinChaiTalk02_CSkip", arg2: "nextState");
+                context.CreateMonster(arg1: new int[] {101, 900, 901, 902}, arg2: false);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StatePCWakeUp03(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StatePCWakeUp03 : TriggerState {
+            internal StatePCWakeUp03(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.MoveUserPath(arg1: "MS2PatrolData_1000");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1500)) {
+                    context.State = new StatePCWakeUp04(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StatePCWakeUp04 : TriggerState {
+            internal StatePCWakeUp04(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetPcEmotionSequence(arg1: "Bore_C");
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$63000028_CS__BATTLE01__0$", arg4: 3, arg5: 0);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 3500)) {
+                    context.State = new StatePCWakeUp05(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StatePCWakeUp05 : TriggerState {
+            internal StatePCWakeUp05(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$63000028_CS__BATTLE01__1$", arg4: 3, arg5: 0);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateBattleING01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateBattleING01 : TriggerState {
+            internal StateBattleING01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.MoveUserPath(arg1: "MS2PatrolData_1001");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateBattleING02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateBattleING02 : TriggerState {
+            internal StateBattleING02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CameraSelect(arg1: 501, arg2: true);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 3000)) {
+                    context.State = new StateTinChaiTalk01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateTinChaiTalk01 : TriggerState {
+            internal StateTinChaiTalk01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetEffect(arg1: new int[] {6000}, arg2: true);
+                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000028_CS__BATTLE01__2$", arg4: 5);
+                context.SetSceneSkip();
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 5000)) {
+                    context.State = new StateTinChaiTalk02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateTinChaiTalk02 : TriggerState {
+            internal StateTinChaiTalk02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.RemoveCinematicTalk();
+                context.SetSkip();
+            }
+
+            public override void Execute() {
+                if (true) {
+                    context.State = new StateReadyToBattle01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateTinChaiTalk02_CSkip : TriggerState {
+            internal StateTinChaiTalk02_CSkip(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.RemoveCinematicTalk();
+            }
+
+            public override void Execute() {
+                if (true) {
+                    context.State = new StateReadyToBattle01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateReadyToBattle01 : TriggerState {
+            internal StateReadyToBattle01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 0);
+                context.SetProductionUI(arg1: 2);
+                context.SetAgent(arg1: "8000", arg2: false);
+                context.SetAgent(arg1: "8001", arg2: false);
+                context.SetAgent(arg1: "8002", arg2: false);
+                context.SetAgent(arg1: "8003", arg2: false);
+                context.SetAgent(arg1: "8004", arg2: false);
+                context.SetAgent(arg1: "8005", arg2: false);
+                context.CameraSelect(arg1: 501, arg2: false);
+            }
+
+            public override void Execute() {
+                if (true) {
+                    context.State = new StateReadyToBattle02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateReadyToBattle02 : TriggerState {
+            internal StateReadyToBattle02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() { }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 2000)) {
+                    context.State = new StateBattleStart01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateBattleStart01 : TriggerState {
+            internal StateBattleStart01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetEffect(arg1: new int[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityID: 10035010, textID: 10035010);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StateBattleStart02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateBattleStart02 : TriggerState {
+            internal StateBattleStart02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.GuideEvent(eventID: 10035020);
+            }
+
+            public override void Execute() {
+                if (context.MonsterDead(arg1: new int[] {900, 901, 902})) {
+                    context.State = new StateBattleEnd01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() {
+                context.HideGuideSummary(entityID: 10035010);
+            }
+        }
+
+        private class StateBattleEnd01 : TriggerState {
+            internal StateBattleEnd01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.DestroyMonster(arg1: new int[] {900, 901, 902});
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StateBattleEnd02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateBattleEnd02 : TriggerState {
+            internal StateBattleEnd02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.SetProductionUI(arg1: 4);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StateBattleEnd03(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateBattleEnd03 : TriggerState {
+            internal StateBattleEnd03(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.MoveUser(arg1: 63000028, arg2: 10, arg3: 9900);
+                context.DestroyMonster(arg1: new int[] {101});
+                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateBattleEnd04(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateBattleEnd04 : TriggerState {
+            internal StateBattleEnd04(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetSceneSkip(arg1: "MeetJunta05_Cskip", arg2: "nextState");
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateBattleEnd05(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateBattleEnd05 : TriggerState {
+            internal StateBattleEnd05(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetConversation(arg1: 1, arg2: 102, arg3: "$63000028_CS__BATTLE01__3$", arg4: 3, arg5: 0);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 2500)) {
+                    context.State = new StateShadowWave01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateShadowWave01 : TriggerState {
+            internal StateShadowWave01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.SetAgent(arg1: "8100", arg2: true);
+                context.SetAgent(arg1: "8101", arg2: true);
+                context.SetAgent(arg1: "8102", arg2: true);
+                context.SetAgent(arg1: "8103", arg2: true);
+                context.SetAgent(arg1: "8104", arg2: true);
+                context.SetAgent(arg1: "8105", arg2: true);
+                context.SetAgent(arg1: "8106", arg2: true);
+                context.SetAgent(arg1: "8107", arg2: true);
+                context.SetAgent(arg1: "8108", arg2: true);
+                context.SetAgent(arg1: "8109", arg2: true);
+                context.SetAgent(arg1: "8110", arg2: true);
+                context.SetAgent(arg1: "8111", arg2: true);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateShadowWave02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateShadowWave02 : TriggerState {
+            internal StateShadowWave02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CameraSelect(arg1: 600, arg2: true);
+                context.SetEffect(arg1: new int[] {5100}, arg2: true);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StateShadowWave03(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateShadowWave03 : TriggerState {
+            internal StateShadowWave03(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CreateMonster(arg1: new int[] {910, 911, 912, 913});
+                context.MoveNpc(arg1: 910, arg2: "MS2PatrolData_910");
+                context.MoveNpc(arg1: 911, arg2: "MS2PatrolData_911");
+                context.MoveNpc(arg1: 912, arg2: "MS2PatrolData_912");
+                context.MoveNpc(arg1: 913, arg2: "MS2PatrolData_913");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateShadowWave04(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateShadowWave04 : TriggerState {
+            internal StateShadowWave04(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CreateMonster(arg1: new int[] {920, 921, 922, 923, 924});
+                context.MoveNpc(arg1: 920, arg2: "MS2PatrolData_920");
+                context.MoveNpc(arg1: 921, arg2: "MS2PatrolData_921");
+                context.MoveNpc(arg1: 922, arg2: "MS2PatrolData_922");
+                context.MoveNpc(arg1: 923, arg2: "MS2PatrolData_923");
+                context.MoveNpc(arg1: 924, arg2: "MS2PatrolData_924");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StateShadowWave05(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateShadowWave05 : TriggerState {
+            internal StateShadowWave05(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CameraSelect(arg1: 601, arg2: true);
+                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_101");
+                context.MoveUserPath(arg1: "MS2PatrolData_1002");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateShadowWave06(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateShadowWave06 : TriggerState {
+            internal StateShadowWave06(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CreateMonster(arg1: new int[] {930, 931, 932, 933, 950, 951, 952, 953});
+                context.MoveNpc(arg1: 930, arg2: "MS2PatrolData_930");
+                context.MoveNpc(arg1: 931, arg2: "MS2PatrolData_931");
+                context.MoveNpc(arg1: 932, arg2: "MS2PatrolData_932");
+                context.MoveNpc(arg1: 933, arg2: "MS2PatrolData_933");
+                context.MoveNpc(arg1: 950, arg2: "MS2PatrolData_950");
+                context.MoveNpc(arg1: 951, arg2: "MS2PatrolData_951");
+                context.MoveNpc(arg1: 952, arg2: "MS2PatrolData_952");
+                context.MoveNpc(arg1: 953, arg2: "MS2PatrolData_953");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StateShadowWave07(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateShadowWave07 : TriggerState {
+            internal StateShadowWave07(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetConversation(arg1: 1, arg2: 102, arg3: "$63000028_CS__BATTLE01__4$", arg4: 3, arg5: 0);
+                context.CreateMonster(arg1: new int[] {940, 941, 942, 943, 944, 945, 960, 961, 962, 963, 964, 965});
+                context.MoveNpc(arg1: 940, arg2: "MS2PatrolData_940");
+                context.MoveNpc(arg1: 941, arg2: "MS2PatrolData_941");
+                context.MoveNpc(arg1: 942, arg2: "MS2PatrolData_942");
+                context.MoveNpc(arg1: 943, arg2: "MS2PatrolData_943");
+                context.MoveNpc(arg1: 944, arg2: "MS2PatrolData_944");
+                context.MoveNpc(arg1: 945, arg2: "MS2PatrolData_945");
+                context.MoveNpc(arg1: 960, arg2: "MS2PatrolData_960");
+                context.MoveNpc(arg1: 961, arg2: "MS2PatrolData_961");
+                context.MoveNpc(arg1: 962, arg2: "MS2PatrolData_962");
+                context.MoveNpc(arg1: 963, arg2: "MS2PatrolData_963");
+                context.MoveNpc(arg1: 964, arg2: "MS2PatrolData_964");
+                context.MoveNpc(arg1: 965, arg2: "MS2PatrolData_965");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 2000)) {
+                    context.State = new StateTinChaiDesperate01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateTinChaiDesperate01 : TriggerState {
+            internal StateTinChaiDesperate01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CameraSelect(arg1: 602, arg2: true);
+                context.SetNpcEmotionLoop(arg1: 102, arg2: "Attack_Idle_A", arg3: 12000f);
+                context.SetPcEmotionLoop(arg1: "Orb_Attack_Idle_A", arg2: 12000f);
+                context.SetEffect(arg1: new int[] {6001}, arg2: true);
+                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000028_CS__BATTLE01__5$", arg4: 5);
+                context.SetSkip(arg1: "TinChaiDesperate02");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 5000)) {
+                    context.State = new StateTinChaiDesperate02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateTinChaiDesperate02 : TriggerState {
+            internal StateTinChaiDesperate02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.RemoveCinematicTalk();
+                context.SetSkip();
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StateJuntaApp01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateJuntaApp01 : TriggerState {
+            internal StateJuntaApp01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.SetProductionUI(arg1: 4);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateJuntaApp02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateJuntaApp02 : TriggerState {
+            internal StateJuntaApp02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CameraSelect(arg1: 700, arg2: true);
+                context.DestroyMonster(arg1: new int[] {
+                    910, 911, 912, 913, 920, 921, 922, 923, 924, 930, 931, 932, 933, 940, 941, 942, 943, 944, 945, 950,
+                    951, 952, 953, 960, 961, 962, 963, 964, 965
+                });
+                context.CreateMonster(
+                    arg1: new int[] {
+                        970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988,
+                        989, 990, 991, 992, 993, 994, 995, 996, 997, 998
+                    }, arg2: false);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateJuntaApp03(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateJuntaApp03 : TriggerState {
+            internal StateJuntaApp03(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.SetAgent(arg1: "8100", arg2: false);
+                context.SetAgent(arg1: "8101", arg2: false);
+                context.SetAgent(arg1: "8102", arg2: false);
+                context.SetAgent(arg1: "8103", arg2: false);
+                context.SetAgent(arg1: "8104", arg2: false);
+                context.SetAgent(arg1: "8105", arg2: false);
+                context.SetAgent(arg1: "8106", arg2: false);
+                context.SetAgent(arg1: "8107", arg2: false);
+                context.SetAgent(arg1: "8108", arg2: false);
+                context.SetAgent(arg1: "8109", arg2: false);
+                context.SetAgent(arg1: "8110", arg2: false);
+                context.SetAgent(arg1: "8111", arg2: false);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateJuntaApp04(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateJuntaApp04 : TriggerState {
+            internal StateJuntaApp04(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CreateMonster(arg1: new int[] {201}, arg2: false);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 900)) {
+                    context.State = new StateJuntaTalk01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() {
+                context.SetSkill(arg1: new int[] {7000}, arg2: true);
+            }
+        }
+
+        private class StateJuntaTalk01 : TriggerState {
+            internal StateJuntaTalk01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetEffect(arg1: new int[] {5100}, arg2: false);
+                context.SetEffect(arg1: new int[] {6100}, arg2: true);
+                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000028_CS__BATTLE01__6$", arg4: 4);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 2000)) {
+                    context.State = new StateMeetJunta01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateMeetJunta01 : TriggerState {
+            internal StateMeetJunta01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.DestroyMonster(arg1: new int[] {
+                    970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989,
+                    990, 991, 992, 993, 994, 995, 996, 997, 998
+                });
+                context.MoveUserPath(arg1: "MS2PatrolData_1003");
+                context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_102");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 3000)) {
+                    context.State = new StateMeetJunta02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() {
+                context.RemoveCinematicTalk();
+            }
+        }
+
+        private class StateMeetJunta02 : TriggerState {
+            internal StateMeetJunta02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CameraSelect(arg1: 701, arg2: true);
+                context.SetNpcEmotionSequence(arg1: 102, arg2: "Talk_A");
+                context.SetEffect(arg1: new int[] {6002}, arg2: true);
+                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000028_CS__BATTLE01__7$", arg4: 5);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 5000)) {
+                    context.State = new StateMeetJunta03(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateMeetJunta03 : TriggerState {
+            internal StateMeetJunta03(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetNpcEmotionSequence(arg1: 102, arg2: "Idle_A");
+                context.RemoveCinematicTalk();
+                context.SetSceneSkip();
+            }
+
+            public override void Execute() {
+                if (true) {
+                    context.State = new StateMeetJunta04(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateMeetJunta04 : TriggerState {
+            internal StateMeetJunta04(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetEffect(arg1: new int[] {6101}, arg2: true);
+                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000028_CS__BATTLE01__8$", arg4: 7);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 7000)) {
+                    context.State = new StateMeetJunta05(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateMeetJunta05_Cskip : TriggerState {
+            internal StateMeetJunta05_Cskip(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CameraSelect(arg1: 701, arg2: true);
+                context.SetEffect(arg1: new int[] {5100}, arg2: false);
+                context.DestroyMonster(arg1: new int[] {
+                    910, 911, 912, 913, 920, 921, 922, 923, 924, 930, 931, 932, 933, 940, 941, 942, 943, 944, 945, 950,
+                    951, 952, 953, 960, 961, 962, 963, 964, 965
+                });
+                context.MoveUserPath(arg1: "MS2PatrolData_1003");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateMeetJunta05_Cskip2(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateMeetJunta05_Cskip2 : TriggerState {
+            internal StateMeetJunta05_Cskip2(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.DestroyMonster(arg1: new int[] {
+                    970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989,
+                    990, 991, 992, 993, 994, 995, 996, 997, 998
+                });
+                context.DestroyMonster(arg1: new int[] {102, 201});
+                context.CreateMonster(arg1: new int[] {103, 202}, arg2: false);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StateMeetJunta06(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() {
+                context.RemoveCinematicTalk();
+            }
+        }
+
+        private class StateMeetJunta05 : TriggerState {
+            internal StateMeetJunta05(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.RemoveCinematicTalk();
+                context.DestroyMonster(arg1: new int[] {102, 201});
+                context.CreateMonster(arg1: new int[] {103, 202}, arg2: false);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateMeetJunta06(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateMeetJunta06 : TriggerState {
+            internal StateMeetJunta06(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CameraSelect(arg1: 701, arg2: false);
+                context.SetProductionUI(arg1: 0);
+                context.SetProductionUI(arg1: 2);
+                context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "complete_airstrikeofjunta");
+            }
+
+            public override void Execute() {
+                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {90000451},
+                    arg3: new byte[] {2})) {
+                    context.State = new StateFirstQuestEnd01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateFirstQuestEnd01 : TriggerState {
+            internal StateFirstQuestEnd01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetEffect(arg1: new int[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityID: 10031010, textID: 10031010);
+            }
+
+            public override void Execute() {
+                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {90000451},
+                    arg3: new byte[] {3})) {
+                    context.State = new StateSecondQuestStart01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() {
+                context.HideGuideSummary(entityID: 10031010);
+            }
+        }
+
+        private class StateSecondQuestStart01 : TriggerState {
+            internal StateSecondQuestStart01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetEffect(arg1: new int[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityID: 10031020, textID: 10031020);
+            }
+
+            public override void Execute() {
+                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {90000452},
+                    arg3: new byte[] {1})) {
+                    context.State = new StateDelay01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() {
+                context.HideGuideSummary(entityID: 10031020);
+            }
+        }
+
+        private class StateDelay01 : TriggerState {
+            internal StateDelay01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() { }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StateDelay02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateDelay02 : TriggerState {
+            internal StateDelay02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.SetProductionUI(arg1: 4);
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateShadowWaveAgain01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateShadowWaveAgain01 : TriggerState {
+            internal StateShadowWaveAgain01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.MoveUser(arg1: 63000028, arg2: 12, arg3: 9900);
+                context.DestroyMonster(arg1: new int[] {103, 202});
+                context.CreateMonster(arg1: new int[] {104, 203}, arg2: false);
+                context.CameraSelect(arg1: 600, arg2: true);
+                context.SetSceneSkip(arg1: "TimeToLeave05", arg2: "exit");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateShadowWaveAgain02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateShadowWaveAgain02 : TriggerState {
+            internal StateShadowWaveAgain02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 1);
+                context.SetProductionUI(arg1: 3);
+                context.SetAgent(arg1: "8100", arg2: true);
+                context.SetAgent(arg1: "8101", arg2: true);
+                context.SetAgent(arg1: "8102", arg2: true);
+                context.SetAgent(arg1: "8103", arg2: true);
+                context.SetAgent(arg1: "8106", arg2: true);
+                context.SetAgent(arg1: "8107", arg2: true);
+                context.SetAgent(arg1: "8108", arg2: true);
+                context.SetAgent(arg1: "8109", arg2: true);
+                context.SetAgent(arg1: "8110", arg2: true);
+                context.SetAgent(arg1: "8111", arg2: true);
+                context.SetAgent(arg1: "8112", arg2: true);
+                context.SetAgent(arg1: "8113", arg2: true);
+                context.SetAgent(arg1: "8114", arg2: true);
+                context.SetAgent(arg1: "8115", arg2: true);
+                context.CreateMonster(arg1: new int[] {910, 911, 912, 913});
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StateShadowWaveAgain03(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateShadowWaveAgain03 : TriggerState {
+            internal StateShadowWaveAgain03(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CameraSelect(arg1: 601, arg2: true);
+                context.SetEffect(arg1: new int[] {5100}, arg2: true);
+                context.SetEffect(arg1: new int[] {6003}, arg2: true);
+                context.SetConversation(arg1: 1, arg2: 104, arg3: "$63000028_CS__BATTLE01__9$", arg4: 3, arg5: 1);
+                context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_103");
+                context.MoveUserPath(arg1: "MS2PatrolData_1004");
+                context.CreateMonster(arg1: new int[] {920, 921, 922, 923, 924});
+                context.MoveNpc(arg1: 910, arg2: "MS2PatrolData_910");
+                context.MoveNpc(arg1: 911, arg2: "MS2PatrolData_911");
+                context.MoveNpc(arg1: 912, arg2: "MS2PatrolData_912");
+                context.MoveNpc(arg1: 913, arg2: "MS2PatrolData_913");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StateShadowWaveAgain04(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateShadowWaveAgain04 : TriggerState {
+            internal StateShadowWaveAgain04(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.MoveNpc(arg1: 920, arg2: "MS2PatrolData_920");
+                context.MoveNpc(arg1: 921, arg2: "MS2PatrolData_921");
+                context.MoveNpc(arg1: 922, arg2: "MS2PatrolData_922");
+                context.MoveNpc(arg1: 923, arg2: "MS2PatrolData_923");
+                context.MoveNpc(arg1: 924, arg2: "MS2PatrolData_924");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 2000)) {
+                    context.State = new StateShadowWaveAgain05(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateShadowWaveAgain05 : TriggerState {
+            internal StateShadowWaveAgain05(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetEffect(arg1: new int[] {6102}, arg2: true);
+                context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000028_CS__BATTLE01__10$", arg4: 4);
+                context.CreateMonster(arg1: new int[] {930, 931, 932, 933, 950, 951, 952, 953});
+                context.MoveNpc(arg1: 930, arg2: "MS2PatrolData_930");
+                context.MoveNpc(arg1: 931, arg2: "MS2PatrolData_931");
+                context.MoveNpc(arg1: 932, arg2: "MS2PatrolData_932");
+                context.MoveNpc(arg1: 933, arg2: "MS2PatrolData_933");
+                context.MoveNpc(arg1: 950, arg2: "MS2PatrolData_950");
+                context.MoveNpc(arg1: 951, arg2: "MS2PatrolData_951");
+                context.MoveNpc(arg1: 952, arg2: "MS2PatrolData_952");
+                context.MoveNpc(arg1: 953, arg2: "MS2PatrolData_953");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1000)) {
+                    context.State = new StateShadowWaveAgain06(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateShadowWaveAgain06 : TriggerState {
+            internal StateShadowWaveAgain06(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CreateMonster(arg1: new int[] {940, 941, 942, 943, 944, 945, 960, 961, 962, 963, 964, 965});
+                context.MoveNpc(arg1: 940, arg2: "MS2PatrolData_940");
+                context.MoveNpc(arg1: 941, arg2: "MS2PatrolData_941");
+                context.MoveNpc(arg1: 942, arg2: "MS2PatrolData_942");
+                context.MoveNpc(arg1: 943, arg2: "MS2PatrolData_943");
+                context.MoveNpc(arg1: 944, arg2: "MS2PatrolData_944");
+                context.MoveNpc(arg1: 945, arg2: "MS2PatrolData_945");
+                context.MoveNpc(arg1: 960, arg2: "MS2PatrolData_960");
+                context.MoveNpc(arg1: 961, arg2: "MS2PatrolData_961");
+                context.MoveNpc(arg1: 962, arg2: "MS2PatrolData_962");
+                context.MoveNpc(arg1: 963, arg2: "MS2PatrolData_963");
+                context.MoveNpc(arg1: 964, arg2: "MS2PatrolData_964");
+                context.MoveNpc(arg1: 965, arg2: "MS2PatrolData_965");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 2000)) {
+                    context.State = new StateTimeToLeave01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateTimeToLeave01 : TriggerState {
+            internal StateTimeToLeave01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.CameraSelect(arg1: 602, arg2: true);
+                context.SetEffect(arg1: new int[] {6004}, arg2: true);
+                context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000028_CS__BATTLE01__11$", arg4: 4);
+                context.SetSceneSkip();
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 2000)) {
+                    context.State = new StateTimeToLeave02(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateTimeToLeave02 : TriggerState {
+            internal StateTimeToLeave02(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.MoveNpc(arg1: 203, arg2: "MS2PatrolData_201");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 700)) {
+                    context.State = new StateTimeToLeave03(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateTimeToLeave03 : TriggerState {
+            internal StateTimeToLeave03(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_104");
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 500)) {
+                    context.State = new StateTimeToLeave04(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateTimeToLeave04 : TriggerState {
+            internal StateTimeToLeave04(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.MoveUserPath(arg1: "MS2PatrolData_1005");
+                context.CameraSelect(arg1: 602, arg2: false);
+                context.RemoveCinematicTalk();
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 1500)) {
+                    context.State = new StateTimeToLeave05(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateTimeToLeave05 : TriggerState {
+            internal StateTimeToLeave05(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.DestroyMonster(arg1: new int[] {104, 203});
+            }
+
+            public override void Execute() {
+                if (context.WaitTick(waitTick: 800)) {
+                    context.State = new StatePCTeleport01(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StatePCTeleport01 : TriggerState {
+            internal StatePCTeleport01(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetProductionUI(arg1: 0);
+                context.SetProductionUI(arg1: 2);
+                context.MoveUser(arg1: 63000029, arg2: 1, arg3: 9900);
+            }
+
+            public override void Execute() {
+                if (!context.UserDetected(arg1: "9900")) {
+                    context.State = new StateQuit(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class StateQuit : TriggerState {
+            internal StateQuit(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() { }
+
+            public override void Execute() { }
+
+            public override void OnExit() { }
+        }
+    }
+}

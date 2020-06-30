@@ -1,0 +1,275 @@
+using System;
+
+namespace Maple2.Trigger._02020063_bf {
+    public static class _battle_3_monsterspawn {
+        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
+
+        private class State대기 : TriggerState {
+            internal State대기(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetUserValue(triggerID: 99990001, key: "Battle_3_Clear", value: 0);
+                context.StartCombineSpawn(groupId: new int[] {500}, isStart: "false");
+                context.StartCombineSpawn(groupId: new int[] {501}, isStart: "false");
+                context.StartCombineSpawn(groupId: new int[] {502}, isStart: "false");
+                context.StartCombineSpawn(groupId: new int[] {503}, isStart: "false");
+                context.StartCombineSpawn(groupId: new int[] {504}, isStart: "false");
+                context.SetOnetimeEffect(id: 1, enable: false,
+                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.ResetTimer(arg1: "1");
+                context.ResetTimer(arg1: "2");
+                context.ResetTimer(arg1: "3");
+                context.ResetTimer(arg1: "4");
+            }
+
+            public override void Execute() {
+                if (context.UserValue(key: "Battle_3_SpawnStart", value: 1)) {
+                    context.State = new State스폰_1_SE(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class State스폰_1_SE : TriggerState {
+            internal State스폰_1_SE(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.ScoreBoardCreate(maxScore: 900);
+                context.SetOnetimeEffect(id: 1, enable: true,
+                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+            }
+
+            public override void Execute() {
+                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                    context.State = new State대기(context);
+                    return;
+                }
+
+                if (context.WaitTick(waitTick: 5000)) {
+                    context.State = new State스폰_1(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class State스폰_1 : TriggerState {
+            internal State스폰_1(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetTimer(arg1: "1", arg2: 60, arg3: true);
+                context.SetOnetimeEffect(id: 1, enable: false,
+                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.StartCombineSpawn(groupId: new int[] {500}, isStart: "true");
+            }
+
+            public override void Execute() {
+                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                    context.State = new State대기(context);
+                    return;
+                }
+
+                if (context.TimeExpired(arg1: "1")
+                    || context.ScoreBoardCompare(compareOp: "GreaterEqual", score: 150)) {
+                    context.State = new State스폰_3_SE(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class State스폰_2_SE : TriggerState {
+            internal State스폰_2_SE(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetOnetimeEffect(id: 1, enable: true,
+                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+            }
+
+            public override void Execute() {
+                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                    context.State = new State대기(context);
+                    return;
+                }
+
+                if (context.WaitTick(waitTick: 2000)) {
+                    context.State = new State스폰_2(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class State스폰_2 : TriggerState {
+            internal State스폰_2(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetTimer(arg1: "2", arg2: 60, arg3: true);
+                context.SetOnetimeEffect(id: 1, enable: false,
+                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.StartCombineSpawn(groupId: new int[] {501}, isStart: "true");
+            }
+
+            public override void Execute() {
+                if (context.TimeExpired(arg1: "2")
+                    || context.ScoreBoardCompare(compareOp: "GreaterEqual", score: 250)) {
+                    context.State = new State스폰_3_SE(context);
+                    return;
+                }
+
+                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                    context.State = new State대기(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class State스폰_3_SE : TriggerState {
+            internal State스폰_3_SE(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetOnetimeEffect(id: 1, enable: true,
+                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+            }
+
+            public override void Execute() {
+                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                    context.State = new State대기(context);
+                    return;
+                }
+
+                if (context.WaitTick(waitTick: 2000)) {
+                    context.State = new State스폰_3(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class State스폰_3 : TriggerState {
+            internal State스폰_3(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetTimer(arg1: "3", arg2: 60, arg3: true);
+                context.SetOnetimeEffect(id: 1, enable: false,
+                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.StartCombineSpawn(groupId: new int[] {502}, isStart: "true");
+            }
+
+            public override void Execute() {
+                if (context.TimeExpired(arg1: "3")
+                    || context.ScoreBoardCompare(compareOp: "GreaterEqual", score: 500)) {
+                    context.State = new State스폰_4_SE(context);
+                    return;
+                }
+
+                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                    context.State = new State대기(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class State스폰_4_SE : TriggerState {
+            internal State스폰_4_SE(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetOnetimeEffect(id: 1, enable: true,
+                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+            }
+
+            public override void Execute() {
+                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                    context.State = new State대기(context);
+                    return;
+                }
+
+                if (context.WaitTick(waitTick: 2000)) {
+                    context.State = new State스폰_4(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class State스폰_4 : TriggerState {
+            internal State스폰_4(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetTimer(arg1: "4", arg2: 60, arg3: true);
+                context.SetOnetimeEffect(id: 1, enable: false,
+                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.StartCombineSpawn(groupId: new int[] {503}, isStart: "true");
+            }
+
+            public override void Execute() {
+                if (context.TimeExpired(arg1: "4")
+                    || context.ScoreBoardCompare(compareOp: "GreaterEqual", score: 750)) {
+                    context.State = new State스폰_5_SE(context);
+                    return;
+                }
+
+                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                    context.State = new State대기(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class State스폰_5_SE : TriggerState {
+            internal State스폰_5_SE(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.SetOnetimeEffect(id: 1, enable: true,
+                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+            }
+
+            public override void Execute() {
+                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                    context.State = new State대기(context);
+                    return;
+                }
+
+                if (context.WaitTick(waitTick: 2000)) {
+                    context.State = new State스폰_5(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+
+        private class State스폰_5 : TriggerState {
+            internal State스폰_5(ITriggerContext context) : base(context) { }
+
+            public override void OnEnter() {
+                context.StartCombineSpawn(groupId: new int[] {504}, isStart: "true");
+                context.SetOnetimeEffect(id: 1, enable: false,
+                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.ScoreBoardRemove();
+            }
+
+            public override void Execute() {
+                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                    context.State = new State대기(context);
+                    return;
+                }
+            }
+
+            public override void OnExit() { }
+        }
+    }
+}
