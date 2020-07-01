@@ -6,18 +6,8 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.SetPortal(arg1: 14, arg2: false, arg3: false, arg4: false);
                 context.SetMesh(arg1: new[] {4014}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetAgent(arg1: "28061", arg2: true);
-                context.SetAgent(arg1: "28062", arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611,
-                        230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        430600, 430601, 430602, 430603, 430604, 430605, 430606, 430607, 430608, 430609, 430610, 430611,
-                        430612, 430613, 430614, 430615, 430616, 430617, 430618, 430619
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetAgent(arg1: new[] {28061, 28062}, arg2: true);
+                context.SetMesh(arg1: new[] {230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611, 230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619, 430600, 430601, 430602, 430603, 430604, 430605, 430606, 430607, 430608, 430609, 430610, 430611, 430612, 430613, 430614, 430615, 430616, 430617, 430618, 430619}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "RouteSelected", value: 0);
                 context.SetUserValue(key: "MakeTrue", value: 0);
                 context.SetUserValue(key: "MakeFalse", value: 0);
@@ -37,11 +27,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateStartDazzlingRandom01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611,
-                        230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619
-                    }, arg2: true, arg3: 6, arg4: 100, arg5: 500);
+                context.SetRandomMesh(arg1: new[] {230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611, 230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619}, arg2: true, arg3: 6, arg4: 100, arg5: 500);
             }
 
             public override void Execute() {
@@ -62,11 +48,7 @@ namespace Maple2.Trigger._02000378_bf {
             }
 
             public override void OnExit() {
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611,
-                        230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619
-                    }, arg2: false, arg3: 20, arg4: 0, arg5: 0);
+                context.SetRandomMesh(arg1: new[] {230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611, 230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619}, arg2: false, arg3: 20, arg4: 0, arg5: 0);
             }
         }
 
@@ -74,11 +56,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateStartDazzlingRandom02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611,
-                        230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619
-                    }, arg2: true, arg3: 6, arg4: 100, arg5: 500);
+                context.SetRandomMesh(arg1: new[] {230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611, 230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619}, arg2: true, arg3: 6, arg4: 100, arg5: 500);
             }
 
             public override void Execute() {
@@ -99,11 +77,7 @@ namespace Maple2.Trigger._02000378_bf {
             }
 
             public override void OnExit() {
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611,
-                        230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619
-                    }, arg2: false, arg3: 20, arg4: 0, arg5: 0);
+                context.SetRandomMesh(arg1: new[] {230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611, 230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619}, arg2: false, arg3: 20, arg4: 0, arg5: 0);
             }
         }
 
@@ -112,18 +86,9 @@ namespace Maple2.Trigger._02000378_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5006}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611,
-                        230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        430600, 430601, 430602, 430603, 430604, 430605, 430606, 430607, 430608, 430609, 430610, 430611,
-                        430612, 430613, 430614, 430615, 430616, 430617, 430618, 430619
-                    }, arg2: true, arg3: 20, arg4: 0, arg5: 50);
-                context.SetAgent(arg1: "28061", arg2: false);
-                context.SetAgent(arg1: "28062", arg2: false);
+                context.SetMesh(arg1: new[] {230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611, 230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetRandomMesh(arg1: new[] {430600, 430601, 430602, 430603, 430604, 430605, 430606, 430607, 430608, 430609, 430610, 430611, 430612, 430613, 430614, 430615, 430616, 430617, 430618, 430619}, arg2: true, arg3: 20, arg4: 0, arg5: 50);
+                context.SetAgent(arg1: new[] {28061, 28062}, arg2: false);
                 context.SetPortal(arg1: 14, arg2: true, arg3: true, arg4: false);
                 context.SetMesh(arg1: new[] {4014}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
@@ -142,11 +107,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateMakeFalse(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611,
-                        230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetMesh(arg1: new[] {230600, 230601, 230602, 230603, 230604, 230605, 230606, 230607, 230608, 230609, 230610, 230611, 230612, 230613, 230614, 230615, 230616, 230617, 230618, 230619}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
             }
 
             public override void Execute() {

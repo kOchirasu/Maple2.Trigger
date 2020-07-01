@@ -5,57 +5,28 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.DestroyMonster(arg1: new[] {
-                    101, 102, 201, 202, 203, 204, 290, 210, 211, 212, 213, 214, 215, 220, 221, 222, 223, 224, 225, 240,
-                    241, 242, 243, 244, 245
-                });
-                context.DestroyMonster(arg1: new[] {
-                    300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 401, 402, 403, 404, 405, 406, 407, 408, 409,
-                    410, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 601, 602, 603, 604
-                });
-                context.DestroyMonster(arg1: new[] {
-                    901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 921, 922, 923, 924, 925, 926,
-                    927, 928
-                });
-                context.DestroyMonster(arg1: new[]
-                    {605, 606, 607, 608, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814});
-                context.DestroyMonster(arg1: new[] {701, 702, 703, 704});
-                context.DestroyMonster(arg1: new[] {710, 711, 712, 713});
-                context.CreateMonster(
-                    arg1: new[] {
-                        110, 111, 112, 120, 121, 122, 123, 124, 125, 126, 130, 131, 132, 133, 134, 135, 136, 140, 141,
-                        142, 143, 144, 145, 146, 147, 150, 151, 152, 153, 154, 155, 156, 160, 161, 162, 163, 164, 165,
-                        166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 185, 183, 184,
-                        185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 113, 114, 115, 116,
-                        117, 118
-                    }, arg2: false);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.DestroyMonster(arg1: new[] {101, 102, 201, 202, 203, 204, 290, 210, 211, 212, 213, 214, 215, 220, 221, 222, 223, 224, 225, 240, 241, 242, 243, 244, 245, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 601, 602, 603, 604});
+                context.DestroyMonster(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 921, 922, 923, 924, 925, 926, 927, 928});
+                context.DestroyMonster(arg1: new[] {605, 606, 607, 608, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 701, 702, 703, 704, 710, 711, 712, 713});
+                context.CreateMonster(arg1: new[] {110, 111, 112, 120, 121, 122, 123, 124, 125, 126, 130, 131, 132, 133, 134, 135, 136, 140, 141, 142, 143, 144, 145, 146, 147, 150, 151, 152, 153, 154, 155, 156, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 185, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 113, 114, 115, 116, 117, 118}, arg2: false);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 4500, arg2: true, arg3: "Interaction_bridge_A01_on");
                 context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: false);
                 context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: false);
-                context.SetCube(ids: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010},
-                    isVisible: false);
+                context.SetCube(ids: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010}, isVisible: false);
                 context.SetLocalCamera(cameraId: 10000, enable: false);
                 context.SetLocalCamera(cameraId: 10001, enable: false);
-                context.SetAgent(arg1: "8001", arg2: false);
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetAgent(arg1: new[] {8001, 8002, 8003}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001551},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001551}, arg3: new byte[] {1})) {
                     context.State = new StateLoadingDelay01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001551},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001551}, arg3: new byte[] {2})) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -72,13 +43,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.CreateMonster(arg1: new[] {605, 606, 607, 608}, arg2: false);
-                context.CreateMonster(arg1: new[] {801, 802, 803, 804, 805, 806}, arg2: false);
-                context.CreateMonster(arg1: new[] {807, 808, 809, 810, 811, 812, 813, 814}, arg2: false);
-                context.CreateMonster(arg1: new[] {101, 201}, arg2: false);
-                context.CreateMonster(arg1: new[] {501, 502, 507, 508}, arg2: false);
-                context.CreateMonster(arg1: new[] {401, 402, 403, 404, 405, 406, 407, 408, 409, 410}, arg2: false);
-                context.CreateMonster(arg1: new[] {710, 711, 712, 713}, arg2: false);
+                context.CreateMonster(arg1: new[] {605, 606, 607, 608, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 101, 201, 501, 502, 507, 508, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 710, 711, 712, 713}, arg2: false);
                 context.CameraSelect(arg1: 10, arg2: true);
             }
 
@@ -116,8 +81,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003221, msg: "$52000120_QD__01_HENESYSDEFENSE__0$", duration: 5000,
-                    align: "center", illustId: "Manovich_normal");
+                context.AddCinematicTalk(npcId: 11003221, msg: "$52000120_QD__01_HENESYSDEFENSE__0$", duration: 5000, align: "center", illustId: "Manovich_normal");
                 context.SetSceneSkip(arg1: "SetLocalTargetCamera01cskip", arg2: "nextState");
             }
 
@@ -155,8 +119,7 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_1000");
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
-                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__1$", duration: 4000,
-                    align: "center", illustId: "Oskhal_normal");
+                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__1$", duration: 4000, align: "center", illustId: "Oskhal_normal");
             }
 
             public override void Execute() {
@@ -175,8 +138,7 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.CameraSelect(arg1: 11, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000120_QD__01_HENESYSDEFENSE__2$", duration: 2000,
-                    delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000120_QD__01_HENESYSDEFENSE__2$", duration: 2000, delayTick: 1000);
             }
 
             public override void Execute() {
@@ -280,8 +242,7 @@ namespace Maple2.Trigger._52000120_qd {
             internal StatePCTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000120_QD__01_HENESYSDEFENSE__3$", duration: 4000,
-                    align: "center", illustId: "0");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000120_QD__01_HENESYSDEFENSE__3$", duration: 4000, align: "center", illustId: "0");
             }
 
             public override void Execute() {
@@ -316,8 +277,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003221, msg: "$52000120_QD__01_HENESYSDEFENSE__4$", duration: 5000,
-                    align: "center", illustId: "Manovich_normal");
+                context.AddCinematicTalk(npcId: 11003221, msg: "$52000120_QD__01_HENESYSDEFENSE__4$", duration: 5000, align: "center", illustId: "Manovich_normal");
             }
 
             public override void Execute() {
@@ -353,8 +313,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 4000f);
-                context.AddCinematicTalk(npcId: 0, msg: "$52000120_QD__01_HENESYSDEFENSE__5$", duration: 4000,
-                    align: "center", illustId: "0");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000120_QD__01_HENESYSDEFENSE__5$", duration: 4000, align: "center", illustId: "0");
             }
 
             public override void Execute() {
@@ -390,8 +349,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
-                context.AddCinematicTalk(npcId: 11003221, msg: "$52000120_QD__01_HENESYSDEFENSE__6$", duration: 4000,
-                    align: "center", illustId: "Manovich_normal");
+                context.AddCinematicTalk(npcId: 11003221, msg: "$52000120_QD__01_HENESYSDEFENSE__6$", duration: 4000, align: "center", illustId: "Manovich_normal");
             }
 
             public override void Execute() {
@@ -426,8 +384,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__7$", duration: 5000,
-                    align: "center", illustId: "Oskhal_normal");
+                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__7$", duration: 5000, align: "center", illustId: "Oskhal_normal");
             }
 
             public override void Execute() {
@@ -446,8 +403,7 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Idle_A");
                 context.RemoveCinematicTalk();
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5000, 5001}, arg2: true);
             }
 
             public override void Execute() {
@@ -498,8 +454,7 @@ namespace Maple2.Trigger._52000120_qd {
             internal StateOskhalTalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__8$", duration: 4000,
-                    align: "center", illustId: "Oskhal_serious");
+                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__8$", duration: 4000, align: "center", illustId: "Oskhal_serious");
             }
 
             public override void Execute() {
@@ -533,8 +488,7 @@ namespace Maple2.Trigger._52000120_qd {
             internal StateOskhalTalk04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__9$", duration: 5000,
-                    align: "center", illustId: "Oskhal_normal");
+                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__9$", duration: 5000, align: "center", illustId: "Oskhal_normal");
             }
 
             public override void Execute() {
@@ -611,8 +565,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105}, arg2: false, arg3: 500, arg4: 0,
-                    arg5: 2f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105}, arg2: false, arg3: 500, arg4: 0, arg5: 2f);
                 context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: true);
                 context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: true);
             }
@@ -674,8 +627,7 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() {
                 context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: false);
                 context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: false);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105}, arg2: true, arg3: 500, arg4: 0,
-                    arg5: 2f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105}, arg2: true, arg3: 500, arg4: 0, arg5: 2f);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
@@ -700,8 +652,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: false);
                 context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: false);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105}, arg2: true, arg3: 500, arg4: 0,
-                    arg5: 2f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105}, arg2: true, arg3: 500, arg4: 0, arg5: 2f);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
@@ -721,9 +672,7 @@ namespace Maple2.Trigger._52000120_qd {
             internal StateSetLocalTargetCamera02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
+                context.SetAgent(arg1: new[] {8001, 8002, 8003}, arg2: true);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
@@ -742,8 +691,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() {
                 context.SetLocalCamera(cameraId: 10000, enable: true);
-                context.SetCube(ids: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010},
-                    isVisible: true);
+                context.SetCube(ids: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010}, isVisible: true);
             }
 
             public override void Execute() {
@@ -780,8 +728,7 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {202, 210, 211, 212, 213, 214, 215});
                 context.CreateMonster(arg1: new[] {203, 220, 221, 222, 223, 224, 225}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__10$", duration: 5000,
-                    align: "center", illustId: "Oskhal_normal");
+                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__10$", duration: 5000, align: "center", illustId: "Oskhal_normal");
                 context.SetSceneSkip(arg1: "BattleOnTheWallGuide01Skip");
             }
 
@@ -817,12 +764,10 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001}, arg2: false);
                 context.CreateMonster(arg1: new[] {903, 904}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003221, msg: "$52000120_QD__01_HENESYSDEFENSE__11$", duration: 4000,
-                    align: "center", illustId: "Manovich_normal");
+                context.AddCinematicTalk(npcId: 11003221, msg: "$52000120_QD__01_HENESYSDEFENSE__11$", duration: 4000, align: "center", illustId: "Manovich_normal");
                 context.SetSceneSkip(arg1: "BattleOnTheWallGuide02Skip");
             }
 
@@ -938,8 +883,7 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__12$", duration: 5000,
-                    align: "center", illustId: "Oskhal_normal");
+                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__12$", duration: 5000, align: "center", illustId: "Oskhal_normal");
                 context.SetSceneSkip(arg1: "PCVolunteer05CSkip", arg2: "nextState");
             }
 
@@ -1049,8 +993,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 4000f);
-                context.AddCinematicTalk(npcId: 0, msg: "$52000120_QD__01_HENESYSDEFENSE__13$", duration: 4000,
-                    align: "center", illustId: "0");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000120_QD__01_HENESYSDEFENSE__13$", duration: 4000, align: "center", illustId: "0");
             }
 
             public override void Execute() {
@@ -1128,21 +1071,13 @@ namespace Maple2.Trigger._52000120_qd {
             internal StateBattle01Start02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(ids: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010},
-                    isVisible: false);
-                context.DestroyMonster(arg1: new[] {701, 702, 703, 704});
-                context.DestroyMonster(arg1: new[] {710, 711, 712, 713});
-                context.CreateMonster(arg1: new[] {300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310},
-                    arg2: false);
-                context.CreateMonster(arg1: new[] {500, 503, 504, 505, 506, 509, 510}, arg2: false);
-                context.CreateMonster(arg1: new[] {601, 602, 603, 604}, arg2: false);
-                context.CreateMonster(arg1: new[] {701, 702, 703, 704}, arg2: false);
+                context.SetCube(ids: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010}, isVisible: false);
+                context.DestroyMonster(arg1: new[] {701, 702, 703, 704, 710, 711, 712, 713});
+                context.CreateMonster(arg1: new[] {300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 500, 503, 504, 505, 506, 509, 510, 601, 602, 603, 604, 701, 702, 703, 704}, arg2: false);
                 context.MoveUser(arg1: 52000120, arg2: 30, arg3: 9900);
                 context.CreateMonster(arg1: new[] {240, 241, 242, 243, 244, 245}, arg2: false);
                 context.CameraSelect(arg1: 30, arg2: true);
-                context.SetAgent(arg1: "8001", arg2: false);
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
+                context.SetAgent(arg1: new[] {8001, 8002, 8003}, arg2: false);
             }
 
             public override void Execute() {
@@ -1163,8 +1098,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetProductionUI(arg1: 3);
                 context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105}, arg2: false, arg3: 500, arg4: 0,
-                    arg5: 2f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105}, arg2: false, arg3: 500, arg4: 0, arg5: 2f);
                 context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: true);
                 context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: true);
             }
@@ -1227,8 +1161,7 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() {
                 context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: false);
                 context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: false);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105}, arg2: true, arg3: 500, arg4: 0,
-                    arg5: 2f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105}, arg2: true, arg3: 500, arg4: 0, arg5: 2f);
                 context.SetActor(arg1: 4500, arg2: true, arg3: "Interaction_bridge_A01_on");
                 context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
@@ -1247,9 +1180,7 @@ namespace Maple2.Trigger._52000120_qd {
             internal StateBattle01Start07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
+                context.SetAgent(arg1: new[] {8001, 8002, 8003}, arg2: true);
                 context.ChangeMonster(arg1: 203, arg2: 204);
                 context.ChangeMonster(arg1: 240, arg2: 250);
                 context.ChangeMonster(arg1: 241, arg2: 251);
@@ -1281,8 +1212,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.HideGuideSummary(entityId: 25101202);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__14$", duration: 5000,
-                    align: "center", illustId: "Oskhal_normal");
+                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__14$", duration: 5000, align: "center", illustId: "Oskhal_normal");
                 context.SetSceneSkip(arg1: "Battle01End01Skip");
             }
 
@@ -1389,8 +1319,7 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__15$", duration: 5000,
-                    align: "center", illustId: "Oskhal_normal");
+                context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__15$", duration: 5000, align: "center", illustId: "Oskhal_normal");
                 context.SetSceneSkip(arg1: "Battle02End01Skip");
             }
 
@@ -1591,10 +1520,8 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.AddCinematicTalk(npcId: 11003226, msg: "$52000120_QD__01_HENESYSDEFENSE__16$", duration: 5000,
-                    align: "center", illustId: "0");
+                context.SetEffect(arg1: new[] {5000, 5001}, arg2: true);
+                context.AddCinematicTalk(npcId: 11003226, msg: "$52000120_QD__01_HENESYSDEFENSE__16$", duration: 5000, align: "center", illustId: "0");
                 context.SetSceneSkip(arg1: "ManovichTalk03_CSkip", arg2: "exit");
             }
 
@@ -1684,8 +1611,7 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003226, msg: "$52000120_QD__01_HENESYSDEFENSE__17$", duration: 4000,
-                    align: "center", illustId: "Turka_normal");
+                context.AddCinematicTalk(npcId: 11003226, msg: "$52000120_QD__01_HENESYSDEFENSE__17$", duration: 4000, align: "center", illustId: "Turka_normal");
             }
 
             public override void Execute() {
@@ -1705,8 +1631,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.RemoveCinematicTalk();
                 context.MoveNpc(arg1: 290, arg2: "MS2PatrolData_302");
                 context.DestroyMonster(arg1: new[] {980, 981, 982, 983, 984, 985, 990, 991, 992, 993, 994, 995});
-                context.CreateMonster(arg1: new[] {960, 961, 962, 963, 964, 965, 970, 971, 972, 973, 974, 975},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {960, 961, 962, 963, 964, 965, 970, 971, 972, 973, 974, 975}, arg2: false);
             }
 
             public override void Execute() {
@@ -1863,8 +1788,7 @@ namespace Maple2.Trigger._52000120_qd {
             internal StateEnemyRetreat06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {112, 144, 145, 146, 147, 170, 172, 178, 179, 180});
-                context.DestroyMonster(arg1: new[] {160, 161, 162, 163, 164, 165, 166});
+                context.DestroyMonster(arg1: new[] {112, 144, 145, 146, 147, 170, 172, 178, 179, 180, 160, 161, 162, 163, 164, 165, 166});
                 context.MoveNpc(arg1: 130, arg2: "MS2PatrolData_2101");
                 context.MoveNpc(arg1: 131, arg2: "MS2PatrolData_2003");
                 context.MoveNpc(arg1: 132, arg2: "MS2PatrolData_2002");
@@ -1894,8 +1818,7 @@ namespace Maple2.Trigger._52000120_qd {
             internal StateEnemyRetreat07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {171, 174, 175, 176, 177, 150, 151, 152, 153, 154, 155, 156});
-                context.DestroyMonster(arg1: new[] {140, 141, 142, 143, 167, 168, 169});
+                context.DestroyMonster(arg1: new[] {171, 174, 175, 176, 177, 150, 151, 152, 153, 154, 155, 156, 140, 141, 142, 143, 167, 168, 169});
                 context.MoveNpc(arg1: 181, arg2: "MS2PatrolData_2001");
                 context.MoveNpc(arg1: 182, arg2: "MS2PatrolData_2002");
                 context.MoveNpc(arg1: 183, arg2: "MS2PatrolData_2003");
@@ -1929,8 +1852,7 @@ namespace Maple2.Trigger._52000120_qd {
             internal StateEnemyRetreat08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {191, 192, 193, 194, 195});
-                context.DestroyMonster(arg1: new[] {114, 115, 116, 117, 118, 110});
+                context.DestroyMonster(arg1: new[] {191, 192, 193, 194, 195, 114, 115, 116, 117, 118, 110});
             }
 
             public override void Execute() {
@@ -1947,8 +1869,7 @@ namespace Maple2.Trigger._52000120_qd {
             internal StateEnemyRetreat09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {111, 187, 188, 189, 190});
-                context.DestroyMonster(arg1: new[] {120, 121, 122, 123, 124, 125, 126});
+                context.DestroyMonster(arg1: new[] {111, 187, 188, 189, 190, 120, 121, 122, 123, 124, 125, 126});
             }
 
             public override void Execute() {
@@ -1965,8 +1886,7 @@ namespace Maple2.Trigger._52000120_qd {
             internal StateEnemyRetreat10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {130, 131, 132, 133, 134, 135, 136, 184});
-                context.DestroyMonster(arg1: new[] {113, 196, 197, 198, 199});
+                context.DestroyMonster(arg1: new[] {130, 131, 132, 133, 134, 135, 136, 184, 113, 196, 197, 198, 199});
             }
 
             public override void Execute() {
@@ -1983,10 +1903,7 @@ namespace Maple2.Trigger._52000120_qd {
             internal StateEnemyRetreat11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {181, 182, 183, 184, 185, 186});
-                context.DestroyMonster(arg1: new[] {990, 991, 992, 993, 994, 995});
-                context.DestroyMonster(arg1: new[] {980, 981, 982, 983, 984, 985});
-                context.DestroyMonster(arg1: new[] {290});
+                context.DestroyMonster(arg1: new[] {181, 182, 183, 184, 185, 186, 990, 991, 992, 993, 994, 995, 980, 981, 982, 983, 984, 985, 290});
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
             }
 
@@ -2039,8 +1956,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
-                context.AddCinematicTalk(npcId: 11003221, msg: "$52000120_QD__01_HENESYSDEFENSE__18$", duration: 4000,
-                    align: "center", illustId: "Manovich_normal");
+                context.AddCinematicTalk(npcId: 11003221, msg: "$52000120_QD__01_HENESYSDEFENSE__18$", duration: 4000, align: "center", illustId: "Manovich_normal");
             }
 
             public override void Execute() {

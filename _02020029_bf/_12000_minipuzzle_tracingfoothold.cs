@@ -6,13 +6,8 @@ namespace Maple2.Trigger._02020029_bf {
             public override void OnEnter() {
                 context.ResetTimer(arg1: "1");
                 context.ResetTimer(arg1: "2");
-                context.SetInteractObject(arg1: new[] {12000082}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000083}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000224}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000075}, arg2: 2);
-                context.SetMesh(arg1: new[] {12001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {12002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {12003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {12000082, 12000083, 12000224, 12000075}, arg2: 2);
+                context.SetMesh(arg1: new[] {12001, 12002, 12003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 12201, arg2: false, arg3: "Interaction_luminous_A01_on");
                 context.SetActor(arg1: 12202, arg2: false, arg3: "Interaction_luminous_A01_on");
                 context.SetEffect(arg1: new[] {12100}, arg2: false);

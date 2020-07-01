@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52100207_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003190},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003190}, arg3: new byte[] {2})) {
                     context.State = new Statewait_01_02(context);
                     return;
                 }
@@ -20,8 +19,7 @@ namespace Maple2.Trigger._52100207_qd {
             internal Statewait_01_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
@@ -40,8 +38,7 @@ namespace Maple2.Trigger._52100207_qd {
             internal State요랑의방_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
 
@@ -133,8 +130,7 @@ namespace Maple2.Trigger._52100207_qd {
             internal StateSkip_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {

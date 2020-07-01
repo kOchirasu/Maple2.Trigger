@@ -9,43 +9,34 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetOnetimeEffect(id: 2, enable: false,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Ending_Chord_01.xml");
-                context.SetOnetimeEffect(id: 3, enable: false,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
-                context.SetOnetimeEffect(id: 4, enable: false,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
-                context.SetOnetimeEffect(id: 5, enable: false,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Ending_Chord_01.xml");
+                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60100070}, arg3: new byte[] {3},
-                    arg4: 70)) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60100070}, arg3: new byte[] {3}, arg4: 70)) {
                     context.State = new StateQuit(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100070}, arg3: new byte[] {2},
-                    arg4: 70)) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100070}, arg3: new byte[] {2}, arg4: 70)) {
                     context.State = new StateQuit(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100070}, arg3: new byte[] {1},
-                    arg4: 70)) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100070}, arg3: new byte[] {1}, arg4: 70)) {
                     context.State = new StateLoadingDelay02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60100065}, arg3: new byte[] {3},
-                    arg4: 70)) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60100065}, arg3: new byte[] {3}, arg4: 70)) {
                     context.State = new StateDefaultSetting02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60100065}, arg3: new byte[] {2},
-                    arg4: 70)) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60100065}, arg3: new byte[] {2}, arg4: 70)) {
                     context.State = new StateLoadingDelay01(context);
                     return;
                 }
@@ -132,8 +123,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateCameraWalk04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Ending_Chord_01.xml");
+                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Ending_Chord_01.xml");
             }
 
             public override void Execute() {
@@ -151,8 +141,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 802, arg2: true);
-                context.SetOnetimeEffect(id: 3, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override void Execute() {
@@ -170,8 +159,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 803, arg2: true);
-                context.SetOnetimeEffect(id: 4, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override void Execute() {
@@ -189,8 +177,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 804, arg2: true);
-                context.SetOnetimeEffect(id: 5, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 5, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override void Execute() {
@@ -231,8 +218,7 @@ namespace Maple2.Trigger._52000037_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100070},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100070}, arg3: new byte[] {1})) {
                     context.State = new StateLoadingDelay02(context);
                     return;
                 }
@@ -393,8 +379,7 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 811, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$52000037_QD__LOOKINTO_THIEF_09__0$", arg3: 3000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$52000037_QD__LOOKINTO_THIEF_09__0$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() { }

@@ -118,14 +118,9 @@ namespace Maple2.Trigger._02000331_bf {
             internal State다리재생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013,
-                        10014, 10015, 10016
-                    }, arg2: true, arg3: 16, arg4: 100, arg5: 100);
+                context.SetRandomMesh(arg1: new[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014, 10015, 10016}, arg2: true, arg3: 16, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777701}, arg2: true);
-                context.SetMesh(arg1: new[] {90000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {90001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {90000, 90001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {4100}, arg2: false);
             }
 

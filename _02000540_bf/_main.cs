@@ -6,33 +6,19 @@ namespace Maple2.Trigger._02000540_bf {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAmbientLight(arg1: new Vector3(132f, 195f, 255f), arg2: new Vector3(0f, 0f, 0f),
-                    arg3: new Vector3(0f, 0f, 0f));
+                context.SetAmbientLight(arg1: new Vector3(132f, 195f, 255f), arg2: new Vector3(0f, 0f, 0f), arg3: new Vector3(0f, 0f, 0f));
                 context.SetDirectionalLight(arg1: new Vector3(163f, 115f, 143f), arg2: new Vector3(140f, 140f, 140f));
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 6002, arg2: false);
                 context.SetPortal(arg1: 6003, arg2: false);
                 context.SetPortal(arg1: 6004, arg2: false);
                 context.SetPortal(arg1: 6005, arg2: false);
-                context.SetInteractObject(arg1: new[] {10003138}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10003139}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10003140}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10003141}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10003138, 10003139, 10003140, 10003141}, arg2: 0);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
-                context.SetEffect(arg1: new[] {9000}, arg2: false);
-                context.SetEffect(arg1: new[] {9001}, arg2: false);
-                context.SetEffect(arg1: new[] {9002}, arg2: false);
-                context.SetEffect(arg1: new[] {9003}, arg2: false);
+                context.SetEffect(arg1: new[] {9000, 9001, 9002, 9003}, arg2: false);
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
-                context.SetEffect(arg1: new[] {8001}, arg2: false);
-                context.SetEffect(arg1: new[] {8002}, arg2: false);
-                context.SetEffect(arg1: new[] {8003}, arg2: false);
-                context.SetEffect(arg1: new[] {8004}, arg2: false);
-                context.SetEffect(arg1: new[] {8005}, arg2: false);
-                context.SetEffect(arg1: new[] {8006}, arg2: false);
-                context.SetEffect(arg1: new[] {8007}, arg2: false);
-                context.SetEffect(arg1: new[] {8008}, arg2: false);
+                context.SetEffect(arg1: new[] {8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: false);
                 context.CreateMonster(arg1: new[] {614}, arg2: true);
                 context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetOnetimeEffect(id: 102, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -76,10 +62,8 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {601, 6011, 6012}, arg2: true);
                 context.AddBalloonTalk(spawnPointId: 601, msg: "$02000540_BF__MAIN__1$", duration: 3500, delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 6011, msg: "$02000540_BF__MAIN__2$", duration: 3500,
-                    delayTick: 1500);
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000,
-                    script: "$02000540_BF__MAIN__3$");
+                context.AddBalloonTalk(spawnPointId: 6011, msg: "$02000540_BF__MAIN__2$", duration: 3500, delayTick: 1500);
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000540_BF__MAIN__3$");
             }
 
             public override void Execute() {
@@ -97,8 +81,7 @@ namespace Maple2.Trigger._02000540_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {602, 6021, 6022, 603}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 603, msg: "$02000540_BF__MAIN__4$", duration: 3500,
-                    delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 603, msg: "$02000540_BF__MAIN__4$", duration: 3500, delayTick: 500);
             }
 
             public override void Execute() {
@@ -154,8 +137,7 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {9000}, arg2: false);
                 context.CreateMonster(arg1: new[] {604, 6041, 6042}, arg2: false);
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000,
-                    script: "$02000540_BF__MAIN__7$");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000540_BF__MAIN__7$");
             }
 
             public override void Execute() {
@@ -173,8 +155,7 @@ namespace Maple2.Trigger._02000540_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {605, 6051, 6052, 606}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 606, msg: "$02000540_BF__MAIN__8$", duration: 3500,
-                    delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 606, msg: "$02000540_BF__MAIN__8$", duration: 3500, delayTick: 500);
             }
 
             public override void Execute() {
@@ -212,12 +193,10 @@ namespace Maple2.Trigger._02000540_bf {
                 context.SetEffect(arg1: new[] {8002}, arg2: true);
                 context.SetOnetimeEffect(id: 102, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetEventUI(arg1: 1, arg2: "$02000540_BF__MAIN__10$", arg3: 3000);
-                context.SetEffect(arg1: new[] {8005}, arg2: true);
-                context.SetEffect(arg1: new[] {8006}, arg2: true);
+                context.SetEffect(arg1: new[] {8005, 8006}, arg2: true);
                 context.SetPortal(arg1: 6002, arg2: true);
                 context.SetPortal(arg1: 6003, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 614, msg: "$02000540_BF__MAIN__11$", duration: 6500,
-                    delayTick: 2000);
+                context.AddBalloonTalk(spawnPointId: 614, msg: "$02000540_BF__MAIN__11$", duration: 6500, delayTick: 2000);
             }
 
             public override void Execute() {
@@ -253,8 +232,7 @@ namespace Maple2.Trigger._02000540_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {608, 6081, 6082, 609}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 609, msg: "$02000540_BF__MAIN__12$", duration: 3500,
-                    delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 609, msg: "$02000540_BF__MAIN__12$", duration: 3500, delayTick: 500);
             }
 
             public override void Execute() {
@@ -327,8 +305,7 @@ namespace Maple2.Trigger._02000540_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {611, 6111, 6112, 612}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 612, msg: "$02000540_BF__MAIN__15$", duration: 3500,
-                    delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 612, msg: "$02000540_BF__MAIN__15$", duration: 3500, delayTick: 500);
             }
 
             public override void Execute() {
@@ -366,13 +343,11 @@ namespace Maple2.Trigger._02000540_bf {
                 context.SetEffect(arg1: new[] {8004}, arg2: true);
                 context.SetOnetimeEffect(id: 104, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetEventUI(arg1: 1, arg2: "$02000540_BF__MAIN__17$", arg3: 3000);
-                context.SetAmbientLight(arg1: new Vector3(237f, 225f, 255f), arg2: new Vector3(0f, 0f, 0f),
-                    arg3: new Vector3(0f, 0f, 0f));
+                context.SetAmbientLight(arg1: new Vector3(237f, 225f, 255f), arg2: new Vector3(0f, 0f, 0f), arg3: new Vector3(0f, 0f, 0f));
                 context.SetDirectionalLight(arg1: new Vector3(232f, 212f, 127f), arg2: new Vector3(140f, 140f, 140f));
                 context.SetPortal(arg1: 6004, arg2: true);
                 context.SetPortal(arg1: 6005, arg2: true);
-                context.SetEffect(arg1: new[] {8007}, arg2: true);
-                context.SetEffect(arg1: new[] {8008}, arg2: true);
+                context.SetEffect(arg1: new[] {8007, 8008}, arg2: true);
             }
 
             public override void Execute() {
@@ -389,8 +364,7 @@ namespace Maple2.Trigger._02000540_bf {
             internal State보스등장전에(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000,
-                    script: "$02000540_BF__MAIN__18$");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000540_BF__MAIN__18$");
             }
 
             public override void Execute() {
@@ -411,8 +385,7 @@ namespace Maple2.Trigger._02000540_bf {
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: true);
                 context.SetOnetimeEffect(id: 105, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000,
-                    script: "$02000540_BF__MAIN__19$");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000540_BF__MAIN__19$");
                 context.CreateMonster(arg1: new[] {613}, arg2: true);
                 context.SetPortal(arg1: 6005, arg2: false);
             }
@@ -431,8 +404,7 @@ namespace Maple2.Trigger._02000540_bf {
             internal State다리생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000,
-                    script: "$02000540_BF__MAIN__20$");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000540_BF__MAIN__20$");
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 

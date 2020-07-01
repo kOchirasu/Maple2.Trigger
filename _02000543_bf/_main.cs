@@ -11,14 +11,8 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
-                context.SetEffect(arg1: new[] {3000}, arg2: false);
-                context.SetEffect(arg1: new[] {3002}, arg2: false);
-                context.SetEffect(arg1: new[] {3001}, arg2: false);
-                context.SetEffect(arg1: new[] {3003}, arg2: false);
-                context.SetEffect(arg1: new[] {3004}, arg2: false);
-                context.SetEffect(arg1: new[] {3005}, arg2: false);
-                context.SetSkill(arg1: new[] {4000}, arg2: false);
-                context.SetSkill(arg1: new[] {4001}, arg2: false);
+                context.SetEffect(arg1: new[] {3000, 3002, 3001, 3003, 3004, 3005}, arg2: false);
+                context.SetSkill(arg1: new[] {4000, 4001}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetOnetimeEffect(id: 102, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -62,8 +56,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {3001}, arg2: true);
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000,
-                    script: "$02000543_BF__MAIN__0$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000, script: "$02000543_BF__MAIN__0$");
             }
 
             public override void Execute() {
@@ -81,8 +74,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {7000}, arg2: false);
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000,
-                    script: "$02000543_BF__MAIN__1$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000, script: "$02000543_BF__MAIN__1$");
                 context.LockMyPc(isLock: true);
                 context.SetMesh(arg1: new[] {5000, 5001}, arg2: true);
             }
@@ -104,8 +96,7 @@ namespace Maple2.Trigger._02000543_bf {
                 context.CameraSelectPath(arg1: new[] {7000}, arg2: true);
                 context.LockMyPc(isLock: false);
                 context.AddBalloonTalk(spawnPointId: 104, msg: "$02000543_BF__MAIN__2$", duration: 3500, delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 105, msg: "$02000543_BF__MAIN__3$", duration: 3500,
-                    delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 105, msg: "$02000543_BF__MAIN__3$", duration: 3500, delayTick: 500);
                 context.CreateMonster(arg1: new[] {107}, arg2: true);
                 context.CreateMonster(arg1: new[] {111}, arg2: false);
             }
@@ -127,8 +118,7 @@ namespace Maple2.Trigger._02000543_bf {
                 context.CameraReset(interpolationTime: 1f);
                 context.CreateMonster(arg1: new[] {106}, arg2: true);
                 context.CreateMonster(arg1: new[] {112}, arg2: false);
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
-                    script: "$02000543_BF__MAIN__4$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "$02000543_BF__MAIN__4$");
             }
 
             public override void Execute() {
@@ -145,8 +135,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State게임설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 21450036, illust: "DesertDragonMagicGreen_normal", duration: 4000,
-                    script: "$02000543_BF__MAIN__5$");
+                context.SideNpcTalk(npcId: 21450036, illust: "DesertDragonMagicGreen_normal", duration: 4000, script: "$02000543_BF__MAIN__5$");
                 context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetEffect(arg1: new[] {3002}, arg2: true);
             }
@@ -284,8 +273,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {109}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 107, msg: "$02000543_BF__MAIN__8$", duration: 3500,
-                    delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 107, msg: "$02000543_BF__MAIN__8$", duration: 3500, delayTick: 500);
             }
 
             public override void Execute() {
@@ -351,8 +339,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State조건체크몬스터스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 21450036, illust: "DesertDragonMagicGreen_normal", duration: 4000,
-                    script: "$02000543_BF__MAIN__10$");
+                context.SideNpcTalk(npcId: 21450036, illust: "DesertDragonMagicGreen_normal", duration: 4000, script: "$02000543_BF__MAIN__10$");
             }
 
             public override void Execute() {
@@ -408,8 +395,7 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {3003}, arg2: true);
                 context.LockMyPc(isLock: true);
-                context.SideNpcTalk(npcId: 21450036, illust: "DesertDragonMagicGreen_normal", duration: 3000,
-                    script: "$02000543_BF__MAIN__12$");
+                context.SideNpcTalk(npcId: 21450036, illust: "DesertDragonMagicGreen_normal", duration: 3000, script: "$02000543_BF__MAIN__12$");
             }
 
             public override void Execute() {
@@ -426,12 +412,9 @@ namespace Maple2.Trigger._02000543_bf {
             internal State응접실문열기11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {3000}, arg2: false);
-                context.SetEffect(arg1: new[] {3002}, arg2: false);
-                context.SetEffect(arg1: new[] {3004}, arg2: true);
-                context.SetEffect(arg1: new[] {3005}, arg2: true);
-                context.SideNpcTalk(npcId: 21450036, illust: "DesertDragonMagicGreen_normal", duration: 4000,
-                    script: "$02000543_BF__MAIN__13$");
+                context.SetEffect(arg1: new[] {3000, 3002}, arg2: false);
+                context.SetEffect(arg1: new[] {3004, 3005}, arg2: true);
+                context.SideNpcTalk(npcId: 21450036, illust: "DesertDragonMagicGreen_normal", duration: 4000, script: "$02000543_BF__MAIN__13$");
             }
 
             public override void Execute() {
@@ -450,8 +433,7 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000543_BF__MAIN__14$", arg3: 3000);
                 context.DestroyMonster(arg1: new[] {111, 112});
-                context.SetEffect(arg1: new[] {3004}, arg2: false);
-                context.SetEffect(arg1: new[] {3005}, arg2: false);
+                context.SetEffect(arg1: new[] {3004, 3005}, arg2: false);
                 context.LockMyPc(isLock: false);
             }
 
@@ -490,8 +472,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State응접실문열고나서처리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
-                    script: "$02000543_BF__MAIN__17$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "$02000543_BF__MAIN__17$");
                 context.DestroyMonster(arg1: new[] {104, 105});
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: true);

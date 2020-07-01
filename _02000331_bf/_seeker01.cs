@@ -6,32 +6,11 @@ namespace Maple2.Trigger._02000331_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "11000", arg2: false);
-                context.SetAgent(arg1: "11001", arg2: false);
-                context.SetAgent(arg1: "13001", arg2: true);
-                context.SetAgent(arg1: "13002", arg2: true);
-                context.SetAgent(arg1: "13003", arg2: true);
-                context.SetAgent(arg1: "13004", arg2: true);
-                context.SetAgent(arg1: "13005", arg2: true);
-                context.SetAgent(arg1: "13006", arg2: true);
-                context.SetAgent(arg1: "15000", arg2: false);
-                context.SetAgent(arg1: "15001", arg2: false);
-                context.SetAgent(arg1: "15002", arg2: false);
-                context.SetAgent(arg1: "16000", arg2: false);
-                context.SetAgent(arg1: "16001", arg2: false);
-                context.SetAgent(arg1: "16002", arg2: false);
-                context.SetAgent(arg1: "16003", arg2: false);
-                context.SetAgent(arg1: "16004", arg2: false);
-                context.SetMesh(arg1: new[] {90000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {90001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {90002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {90003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {90004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {90005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {90006}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {90007}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {90008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {98880}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetAgent(arg1: new[] {11000, 11001}, arg2: false);
+                context.SetAgent(arg1: new[] {13001, 13002, 13003, 13004, 13005, 13006}, arg2: true);
+                context.SetAgent(arg1: new[] {15000, 15001, 15002, 16000, 16001, 16002, 16003, 16004}, arg2: false);
+                context.SetMesh(arg1: new[] {90000, 90001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {90002, 90003, 90004, 90005, 90006, 90007, 90008, 98880}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Closed");
                 context.SetMesh(arg1: new[] {89999}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 92220, arg2: true, arg3: "Idle_A");
@@ -65,105 +44,12 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetActor(arg1: 96663, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 96664, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 97770, arg2: true, arg3: "Closed");
-                context.SetMesh(
-                    arg1: new[] {
-                        10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013,
-                        10014, 10015, 10016
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {10040, 10041, 10042, 10043, 10044}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116,
-                        2117
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216,
-                        2217, 2218, 2219, 2220
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[]
-                        {2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016,
-                        3017, 3018
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216,
-                        3217, 3218, 3219, 3220, 3221
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316,
-                        3317, 3318
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416,
-                        3417, 3418, 3419
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {90090, 90091, 90092, 90093, 90094, 90095, 90096, 90097, 90098, 90099},
-                    arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10000766}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000767}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000768}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000769}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000771}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000772}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000773}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000774}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000775}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000784}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000792}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000793}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000794}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000795}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000785}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000796}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000797}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000798}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000799}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000776}, arg2: 2);
-                context.CreateMonster(arg1: new[] {401}, arg2: false);
-                context.CreateMonster(arg1: new[] {610}, arg2: false);
-                context.SetEffect(arg1: new[] {99999}, arg2: false);
-                context.SetEffect(arg1: new[] {7771}, arg2: false);
-                context.SetEffect(arg1: new[] {7772}, arg2: false);
-                context.SetEffect(arg1: new[] {777401}, arg2: false);
-                context.SetEffect(arg1: new[] {777402}, arg2: false);
-                context.SetEffect(arg1: new[] {777403}, arg2: false);
-                context.SetEffect(arg1: new[] {777404}, arg2: false);
-                context.SetEffect(arg1: new[] {777405}, arg2: false);
-                context.SetEffect(arg1: new[] {777501}, arg2: false);
-                context.SetEffect(arg1: new[] {777502}, arg2: false);
-                context.SetEffect(arg1: new[] {7776}, arg2: false);
-                context.SetEffect(arg1: new[] {777701}, arg2: false);
-                context.SetEffect(arg1: new[] {777702}, arg2: false);
-                context.SetEffect(arg1: new[] {777801}, arg2: false);
-                context.SetEffect(arg1: new[] {777802}, arg2: false);
-                context.SetEffect(arg1: new[] {777803}, arg2: false);
-                context.SetEffect(arg1: new[] {777901}, arg2: false);
-                context.SetEffect(arg1: new[] {777902}, arg2: false);
-                context.SetEffect(arg1: new[] {777903}, arg2: false);
-                context.SetEffect(arg1: new[] {777904}, arg2: false);
+                context.SetMesh(arg1: new[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014, 10015, 10016, 10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {10040, 10041, 10042, 10043, 10044, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416, 3417, 3418, 3419, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {90090, 90091, 90092, 90093, 90094, 90095, 90096, 90097, 90098, 90099}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {10000766, 10000767, 10000768, 10000769, 10000771, 10000772, 10000773, 10000774, 10000775, 10000784, 10000792, 10000793, 10000794, 10000795, 10000785, 10000796, 10000797, 10000798, 10000799, 10000776}, arg2: 2);
+                context.CreateMonster(arg1: new[] {401, 610}, arg2: false);
+                context.SetEffect(arg1: new[] {99999, 7771, 7772, 777401, 777402, 777403, 777404, 777405, 777501, 777502, 7776, 777701, 777702, 777801, 777802, 777803, 777901, 777902, 777903, 777904}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
             }
 
@@ -184,8 +70,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -638,8 +523,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째다리붕괴01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "11000", arg2: true);
-                context.SetAgent(arg1: "11001", arg2: true);
+                context.SetAgent(arg1: new[] {11000, 11001}, arg2: true);
             }
 
             public override void Execute() {
@@ -676,14 +560,9 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째다리붕괴02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013,
-                        10014, 10015, 10016
-                    }, arg2: false, arg3: 16, arg4: 100, arg5: 100);
+                context.SetRandomMesh(arg1: new[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014, 10015, 10016}, arg2: false, arg3: 16, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777801}, arg2: true);
-                context.SetMesh(arg1: new[] {90001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {90000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {90001, 90000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkip(arg1: "첫번째무너짐연출종료01");
             }
 
@@ -856,10 +735,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016
-                    }, arg2: true, arg3: 16, arg4: 100, arg5: 100);
+                context.SetRandomMesh(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016}, arg2: true, arg3: 16, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777501}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000766}, arg2: 1);
             }
@@ -973,11 +849,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116,
-                        2117
-                    }, arg2: true, arg3: 17, arg4: 100, arg5: 100);
+                context.SetRandomMesh(arg1: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117}, arg2: true, arg3: 17, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777501}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000767}, arg2: 1);
             }
@@ -1091,11 +963,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216,
-                        2217, 2218, 2219, 2220
-                    }, arg2: true, arg3: 20, arg4: 100, arg5: 100);
+                context.SetRandomMesh(arg1: new[] {2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220}, arg2: true, arg3: 20, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777501}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000768}, arg2: 1);
             }
@@ -1209,10 +1077,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
-                context.SetRandomMesh(
-                    arg1: new[]
-                        {2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315},
-                    arg2: true, arg3: 15, arg4: 100, arg5: 100);
+                context.SetRandomMesh(arg1: new[] {2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315}, arg2: true, arg3: 15, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777501}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000769}, arg2: 1);
             }
@@ -1503,18 +1368,12 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__30$", arg4: 2, arg5: 0);
-                context.SetAgent(arg1: "13001", arg2: false);
-                context.SetAgent(arg1: "13002", arg2: false);
-                context.SetAgent(arg1: "13003", arg2: false);
-                context.SetAgent(arg1: "13004", arg2: false);
-                context.SetAgent(arg1: "13005", arg2: false);
-                context.SetAgent(arg1: "13006", arg2: false);
+                context.SetAgent(arg1: new[] {13001, 13002, 13003, 13004, 13005, 13006}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__31$", arg4: 2, arg5: 2);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[]
-                    {9221, 9222, 9223, 9224, 9225, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929})) {
+                if (context.MonsterDead(arg1: new[] {9221, 9222, 9223, 9224, 9225, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929})) {
                     context.State = new State두번째꼬마랜덤(context);
                     return;
                 }
@@ -1566,11 +1425,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_997");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2013");
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016,
-                        3017, 3018
-                    }, arg2: true, arg3: 18, arg4: 50, arg5: 50);
+                context.SetRandomMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018}, arg2: true, arg3: 18, arg4: 50, arg5: 50);
                 context.SetEffect(arg1: new[] {777502}, arg2: true);
             }
 
@@ -1753,10 +1608,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_997");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2013");
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116
-                    }, arg2: true, arg3: 16, arg4: 50, arg5: 50);
+                context.SetRandomMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116}, arg2: true, arg3: 16, arg4: 50, arg5: 50);
                 context.SetEffect(arg1: new[] {777502}, arg2: true);
             }
 
@@ -1939,11 +1791,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_997");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2013");
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216,
-                        3217, 3218, 3219, 3220, 3221
-                    }, arg2: true, arg3: 21, arg4: 50, arg5: 50);
+                context.SetRandomMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221}, arg2: true, arg3: 21, arg4: 50, arg5: 50);
                 context.SetEffect(arg1: new[] {777502}, arg2: true);
             }
 
@@ -2126,11 +1974,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_997");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2013");
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316,
-                        3317, 3318
-                    }, arg2: true, arg3: 18, arg4: 50, arg5: 50);
+                context.SetRandomMesh(arg1: new[] {3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318}, arg2: true, arg3: 18, arg4: 50, arg5: 50);
                 context.SetEffect(arg1: new[] {777502}, arg2: true);
             }
 
@@ -2312,11 +2156,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2013");
                 context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__800$", arg3: 3000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416,
-                        3417, 3418, 3419
-                    }, arg2: true, arg3: 19, arg4: 50, arg5: 50);
+                context.SetRandomMesh(arg1: new[] {3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416, 3417, 3418, 3419}, arg2: true, arg3: 19, arg4: 50, arg5: 50);
                 context.SetEffect(arg1: new[] {777502}, arg2: true);
             }
 
@@ -2596,8 +2436,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State세번째꼬마찾기시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {777403}, arg2: false);
-                context.SetEffect(arg1: new[] {777404}, arg2: false);
+                context.SetEffect(arg1: new[] {777403, 777404}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__73$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1016");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2015");
@@ -4037,8 +3876,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[]
-                    {930, 931, 932, 933, 934, 935, 936, 937, 938, 991, 992, 993, 994})) {
+                if (context.MonsterDead(arg1: new[] {930, 931, 932, 933, 934, 935, 936, 937, 938, 991, 992, 993, 994})) {
                     context.State = new State네번째꼬마만남01(context);
                     return;
                 }
@@ -4177,14 +4015,9 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째다리붕괴02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033
-                    }, arg2: false, arg3: 14, arg4: 100, arg5: 100);
+                context.SetRandomMesh(arg1: new[] {10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033}, arg2: false, arg3: 14, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777803}, arg2: true);
-                context.SetAgent(arg1: "15000", arg2: true);
-                context.SetAgent(arg1: "15001", arg2: true);
-                context.SetAgent(arg1: "15002", arg2: true);
+                context.SetAgent(arg1: new[] {15000, 15001, 15002}, arg2: true);
                 context.SetSkip(arg1: "두번째무너짐연출종료01");
             }
 
@@ -4546,8 +4379,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {90008}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {777702}, arg2: true);
-                context.SetRandomMesh(arg1: new[] {10040, 10041, 10042, 10043, 10044}, arg2: true, arg3: 5,
-                    arg4: 150, arg5: 150);
+                context.SetRandomMesh(arg1: new[] {10040, 10041, 10042, 10043, 10044}, arg2: true, arg3: 5, arg4: 150, arg5: 150);
             }
 
             public override void Execute() {
@@ -4773,14 +4605,9 @@ namespace Maple2.Trigger._02000331_bf {
             internal State보스등장연출중03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetRandomMesh(arg1: new[] {10040, 10041, 10042, 10043, 10044}, arg2: false, arg3: 5,
-                    arg4: 150, arg5: 150);
+                context.SetRandomMesh(arg1: new[] {10040, 10041, 10042, 10043, 10044}, arg2: false, arg3: 5, arg4: 150, arg5: 150);
                 context.SetEffect(arg1: new[] {777802}, arg2: true);
-                context.SetAgent(arg1: "16000", arg2: true);
-                context.SetAgent(arg1: "16001", arg2: true);
-                context.SetAgent(arg1: "16002", arg2: true);
-                context.SetAgent(arg1: "16003", arg2: true);
-                context.SetAgent(arg1: "16004", arg2: true);
+                context.SetAgent(arg1: new[] {16000, 16001, 16002, 16003, 16004}, arg2: true);
                 context.SetSkip(arg1: "보스등장연출중03Skip");
             }
 
@@ -5036,11 +4863,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State두번째웨이브대기(context);
                     return;
                 }
@@ -5057,11 +4880,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State두번째웨이브대기(context);
                     return;
                 }
@@ -5078,11 +4897,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State두번째웨이브대기(context);
                     return;
                 }
@@ -5099,11 +4914,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State두번째웨이브대기(context);
                     return;
                 }
@@ -5120,11 +4931,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State두번째웨이브대기(context);
                     return;
                 }
@@ -5276,11 +5083,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State몬스터출현06_생성랜덤04(context);
                     return;
                 }
@@ -5382,11 +5185,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State몬스터출현06_생성랜덤04(context);
                     return;
                 }
@@ -5488,11 +5287,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State몬스터출현06_생성랜덤04(context);
                     return;
                 }
@@ -5594,11 +5389,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State몬스터출현06_생성랜덤04(context);
                     return;
                 }
@@ -5700,11 +5491,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State몬스터출현06_생성랜덤04(context);
                     return;
                 }
@@ -5875,11 +5662,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State보스전투_준비01(context);
                     return;
                 }
@@ -6015,11 +5798,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State보스전투_준비01(context);
                     return;
                 }
@@ -6155,11 +5934,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State보스전투_준비01(context);
                     return;
                 }
@@ -6295,11 +6070,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State보스전투_준비01(context);
                     return;
                 }
@@ -6435,11 +6206,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
-                    960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
-                    980, 981, 982, 983, 984, 985, 986, 987, 988, 989
-                })) {
+                if (context.MonsterDead(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989})) {
                     context.State = new State보스전투_준비01(context);
                     return;
                 }
@@ -6700,8 +6467,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 600, arg3: "$02000331_BF__Seeker01__130$", arg4: 2, arg5: 0);
-                context.SetEffect(arg1: new[] {99999}, arg2: true);
-                context.SetEffect(arg1: new[] {7772}, arg2: true);
+                context.SetEffect(arg1: new[] {99999, 7772}, arg2: true);
             }
 
             public override void Execute() {
@@ -6782,9 +6548,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State던전클리어01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetRandomMesh(
-                    arg1: new[] {90090, 90091, 90092, 90093, 90094, 90095, 90096, 90097, 90098, 90099}, arg2: false,
-                    arg3: 10, arg4: 100, arg5: 100);
+                context.SetRandomMesh(arg1: new[] {90090, 90091, 90092, 90093, 90094, 90095, 90096, 90097, 90098, 90099}, arg2: false, arg3: 10, arg4: 100, arg5: 100);
                 context.ChangeMonster(arg1: 110, arg2: 111);
             }
 
@@ -6825,16 +6589,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "11000", arg2: false);
-                context.SetAgent(arg1: "11001", arg2: false);
-                context.SetAgent(arg1: "15000", arg2: false);
-                context.SetAgent(arg1: "15001", arg2: false);
-                context.SetAgent(arg1: "15002", arg2: false);
-                context.SetAgent(arg1: "16000", arg2: false);
-                context.SetAgent(arg1: "16001", arg2: false);
-                context.SetAgent(arg1: "16002", arg2: false);
-                context.SetAgent(arg1: "16003", arg2: false);
-                context.SetAgent(arg1: "16004", arg2: false);
+                context.SetAgent(arg1: new[] {11000, 11001, 15000, 15001, 15002, 16000, 16001, 16002, 16003, 16004}, arg2: false);
             }
 
             public override void Execute() { }

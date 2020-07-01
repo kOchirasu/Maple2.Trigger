@@ -4,8 +4,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {444}, arg2: false);
-                context.SetSkill(arg1: new[] {666}, arg2: false);
+                context.SetSkill(arg1: new[] {444, 666}, arg2: false);
             }
 
             public override void Execute() {
@@ -86,8 +85,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State스킬끄기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {444}, arg2: false);
-                context.SetSkill(arg1: new[] {666}, arg2: false);
+                context.SetSkill(arg1: new[] {444, 666}, arg2: false);
                 context.AddBuff(arg1: new[] {750}, arg2: 50004524, arg3: 1, arg4: false);
             }
 

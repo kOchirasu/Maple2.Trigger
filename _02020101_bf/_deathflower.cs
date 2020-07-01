@@ -19,9 +19,7 @@ namespace Maple2.Trigger._02020101_bf {
             internal State랜덤대상선정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RandomAdditionalEffect(target: "pc", triggerBoxId: 1003, spawnPointId: false, targetCount: true,
-                    tick: 3, waitTick: 2, targetEffect: @"Additional/Etc/Eff_Target_Select_Keep.xml",
-                    additionalEffectId: 62100021);
+                context.RandomAdditionalEffect(target: "pc", triggerBoxId: 1003, spawnPointId: false, targetCount: true, tick: 3, waitTick: 2, targetEffect: @"Additional/Etc/Eff_Target_Select_Keep.xml", additionalEffectId: 62100021);
             }
 
             public override void Execute() {

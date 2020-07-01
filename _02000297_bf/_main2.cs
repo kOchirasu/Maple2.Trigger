@@ -5,12 +5,9 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: false);
-                context.DestroyMonster(arg1: new[] {1005});
-                context.DestroyMonster(arg1: new[] {1006});
-                context.DestroyMonster(arg1: new[] {1007});
+                context.DestroyMonster(arg1: new[] {1005, 1006, 1007});
                 context.SetMesh(arg1: new[] {107}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {31000, 31001, 31002, 31003, 31004, 31005}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {31000, 31001, 31002, 31003, 31004, 31005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
             }
 
@@ -140,10 +137,8 @@ namespace Maple2.Trigger._02000297_bf {
             internal State레논03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1004});
-                context.DestroyMonster(arg1: new[] {1001});
-                context.CreateMonster(arg1: new[] {1005}, arg2: false);
-                context.CreateMonster(arg1: new[] {1008}, arg2: false);
+                context.DestroyMonster(arg1: new[] {1004, 1001});
+                context.CreateMonster(arg1: new[] {1005, 1008}, arg2: false);
             }
 
             public override void Execute() {
@@ -204,14 +199,9 @@ namespace Maple2.Trigger._02000297_bf {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 888888, arg2: false);
-                context.SetMesh(arg1: new[] {107}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {31000, 31001, 31002, 31003, 31004, 31005}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {107, 31000, 31001, 31002, 31003, 31004, 31005}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.CreateMonster(arg1: new[] {6200}, arg2: false);
-                context.DestroyMonster(arg1: new[] {1003});
-                context.DestroyMonster(arg1: new[] {1002});
-                context.DestroyMonster(arg1: new[] {1001});
-                context.DestroyMonster(arg1: new[] {1004});
+                context.DestroyMonster(arg1: new[] {1003, 1002, 1001, 1004});
                 context.CreateMonster(arg1: new[] {1005}, arg2: false);
                 context.CreateMonster(arg1: new[] {1006}, arg2: true);
                 context.CreateMonster(arg1: new[] {1008}, arg2: false);
@@ -232,8 +222,7 @@ namespace Maple2.Trigger._02000297_bf {
             internal State엔딩연출1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {31000, 31001, 31002, 31003, 31004, 31005}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {31000, 31001, 31002, 31003, 31004, 31005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -297,9 +286,7 @@ namespace Maple2.Trigger._02000297_bf {
                 context.SetProductionUI(arg1: 2);
                 context.SetSkip();
                 context.CameraSelect(arg1: 888888, arg2: false);
-                context.DestroyMonster(arg1: new[] {1005});
-                context.DestroyMonster(arg1: new[] {1008});
-                context.DestroyMonster(arg1: new[] {1007});
+                context.DestroyMonster(arg1: new[] {1005, 1008, 1007});
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "ClearKatramusSecond");
             }
 

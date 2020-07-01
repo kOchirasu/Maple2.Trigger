@@ -5,11 +5,7 @@ namespace Maple2.Trigger._02010087_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.SetEffect(arg1: new[] {7301}, arg2: false);
-                context.SetEffect(arg1: new[] {7302}, arg2: false);
-                context.SetEffect(arg1: new[] {7303}, arg2: false);
-                context.SetEffect(arg1: new[] {7304}, arg2: false);
-                context.SetEffect(arg1: new[] {7305}, arg2: false);
+                context.SetEffect(arg1: new[] {7301, 7302, 7303, 7304, 7305}, arg2: false);
                 context.SetEffect(arg1: new[] {7310}, arg2: true);
             }
 
@@ -63,10 +59,8 @@ namespace Maple2.Trigger._02010087_bf {
             internal State폭발03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7303}, arg2: true);
-                context.SetEffect(arg1: new[] {7304}, arg2: true);
-                context.SetSkill(arg1: new[] {8303}, arg2: true);
-                context.SetSkill(arg1: new[] {8304}, arg2: true);
+                context.SetEffect(arg1: new[] {7303, 7304}, arg2: true);
+                context.SetSkill(arg1: new[] {8303, 8304}, arg2: true);
             }
 
             public override void Execute() {

@@ -13,26 +13,22 @@ namespace Maple2.Trigger._52000135_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001582},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001582}, arg3: new byte[] {1})) {
                     context.State = new State연출이후(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001581},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001581}, arg3: new byte[] {3})) {
                     context.State = new State연출이후(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001581},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001581}, arg3: new byte[] {2})) {
                     context.State = new State연출이후(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001581},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001581}, arg3: new byte[] {1})) {
                     context.State = new State연출대기(context);
                     return;
                 }
@@ -101,8 +97,7 @@ namespace Maple2.Trigger._52000135_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_01");
-                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__0$",
-                    duration: 4000, align: "right");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__0$", duration: 4000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 8500f);
                 context.SetSceneSkip(arg1: "오브젝트조사전_스킵완료", arg2: "nextState");
             }
@@ -121,8 +116,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__1$",
-                    duration: 4000, align: "right");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__1$", duration: 4000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 6800f);
                 context.SetSkip(arg1: "아노스대사02_skip");
             }
@@ -160,8 +154,7 @@ namespace Maple2.Trigger._52000135_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8002}, arg2: true);
-                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__2$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__2$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "ChatUp_A", arg3: 5400f);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_03");
                 context.SetSceneSkip();
@@ -243,8 +236,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스대사04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__3$",
-                    duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__3$", duration: 3000, align: "left");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 7000f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_0201");
                 context.SetSceneSkip(arg1: "오브젝트조사후_스킵완료", arg2: "nextState");
@@ -264,8 +256,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스대사05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__4$",
-                    duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__4$", duration: 3000, align: "left");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 8300f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_0202");
                 context.SetSkip(arg1: "아노스대사05_skip");
@@ -303,8 +294,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스대사06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__5$",
-                    duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__5$", duration: 3000, align: "left");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 6500f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_0203");
                 context.SetSkip(arg1: "아노스대사06_skip");
@@ -342,8 +332,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스대사07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__6$",
-                    duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__6$", duration: 3000, align: "left");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Chatup_A", arg3: 7900f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_0204");
                 context.SetSkip(arg1: "아노스대사07_skip");
@@ -420,8 +409,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스대사08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__7$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__7$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 11000f);
                 context.SetEffect(arg1: new[] {3012}, arg2: false);
                 context.SetSkip(arg1: "아노스대사08_skip");
@@ -460,8 +448,7 @@ namespace Maple2.Trigger._52000135_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8010}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003250, illustId: "0", msg: "$52000135_QD__MAIN__8$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11003250, illustId: "0", msg: "$52000135_QD__MAIN__8$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 5100f);
                 context.SetSkip(arg1: "아시모프대사01_skip");
             }
@@ -498,8 +485,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스대사09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__9$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__9$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3800f);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_0302");
                 context.SetSkip(arg1: "아노스대사09_skip");
@@ -537,8 +523,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal StatePC크리스탈접근(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000135_QD__MAIN__10$", duration: 2000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000135_QD__MAIN__10$", duration: 2000, align: "right");
                 context.SetPcEmotionLoop(arg1: "Object_React_H", arg2: 1500f);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 2000f);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 2000f);
@@ -564,8 +549,7 @@ namespace Maple2.Trigger._52000135_qd {
                 context.SetMesh(arg1: new[] {3000}, arg2: true);
                 context.SetMeshAnimation(arg1: new[] {3000}, arg2: true);
                 context.SetEffect(arg1: new[] {3010}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000135_QD__MAIN__11$", duration: 3000,
-                    delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000135_QD__MAIN__11$", duration: 3000, delayTick: 1000);
                 context.SetPcEmotionSequence(arg1: "Emotion_Surprise_A");
             }
 
@@ -588,10 +572,8 @@ namespace Maple2.Trigger._52000135_qd {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_04");
                 context.SetEffect(arg1: new[] {3011}, arg2: true);
                 context.SetPcEmotionSequence(arg1: "Emotion_Think_A");
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$52000135_QD__MAIN__12$", duration: 2000,
-                    delayTick: 100);
-                context.AddBalloonTalk(spawnPointId: 102, msg: "$52000135_QD__MAIN__13$", duration: 2000,
-                    delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$52000135_QD__MAIN__12$", duration: 2000, delayTick: 100);
+                context.AddBalloonTalk(spawnPointId: 102, msg: "$52000135_QD__MAIN__13$", duration: 2000, delayTick: 500);
             }
 
             public override void Execute() {
@@ -608,8 +590,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스대사10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__14$",
-                    duration: 3000);
+                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__14$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3400f);
                 context.SetSkip(arg1: "아노스대사10_skip");
             }
@@ -688,8 +669,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스대사11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__16$", duration: 5000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11003251, illustId: "0", msg: "$52000135_QD__MAIN__16$", duration: 5000, align: "right");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_07");
                 context.SetSkip(arg1: "아노스대사11_skip");
             }
@@ -727,8 +707,7 @@ namespace Maple2.Trigger._52000135_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8010}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003250, illustId: "Asimov_normal", msg: "$52000135_QD__MAIN__17$",
-                    duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003250, illustId: "Asimov_normal", msg: "$52000135_QD__MAIN__17$", duration: 3000, align: "left");
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 8600f);
                 context.SetSceneSkip();
             }

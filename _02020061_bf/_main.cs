@@ -15,16 +15,8 @@ namespace Maple2.Trigger._02020061_bf {
                 context.ResetTimer(arg1: "2");
                 context.ResetTimer(arg1: "3");
                 context.SetActor(arg1: 1901, arg2: true, arg3: "Idle_A");
-                context.SetEffect(
-                    arg1: new[] {
-                        2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016
-                    }, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016,
-                        1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032,
-                        1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048
-                    }, arg2: true);
+                context.SetEffect(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016}, arg2: true);
+                context.SetMesh(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048}, arg2: true);
                 context.ShadowExpedition(type: "CloseBossGauge");
                 context.SetUserValue(triggerId: 99990002, key: "SpawnStart", value: 0);
                 context.SetUserValue(triggerId: 99990003, key: "ObjectPhase", value: 0);
@@ -123,16 +115,8 @@ namespace Maple2.Trigger._02020061_bf {
                 context.EnableSpawnPointPc(spawnPointId: 3, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 4, isEnable: true);
                 context.CameraReset(interpolationTime: 1f);
-                context.SetEffect(
-                    arg1: new[] {
-                        2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016
-                    }, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016,
-                        1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032,
-                        1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048
-                    }, arg2: false);
+                context.SetEffect(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016}, arg2: false);
+                context.SetMesh(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048}, arg2: false);
                 context.SetEventUI(arg1: 0, arg2: "1,3");
                 context.SetEventUI(arg1: 1, arg2: "$02020061_BF__MAIN__2$", arg3: 5000);
                 context.SetTimer(arg1: "1", arg2: 180, arg3: true, arg4: true, arg5: 60);
@@ -217,8 +201,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State성공_세팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000,
-                    script: "$02020061_BF__MAIN__5$");
+                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020061_BF__MAIN__5$");
                 context.ResetTimer(arg1: "1");
                 context.ResetTimer(arg1: "2");
                 context.ResetTimer(arg1: "3");
@@ -241,8 +224,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State성공_대사용(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_smile", duration: 5000,
-                    script: "$02020061_BF__MAIN__6$");
+                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_smile", duration: 5000, script: "$02020061_BF__MAIN__6$");
                 context.DestroyMonster(arg1: new[] {-1});
             }
 
@@ -260,8 +242,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State실패_세팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000,
-                    script: "$02020061_BF__MAIN__7$");
+                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020061_BF__MAIN__7$");
                 context.ResetTimer(arg1: "1");
                 context.ResetTimer(arg1: "2");
                 context.ResetTimer(arg1: "3");
@@ -285,8 +266,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State실패_대사용(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000,
-                    script: "$02020061_BF__MAIN__8$");
+                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020061_BF__MAIN__8$");
             }
 
             public override void Execute() {

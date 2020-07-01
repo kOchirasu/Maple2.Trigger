@@ -4,24 +4,11 @@ namespace Maple2.Trigger._52000027_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8100", arg2: true);
-                context.SetAgent(arg1: "8101", arg2: true);
-                context.SetAgent(arg1: "8102", arg2: true);
-                context.SetAgent(arg1: "8103", arg2: true);
-                context.SetAgent(arg1: "8104", arg2: true);
-                context.SetAgent(arg1: "8200", arg2: true);
-                context.SetAgent(arg1: "8201", arg2: true);
-                context.SetAgent(arg1: "8202", arg2: true);
-                context.SetAgent(arg1: "8203", arg2: true);
-                context.SetAgent(arg1: "8204", arg2: true);
-                context.SetAgent(arg1: "8205", arg2: true);
+                context.SetAgent(arg1: new[] {8100, 8101, 8102, 8103, 8104, 8200, 8201, 8202, 8203, 8204, 8205}, arg2: true);
                 context.CreateMonster(arg1: new[] {901, 902, 903, 911, 912}, arg2: false);
                 context.SetLadder(arg1: 4000, arg2: false, arg3: false, arg4: 2);
                 context.SetLadder(arg1: 4001, arg2: false, arg3: false, arg4: 2);
-                context.SetMesh(arg1: new[] {8900, 8901, 8902, 8903}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {8001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {8002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {8003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {8900, 8901, 8902, 8903, 8001, 8002, 8003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 7000, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 7001, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 7100, arg2: true, arg3: "Closed");
@@ -38,17 +25,11 @@ namespace Maple2.Trigger._52000027_qd {
                 context.SetVisibleBreakableObject(arg1: new[] {6201, 6202, 6203}, arg2: false);
                 context.SetMesh(arg1: new[] {8500}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000420}, arg2: 0);
-                context.SetEffect(arg1: new[] {6100}, arg2: false);
-                context.SetEffect(arg1: new[] {6200}, arg2: false);
-                context.SetEffect(arg1: new[] {6300}, arg2: false);
-                context.SetEffect(arg1: new[] {6400}, arg2: false);
-                context.SetEffect(arg1: new[] {6401}, arg2: false);
-                context.SetEffect(arg1: new[] {6500}, arg2: false);
+                context.SetEffect(arg1: new[] {6100, 6200, 6300, 6400, 6401, 6500}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10003012}, arg3: new byte[] {1},
-                    arg4: 80)) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10003012}, arg3: new byte[] {1}, arg4: 80)) {
                     context.State = new State1차전투대기(context);
                     return;
                 }
@@ -132,8 +113,7 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1011");
-                context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__0$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__0$", arg4: 3, arg5: 0);
                 context.SetSkip(arg1: "루키등장03");
             }
 
@@ -153,8 +133,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키등장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__1$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__1$", arg4: 3, arg5: 0);
                 context.SetSkip(arg1: "사다리생성01");
             }
 
@@ -321,11 +300,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키이동04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8100", arg2: false);
-                context.SetAgent(arg1: "8101", arg2: false);
-                context.SetAgent(arg1: "8102", arg2: false);
-                context.SetAgent(arg1: "8103", arg2: false);
-                context.SetAgent(arg1: "8104", arg2: false);
+                context.SetAgent(arg1: new[] {8100, 8101, 8102, 8103, 8104}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_1014");
             }
 
@@ -393,8 +368,7 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__5$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__5$", arg4: 3, arg5: 0);
                 context.CameraSelect(arg1: 700, arg2: true);
             }
 
@@ -464,8 +438,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키경고01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__6$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__6$", arg4: 3, arg5: 0);
                 context.SetSkip(arg1: "루키경고02");
             }
 
@@ -502,8 +475,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키경고03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__7$", arg4: 5,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__7$", arg4: 5, arg5: 0);
                 context.SetSkip(arg1: "루키경고04");
             }
 
@@ -581,8 +553,7 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__9$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__9$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -627,8 +598,7 @@ namespace Maple2.Trigger._52000027_qd {
                 context.SetActor(arg1: 7102, arg2: true, arg3: "Opened");
                 context.SetActor(arg1: 7103, arg2: true, arg3: "Opened");
                 context.SetMesh(arg1: new[] {8900, 8901, 8902, 8903}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {6400}, arg2: true);
-                context.SetEffect(arg1: new[] {6401}, arg2: true);
+                context.SetEffect(arg1: new[] {6400, 6401}, arg2: true);
             }
 
             public override void Execute() {
@@ -669,12 +639,7 @@ namespace Maple2.Trigger._52000027_qd {
                 context.SetActor(arg1: 7001, arg2: true, arg3: "Opened");
                 context.SetEffect(arg1: new[] {6300}, arg2: true);
                 context.SetMesh(arg1: new[] {8003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetAgent(arg1: "8200", arg2: false);
-                context.SetAgent(arg1: "8201", arg2: false);
-                context.SetAgent(arg1: "8202", arg2: false);
-                context.SetAgent(arg1: "8203", arg2: false);
-                context.SetAgent(arg1: "8204", arg2: false);
-                context.SetAgent(arg1: "8205", arg2: false);
+                context.SetAgent(arg1: new[] {8200, 8201, 8202, 8203, 8204, 8205}, arg2: false);
             }
 
             public override void Execute() {
@@ -758,8 +723,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키미션02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__11$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__11$", arg4: 3, arg5: 0);
                 context.SetSkip(arg1: "루키미션03");
             }
 
@@ -779,8 +743,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키미션03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__12$", arg4: 4,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__12$", arg4: 4, arg5: 0);
                 context.SetMesh(arg1: new[] {8500}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000420}, arg2: 1);
                 context.SetSkip(arg1: "루키미션04");
@@ -823,8 +786,7 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003012},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003012}, arg3: new byte[] {2})) {
                     context.State = new State미션완료02(context);
                     return;
                 }

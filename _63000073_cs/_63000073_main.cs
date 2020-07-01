@@ -5,23 +5,7 @@ namespace Maple2.Trigger._63000073_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.CreateMonster(arg1: new[] {101}, arg2: true);
-                context.CreateMonster(arg1: new[] {102}, arg2: true);
-                context.CreateMonster(arg1: new[] {103}, arg2: true);
-                context.CreateMonster(arg1: new[] {104}, arg2: true);
-                context.CreateMonster(arg1: new[] {105}, arg2: true);
-                context.CreateMonster(arg1: new[] {106}, arg2: true);
-                context.CreateMonster(arg1: new[] {107}, arg2: true);
-                context.CreateMonster(arg1: new[] {108}, arg2: true);
-                context.CreateMonster(arg1: new[] {109}, arg2: true);
-                context.CreateMonster(arg1: new[] {110}, arg2: true);
-                context.CreateMonster(arg1: new[] {111}, arg2: true);
-                context.CreateMonster(arg1: new[] {112}, arg2: true);
-                context.CreateMonster(arg1: new[] {113}, arg2: true);
-                context.CreateMonster(arg1: new[] {114}, arg2: true);
-                context.CreateMonster(arg1: new[] {115}, arg2: true);
-                context.CreateMonster(arg1: new[] {116}, arg2: true);
-                context.CreateMonster(arg1: new[] {117}, arg2: true);
+                context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117}, arg2: true);
                 context.SetLadder(arg1: 6001, arg2: false, arg3: false);
                 context.SetLadder(arg1: 6002, arg2: false, arg3: false);
                 context.SetLadder(arg1: 6003, arg2: false, arg3: false);
@@ -32,20 +16,17 @@ namespace Maple2.Trigger._63000073_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {30000372},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {30000372}, arg3: new byte[] {3})) {
                     context.State = new State전투만(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {30000372},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {30000372}, arg3: new byte[] {2})) {
                     context.State = new State퀘완료가능재입장(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {30000372},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {30000372}, arg3: new byte[] {1})) {
                     context.State = new State잠시대기_01(context);
                     return;
                 }
@@ -140,8 +121,7 @@ namespace Maple2.Trigger._63000073_cs {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 121, arg2: "MS2PatrolData_2001");
-                context.AddBalloonTalk(spawnPointId: 121, msg: "$63000073_CS__63000073_MAIN__0$", duration: 2500,
-                    delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 121, msg: "$63000073_CS__63000073_MAIN__0$", duration: 2500, delayTick: 1000);
             }
 
             public override void Execute() {
@@ -229,8 +209,7 @@ namespace Maple2.Trigger._63000073_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {30000372},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {30000372}, arg3: new byte[] {2})) {
                     context.State = new State트렁크오픈_02(context);
                     return;
                 }
@@ -344,8 +323,7 @@ namespace Maple2.Trigger._63000073_cs {
             internal State에이든대화_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11004359, msg: "$63000073_CS__63000073_MAIN__1$", duration: 2500,
-                    align: "right", illustId: "0");
+                context.AddCinematicTalk(npcId: 11004359, msg: "$63000073_CS__63000073_MAIN__1$", duration: 2500, align: "right", illustId: "0");
             }
 
             public override void Execute() {
@@ -380,8 +358,7 @@ namespace Maple2.Trigger._63000073_cs {
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 2500f);
-                context.AddCinematicTalk(npcId: 0, msg: "$63000073_CS__63000073_MAIN__2$", duration: 2500,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$63000073_CS__63000073_MAIN__2$", duration: 2500, align: "right");
             }
 
             public override void Execute() {
@@ -399,8 +376,7 @@ namespace Maple2.Trigger._63000073_cs {
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 2500f);
-                context.AddCinematicTalk(npcId: 0, msg: "$63000073_CS__63000073_MAIN__3$", duration: 4500,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$63000073_CS__63000073_MAIN__3$", duration: 4500, align: "right");
             }
 
             public override void Execute() {
@@ -435,8 +411,7 @@ namespace Maple2.Trigger._63000073_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 122, arg2: "Talk_A", arg3: 3500f);
-                context.AddCinematicTalk(npcId: 11004359, msg: "$63000073_CS__63000073_MAIN__4$", duration: 3500,
-                    align: "right", illustId: "0");
+                context.AddCinematicTalk(npcId: 11004359, msg: "$63000073_CS__63000073_MAIN__4$", duration: 3500, align: "right", illustId: "0");
             }
 
             public override void Execute() {
@@ -454,8 +429,7 @@ namespace Maple2.Trigger._63000073_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 122, arg2: "Talk_A", arg3: 4500f);
-                context.AddCinematicTalk(npcId: 11004359, msg: "$63000073_CS__63000073_MAIN__5$", duration: 4500,
-                    align: "right", illustId: "0");
+                context.AddCinematicTalk(npcId: 11004359, msg: "$63000073_CS__63000073_MAIN__5$", duration: 4500, align: "right", illustId: "0");
             }
 
             public override void Execute() {

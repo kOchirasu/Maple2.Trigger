@@ -4,10 +4,7 @@ namespace Maple2.Trigger._99999884 {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {401}, arg2: false);
-                context.SetEffect(arg1: new[] {402}, arg2: false);
-                context.SetEffect(arg1: new[] {403}, arg2: false);
-                context.SetEffect(arg1: new[] {404}, arg2: false);
+                context.SetEffect(arg1: new[] {401, 402, 403, 404}, arg2: false);
                 context.SetActor(arg1: 405, arg2: false);
                 context.SetEffect(arg1: new[] {406}, arg2: false);
             }

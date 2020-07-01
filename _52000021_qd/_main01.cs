@@ -4,30 +4,16 @@ namespace Maple2.Trigger._52000021_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
-                context.SetEffect(arg1: new[] {6100}, arg2: false);
-                context.SetEffect(arg1: new[] {6200}, arg2: false);
-                context.SetEffect(arg1: new[] {6201}, arg2: false);
-                context.SetEffect(arg1: new[] {6202}, arg2: false);
-                context.SetEffect(arg1: new[] {6300}, arg2: false);
-                context.SetEffect(arg1: new[] {6301}, arg2: false);
-                context.SetEffect(arg1: new[] {6400}, arg2: false);
-                context.SetEffect(arg1: new[] {6401}, arg2: false);
-                context.SetEffect(arg1: new[] {6500}, arg2: false);
-                context.SetEffect(arg1: new[] {6600}, arg2: false);
-                context.SetEffect(arg1: new[] {6700}, arg2: false);
-                context.SetMesh(arg1: new[] {5000, 5001, 5002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {6000, 6100, 6200, 6201, 6202, 6300, 6301, 6400, 6401, 6500, 6600, 6700}, arg2: false);
+                context.SetMesh(arg1: new[] {5000, 5001, 5002, 4000, 4001, 4002, 4003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000831}, arg2: 0);
                 context.SetInteractObject(arg1: new[] {10000832}, arg2: 2);
-                context.CreateMonster(arg1: new[] {111}, arg2: true);
-                context.CreateMonster(arg1: new[] {311}, arg2: true);
+                context.CreateMonster(arg1: new[] {111, 311}, arg2: true);
                 context.MoveNpc(arg1: 311, arg2: "MS2PatrolData_311");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60001030},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60001030}, arg3: new byte[] {1})) {
                     context.State = new State연출준비(context);
                     return;
                 }
@@ -40,19 +26,13 @@ namespace Maple2.Trigger._52000021_qd {
             internal State연출준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {111});
-                context.DestroyMonster(arg1: new[] {311});
+                context.DestroyMonster(arg1: new[] {111, 311});
                 context.SetTimer(arg1: "1", arg2: 2);
                 context.SetMesh(arg1: new[] {5000, 5001, 5002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {6100}, arg2: true);
                 context.CameraSelect(arg1: 600, arg2: true);
-                context.CreateMonster(arg1: new[] {101}, arg2: true);
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
-                context.CreateMonster(arg1: new[] {301}, arg2: true);
-                context.SetEffect(arg1: new[] {6200}, arg2: true);
-                context.SetEffect(arg1: new[] {6300}, arg2: true);
-                context.SetEffect(arg1: new[] {6201}, arg2: true);
-                context.SetEffect(arg1: new[] {6301}, arg2: true);
+                context.CreateMonster(arg1: new[] {101, 201, 301}, arg2: true);
+                context.SetEffect(arg1: new[] {6200, 6300, 6201, 6301}, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
@@ -378,9 +358,7 @@ namespace Maple2.Trigger._52000021_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "30", arg2: 1);
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
-                context.SetEffect(arg1: new[] {6400}, arg2: false);
-                context.SetEffect(arg1: new[] {6401}, arg2: false);
+                context.SetEffect(arg1: new[] {6000, 6400, 6401}, arg2: false);
                 context.SetEffect(arg1: new[] {6202}, arg2: true);
                 context.SetMesh(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetProductionUI(arg1: 1);
@@ -396,11 +374,7 @@ namespace Maple2.Trigger._52000021_qd {
             }
 
             public override void OnExit() {
-                context.SetEffect(arg1: new[] {6200}, arg2: false);
-                context.SetEffect(arg1: new[] {6201}, arg2: false);
-                context.SetEffect(arg1: new[] {6300}, arg2: false);
-                context.SetEffect(arg1: new[] {6301}, arg2: false);
-                context.SetEffect(arg1: new[] {6100}, arg2: false);
+                context.SetEffect(arg1: new[] {6200, 6201, 6300, 6301, 6100}, arg2: false);
             }
         }
 
@@ -447,9 +421,7 @@ namespace Maple2.Trigger._52000021_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "33", arg2: 1);
-                context.SetEffect(arg1: new[] {6700}, arg2: true);
-                context.SetEffect(arg1: new[] {6600}, arg2: true);
-                context.SetEffect(arg1: new[] {6500}, arg2: true);
+                context.SetEffect(arg1: new[] {6700, 6600, 6500}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000021_QD__MAIN01__11$", arg4: 2);
             }
 
@@ -487,11 +459,8 @@ namespace Maple2.Trigger._52000021_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "34", arg2: 2);
                 context.SetProductionUI(arg1: 4);
-                context.DestroyMonster(arg1: new[] {201});
-                context.DestroyMonster(arg1: new[] {101});
-                context.DestroyMonster(arg1: new[] {301});
-                context.CreateMonster(arg1: new[] {111}, arg2: true);
-                context.CreateMonster(arg1: new[] {311}, arg2: true);
+                context.DestroyMonster(arg1: new[] {201, 101, 301});
+                context.CreateMonster(arg1: new[] {111, 311}, arg2: true);
                 context.MoveNpc(arg1: 311, arg2: "MS2PatrolData_311");
             }
 

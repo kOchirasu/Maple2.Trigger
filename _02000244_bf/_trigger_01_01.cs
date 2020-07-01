@@ -4,8 +4,7 @@ namespace Maple2.Trigger._02000244_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {701, 702}, arg2: true);
-                context.SetMesh(arg1: new[] {709, 710}, arg2: true);
+                context.SetMesh(arg1: new[] {701, 702, 709, 710}, arg2: true);
                 context.DestroyMonster(arg1: new[] {631, 632, 633, 634, 635, 636, 637, 638, 639});
             }
 
@@ -45,8 +44,7 @@ namespace Maple2.Trigger._02000244_bf {
             internal State통과(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {701, 702}, arg2: false);
-                context.SetMesh(arg1: new[] {709, 710}, arg2: false);
+                context.SetMesh(arg1: new[] {701, 702, 709, 710}, arg2: false);
                 context.SetTimer(arg1: "1", arg2: 180);
             }
 

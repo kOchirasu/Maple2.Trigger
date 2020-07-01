@@ -4,10 +4,8 @@ namespace Maple2.Trigger._02020062_bf {
             internal State발판초기화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208},
-                    arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: false);
+                context.SetBreakable(arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: false);
                 context.SetUserValue(triggerId: 99990026, key: "MovePanel03", value: 0);
                 context.SetInteractObject(arg1: new[] {12000117}, arg2: 2);
             }
@@ -43,15 +41,13 @@ namespace Maple2.Trigger._02020062_bf {
             internal State발판이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: true);
                 context.SetInteractObject(arg1: new[] {12000117}, arg2: 2);
             }
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {9202})) {
-                    context.SetBreakable(arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208},
-                        arg2: true);
+                    context.SetBreakable(arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: true);
                     context.State = new State대기(context);
                     return;
                 }
@@ -64,8 +60,7 @@ namespace Maple2.Trigger._02020062_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208},
-                    arg2: false);
+                context.SetBreakable(arg1: new[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208}, arg2: false);
             }
 
             public override void Execute() {

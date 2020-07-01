@@ -4,9 +4,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {608}, arg2: false);
-                context.SetEffect(arg1: new[] {610}, arg2: false);
-                context.SetEffect(arg1: new[] {611}, arg2: false);
+                context.SetEffect(arg1: new[] {608, 610, 611}, arg2: false);
                 context.SetActor(arg1: 292, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 293, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 294, arg2: true, arg3: "sf_quest_light_A01_Off");
@@ -145,10 +143,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_1279(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -190,10 +185,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_1238(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -235,10 +227,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_1358(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -280,10 +269,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_1489(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -325,10 +311,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_1567(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -370,10 +353,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_1679(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -415,10 +395,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_2389(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -460,10 +437,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_2347(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -505,10 +479,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_2478(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -550,10 +521,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_2456(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -595,10 +563,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_2569(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -640,10 +605,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_2678(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -685,10 +647,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_3458(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -730,10 +689,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_3589(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -775,10 +731,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_3679(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -820,10 +773,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_3789(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -865,10 +815,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_4567(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -910,10 +857,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_4578(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -955,10 +899,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_4689(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -1000,10 +941,7 @@ namespace Maple2.Trigger._02000298_bf {
             internal State입력대기중_4789(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
             public override void Execute() {
@@ -1094,10 +1032,7 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.ShowGuideSummary(entityId: 20002985, textId: 20002985);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetInteractObject(
-                    arg1: new[]
-                        {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009},
-                    arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 0);
             }
 
             public override void Execute() {

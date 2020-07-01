@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52020035_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {703}, arg2: new[] {30000318},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {703}, arg2: new[] {30000318}, arg3: new byte[] {2})) {
                     context.State = new State연출시작3(context);
                     return;
                 }
@@ -40,11 +39,7 @@ namespace Maple2.Trigger._52020035_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
-                context.DestroyMonster(arg1: new[] {117});
-                context.DestroyMonster(arg1: new[] {118});
-                context.DestroyMonster(arg1: new[] {119});
-                context.DestroyMonster(arg1: new[] {120});
-                context.DestroyMonster(arg1: new[] {121});
+                context.DestroyMonster(arg1: new[] {117, 118, 119, 120, 121});
                 context.CreateMonster(arg1: new[] {110}, arg2: false, arg3: 0);
                 context.CreateMonster(arg1: new[] {117}, arg2: false, arg3: 0);
                 context.CreateMonster(arg1: new[] {118}, arg2: false, arg3: 0);
@@ -185,11 +180,7 @@ namespace Maple2.Trigger._52020035_qd {
                 context.CameraReset(interpolationTime: 0f);
                 context.VisibleMyPc(isVisible: true);
                 context.MoveUser(arg1: 02020012, arg2: 1);
-                context.DestroyMonster(arg1: new[] {111});
-                context.DestroyMonster(arg1: new[] {112});
-                context.DestroyMonster(arg1: new[] {113});
-                context.DestroyMonster(arg1: new[] {114});
-                context.DestroyMonster(arg1: new[] {115});
+                context.DestroyMonster(arg1: new[] {111, 112, 113, 114, 115});
             }
 
             public override void Execute() { }

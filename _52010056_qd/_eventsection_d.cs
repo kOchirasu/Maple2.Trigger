@@ -68,21 +68,7 @@ namespace Maple2.Trigger._52010056_qd {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new[] {901}, arg2: true);
-                context.CreateMonster(arg1: new[] {902}, arg2: true);
-                context.CreateMonster(arg1: new[] {903}, arg2: true);
-                context.CreateMonster(arg1: new[] {904}, arg2: true);
-                context.CreateMonster(arg1: new[] {905}, arg2: true);
-                context.CreateMonster(arg1: new[] {906}, arg2: true);
-                context.CreateMonster(arg1: new[] {907}, arg2: true);
-                context.CreateMonster(arg1: new[] {908}, arg2: true);
-                context.CreateMonster(arg1: new[] {909}, arg2: true);
-                context.CreateMonster(arg1: new[] {910}, arg2: true);
-                context.CreateMonster(arg1: new[] {911}, arg2: true);
-                context.CreateMonster(arg1: new[] {912}, arg2: true);
-                context.CreateMonster(arg1: new[] {913}, arg2: true);
-                context.CreateMonster(arg1: new[] {914}, arg2: true);
-                context.CreateMonster(arg1: new[] {915}, arg2: true);
+                context.CreateMonster(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915}, arg2: true);
                 context.ChangeMonster(arg1: 999, arg2: 901);
             }
         }

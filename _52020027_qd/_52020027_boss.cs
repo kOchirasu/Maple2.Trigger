@@ -50,10 +50,7 @@ namespace Maple2.Trigger._52020027_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 111, arg3: "조심하는 게 좋을걸?", arg4: 4);
-                context.CreateMonster(arg1: new[] {112}, arg2: true);
-                context.CreateMonster(arg1: new[] {113}, arg2: true);
-                context.CreateMonster(arg1: new[] {114}, arg2: true);
-                context.CreateMonster(arg1: new[] {115}, arg2: true);
+                context.CreateMonster(arg1: new[] {112, 113, 114, 115}, arg2: true);
             }
 
             public override void Execute() {

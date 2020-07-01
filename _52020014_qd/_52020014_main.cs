@@ -6,11 +6,9 @@ namespace Maple2.Trigger._52020014_qd {
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false);
                 context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetMesh(arg1: new[] {9101}, arg2: true);
-                context.SetMesh(arg1: new[] {9102}, arg2: true);
+                context.SetMesh(arg1: new[] {9101, 9102}, arg2: true);
                 context.SetVisibleBreakableObject(arg1: new[] {1}, arg2: false);
-                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010},
-                    arg2: false);
+                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010}, arg2: false);
                 context.SetLadder(arg1: 10001, arg2: false, arg3: false);
                 context.SetLadder(arg1: 10002, arg2: false, arg3: false);
                 context.SetLadder(arg1: 10003, arg2: false, arg3: false);
@@ -18,8 +16,7 @@ namespace Maple2.Trigger._52020014_qd {
                 context.SetLadder(arg1: 10005, arg2: false, arg3: false);
                 context.SetLadder(arg1: 10006, arg2: false, arg3: false);
                 context.SetBreakable(arg1: new[] {10001}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10002004}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002005}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10002004, 10002005}, arg2: 0);
             }
 
             public override void Execute() {
@@ -36,9 +33,7 @@ namespace Maple2.Trigger._52020014_qd {
             internal State1차전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101}, arg2: true);
-                context.CreateMonster(arg1: new[] {102}, arg2: true);
-                context.CreateMonster(arg1: new[] {103}, arg2: true);
+                context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: true);
             }
 
             public override void Execute() {
@@ -55,9 +50,7 @@ namespace Maple2.Trigger._52020014_qd {
             internal State2차전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {104}, arg2: true);
-                context.CreateMonster(arg1: new[] {105}, arg2: true);
-                context.CreateMonster(arg1: new[] {106}, arg2: true);
+                context.CreateMonster(arg1: new[] {104, 105, 106}, arg2: true);
             }
 
             public override void Execute() {
@@ -110,8 +103,7 @@ namespace Maple2.Trigger._52020014_qd {
             internal State3차전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {111}, arg2: true);
-                context.CreateMonster(arg1: new[] {112}, arg2: true);
+                context.CreateMonster(arg1: new[] {111, 112}, arg2: true);
             }
 
             public override void Execute() {
@@ -128,9 +120,7 @@ namespace Maple2.Trigger._52020014_qd {
             internal State4차전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {113}, arg2: true);
-                context.CreateMonster(arg1: new[] {114}, arg2: true);
-                context.CreateMonster(arg1: new[] {115}, arg2: true);
+                context.CreateMonster(arg1: new[] {113, 114, 115}, arg2: true);
             }
 
             public override void Execute() {
@@ -164,8 +154,7 @@ namespace Maple2.Trigger._52020014_qd {
             internal State이공간다리활성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010},
-                    arg2: true, arg3: 0, arg4: 200, arg5: 3f);
+                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010}, arg2: true, arg3: 0, arg4: 200, arg5: 3f);
             }
 
             public override void Execute() {
@@ -222,9 +211,7 @@ namespace Maple2.Trigger._52020014_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1f);
-                context.CreateMonster(arg1: new[] {121}, arg2: true);
-                context.CreateMonster(arg1: new[] {122}, arg2: true);
-                context.CreateMonster(arg1: new[] {123}, arg2: true);
+                context.CreateMonster(arg1: new[] {121, 122, 123}, arg2: true);
                 context.SetEventUI(arg1: 1, arg2: "에고 웨폰을 모두 처치하고 레버를 작동시키세요.", arg3: 5000);
             }
 
@@ -242,9 +229,7 @@ namespace Maple2.Trigger._52020014_qd {
             internal State이공간2차전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {124}, arg2: true);
-                context.CreateMonster(arg1: new[] {125}, arg2: true);
-                context.CreateMonster(arg1: new[] {126}, arg2: true);
+                context.CreateMonster(arg1: new[] {124, 125, 126}, arg2: true);
             }
 
             public override void Execute() {

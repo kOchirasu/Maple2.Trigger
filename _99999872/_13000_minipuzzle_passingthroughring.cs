@@ -4,21 +4,10 @@ namespace Maple2.Trigger._99999872 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {13001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {13011}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {13002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {13012}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {13003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {13013}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMeshAnimation(arg1: new[] {13011}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new[] {13012}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new[] {13013}, arg2: false, arg3: 0, arg4: 0);
-                context.SetInteractObject(arg1: new[] {12000068}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000076}, arg2: 2);
-                context.SetEffect(arg1: new[] {13101}, arg2: false);
-                context.SetEffect(arg1: new[] {13102}, arg2: false);
-                context.SetEffect(arg1: new[] {13103}, arg2: false);
-                context.SetEffect(arg1: new[] {13200}, arg2: false);
+                context.SetMesh(arg1: new[] {13001, 13011, 13002, 13012, 13003, 13013}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMeshAnimation(arg1: new[] {13011, 13012, 13013}, arg2: false, arg3: 0, arg4: 0);
+                context.SetInteractObject(arg1: new[] {12000068, 12000076}, arg2: 2);
+                context.SetEffect(arg1: new[] {13101, 13102, 13103, 13200}, arg2: false);
                 context.SetMesh(arg1: new[] {13300}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -98,8 +87,7 @@ namespace Maple2.Trigger._99999872 {
             }
 
             public override void Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13401, additionalEffectId: 71001031,
-                    level: true)) {
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13401, additionalEffectId: 71001031, level: true)) {
                     context.State = new StatePassingThroughRing_Play01_Delay(context);
                     return;
                 }
@@ -146,8 +134,7 @@ namespace Maple2.Trigger._99999872 {
             }
 
             public override void Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13402, additionalEffectId: 71001031,
-                    level: true)) {
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13402, additionalEffectId: 71001031, level: true)) {
                     context.State = new StatePassingThroughRing_Play02_Delay(context);
                     return;
                 }
@@ -194,8 +181,7 @@ namespace Maple2.Trigger._99999872 {
             }
 
             public override void Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13403, additionalEffectId: 71001031,
-                    level: true)) {
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13403, additionalEffectId: 71001031, level: true)) {
                     context.State = new StatePassingThroughRing_Play03_Delay(context);
                     return;
                 }

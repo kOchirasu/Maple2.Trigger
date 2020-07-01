@@ -44,8 +44,7 @@ namespace Maple2.Trigger._52100110_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2000}, arg2: new[] {50101040},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2000}, arg2: new[] {50101040}, arg3: new byte[] {1})) {
                     context.State = new State52100110_1화이트박스제거(context);
                     return;
                 }

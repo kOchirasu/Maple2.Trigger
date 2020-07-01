@@ -34,8 +34,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal State몬스터소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {210});
-                context.DestroyMonster(arg1: new[] {101, 102});
+                context.DestroyMonster(arg1: new[] {210, 101, 102});
             }
 
             public override void Execute() {
@@ -198,8 +197,7 @@ namespace Maple2.Trigger._02000443_bf {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518}, arg3: new byte[] {1})) {
                     // context.State = new StateQuestEnd_warp(context);
                     return;
                 }

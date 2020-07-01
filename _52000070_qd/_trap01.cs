@@ -6,19 +6,16 @@ namespace Maple2.Trigger._52000070_qd {
             public override void OnEnter() {
                 context.SetBreakable(arg1: new[] {4000}, arg2: false);
                 context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
-                context.SetMesh(arg1: new[] {3100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {4100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100, 4100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {4200}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 3000, arg2: true, arg3: "Closed");
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
-                context.SetEffect(arg1: new[] {6100}, arg2: false);
+                context.SetEffect(arg1: new[] {6000, 6100}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002677},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002677}, arg3: new byte[] {1})) {
                     context.State = new StateLoadingDelay01(context);
                     return;
                 }
@@ -525,8 +522,7 @@ namespace Maple2.Trigger._52000070_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002677},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002677}, arg3: new byte[] {2})) {
                     context.State = new StateMoveToComplete(context);
                     return;
                 }

@@ -5,11 +5,8 @@ namespace Maple2.Trigger._02000298_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 214, arg2: true, arg3: "Closed");
-                context.SetMesh(arg1: new[] {3141}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3142}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetAgent(arg1: "9141", arg2: true);
-                context.SetAgent(arg1: "9142", arg2: true);
-                context.SetAgent(arg1: "9143", arg2: true);
+                context.SetMesh(arg1: new[] {3141, 3142}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetAgent(arg1: new[] {9141, 9142, 9143}, arg2: true);
             }
 
             public override void Execute() {
@@ -29,9 +26,7 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetActor(arg1: 214, arg2: true, arg3: "Opened");
                 context.SetMesh(arg1: new[] {3141}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                 context.SetMesh(arg1: new[] {3142}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                context.SetAgent(arg1: "9141", arg2: false);
-                context.SetAgent(arg1: "9142", arg2: false);
-                context.SetAgent(arg1: "9143", arg2: false);
+                context.SetAgent(arg1: new[] {9141, 9142, 9143}, arg2: false);
                 context.CreateMonster(arg1: new[] {1015}, arg2: true);
             }
 

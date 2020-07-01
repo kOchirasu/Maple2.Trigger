@@ -5,40 +5,16 @@ namespace Maple2.Trigger._02000379_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5100}, arg2: false);
-                context.SetEffect(arg1: new[] {5200}, arg2: false);
-                context.SetEffect(arg1: new[] {5300}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5100, 5200, 5300}, arg2: false);
                 context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMeshAnimation(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315,
-                        3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(arg1: new[] {2000}, arg2: false);
-                context.SetSkill(arg1: new[] {2001}, arg2: false);
-                context.SetSkill(arg1: new[] {2002}, arg2: false);
-                context.SetAgent(arg1: "8000", arg2: true);
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
-                context.SetAgent(arg1: "8004", arg2: true);
-                context.SetAgent(arg1: "8005", arg2: true);
-                context.SetAgent(arg1: "8006", arg2: true);
-                context.SetAgent(arg1: "8007", arg2: true);
-                context.SetAgent(arg1: "8008", arg2: true);
-                context.SetAgent(arg1: "8009", arg2: true);
-                context.SetAgent(arg1: "8010", arg2: true);
-                context.SetAgent(arg1: "8011", arg2: true);
+                context.SetMeshAnimation(arg1: new[] {3001, 3002}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3200, 3201, 3202, 3203, 3204, 3205, 3206}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetSkill(arg1: new[] {2000, 2001, 2002}, arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011}, arg2: true);
             }
 
             public override void Execute() {
@@ -74,8 +50,7 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateLodingDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 201, 301}, arg2: false);
-                context.CreateMonster(arg1: new[] {910, 911, 912, 920, 921, 922}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 201, 301, 910, 911, 912, 920, 921, 922}, arg2: false);
             }
 
             public override void Execute() {
@@ -397,18 +372,7 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateFakeLaozApp04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8000", arg2: false);
-                context.SetAgent(arg1: "8001", arg2: false);
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
-                context.SetAgent(arg1: "8004", arg2: false);
-                context.SetAgent(arg1: "8005", arg2: false);
-                context.SetAgent(arg1: "8006", arg2: false);
-                context.SetAgent(arg1: "8007", arg2: false);
-                context.SetAgent(arg1: "8008", arg2: false);
-                context.SetAgent(arg1: "8009", arg2: false);
-                context.SetAgent(arg1: "8010", arg2: false);
-                context.SetAgent(arg1: "8011", arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011}, arg2: false);
                 context.CameraSelect(arg1: 602, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
@@ -468,8 +432,7 @@ namespace Maple2.Trigger._02000379_bf {
                 context.SetMeshAnimation(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0);
                 context.SetMeshAnimation(arg1: new[] {3001}, arg2: true, arg3: 200, arg4: 0);
                 context.SetUserValue(triggerId: 2, key: "SpyKandura", value: 2);
-                context.DestroyMonster(arg1: new[] {900, 910, 911, 912, 920, 921, 922});
-                context.DestroyMonster(arg1: new[] {102, 202});
+                context.DestroyMonster(arg1: new[] {900, 910, 911, 912, 920, 921, 922, 102, 202});
                 context.CreateMonster(arg1: new[] {103, 203}, arg2: false);
             }
 
@@ -488,14 +451,8 @@ namespace Maple2.Trigger._02000379_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5300}, arg2: true);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315,
-                        3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323
-                    }, arg2: true, arg3: 24, arg4: 100, arg5: 70);
-                context.SetMesh(arg1: new[] {3202, 3203, 3204}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 0f);
+                context.SetRandomMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323}, arg2: true, arg3: 24, arg4: 100, arg5: 70);
+                context.SetMesh(arg1: new[] {3202, 3203, 3204, 3100, 3101, 3102, 3103, 3104, 3105, 3106}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.CameraSelect(arg1: 700, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);

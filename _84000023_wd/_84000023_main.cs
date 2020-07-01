@@ -61,8 +61,7 @@ namespace Maple2.Trigger._84000023_wd {
             internal State연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
                 context.WeddingMoveUser(entryType: "Guest", arg1: 84000023, arg2: new byte[] {22, 23}, arg3: 701);
                 context.WeddingMoveUser(entryType: "Guest", arg1: 84000023, arg2: new byte[] {22, 23}, arg3: 703);
@@ -85,8 +84,7 @@ namespace Maple2.Trigger._84000023_wd {
             internal State주례줌인01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {8002, 8001}, arg2: false);
             }
 

@@ -4,9 +4,7 @@ namespace Maple2.Trigger._52000063_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {605}, arg2: false);
-                context.SetEffect(arg1: new[] {606}, arg2: false);
+                context.SetEffect(arg1: new[] {604, 605, 606}, arg2: false);
             }
 
             public override void Execute() {
@@ -23,9 +21,7 @@ namespace Maple2.Trigger._52000063_qd {
             internal State감지대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {604}, arg2: true);
-                context.SetEffect(arg1: new[] {605}, arg2: true);
-                context.SetEffect(arg1: new[] {606}, arg2: true);
+                context.SetEffect(arg1: new[] {604, 605, 606}, arg2: true);
             }
 
             public override void Execute() {
@@ -42,9 +38,7 @@ namespace Maple2.Trigger._52000063_qd {
             internal State스킬랜덤(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {605}, arg2: false);
-                context.SetEffect(arg1: new[] {606}, arg2: false);
+                context.SetEffect(arg1: new[] {604, 605, 606}, arg2: false);
             }
 
             public override void Execute() {

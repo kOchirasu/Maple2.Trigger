@@ -23,8 +23,7 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10001026}, arg2: 0);
-                context.SetRandomMesh(arg1: new[] {1010, 1011, 1012, 1013, 1014}, arg2: false, arg3: 5, arg4: 500,
-                    arg5: 100);
+                context.SetRandomMesh(arg1: new[] {1010, 1011, 1012, 1013, 1014}, arg2: false, arg3: 5, arg4: 500, arg5: 100);
                 context.SetUserValue(triggerId: 10, key: "1stTreeRemove", value: 1);
             }
 

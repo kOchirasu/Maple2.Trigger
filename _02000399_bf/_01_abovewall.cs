@@ -6,11 +6,8 @@ namespace Maple2.Trigger._02000399_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetInteractObject(arg1: new[] {10001150}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10001151}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10001152}, arg2: 0);
-                context.DestroyMonster(arg1: new[] {901, 902, 903});
-                context.DestroyMonster(arg1: new[] {910, 911, 912, 920, 921, 922, 930, 931, 932, 940, 941, 942});
+                context.SetInteractObject(arg1: new[] {10001150, 10001151, 10001152}, arg2: 0);
+                context.DestroyMonster(arg1: new[] {901, 902, 903, 910, 911, 912, 920, 921, 922, 930, 931, 932, 940, 941, 942});
                 context.SetLadder(arg1: 510, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 511, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 512, arg2: false, arg3: false, arg4: 0);

@@ -5,11 +5,7 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 199, arg2: 99910140);
-                context.SetInteractObject(arg1: new[] {12000023}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000024}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000025}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000026}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000038}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000023, 12000024, 12000025, 12000026, 12000038}, arg2: 2);
             }
 
             public override void Execute() {
@@ -69,10 +65,7 @@ namespace Maple2.Trigger._02000401_bf {
                 context.SetSkip(arg1: "종료체크");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetInteractObject(arg1: new[] {12000023}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000024}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000025}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000026}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000023, 12000024, 12000025, 12000026}, arg2: 1);
             }
 
             public override void Execute() {
@@ -137,11 +130,7 @@ namespace Maple2.Trigger._02000401_bf {
             public override void Execute() {
                 if (context.GetUserValue(key: "DungeonClear") == 1) {
                     context.DestroyMonster(arg1: new[] {1101, 1102, 1103, 1104, 1104}, arg2: false);
-                    context.SetInteractObject(arg1: new[] {12000023}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {12000024}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {12000025}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {12000026}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {12000038}, arg2: 0);
+                    context.SetInteractObject(arg1: new[] {12000023, 12000024, 12000025, 12000026, 12000038}, arg2: 0);
                     context.RemoveBuff(arg1: 199, arg2: 99910140);
                     context.State = new State종료(context);
                     return;

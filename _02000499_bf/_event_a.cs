@@ -4,14 +4,8 @@ namespace Maple2.Trigger._02000499_bf {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.CreateMonster(arg1: new[] {103}, arg2: false);
-                context.CreateMonster(arg1: new[] {104}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102, 103, 104}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: false);
             }
 
             public override void Execute() {
@@ -48,10 +42,7 @@ namespace Maple2.Trigger._02000499_bf {
             internal StateCompleteEffect(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
-                context.SetEffect(arg1: new[] {5004}, arg2: true);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: true);
             }
 
             public override void Execute() {

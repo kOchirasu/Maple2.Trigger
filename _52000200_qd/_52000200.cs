@@ -19,8 +19,7 @@ namespace Maple2.Trigger._52000200_qd {
             internal StateCameraEffect01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {
@@ -77,8 +76,7 @@ namespace Maple2.Trigger._52000200_qd {
             internal StateCameraEffect03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 1);
@@ -118,12 +116,9 @@ namespace Maple2.Trigger._52000200_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__1$", illustId: "Ereb_normal",
-                    align: "left", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__2$", align: "right",
-                    illustId: "Karl_normal", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__3$", illustId: "Ereb_normal",
-                    align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__1$", illustId: "Ereb_normal", align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__2$", align: "right", illustId: "Karl_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__3$", illustId: "Ereb_normal", align: "left", duration: 4000);
             }
 
             public override void Execute() {
@@ -141,12 +136,9 @@ namespace Maple2.Trigger._52000200_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4004, 4005}, arg2: false);
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__4$", align: "right",
-                    illustId: "Karl_normal", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__5$", illustId: "Ereb_normal",
-                    align: "left", duration: 4500);
-                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__6$", illustId: "Ereb_normal",
-                    align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__4$", align: "right", illustId: "Karl_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__5$", illustId: "Ereb_normal", align: "left", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__6$", illustId: "Ereb_normal", align: "left", duration: 3000);
             }
 
             public override void Execute() {
@@ -163,12 +155,9 @@ namespace Maple2.Trigger._52000200_qd {
             internal State여제알현_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__7$", align: "right",
-                    illustId: "Karl_normal", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__8$", align: "right",
-                    illustId: "Karl_normal", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__9$", illustId: "Ereb_surprise",
-                    align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__7$", align: "right", illustId: "Karl_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__8$", align: "right", illustId: "Karl_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__9$", illustId: "Ereb_surprise", align: "left", duration: 3000);
             }
 
             public override void Execute() {
@@ -204,18 +193,12 @@ namespace Maple2.Trigger._52000200_qd {
             internal State여제알현_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11004782, msg: "$52000200_QD__52000200__10$", align: "left",
-                    illustId: "Ruana_normal", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__11$", align: "left",
-                    illustId: "Ereb_surprise", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__12$", align: "right",
-                    illustId: "Karl_normal", duration: 4500);
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__13$", align: "right",
-                    illustId: "Karl_normal", duration: 4500);
-                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__14$", align: "left",
-                    illustId: "Ereb_surprise", duration: 3000);
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__15$", align: "right",
-                    illustId: "Karl_normal", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004782, msg: "$52000200_QD__52000200__10$", align: "left", illustId: "Ruana_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__11$", align: "left", illustId: "Ereb_surprise", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__12$", align: "right", illustId: "Karl_normal", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__13$", align: "right", illustId: "Karl_normal", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__14$", align: "left", illustId: "Ereb_surprise", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__15$", align: "right", illustId: "Karl_normal", duration: 4500);
             }
 
             public override void Execute() {
@@ -233,20 +216,13 @@ namespace Maple2.Trigger._52000200_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4007, 4008}, arg2: false);
-                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__16$", align: "left",
-                    illustId: "Ereb_surprise", duration: 4500);
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__17$", align: "right",
-                    illustId: "Karl_normal", duration: 2800);
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__18$", align: "right",
-                    illustId: "Karl_normal", duration: 4500);
-                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__19$", align: "left",
-                    illustId: "Ereb_surprise", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__20$", align: "left",
-                    illustId: "Ereb_closeEye", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__21$", align: "left",
-                    illustId: "Ereb_closeEye", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__22$", align: "right",
-                    illustId: "Karl_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__16$", align: "left", illustId: "Ereb_surprise", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__17$", align: "right", illustId: "Karl_normal", duration: 2800);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__18$", align: "right", illustId: "Karl_normal", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__19$", align: "left", illustId: "Ereb_surprise", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__20$", align: "left", illustId: "Ereb_closeEye", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004785, msg: "$52000200_QD__52000200__21$", align: "left", illustId: "Ereb_closeEye", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__22$", align: "right", illustId: "Karl_normal", duration: 4000);
             }
 
             public override void Execute() {
@@ -302,22 +278,14 @@ namespace Maple2.Trigger._52000200_qd {
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11001975, msg: "$52000200_QD__52000200__24$", align: "left",
-                    duration: 4500);
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__25$", align: "right",
-                    illustId: "Karl_normal", duration: 2800);
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__26$", align: "right",
-                    illustId: "Karl_normal", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__27$", align: "right",
-                    illustId: "Karl_normal", duration: 3000);
-                context.AddCinematicTalk(npcId: 11000264, msg: "$52000200_QD__52000200__28$", align: "left",
-                    illustId: "Radin_normal", duration: 4500);
-                context.AddCinematicTalk(npcId: 11000264, msg: "$52000200_QD__52000200__29$", align: "left",
-                    illustId: "Radin_normal", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__30$", align: "right",
-                    illustId: "Karl_normal", duration: 4000);
-                context.AddCinematicTalk(npcId: 11000264, msg: "$52000200_QD__52000200__31$", align: "left",
-                    illustId: "Radin_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11001975, msg: "$52000200_QD__52000200__24$", align: "left", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__25$", align: "right", illustId: "Karl_normal", duration: 2800);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__26$", align: "right", illustId: "Karl_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__27$", align: "right", illustId: "Karl_normal", duration: 3000);
+                context.AddCinematicTalk(npcId: 11000264, msg: "$52000200_QD__52000200__28$", align: "left", illustId: "Radin_normal", duration: 4500);
+                context.AddCinematicTalk(npcId: 11000264, msg: "$52000200_QD__52000200__29$", align: "left", illustId: "Radin_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004778, msg: "$52000200_QD__52000200__30$", align: "right", illustId: "Karl_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11000264, msg: "$52000200_QD__52000200__31$", align: "left", illustId: "Radin_normal", duration: 4000);
                 context.SetSceneSkip();
             }
 

@@ -4,8 +4,7 @@ namespace Maple2.Trigger._02000047_bf {
             internal State반응대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000084}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000085}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000084, 10000085}, arg2: 1);
                 context.SetMesh(arg1: new[] {10, 11, 12, 13, 14, 15, 16, 17}, arg2: false);
             }
 

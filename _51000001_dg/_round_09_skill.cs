@@ -4,11 +4,7 @@ namespace Maple2.Trigger._51000001_dg {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3901}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3902}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3903}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3904}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3905}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3901, 3902, 3903, 3904, 3905}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -186,11 +182,7 @@ namespace Maple2.Trigger._51000001_dg {
             internal State대기시간(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3901}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3902}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3903}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3904}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3905}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3901, 3902, 3903, 3904, 3905}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

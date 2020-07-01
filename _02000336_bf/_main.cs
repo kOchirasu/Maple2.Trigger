@@ -5,12 +5,7 @@ namespace Maple2.Trigger._02000336_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {16003, 16004}, arg2: false, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {122, 123, 301, 302}, arg2: false);
-                context.CreateMonster(
-                    arg1: new[] {
-                        110, 111, 112, 113, 114, 116, 117, 120, 121, 124, 125, 126, 127, 128, 129, 131, 132, 133, 134,
-                        135, 137, 139, 141, 142, 144
-                    }, arg2: false);
+                context.CreateMonster(arg1: new[] {122, 123, 301, 302, 110, 111, 112, 113, 114, 116, 117, 120, 121, 124, 125, 126, 127, 128, 129, 131, 132, 133, 134, 135, 137, 139, 141, 142, 144}, arg2: false);
             }
 
             public override void Execute() {

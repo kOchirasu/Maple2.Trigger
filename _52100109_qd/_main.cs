@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52100109_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000980},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000980}, arg3: new byte[] {1})) {
                     context.State = new State준비(context);
                     return;
                 }
@@ -20,8 +19,7 @@ namespace Maple2.Trigger._52100109_qd {
             internal State준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 52100109, arg2: 2);
@@ -46,8 +44,7 @@ namespace Maple2.Trigger._52100109_qd {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_3001");
             }
 
@@ -84,8 +81,7 @@ namespace Maple2.Trigger._52100109_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 5000f);
-                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__0$", align: "left",
-                    illustId: "Eone_normal", duration: 5000);
+                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__0$", align: "left", illustId: "Eone_normal", duration: 5000);
             }
 
             public override void Execute() {
@@ -103,10 +99,8 @@ namespace Maple2.Trigger._52100109_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 8500f);
-                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__1$", align: "right",
-                    illustId: "Bliche_closeEye", duration: 4500);
-                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__2$", align: "right",
-                    illustId: "Bliche_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__1$", align: "right", illustId: "Bliche_closeEye", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__2$", align: "right", illustId: "Bliche_normal", duration: 4000);
             }
 
             public override void Execute() {
@@ -124,10 +118,8 @@ namespace Maple2.Trigger._52100109_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 9000f);
-                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__3$", align: "left",
-                    illustId: "Eone_normal", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__4$", align: "left",
-                    illustId: "Eone_serious", duration: 5000);
+                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__3$", align: "left", illustId: "Eone_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__4$", align: "left", illustId: "Eone_serious", duration: 5000);
             }
 
             public override void Execute() {
@@ -145,10 +137,8 @@ namespace Maple2.Trigger._52100109_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 5200f);
-                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__5$", align: "right",
-                    illustId: "Bliche_normal", duration: 2000);
-                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__6$", align: "right",
-                    illustId: "Bliche_normal", duration: 3200);
+                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__5$", align: "right", illustId: "Bliche_normal", duration: 2000);
+                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__6$", align: "right", illustId: "Bliche_normal", duration: 3200);
             }
 
             public override void Execute() {
@@ -166,8 +156,7 @@ namespace Maple2.Trigger._52100109_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3200f);
-                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__7$", align: "left",
-                    illustId: "Eone_closeEye", duration: 3200);
+                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__7$", align: "left", illustId: "Eone_closeEye", duration: 3200);
             }
 
             public override void Execute() {
@@ -186,8 +175,7 @@ namespace Maple2.Trigger._52100109_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 19000f);
                 context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
-                context.AddCinematicTalk(npcId: 11004615, msg: "$52100109_QD__MAIN__8$", align: "left",
-                    illustId: "siman_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004615, msg: "$52100109_QD__MAIN__8$", align: "left", illustId: "siman_normal", duration: 4000);
             }
 
             public override void Execute() {
@@ -205,12 +193,9 @@ namespace Maple2.Trigger._52100109_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
-                context.AddCinematicTalk(npcId: 11004615, msg: "$52100109_QD__MAIN__9$", align: "left",
-                    illustId: "siman_normal", duration: 5000);
-                context.AddCinematicTalk(npcId: 11004615, msg: "$52100109_QD__MAIN__10$", align: "left",
-                    illustId: "siman_normal", duration: 5000);
-                context.AddCinematicTalk(npcId: 11004615, msg: "$52100109_QD__MAIN__11$", align: "left",
-                    illustId: "siman_normal", duration: 5000);
+                context.AddCinematicTalk(npcId: 11004615, msg: "$52100109_QD__MAIN__9$", align: "left", illustId: "siman_normal", duration: 5000);
+                context.AddCinematicTalk(npcId: 11004615, msg: "$52100109_QD__MAIN__10$", align: "left", illustId: "siman_normal", duration: 5000);
+                context.AddCinematicTalk(npcId: 11004615, msg: "$52100109_QD__MAIN__11$", align: "left", illustId: "siman_normal", duration: 5000);
             }
 
             public override void Execute() {
@@ -228,8 +213,7 @@ namespace Maple2.Trigger._52100109_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 5000f);
-                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__12$", align: "left",
-                    illustId: "Eone_serious", duration: 5000);
+                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__12$", align: "left", illustId: "Eone_serious", duration: 5000);
             }
 
             public override void Execute() {
@@ -247,8 +231,7 @@ namespace Maple2.Trigger._52100109_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 4500f);
-                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__13$", align: "right",
-                    illustId: "Bliche_closeEye", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__13$", align: "right", illustId: "Bliche_closeEye", duration: 4500);
             }
 
             public override void Execute() {
@@ -266,12 +249,9 @@ namespace Maple2.Trigger._52100109_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 8500f);
-                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__14$", align: "left",
-                    illustId: "Eone_normal", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__15$", align: "left",
-                    illustId: "Eone_closeEye", duration: 4500);
-                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__16$", align: "right",
-                    illustId: "Bliche_closeEye", duration: 2800);
+                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__14$", align: "left", illustId: "Eone_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__15$", align: "left", illustId: "Eone_closeEye", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__16$", align: "right", illustId: "Bliche_closeEye", duration: 2800);
             }
 
             public override void Execute() {
@@ -289,8 +269,7 @@ namespace Maple2.Trigger._52100109_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 4500f);
-                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__17$", align: "right",
-                    illustId: "Bliche_normal", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__17$", align: "right", illustId: "Bliche_normal", duration: 4500);
             }
 
             public override void Execute() {
@@ -308,8 +287,7 @@ namespace Maple2.Trigger._52100109_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3200f);
-                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__18$", align: "left",
-                    illustId: "Eone_normal", duration: 3200);
+                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__18$", align: "left", illustId: "Eone_normal", duration: 3200);
             }
 
             public override void Execute() {
@@ -327,10 +305,8 @@ namespace Maple2.Trigger._52100109_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 4500f);
-                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__19$", align: "right",
-                    illustId: "Bliche_normal", duration: 4500);
-                context.AddCinematicTalk(npcId: 11004615, msg: "$52100109_QD__MAIN__20$", align: "left",
-                    illustId: "siman_normal", duration: 2000);
+                context.AddCinematicTalk(npcId: 11004616, msg: "$52100109_QD__MAIN__19$", align: "right", illustId: "Bliche_normal", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004615, msg: "$52100109_QD__MAIN__20$", align: "left", illustId: "siman_normal", duration: 2000);
             }
 
             public override void Execute() {
@@ -348,10 +324,8 @@ namespace Maple2.Trigger._52100109_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 8000f);
-                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__21$", align: "left",
-                    illustId: "Eone_smile", duration: 4000);
-                context.AddCinematicTalk(npcId: 11004615, msg: "$52100109_QD__MAIN__22$", align: "right",
-                    illustId: "siman_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__21$", align: "left", illustId: "Eone_smile", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004615, msg: "$52100109_QD__MAIN__22$", align: "right", illustId: "siman_normal", duration: 4000);
                 context.SetSceneSkip();
             }
 
@@ -403,9 +377,7 @@ namespace Maple2.Trigger._52100109_qd {
             internal State정리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {101});
-                context.DestroyMonster(arg1: new[] {102});
-                context.DestroyMonster(arg1: new[] {103});
+                context.DestroyMonster(arg1: new[] {101, 102, 103});
                 context.VisibleMyPc(isVisible: true);
             }
 

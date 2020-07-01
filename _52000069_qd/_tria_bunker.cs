@@ -4,48 +4,13 @@ namespace Maple2.Trigger._52000069_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {605}, arg2: false);
-                context.SetEffect(arg1: new[] {606}, arg2: false);
-                context.SetEffect(arg1: new[] {607}, arg2: false);
-                context.SetEffect(arg1: new[] {608}, arg2: false);
-                context.SetEffect(arg1: new[] {609}, arg2: false);
-                context.SetEffect(arg1: new[] {610}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetAgent(arg1: "8000", arg2: true);
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
-                context.SetAgent(arg1: "8004", arg2: true);
-                context.SetAgent(arg1: "8005", arg2: true);
-                context.SetAgent(arg1: "8006", arg2: true);
-                context.SetAgent(arg1: "8007", arg2: true);
-                context.SetAgent(arg1: "8008", arg2: true);
-                context.SetAgent(arg1: "8009", arg2: true);
-                context.SetAgent(arg1: "8010", arg2: true);
-                context.SetAgent(arg1: "8011", arg2: true);
-                context.SetAgent(arg1: "8012", arg2: true);
-                context.SetAgent(arg1: "8013", arg2: true);
-                context.SetAgent(arg1: "8014", arg2: true);
-                context.SetAgent(arg1: "8015", arg2: true);
-                context.SetAgent(arg1: "8016", arg2: true);
-                context.SetAgent(arg1: "8017", arg2: true);
-                context.SetAgent(arg1: "8018", arg2: true);
-                context.SetAgent(arg1: "8019", arg2: true);
-                context.SetAgent(arg1: "8020", arg2: true);
-                context.SetAgent(arg1: "8021", arg2: true);
-                context.CreateMonster(arg1: new[] {1000, 1001, 1002, 1003}, arg2: false);
-                context.CreateMonster(
-                    arg1: new[] {1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110}, arg2: false);
-                context.CreateMonster(arg1: new[] {1201, 1202, 1203}, arg2: false);
-                context.CreateMonster(arg1: new[] {2001, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108},
-                    arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019, 8020, 8021}, arg2: true);
+                context.CreateMonster(arg1: new[] {1000, 1001, 1002, 1003, 1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1201, 1202, 1203, 2001, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, arg2: false);
             }
 
             public override void Execute() {
@@ -82,8 +47,7 @@ namespace Maple2.Trigger._52000069_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.AddCinematicTalk(npcId: 11000064, illustId: "Lennon_normal",
-                    msg: "$52000069_QD__TRIA_BUNKER__0$", duration: 9195, align: "left");
+                context.AddCinematicTalk(npcId: 11000064, illustId: "Lennon_normal", msg: "$52000069_QD__TRIA_BUNKER__0$", duration: 9195, align: "left");
             }
 
             public override void Execute() {
@@ -125,8 +89,7 @@ namespace Maple2.Trigger._52000069_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetOnetimeEffect(id: 11100101, enable: true,
-                    path: @"BG/Common/Sound/Eff_Object_Devlin_Appear_01.xml ");
+                context.SetOnetimeEffect(id: 11100101, enable: true, path: @"BG/Common/Sound/Eff_Object_Devlin_Appear_01.xml ");
                 context.SetNpcEmotionSequence(arg1: 2001, arg2: "AttackReady_A");
                 context.CameraSelect(arg1: 302, arg2: true);
             }
@@ -147,8 +110,7 @@ namespace Maple2.Trigger._52000069_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 303, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 2003, arg2: "Bore_A");
-                context.AddCinematicTalk(npcId: 11000119, illustId: "Fray_serious",
-                    msg: "$52000069_QD__TRIA_BUNKER__2$", duration: 4000, align: "center");
+                context.AddCinematicTalk(npcId: 11000119, illustId: "Fray_serious", msg: "$52000069_QD__TRIA_BUNKER__2$", duration: 4000, align: "center");
                 context.SetSceneSkip(arg1: "대사스킵용01");
             }
 
@@ -186,24 +148,7 @@ namespace Maple2.Trigger._52000069_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.CameraSelect(arg1: 304, arg2: true);
-                context.SetAgent(arg1: "8004", arg2: false);
-                context.SetAgent(arg1: "8005", arg2: false);
-                context.SetAgent(arg1: "8006", arg2: false);
-                context.SetAgent(arg1: "8007", arg2: false);
-                context.SetAgent(arg1: "8008", arg2: false);
-                context.SetAgent(arg1: "8009", arg2: false);
-                context.SetAgent(arg1: "8010", arg2: false);
-                context.SetAgent(arg1: "8011", arg2: false);
-                context.SetAgent(arg1: "8012", arg2: false);
-                context.SetAgent(arg1: "8013", arg2: false);
-                context.SetAgent(arg1: "8014", arg2: false);
-                context.SetAgent(arg1: "8015", arg2: false);
-                context.SetAgent(arg1: "8016", arg2: false);
-                context.SetAgent(arg1: "8017", arg2: false);
-                context.SetAgent(arg1: "8018", arg2: false);
-                context.SetAgent(arg1: "8019", arg2: false);
-                context.SetAgent(arg1: "8020", arg2: false);
-                context.SetAgent(arg1: "8021", arg2: false);
+                context.SetAgent(arg1: new[] {8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019, 8020, 8021}, arg2: false);
             }
 
             public override void Execute() {
@@ -239,8 +184,7 @@ namespace Maple2.Trigger._52000069_qd {
             internal State지원군등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1201, 1202, 1203});
-                context.DestroyMonster(arg1: new[] {2101, 2102, 2103});
+                context.DestroyMonster(arg1: new[] {1201, 1202, 1203, 2101, 2102, 2103});
                 context.CreateMonster(arg1: new[] {1004, 1005, 1301, 1302, 1303, 1304}, arg2: false);
             }
 
@@ -343,10 +287,7 @@ namespace Maple2.Trigger._52000069_qd {
                 context.SetProductionUI(arg1: 4);
                 context.MoveUser(arg1: 52000069, arg2: 2);
                 context.CreateMonster(arg1: new[] {1006, 1007, 1009}, arg2: false);
-                context.DestroyMonster(arg1: new[]
-                    {1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110});
-                context.DestroyMonster(arg1: new[]
-                    {1003, 1004, 1005, 1301, 1302, 1303, 1304, 2001, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108});
+                context.DestroyMonster(arg1: new[] {1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1003, 1004, 1005, 1301, 1302, 1303, 1304, 2001, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108});
             }
 
             public override void Execute() {
@@ -421,8 +362,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001975, arg3: "$52000069_QD__TRIA_BUNKER__7$", arg4: 4);
-                context.SetOnetimeEffect(id: 1991, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_TriaSeige_02_00001991.xml");
+                context.SetOnetimeEffect(id: 1991, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_02_00001991.xml");
             }
 
             public override void Execute() {
@@ -440,8 +380,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 90000, arg2: false);
-                context.AddCinematicTalk(npcId: 11000075, illustId: "Ereb_surprise",
-                    msg: "$52000069_QD__TRIA_BUNKER__8$", duration: 4000, align: "center");
+                context.AddCinematicTalk(npcId: 11000075, illustId: "Ereb_surprise", msg: "$52000069_QD__TRIA_BUNKER__8$", duration: 4000, align: "center");
             }
 
             public override void Execute() {
@@ -500,12 +439,7 @@ namespace Maple2.Trigger._52000069_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.MoveNpc(arg1: 2000, arg2: "MS2PatrolData_2000A");
-                context.SetEffect(arg1: new[] {609}, arg2: true);
-                context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetEffect(arg1: new[] {603}, arg2: true);
-                context.SetEffect(arg1: new[] {604}, arg2: true);
-                context.SetEffect(arg1: new[] {605}, arg2: true);
-                context.SetEffect(arg1: new[] {606}, arg2: true);
+                context.SetEffect(arg1: new[] {609, 602, 603, 604, 605, 606}, arg2: true);
             }
 
             public override void Execute() {
@@ -598,8 +532,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000069_QD__TRIA_BUNKER__9$", arg4: 7);
-                context.SetOnetimeEffect(id: 1992, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_TriaSeige_03_00001992.xml");
+                context.SetOnetimeEffect(id: 1992, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_03_00001992.xml");
                 context.CameraSelect(arg1: 310, arg2: true);
             }
 
@@ -617,8 +550,7 @@ namespace Maple2.Trigger._52000069_qd {
             internal State마드리아공격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11000075, illustId: "Ereb_serious",
-                    msg: "$52000069_QD__TRIA_BUNKER__10$", duration: 3000, align: "center");
+                context.AddCinematicTalk(npcId: 11000075, illustId: "Ereb_serious", msg: "$52000069_QD__TRIA_BUNKER__10$", duration: 3000, align: "center");
                 context.CameraSelect(arg1: 311, arg2: true);
             }
 
@@ -637,8 +569,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000069_QD__TRIA_BUNKER__11$", arg4: 12);
-                context.SetOnetimeEffect(id: 1993, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_TriaSeige_04_00001993.xml");
+                context.SetOnetimeEffect(id: 1993, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_04_00001993.xml");
             }
 
             public override void Execute() {
@@ -656,8 +587,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000069_QD__TRIA_BUNKER__12$", arg4: 11);
-                context.SetOnetimeEffect(id: 1994, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_TriaSeige_05_00001994.xml");
+                context.SetOnetimeEffect(id: 1994, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_05_00001994.xml");
             }
 
             public override void Execute() {
@@ -675,8 +605,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000069_QD__TRIA_BUNKER__13$", arg4: 8);
-                context.SetOnetimeEffect(id: 1995, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_TriaSeige_06_00001995.xml");
+                context.SetOnetimeEffect(id: 1995, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_06_00001995.xml");
             }
 
             public override void Execute() {
@@ -782,8 +711,7 @@ namespace Maple2.Trigger._52000069_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 313, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 1000, arg2: "Spell_A");
-                context.SetOnetimeEffect(id: 02100287, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Chapter8_Destruction_of_Ereb_01.xml");
+                context.SetOnetimeEffect(id: 02100287, enable: true, path: @"BG/Common/Sound/Eff_System_Chapter8_Destruction_of_Ereb_01.xml");
             }
 
             public override void Execute() {
@@ -801,8 +729,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {608}, arg2: true);
-                context.SetOnetimeEffect(id: 3, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
+                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
             }
 
             public override void Execute() {
@@ -820,8 +747,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000069_QD__TRIA_BUNKER__14$", arg4: 7);
-                context.SetOnetimeEffect(id: 1996, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_TriaSeige_07_00001996.xml");
+                context.SetOnetimeEffect(id: 1996, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_07_00001996.xml");
             }
 
             public override void Execute() {
@@ -839,8 +765,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000069_QD__TRIA_BUNKER__15$", arg4: 3);
-                context.SetOnetimeEffect(id: 1997, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_TriaSeige_08_00001997.xml");
+                context.SetOnetimeEffect(id: 1997, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_08_00001997.xml");
             }
 
             public override void Execute() {
@@ -859,14 +784,12 @@ namespace Maple2.Trigger._52000069_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.RemoveBuff(arg1: 199, arg2: 70000109);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {607}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 607}, arg2: false);
                 context.SetPcEmotionSequence(arg1: "Idle_A");
                 context.DestroyMonster(arg1: new[] {1000, 1006, 1007, 1009, 2000, 1001, 1002});
                 context.MoveUser(arg1: 52000069, arg2: 2);
                 context.CreateMonster(arg1: new[] {1000, 1006, 1007, 1010, 1011, 1001, 1002, 9999}, arg2: false);
-                context.SetOnetimeEffect(id: 3, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
+                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
             }
 
             public override void Execute() {

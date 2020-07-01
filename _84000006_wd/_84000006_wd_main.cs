@@ -9,9 +9,7 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SetPortal(arg1: 10001, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 10002, arg2: false, arg3: false, arg4: false);
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.SetEffect(arg1: new[] {3000}, arg2: false);
-                context.SetEffect(arg1: new[] {3001}, arg2: false);
-                context.SetEffect(arg1: new[] {3002}, arg2: false);
+                context.SetEffect(arg1: new[] {3000, 3001, 3002}, arg2: false);
             }
 
             public override void Execute() {
@@ -72,10 +70,8 @@ namespace Maple2.Trigger._84000006_wd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {3001}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__0$", duration: 3000,
-                    delayTick: 500);
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__1$", duration: 3000,
-                    delayTick: 3500);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__0$", duration: 3000, delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__1$", duration: 3000, delayTick: 3500);
             }
 
             public override void Execute() {
@@ -93,8 +89,7 @@ namespace Maple2.Trigger._84000006_wd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {3001}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__2$", duration: 3000,
-                    delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__2$", duration: 3000, delayTick: 500);
             }
 
             public override void Execute() {
@@ -116,10 +111,8 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SetAmbientLight(arg1: new Vector3(150f, 150f, 150f));
                 context.CreateMonster(arg1: new[] {201}, arg2: false, arg3: 30000);
                 context.SetEffect(arg1: new[] {3002}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__3$", duration: 4000,
-                    delayTick: 1000);
-                context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__4$", duration: 4000,
-                    delayTick: 5000);
+                context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__3$", duration: 4000, delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__4$", duration: 4000, delayTick: 5000);
             }
 
             public override void Execute() {
@@ -141,8 +134,7 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.VisibleMyPc(isVisible: true);
-                context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000,
-                    script: "$84000006_WD__84000006_WD_MAIN__5$");
+                context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000, script: "$84000006_WD__84000006_WD_MAIN__5$");
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 20000f);
             }
 
@@ -160,8 +152,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateGameGuide02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000,
-                    script: "$84000006_WD__84000006_WD_MAIN__6$");
+                context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000, script: "$84000006_WD__84000006_WD_MAIN__6$");
             }
 
             public override void Execute() {
@@ -178,8 +169,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateGameGuide03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000,
-                    script: "$84000006_WD__84000006_WD_MAIN__7$");
+                context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000, script: "$84000006_WD__84000006_WD_MAIN__7$");
             }
 
             public override void Execute() {
@@ -196,8 +186,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateGameGuide04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000,
-                    script: "$84000006_WD__84000006_WD_MAIN__8$");
+                context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000, script: "$84000006_WD__84000006_WD_MAIN__8$");
             }
 
             public override void Execute() {
@@ -214,8 +203,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateGameGuide05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000,
-                    script: "$84000006_WD__84000006_WD_MAIN__9$");
+                context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000, script: "$84000006_WD__84000006_WD_MAIN__9$");
             }
 
             public override void Execute() {
@@ -232,8 +220,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateGameGuide06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 2, arg2: "$84000006_WD__84000006_WD_MAIN__10$", arg3: 3000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 2, arg2: "$84000006_WD__84000006_WD_MAIN__10$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {
@@ -252,12 +239,9 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 1004, key: "Interaction", value: 1);
                 context.DestroyMonster(arg1: new[] {102});
-                context.SetMesh(
-                    arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.StartMiniGame(boxId: 9001, round: 1, isShowResultUI: "False", gameName: "PinataWD");
-                context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__11$", duration: 8000,
-                    delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__11$", duration: 8000, delayTick: 1000);
                 context.ShowGuideSummary(entityId: 28500010, textId: 28500010, duration: 5000);
             }
 
@@ -275,8 +259,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal StatePinata_Fight(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000,
-                    script: "$84000006_WD__84000006_WD_MAIN__12$");
+                context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000, script: "$84000006_WD__84000006_WD_MAIN__12$");
             }
 
             public override void Execute() {
@@ -299,16 +282,14 @@ namespace Maple2.Trigger._84000006_wd {
 
             public override void Execute() {
                 if (context.MonsterDead(arg1: new[] {201})) {
-                    context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__14$",
-                        duration: 3000, delayTick: 1000);
+                    context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__14$", duration: 3000, delayTick: 1000);
                     context.SetTimer(arg1: "4", arg2: 20, arg3: false, arg4: false);
                     context.State = new StatePinata_Kill(context);
                     return;
                 }
 
                 if (context.TimeExpired(arg1: "3")) {
-                    context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__15$",
-                        duration: 3000, delayTick: 1000);
+                    context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__15$", duration: 3000, delayTick: 1000);
                     context.SetTimer(arg1: "4", arg2: 20, arg3: false, arg4: false);
                     context.State = new StatePinata_noKill(context);
                     return;
@@ -363,17 +344,12 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(255f, 255f, 255f));
                 context.SetUserValue(triggerId: 1004, key: "Interaction", value: 2);
-                context.SetEventUI(arg1: 3, arg2: "$84000006_WD__84000006_WD_MAIN__16$", arg3: 3000,
-                    arg4: "9001");
-                context.SetEventUI(arg1: 4, arg2: "$84000006_WD__84000006_WD_MAIN__17$", arg3: 3000,
-                    arg4: "!9001");
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.CreateMonster(arg1: new[] {103}, arg2: false);
+                context.SetEventUI(arg1: 3, arg2: "$84000006_WD__84000006_WD_MAIN__16$", arg3: 3000, arg4: "9001");
+                context.SetEventUI(arg1: 4, arg2: "$84000006_WD__84000006_WD_MAIN__17$", arg3: 3000, arg4: "!9001");
+                context.CreateMonster(arg1: new[] {101, 103}, arg2: false);
                 context.SetEffect(arg1: new[] {3001}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__18$", duration: 5000,
-                    delayTick: 100);
-                context.AddBalloonTalk(spawnPointId: 103, msg: "$84000006_WD__84000006_WD_MAIN__19$", duration: 20000,
-                    delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__18$", duration: 5000, delayTick: 100);
+                context.AddBalloonTalk(spawnPointId: 103, msg: "$84000006_WD__84000006_WD_MAIN__19$", duration: 20000, delayTick: 1000);
                 context.SetAmbientLight(arg1: new Vector3(255f, 255f, 255f));
             }
 
@@ -393,17 +369,12 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(255f, 255f, 255f));
                 context.SetUserValue(triggerId: 1004, key: "Interaction", value: 2);
-                context.SetEventUI(arg1: 3, arg2: "$84000006_WD__84000006_WD_MAIN__20$", arg3: 3000,
-                    arg4: "9002");
-                context.SetEventUI(arg1: 4, arg2: "$84000006_WD__84000006_WD_MAIN__21$", arg3: 3000,
-                    arg4: "!9002");
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.CreateMonster(arg1: new[] {103}, arg2: false);
+                context.SetEventUI(arg1: 3, arg2: "$84000006_WD__84000006_WD_MAIN__20$", arg3: 3000, arg4: "9002");
+                context.SetEventUI(arg1: 4, arg2: "$84000006_WD__84000006_WD_MAIN__21$", arg3: 3000, arg4: "!9002");
+                context.CreateMonster(arg1: new[] {101, 103}, arg2: false);
                 context.SetEffect(arg1: new[] {3001}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__22$", duration: 5000,
-                    delayTick: 100);
-                context.AddBalloonTalk(spawnPointId: 103, msg: "$84000006_WD__84000006_WD_MAIN__23$", duration: 20000,
-                    delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__22$", duration: 5000, delayTick: 100);
+                context.AddBalloonTalk(spawnPointId: 103, msg: "$84000006_WD__84000006_WD_MAIN__23$", duration: 20000, delayTick: 1000);
             }
 
             public override void Execute() {
@@ -445,10 +416,8 @@ namespace Maple2.Trigger._84000006_wd {
                 context.AddBuff(arg1: new[] {9002}, arg2: 99940042, arg3: 1, arg4: false, arg5: true);
                 context.SetEventUI(arg1: 1, arg2: "$84000006_WD__84000006_WD_MAIN__24$", arg3: 3000);
                 context.SetTimer(arg1: "5", arg2: 150, arg3: false, arg4: true);
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__25$", duration: 5000,
-                    delayTick: 3000);
-                context.AddBalloonTalk(spawnPointId: 103, msg: "$84000006_WD__84000006_WD_MAIN__26$", duration: 5000,
-                    delayTick: 3000);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__25$", duration: 5000, delayTick: 3000);
+                context.AddBalloonTalk(spawnPointId: 103, msg: "$84000006_WD__84000006_WD_MAIN__26$", duration: 5000, delayTick: 3000);
                 context.SetPhotoStudio(isEnable: true);
             }
 

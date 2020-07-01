@@ -10,20 +10,17 @@ namespace Maple2.Trigger._52000136_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001604},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001604}, arg3: new byte[] {1})) {
                     context.State = new State기본(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001603},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001603}, arg3: new byte[] {3})) {
                     context.State = new State기본(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001603},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001603}, arg3: new byte[] {2})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -73,8 +70,7 @@ namespace Maple2.Trigger._52000136_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000136_QD__MAIN__0$", duration: 3000,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000136_QD__MAIN__0$", duration: 3000, align: "left");
                 context.SetSceneSkip(arg1: "불안한케이틀린_스킵완료", arg2: "nextState");
             }
 
@@ -132,10 +128,8 @@ namespace Maple2.Trigger._52000136_qd {
                 context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "Patrol_101_katelyn_wander");
                 context.AddBalloonTalk(spawnPointId: 101, msg: "$52000136_QD__MAIN__1$", duration: 1000, delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$52000136_QD__MAIN__2$", duration: 1000,
-                    delayTick: 500);
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$52000136_QD__MAIN__3$", duration: 1000,
-                    delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$52000136_QD__MAIN__2$", duration: 1000, delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$52000136_QD__MAIN__3$", duration: 1000, delayTick: 500);
                 context.SetSkip(arg1: "불안한케이틀린_스킵완료");
             }
 
@@ -154,8 +148,7 @@ namespace Maple2.Trigger._52000136_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
-                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000136_QD__MAIN__4$", duration: 3000,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000136_QD__MAIN__4$", duration: 3000, align: "left");
                 context.MoveUserPath(arg1: "MS2PatrolData_PC");
                 context.SetSkip(arg1: "불안한케이틀린_스킵완료");
             }
@@ -175,8 +168,7 @@ namespace Maple2.Trigger._52000136_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$52000136_QD__MAIN__5$", duration: 3000,
-                    delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$52000136_QD__MAIN__5$", duration: 3000, delayTick: 500);
                 context.MoveNpc(arg1: 101, arg2: "Patrol_101_katelyn_run");
                 context.SetSkip(arg1: "불안한케이틀린_스킵완료");
             }
@@ -216,8 +208,7 @@ namespace Maple2.Trigger._52000136_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8005}, arg2: false);
-                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000136_QD__MAIN__7$", duration: 3000,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000136_QD__MAIN__7$", duration: 3000, align: "left");
                 context.SetSkip(arg1: "불안한케이틀린_스킵완료");
             }
 

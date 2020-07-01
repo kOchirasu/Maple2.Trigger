@@ -4,8 +4,7 @@ namespace Maple2.Trigger._02000290_bf {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6001}, arg2: false);
-                context.SetEffect(arg1: new[] {6002}, arg2: false);
+                context.SetEffect(arg1: new[] {6001, 6002}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000464}, arg2: 1);
                 context.SetActor(arg1: 9007, arg2: true, arg3: "Down_Idle_A");
             }

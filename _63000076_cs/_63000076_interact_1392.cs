@@ -4,8 +4,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {108}, arg2: false);
-                context.CreateMonster(arg1: new[] {115}, arg2: false);
+                context.CreateMonster(arg1: new[] {108, 115}, arg2: false);
             }
 
             public override void Execute() {
@@ -22,10 +21,8 @@ namespace Maple2.Trigger._63000076_cs {
             internal State1392화난요정_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {108});
-                context.DestroyMonster(arg1: new[] {115});
-                context.CreateMonster(arg1: new[] {208}, arg2: true);
-                context.CreateMonster(arg1: new[] {215}, arg2: true);
+                context.DestroyMonster(arg1: new[] {108, 115});
+                context.CreateMonster(arg1: new[] {208, 215}, arg2: true);
             }
 
             public override void Execute() {
@@ -57,8 +54,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State1392화난요정_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {108}, arg2: false);
-                context.CreateMonster(arg1: new[] {115}, arg2: false);
+                context.CreateMonster(arg1: new[] {108, 115}, arg2: false);
             }
 
             public override void Execute() {

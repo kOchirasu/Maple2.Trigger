@@ -54,8 +54,7 @@ namespace Maple2.Trigger._99999949 {
 
             public override void OnEnter() {
                 context.DebugString(message: "EffectTest 발동");
-                context.SetEffect(arg1: new[] {9101, 9102, 9103, 9104, 9105, 9106, 9107, 9108, 9109, 9110},
-                    arg2: true);
+                context.SetEffect(arg1: new[] {9101, 9102, 9103, 9104, 9105, 9106, 9107, 9108, 9109, 9110}, arg2: true);
             }
 
             public override void Execute() {

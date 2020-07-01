@@ -4,19 +4,8 @@ namespace Maple2.Trigger._52000056_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {605}, arg2: false);
-                context.SetEffect(arg1: new[] {606}, arg2: false);
-                context.SetEffect(arg1: new[] {607}, arg2: false);
-                context.SetEffect(arg1: new[] {608}, arg2: false);
-                context.SetEffect(arg1: new[] {609}, arg2: false);
-                context.SetEffect(arg1: new[] {610}, arg2: false);
-                context.SetEffect(arg1: new[] {611}, arg2: false);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611}, arg2: false);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetGravity(gravity: -9.8f);
             }
 
@@ -71,8 +60,7 @@ namespace Maple2.Trigger._52000056_qd {
             internal State낙하준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: false, arg3: 0,
-                    arg4: 200, arg5: 2f);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
                 context.SetGravity(gravity: -37f);
             }
 
@@ -146,17 +134,7 @@ namespace Maple2.Trigger._52000056_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEffect(arg1: new[] {601}, arg2: true);
-                    context.SetEffect(arg1: new[] {602}, arg2: true);
-                    context.SetEffect(arg1: new[] {603}, arg2: true);
-                    context.SetEffect(arg1: new[] {604}, arg2: true);
-                    context.SetEffect(arg1: new[] {605}, arg2: true);
-                    context.SetEffect(arg1: new[] {606}, arg2: true);
-                    context.SetEffect(arg1: new[] {607}, arg2: true);
-                    context.SetEffect(arg1: new[] {608}, arg2: true);
-                    context.SetEffect(arg1: new[] {609}, arg2: true);
-                    context.SetEffect(arg1: new[] {610}, arg2: true);
-                    context.SetEffect(arg1: new[] {611}, arg2: true);
+                    context.SetEffect(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611}, arg2: true);
                     context.SetProductionUI(arg1: 0);
                     context.SetProductionUI(arg1: 2);
                     context.SetGravity(gravity: -9.8f);
@@ -175,17 +153,7 @@ namespace Maple2.Trigger._52000056_qd {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    context.SetEffect(arg1: new[] {601}, arg2: false);
-                    context.SetEffect(arg1: new[] {602}, arg2: false);
-                    context.SetEffect(arg1: new[] {603}, arg2: false);
-                    context.SetEffect(arg1: new[] {604}, arg2: false);
-                    context.SetEffect(arg1: new[] {605}, arg2: false);
-                    context.SetEffect(arg1: new[] {606}, arg2: false);
-                    context.SetEffect(arg1: new[] {607}, arg2: false);
-                    context.SetEffect(arg1: new[] {608}, arg2: false);
-                    context.SetEffect(arg1: new[] {609}, arg2: false);
-                    context.SetEffect(arg1: new[] {610}, arg2: false);
-                    context.SetEffect(arg1: new[] {611}, arg2: false);
+                    context.SetEffect(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611}, arg2: false);
                     context.State = new State종료(context);
                     return;
                 }

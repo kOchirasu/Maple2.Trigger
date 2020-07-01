@@ -4,11 +4,7 @@ namespace Maple2.Trigger._02000029_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319,
-                        320, 321, 322
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -25,11 +21,7 @@ namespace Maple2.Trigger._02000029_bf {
             internal State발판01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319,
-                        320, 321, 322
-                    }, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
+                context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
             }
 
             public override void Execute() {
@@ -46,11 +38,7 @@ namespace Maple2.Trigger._02000029_bf {
             internal State해모칸죽음(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319,
-                        320, 321, 322
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() { }

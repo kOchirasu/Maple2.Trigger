@@ -7,25 +7,16 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetInteractObject(arg1: new[] {10000739}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000740}, arg2: 2);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {611}, arg2: false);
-                context.SetEffect(arg1: new[] {612}, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
-                        3016, 3017, 3018, 3019, 3020, 3021, 3022
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {10000739, 10000740}, arg2: 2);
+                context.SetEffect(arg1: new[] {601, 602, 611, 612}, arg2: false);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000752}, arg2: 0);
                 context.SetInteractObject(arg1: new[] {13000009}, arg2: 2);
             }
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -37,11 +28,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
-                        3016, 3017, 3018, 3019, 3020, 3021, 3022
-                    }, arg2: true, arg3: 0, arg4: 200, arg5: 2f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022}, arg2: true, arg3: 0, arg4: 200, arg5: 2f);
             }
 
             public override void Execute() {
@@ -124,11 +111,8 @@ namespace Maple2.Trigger._02000325_bf {
             internal State1라운드카운트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetEffect(arg1: new[] {611}, arg2: true);
-                context.SetEffect(arg1: new[] {612}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10000739}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000740}, arg2: 1);
+                context.SetEffect(arg1: new[] {602, 611, 612}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000739, 10000740}, arg2: 1);
                 context.SetEventUI(arg1: 0, arg2: "1,3");
                 context.ShowCountUI(text: "$02000325_BF__MAIN__3$", stage: 1, count: 3);
             }
@@ -257,8 +241,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3001소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2001}, arg2: false);
-                context.CreateMonster(arg1: new[] {3001}, arg2: false);
+                context.CreateMonster(arg1: new[] {2001, 3001}, arg2: false);
             }
 
             public override void Execute() {
@@ -275,8 +258,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3002소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2002}, arg2: false);
-                context.CreateMonster(arg1: new[] {3002}, arg2: false);
+                context.CreateMonster(arg1: new[] {2002, 3002}, arg2: false);
             }
 
             public override void Execute() {
@@ -293,8 +275,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3003소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2003}, arg2: false);
-                context.CreateMonster(arg1: new[] {3003}, arg2: false);
+                context.CreateMonster(arg1: new[] {2003, 3003}, arg2: false);
             }
 
             public override void Execute() {
@@ -311,8 +292,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3004소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2004}, arg2: false);
-                context.CreateMonster(arg1: new[] {3004}, arg2: false);
+                context.CreateMonster(arg1: new[] {2004, 3004}, arg2: false);
             }
 
             public override void Execute() {
@@ -329,8 +309,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3005소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2005}, arg2: false);
-                context.CreateMonster(arg1: new[] {3005}, arg2: false);
+                context.CreateMonster(arg1: new[] {2005, 3005}, arg2: false);
             }
 
             public override void Execute() {
@@ -347,8 +326,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3006소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2006}, arg2: false);
-                context.CreateMonster(arg1: new[] {3006}, arg2: false);
+                context.CreateMonster(arg1: new[] {2006, 3006}, arg2: false);
             }
 
             public override void Execute() {
@@ -365,8 +343,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3007소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2007}, arg2: false);
-                context.CreateMonster(arg1: new[] {3007}, arg2: false);
+                context.CreateMonster(arg1: new[] {2007, 3007}, arg2: false);
             }
 
             public override void Execute() {
@@ -383,8 +360,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3008소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2008}, arg2: false);
-                context.CreateMonster(arg1: new[] {3008}, arg2: false);
+                context.CreateMonster(arg1: new[] {2008, 3008}, arg2: false);
             }
 
             public override void Execute() {
@@ -401,8 +377,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3009소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2009}, arg2: false);
-                context.CreateMonster(arg1: new[] {3009}, arg2: false);
+                context.CreateMonster(arg1: new[] {2009, 3009}, arg2: false);
             }
 
             public override void Execute() {
@@ -419,8 +394,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3010소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2010}, arg2: false);
-                context.CreateMonster(arg1: new[] {3010}, arg2: false);
+                context.CreateMonster(arg1: new[] {2010, 3010}, arg2: false);
             }
 
             public override void Execute() {
@@ -437,8 +411,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3011소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2011}, arg2: false);
-                context.CreateMonster(arg1: new[] {3011}, arg2: false);
+                context.CreateMonster(arg1: new[] {2011, 3011}, arg2: false);
             }
 
             public override void Execute() {
@@ -455,8 +428,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3012소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2012}, arg2: false);
-                context.CreateMonster(arg1: new[] {3012}, arg2: false);
+                context.CreateMonster(arg1: new[] {2012, 3012}, arg2: false);
             }
 
             public override void Execute() {
@@ -473,8 +445,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3013소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2013}, arg2: false);
-                context.CreateMonster(arg1: new[] {3013}, arg2: false);
+                context.CreateMonster(arg1: new[] {2013, 3013}, arg2: false);
             }
 
             public override void Execute() {
@@ -491,8 +462,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3014소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2014}, arg2: false);
-                context.CreateMonster(arg1: new[] {3014}, arg2: false);
+                context.CreateMonster(arg1: new[] {2014, 3014}, arg2: false);
             }
 
             public override void Execute() {
@@ -509,8 +479,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3015소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2015}, arg2: false);
-                context.CreateMonster(arg1: new[] {3015}, arg2: false);
+                context.CreateMonster(arg1: new[] {2015, 3015}, arg2: false);
             }
 
             public override void Execute() {
@@ -527,8 +496,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3016소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2016}, arg2: false);
-                context.CreateMonster(arg1: new[] {3016}, arg2: false);
+                context.CreateMonster(arg1: new[] {2016, 3016}, arg2: false);
             }
 
             public override void Execute() {
@@ -545,8 +513,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3017소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2017}, arg2: false);
-                context.CreateMonster(arg1: new[] {3017}, arg2: false);
+                context.CreateMonster(arg1: new[] {2017, 3017}, arg2: false);
             }
 
             public override void Execute() {
@@ -563,8 +530,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3018소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2018}, arg2: false);
-                context.CreateMonster(arg1: new[] {3018}, arg2: false);
+                context.CreateMonster(arg1: new[] {2018, 3018}, arg2: false);
             }
 
             public override void Execute() {
@@ -581,8 +547,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3019소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2019}, arg2: false);
-                context.CreateMonster(arg1: new[] {3019}, arg2: false);
+                context.CreateMonster(arg1: new[] {2019, 3019}, arg2: false);
             }
 
             public override void Execute() {
@@ -599,8 +564,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3020소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2020}, arg2: false);
-                context.CreateMonster(arg1: new[] {3020}, arg2: false);
+                context.CreateMonster(arg1: new[] {2020, 3020}, arg2: false);
             }
 
             public override void Execute() {
@@ -617,11 +581,8 @@ namespace Maple2.Trigger._02000325_bf {
             internal State2라운드대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000739}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000740}, arg2: 2);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {611}, arg2: false);
-                context.SetEffect(arg1: new[] {612}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000739, 10000740}, arg2: 2);
+                context.SetEffect(arg1: new[] {601, 611, 612}, arg2: false);
             }
 
             public override void Execute() {
@@ -689,8 +650,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State2라운드카운트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetEffect(arg1: new[] {612}, arg2: true);
+                context.SetEffect(arg1: new[] {602, 612}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000740}, arg2: 1);
                 context.SetEventUI(arg1: 0, arg2: "2,3");
                 context.ShowCountUI(text: "$02000325_BF__MAIN__6$", stage: 2, count: 3);
@@ -1220,8 +1180,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3001소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2001}, arg2: false);
-                context.CreateMonster(arg1: new[] {3001}, arg2: false);
+                context.CreateMonster(arg1: new[] {2001, 3001}, arg2: false);
             }
 
             public override void Execute() {
@@ -1238,8 +1197,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3002소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2002}, arg2: false);
-                context.CreateMonster(arg1: new[] {3002}, arg2: false);
+                context.CreateMonster(arg1: new[] {2002, 3002}, arg2: false);
             }
 
             public override void Execute() {
@@ -1256,8 +1214,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3003소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2003}, arg2: false);
-                context.CreateMonster(arg1: new[] {3003}, arg2: false);
+                context.CreateMonster(arg1: new[] {2003, 3003}, arg2: false);
             }
 
             public override void Execute() {
@@ -1274,8 +1231,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3004소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2004}, arg2: false);
-                context.CreateMonster(arg1: new[] {3004}, arg2: false);
+                context.CreateMonster(arg1: new[] {2004, 3004}, arg2: false);
             }
 
             public override void Execute() {
@@ -1292,8 +1248,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3005소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2005}, arg2: false);
-                context.CreateMonster(arg1: new[] {3005}, arg2: false);
+                context.CreateMonster(arg1: new[] {2005, 3005}, arg2: false);
             }
 
             public override void Execute() {
@@ -1310,8 +1265,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3006소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2006}, arg2: false);
-                context.CreateMonster(arg1: new[] {3006}, arg2: false);
+                context.CreateMonster(arg1: new[] {2006, 3006}, arg2: false);
             }
 
             public override void Execute() {
@@ -1328,8 +1282,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3007소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2007}, arg2: false);
-                context.CreateMonster(arg1: new[] {3007}, arg2: false);
+                context.CreateMonster(arg1: new[] {2007, 3007}, arg2: false);
             }
 
             public override void Execute() {
@@ -1346,8 +1299,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3008소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2008}, arg2: false);
-                context.CreateMonster(arg1: new[] {3008}, arg2: false);
+                context.CreateMonster(arg1: new[] {2008, 3008}, arg2: false);
             }
 
             public override void Execute() {
@@ -1364,8 +1316,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3009소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2009}, arg2: false);
-                context.CreateMonster(arg1: new[] {3009}, arg2: false);
+                context.CreateMonster(arg1: new[] {2009, 3009}, arg2: false);
             }
 
             public override void Execute() {
@@ -1382,8 +1333,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3010소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2010}, arg2: false);
-                context.CreateMonster(arg1: new[] {3010}, arg2: false);
+                context.CreateMonster(arg1: new[] {2010, 3010}, arg2: false);
             }
 
             public override void Execute() {
@@ -1400,8 +1350,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3011소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2011}, arg2: false);
-                context.CreateMonster(arg1: new[] {3011}, arg2: false);
+                context.CreateMonster(arg1: new[] {2011, 3011}, arg2: false);
             }
 
             public override void Execute() {
@@ -1418,8 +1367,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3012소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2012}, arg2: false);
-                context.CreateMonster(arg1: new[] {3012}, arg2: false);
+                context.CreateMonster(arg1: new[] {2012, 3012}, arg2: false);
             }
 
             public override void Execute() {
@@ -1436,8 +1384,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3013소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2013}, arg2: false);
-                context.CreateMonster(arg1: new[] {3013}, arg2: false);
+                context.CreateMonster(arg1: new[] {2013, 3013}, arg2: false);
             }
 
             public override void Execute() {
@@ -1454,8 +1401,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3014소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2014}, arg2: false);
-                context.CreateMonster(arg1: new[] {3014}, arg2: false);
+                context.CreateMonster(arg1: new[] {2014, 3014}, arg2: false);
             }
 
             public override void Execute() {
@@ -1472,8 +1418,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3015소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2015}, arg2: false);
-                context.CreateMonster(arg1: new[] {3015}, arg2: false);
+                context.CreateMonster(arg1: new[] {2015, 3015}, arg2: false);
             }
 
             public override void Execute() {
@@ -1490,8 +1435,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3016소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2016}, arg2: false);
-                context.CreateMonster(arg1: new[] {3016}, arg2: false);
+                context.CreateMonster(arg1: new[] {2016, 3016}, arg2: false);
             }
 
             public override void Execute() {
@@ -1508,8 +1452,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3017소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2017}, arg2: false);
-                context.CreateMonster(arg1: new[] {3017}, arg2: false);
+                context.CreateMonster(arg1: new[] {2017, 3017}, arg2: false);
             }
 
             public override void Execute() {
@@ -1526,8 +1469,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3018소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2018}, arg2: false);
-                context.CreateMonster(arg1: new[] {3018}, arg2: false);
+                context.CreateMonster(arg1: new[] {2018, 3018}, arg2: false);
             }
 
             public override void Execute() {
@@ -1544,8 +1486,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3019소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2019}, arg2: false);
-                context.CreateMonster(arg1: new[] {3019}, arg2: false);
+                context.CreateMonster(arg1: new[] {2019, 3019}, arg2: false);
             }
 
             public override void Execute() {
@@ -1562,8 +1503,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3020소환2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2020}, arg2: false);
-                context.CreateMonster(arg1: new[] {3020}, arg2: false);
+                context.CreateMonster(arg1: new[] {2020, 3020}, arg2: false);
             }
 
             public override void Execute() {
@@ -1580,8 +1520,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3라운드대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {612}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 612}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000740}, arg2: 2);
             }
 
@@ -2163,8 +2102,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3001소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2001}, arg2: false);
-                context.CreateMonster(arg1: new[] {3001}, arg2: false);
+                context.CreateMonster(arg1: new[] {2001, 3001}, arg2: false);
             }
 
             public override void Execute() {
@@ -2181,8 +2119,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3002소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2002}, arg2: false);
-                context.CreateMonster(arg1: new[] {3002}, arg2: false);
+                context.CreateMonster(arg1: new[] {2002, 3002}, arg2: false);
             }
 
             public override void Execute() {
@@ -2199,8 +2136,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3003소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2003}, arg2: false);
-                context.CreateMonster(arg1: new[] {3003}, arg2: false);
+                context.CreateMonster(arg1: new[] {2003, 3003}, arg2: false);
             }
 
             public override void Execute() {
@@ -2217,8 +2153,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3004소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2004}, arg2: false);
-                context.CreateMonster(arg1: new[] {3004}, arg2: false);
+                context.CreateMonster(arg1: new[] {2004, 3004}, arg2: false);
             }
 
             public override void Execute() {
@@ -2235,8 +2170,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3005소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2005}, arg2: false);
-                context.CreateMonster(arg1: new[] {3005}, arg2: false);
+                context.CreateMonster(arg1: new[] {2005, 3005}, arg2: false);
             }
 
             public override void Execute() {
@@ -2253,8 +2187,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3006소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2006}, arg2: false);
-                context.CreateMonster(arg1: new[] {3006}, arg2: false);
+                context.CreateMonster(arg1: new[] {2006, 3006}, arg2: false);
             }
 
             public override void Execute() {
@@ -2271,8 +2204,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3007소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2007}, arg2: false);
-                context.CreateMonster(arg1: new[] {3007}, arg2: false);
+                context.CreateMonster(arg1: new[] {2007, 3007}, arg2: false);
             }
 
             public override void Execute() {
@@ -2289,8 +2221,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3008소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2008}, arg2: false);
-                context.CreateMonster(arg1: new[] {3008}, arg2: false);
+                context.CreateMonster(arg1: new[] {2008, 3008}, arg2: false);
             }
 
             public override void Execute() {
@@ -2307,8 +2238,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3009소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2009}, arg2: false);
-                context.CreateMonster(arg1: new[] {3009}, arg2: false);
+                context.CreateMonster(arg1: new[] {2009, 3009}, arg2: false);
             }
 
             public override void Execute() {
@@ -2325,8 +2255,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3010소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2010}, arg2: false);
-                context.CreateMonster(arg1: new[] {3010}, arg2: false);
+                context.CreateMonster(arg1: new[] {2010, 3010}, arg2: false);
             }
 
             public override void Execute() {
@@ -2343,8 +2272,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3011소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2011}, arg2: false);
-                context.CreateMonster(arg1: new[] {3011}, arg2: false);
+                context.CreateMonster(arg1: new[] {2011, 3011}, arg2: false);
             }
 
             public override void Execute() {
@@ -2361,8 +2289,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3012소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2012}, arg2: false);
-                context.CreateMonster(arg1: new[] {3012}, arg2: false);
+                context.CreateMonster(arg1: new[] {2012, 3012}, arg2: false);
             }
 
             public override void Execute() {
@@ -2379,8 +2306,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3013소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2013}, arg2: false);
-                context.CreateMonster(arg1: new[] {3013}, arg2: false);
+                context.CreateMonster(arg1: new[] {2013, 3013}, arg2: false);
             }
 
             public override void Execute() {
@@ -2397,8 +2323,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3014소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2014}, arg2: false);
-                context.CreateMonster(arg1: new[] {3014}, arg2: false);
+                context.CreateMonster(arg1: new[] {2014, 3014}, arg2: false);
             }
 
             public override void Execute() {
@@ -2415,8 +2340,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3015소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2015}, arg2: false);
-                context.CreateMonster(arg1: new[] {3015}, arg2: false);
+                context.CreateMonster(arg1: new[] {2015, 3015}, arg2: false);
             }
 
             public override void Execute() {
@@ -2433,8 +2357,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3016소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2016}, arg2: false);
-                context.CreateMonster(arg1: new[] {3016}, arg2: false);
+                context.CreateMonster(arg1: new[] {2016, 3016}, arg2: false);
             }
 
             public override void Execute() {
@@ -2451,8 +2374,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3017소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2017}, arg2: false);
-                context.CreateMonster(arg1: new[] {3017}, arg2: false);
+                context.CreateMonster(arg1: new[] {2017, 3017}, arg2: false);
             }
 
             public override void Execute() {
@@ -2469,8 +2391,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3018소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2018}, arg2: false);
-                context.CreateMonster(arg1: new[] {3018}, arg2: false);
+                context.CreateMonster(arg1: new[] {2018, 3018}, arg2: false);
             }
 
             public override void Execute() {
@@ -2487,8 +2408,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3019소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2019}, arg2: false);
-                context.CreateMonster(arg1: new[] {3019}, arg2: false);
+                context.CreateMonster(arg1: new[] {2019, 3019}, arg2: false);
             }
 
             public override void Execute() {
@@ -2505,8 +2425,7 @@ namespace Maple2.Trigger._02000325_bf {
             internal State3020소환3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2020}, arg2: false);
-                context.CreateMonster(arg1: new[] {3020}, arg2: false);
+                context.CreateMonster(arg1: new[] {2020, 3020}, arg2: false);
             }
 
             public override void Execute() {
@@ -2524,13 +2443,8 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 102, arg2: "trigger", arg3: "BraveRace");
-                context.SetMesh(
-                    arg1: new[] {
-                        3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
-                        3016, 3017, 3018, 3019, 3020, 3021, 3022
-                    }, arg2: true, arg3: 0, arg4: 200, arg5: 2f);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {612}, arg2: false);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022}, arg2: true, arg3: 0, arg4: 200, arg5: 2f);
+                context.SetEffect(arg1: new[] {601, 612}, arg2: false);
             }
 
             public override void Execute() {

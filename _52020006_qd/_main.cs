@@ -23,62 +23,52 @@ namespace Maple2.Trigger._52020006_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001797},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001797}, arg3: new byte[] {3})) {
                     context.State = new State빈방(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001797},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001797}, arg3: new byte[] {2})) {
                     context.State = new State빈방(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001797},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001797}, arg3: new byte[] {1})) {
                     context.State = new State제이든_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796}, arg3: new byte[] {3})) {
                     context.State = new State제이든_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796}, arg3: new byte[] {2})) {
                     context.State = new State제이든_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796}, arg3: new byte[] {1})) {
                     context.State = new State세리하와함께전투_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {3})) {
                     context.State = new State세리하_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {2})) {
                     context.State = new State세리하_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {1})) {
                     context.State = new State세리하와아르망_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001794},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001794}, arg3: new byte[] {3})) {
                     context.State = new State세리하_대기(context);
                     return;
                 }
@@ -96,14 +86,12 @@ namespace Maple2.Trigger._52020006_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796}, arg3: new byte[] {1})) {
                     context.State = new State세리하와함께전투_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {1})) {
                     context.State = new State세리하와아르망_대기(context);
                     return;
                 }
@@ -126,14 +114,12 @@ namespace Maple2.Trigger._52020006_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796}, arg3: new byte[] {1})) {
                     context.State = new State세리하와함께전투_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {1})) {
                     context.State = new State세리하와아르망_대기(context);
                     return;
                 }
@@ -155,14 +141,12 @@ namespace Maple2.Trigger._52020006_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796}, arg3: new byte[] {1})) {
                     context.State = new State세리하와함께전투_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {1})) {
                     context.State = new State세리하와아르망_대기(context);
                     return;
                 }
@@ -182,38 +166,32 @@ namespace Maple2.Trigger._52020006_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796}, arg3: new byte[] {1})) {
                     context.State = new State세리하와함께전투_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {1})) {
                     context.State = new State세리하와아르망_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {3})) {
                     context.State = new State조건확인_대기02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {2})) {
                     context.State = new State조건확인_대기02(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796},
-                    arg3: new byte[] {1})) {
+                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796}, arg3: new byte[] {1})) {
                     context.State = new State조건확인_대기02(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {1})) {
+                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {1})) {
                     context.State = new State조건확인_대기02(context);
                     return;
                 }
@@ -228,38 +206,32 @@ namespace Maple2.Trigger._52020006_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796}, arg3: new byte[] {1})) {
                     context.State = new State세리하와함께전투_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {1})) {
                     context.State = new State세리하와아르망_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {3})) {
                     context.State = new State조건확인_대기01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {2})) {
                     context.State = new State조건확인_대기01(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796},
-                    arg3: new byte[] {1})) {
+                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796}, arg3: new byte[] {1})) {
                     context.State = new State조건확인_대기01(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {1})) {
+                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {1})) {
                     context.State = new State조건확인_대기01(context);
                     return;
                 }
@@ -280,8 +252,7 @@ namespace Maple2.Trigger._52020006_qd {
             }
 
             public override void Execute() {
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795},
-                    arg3: new byte[] {1})) {
+                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001795}, arg3: new byte[] {1})) {
                     context.State = new State퀘스트조건체크(context);
                     return;
                 }
@@ -354,8 +325,7 @@ namespace Maple2.Trigger._52020006_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003658, illustId: "Armand_normal", msg: "조금만 기다려 주세요",
-                    duration: 3000);
+                context.AddCinematicTalk(npcId: 11003658, illustId: "Armand_normal", msg: "조금만 기다려 주세요", duration: 3000);
                 context.VisibleMyPc(isVisible: true);
             }
 
@@ -459,8 +429,7 @@ namespace Maple2.Trigger._52020006_qd {
             }
 
             public override void Execute() {
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796},
-                    arg3: new byte[] {1})) {
+                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001796}, arg3: new byte[] {1})) {
                     context.State = new State퀘스트조건체크(context);
                     return;
                 }
@@ -515,8 +484,7 @@ namespace Maple2.Trigger._52020006_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003548, illustId: "Seriha_normal", msg: "그럼 누가 먼저 저것들을 쓸어버리나 내기하자고.",
-                    duration: 3000);
+                context.AddCinematicTalk(npcId: 11003548, illustId: "Seriha_normal", msg: "그럼 누가 먼저 저것들을 쓸어버리나 내기하자고.", duration: 3000);
             }
 
             public override void Execute() {
@@ -702,8 +670,7 @@ namespace Maple2.Trigger._52020006_qd {
             internal State전투후제이든등장_01_세리하소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003548, illustId: "Seriha_normal", msg: "내가 이긴 듯. 그럼 이만!",
-                    duration: 3000);
+                context.AddCinematicTalk(npcId: 11003548, illustId: "Seriha_normal", msg: "내가 이긴 듯. 그럼 이만!", duration: 3000);
             }
 
             public override void Execute() {
@@ -721,8 +688,7 @@ namespace Maple2.Trigger._52020006_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {110});
-                context.AddCinematicTalk(npcId: 0, illustId: "Seriha_normal", msg: "이제 저 너머로 갈 차례인가...",
-                    duration: 3000);
+                context.AddCinematicTalk(npcId: 0, illustId: "Seriha_normal", msg: "이제 저 너머로 갈 차례인가...", duration: 3000);
             }
 
             public override void Execute() {
@@ -740,8 +706,7 @@ namespace Maple2.Trigger._52020006_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {105}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003677, illustId: "Jaiden_normal", msg: "무사했구나, $MyPCName$.",
-                    duration: 3000);
+                context.AddCinematicTalk(npcId: 11003677, illustId: "Jaiden_normal", msg: "무사했구나, $MyPCName$.", duration: 3000);
                 context.SetSceneSkip();
             }
 

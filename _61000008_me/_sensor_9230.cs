@@ -5,8 +5,7 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "Box23Check", value: 10);
-                context.SetMesh(arg1: new[] {523}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {5230}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {523, 5230}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

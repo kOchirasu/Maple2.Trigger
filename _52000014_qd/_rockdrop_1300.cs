@@ -4,12 +4,8 @@ namespace Maple2.Trigger._52000014_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1300}, arg2: false);
-                context.SetSkill(arg1: new[] {1302}, arg2: false);
-                context.SetSkill(arg1: new[] {1304}, arg2: false);
-                context.SetEffect(arg1: new[] {1301}, arg2: false);
-                context.SetEffect(arg1: new[] {1303}, arg2: false);
-                context.SetEffect(arg1: new[] {1305}, arg2: false);
+                context.SetSkill(arg1: new[] {1300, 1302, 1304}, arg2: false);
+                context.SetEffect(arg1: new[] {1301, 1303, 1305}, arg2: false);
             }
 
             public override void Execute() {
@@ -131,12 +127,8 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 2);
-                context.SetSkill(arg1: new[] {1300}, arg2: false);
-                context.SetSkill(arg1: new[] {1302}, arg2: false);
-                context.SetSkill(arg1: new[] {1304}, arg2: false);
-                context.SetEffect(arg1: new[] {1301}, arg2: false);
-                context.SetEffect(arg1: new[] {1303}, arg2: false);
-                context.SetEffect(arg1: new[] {1305}, arg2: false);
+                context.SetSkill(arg1: new[] {1300, 1302, 1304}, arg2: false);
+                context.SetEffect(arg1: new[] {1301, 1303, 1305}, arg2: false);
             }
 
             public override void Execute() {

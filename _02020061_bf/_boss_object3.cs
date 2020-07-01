@@ -38,12 +38,7 @@ namespace Maple2.Trigger._02020061_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})
-                    && context.MonsterDead(arg1: new[] {922})
-                    && context.MonsterDead(arg1: new[] {923})
-                    && context.MonsterDead(arg1: new[] {924})
-                    && context.MonsterDead(arg1: new[] {925})
-                    && context.MonsterDead(arg1: new[] {926})) {
+                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923}) && context.MonsterDead(arg1: new[] {924}) && context.MonsterDead(arg1: new[] {925}) && context.MonsterDead(arg1: new[] {926})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -66,12 +61,7 @@ namespace Maple2.Trigger._02020061_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})
-                    && context.MonsterDead(arg1: new[] {922})
-                    && context.MonsterDead(arg1: new[] {923})
-                    && context.MonsterDead(arg1: new[] {924})
-                    && context.MonsterDead(arg1: new[] {925})
-                    && context.MonsterDead(arg1: new[] {926})) {
+                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923}) && context.MonsterDead(arg1: new[] {924}) && context.MonsterDead(arg1: new[] {925}) && context.MonsterDead(arg1: new[] {926})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -98,12 +88,7 @@ namespace Maple2.Trigger._02020061_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})
-                    && context.MonsterDead(arg1: new[] {922})
-                    && context.MonsterDead(arg1: new[] {923})
-                    && context.MonsterDead(arg1: new[] {924})
-                    && context.MonsterDead(arg1: new[] {925})
-                    && context.MonsterDead(arg1: new[] {926})) {
+                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923}) && context.MonsterDead(arg1: new[] {924}) && context.MonsterDead(arg1: new[] {925}) && context.MonsterDead(arg1: new[] {926})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -130,12 +115,7 @@ namespace Maple2.Trigger._02020061_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})
-                    && context.MonsterDead(arg1: new[] {922})
-                    && context.MonsterDead(arg1: new[] {923})
-                    && context.MonsterDead(arg1: new[] {924})
-                    && context.MonsterDead(arg1: new[] {925})
-                    && context.MonsterDead(arg1: new[] {926})) {
+                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923}) && context.MonsterDead(arg1: new[] {924}) && context.MonsterDead(arg1: new[] {925}) && context.MonsterDead(arg1: new[] {926})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -160,12 +140,7 @@ namespace Maple2.Trigger._02020061_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})
-                    && context.MonsterDead(arg1: new[] {922})
-                    && context.MonsterDead(arg1: new[] {923})
-                    && context.MonsterDead(arg1: new[] {924})
-                    && context.MonsterDead(arg1: new[] {925})
-                    && context.MonsterDead(arg1: new[] {926})) {
+                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923}) && context.MonsterDead(arg1: new[] {924}) && context.MonsterDead(arg1: new[] {925}) && context.MonsterDead(arg1: new[] {926})) {
                     context.State = new State종료(context);
                     return;
                 }

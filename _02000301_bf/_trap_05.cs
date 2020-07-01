@@ -7,16 +7,9 @@ namespace Maple2.Trigger._02000301_bf {
                 context.SetActor(arg1: 210, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 211, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetInteractObject(arg1: new[] {10000513}, arg2: 1);
-                context.SetEffect(arg1: new[] {606}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {610}, arg2: false);
-                context.SetMesh(arg1: new[] {3051, 3052, 3053, 3054, 3055, 3056}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        4501, 4502, 4503, 4504, 4505, 4506, 4507, 4508, 4509, 4510, 4511, 4512, 4513, 4514, 4515, 4516,
-                        4517, 4518, 4519
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {606, 604, 610}, arg2: false);
+                context.SetMesh(arg1: new[] {3051, 3052, 3053, 3054, 3055, 3056}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {4501, 4502, 4503, 4504, 4505, 4506, 4507, 4508, 4509, 4510, 4511, 4512, 4513, 4514, 4515, 4516, 4517, 4518, 4519}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -67,18 +60,11 @@ namespace Maple2.Trigger._02000301_bf {
                 context.SetActor(arg1: 211, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetInteractObject(arg1: new[] {10000513}, arg2: 0);
                 context.CreateMonster(arg1: new[] {2006}, arg2: false);
-                context.SetEffect(arg1: new[] {606}, arg2: true);
-                context.SetEffect(arg1: new[] {604}, arg2: true);
-                context.SetEffect(arg1: new[] {610}, arg2: true);
+                context.SetEffect(arg1: new[] {606, 604, 610}, arg2: true);
                 context.ShowGuideSummary(entityId: 20003001, textId: 20003001);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetMesh(arg1: new[] {3051, 3052, 3053, 3054, 3055, 3056}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        4501, 4502, 4503, 4504, 4505, 4506, 4507, 4508, 4509, 4510, 4511, 4512, 4513, 4514, 4515, 4516,
-                        4517, 4518, 4519
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3051, 3052, 3053, 3054, 3055, 3056}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {4501, 4502, 4503, 4504, 4505, 4506, 4507, 4508, 4509, 4510, 4511, 4512, 4513, 4514, 4515, 4516, 4517, 4518, 4519}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -100,13 +86,8 @@ namespace Maple2.Trigger._02000301_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {2006});
-                context.SetMesh(arg1: new[] {3051, 3052, 3053, 3054, 3055, 3056}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 5f);
-                context.SetMesh(
-                    arg1: new[] {
-                        4501, 4502, 4503, 4504, 4505, 4506, 4507, 4508, 4509, 4510, 4511, 4512, 4513, 4514, 4515, 4516,
-                        4517, 4518, 4519
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetMesh(arg1: new[] {3051, 3052, 3053, 3054, 3055, 3056}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetMesh(arg1: new[] {4501, 4502, 4503, 4504, 4505, 4506, 4507, 4508, 4509, 4510, 4511, 4512, 4513, 4514, 4515, 4516, 4517, 4518, 4519}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
             }
 
             public override void Execute() { }

@@ -7,19 +7,16 @@ namespace Maple2.Trigger._52000012_qd {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetActor(arg1: 10001, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 10002, arg2: true, arg3: "Closed");
-                context.SetMesh(arg1: new[] {10011}, arg2: true);
-                context.SetMesh(arg1: new[] {10012}, arg2: true);
+                context.SetMesh(arg1: new[] {10011, 10012}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002610},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002610}, arg3: new byte[] {2})) {
                     context.State = new State문열림1(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002610},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002610}, arg3: new byte[] {3})) {
                     context.State = new State문열림1(context);
                     return;
                 }
@@ -27,10 +24,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override void OnExit() {
                 context.CreateMonster(arg1: new[] {2000}, arg2: false);
-                context.DestroyMonster(arg1: new[] {5000});
-                context.DestroyMonster(arg1: new[] {101});
-                context.DestroyMonster(arg1: new[] {102});
-                context.DestroyMonster(arg1: new[] {103});
+                context.DestroyMonster(arg1: new[] {5000, 101, 102, 103});
             }
         }
 
@@ -62,14 +56,12 @@ namespace Maple2.Trigger._52000012_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {10002611},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {10002611}, arg3: new byte[] {2})) {
                     context.State = new State포털생성(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {10002611},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {10002611}, arg3: new byte[] {3})) {
                     context.State = new State포털생성(context);
                     return;
                 }

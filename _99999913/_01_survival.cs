@@ -5,26 +5,8 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {4000, 4100, 4200, 4300, 4400, 4500, 4600, 4700, 4800}, arg2: false);
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3700, 3701, 3702, 3703, 3704, 3705, 3706, 3707}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3800, 3801, 3802, 3803, 3804, 3805, 3806, 3807}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {11000037}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {11000039}, arg2: 1);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407, 3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507, 3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607, 3700, 3701, 3702, 3703, 3704, 3705, 3706, 3707, 3800, 3801, 3802, 3803, 3804, 3805, 3806, 3807}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {11000037, 11000039}, arg2: 1);
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 20001, arg2: false);
                 context.SightRange(enable: true, range: 3);
@@ -47,8 +29,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 60, arg3: true, arg4: true, arg5: -80);
-                context.SetEventUI(arg1: 1, arg2: @"잠시 기다려주세요.\n잠시 후 경기 시작점이 결정됩니다.", arg3: 4000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: @"잠시 기다려주세요.\n잠시 후 경기 시작점이 결정됩니다.", arg3: 4000, arg4: "0");
                 context.WriteLog(arg1: "Survival", arg3: "Waiting_Start");
             }
 
@@ -317,8 +298,7 @@ namespace Maple2.Trigger._99999913 {
             internal StatePVPReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"space 키를 누르면  수레에 탈 수 있습니다.\nspace 키를 다시 누르면 수레에서 내립니다.",
-                    arg3: 3000, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: @"space 키를 누르면  수레에 탈 수 있습니다.\nspace 키를 다시 누르면 수레에서 내립니다.", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {
@@ -336,8 +316,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: @"경기를 곧 시작합니다!\n경기 시작과 함께 수레가 출발합니다!", arg3: 4000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: @"경기를 곧 시작합니다!\n경기 시작과 함께 수레가 출발합니다!", arg3: 4000, arg4: "0");
                 context.CreateFieldGame(type: "MapleSurvive");
             }
 
@@ -379,24 +358,15 @@ namespace Maple2.Trigger._99999913 {
                 context.SetUserValue(triggerId: 4, key: "InvincibleOff", value: 1);
                 context.AddBuff(arg1: new[] {9000}, arg2: 71000053, arg3: 1, arg4: false, arg5: false);
                 context.SetEffect(arg1: new[] {4000, 4100, 4200, 4300, 4400, 4500, 4600, 4700, 4800}, arg2: false);
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new[] {3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new[] {3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new[] {3700, 3701, 3702, 3703, 3704, 3705, 3706, 3707}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new[] {3800, 3801, 3802, 3803, 3804, 3805, 3806, 3807}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007}, arg2: false, arg3: 1000, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: false, arg3: 1000, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: false, arg3: 1000, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307}, arg2: false, arg3: 1000, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407}, arg2: false, arg3: 1000, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507}, arg2: false, arg3: 1000, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607}, arg2: false, arg3: 1000, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {3700, 3701, 3702, 3703, 3704, 3705, 3706, 3707}, arg2: false, arg3: 1000, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {3800, 3801, 3802, 3803, 3804, 3805, 3806, 3807}, arg2: false, arg3: 1000, arg4: 0, arg5: 2f);
                 context.WriteLog(arg1: "Survival", arg3: "Start");
             }
 
@@ -434,8 +404,7 @@ namespace Maple2.Trigger._99999913 {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {11000037}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {11000039}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {11000037, 11000039}, arg2: 0);
                 context.SetUserValue(triggerId: 5, key: "RareBoxOff", value: 1);
                 context.WriteLog(arg1: "Survival", arg3: "Trigger_End");
                 context.DestroyMonster(arg1: new[] {-1});
@@ -484,8 +453,7 @@ namespace Maple2.Trigger._99999913 {
             internal StateGameCancel03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {11000037}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {11000039}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {11000037, 11000039}, arg2: 0);
                 context.DestroyMonster(arg1: new[] {-1});
                 context.MoveUser(arg1: 0, arg2: 0);
             }

@@ -8,8 +8,7 @@ namespace Maple2.Trigger._52010027_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003101},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003101}, arg3: new byte[] {1})) {
                     context.State = new StateReady(context);
                     return;
                 }
@@ -45,8 +44,7 @@ namespace Maple2.Trigger._52010027_qd {
                 context.CameraSelectPath(arg1: new[] {4011}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3006");
                 context.CreateMonster(arg1: new[] {801}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$52010027_QD__MAIN_QUEST10003101__0$", duration: 3000,
-                    delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52010027_QD__MAIN_QUEST10003101__0$", duration: 3000, delayTick: 500);
             }
 
             public override void Execute() {
@@ -64,8 +62,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override void OnEnter() {
                 context.SetPcEmotionSequence(arg1: "Emotion_Suprise_A");
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$52010027_QD__MAIN_QUEST10003101__1$", duration: 2000,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52010027_QD__MAIN_QUEST10003101__1$", duration: 2000, delayTick: 0);
             }
 
             public override void Execute() {
@@ -257,10 +254,8 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {802}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$52010027_QD__MAIN_QUEST10003101__12$", arg3: 3000,
-                    arg4: "0");
-                context.AddBalloonTalk(spawnPointId: 802, msg: "$52010027_QD__MAIN_QUEST10003101__13$", duration: 3000,
-                    delayTick: 5000);
+                context.SetEventUI(arg1: 1, arg2: "$52010027_QD__MAIN_QUEST10003101__12$", arg3: 3000, arg4: "0");
+                context.AddBalloonTalk(spawnPointId: 802, msg: "$52010027_QD__MAIN_QUEST10003101__13$", duration: 3000, delayTick: 5000);
             }
 
             public override void Execute() {

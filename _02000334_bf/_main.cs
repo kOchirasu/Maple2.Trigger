@@ -8,22 +8,14 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() {
                 context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
                 context.SetInteractObject(arg1: new[] {13000012}, arg2: 2);
-                context.SetEffect(arg1: new[] {98001}, arg2: false);
-                context.SetEffect(arg1: new[] {98002}, arg2: false);
-                context.SetEffect(arg1: new[] {98003}, arg2: false);
-                context.SetEffect(arg1: new[] {98004}, arg2: false);
-                context.SetEffect(arg1: new[] {98005}, arg2: false);
-                context.SetEffect(arg1: new[] {98006}, arg2: false);
-                context.SetEffect(arg1: new[] {90021}, arg2: false);
-                context.SetEffect(arg1: new[] {90022}, arg2: false);
+                context.SetEffect(arg1: new[] {98001, 98002, 98003, 98004, 98005, 98006, 90021, 90022}, arg2: false);
                 context.SetEffect(arg1: new[] {98031}, arg2: true);
                 context.CameraSelect(arg1: 8000, arg2: true);
             }
 
             public override void Execute() {
                 if (context.GetUserCount(boxId: 90001) == 1) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -39,13 +31,8 @@ namespace Maple2.Trigger._02000334_bf {
                 context.CreateMonster(arg1: new[] {199}, arg2: true);
                 context.CameraSelect(arg1: 8001, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.CreateMonster(arg1: new[] {401, 402, 403, 404, 405, 406}, arg2: true);
-                context.CreateMonster(arg1: new[] {801, 802, 803, 804, 805, 806, 807, 808, 809}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015,
-                        6016
-                    }, arg2: true);
+                context.CreateMonster(arg1: new[] {401, 402, 403, 404, 405, 406, 801, 802, 803, 804, 805, 806, 807, 808, 809}, arg2: true);
+                context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: true);
             }
 
             public override void Execute() {
@@ -197,8 +184,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {90022}, arg2: true);
-                context.CreateMonster(arg1: new[] {160}, arg2: false);
-                context.CreateMonster(arg1: new[] {150}, arg2: false);
+                context.CreateMonster(arg1: new[] {160, 150}, arg2: false);
                 context.SetTimer(arg1: "60", arg2: 60, arg4: true);
             }
 
@@ -230,10 +216,7 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.DestroyMonster(arg1: new[] {
-                    101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151,
-                    152, 991, 992, 993, 994, 995, 996, 997, 998
-                });
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__7$", arg4: 3);
                 context.SetSkip(arg1: "2단계_시작");
@@ -259,11 +242,7 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {204, 205}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 199, arg3: "$02000334_BF__MAIN__8$", arg4: 3);
-                context.SetMesh(
-                    arg1: new[] {
-                        6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015,
-                        6016
-                    }, arg2: false, arg4: 250, arg5: 1f);
+                context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg4: 250, arg5: 1f);
                 context.SetEventUI(arg1: 0, arg2: "2,4");
                 context.ShowCountUI(text: "$02000334_BF__MAIN__2$", stage: 2, count: 5);
                 context.SetTimer(arg1: "6", arg2: 6);
@@ -317,10 +296,7 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.DestroyMonster(arg1: new[] {
-                    101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151,
-                    991, 992, 993, 994, 995, 996, 997, 998
-                });
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__9$", arg4: 3);
                 context.SetSkip(arg1: "3단계_시작");
@@ -397,10 +373,7 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.DestroyMonster(arg1: new[] {
-                    101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151,
-                    152, 991, 992, 993, 994, 995, 996, 997, 998
-                });
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__10$", arg4: 3);
             }
@@ -441,10 +414,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal State4단계_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {
-                    101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151,
-                    152, 991, 992, 993, 994, 995, 996, 997, 998
-                });
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.MoveNpc(arg1: 190, arg2: "MS2PatrolData_2999");
                 context.SetEventUI(arg1: 0, arg2: "4,4");
                 context.ShowCountUI(text: "$02000334_BF__MAIN__2$", stage: 4, count: 5);
@@ -503,10 +473,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal State게임오버(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {
-                    101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151,
-                    152, 190, 991, 992, 993, 994, 995, 996, 997, 998
-                });
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 190, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetEventUI(arg1: 5, arg3: 3000);
                 context.SetEventUI(arg1: 0, arg2: "0,0");
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
@@ -529,10 +496,7 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.DestroyMonster(arg1: new[] {
-                    101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151,
-                    152, 190, 991, 992, 993, 994, 995, 996, 997, 998
-                });
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 190, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
                 context.SetConversation(arg1: 2, arg2: 24001205, arg3: "$02000334_BF__MAIN__13$", arg4: 3);
                 context.SetSkip(arg1: "게임오버_강퇴");
@@ -587,14 +551,8 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 90001, arg2: "trigger", arg3: "TaboKill");
-                context.DestroyMonster(arg1: new[] {
-                    101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151,
-                    152, 991, 992, 993, 994, 995, 996, 997, 998
-                });
-                context.SetEffect(arg1: new[] {98002}, arg2: true);
-                context.SetEffect(arg1: new[] {98003}, arg2: true);
-                context.SetEffect(arg1: new[] {98004}, arg2: true);
-                context.SetEffect(arg1: new[] {98005}, arg2: true);
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
+                context.SetEffect(arg1: new[] {98002, 98003, 98004, 98005}, arg2: true);
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.SetEffect(arg1: new[] {98031}, arg2: false);
             }
@@ -607,10 +565,7 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetEffect(arg1: new[] {98002}, arg2: false);
-                context.SetEffect(arg1: new[] {98003}, arg2: false);
-                context.SetEffect(arg1: new[] {98004}, arg2: false);
-                context.SetEffect(arg1: new[] {98005}, arg2: false);
+                context.SetEffect(arg1: new[] {98002, 98003, 98004, 98005}, arg2: false);
             }
         }
 
@@ -618,18 +573,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State클리어_이벤트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {
-                    101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151,
-                    152, 991, 992, 993, 994, 995, 996, 997, 998
-                });
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__16$", arg4: 3);
-                context.SetMesh(
-                    arg1: new[] {
-                        6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015,
-                        6016
-                    }, arg2: false, arg4: 250, arg5: 1f);
+                context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg4: 250, arg5: 1f);
                 context.SetSkip(arg1: "클리어_보상");
                 context.SetTimer(arg1: "3", arg2: 3);
             }

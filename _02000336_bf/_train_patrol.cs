@@ -4,9 +4,7 @@ namespace Maple2.Trigger._02000336_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7002}, arg2: false);
-                context.SetEffect(arg1: new[] {7003}, arg2: false);
-                context.SetEffect(arg1: new[] {7004}, arg2: false);
+                context.SetEffect(arg1: new[] {7002, 7003, 7004}, arg2: false);
                 context.SetMesh(arg1: new[] {16004}, arg2: false, arg4: 0, arg5: 0f);
             }
 
@@ -60,9 +58,7 @@ namespace Maple2.Trigger._02000336_bf {
                 context.ShowGuideSummary(entityId: 105, textId: 20003361);
                 context.CreateMonster(arg1: new[] {191, 192, 193, 194, 195, 196, 197, 198}, arg2: false);
                 context.SetEffect(arg1: new[] {7002}, arg2: true);
-                context.SetSkill(arg1: new[] {5803}, arg2: true);
-                context.SetSkill(arg1: new[] {5804}, arg2: true);
-                context.SetSkill(arg1: new[] {5805}, arg2: true);
+                context.SetSkill(arg1: new[] {5803, 5804, 5805}, arg2: true);
             }
 
             public override void Execute() {

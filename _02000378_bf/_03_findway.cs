@@ -5,8 +5,7 @@ namespace Maple2.Trigger._02000378_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 25, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(arg1: new[] {4023}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {4023, 3003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3103}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMeshAnimation(arg1: new[] {3003}, arg2: true, arg3: 0, arg4: 0);
                 context.SetMeshAnimation(arg1: new[] {3103}, arg2: false, arg3: 0, arg4: 0);
@@ -87,8 +86,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound03_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1003}, arg2: false);
-                context.CreateMonster(arg1: new[] {2003}, arg2: false);
+                context.CreateMonster(arg1: new[] {1003, 2003}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 1003, arg3: "$02000378_BF__03_FINDWAY__3$", arg4: 3, arg5: 2);
                 context.SetUserValue(triggerId: 903, key: "MobWaveStart", value: 1);
             }
@@ -169,8 +167,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateQuit02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {203});
-                context.DestroyMonster(arg1: new[] {904, 905, 906});
+                context.DestroyMonster(arg1: new[] {203, 904, 905, 906});
             }
 
             public override void Execute() { }

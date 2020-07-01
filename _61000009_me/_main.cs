@@ -9,15 +9,7 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetMesh(arg1: new[] {6001}, arg2: false);
                 context.SetMesh(arg1: new[] {6002}, arg2: true);
-                context.SetEffect(arg1: new[] {7999}, arg2: false);
-                context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetEffect(arg1: new[] {7002}, arg2: false);
-                context.SetEffect(arg1: new[] {7003}, arg2: false);
-                context.SetEffect(arg1: new[] {7999}, arg2: false);
-                context.SetEffect(arg1: new[] {7998}, arg2: false);
-                context.SetEffect(arg1: new[] {7801}, arg2: false);
-                context.SetEffect(arg1: new[] {7802}, arg2: false);
-                context.SetEffect(arg1: new[] {7803}, arg2: false);
+                context.SetEffect(arg1: new[] {7999, 7001, 7002, 7003, 7999, 7998, 7801, 7802, 7803}, arg2: false);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
@@ -274,27 +266,14 @@ namespace Maple2.Trigger._61000009_me {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, arg2: "2,3");
                 context.CameraSelect(arg1: 8001, arg2: true);
-                context.SetEffect(arg1: new[] {7801}, arg2: true);
-                context.SetEffect(arg1: new[] {7802}, arg2: true);
+                context.SetEffect(arg1: new[] {7801, 7802}, arg2: true);
                 context.SetEventUI(arg1: 1, arg2: "$02000374_BF__MAIN__28$", arg3: 3000);
                 context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000374_BF__MAIN__29$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.SetSkill(arg1: new[] {5001}, arg2: true);
-                    context.SetSkill(arg1: new[] {5002}, arg2: true);
-                    context.SetSkill(arg1: new[] {5003}, arg2: true);
-                    context.SetSkill(arg1: new[] {5004}, arg2: true);
-                    context.SetSkill(arg1: new[] {5005}, arg2: true);
-                    context.SetSkill(arg1: new[] {5006}, arg2: true);
-                    context.SetSkill(arg1: new[] {5007}, arg2: true);
-                    context.SetSkill(arg1: new[] {5008}, arg2: true);
-                    context.SetSkill(arg1: new[] {5009}, arg2: true);
-                    context.SetSkill(arg1: new[] {5010}, arg2: true);
-                    context.SetSkill(arg1: new[] {5011}, arg2: true);
-                    context.SetSkill(arg1: new[] {5012}, arg2: true);
-                    context.SetSkill(arg1: new[] {5013}, arg2: true);
+                    context.SetSkill(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013}, arg2: true);
                     context.State = new State2Round_Talk_02(context);
                     return;
                 }
@@ -302,9 +281,7 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnExit() {
                 context.CameraSelect(arg1: 8001, arg2: false);
-                context.SetEffect(arg1: new[] {7001}, arg2: true);
-                context.SetEffect(arg1: new[] {7002}, arg2: true);
-                context.SetEffect(arg1: new[] {7003}, arg2: true);
+                context.SetEffect(arg1: new[] {7001, 7002, 7003}, arg2: true);
             }
         }
 

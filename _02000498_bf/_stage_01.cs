@@ -39,8 +39,7 @@ namespace Maple2.Trigger._02000498_bf {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "곧 새로운 차원으로 당신을 안내 합니다.", arg3: 3000);
-                context.SetEffect(arg1: new[] {500}, arg2: true);
-                context.SetEffect(arg1: new[] {501}, arg2: true);
+                context.SetEffect(arg1: new[] {500, 501}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_3sec.xml");
             }
 

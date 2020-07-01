@@ -4,13 +4,9 @@ namespace Maple2.Trigger._02000532_bf {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3000, 3001}, arg2: true);
-                context.SetMesh(arg1: new[] {3002, 3003}, arg2: true);
-                context.SetMesh(arg1: new[] {3004}, arg2: true);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: true);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetEffect(arg1: new[] {7006}, arg2: false);
-                context.SetEffect(arg1: new[] {7007}, arg2: false);
+                context.SetEffect(arg1: new[] {7001, 7006, 7007}, arg2: false);
             }
 
             public override void Execute() {
@@ -31,9 +27,7 @@ namespace Maple2.Trigger._02000532_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetSceneSkip();
-                context.CreateMonster(arg1: new[] {216, 101, 102, 103, 104, 105, 106, 107, 108, 109, 111, 112, 113},
-                    arg2: true);
-                context.CreateMonster(arg1: new[] {110, 111}, arg2: true);
+                context.CreateMonster(arg1: new[] {216, 101, 102, 103, 104, 105, 106, 107, 108, 109, 111, 112, 113, 110, 111}, arg2: true);
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_8000");
                 context.MoveNpc(arg1: 111, arg2: "MS2PatrolData_8001");
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
@@ -57,9 +51,7 @@ namespace Maple2.Trigger._02000532_bf {
                 context.SetSceneSkip(arg1: "목표", arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {604, 603}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.ShowCaption(type: "VerticalCaption", title: "$02000532_BF__MAIN__0$",
-                    desc: "$02000532_BF__MAIN__1$", align: "centerRight", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 3000, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "$02000532_BF__MAIN__0$", desc: "$02000532_BF__MAIN__1$", align: "centerRight", offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);
             }
 
             public override void Execute() {
@@ -100,8 +92,7 @@ namespace Maple2.Trigger._02000532_bf {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetEventUI(arg1: 1, arg2: "$02000532_BF__MAIN__3$", arg3: 3000);
-                context.SetEffect(arg1: new[] {7006}, arg2: true);
-                context.SetEffect(arg1: new[] {7007}, arg2: true);
+                context.SetEffect(arg1: new[] {7006, 7007}, arg2: true);
                 context.CreateMonster(arg1: new[] {408}, arg2: true);
             }
 
@@ -121,12 +112,9 @@ namespace Maple2.Trigger._02000532_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3004}, arg2: false);
                 context.AddBalloonTalk(spawnPointId: 112, msg: "$02000532_BF__MAIN__4$", duration: 3500, delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 112, msg: "$02000532_BF__MAIN__5$", duration: 3500,
-                    delayTick: 3500);
-                context.AddBalloonTalk(spawnPointId: 102, msg: "$02000532_BF__MAIN__6$", duration: 3500,
-                    delayTick: 500);
-                context.AddBalloonTalk(spawnPointId: 113, msg: "$02000532_BF__MAIN__7$", duration: 3500,
-                    delayTick: 900);
+                context.AddBalloonTalk(spawnPointId: 112, msg: "$02000532_BF__MAIN__5$", duration: 3500, delayTick: 3500);
+                context.AddBalloonTalk(spawnPointId: 102, msg: "$02000532_BF__MAIN__6$", duration: 3500, delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 113, msg: "$02000532_BF__MAIN__7$", duration: 3500, delayTick: 900);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 10000f);
                 context.SetNpcEmotionLoop(arg1: 113, arg2: "Sit_Down_A", arg3: 10000f);
                 context.SetNpcEmotionLoop(arg1: 112, arg2: "Talk_A", arg3: 10000f);
@@ -154,12 +142,9 @@ namespace Maple2.Trigger._02000532_bf {
                 context.LockMyPc(isLock: true);
                 context.SetSceneSkip(arg1: "흑성회의반격", arg2: "nextState");
                 context.AddBalloonTalk(spawnPointId: 104, msg: "$02000532_BF__MAIN__8$", duration: 3500, delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 105, msg: "$02000532_BF__MAIN__9$", duration: 3500,
-                    delayTick: 2500);
-                context.AddBalloonTalk(spawnPointId: 103, msg: "$02000532_BF__MAIN__10$", duration: 3500,
-                    delayTick: 2800);
-                context.SetEffect(arg1: new[] {7006}, arg2: false);
-                context.SetEffect(arg1: new[] {7007}, arg2: false);
+                context.AddBalloonTalk(spawnPointId: 105, msg: "$02000532_BF__MAIN__9$", duration: 3500, delayTick: 2500);
+                context.AddBalloonTalk(spawnPointId: 103, msg: "$02000532_BF__MAIN__10$", duration: 3500, delayTick: 2800);
+                context.SetEffect(arg1: new[] {7006, 7007}, arg2: false);
             }
 
             public override void Execute() {
@@ -193,10 +178,8 @@ namespace Maple2.Trigger._02000532_bf {
             internal State통신을받은제이부하2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 205, msg: "$02000532_BF__MAIN__11$", duration: 3500,
-                    delayTick: 500);
-                context.AddBalloonTalk(spawnPointId: 300, msg: "$02000532_BF__MAIN__12$", duration: 3500,
-                    delayTick: 3000);
+                context.AddBalloonTalk(spawnPointId: 205, msg: "$02000532_BF__MAIN__11$", duration: 3500, delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 300, msg: "$02000532_BF__MAIN__12$", duration: 3500, delayTick: 3000);
             }
 
             public override void Execute() {
@@ -231,10 +214,8 @@ namespace Maple2.Trigger._02000532_bf {
             internal State불안한제이2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000,
-                    script: "$02000532_BF__MAIN__13$");
-                context.AddBalloonTalk(spawnPointId: 205, msg: "$02000532_BF__MAIN__14$", duration: 3500,
-                    delayTick: 4100);
+                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000, script: "$02000532_BF__MAIN__13$");
+                context.AddBalloonTalk(spawnPointId: 205, msg: "$02000532_BF__MAIN__14$", duration: 3500, delayTick: 4100);
             }
 
             public override void Execute() {
@@ -291,8 +272,7 @@ namespace Maple2.Trigger._02000532_bf {
             internal State흑성회의반격22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 21450001, illust: "Mafia1_normal", duration: 3000,
-                    script: "$02000532_BF__MAIN__16$");
+                context.SideNpcTalk(npcId: 21450001, illust: "Mafia1_normal", duration: 3000, script: "$02000532_BF__MAIN__16$");
             }
 
             public override void Execute() {
@@ -309,8 +289,7 @@ namespace Maple2.Trigger._02000532_bf {
             internal State골목체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 3000,
-                    script: "$02000532_BF__MAIN__17$");
+                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 3000, script: "$02000532_BF__MAIN__17$");
             }
 
             public override void Execute() {
@@ -329,12 +308,9 @@ namespace Maple2.Trigger._02000532_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {108, 109});
                 context.CreateMonster(arg1: new[] {406, 407, 409, 410, 411}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 409, msg: "$02000532_BF__MAIN__18$", duration: 3500,
-                    delayTick: 1500);
-                context.AddBalloonTalk(spawnPointId: 410, msg: "$02000532_BF__MAIN__19$", duration: 3500,
-                    delayTick: 1500);
-                context.AddBalloonTalk(spawnPointId: 407, msg: "$02000532_BF__MAIN__20$", duration: 3500,
-                    delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 409, msg: "$02000532_BF__MAIN__18$", duration: 3500, delayTick: 1500);
+                context.AddBalloonTalk(spawnPointId: 410, msg: "$02000532_BF__MAIN__19$", duration: 3500, delayTick: 1500);
+                context.AddBalloonTalk(spawnPointId: 407, msg: "$02000532_BF__MAIN__20$", duration: 3500, delayTick: 500);
             }
 
             public override void Execute() {
@@ -351,8 +327,7 @@ namespace Maple2.Trigger._02000532_bf {
             internal State2차생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 3000,
-                    script: "$02000532_BF__MAIN__21$");
+                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 3000, script: "$02000532_BF__MAIN__21$");
             }
 
             public override void Execute() {

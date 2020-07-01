@@ -14,56 +14,18 @@ namespace Maple2.Trigger._02000349_bf {
                 context.SetActor(arg1: 205, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 206, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 207, arg2: true, arg3: "Idle_A");
-                context.SetInteractObject(arg1: new[] {10000806}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000806}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000807}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000808}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000809}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000810}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000811}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000812}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {13000014}, arg2: 2);
-                context.SetMesh(arg1: new[] {39101, 39102, 39103, 39104, 39105, 39106}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {600}, arg2: false);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {6101}, arg2: false);
-                context.SetEffect(arg1: new[] {6102}, arg2: false);
-                context.SetEffect(arg1: new[] {6103}, arg2: false);
-                context.SetEffect(arg1: new[] {6104}, arg2: false);
-                context.SetEffect(arg1: new[] {6105}, arg2: false);
-                context.SetEffect(arg1: new[] {6106}, arg2: false);
-                context.SetEffect(arg1: new[] {6107}, arg2: false);
-                context.SetEffect(arg1: new[] {6108}, arg2: false);
-                context.SetEffect(arg1: new[] {6201}, arg2: false);
-                context.SetEffect(arg1: new[] {6202}, arg2: false);
-                context.SetEffect(arg1: new[] {6203}, arg2: false);
-                context.SetEffect(arg1: new[] {6204}, arg2: false);
-                context.SetEffect(arg1: new[] {6205}, arg2: false);
-                context.SetSkill(arg1: new[] {701}, arg2: false);
-                context.SetSkill(arg1: new[] {702}, arg2: false);
-                context.SetSkill(arg1: new[] {703}, arg2: false);
-                context.SetSkill(arg1: new[] {704}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000806, 10000806, 10000807, 10000808, 10000809, 10000810, 10000811, 10000812, 13000014}, arg2: 2);
+                context.SetMesh(arg1: new[] {39101, 39102, 39103, 39104, 39105, 39106, 3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {600, 601, 602, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6201, 6202, 6203, 6204, 6205}, arg2: false);
+                context.SetSkill(arg1: new[] {701, 702, 703, 704}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetAgent(arg1: "901", arg2: true);
-                context.SetAgent(arg1: "902", arg2: true);
-                context.SetAgent(arg1: "903", arg2: true);
-                context.SetAgent(arg1: "904", arg2: true);
+                context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: true);
             }
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -337,10 +299,7 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000812}, arg2: 0)) {
-                    context.DestroyMonster(arg1: new[] {
-                        1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016,
-                        1017, 1018, 1019, 1020
-                    });
+                    context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020});
                     context.HideGuideSummary(entityId: 20003495);
                     context.State = new State레논구출(context);
                     return;
@@ -824,12 +783,8 @@ namespace Maple2.Trigger._02000349_bf {
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003502, textId: 20003502, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.DestroyMonster(arg1: new[] {1025, 1026});
-                context.DestroyMonster(arg1: new[] {1099});
-                context.SetAgent(arg1: "901", arg2: false);
-                context.SetAgent(arg1: "902", arg2: false);
-                context.SetAgent(arg1: "903", arg2: false);
-                context.SetAgent(arg1: "904", arg2: false);
+                context.DestroyMonster(arg1: new[] {1025, 1026, 1099});
+                context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: false);
                 context.DestroyMonster(arg1: new[] {2007});
                 context.CreateMonster(arg1: new[] {2006});
                 context.CameraSelectPath(arg1: new[] {302}, arg2: true);
@@ -870,16 +825,9 @@ namespace Maple2.Trigger._02000349_bf {
             internal State진행17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1025, 1026}, arg2: false);
-                context.CreateMonster(arg1: new[] {1099}, arg2: false);
-                context.SetAgent(arg1: "901", arg2: true);
-                context.SetAgent(arg1: "902", arg2: true);
-                context.SetAgent(arg1: "903", arg2: true);
-                context.SetAgent(arg1: "904", arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816
-                    }, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
+                context.CreateMonster(arg1: new[] {1025, 1026, 1099}, arg2: false);
+                context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: true);
+                context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
             }
 
             public override void Execute() {
@@ -936,10 +884,7 @@ namespace Maple2.Trigger._02000349_bf {
                 context.SetConversation(arg1: 1, arg2: 2008, arg3: "$02000349_BF__MAIN__13$", arg4: 4);
                 context.MoveNpc(arg1: 2008, arg2: "MS2PatrolData2008_A");
                 context.SetEffect(arg1: new[] {6205}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 

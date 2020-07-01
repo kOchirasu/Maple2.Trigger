@@ -5,10 +5,7 @@ namespace Maple2.Trigger._52100052_qd {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3420, 3421, 3422, 3423}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {5200}, arg2: false);
-                context.SetEffect(arg1: new[] {5201}, arg2: false);
-                context.SetEffect(arg1: new[] {5202}, arg2: false);
-                context.SetEffect(arg1: new[] {5203}, arg2: false);
+                context.SetEffect(arg1: new[] {5200, 5201, 5202, 5203}, arg2: false);
                 context.DestroyMonster(arg1: new[] {202, 302});
                 context.SetInteractObject(arg1: new[] {10002081}, arg2: 0, arg4: false);
                 context.SetUserValue(key: "TrapOn", value: 0);
@@ -44,10 +41,7 @@ namespace Maple2.Trigger._52100052_qd {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002081}, arg2: 1);
-                context.SetEffect(arg1: new[] {5200}, arg2: true);
-                context.SetEffect(arg1: new[] {5201}, arg2: true);
-                context.SetEffect(arg1: new[] {5202}, arg2: true);
-                context.SetEffect(arg1: new[] {5203}, arg2: true);
+                context.SetEffect(arg1: new[] {5200, 5201, 5202, 5203}, arg2: true);
             }
 
             public override void Execute() {
@@ -66,10 +60,7 @@ namespace Maple2.Trigger._52100052_qd {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {202, 302}, arg2: false);
                 context.SetMesh(arg1: new[] {3420, 3421, 3422, 3423}, arg2: false, arg3: 500, arg4: 0, arg5: 2f);
-                context.SetEffect(arg1: new[] {5200}, arg2: false);
-                context.SetEffect(arg1: new[] {5201}, arg2: false);
-                context.SetEffect(arg1: new[] {5202}, arg2: false);
-                context.SetEffect(arg1: new[] {5203}, arg2: false);
+                context.SetEffect(arg1: new[] {5200, 5201, 5202, 5203}, arg2: false);
             }
 
             public override void Execute() {

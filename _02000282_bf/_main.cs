@@ -4,12 +4,8 @@ namespace Maple2.Trigger._02000282_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000424}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000425}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000426}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000433}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000434}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000435}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000424, 10000425, 10000426}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000433, 10000434, 10000435}, arg2: 2);
                 context.SetLadder(arg1: 341, arg2: false, arg3: false);
                 context.SetLadder(arg1: 342, arg2: false, arg3: false);
                 context.SetLadder(arg1: 343, arg2: false, arg3: false);
@@ -38,25 +34,7 @@ namespace Maple2.Trigger._02000282_bf {
             internal State준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1001}, arg2: false);
-                context.CreateMonster(arg1: new[] {1002}, arg2: false);
-                context.CreateMonster(arg1: new[] {1003}, arg2: false);
-                context.CreateMonster(arg1: new[] {1004}, arg2: false);
-                context.CreateMonster(arg1: new[] {1006}, arg2: false);
-                context.CreateMonster(arg1: new[] {1007}, arg2: false);
-                context.CreateMonster(arg1: new[] {1008}, arg2: false);
-                context.CreateMonster(arg1: new[] {1009}, arg2: false);
-                context.CreateMonster(arg1: new[] {1010}, arg2: false);
-                context.CreateMonster(arg1: new[] {1011}, arg2: false);
-                context.CreateMonster(arg1: new[] {1012}, arg2: false);
-                context.CreateMonster(arg1: new[] {1014}, arg2: false);
-                context.CreateMonster(arg1: new[] {1015}, arg2: false);
-                context.CreateMonster(arg1: new[] {1016}, arg2: false);
-                context.CreateMonster(arg1: new[] {1017}, arg2: false);
-                context.CreateMonster(arg1: new[] {1018}, arg2: false);
-                context.CreateMonster(arg1: new[] {1019}, arg2: false);
-                context.CreateMonster(arg1: new[] {1020}, arg2: false);
-                context.CreateMonster(arg1: new[] {1021}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021}, arg2: false);
             }
 
             public override void Execute() {

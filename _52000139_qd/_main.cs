@@ -6,35 +6,22 @@ namespace Maple2.Trigger._52000139_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CreateMonster(arg1: new[] {109}, arg2: true);
-                context.CreateMonster(arg1: new[] {110}, arg2: true);
-                context.CreateMonster(arg1: new[] {101}, arg2: true);
-                context.CreateMonster(arg1: new[] {102}, arg2: true);
-                context.CreateMonster(arg1: new[] {104}, arg2: true);
-                context.CreateMonster(arg1: new[] {105}, arg2: true);
-                context.CreateMonster(arg1: new[] {106}, arg2: true);
-                context.CreateMonster(arg1: new[] {107}, arg2: true);
-                context.SetEffect(
-                    arg1: new[]
-                        {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {109, 110, 101, 102, 104, 105, 106, 107}, arg2: true);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002700},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002700}, arg3: new byte[] {3})) {
                     context.State = new State다시검은화면_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002700},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002700}, arg3: new byte[] {2})) {
                     context.State = new State퀘스트진행_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002700},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002700}, arg3: new byte[] {1})) {
                     context.State = new State퀘스트수락_02(context);
                     return;
                 }
@@ -148,9 +135,7 @@ namespace Maple2.Trigger._52000139_qd {
             internal State카메라연출_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(type: "VerticalCaption", title: "$52000139_QD__MAIN__22$",
-                    desc: "$52000139_QD__MAIN__23$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 4000, scale: 2.5f);
+                context.ShowCaption(type: "VerticalCaption", title: "$52000139_QD__MAIN__22$", desc: "$52000139_QD__MAIN__23$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2.5f);
             }
 
             public override void Execute() {
@@ -347,8 +332,7 @@ namespace Maple2.Trigger._52000139_qd {
             internal State기사와대화_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003320, msg: "$52000139_QD__MAIN__9$", duration: 2500,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11003320, msg: "$52000139_QD__MAIN__9$", duration: 2500, align: "right");
             }
 
             public override void Execute() {
@@ -391,8 +375,7 @@ namespace Maple2.Trigger._52000139_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002700},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002700}, arg3: new byte[] {1})) {
                     context.State = new State기지로이동_01(context);
                     return;
                 }
@@ -407,16 +390,12 @@ namespace Maple2.Trigger._52000139_qd {
             internal State기지로이동_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(
-                    arg1: new[]
-                        {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014},
-                    arg2: true);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014}, arg2: true);
                 context.ShowGuideSummary(entityId: 25201391, textId: 25201391);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002700},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002700}, arg3: new byte[] {1})) {
                     context.State = new State퀘스트진행_01(context);
                     return;
                 }
@@ -431,16 +410,12 @@ namespace Maple2.Trigger._52000139_qd {
             internal State퀘스트진행_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(
-                    arg1: new[]
-                        {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014},
-                    arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014}, arg2: false);
                 context.ShowGuideSummary(entityId: 25201392, textId: 25201392);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701, 702}, arg2: new[] {40002700},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701, 702}, arg2: new[] {40002700}, arg3: new byte[] {2})) {
                     context.State = new State퀘스트완료가능_01(context);
                     return;
                 }
@@ -461,8 +436,7 @@ namespace Maple2.Trigger._52000139_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002700},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002700}, arg3: new byte[] {3})) {
                     context.State = new State다시검은화면_01(context);
                     return;
                 }

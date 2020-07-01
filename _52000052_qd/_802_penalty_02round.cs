@@ -91,10 +91,7 @@ namespace Maple2.Trigger._52000052_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    90280, 90281, 90282, 90283, 90284, 90285, 90286, 90287, 90288, 90289, 90290, 90291, 90292, 90293,
-                    90294, 90295, 90296, 90297, 90298, 90299
-                })) {
+                if (context.MonsterDead(arg1: new[] {90280, 90281, 90282, 90283, 90284, 90285, 90286, 90287, 90288, 90289, 90290, 90291, 90292, 90293, 90294, 90295, 90296, 90297, 90298, 90299})) {
                     context.State = new StatePenaltyFinished01(context);
                     return;
                 }
@@ -107,10 +104,7 @@ namespace Maple2.Trigger._52000052_qd {
             internal StatePenaltyFinished01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {
-                    90280, 90281, 90282, 90283, 90284, 90285, 90286, 90287, 90288, 90289, 90290, 90291, 90292, 90293,
-                    90294, 90295, 90296, 90297, 90298, 90299
-                });
+                context.DestroyMonster(arg1: new[] {90280, 90281, 90282, 90283, 90284, 90285, 90286, 90287, 90288, 90289, 90290, 90291, 90292, 90293, 90294, 90295, 90296, 90297, 90298, 90299});
                 context.SetUserValue(triggerId: 902, key: "PenaltyFinish", value: 1);
             }
 

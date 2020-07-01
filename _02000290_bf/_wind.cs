@@ -5,11 +5,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {701}, arg2: false);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {605}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602, 603, 604, 605}, arg2: false);
             }
 
             public override void Execute() {
@@ -131,10 +127,7 @@ namespace Maple2.Trigger._02000290_bf {
 
                 if (context.WaitTick(waitTick: 4000)) {
                     context.HideGuideSummary(entityId: 20002906);
-                    context.SetEffect(arg1: new[] {602}, arg2: true);
-                    context.SetEffect(arg1: new[] {603}, arg2: true);
-                    context.SetEffect(arg1: new[] {604}, arg2: true);
-                    context.SetEffect(arg1: new[] {605}, arg2: true);
+                    context.SetEffect(arg1: new[] {602, 603, 604, 605}, arg2: true);
                     context.SetSkill(arg1: new[] {701}, arg2: true);
                     context.State = new State스킬랜덤(context);
                     return;

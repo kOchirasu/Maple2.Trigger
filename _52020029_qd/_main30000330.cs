@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52020029_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000330},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000330}, arg3: new byte[] {2})) {
                     context.State = new State암전(context);
                     return;
                 }
@@ -128,12 +127,9 @@ namespace Maple2.Trigger._52020029_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4013, 4010}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003717, msg: "티어스 코어는 티마이온의 에너지 원으로, 강력한 마력의 힘이 담겨 있다.",
-                    duration: 3000);
-                context.AddCinematicTalk(npcId: 11003717, msg: "티어스 코어는 몇 가지의 재료로 조합할 수 있으며, 이 재료는 크리티아스의 사방에 흩어져 있다.",
-                    duration: 3000);
-                context.AddCinematicTalk(npcId: 11003717,
-                    msg: "주 재료가 되는 파멸의 날개는 크리티아스 왕가에 내려져 오는 가보로, 하나는 헤카톤 국왕이, 하나는 왕비가 가지고 있다.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003717, msg: "티어스 코어는 티마이온의 에너지 원으로, 강력한 마력의 힘이 담겨 있다.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003717, msg: "티어스 코어는 몇 가지의 재료로 조합할 수 있으며, 이 재료는 크리티아스의 사방에 흩어져 있다.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003717, msg: "주 재료가 되는 파멸의 날개는 크리티아스 왕가에 내려져 오는 가보로, 하나는 헤카톤 국왕이, 하나는 왕비가 가지고 있다.", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003717, msg: "왕비가 가지고 있던 파멸의 날개는 딸 이오네에게 넘겨졌다.", duration: 3000);
             }
 
@@ -151,10 +147,8 @@ namespace Maple2.Trigger._52020029_qd {
             internal State정보검색첫번째3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003717, msg: "파멸의 날개 이외의 재료는 천공의 심장, 신의 눈, 영혼의 구슬, 지혜의 고리이다. ",
-                    duration: 3000);
-                context.AddCinematicTalk(npcId: 11003717,
-                    msg: "천공의 심장은 마력의 숲의 천공의 탑에 보관되어 있으며, 실제적인 티어스 코어의 베이스가 되는 물질이다.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003717, msg: "파멸의 날개 이외의 재료는 천공의 심장, 신의 눈, 영혼의 구슬, 지혜의 고리이다. ", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003717, msg: "천공의 심장은 마력의 숲의 천공의 탑에 보관되어 있으며, 실제적인 티어스 코어의 베이스가 되는 물질이다.", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003717, msg: "신의 눈은 티아만 시간의...", duration: 3000);
             }
 
@@ -511,8 +505,7 @@ namespace Maple2.Trigger._52020029_qd {
             internal State이동_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {103});
-                context.DestroyMonster(arg1: new[] {104});
+                context.DestroyMonster(arg1: new[] {103, 104});
             }
 
             public override void Execute() {

@@ -4,8 +4,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
+                context.SetEffect(arg1: new[] {602, 603}, arg2: false);
             }
 
             public override void Execute() {
@@ -47,8 +46,7 @@ namespace Maple2.Trigger._52100002_qd {
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.CreateMonster(arg1: new[] {2002}, arg2: false);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__SUMMON__0$",
-                    align: "left", duration: 2000);
+                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__SUMMON__0$", align: "left", duration: 2000);
                 context.SetSkip(arg1: "죽음대기");
             }
 
@@ -74,8 +72,7 @@ namespace Maple2.Trigger._52100002_qd {
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.CreateMonster(arg1: new[] {2102}, arg2: false);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__SUMMON__0$",
-                    align: "left", duration: 2000);
+                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__SUMMON__0$", align: "left", duration: 2000);
                 context.SetSkip(arg1: "퀘스트죽음대기");
             }
 

@@ -6,23 +6,10 @@ namespace Maple2.Trigger._02000335_bf {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906, 6907, 6908}, arg2: false, arg4: 0,
-                    arg5: 10f);
-                context.CreateMonster(
-                    arg1: new[] {
-                        101, 102, 103, 104, 106, 107, 111, 120, 121, 124, 125, 131, 132, 133, 134, 135, 140, 143, 144,
-                        145, 147, 148
-                    }, arg2: false);
-                context.CreateMonster(
-                    arg1: new[]
-                        {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217},
-                    arg2: false);
-                context.SetEffect(arg1: new[] {6901}, arg2: false);
-                context.SetEffect(arg1: new[] {6902}, arg2: false);
-                context.SetEffect(arg1: new[] {6903}, arg2: false);
-                context.SetEffect(arg1: new[] {6904}, arg2: false);
-                context.SetEffect(arg1: new[] {6905}, arg2: false);
-                context.SetEffect(arg1: new[] {6906}, arg2: false);
+                context.SetMesh(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906, 6907, 6908}, arg2: false, arg4: 0, arg5: 10f);
+                context.CreateMonster(arg1: new[] {101, 102, 103, 104, 106, 107, 111, 120, 121, 124, 125, 131, 132, 133, 134, 135, 140, 143, 144, 145, 147, 148}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217}, arg2: false);
+                context.SetEffect(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906}, arg2: false);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 991, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 992, isEnable: false);
@@ -30,8 +17,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override void Execute() {
                 if (context.GetUserCount(boxId: 700) == 1) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -126,8 +112,7 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20003362);
-                context.SetMesh(arg1: new[] {6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108}, arg2: false, arg4: 0,
-                    arg5: 10f);
+                context.SetMesh(arg1: new[] {6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108}, arg2: false, arg4: 0, arg5: 10f);
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
             }
 
@@ -196,8 +181,7 @@ namespace Maple2.Trigger._02000335_bf {
                 context.EnableSpawnPointPc(spawnPointId: 991, isEnable: true);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20003362);
-                context.SetMesh(arg1: new[] {6111, 6112, 6113, 6114, 6115, 6116, 6117, 6118}, arg2: false, arg4: 0,
-                    arg5: 10f);
+                context.SetMesh(arg1: new[] {6111, 6112, 6113, 6114, 6115, 6116, 6117, 6118}, arg2: false, arg4: 0, arg5: 10f);
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
             }
 

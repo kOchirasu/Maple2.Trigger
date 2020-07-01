@@ -6,26 +6,22 @@ namespace Maple2.Trigger._52000126_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100210},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100210}, arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100210},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100210}, arg3: new byte[] {3})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100215},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100215}, arg3: new byte[] {1})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100215},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100215}, arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -61,8 +57,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_3001");
-                context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__0$", duration: 7000,
-                    delayTick: 1);
+                context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__0$", duration: 7000, delayTick: 1);
             }
 
             public override void Execute() {
@@ -80,8 +75,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Clap_A");
-                context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__1$", duration: 3000,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__1$", duration: 3000, delayTick: 0);
             }
 
             public override void Execute() {
@@ -98,8 +92,7 @@ namespace Maple2.Trigger._52000126_qd {
             internal Stateendtalk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__2$", duration: 3000,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__2$", duration: 3000, delayTick: 0);
             }
 
             public override void Execute() {

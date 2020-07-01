@@ -9,18 +9,11 @@ namespace Maple2.Trigger._02020006_bf {
                 context.EnableLocalCamera(isEnable: false);
                 context.SetUserValue(key: "StandAsideTypeA", value: 0);
                 context.SetUserValue(key: "StandAsideTypeB", value: 0);
-                context.SetMesh(arg1: new[] {15101}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {15102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {15101, 15102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 15100, arg2: false, arg3: "Idle_A");
-                context.SetInteractObject(arg1: new[] {12000250}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000078}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000093}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000250, 12000078, 12000093}, arg2: 2);
                 context.DestroyMonster(arg1: new[] {15401, 15402, 15501, 15502});
-                context.SetEffect(arg1: new[] {15300}, arg2: false);
-                context.SetEffect(arg1: new[] {15301}, arg2: false);
-                context.SetEffect(arg1: new[] {15302}, arg2: false);
-                context.SetEffect(arg1: new[] {15303}, arg2: false);
-                context.SetEffect(arg1: new[] {15304}, arg2: false);
+                context.SetEffect(arg1: new[] {15300, 15301, 15302, 15303, 15304}, arg2: false);
             }
 
             public override void Execute() {
@@ -53,8 +46,7 @@ namespace Maple2.Trigger._02020006_bf {
             internal StateInteractWithNpc_NpcTypeRandomPick(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {15101}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {15002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {15101, 15002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 15100, arg2: true, arg3: "Idle_A");
                 context.SetUserValue(triggerId: 15001, key: "PortalOn", value: 1);
             }
@@ -130,8 +122,7 @@ namespace Maple2.Trigger._02020006_bf {
                 context.DestroyMonster(arg1: new[] {15401});
                 context.CreateMonster(arg1: new[] {15402}, arg2: true);
                 context.SetUserValue(triggerId: 15001, key: "PortalOn", value: 2);
-                context.SetMesh(arg1: new[] {15101}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {15102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {15101, 15102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.AddBuff(arg1: new[] {150001}, arg2: 71001052, arg3: 1, arg4: false, arg5: false);
                 context.SetTimer(arg1: "10", arg2: 60, arg3: true, arg4: false, arg5: 0);
                 context.SetUserValue(triggerId: 151001, key: "NPCKill", value: 1);
@@ -221,8 +212,7 @@ namespace Maple2.Trigger._02020006_bf {
                 context.DestroyMonster(arg1: new[] {15501});
                 context.CreateMonster(arg1: new[] {15502}, arg2: true);
                 context.SetUserValue(triggerId: 15001, key: "PortalOn", value: 2);
-                context.SetMesh(arg1: new[] {15101}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {15102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {15101, 15102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.AddBuff(arg1: new[] {150001}, arg2: 71001052, arg3: 1, arg4: false, arg5: false);
                 context.SetTimer(arg1: "10", arg2: 60, arg3: true, arg4: false, arg5: 0);
                 context.SetUserValue(triggerId: 151001, key: "NPCKill", value: 1);
@@ -300,9 +290,7 @@ namespace Maple2.Trigger._02020006_bf {
             internal StateInteractWithNpc_Fail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000250}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000078}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000093}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000250, 12000078, 12000093}, arg2: 2);
             }
 
             public override void Execute() {

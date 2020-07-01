@@ -6,27 +6,15 @@ namespace Maple2.Trigger._02000351_bf {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {31, 32}, arg2: false);
-                context.CreateMonster(arg1: new[] {11, 12, 13, 14, 15, 16, 17}, arg2: false);
-                context.CreateMonster(arg1: new[] {21, 22, 23, 24, 25, 26, 27, 28, 29}, arg2: false);
+                context.CreateMonster(arg1: new[] {31, 32, 11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26, 27, 28, 29}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000818}, arg2: 0);
-                context.SetEffect(arg1: new[] {9000001}, arg2: false);
-                context.SetEffect(arg1: new[] {9000002}, arg2: false);
-                context.SetEffect(arg1: new[] {9000003}, arg2: false);
-                context.SetEffect(arg1: new[] {9000004}, arg2: false);
-                context.SetEffect(arg1: new[] {9000005}, arg2: false);
-                context.SetEffect(arg1: new[] {9000006}, arg2: false);
-                context.SetEffect(arg1: new[] {9000007}, arg2: false);
-                context.SetEffect(arg1: new[] {9000008}, arg2: false);
-                context.SetEffect(arg1: new[] {9000009}, arg2: false);
-                context.SetEffect(arg1: new[] {9000010}, arg2: false);
+                context.SetEffect(arg1: new[] {9000001, 9000002, 9000003, 9000004, 9000005, 9000006, 9000007, 9000008, 9000009, 9000010}, arg2: false);
                 context.SetMesh(arg1: new[] {6007}, arg2: false, arg4: 0, arg5: 10f);
             }
 
             public override void Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -101,8 +89,7 @@ namespace Maple2.Trigger._02000351_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 111, textId: 20000080);
-                context.SetInteractObject(arg1: new[] {10000819}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000820}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000819, 10000820}, arg2: 1);
             }
 
             public override void Execute() {

@@ -11,10 +11,7 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetLadder(arg1: 543, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 544, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 545, arg2: false, arg3: false, arg4: 0);
-                context.SetMesh(arg1: new[] {3700}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3701, 3704}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3702}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3703}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3700, 3701, 3704, 3702, 3703}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10002097}, arg2: 0);
                 context.SetUserValue(key: "HiddenRouteOpen", value: 0);
             }

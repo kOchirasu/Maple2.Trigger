@@ -5,8 +5,7 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {169, 170}, arg2: true);
-                context.SetEffect(arg1: new[] {8031}, arg2: true);
-                context.SetEffect(arg1: new[] {8032}, arg2: true);
+                context.SetEffect(arg1: new[] {8031, 8032}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000401}, arg2: 1);
             }
 
@@ -25,8 +24,7 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
-                context.SetEffect(arg1: new[] {8031}, arg2: false);
-                context.SetEffect(arg1: new[] {8032}, arg2: false);
+                context.SetEffect(arg1: new[] {8031, 8032}, arg2: false);
                 context.SetMesh(arg1: new[] {169, 170}, arg2: false);
                 context.CreateMonster(arg1: new[] {1012}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 1012, arg3: "$02000252_BF__DOOR_01__0$", arg4: 2);

@@ -6,15 +6,12 @@ namespace Maple2.Trigger._52000124_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001},
-                    arg2: new[] {60100105, 60100106, 60100107, 60100108, 60100109, 60100110},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100105, 60100106, 60100107, 60100108, 60100109, 60100110}, arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100110},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100110}, arg3: new byte[] {3})) {
                     context.State = new Statedelnpc(context);
                     return;
                 }
@@ -85,8 +82,7 @@ namespace Maple2.Trigger._52000124_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003195, msg: "$52000124_QD__MAIN__0$", duration: 2000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11003195, msg: "$52000124_QD__MAIN__0$", duration: 2000, align: "right");
                 context.SetSceneSkip(arg1: "scene_07", arg2: "exit");
             }
 
@@ -105,8 +101,7 @@ namespace Maple2.Trigger._52000124_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003195, msg: "$52000124_QD__MAIN__1$", duration: 2000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11003195, msg: "$52000124_QD__MAIN__1$", duration: 2000, align: "right");
             }
 
             public override void Execute() {
@@ -162,8 +157,7 @@ namespace Maple2.Trigger._52000124_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4005}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Sit_down_A", arg3: 999999999999f);
-                context.AddCinematicTalk(npcId: 11000069, msg: "$52000124_QD__MAIN__4$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11000069, msg: "$52000124_QD__MAIN__4$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -225,8 +219,7 @@ namespace Maple2.Trigger._52000124_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100110},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100110}, arg3: new byte[] {2})) {
                     context.State = new Statewarptalk(context);
                     return;
                 }

@@ -8,10 +8,7 @@ namespace Maple2.Trigger._80000014_bonus {
                 context.SetInteractObject(arg1: new[] {10001338}, arg2: 2);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {3101, 3102, 3201, 3202, 3301, 3302, 3401, 3402, 3601, 3602, 3603, 3604},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3002, 3003, 3004, 3101, 3102, 3201, 3202, 3301, 3302, 3401, 3402, 3601, 3602, 3603, 3604}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -141,11 +138,7 @@ namespace Maple2.Trigger._80000014_bonus {
                 context.SetEventUI(arg1: 1, arg2: "$80000014_bonus__main__0$", arg3: 5000);
                 context.ScoreBoardCreate(type: "ScoreBoardTopCenter", maxScore: 0);
                 context.ScoreBoardSetScore(score: false);
-                context.SpawnItemRange(
-                    rangeId: new[] {
-                        9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016,
-                        9017, 9018, 9019
-                    }, randomPickCount: 10);
+                context.SpawnItemRange(rangeId: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019}, randomPickCount: 10);
             }
 
             public override void Execute() {

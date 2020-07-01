@@ -6,14 +6,12 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100070},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100070}, arg3: new byte[] {2})) {
                     context.State = new Statemonsterdel(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60100075},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60100075}, arg3: new byte[] {1})) {
                     context.State = new Statefadeout(context);
                     return;
                 }
@@ -46,13 +44,8 @@ namespace Maple2.Trigger._52000119_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {4020}, arg2: false);
-                context.DestroyMonster(arg1: new[] {
-                    901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920
-                });
-                context.DestroyMonster(arg1: new[] {921, 922, 923, 924, 925, 926, 927, 928, 929});
-                context.CreateMonster(arg1: new[] {106}, arg2: true);
-                context.CreateMonster(arg1: new[] {201, 202}, arg2: true);
-                context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306}, arg2: true);
+                context.DestroyMonster(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929});
+                context.CreateMonster(arg1: new[] {106, 201, 202, 301, 302, 303, 304, 305, 306}, arg2: true);
                 context.MoveUser(arg1: 52000119, arg2: 6001);
                 context.SetSceneSkip(arg1: "fadeout_01", arg2: "nextState");
             }
@@ -92,8 +85,7 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4021}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 105, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003169, illustId: "Jordy_normal", msg: "$52000119_QD__MAIN3__0$",
-                    duration: 3000, align: "Right");
+                context.AddCinematicTalk(npcId: 11003169, illustId: "Jordy_normal", msg: "$52000119_QD__MAIN3__0$", duration: 3000, align: "Right");
             }
 
             public override void Execute() {
@@ -261,10 +253,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4019}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
-                context.SetEffect(arg1: new[] {5004}, arg2: true);
-                context.SetEffect(arg1: new[] {5005}, arg2: true);
+                context.SetEffect(arg1: new[] {5002, 5003, 5004, 5005}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 106, arg2: "Bore_A");
                 context.AddCinematicTalk(npcId: 11003171, msg: "$52000119_QD__MAIN3__12$", duration: 4000);
             }
@@ -348,8 +337,7 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetEventUI(arg1: 1, arg2: "$52000119_QD__MAIN3__14$", arg3: 3000, arg4: "0");
-                context.AddBalloonTalk(spawnPointId: 999, msg: "$52000119_QD__MAIN3__15$", duration: 2000,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 999, msg: "$52000119_QD__MAIN3__15$", duration: 2000, delayTick: 0);
             }
 
             public override void Execute() {
@@ -367,12 +355,9 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 7002, arg2: false);
-                context.AddBalloonTalk(spawnPointId: 999, msg: "$52000119_QD__MAIN3__19$", duration: 2000,
-                    delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 306, msg: "$52000119_QD__MAIN3__20$", duration: 2000,
-                    delayTick: 1);
-                context.DestroyMonster(arg1: new[] {201, 202});
-                context.DestroyMonster(arg1: new[] {401, 402, 403, 404, 405, 406, 407});
+                context.AddBalloonTalk(spawnPointId: 999, msg: "$52000119_QD__MAIN3__19$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 306, msg: "$52000119_QD__MAIN3__20$", duration: 2000, delayTick: 1);
+                context.DestroyMonster(arg1: new[] {201, 202, 401, 402, 403, 404, 405, 406, 407});
                 context.SetAchievement(arg2: "trigger", arg3: "jordysave3");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
@@ -406,16 +391,12 @@ namespace Maple2.Trigger._52000119_qd {
             internal Statemonsterdel(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {
-                    901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920
-                });
-                context.DestroyMonster(arg1: new[] {921, 922, 923, 924, 925, 926, 927, 928, 929});
+                context.DestroyMonster(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929});
                 context.CreateMonster(arg1: new[] {401, 402, 403, 404, 405, 406, 407}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60100075},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60100075}, arg3: new byte[] {1})) {
                     context.State = new Stateready(context);
                     return;
                 }

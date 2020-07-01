@@ -4,8 +4,7 @@ namespace Maple2.Trigger._02000352_bf {
             internal State레버체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000823}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000824}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000823, 10000824}, arg2: 0);
             }
 
             public override void Execute() {

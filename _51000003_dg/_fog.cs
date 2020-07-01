@@ -4,11 +4,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetEffect(arg1: new[] {7002}, arg2: false);
-                context.SetEffect(arg1: new[] {7003}, arg2: false);
-                context.SetEffect(arg1: new[] {7004}, arg2: false);
-                context.SetEffect(arg1: new[] {7005}, arg2: false);
+                context.SetEffect(arg1: new[] {7001, 7002, 7003, 7004, 7005}, arg2: false);
                 context.SetEffect(arg1: new[] {7010}, arg2: true);
             }
 

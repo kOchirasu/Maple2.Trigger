@@ -39,8 +39,7 @@ namespace Maple2.Trigger._02000535_bf {
             internal State끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {5501, 5502, 5503, 5504, 5505, 5520, 5521, 5522, 5523, 5532});
-                context.DestroyMonster(arg1: new[] {501, 522, 532, 533, 534, 535, 536, 537, 538});
+                context.DestroyMonster(arg1: new[] {5501, 5502, 5503, 5504, 5505, 5520, 5521, 5522, 5523, 5532, 501, 522, 532, 533, 534, 535, 536, 537, 538});
             }
 
             public override void Execute() {

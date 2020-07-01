@@ -4,10 +4,8 @@ namespace Maple2.Trigger._02020062_bf {
             internal State발판초기화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008},
-                    arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: false);
+                context.SetBreakable(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: false);
                 context.SetUserValue(triggerId: 99990024, key: "MovePanel01", value: 0);
                 context.SetInteractObject(arg1: new[] {12000115}, arg2: 2);
             }
@@ -43,22 +41,19 @@ namespace Maple2.Trigger._02020062_bf {
             internal State발판이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: true);
                 context.SetInteractObject(arg1: new[] {12000115}, arg2: 2);
             }
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {9200})) {
-                    context.SetBreakable(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008},
-                        arg2: true);
+                    context.SetBreakable(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: true);
                     context.State = new State대기(context);
                     return;
                 }
 
                 if (context.UserDetected(arg1: new[] {9204})) {
-                    context.SetBreakable(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008},
-                        arg2: true);
+                    context.SetBreakable(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: true);
                     context.State = new State대기(context);
                     return;
                 }
@@ -74,8 +69,7 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void Execute() {
                 if (!context.UserDetected(arg1: new[] {9204})) {
-                    context.SetBreakable(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008},
-                        arg2: false);
+                    context.SetBreakable(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008}, arg2: false);
                     context.State = new State발판이동(context);
                     return;
                 }

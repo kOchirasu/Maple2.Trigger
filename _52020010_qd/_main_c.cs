@@ -6,32 +6,27 @@ namespace Maple2.Trigger._52020010_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200055},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200055}, arg3: new byte[] {2})) {
                     context.State = new StateActor_On(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200055},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200055}, arg3: new byte[] {3})) {
                     context.State = new StateActor_On(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060}, arg3: new byte[] {1})) {
                     context.State = new StateActor_On(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060}, arg3: new byte[] {2})) {
                     context.State = new StateActor_Off(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060}, arg3: new byte[] {3})) {
                     context.State = new StateActor_Off(context);
                     return;
                 }
@@ -48,14 +43,12 @@ namespace Maple2.Trigger._52020010_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060}, arg3: new byte[] {2})) {
                     context.State = new StateActor_Off(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060}, arg3: new byte[] {3})) {
                     context.State = new StateActor_Off(context);
                     return;
                 }
@@ -72,14 +65,12 @@ namespace Maple2.Trigger._52020010_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060}, arg3: new byte[] {2})) {
                     context.State = new StateActor_Off(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2007}, arg2: new[] {60200060}, arg3: new byte[] {2})) {
                     context.State = new StateActor_Off(context);
                     return;
                 }

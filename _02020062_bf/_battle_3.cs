@@ -30,8 +30,7 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000,
-                        script: "$02020062_BF__BATTLE_3__0$");
+                    context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020062_BF__BATTLE_3__0$");
                     context.State = new State보스랜덤픽(context);
                     return;
                 }
@@ -85,8 +84,7 @@ namespace Maple2.Trigger._02020062_bf {
                     return;
                 }
 
-                if (context.GetUserValue(key: "ObjectStart") == 2
-                    && context.NpcDetected(arg1: 9099, arg2: new[] {921})) {
+                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {921})) {
                     context.State = new State보스_무적페이즈(context);
                     return;
                 }
@@ -113,8 +111,7 @@ namespace Maple2.Trigger._02020062_bf {
                     return;
                 }
 
-                if (context.GetUserValue(key: "ObjectStart") == 2
-                    && context.NpcDetected(arg1: 9099, arg2: new[] {922})) {
+                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {922})) {
                     context.State = new State보스_무적페이즈(context);
                     return;
                 }
@@ -141,8 +138,7 @@ namespace Maple2.Trigger._02020062_bf {
                     return;
                 }
 
-                if (context.GetUserValue(key: "ObjectStart") == 2
-                    && context.NpcDetected(arg1: 9099, arg2: new[] {923})) {
+                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {923})) {
                     context.State = new State보스_무적페이즈(context);
                     return;
                 }
@@ -156,8 +152,7 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02020062_BF__BATTLE_3__2$", arg3: 5000);
-                context.CreateMonster(arg1: new[] {711, 712, 713}, arg2: false);
-                context.CreateMonster(arg1: new[] {811, 812, 821, 822, 831, 832}, arg2: false);
+                context.CreateMonster(arg1: new[] {711, 712, 713, 811, 812, 821, 822, 831, 832}, arg2: false);
                 context.SetUserValue(triggerId: 99990009, key: "BossObjectStart", value: 1);
                 context.SetUserValue(triggerId: 99990010, key: "BossObjectStart", value: 1);
                 context.SetUserValue(triggerId: 99990011, key: "BossObjectStart", value: 1);
@@ -170,9 +165,7 @@ namespace Maple2.Trigger._02020062_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})
-                    && context.MonsterDead(arg1: new[] {922})
-                    && context.MonsterDead(arg1: new[] {923})) {
+                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923})) {
                     context.State = new State보스군단_클리어(context);
                     return;
                 }
@@ -190,8 +183,7 @@ namespace Maple2.Trigger._02020062_bf {
             internal State보스_추가대사1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000,
-                    script: "$02020062_BF__BATTLE_3__1$");
+                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020062_BF__BATTLE_3__1$");
             }
 
             public override void Execute() {
@@ -200,9 +192,7 @@ namespace Maple2.Trigger._02020062_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})
-                    && context.MonsterDead(arg1: new[] {922})
-                    && context.MonsterDead(arg1: new[] {923})) {
+                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923})) {
                     context.State = new State보스군단_클리어(context);
                     return;
                 }
@@ -220,8 +210,7 @@ namespace Maple2.Trigger._02020062_bf {
             internal State보스_추가대사2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000,
-                    script: "$02020062_BF__BATTLE_3__3$");
+                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020062_BF__BATTLE_3__3$");
             }
 
             public override void Execute() {
@@ -230,9 +219,7 @@ namespace Maple2.Trigger._02020062_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})
-                    && context.MonsterDead(arg1: new[] {922})
-                    && context.MonsterDead(arg1: new[] {923})) {
+                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923})) {
                     context.State = new State보스군단_클리어(context);
                     return;
                 }

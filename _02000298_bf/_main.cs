@@ -16,8 +16,7 @@ namespace Maple2.Trigger._02000298_bf {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -167,8 +166,7 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 5f);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                 context.SetMesh(arg1: new[] {3221, 3222, 3223}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 

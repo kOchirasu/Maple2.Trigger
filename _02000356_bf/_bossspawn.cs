@@ -7,16 +7,12 @@ namespace Maple2.Trigger._02000356_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(
-                    arg1: new[]
-                        {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013},
-                    arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -28,11 +24,7 @@ namespace Maple2.Trigger._02000356_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(
-                    arg1: new[] {
-                        1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1010, 1011, 1012, 1013, 1014, 1015,
-                        1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030
-                    }, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000259, 10000260, 10000261}, arg2: 1);
             }
 
@@ -50,10 +42,7 @@ namespace Maple2.Trigger._02000356_bf {
             internal State카메라이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[]
-                        {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.AddBuff(arg1: new[] {102}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.ShowGuideSummary(entityId: 20003563, textId: 20003563, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");

@@ -5,8 +5,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6603, 6604}, arg2: false);
-                context.SetMesh(arg1: new[] {1511, 1512, 1513, 1514, 1515, 1516, 1517, 1518, 1519, 1520},
-                    arg2: true, arg3: 0, arg4: 1000, arg5: 0f);
+                context.SetMesh(arg1: new[] {1511, 1512, 1513, 1514, 1515, 1516, 1517, 1518, 1519, 1520}, arg2: true, arg3: 0, arg4: 1000, arg5: 0f);
                 context.SetMesh(arg1: new[] {19992}, arg2: true);
             }
 
@@ -55,8 +54,7 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
                 context.ShowGuideSummary(entityId: 102, textId: 40011);
                 context.SetMesh(arg1: new[] {19992}, arg2: false);
-                context.SetMesh(arg1: new[] {1511, 1512, 1513, 1514, 1515, 1516, 1517, 1518, 1519, 1520},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {1511, 1512, 1513, 1514, 1515, 1516, 1517, 1518, 1519, 1520}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
             }
 
             public override void Execute() {

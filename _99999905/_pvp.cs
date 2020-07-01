@@ -5,8 +5,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "30", arg2: 30, arg3: false);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 4001, 4002, 4003}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 4001, 4002, 4003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -29,8 +28,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1, arg3: false);
-                context.SetPvpZone(arg1: 104, arg2: 3, arg3: 600, arg4: 90001002, arg5: 3,
-                    arg6: new byte[] {1, 2, 101, 102, 103});
+                context.SetPvpZone(arg1: 104, arg2: 3, arg3: 600, arg4: 90001002, arg5: 3, arg6: new byte[] {1, 2, 101, 102, 103});
             }
 
             public override void Execute() {
@@ -122,8 +120,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {105})) {
-                    context.SetMesh(arg1: new[] {3001, 3002, 3003, 4001, 4002, 4003}, arg2: false, arg3: 0, arg4: 0,
-                        arg5: 0f);
+                    context.SetMesh(arg1: new[] {3001, 3002, 3003, 4001, 4002, 4003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StatePvP종료(context);
                     return;
                 }

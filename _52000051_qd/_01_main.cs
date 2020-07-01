@@ -4,21 +4,13 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3500, 3501}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3010, 3011, 3012, 3013}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3014}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3030}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3500, 3501, 3010, 3011, 3012, 3013, 3014, 3030}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 4001, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 4002, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 4000, arg2: true, arg3: "or_fi_struc_stonegate_A01_off");
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetAgent(arg1: "8000", arg2: true);
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
+                context.SetEffect(arg1: new[] {5000, 5001, 5004}, arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003}, arg2: true);
                 context.SetUserValue(key: "FindLotus", value: 0);
                 context.SetUserValue(key: "PuzzleSolved", value: 0);
                 context.SetUserValue(key: "PatrolEnd", value: 0);
@@ -59,16 +51,8 @@ namespace Maple2.Trigger._52000051_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 600, arg2: true);
-                context.CreateMonster(
-                    arg1: new[] {
-                        800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818,
-                        819, 820, 821, 822, 823, 824, 825, 826
-                    }, arg2: false);
-                context.CreateMonster(
-                    arg1: new[] {
-                        950, 951, 952, 953, 955, 956, 957, 958, 959, 962, 963, 964, 967, 970, 974, 975, 976, 977, 978,
-                        980, 981, 982
-                    }, arg2: false);
+                context.CreateMonster(arg1: new[] {800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826}, arg2: false);
+                context.CreateMonster(arg1: new[] {950, 951, 952, 953, 955, 956, 957, 958, 959, 962, 963, 964, 967, 970, 974, 975, 976, 977, 978, 980, 981, 982}, arg2: false);
             }
 
             public override void Execute() {
@@ -368,8 +352,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateNpcChange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {101, 201});
-                context.DestroyMonster(arg1: new[] {102, 202});
+                context.DestroyMonster(arg1: new[] {101, 201, 102, 202});
                 context.CreateMonster(arg1: new[] {105, 205}, arg2: false);
             }
 
@@ -387,9 +370,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateNpcChange02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {101, 201});
-                context.DestroyMonster(arg1: new[] {102, 202});
-                context.DestroyMonster(arg1: new[] {103, 203});
+                context.DestroyMonster(arg1: new[] {101, 201, 102, 202, 103, 203});
                 context.CreateMonster(arg1: new[] {105, 205}, arg2: false);
                 context.RemoveBalloonTalk(spawnPointId: 203);
                 context.RemoveBalloonTalk(spawnPointId: 103);
@@ -409,8 +390,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateFoundTotem01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {101, 201});
-                context.DestroyMonster(arg1: new[] {102, 202});
+                context.DestroyMonster(arg1: new[] {101, 201, 102, 202});
                 context.CreateMonster(arg1: new[] {103, 203}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 203, arg3: "$02000376_BF__01_MAIN__3$", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 103, arg3: "$02000376_BF__01_MAIN__4$", arg4: 3, arg5: 2);
@@ -444,9 +424,7 @@ namespace Maple2.Trigger._52000051_qd {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {101, 201});
-                context.DestroyMonster(arg1: new[] {102, 202});
-                context.DestroyMonster(arg1: new[] {103, 203});
+                context.DestroyMonster(arg1: new[] {101, 201, 102, 202, 103, 203});
                 context.CreateMonster(arg1: new[] {105, 205}, arg2: false);
                 context.RemoveBalloonTalk(spawnPointId: 203);
                 context.RemoveBalloonTalk(spawnPointId: 103);
@@ -544,10 +522,7 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetActor(arg1: 4002, arg2: true, arg3: "Opened");
                 context.SetActor(arg1: 4001, arg2: true, arg3: "Opened");
                 context.SetEffect(arg1: new[] {5004}, arg2: true);
-                context.SetAgent(arg1: "8000", arg2: false);
-                context.SetAgent(arg1: "8001", arg2: false);
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003}, arg2: false);
             }
 
             public override void Execute() {
@@ -658,10 +633,7 @@ namespace Maple2.Trigger._52000051_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    901, 902, 903, 904, 905, 906, 907, 908, 911, 912, 913, 914, 915, 916, 917, 918, 921, 922, 923, 924,
-                    925, 926, 927, 928, 931, 932, 933, 934, 935, 936, 937, 938
-                })) {
+                if (context.MonsterDead(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 911, 912, 913, 914, 915, 916, 917, 918, 921, 922, 923, 924, 925, 926, 927, 928, 931, 932, 933, 934, 935, 936, 937, 938})) {
                     context.State = new StateStartPuzzle01(context);
                     return;
                 }

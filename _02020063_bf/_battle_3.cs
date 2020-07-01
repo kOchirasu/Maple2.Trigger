@@ -57,8 +57,7 @@ namespace Maple2.Trigger._02020063_bf {
                     return;
                 }
 
-                if (context.GetUserValue(key: "ObjectStart") == 2
-                    && context.NpcDetected(arg1: 9099, arg2: new[] {921})) {
+                if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {921})) {
                     context.State = new State보스_무적페이즈(context);
                     return;
                 }
@@ -105,8 +104,7 @@ namespace Maple2.Trigger._02020063_bf {
             internal State보스_추가대사1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000,
-                    script: "$02020063_BF__BATTLE_3__2$");
+                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020063_BF__BATTLE_3__2$");
             }
 
             public override void Execute() {
@@ -133,8 +131,7 @@ namespace Maple2.Trigger._02020063_bf {
             internal State보스_추가대사2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000,
-                    script: "$02020063_BF__BATTLE_3__3$");
+                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020063_BF__BATTLE_3__3$");
             }
 
             public override void Execute() {

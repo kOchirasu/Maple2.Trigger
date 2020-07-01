@@ -4,38 +4,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {110, 111, 112, 113, 114, 115}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {120, 121, 122, 123, 124, 125}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {130, 131, 132, 133, 134, 135}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {140, 141, 142, 143, 144, 145}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {210, 211, 212, 213, 214, 215}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {220, 221, 222, 223, 224, 225}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {230, 231, 232, 233, 234, 235}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {240, 241, 242, 243, 244, 245}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {310, 311, 312, 313, 314, 315}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {320, 321, 322, 323, 324, 325}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {330, 331, 332, 333, 334, 335}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {340, 341, 342, 343, 344, 345}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {410, 411, 412, 413, 414, 415}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {420, 421, 422, 423, 424, 425}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {430, 431, 432, 433, 434, 435}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {440, 441, 442, 443, 444, 445}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {110, 111, 112, 113, 114, 115, 120, 121, 122, 123, 124, 125, 130, 131, 132, 133, 134, 135, 140, 141, 142, 143, 144, 145, 210, 211, 212, 213, 214, 215, 220, 221, 222, 223, 224, 225, 230, 231, 232, 233, 234, 235, 240, 241, 242, 243, 244, 245, 310, 311, 312, 313, 314, 315, 320, 321, 322, 323, 324, 325, 330, 331, 332, 333, 334, 335, 340, 341, 342, 343, 344, 345, 410, 411, 412, 413, 414, 415, 420, 421, 422, 423, 424, 425, 430, 431, 432, 433, 434, 435, 440, 441, 442, 443, 444, 445}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

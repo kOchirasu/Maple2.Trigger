@@ -12,14 +12,12 @@ namespace Maple2.Trigger._63000039_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {40002641},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {40002641}, arg3: new byte[] {1})) {
                     context.State = new StateNPC말풍선(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {40002641},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {40002641}, arg3: new byte[] {2})) {
                     context.State = new State유저이동(context);
                     return;
                 }
@@ -134,8 +132,7 @@ namespace Maple2.Trigger._63000039_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {40002641},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {40002641}, arg3: new byte[] {2})) {
                     context.State = new State유저이동(context);
                     return;
                 }

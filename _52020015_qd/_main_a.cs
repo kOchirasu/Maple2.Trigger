@@ -4,21 +4,11 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetEffect(arg1: new[] {5005}, arg2: false);
-                context.SetEffect(arg1: new[] {5006}, arg2: false);
-                context.SetEffect(arg1: new[] {5007}, arg2: false);
-                context.SetEffect(arg1: new[] {5008}, arg2: false);
-                context.SetEffect(arg1: new[] {5100}, arg2: false);
-                context.SetEffect(arg1: new[] {5101}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5100, 5101}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200095},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200095}, arg3: new byte[] {1})) {
                     context.State = new StateReady(context);
                     return;
                 }
@@ -31,19 +21,11 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101}, arg2: true);
-                context.CreateMonster(arg1: new[] {102}, arg2: true);
-                context.CreateMonster(arg1: new[] {103}, arg2: true);
-                context.CreateMonster(arg1: new[] {104}, arg2: true);
-                context.CreateMonster(arg1: new[] {105}, arg2: true);
-                context.CreateMonster(arg1: new[] {106}, arg2: true);
-                context.CreateMonster(arg1: new[] {107}, arg2: true);
-                context.CreateMonster(arg1: new[] {108}, arg2: true);
+                context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60200095},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60200095}, arg3: new byte[] {1})) {
                     context.State = new StateScene_Ready(context);
                     return;
                 }
@@ -91,8 +73,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5100}, arg2: true);
-                context.SetEffect(arg1: new[] {5101}, arg2: true);
+                context.SetEffect(arg1: new[] {5100, 5101}, arg2: true);
             }
 
             public override void Execute() {
@@ -236,9 +217,7 @@ namespace Maple2.Trigger._52020015_qd {
                 context.ChangeMonster(arg1: 101, arg2: 201);
                 context.ChangeMonster(arg1: 102, arg2: 202);
                 context.ChangeMonster(arg1: 103, arg2: 203);
-                context.SetEffect(arg1: new[] {5006}, arg2: true);
-                context.SetEffect(arg1: new[] {5007}, arg2: true);
-                context.SetEffect(arg1: new[] {5008}, arg2: true);
+                context.SetEffect(arg1: new[] {5006, 5007, 5008}, arg2: true);
             }
 
             public override void Execute() {
@@ -279,11 +258,7 @@ namespace Maple2.Trigger._52020015_qd {
                 context.ChangeMonster(arg1: 106, arg2: 206);
                 context.ChangeMonster(arg1: 107, arg2: 207);
                 context.ChangeMonster(arg1: 108, arg2: 208);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
-                context.SetEffect(arg1: new[] {5004}, arg2: true);
-                context.SetEffect(arg1: new[] {5005}, arg2: true);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005}, arg2: true);
             }
 
             public override void Execute() {
@@ -318,8 +293,7 @@ namespace Maple2.Trigger._52020015_qd {
             internal StateScene_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5100}, arg2: false);
-                context.SetEffect(arg1: new[] {5101}, arg2: false);
+                context.SetEffect(arg1: new[] {5100, 5101}, arg2: false);
                 context.SetSceneSkip();
             }
 

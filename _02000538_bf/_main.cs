@@ -5,11 +5,7 @@ namespace Maple2.Trigger._02000538_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {5000}, arg2: false);
-                context.SetSkill(arg1: new[] {9001}, arg2: false);
-                context.SetSkill(arg1: new[] {9002}, arg2: false);
-                context.SetSkill(arg1: new[] {9003}, arg2: false);
-                context.SetSkill(arg1: new[] {9004}, arg2: false);
-                context.SetSkill(arg1: new[] {9005}, arg2: false);
+                context.SetSkill(arg1: new[] {9001, 9002, 9003, 9004, 9005}, arg2: false);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 2, isEnable: false);
@@ -56,8 +52,7 @@ namespace Maple2.Trigger._02000538_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {108});
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
-                    script: "$02000538_BF__MAIN__1$");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "$02000538_BF__MAIN__1$");
                 context.CreateMonster(arg1: new[] {101, 1011, 1012, 1013, 1014}, arg2: true);
             }
 
@@ -76,8 +71,7 @@ namespace Maple2.Trigger._02000538_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1081}, arg2: true);
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
-                    script: "$02000538_BF__MAIN__2$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "$02000538_BF__MAIN__2$");
                 context.CreateMonster(arg1: new[] {1015, 1016, 1017}, arg2: true);
             }
 
@@ -96,8 +90,7 @@ namespace Maple2.Trigger._02000538_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {102, 1021, 1022}, arg2: true);
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
-                    script: "$02000538_BF__MAIN__3$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "$02000538_BF__MAIN__3$");
             }
 
             public override void Execute() {
@@ -120,8 +113,7 @@ namespace Maple2.Trigger._02000538_bf {
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: true);
                 context.CreateMonster(arg1: new[] {1023, 1024}, arg2: true);
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
-                    script: "$02000538_BF__MAIN__4$");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "$02000538_BF__MAIN__4$");
             }
 
             public override void Execute() {
@@ -139,8 +131,7 @@ namespace Maple2.Trigger._02000538_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {103, 1031, 1032, 1033}, arg2: true);
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
-                    script: "$02000538_BF__MAIN__5$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "$02000538_BF__MAIN__5$");
             }
 
             public override void Execute() {
@@ -172,8 +163,7 @@ namespace Maple2.Trigger._02000538_bf {
             internal State몬스터추가생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
-                    script: "$02000538_BF__MAIN__6$");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "$02000538_BF__MAIN__6$");
                 context.CreateMonster(arg1: new[] {104, 1041, 1042, 1043, 1044}, arg2: true);
             }
 
@@ -210,8 +200,7 @@ namespace Maple2.Trigger._02000538_bf {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetSkill(arg1: new[] {9003}, arg2: true);
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
-                    script: "$02000538_BF__MAIN__7$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "$02000538_BF__MAIN__7$");
             }
 
             public override void Execute() {
@@ -283,8 +272,7 @@ namespace Maple2.Trigger._02000538_bf {
             internal State마지막전투판파괴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
-                    script: "$02000538_BF__MAIN__8$");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "$02000538_BF__MAIN__8$");
                 context.LockMyPc(isLock: true);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                 context.SetOnetimeEffect(id: 105, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -306,18 +294,7 @@ namespace Maple2.Trigger._02000538_bf {
             public override void OnEnter() {
                 context.LockMyPc(isLock: false);
                 context.SetSkill(arg1: new[] {9005}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
-                        620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638,
-                        639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657,
-                        658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676,
-                        677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695,
-                        696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714,
-                        715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733,
-                        734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752,
-                        753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767
-                    }, arg2: false);
+                context.SetMesh(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767}, arg2: false);
             }
 
             public override void Execute() { }

@@ -4,11 +4,7 @@ namespace Maple2.Trigger._80000019_bonus {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        10000549, 10000550, 10000551, 10000552, 10000553, 10000554, 10000555, 10000556, 10000557,
-                        10000558, 10000559, 10000560, 10000561, 10000562, 10000563
-                    }, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {10000549, 10000550, 10000551, 10000552, 10000553, 10000554, 10000555, 10000556, 10000557, 10000558, 10000559, 10000560, 10000561, 10000562, 10000563}, isStart: false);
             }
 
             public override void Execute() {
@@ -25,11 +21,7 @@ namespace Maple2.Trigger._80000019_bonus {
             internal StateSpawnOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        10000549, 10000550, 10000551, 10000552, 10000553, 10000554, 10000555, 10000556, 10000557,
-                        10000558, 10000559, 10000560, 10000561, 10000562, 10000563
-                    }, isStart: true);
+                context.StartCombineSpawn(groupId: new[] {10000549, 10000550, 10000551, 10000552, 10000553, 10000554, 10000555, 10000556, 10000557, 10000558, 10000559, 10000560, 10000561, 10000562, 10000563}, isStart: true);
             }
 
             public override void Execute() {
@@ -46,11 +38,7 @@ namespace Maple2.Trigger._80000019_bonus {
             internal StateSpawnOff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        10000549, 10000550, 10000551, 10000552, 10000553, 10000554, 10000555, 10000556, 10000557,
-                        10000558, 10000559, 10000560, 10000561, 10000562, 10000563
-                    }, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {10000549, 10000550, 10000551, 10000552, 10000553, 10000554, 10000555, 10000556, 10000557, 10000558, 10000559, 10000560, 10000561, 10000562, 10000563}, isStart: false);
             }
 
             public override void Execute() { }

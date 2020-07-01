@@ -4,19 +4,13 @@ namespace Maple2.Trigger._52020030_qd {
             internal State입장1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetEffect(arg1: new[] {5007}, arg2: false);
-                context.SetEffect(arg1: new[] {5006}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5007, 5006}, arg2: false);
                 context.SetOnetimeEffect(id: 300, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetOnetimeEffect(id: 301, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2003}, arg2: new[] {30000335},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2003}, arg2: new[] {30000335}, arg3: new byte[] {1})) {
                     context.State = new State투르카이오네연출시작(context);
                     return;
                 }
@@ -53,10 +47,8 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.CreateMonster(arg1: new[] {103}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
+                context.CreateMonster(arg1: new[] {102, 103}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: true);
             }
 
             public override void Execute() {
@@ -362,8 +354,7 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4034}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Quest_Resonance_A", arg3: 1200000000f);
-                context.SetEffect(arg1: new[] {5004}, arg2: true);
-                context.SetEffect(arg1: new[] {5007}, arg2: true);
+                context.SetEffect(arg1: new[] {5004, 5007}, arg2: true);
             }
 
             public override void Execute() {
@@ -425,8 +416,7 @@ namespace Maple2.Trigger._52020030_qd {
                 context.SetNpcEmotionSequence(arg1: 104, arg2: "Attack_02_C");
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetOnetimeEffect(id: 300, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.AddCinematicTalk(npcId: 11003762, msg: @"너 따위는 내가 직접 나설 것도 없지.\n이 곳에서 영원히 잠들어라.",
-                    duration: 3000);
+                context.AddCinematicTalk(npcId: 11003762, msg: @"너 따위는 내가 직접 나설 것도 없지.\n이 곳에서 영원히 잠들어라.", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003762, msg: "나와라. 어둠의 그림자들이여...", duration: 3000);
             }
 
@@ -448,20 +438,7 @@ namespace Maple2.Trigger._52020030_qd {
                 context.CameraSelectPath(arg1: new[] {4032, 4033}, arg2: false);
                 context.SetEffect(arg1: new[] {5003}, arg2: true);
                 context.SetNpcEmotionLoop(arg1: 104, arg2: "Bore_A", arg3: 100000f);
-                context.CreateMonster(arg1: new[] {501}, arg2: true);
-                context.CreateMonster(arg1: new[] {502}, arg2: true);
-                context.CreateMonster(arg1: new[] {503}, arg2: true);
-                context.CreateMonster(arg1: new[] {504}, arg2: true);
-                context.CreateMonster(arg1: new[] {505}, arg2: true);
-                context.CreateMonster(arg1: new[] {506}, arg2: true);
-                context.CreateMonster(arg1: new[] {507}, arg2: true);
-                context.CreateMonster(arg1: new[] {508}, arg2: true);
-                context.CreateMonster(arg1: new[] {509}, arg2: true);
-                context.CreateMonster(arg1: new[] {510}, arg2: true);
-                context.CreateMonster(arg1: new[] {511}, arg2: true);
-                context.CreateMonster(arg1: new[] {512}, arg2: true);
-                context.CreateMonster(arg1: new[] {513}, arg2: true);
-                context.CreateMonster(arg1: new[] {514}, arg2: true);
+                context.CreateMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514}, arg2: true);
             }
 
             public override void Execute() {
@@ -509,8 +486,7 @@ namespace Maple2.Trigger._52020030_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[]
-                    {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514})) {
+                if (context.MonsterDead(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514})) {
                     context.State = new State공명완료(context);
                     return;
                 }
@@ -625,12 +601,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 6, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CreateMonster(arg1: new[] {107}, arg2: false);
-                context.DestroyMonster(arg1: new[] {102});
-                context.DestroyMonster(arg1: new[] {103});
-                context.DestroyMonster(arg1: new[] {110});
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetEffect(arg1: new[] {5005}, arg2: true);
+                context.DestroyMonster(arg1: new[] {102, 103, 110});
+                context.SetEffect(arg1: new[] {5001, 5002, 5005}, arg2: true);
                 context.MoveUser(arg1: 52020030, arg2: 6005);
             }
 
@@ -673,8 +645,7 @@ namespace Maple2.Trigger._52020030_qd {
                 context.CameraSelectPath(arg1: new[] {4017}, arg2: false);
                 context.MoveNpc(arg1: 107, arg2: "MS2PatrolData_3002");
                 context.AddCinematicTalk(npcId: 11003753, msg: "자네... 무사했군....", duration: 3000);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
             }
 
             public override void Execute() {

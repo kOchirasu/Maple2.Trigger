@@ -4,21 +4,9 @@ namespace Maple2.Trigger._02000350_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {610}, arg2: false);
-                context.SetEffect(arg1: new[] {620}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {6110}, arg2: false);
-                context.SetEffect(arg1: new[] {6111}, arg2: false);
-                context.SetEffect(arg1: new[] {6112}, arg2: false);
-                context.SetEffect(arg1: new[] {6113}, arg2: false);
-                context.SetEffect(arg1: new[] {6201}, arg2: false);
+                context.SetEffect(arg1: new[] {610, 620, 603, 6110, 6111, 6112, 6113, 6201}, arg2: false);
                 context.SetSkill(arg1: new[] {703}, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216,
-                        3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232,
-                        3233, 3234, 3235
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232, 3233, 3234, 3235}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -55,8 +43,7 @@ namespace Maple2.Trigger._02000350_bf {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000350_BF__MAIN_2__0$", arg3: 4000, arg4: "0");
-                context.DarkStream(type: "SpawnMonster", spawnId: new[] {106001, 106002, 106003, 106004, 106005},
-                    score: 18000);
+                context.DarkStream(type: "SpawnMonster", spawnId: new[] {106001, 106002, 106003, 106004, 106005}, score: 18000);
             }
 
             public override void Execute() {
@@ -94,8 +81,7 @@ namespace Maple2.Trigger._02000350_bf {
             internal State7라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DarkStream(type: "SpawnMonster", spawnId: new[] {107001, 107002, 107003, 107004, 107005},
-                    score: 22000);
+                context.DarkStream(type: "SpawnMonster", spawnId: new[] {107001, 107002, 107003, 107004, 107005}, score: 22000);
             }
 
             public override void Execute() {
@@ -175,8 +161,7 @@ namespace Maple2.Trigger._02000350_bf {
             internal State9라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DarkStream(type: "SpawnMonster", spawnId: new[] {109001, 109002, 109003, 109004},
-                    score: 65000);
+                context.DarkStream(type: "SpawnMonster", spawnId: new[] {109001, 109002, 109003, 109004}, score: 65000);
             }
 
             public override void Execute() {
@@ -242,12 +227,7 @@ namespace Maple2.Trigger._02000350_bf {
                 if (context.TimeExpired(arg1: "3")) {
                     context.SetEffect(arg1: new[] {620}, arg2: true);
                     context.SetSkill(arg1: new[] {703}, arg2: true);
-                    context.SetMesh(
-                        arg1: new[] {
-                            3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215,
-                            3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230,
-                            3231, 3232, 3233, 3234, 3235
-                        }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232, 3233, 3234, 3235}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.SetEventUI(arg1: 0, arg2: "0,0");
                     context.State = new State종료(context);
                     return;

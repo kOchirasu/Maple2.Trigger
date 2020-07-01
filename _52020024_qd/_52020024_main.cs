@@ -10,14 +10,10 @@ namespace Maple2.Trigger._52020024_qd {
                 context.SetActor(arg1: 10001, arg2: true, arg3: "ks_quest_movewall_A02_off");
                 context.SetActor(arg1: 10002, arg2: true, arg3: "ks_quest_movewall_A02_off");
                 context.SetActor(arg1: 10003, arg2: true, arg3: "ks_quest_fusiondevice_A01_off");
-                context.SetMesh(arg1: new[] {1001}, arg2: true);
-                context.SetMesh(arg1: new[] {2001}, arg2: true);
+                context.SetMesh(arg1: new[] {1001, 2001}, arg2: true);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetInteractObject(arg1: new[] {10002006}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10002007}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10002008}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10002009}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002006, 10002007, 10002008, 10002009}, arg2: 2);
             }
 
             public override void Execute() {

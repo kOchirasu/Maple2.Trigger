@@ -53,8 +53,7 @@ namespace Maple2.Trigger._65000003_bd {
                 context.SetTimer(arg1: "1", arg2: 1, arg3: false);
                 context.SetAchievement(arg1: 104, arg2: "trigger", arg3: "dailyquest_start");
                 context.GiveGuildExp(boxId: false, type: 2);
-                context.SetPvpZone(arg1: 104, arg2: 3, arg3: 600, arg4: 90001002, arg5: 3,
-                    arg6: new byte[] {1, 2, 101, 102, 103});
+                context.SetPvpZone(arg1: 104, arg2: 3, arg3: 600, arg4: 90001002, arg5: 3, arg6: new byte[] {1, 2, 101, 102, 103});
             }
 
             public override void Execute() {

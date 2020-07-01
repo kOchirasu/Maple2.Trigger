@@ -4,11 +4,7 @@ namespace Maple2.Trigger._82000000_survival {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        10000330, 10000331, 10000332, 10000333, 10000334, 10000335, 10000336, 10000337, 10000338,
-                        10000339, 10000340, 10000341
-                    }, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {10000330, 10000331, 10000332, 10000333, 10000334, 10000335, 10000336, 10000337, 10000338, 10000339, 10000340, 10000341}, isStart: false);
                 context.SetUserValue(key: "BattleRidingOnCount", value: 0);
                 context.SetUserValue(key: "BattleRidingOff", value: 0);
             }
@@ -267,11 +263,8 @@ namespace Maple2.Trigger._82000000_survival {
             internal StateRidingSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {10000330, 10000331, 10000332, 10000333, 10000334, 10000335, 10000336, 10000337},
-                    isStart: true);
-                context.SideNpcTalk(npcId: 23000110, illust: "Mushking_normal", duration: 5000,
-                    script: "$82000000_survival__10_RIdINGBATTLE__0$");
+                context.StartCombineSpawn(groupId: new[] {10000330, 10000331, 10000332, 10000333, 10000334, 10000335, 10000336, 10000337}, isStart: true);
+                context.SideNpcTalk(npcId: 23000110, illust: "Mushking_normal", duration: 5000, script: "$82000000_survival__10_RIdINGBATTLE__0$");
             }
 
             public override void Execute() {
@@ -523,11 +516,7 @@ namespace Maple2.Trigger._82000000_survival {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        10000330, 10000331, 10000332, 10000333, 10000334, 10000335, 10000336, 10000337, 10000338,
-                        10000339, 10000340, 10000341
-                    }, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {10000330, 10000331, 10000332, 10000333, 10000334, 10000335, 10000336, 10000337, 10000338, 10000339, 10000340, 10000341}, isStart: false);
             }
 
             public override void Execute() { }

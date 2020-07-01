@@ -5,22 +5,12 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1003, 2003});
-                context.SetAgent(arg1: "9000", arg2: false);
-                context.SetAgent(arg1: "9001", arg2: false);
-                context.SetAgent(arg1: "9002", arg2: false);
-                context.SetAgent(arg1: "9003", arg2: false);
-                context.SetAgent(arg1: "9004", arg2: false);
-                context.SetAgent(arg1: "9005", arg2: false);
-                context.SetAgent(arg1: "9006", arg2: false);
-                context.SetAgent(arg1: "9007", arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {605}, arg2: false);
+                context.SetAgent(arg1: new[] {9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: false);
+                context.SetEffect(arg1: new[] {603, 604, 605}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001453},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001453}, arg3: new byte[] {1})) {
                     context.DestroyMonster(arg1: new[] {1003, 2003});
                     context.State = new State시작조건(context);
                     return;
@@ -35,11 +25,7 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1003, 2003}, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
-                        3016, 3017
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10001020}, arg2: 2);
                 context.SetInteractObject(arg1: new[] {10001021}, arg2: 1);
             }
@@ -58,14 +44,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "9000", arg2: true);
-                context.SetAgent(arg1: "9001", arg2: true);
-                context.SetAgent(arg1: "9002", arg2: true);
-                context.SetAgent(arg1: "9003", arg2: true);
-                context.SetAgent(arg1: "9004", arg2: true);
-                context.SetAgent(arg1: "9005", arg2: true);
-                context.SetAgent(arg1: "9006", arg2: true);
-                context.SetAgent(arg1: "9007", arg2: true);
+                context.SetAgent(arg1: new[] {9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {2100, 2101}, arg2: false);
@@ -240,14 +219,7 @@ namespace Maple2.Trigger._52000043_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1003, 2003});
                 context.CreateMonster(arg1: new[] {1004, 2004}, arg2: false);
-                context.SetAgent(arg1: "9000", arg2: false);
-                context.SetAgent(arg1: "9001", arg2: false);
-                context.SetAgent(arg1: "9002", arg2: false);
-                context.SetAgent(arg1: "9003", arg2: false);
-                context.SetAgent(arg1: "9004", arg2: false);
-                context.SetAgent(arg1: "9005", arg2: false);
-                context.SetAgent(arg1: "9006", arg2: false);
-                context.SetAgent(arg1: "9007", arg2: false);
+                context.SetAgent(arg1: new[] {9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 303, arg2: false);

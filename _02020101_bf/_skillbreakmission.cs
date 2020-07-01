@@ -21,8 +21,7 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.GetNpcExtraData(spawnPointId: 101, extraDataKey: "brokenShieldRemainTick") >= 8000
-                    && context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002171, level: 1)) {
+                if (context.GetNpcExtraData(spawnPointId: 101, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002171, level: 1)) {
                     context.State = new State던전미션_스킬브레이크저지_성공(context);
                     return;
                 }

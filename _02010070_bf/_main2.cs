@@ -4,10 +4,7 @@ namespace Maple2.Trigger._02010070_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {
-                    2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2100, 2101, 2102, 2103, 2104, 2105, 2106,
-                    2107, 2108
-                });
+                context.DestroyMonster(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108});
                 context.SetInteractObject(arg1: new[] {10000834}, arg2: 1);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
@@ -29,9 +26,7 @@ namespace Maple2.Trigger._02010070_bf {
             internal State대기시간안내01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108},
-                    arg2: false);
-                context.CreateMonster(arg1: new[] {22210, 22211, 22212, 22213}, arg2: false);
+                context.CreateMonster(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 22210, 22211, 22212, 22213}, arg2: false);
             }
 
             public override void Execute() {
@@ -180,8 +175,7 @@ namespace Maple2.Trigger._02010070_bf {
             internal State시작5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {70002}, arg2: true);
-                context.SetEffect(arg1: new[] {70003}, arg2: true);
+                context.SetEffect(arg1: new[] {70002, 70003}, arg2: true);
             }
 
             public override void Execute() {

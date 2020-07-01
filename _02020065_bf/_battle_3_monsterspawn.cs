@@ -10,8 +10,7 @@ namespace Maple2.Trigger._02020065_bf {
                 context.StartCombineSpawn(groupId: new[] {507}, isStart: false);
                 context.StartCombineSpawn(groupId: new[] {508}, isStart: false);
                 context.StartCombineSpawn(groupId: new[] {509}, isStart: false);
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.ResetTimer(arg1: "1");
                 context.ResetTimer(arg1: "2");
                 context.ResetTimer(arg1: "3");
@@ -33,8 +32,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override void OnEnter() {
                 context.ScoreBoardCreate(maxScore: 900);
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override void Execute() {
@@ -57,8 +55,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 60, arg3: true);
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.StartCombineSpawn(groupId: new[] {505}, isStart: true);
             }
 
@@ -81,8 +78,7 @@ namespace Maple2.Trigger._02020065_bf {
             internal State스폰_2_SE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override void Execute() {
@@ -105,8 +101,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 60, arg3: true);
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.StartCombineSpawn(groupId: new[] {506}, isStart: true);
             }
 
@@ -129,8 +124,7 @@ namespace Maple2.Trigger._02020065_bf {
             internal State스폰_3_SE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override void Execute() {
@@ -153,8 +147,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 60, arg3: true);
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.StartCombineSpawn(groupId: new[] {507}, isStart: true);
             }
 
@@ -177,8 +170,7 @@ namespace Maple2.Trigger._02020065_bf {
             internal State스폰_4_SE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override void Execute() {
@@ -201,8 +193,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "4", arg2: 60, arg3: true);
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.StartCombineSpawn(groupId: new[] {508}, isStart: true);
             }
 
@@ -225,8 +216,7 @@ namespace Maple2.Trigger._02020065_bf {
             internal State스폰_5_SE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
             public override void Execute() {
@@ -249,8 +239,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override void OnEnter() {
                 context.StartCombineSpawn(groupId: new[] {509}, isStart: true);
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.ScoreBoardRemove();
             }
 

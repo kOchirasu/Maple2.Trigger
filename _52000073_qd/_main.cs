@@ -8,8 +8,7 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100115},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100115}, arg3: new byte[] {1})) {
                     context.State = new State레논등장(context);
                     return;
                 }
@@ -367,8 +366,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcId: 11001024, msg: "$52000073_QD__MAIN__14$", duration: 3000,
-                    align: "center");
+                context.AddCinematicTalk(npcId: 11001024, msg: "$52000073_QD__MAIN__14$", duration: 3000, align: "center");
                 context.SetSceneSkip();
             }
 

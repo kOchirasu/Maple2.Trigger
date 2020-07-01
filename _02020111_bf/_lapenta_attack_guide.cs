@@ -6,11 +6,7 @@ namespace Maple2.Trigger._02020111_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(
-                    arg1: new[] {
-                        200001, 200002, 200003, 200004, 200005, 200011, 200012, 200013, 200014, 200015, 200021, 200022,
-                        200023, 200024, 200025, 200031, 200032, 200033, 200034, 200035
-                    }, arg2: false);
+                context.SetEffect(arg1: new[] {200001, 200002, 200003, 200004, 200005, 200011, 200012, 200013, 200014, 200015, 200021, 200022, 200023, 200024, 200025, 200031, 200032, 200033, 200034, 200035}, arg2: false);
                 context.SetAmbientLight(arg1: new Vector3(183f, 189f, 201f));
                 context.SetDirectionalLight(arg1: new Vector3(192f, 210f, 211f), arg2: new Vector3(170f, 170f, 170f));
             }
@@ -49,11 +45,7 @@ namespace Maple2.Trigger._02020111_bf {
             internal State가이드발동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(
-                    arg1: new[] {
-                        200001, 200002, 200003, 200004, 200005, 200011, 200012, 200013, 200014, 200015, 200021, 200022,
-                        200023, 200024, 200025, 200031, 200032, 200033, 200034, 200035
-                    }, arg2: true);
+                context.SetEffect(arg1: new[] {200001, 200002, 200003, 200004, 200005, 200011, 200012, 200013, 200014, 200015, 200021, 200022, 200023, 200024, 200025, 200031, 200032, 200033, 200034, 200035}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddBuff(arg1: new[] {1001}, arg2: 75000001, arg3: 1);
             }
@@ -72,11 +64,7 @@ namespace Maple2.Trigger._02020111_bf {
             internal State가이드종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(
-                    arg1: new[] {
-                        200001, 200002, 200003, 200004, 200005, 200011, 200012, 200013, 200014, 200015, 200021, 200022,
-                        200023, 200024, 200025, 200031, 200032, 200033, 200034, 200035
-                    }, arg2: false);
+                context.SetEffect(arg1: new[] {200001, 200002, 200003, 200004, 200005, 200011, 200012, 200013, 200014, 200015, 200021, 200022, 200023, 200024, 200025, 200031, 200032, 200033, 200034, 200035}, arg2: false);
             }
 
             public override void Execute() {

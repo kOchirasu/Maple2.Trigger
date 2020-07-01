@@ -87,14 +87,8 @@ namespace Maple2.Trigger._99999908 {
             internal Statebuff_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {
-                    101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120
-                });
-                context.SpawnNpcRange(
-                    rangeId: new[] {
-                        101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119,
-                        120
-                    }, isAutoTargeting: false, randomPickCount: 3, score: 100);
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120});
+                context.SpawnNpcRange(rangeId: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120}, isAutoTargeting: false, randomPickCount: 3, score: 100);
                 context.AddBuff(arg1: new[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
             }
 

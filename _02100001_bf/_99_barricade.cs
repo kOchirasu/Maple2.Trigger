@@ -8,10 +8,8 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetUserValue(key: "MissionStart", value: 0);
                 context.SetUserValue(key: "MissionComplete", value: 0);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Closed");
-                context.SetMesh(arg1: new[] {3100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3101, 3102, 3103}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
             }
 
             public override void Execute() {

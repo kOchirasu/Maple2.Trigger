@@ -4,12 +4,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {109}, arg2: true);
-                context.CreateMonster(arg1: new[] {110}, arg2: true);
-                context.CreateMonster(arg1: new[] {111}, arg2: true);
-                context.CreateMonster(arg1: new[] {112}, arg2: true);
-                context.CreateMonster(arg1: new[] {113}, arg2: true);
-                context.CreateMonster(arg1: new[] {114}, arg2: true);
+                context.CreateMonster(arg1: new[] {109, 110, 111, 112, 113, 114}, arg2: true);
             }
 
             public override void Execute() {
@@ -26,18 +21,8 @@ namespace Maple2.Trigger._63000076_cs {
             internal State1393화난요정_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {109});
-                context.DestroyMonster(arg1: new[] {110});
-                context.DestroyMonster(arg1: new[] {111});
-                context.DestroyMonster(arg1: new[] {112});
-                context.DestroyMonster(arg1: new[] {113});
-                context.DestroyMonster(arg1: new[] {114});
-                context.CreateMonster(arg1: new[] {209}, arg2: true);
-                context.CreateMonster(arg1: new[] {210}, arg2: true);
-                context.CreateMonster(arg1: new[] {211}, arg2: true);
-                context.CreateMonster(arg1: new[] {212}, arg2: true);
-                context.CreateMonster(arg1: new[] {213}, arg2: true);
-                context.CreateMonster(arg1: new[] {214}, arg2: true);
+                context.DestroyMonster(arg1: new[] {109, 110, 111, 112, 113, 114});
+                context.CreateMonster(arg1: new[] {209, 210, 211, 212, 213, 214}, arg2: true);
             }
 
             public override void Execute() {
@@ -69,12 +54,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State1393화난요정_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {109}, arg2: false);
-                context.CreateMonster(arg1: new[] {110}, arg2: false);
-                context.CreateMonster(arg1: new[] {111}, arg2: false);
-                context.CreateMonster(arg1: new[] {112}, arg2: false);
-                context.CreateMonster(arg1: new[] {113}, arg2: false);
-                context.CreateMonster(arg1: new[] {114}, arg2: false);
+                context.CreateMonster(arg1: new[] {109, 110, 111, 112, 113, 114}, arg2: false);
             }
 
             public override void Execute() {

@@ -24,8 +24,7 @@ namespace Maple2.Trigger._52000150_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001641},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001641}, arg3: new byte[] {2})) {
                     context.State = new State컨텐츠종료01(context);
                     return;
                 }
@@ -184,8 +183,7 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브5생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {600, 601, 602, 603, 604}, arg2: false);
-                context.CreateMonster(arg1: new[] {400, 401, 402, 403, 404}, arg2: false);
+                context.CreateMonster(arg1: new[] {600, 601, 602, 603, 604, 400, 401, 402, 403, 404}, arg2: false);
             }
 
             public override void Execute() {
@@ -221,8 +219,7 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브6생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {500, 501, 502, 503, 504}, arg2: false);
-                context.CreateMonster(arg1: new[] {300, 301, 302, 303, 304}, arg2: false);
+                context.CreateMonster(arg1: new[] {500, 501, 502, 503, 504, 300, 301, 302, 303, 304}, arg2: false);
             }
 
             public override void Execute() {
@@ -260,16 +257,11 @@ namespace Maple2.Trigger._52000150_qd {
             internal State웨이브7생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {300, 301, 302, 303, 304}, arg2: false);
-                context.CreateMonster(arg1: new[] {400, 401, 402, 403, 404}, arg2: false);
-                context.CreateMonster(arg1: new[] {500, 501, 502, 503, 504}, arg2: false);
-                context.CreateMonster(arg1: new[] {600, 601, 602, 603, 604}, arg2: false);
+                context.CreateMonster(arg1: new[] {300, 301, 302, 303, 304, 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 600, 601, 602, 603, 604}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    300, 301, 302, 303, 304, 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 600, 601, 602, 603, 604
-                })) {
+                if (context.MonsterDead(arg1: new[] {300, 301, 302, 303, 304, 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 600, 601, 602, 603, 604})) {
                     context.State = new State컨텐츠종료01(context);
                     return;
                 }
@@ -282,9 +274,7 @@ namespace Maple2.Trigger._52000150_qd {
             internal State컨텐츠종료01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {
-                    300, 301, 302, 303, 304, 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 600, 601, 602, 603, 604
-                });
+                context.DestroyMonster(arg1: new[] {300, 301, 302, 303, 304, 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 600, 601, 602, 603, 604});
                 context.SetProductionUI(arg1: 1);
                 context.SetTimeScale(enable: true, startScale: 0.1f, endScale: 0.5f, duration: 10.0f, interpolator: 1);
             }
@@ -303,8 +293,7 @@ namespace Maple2.Trigger._52000150_qd {
             internal State컨텐츠종료02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 20, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
+                context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
                 context.SetEffect(arg1: new[] {2607}, arg2: false);
                 context.DestroyMonster(arg1: new[] {700});
                 context.CreateMonster(arg1: new[] {202}, arg2: false);
@@ -328,8 +317,7 @@ namespace Maple2.Trigger._52000150_qd {
             internal State컨텐츠종료03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 20, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
+                context.SetOnetimeEffect(id: 20, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
                 context.SetUserValue(triggerId: 10000, key: "52000150monster", value: 0);
             }
 

@@ -6,8 +6,7 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {30000375},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {30000375}, arg3: new byte[] {1})) {
                     context.State = new State702잡담_01(context);
                     return;
                 }
@@ -20,8 +19,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State702잡담_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 103, msg: "$63000076_CS__63000076_CHAT_702__0$", duration: 2000,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 103, msg: "$63000076_CS__63000076_CHAT_702__0$", duration: 2000, delayTick: 0);
             }
 
             public override void Execute() {
@@ -38,8 +36,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State702잡담_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$63000076_CS__63000076_CHAT_702__1$", duration: 2500,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$63000076_CS__63000076_CHAT_702__1$", duration: 2500, delayTick: 0);
             }
 
             public override void Execute() {
@@ -56,8 +53,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State702잡담_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 102, msg: "$63000076_CS__63000076_CHAT_702__2$", duration: 3000,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 102, msg: "$63000076_CS__63000076_CHAT_702__2$", duration: 3000, delayTick: 0);
             }
 
             public override void Execute() {

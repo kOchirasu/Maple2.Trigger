@@ -23,10 +23,7 @@ namespace Maple2.Trigger._52010065_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.VisibleMyPc(isVisible: true);
                 context.SetProductionUI(arg1: 1);
-                context.SetVisibleUI(
-                    uiName:
-                    "UpperHudDialog,MessengerBrowser,ExpBar,GroupMessengerBrowser,QuestGuideDialog,MinimapDialog,AdPushDialog,SnowmanEventDialog",
-                    visible: false);
+                context.SetVisibleUI(uiName: "UpperHudDialog,MessengerBrowser,ExpBar,GroupMessengerBrowser,QuestGuideDialog,MinimapDialog,AdPushDialog,SnowmanEventDialog", visible: false);
             }
 
             public override void Execute() {
@@ -48,28 +45,21 @@ namespace Maple2.Trigger._52010065_qd {
                 context.AddBuff(arg1: new[] {701}, arg2: 99910320, arg3: 1, arg4: false, arg5: true);
                 context.AddBuff(arg1: new[] {701}, arg2: 99910320, arg3: 1, arg4: false, arg5: false);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016,
-                        4017, 4018, 4019, 4020, 4021, 4022, 4023, 4024, 4025, 4026
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016, 4017, 4018, 4019, 4020, 4021, 4022, 4023, 4024, 4025, 4026}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {91000076},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {91000076}, arg3: new byte[] {3})) {
                     context.State = new State퀘스트완료_02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {91000076},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {91000076}, arg3: new byte[] {2})) {
                     context.State = new State검마등장_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {91000076},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {91000076}, arg3: new byte[] {1})) {
                     context.State = new State검마등장_01(context);
                     return;
                 }
@@ -188,8 +178,7 @@ namespace Maple2.Trigger._52010065_qd {
             internal State발록검마인사_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003819, msg: "$52010065_QD__52010065_main__0$", duration: 3000,
-                    illustId: "balrog_normal", align: "center");
+                context.AddCinematicTalk(npcId: 11003819, msg: "$52010065_QD__52010065_main__0$", duration: 3000, illustId: "balrog_normal", align: "center");
             }
 
             public override void Execute() {
@@ -206,8 +195,7 @@ namespace Maple2.Trigger._52010065_qd {
             internal State발록검마인사_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001811, msg: "$52010065_QD__52010065_main__1$", duration: 3000,
-                    illustId: "BlackWizard_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11001811, msg: "$52010065_QD__52010065_main__1$", duration: 3000, illustId: "BlackWizard_normal", align: "right");
             }
 
             public override void Execute() {
@@ -224,8 +212,7 @@ namespace Maple2.Trigger._52010065_qd {
             internal State발록검마인사_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003819, msg: "$52010065_QD__52010065_main__2$", duration: 3000,
-                    illustId: "balrog_normal", align: "center");
+                context.AddCinematicTalk(npcId: 11003819, msg: "$52010065_QD__52010065_main__2$", duration: 3000, illustId: "balrog_normal", align: "center");
             }
 
             public override void Execute() {
@@ -412,8 +399,7 @@ namespace Maple2.Trigger._52010065_qd {
             internal State비웃는검마_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001811, msg: "$52010065_QD__52010065_main__3$", duration: 3000,
-                    illustId: "BlackWizard_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11001811, msg: "$52010065_QD__52010065_main__3$", duration: 3000, illustId: "BlackWizard_normal", align: "right");
             }
 
             public override void Execute() {
@@ -430,10 +416,8 @@ namespace Maple2.Trigger._52010065_qd {
             internal State비웃는검마_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003820, msg: "$52010065_QD__52010065_main__4$", duration: 3000,
-                    illustId: "Bella_normal", align: "left");
-                context.AddCinematicTalk(npcId: 11001811, msg: "$52010065_QD__52010065_main__5$", duration: 3000,
-                    illustId: "BlackWizard_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003820, msg: "$52010065_QD__52010065_main__4$", duration: 3000, illustId: "Bella_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11001811, msg: "$52010065_QD__52010065_main__5$", duration: 3000, illustId: "BlackWizard_normal", align: "right");
             }
 
             public override void Execute() {
@@ -450,11 +434,7 @@ namespace Maple2.Trigger._52010065_qd {
             internal State스킵1_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016, 4017, 4018,
-                        4019, 4020, 4021, 4022, 4023, 4024, 4025
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016, 4017, 4018, 4019, 4020, 4021, 4022, 4023, 4024, 4025}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -555,8 +535,7 @@ namespace Maple2.Trigger._52010065_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {91000076},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {91000076}, arg3: new byte[] {3})) {
                     context.State = new State퀘스트완료_02(context);
                     return;
                 }
@@ -680,10 +659,8 @@ namespace Maple2.Trigger._52010065_qd {
             internal State검마퇴장_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001811, msg: "$52010065_QD__52010065_main__6$", duration: 3000,
-                    align: "right");
-                context.AddCinematicTalk(npcId: 11001811, msg: "$52010065_QD__52010065_main__7$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11001811, msg: "$52010065_QD__52010065_main__6$", duration: 3000, align: "right");
+                context.AddCinematicTalk(npcId: 11001811, msg: "$52010065_QD__52010065_main__7$", duration: 3000, align: "right");
             }
 
             public override void Execute() {

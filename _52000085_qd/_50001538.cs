@@ -6,20 +6,17 @@ namespace Maple2.Trigger._52000085_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280}, arg3: new byte[] {1})) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280}, arg3: new byte[] {2})) {
                     context.State = new State던전종료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280}, arg3: new byte[] {3})) {
                     context.State = new State던전종료(context);
                     return;
                 }
@@ -32,9 +29,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602, 603}, arg2: false);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003}, arg2: false);
                 context.SetPortal(arg1: 91, arg2: false, arg3: false, arg4: false);
@@ -79,8 +74,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1003, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__0$",
-                    align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__0$", align: "left", duration: 4000);
             }
 
             public override void Execute() {
@@ -98,8 +92,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__1$",
-                    align: "left", duration: 6000);
+                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__1$", align: "left", duration: 6000);
             }
 
             public override void Execute() {
@@ -118,8 +111,7 @@ namespace Maple2.Trigger._52000085_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002A");
-                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal",
-                    msg: "$52000085_QD__50001538__2$", align: "right", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", msg: "$52000085_QD__50001538__2$", align: "right", duration: 4000);
             }
 
             public override void Execute() {
@@ -137,8 +129,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003A");
-                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal",
-                    msg: "$52000085_QD__50001538__3$", align: "right", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", msg: "$52000085_QD__50001538__3$", align: "right", duration: 4000);
             }
 
             public override void Execute() {
@@ -157,8 +148,7 @@ namespace Maple2.Trigger._52000085_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 303, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 1003, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__4$",
-                    align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__4$", align: "left", duration: 4000);
             }
 
             public override void Execute() {
@@ -175,8 +165,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State트루카대사04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__5$",
-                    align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__5$", align: "left", duration: 4000);
             }
 
             public override void Execute() {
@@ -194,8 +183,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
-                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal",
-                    msg: "$52000085_QD__50001538__6$", align: "right", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", msg: "$52000085_QD__50001538__6$", align: "right", duration: 3000);
             }
 
             public override void Execute() {
@@ -212,8 +200,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State트루카대사05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__7$",
-                    align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__7$", align: "left", duration: 4000);
             }
 
             public override void Execute() {
@@ -230,8 +217,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State트루카대사06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__8$",
-                    align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__8$", align: "left", duration: 4000);
             }
 
             public override void Execute() {
@@ -249,8 +235,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 303, arg2: true);
-                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__9$",
-                    align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__9$", align: "left", duration: 4000);
             }
 
             public override void Execute() {
@@ -267,8 +252,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State에르다대사04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal",
-                    msg: "$52000085_QD__50001538__10$", align: "right", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", msg: "$52000085_QD__50001538__10$", align: "right", duration: 3000);
             }
 
             public override void Execute() {
@@ -304,8 +288,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 1001, arg2: "Attack_Idle_A", arg3: 999999999999f);
-                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal",
-                    msg: "$52000085_QD__50001538__11$", align: "right", duration: 6000);
+                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000085_QD__50001538__11$", align: "right", duration: 6000);
             }
 
             public override void Execute() {
@@ -324,8 +307,7 @@ namespace Maple2.Trigger._52000085_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 305, arg2: true);
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003B");
-                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__12$",
-                    align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__12$", align: "left", duration: 3000);
             }
 
             public override void Execute() {
@@ -343,8 +325,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1004}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__13$",
-                    align: "left", duration: 5000);
+                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__13$", align: "left", duration: 5000);
             }
 
             public override void Execute() {
@@ -380,8 +361,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 307, arg2: true);
-                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000085_QD__50001538__14$",
-                    align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000085_QD__50001538__14$", align: "left", duration: 4000);
             }
 
             public override void Execute() {
@@ -399,8 +379,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 308, arg2: true);
-                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__15$",
-                    align: "right", duration: 5000);
+                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__15$", align: "right", duration: 5000);
             }
 
             public override void Execute() {
@@ -418,8 +397,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 310, arg2: true);
-                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000085_QD__50001538__16$",
-                    align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000085_QD__50001538__16$", align: "left", duration: 4000);
             }
 
             public override void Execute() {
@@ -437,8 +415,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 308, arg2: true);
-                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__17$",
-                    align: "right", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__17$", align: "right", duration: 4000);
             }
 
             public override void Execute() {
@@ -456,8 +433,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 309, arg2: true);
-                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__18$",
-                    align: "right", duration: 5000);
+                context.AddCinematicTalk(npcId: 11003071, illustId: "11003762", msg: "$52000085_QD__50001538__18$", align: "right", duration: 5000);
             }
 
             public override void Execute() {
@@ -476,8 +452,7 @@ namespace Maple2.Trigger._52000085_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1003, arg2: "Bore_A");
                 context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000085_QD__50001538__19$",
-                    align: "left", duration: 2000);
+                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000085_QD__50001538__19$", align: "left", duration: 2000);
             }
 
             public override void Execute() {
@@ -565,8 +540,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State설눈이대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal",
-                    msg: "$52000085_QD__50001538__20$", align: "right", duration: 6000);
+                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000085_QD__50001538__20$", align: "right", duration: 6000);
             }
 
             public override void Execute() {
@@ -601,8 +575,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 312, arg2: true);
-                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal",
-                    msg: "$52000085_QD__50001538__21$", align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", msg: "$52000085_QD__50001538__21$", align: "left", duration: 3000);
             }
 
             public override void Execute() {
@@ -619,8 +592,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State설눈이대사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal",
-                    msg: "$52000085_QD__50001538__22$", align: "right", duration: 2000);
+                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000085_QD__50001538__22$", align: "right", duration: 2000);
             }
 
             public override void Execute() {
@@ -639,8 +611,7 @@ namespace Maple2.Trigger._52000085_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 1002, arg2: "Attack_Idle_A", arg3: 999999999999f);
                 context.CameraSelect(arg1: 313, arg2: true);
-                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal",
-                    msg: "$52000085_QD__50001538__23$", align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", msg: "$52000085_QD__50001538__23$", align: "left", duration: 4000);
             }
 
             public override void Execute() {
@@ -755,8 +726,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State에르다대사07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal",
-                    msg: "$52000085_QD__50001538__24$", align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", msg: "$52000085_QD__50001538__24$", align: "left", duration: 3000);
             }
 
             public override void Execute() {
@@ -773,8 +743,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State설눈이대사04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal",
-                    msg: "$52000085_QD__50001538__25$", align: "right", duration: 6000);
+                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000085_QD__50001538__25$", align: "right", duration: 6000);
             }
 
             public override void Execute() {
@@ -793,8 +762,7 @@ namespace Maple2.Trigger._52000085_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 315, arg2: true);
                 context.SetNpcEmotionLoop(arg1: 1006, arg2: "Attack_Idle_A", arg3: 999999999999f);
-                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal",
-                    msg: "$52000085_QD__50001538__26$", align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", msg: "$52000085_QD__50001538__26$", align: "left", duration: 3000);
             }
 
             public override void Execute() {
@@ -813,8 +781,7 @@ namespace Maple2.Trigger._52000085_qd {
             public override void OnEnter() {
                 context.SetSkip();
                 context.MoveNpc(arg1: 1006, arg2: "MS2PatrolData_1006");
-                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal",
-                    msg: "$52000085_QD__50001538__27$", align: "right", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000085_QD__50001538__27$", align: "right", duration: 3000);
             }
 
             public override void Execute() {
@@ -833,8 +800,7 @@ namespace Maple2.Trigger._52000085_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 1005, arg2: "Stun_A", arg3: 999999999999f);
                 context.SetPcEmotionLoop(arg1: "StunFrozen_A", arg2: 25000f);
-                context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetEffect(arg1: new[] {603}, arg2: true);
+                context.SetEffect(arg1: new[] {602, 603}, arg2: true);
             }
 
             public override void Execute() {
@@ -1001,8 +967,7 @@ namespace Maple2.Trigger._52000085_qd {
             public override void OnEnter() {
                 context.SetSkip(arg1: "종료연출종료");
                 context.CameraSelect(arg1: 319, arg2: true);
-                context.AddCinematicTalk(npcId: 11003073, illustId: "11000404", msg: "$52000085_QD__50001538__34$",
-                    align: "right", duration: 6000);
+                context.AddCinematicTalk(npcId: 11003073, illustId: "11000404", msg: "$52000085_QD__50001538__34$", align: "right", duration: 6000);
             }
 
             public override void Execute() {
@@ -1019,8 +984,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State설눈이대사05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal",
-                    msg: "$52000085_QD__50001538__35$", align: "left", duration: 5000);
+                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000085_QD__50001538__35$", align: "left", duration: 5000);
             }
 
             public override void Execute() {
@@ -1037,8 +1001,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State설만이대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003073, illustId: "11000404", msg: "$52000085_QD__50001538__36$",
-                    align: "right", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003073, illustId: "11000404", msg: "$52000085_QD__50001538__36$", align: "right", duration: 4000);
             }
 
             public override void Execute() {
@@ -1055,8 +1018,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State설눈이대사06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal",
-                    msg: "$52000085_QD__50001538__37$", align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000085_QD__50001538__37$", align: "left", duration: 4000);
             }
 
             public override void Execute() {
@@ -1073,8 +1035,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State설눈이대사07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal",
-                    msg: "$52000085_QD__50001538__38$", align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000085_QD__50001538__38$", align: "left", duration: 4000);
             }
 
             public override void Execute() {
@@ -1115,9 +1076,7 @@ namespace Maple2.Trigger._52000085_qd {
                 context.CreateMonster(arg1: new[] {1008, 1009}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602, 603}, arg2: false);
                 context.SetPortal(arg1: 91, arg2: true, arg3: true, arg4: true);
                 context.CameraReset(interpolationTime: 0.0f);
             }

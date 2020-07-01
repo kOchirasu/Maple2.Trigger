@@ -4,14 +4,11 @@ namespace Maple2.Trigger._52020028_qd {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000328},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000328}, arg3: new byte[] {1})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -46,8 +43,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.ShowCaption(type: "VerticalCaption", title: "아크로폴리스", desc: "고대 크리티아스 지식의 안식처",
-                    align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "아크로폴리스", desc: "고대 크리티아스 지식의 안식처", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
                 context.CameraSelectPath(arg1: new[] {4002, 4003, 4004}, arg2: false);
                 context.AddCinematicTalk(npcId: 0, msg: "여기가 아크로폴리스...", duration: 3000);
             }
@@ -151,8 +147,7 @@ namespace Maple2.Trigger._52020028_qd {
             internal State유저자격확인2_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 22000117, msg: @"문답무용.\n순수한 크리티아스의 피가 흐르지 않는 자는 이곳에 발을 디딜 수 없다.",
-                    duration: 3000);
+                context.AddCinematicTalk(npcId: 22000117, msg: @"문답무용.\n순수한 크리티아스의 피가 흐르지 않는 자는 이곳에 발을 디딜 수 없다.", duration: 3000);
             }
 
             public override void Execute() {
@@ -252,8 +247,7 @@ namespace Maple2.Trigger._52020028_qd {
                 context.CameraSelectPath(arg1: new[] {4005}, arg2: false);
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "아르케온", desc: "아크로폴리스의 수호자", align: "centerLeft",
-                    offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "아르케온", desc: "아크로폴리스의 수호자", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
                 context.SetOnetimeEffect(id: 1001, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
@@ -272,8 +266,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, msg: "역시 이렇게 되는군.", duration: 3000);
-                context.AddCinematicTalk(npcId: 0, msg: @"말이 통하지 않으니, 어쩔 수 없지.\n여기서 시간을 낭비할 수 없어.\n어서 처치하자.",
-                    duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: @"말이 통하지 않으니, 어쩔 수 없지.\n여기서 시간을 낭비할 수 없어.\n어서 처치하자.", duration: 3000);
             }
 
             public override void Execute() {
@@ -427,8 +420,7 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4011, 4008}, arg2: false);
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.ShowCaption(type: "VerticalCaption", title: "이오네", desc: "크리티아스의 왕녀", align: "centerLeft",
-                    offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "이오네", desc: "크리티아스의 왕녀", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
                 context.AddCinematicTalk(npcId: 11003760, msg: "그 동안 수고 했어요. 아르케온.", duration: 3000);
             }
 
@@ -448,8 +440,7 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Talk_A");
                 context.AddCinematicTalk(npcId: 11003760, msg: "이 뒤는 저에게 맡기고 편히 쉬세요.", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003760, msg: @"이제 이 곳의 모든 정보는 그 누구도 열어보지 못하도록...\n이 이오네가 책임지고 막겠습니다.",
-                    duration: 3000);
+                context.AddCinematicTalk(npcId: 11003760, msg: @"이제 이 곳의 모든 정보는 그 누구도 열어보지 못하도록...\n이 이오네가 책임지고 막겠습니다.", duration: 3000);
             }
 
             public override void Execute() {

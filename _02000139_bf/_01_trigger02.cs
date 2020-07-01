@@ -4,8 +4,7 @@ namespace Maple2.Trigger._02000139_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712},
-                    arg2: false);
+                context.SetEffect(arg1: new[] {701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000160}, arg2: 1);
                 context.SetLadder(arg1: 601, arg2: false, arg3: false);
                 context.SetLadder(arg1: 602, arg2: false, arg3: false);

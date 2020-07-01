@@ -524,14 +524,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1101});
-                context.DestroyMonster(arg1: new[] {1102});
-                context.DestroyMonster(arg1: new[] {1103});
-                context.DestroyMonster(arg1: new[] {1104});
-                context.DestroyMonster(arg1: new[] {1105});
-                context.DestroyMonster(arg1: new[] {1106});
-                context.DestroyMonster(arg1: new[] {1107});
-                context.DestroyMonster(arg1: new[] {1108});
+                context.DestroyMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108});
             }
 
             public override void Execute() {

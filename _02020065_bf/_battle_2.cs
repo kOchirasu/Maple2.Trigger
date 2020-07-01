@@ -57,8 +57,7 @@ namespace Maple2.Trigger._02020065_bf {
             internal State추가대사_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000,
-                    script: "$02020065_BF__BATTLE_2__0$");
+                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020065_BF__BATTLE_2__0$");
             }
 
             public override void Execute() {
@@ -86,8 +85,7 @@ namespace Maple2.Trigger._02020065_bf {
             internal State추가대사_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000,
-                    script: "$02020065_BF__BATTLE_2__1$");
+                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020065_BF__BATTLE_2__1$");
             }
 
             public override void Execute() {
@@ -115,8 +113,7 @@ namespace Maple2.Trigger._02020065_bf {
             internal State추가대사_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000,
-                    script: "$02020065_BF__BATTLE_2__2$");
+                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020065_BF__BATTLE_2__2$");
             }
 
             public override void Execute() {
@@ -166,8 +163,7 @@ namespace Maple2.Trigger._02020065_bf {
             internal State포탑소환_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000,
-                    script: "$02020065_BF__BATTLE_2__4$");
+                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020065_BF__BATTLE_2__4$");
                 context.SetUserValue(triggerId: 99990008, key: "TurretSpawn_2", value: 1);
                 context.SetUserValue(triggerId: 99990009, key: "TurretSpawn_3", value: 1);
             }
@@ -191,8 +187,7 @@ namespace Maple2.Trigger._02020065_bf {
             internal State포탑소환_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000,
-                    script: "$02020065_BF__BATTLE_2__5$");
+                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020065_BF__BATTLE_2__5$");
                 context.SetUserValue(triggerId: 99990010, key: "TurretSpawn_4", value: 1);
                 context.SetUserValue(triggerId: 99990015, key: "TurretSpawn_5", value: 1);
             }
@@ -216,8 +211,7 @@ namespace Maple2.Trigger._02020065_bf {
             internal State종료대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_smile", duration: 5000,
-                    script: "$02020065_BF__BATTLE_2__6$");
+                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_smile", duration: 5000, script: "$02020065_BF__BATTLE_2__6$");
             }
 
             public override void Execute() {

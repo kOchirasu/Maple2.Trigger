@@ -6,53 +6,45 @@ namespace Maple2.Trigger._52000040_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {1})) {
                     context.HideGuideSummary(entityId: 20020020);
                     context.State = new Stateready_02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {2})) {
                     context.State = new Statestart_22(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001445},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001445}, arg3: new byte[] {3})) {
                     context.State = new Stateend_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001445},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001445}, arg3: new byte[] {2})) {
                     context.State = new Statesb_ready_b_13(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001445},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001445}, arg3: new byte[] {1})) {
                     context.State = new Statesb_ready_b_12(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001444},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001444}, arg3: new byte[] {3})) {
                     context.State = new Statesb_ready_b_12(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001444},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001444}, arg3: new byte[] {2})) {
                     context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                     context.HideGuideSummary(entityId: 20020020);
                     context.State = new Statesb_ready_b_02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001443},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001443}, arg3: new byte[] {3})) {
                     context.AddBuff(arg1: new[] {701}, arg2: 70000096, arg3: 1);
                     context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                     context.HideGuideSummary(entityId: 20020020);
@@ -60,14 +52,12 @@ namespace Maple2.Trigger._52000040_qd {
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001442},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001442}, arg3: new byte[] {3})) {
                     context.State = new Statesb_ready_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001442},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001442}, arg3: new byte[] {2})) {
                     context.State = new Statesb_ready_01(context);
                     return;
                 }
@@ -84,8 +74,7 @@ namespace Maple2.Trigger._52000040_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001443},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001443}, arg3: new byte[] {2})) {
                     context.AddBuff(arg1: new[] {701}, arg2: 70000096, arg3: 1);
                     context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                     context.HideGuideSummary(entityId: 20020020);
@@ -120,13 +109,11 @@ namespace Maple2.Trigger._52000040_qd {
             internal Statesb_ready_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {144}, arg2: true);
-                context.CreateMonster(arg1: new[] {145}, arg2: true);
+                context.CreateMonster(arg1: new[] {144, 145}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001443},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001443}, arg3: new byte[] {3})) {
                     context.State = new Statesb_ready_04(context);
                     return;
                 }
@@ -464,8 +451,7 @@ namespace Maple2.Trigger._52000040_qd {
             internal Statesb_ready_b_12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {145}, arg2: true);
-                context.CreateMonster(arg1: new[] {221, 222, 223}, arg2: true);
+                context.CreateMonster(arg1: new[] {145, 221, 222, 223}, arg2: true);
                 context.MoveNpc(arg1: 221, arg2: "MS2PatrolData_2101");
                 context.MoveNpc(arg1: 222, arg2: "MS2PatrolData_2102");
                 context.MoveNpc(arg1: 223, arg2: "MS2PatrolData_2103");
@@ -1461,8 +1447,7 @@ namespace Maple2.Trigger._52000040_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {2})) {
                     context.HideGuideSummary(entityId: 20020020);
                     context.State = new Stateend_01(context);
                     return;
@@ -1480,8 +1465,7 @@ namespace Maple2.Trigger._52000040_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {2})) {
                     context.HideGuideSummary(entityId: 20020020);
                     context.State = new Stateend_01(context);
                     return;

@@ -5,26 +5,16 @@ namespace Maple2.Trigger {
         public TriggerState State { get; set; }
 
         #region Actions
-        public void AddBalloonTalk(int spawnPointId = 0, string msg = "", int duration = 0, int delayTick = 0,
-            bool npcId = false);
-        public void AddBuff(int[] arg1 = default, int arg2 = 0, byte arg3 = 0, bool arg4 = false, bool arg5 = false,
-            string feature = "");
-        public void AddCinematicTalk(int npcId = 0, string illustId = "", string msg = "", int duration = 0,
-            string align = "", byte delayTick = 0, string illust = "", int delay = 0);
-        public void AddEffectNif(int spawnPointId = 0, string nifPath = "", bool isOutline = false, float scale = 0f,
-            int rotateZ = 0);
+        public void AddBalloonTalk(int spawnPointId = 0, string msg = "", int duration = 0, int delayTick = 0, bool npcId = false);
+        public void AddBuff(int[] arg1 = default, int arg2 = 0, byte arg3 = 0, bool arg4 = false, bool arg5 = false, string feature = "");
+        public void AddCinematicTalk(int npcId = 0, string illustId = "", string msg = "", int duration = 0, string align = "", byte delayTick = 0, string illust = "", int delay = 0);
+        public void AddEffectNif(int spawnPointId = 0, string nifPath = "", bool isOutline = false, float scale = 0f, int rotateZ = 0);
         public void AddUserValue(string key = "", int value = 0);
-        public void ArcadeBoomBoomOcean(string type = "", byte lifeCount = 0, int id = 0, int score = 0, byte round = 0,
-            int roundDuration = 0, int timeScoreRate = 0);
-        public void ArcadeSpringFarm(string type = "", byte lifeCount = 0, int id = 0, int score = 0,
-            int[] spawnId = default, int uiDuration = 0, byte round = 0, string timeScoreType = "",
-            int timeScoreRate = 0, int roundDuration = 0);
-        public void ArcadeThreeTwoOne(string type = "", byte lifeCount = 0, int initScore = 0, int uiDuration = 0,
-            bool round = false, byte resultDirection = 0);
-        public void ArcadeThreeTwoOne2(string type = "", byte lifeCount = 0, int initScore = 0, int uiDuration = 0,
-            bool round = false, byte resultDirection = 0);
-        public void ArcadeThreeTwoOne3(string type = "", byte lifeCount = 0, int initScore = 0, int uiDuration = 0,
-            bool round = false, byte resultDirection = 0);
+        public void ArcadeBoomBoomOcean(string type = "", byte lifeCount = 0, int id = 0, int score = 0, byte round = 0, int roundDuration = 0, int timeScoreRate = 0);
+        public void ArcadeSpringFarm(string type = "", byte lifeCount = 0, int id = 0, int score = 0, int[] spawnId = default, int uiDuration = 0, byte round = 0, string timeScoreType = "", int timeScoreRate = 0, int roundDuration = 0);
+        public void ArcadeThreeTwoOne(string type = "", byte lifeCount = 0, int initScore = 0, int uiDuration = 0, bool round = false, byte resultDirection = 0);
+        public void ArcadeThreeTwoOne2(string type = "", byte lifeCount = 0, int initScore = 0, int uiDuration = 0, bool round = false, byte resultDirection = 0);
+        public void ArcadeThreeTwoOne3(string type = "", byte lifeCount = 0, int initScore = 0, int uiDuration = 0, bool round = false, byte resultDirection = 0);
         public void ChangeBackground(string dds = "");
         public void ChangeMonster(int arg1 = 0, int arg2 = 0);
         public void CameraReset(float interpolationTime = 0f);
@@ -35,8 +25,7 @@ namespace Maple2.Trigger {
         public void CreateItem(int[] arg1 = default, int arg2 = 0, int arg3 = 0, int arg5 = 0);
         public void CreateMonster(int[] arg1 = default, bool arg2 = false, int arg3 = 0);
         public void CreateWidget(string arg1 = "");
-        public void DarkStream(string type = "", byte round = 0, int uiDuration = 0, byte damagePenalty = 0,
-            int[] spawnId = default, int score = 0);
+        public void DarkStream(string type = "", byte round = 0, int uiDuration = 0, byte damagePenalty = 0, int[] spawnId = default, int score = 0);
         public void DebugString(string value = "", string feature = "", string message = "", string arg1 = "");
         public void DestroyMonster(int[] arg1 = default, bool arg2 = false);
         public void DungeonClear(string uiType = "");
@@ -55,12 +44,10 @@ namespace Maple2.Trigger {
         public void EnableLocalCamera(bool isEnable = false);
         public void EnableSpawnPointPc(int spawnPointId = 0, bool isEnable = false);
         public void EndMiniGame(int winnerBoxId = 0, string gameName = "", bool isOnlyWinner = false);
-        public void EndMiniGameRound(int winnerBoxId = 0, float expRate = 0f, bool isOnlyWinner = false,
-            bool isGainLoserBonus = false, bool meso = false, string gameName = "");
+        public void EndMiniGameRound(int winnerBoxId = 0, float expRate = 0f, bool isOnlyWinner = false, bool isGainLoserBonus = false, bool meso = false, string gameName = "");
         public void FaceEmotion(int spawnPointId = 0, string emotionName = "", bool spwnPointId = false);
         public void FieldGameConstant(string key = "", string value = "", string feature = "", string locale = "");
-        public void FieldGameMessage(byte custom = 0, string type = "", byte arg1 = 0, string arg2 = "",
-            int arg3 = 0);
+        public void FieldGameMessage(byte custom = 0, string type = "", byte arg1 = 0, string arg2 = "", int arg3 = 0);
         public void FieldWarEnd(bool isClear = false);
         public void GiveExp(byte arg1 = 0, byte arg2 = 0);
         public void GiveGuildExp(bool boxId = false, byte type = 0);
@@ -95,10 +82,8 @@ namespace Maple2.Trigger {
         public void PatrolConditionUser(string patrolName = "", byte patrolIndex = 0, int additionalEffectId = 0);
         public void PlaySceneMovie(string fileName = "", int movieId = 0, string skipType = "");
         public void PlaySystemSoundByUserTag(int userTagId = 0, string soundKey = "");
-        public void PlaySystemSoundInBox(string arg2 = "", int[] arg1 = default);
-        public void RandomAdditionalEffect(string target = "", int triggerBoxId = 0, bool spawnPointId = false,
-            bool targetCount = false, int tick = 0, int waitTick = 0, string targetEffect = "",
-            int additionalEffectId = 0);
+        public void PlaySystemSoundInBox(int[] arg1 = default, string arg2 = "");
+        public void RandomAdditionalEffect(string target = "", int triggerBoxId = 0, bool spawnPointId = false, bool targetCount = false, int tick = 0, int waitTick = 0, string targetEffect = "", int additionalEffectId = 0);
         public void RemoveBalloonTalk(int spawnPointId = 0);
         public void RemoveBuff(int arg1 = 0, int arg2 = 0, bool arg3 = false);
         public void RemoveCinematicTalk();
@@ -110,12 +95,11 @@ namespace Maple2.Trigger {
         public void ScoreBoardSetScore(bool score = false);
         public void SetAchievement(int arg1 = 0, string arg2 = "", string arg3 = "");
         public void SetActor(int arg1 = 0, bool arg2 = false, string arg3 = "", bool arg4 = false, bool arg5 = false);
-        public void SetAgent(string arg1 = "", bool arg2 = false);
+        public void SetAgent(int[] arg1 = default, bool arg2 = false);
         public void SetAiExtraData(string key = "", int value = 0, bool isModify = false, int boxId = 0);
         public void SetAmbientLight(Vector3 arg1 = default, Vector3 arg2 = default, Vector3 arg3 = default);
         public void SetCinematicIntro(string text = "");
-        public void SetConversation(byte arg1 = 0, int arg2 = 0, string arg3 = "", int arg4 = 0, byte arg5 = 0,
-            string align = "");
+        public void SetConversation(byte arg1 = 0, int arg2 = 0, string arg3 = "", int arg4 = 0, byte arg5 = 0, string align = "");
         public void SetCube(int[] ids = default, bool isVisible = false, byte randomCount = 0);
         public void SetDirectionalLight(Vector3 arg1 = default, Vector3 arg2 = default);
         public void SetEffect(int[] arg1 = default, bool arg2 = false, int arg3 = 0, byte arg4 = 0);
@@ -128,8 +112,7 @@ namespace Maple2.Trigger {
         public void SetMeshAnimation(int[] arg1 = default, bool arg2 = false, byte arg3 = 0, byte arg4 = 0);
         public void SetMiniGameAreaForHack(int boxId = 0);
         public void SetBreakable(int[] arg1 = default, bool arg2 = false);
-        public void SetNpcDuelHpBar(bool isOpen = false, int spawnPointId = 0, int durationTick = 0,
-            byte npcHpStep = 0);
+        public void SetNpcDuelHpBar(bool isOpen = false, int spawnPointId = 0, int durationTick = 0, byte npcHpStep = 0);
         public void SetNpcEmotionLoop(int arg1 = 0, string arg2 = "", float arg3 = 0f);
         public void SetNpcEmotionSequence(int arg1 = 0, string arg2 = "", int arg3 = 0);
         public void SetNpcRotation(int arg1 = 0, int arg2 = 0);
@@ -140,8 +123,7 @@ namespace Maple2.Trigger {
         public void SetPhotoStudio(bool isEnable = false);
         public void SetPortal(int arg1 = 0, bool arg2 = false, bool arg3 = false, bool arg4 = false, bool arg5 = false);
         public void SetProductionUI(byte arg1 = 0, string arg2 = "", bool arg3 = false);
-        public void SetPvpZone(byte arg1 = 0, byte arg2 = 0, int arg3 = 0, int arg4 = 0, byte arg5 = 0,
-            byte[] arg6 = default);
+        public void SetPvpZone(byte arg1 = 0, byte arg2 = 0, int arg3 = 0, int arg4 = 0, byte arg5 = 0, byte[] arg6 = default);
         public void SetQuestAccept(int questId = 0, int arg1 = 0);
         public void SetQuestComplete(int questId = 0);
         public void SetRandomMesh(int[] arg1 = default, bool arg2 = false, byte arg3 = 0, int arg4 = 0, int arg5 = 0);
@@ -151,10 +133,8 @@ namespace Maple2.Trigger {
         public void SetSkip(string arg1 = "");
         public void SetSound(int arg1 = 0, bool arg2 = false);
         public void SetState(byte arg1 = 0, string arg2 = "", bool arg3 = false);
-        public void SetTimer(string arg1 = "", int arg2 = 0, bool arg3 = false, bool arg4 = false, int arg5 = 0,
-            string arg6 = "");
-        public void SetTimeScale(bool enable = false, float startScale = 0f, float endScale = 0f, float duration = 0f,
-            byte interpolator = 0);
+        public void SetTimer(string arg1 = "", int arg2 = 0, bool arg3 = false, bool arg4 = false, int arg5 = 0, string arg6 = "");
+        public void SetTimeScale(bool enable = false, float startScale = 0f, float endScale = 0f, float duration = 0f, byte interpolator = 0);
         public void SetUserValue(int triggerId = 0, string key = "", int value = 0);
         public void SetUserValueFromDungeonRewardCount(string key = "", int dungeonRewardId = 0);
         public void SetUserValueFromGuildVsGameScore(int teamId = 0, string key = "");
@@ -162,19 +142,15 @@ namespace Maple2.Trigger {
         public void SetVisibleBreakableObject(int[] arg1 = default, bool arg2 = false);
         public void SetVisibleUI(string uiName = "", bool visible = false);
         public void ShadowExpedition(string type = "", int maxGaugePoint = 0, string title = "");
-        public void ShowCaption(string type = "", string title = "", string desc = "", string align = "",
-            float offsetRateX = 0f, float offsetRateY = 0f, int duration = 0, float scale = 0f);
+        public void ShowCaption(string type = "", string title = "", string desc = "", string align = "", float offsetRateX = 0f, float offsetRateY = 0f, int duration = 0, float scale = 0f);
         public void ShowCountUI(string text = "", byte stage = 0, byte count = 0, byte soundType = 1);
-        public void ShowEventResult(string type = "", string text = "", int duration = 0, int userTagId = 0,
-            int triggerBoxId = 0, bool isOutSide = false);
+        public void ShowEventResult(string type = "", string text = "", int duration = 0, int userTagId = 0, int triggerBoxId = 0, bool isOutSide = false);
         public void ShowGuideSummary(int entityId = 0, int textId = 0, int duration = 0);
         public void ShowRoundUI(byte round = 0, int duration = 0);
-        public void SideNpcTalk(int npcId = 0, string illust = "", int duration = 0, string script = "",
-            string voice = "", string type = "", string usm = "");
+        public void SideNpcTalk(int npcId = 0, string illust = "", int duration = 0, string script = "", string voice = "", string type = "", string usm = "");
         public void SightRange(bool enable = false, byte range = 0, int rangeZ = 0, byte border = 0);
         public void SpawnItemRange(int[] rangeId = default, byte randomPickCount = 0);
-        public void SpawnNpcRange(int[] rangeId = default, bool isAutoTargeting = false, byte randomPickCount = 0,
-            int score = 0);
+        public void SpawnNpcRange(int[] rangeId = default, bool isAutoTargeting = false, byte randomPickCount = 0, int score = 0);
         public void StartCombineSpawn(int[] groupId = default, bool isStart = false);
         public void StartMiniGame(int boxId = 0, byte round = 0, string gameName = "", string isShowResultUI = "");
         public void StartMiniGameRound(int boxId = 0, byte round = 0);
@@ -196,7 +172,7 @@ namespace Maple2.Trigger {
         public void WeddingUserToPatrol(string patrolName = "", string entryType = "", byte patrolIndex = 0);
         public void WeddingVowComplete();
         public void WidgetAction(string arg1 = "", string arg2 = "", string arg3 = "", int widgetArgNum = 0);
-        public void WriteLog(string arg1 = "", string arg3 = "", int arg2 = 0, string arg5 = "", byte arg4 = 0);
+        public void WriteLog(string arg1 = "", int arg2 = 0, string arg3 = "", byte arg4 = 0, string arg5 = "");
         #endregion
 
         #region Conditions

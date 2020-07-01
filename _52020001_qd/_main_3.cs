@@ -51,9 +51,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State몬스터출현_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {6100003}, arg2: false);
-                context.CreateMonster(arg1: new[] {6000018}, arg2: false);
-                context.CreateMonster(arg1: new[] {6000019}, arg2: false);
+                context.CreateMonster(arg1: new[] {6100003, 6000018, 6000019}, arg2: false);
             }
 
             public override void Execute() {
@@ -77,8 +75,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 6000018) <= 0.50f
-                    || context.GetNpcHpRate(spawnPointId: 6000019) <= 0.50f) {
+                if (context.GetNpcHpRate(spawnPointId: 6000018) <= 0.50f || context.GetNpcHpRate(spawnPointId: 6000019) <= 0.50f) {
                     context.State = new State생성_2(context);
                     return;
                 }
@@ -211,8 +208,7 @@ namespace Maple2.Trigger._52020001_qd {
                 context.CameraSelectPath(arg1: new[] {2000008}, arg2: false);
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 0);
-                context.DestroyMonster(arg1: new[] {6000018});
-                context.DestroyMonster(arg1: new[] {6000019});
+                context.DestroyMonster(arg1: new[] {6000018, 6000019});
             }
 
             public override void Execute() {
@@ -280,9 +276,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {10090}, arg2: true);
-                context.SetEffect(arg1: new[] {10091}, arg2: true);
-                context.SetEffect(arg1: new[] {10092}, arg2: true);
+                context.SetEffect(arg1: new[] {10090, 10091, 10092}, arg2: true);
                 context.SetMesh(arg1: new[] {80000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetEventUI(arg1: 1, arg2: "미션에 실패하였습니다. 다시 재도전 해보세요.", arg3: 4000);

@@ -9,12 +9,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetEffect(arg1: new[] {5005}, arg2: false);
-                context.SetEffect(arg1: new[] {5006}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006}, arg2: false);
                 context.SetLadder(arg1: 4001, arg2: false, arg3: false);
                 context.SetLadder(arg1: 4002, arg2: false, arg3: false);
                 context.SetLadder(arg1: 4003, arg2: false, arg3: false);
@@ -27,36 +22,13 @@ namespace Maple2.Trigger._02000313_bf {
                 context.SetLadder(arg1: 4102, arg2: false, arg3: false);
                 context.SetLadder(arg1: 4103, arg2: false, arg3: false);
                 context.SetLadder(arg1: 4104, arg2: false, arg3: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115,
-                        3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131,
-                        3132, 3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146, 3147,
-                        3148, 3149, 3150, 3151, 3152, 3153, 3154, 3155, 3156, 3157, 3158
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215,
-                        3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231,
-                        3232, 3233, 3234, 3235
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315,
-                        3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {1099}, arg2: false);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132, 3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146, 3147, 3148, 3149, 3150, 3151, 3152, 3153, 3154, 3155, 3156, 3157, 3158, 3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232, 3233, 3234, 3235, 3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(arg1: new[] {1099, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {15})) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -83,12 +55,8 @@ namespace Maple2.Trigger._02000313_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {1001}, arg2: false);
-                context.CreateMonster(arg1: new[] {2001}, arg2: false);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(arg1: new[] {1001, 2001}, arg2: false);
                 context.CameraSelect(arg1: 30000, arg2: true);
                 context.SetEffect(arg1: new[] {5002}, arg2: true);
                 context.SetProductionUI(arg1: 1);
@@ -218,13 +186,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.SetLadder(arg1: 4006, arg2: true, arg3: true);
                 context.SetLadder(arg1: 4007, arg2: true, arg3: true);
                 context.SetLadder(arg1: 4008, arg2: true, arg3: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115,
-                        3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131,
-                        3132, 3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146, 3147,
-                        3148, 3149, 3150, 3151, 3152, 3153, 3154, 3155, 3156, 3157, 3158
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132, 3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146, 3147, 3148, 3149, 3150, 3151, 3152, 3153, 3154, 3155, 3156, 3157, 3158}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -305,12 +267,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.SetLadder(arg1: 4102, arg2: true, arg3: true);
                 context.SetLadder(arg1: 4103, arg2: true, arg3: true);
                 context.SetLadder(arg1: 4104, arg2: true, arg3: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215,
-                        3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231,
-                        3232, 3233, 3234, 3235
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232, 3233, 3234, 3235}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -346,8 +303,7 @@ namespace Maple2.Trigger._02000313_bf {
             internal State보스등장연출2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1099});
-                context.DestroyMonster(arg1: new[] {1005});
+                context.DestroyMonster(arg1: new[] {1099, 1005});
                 context.CreateMonster(arg1: new[] {2099}, arg2: false);
             }
 
@@ -373,11 +329,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.SetNpcEmotionLoop(arg1: 1106, arg2: "Dead_A", arg3: 9000f);
                 context.SetNpcEmotionLoop(arg1: 1107, arg2: "Dead_A", arg3: 9000f);
                 context.SetNpcEmotionLoop(arg1: 1108, arg2: "Dead_A", arg3: 9000f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315,
-                        3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkip(arg1: "보스전투시작");
             }
 
@@ -481,20 +433,17 @@ namespace Maple2.Trigger._02000313_bf {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9997}, arg2: new[] {10003105},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9997}, arg2: new[] {10003105}, arg3: new byte[] {2})) {
                     context.State = new State퀘스트연출_시작(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9998}, arg2: new[] {10003105},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9998}, arg2: new[] {10003105}, arg3: new byte[] {2})) {
                     context.State = new State퀘스트연출_시작(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9999}, arg2: new[] {10003105},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9999}, arg2: new[] {10003105}, arg3: new byte[] {2})) {
                     context.State = new State퀘스트연출_시작(context);
                     return;
                 }
@@ -510,10 +459,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 9, arg2: "$02000313_BF__BOSSSPAWN__43$", arg3: false);
-                context.CreateMonster(arg1: new[] {205}, arg2: true);
-                context.CreateMonster(arg1: new[] {202}, arg2: true);
-                context.CreateMonster(arg1: new[] {203}, arg2: true);
-                context.CreateMonster(arg1: new[] {204}, arg2: true);
+                context.CreateMonster(arg1: new[] {205, 202, 203, 204}, arg2: true);
                 context.MoveUser(arg1: 02000313, arg2: 6001);
             }
 
@@ -623,8 +569,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.AddCinematicTalk(npcId: 0, msg: "$02000313_BF__BOSSSPAWN__52$", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__53$", duration: 3000);
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$02000313_BF__BOSSSPAWN__54$", duration: 2000,
-                    delayTick: 5000);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$02000313_BF__BOSSSPAWN__54$", duration: 2000, delayTick: 5000);
             }
 
             public override void Execute() {
@@ -947,8 +892,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.AddCinematicTalk(npcId: 11003407, msg: "$02000313_BF__BOSSSPAWN__80$", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__81$", duration: 3000);
                 context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.DestroyMonster(arg1: new[] {203});
-                context.DestroyMonster(arg1: new[] {204});
+                context.DestroyMonster(arg1: new[] {203, 204});
             }
 
             public override void Execute() {
@@ -1033,8 +977,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.SetOnetimeEffect(id: 102, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetNpcEmotionSequence(arg1: 205, arg2: "Dead_A");
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Attack_01_B");
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
-                context.SetEffect(arg1: new[] {5005}, arg2: true);
+                context.SetEffect(arg1: new[] {5003, 5005}, arg2: true);
             }
 
             public override void Execute() {
@@ -1052,14 +995,9 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.DestroyMonster(arg1: new[] {201});
-                context.DestroyMonster(arg1: new[] {202});
-                context.DestroyMonster(arg1: new[] {205});
-                context.CreateMonster(arg1: new[] {206}, arg2: true);
-                context.CreateMonster(arg1: new[] {207}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
+                context.DestroyMonster(arg1: new[] {201, 202, 205});
+                context.CreateMonster(arg1: new[] {206, 207}, arg2: true);
+                context.SetEffect(arg1: new[] {5001, 5003, 5004}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 206, arg2: "Dead_A", arg3: 1000000f);
                 context.SetNpcEmotionLoop(arg1: 207, arg2: "Dead_B", arg3: 1000000f);
                 context.FaceEmotion(spawnPointId: 206, emotionName: "Trigger_Dead");
@@ -1103,8 +1041,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG\weather\Eff_monochrome_03.xml");
                 context.SetProductionUI(arg1: 9, arg2: "$02000313_BF__BOSSSPAWN__85$", arg3: false);
-                context.SetEffect(arg1: new[] {5005}, arg2: false);
-                context.SetEffect(arg1: new[] {5006}, arg2: false);
+                context.SetEffect(arg1: new[] {5005, 5006}, arg2: false);
             }
 
             public override void Execute() {

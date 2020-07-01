@@ -4,12 +4,8 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002088}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002089}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002090}, arg2: 0);
-                context.SetMesh(arg1: new[] {3200}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3201, 3202}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3300}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {10002088, 10002089, 10002090}, arg2: 0);
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3300}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {5000}, arg2: false);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Closed");
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
@@ -79,8 +75,7 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetMesh(arg1: new[] {3200}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3201, 3202}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: false);
-                context.SetEventUI(arg1: 1, arg2: "$02000396_BF__04_RANDOMPORTAL__0$", arg3: 2000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000396_BF__04_RANDOMPORTAL__0$", arg3: 2000, arg4: "0");
             }
 
             public override void Execute() {
@@ -156,8 +151,7 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateToRoom02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$52100052_QD__04_RANDOMPORTAL__1$", arg3: 2000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$52100052_QD__04_RANDOMPORTAL__1$", arg3: 2000, arg4: "0");
                 context.SetPortal(arg1: 20, arg2: true, arg3: true, arg4: false);
             }
 
@@ -234,8 +228,7 @@ namespace Maple2.Trigger._52100052_qd {
             internal StateToTower02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$52100052_QD__04_RANDOMPORTAL__3$", arg3: 2000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$52100052_QD__04_RANDOMPORTAL__3$", arg3: 2000, arg4: "0");
                 context.SetMesh(arg1: new[] {3300}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Opened");

@@ -8,21 +8,9 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnEnter() {
                 context.SetPortal(arg1: 95, arg2: false, arg3: false);
                 context.SetPortal(arg1: 96, arg2: false, arg3: false);
-                context.SetEffect(
-                    arg1: new[] {
-                        70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010, 70011, 70012, 70013,
-                        70014, 70015, 70016, 70017, 70018, 70019, 70020, 70021, 70022, 70023, 70024
-                    }, arg2: false);
-                context.SetMesh(arg1: new[] {5001, 5002, 5003, 5004, 5005}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetEffect(
-                    arg1: new[]
-                        {72001, 72002, 72003, 72004, 72005, 72006, 72007, 72008, 72009, 72010, 72011, 72012},
-                    arg2: false);
-                context.SetEffect(
-                    arg1: new[]
-                        {73001, 73002, 73003, 73004, 73005, 73006, 73007, 73008, 73009, 73010, 73011, 73012},
-                    arg2: false);
+                context.SetEffect(arg1: new[] {70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010, 70011, 70012, 70013, 70014, 70015, 70016, 70017, 70018, 70019, 70020, 70021, 70022, 70023, 70024}, arg2: false);
+                context.SetMesh(arg1: new[] {5001, 5002, 5003, 5004, 5005}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {72001, 72002, 72003, 72004, 72005, 72006, 72007, 72008, 72009, 72010, 72011, 72012, 73001, 73002, 73003, 73004, 73005, 73006, 73007, 73008, 73009, 73010, 73011, 73012}, arg2: false);
                 context.SetMesh(arg1: new[] {5103, 5104}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -227,11 +215,7 @@ namespace Maple2.Trigger._52020016_qd {
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 0);
                 context.DestroyMonster(arg1: new[] {300001});
-                context.SetEffect(
-                    arg1: new[] {
-                        70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010, 70011, 70012, 70013,
-                        70014, 70015, 70016, 70017, 70018, 70019, 70020, 70021, 70022, 70023, 70024
-                    }, arg2: true);
+                context.SetEffect(arg1: new[] {70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010, 70011, 70012, 70013, 70014, 70015, 70016, 70017, 70018, 70019, 70020, 70021, 70022, 70023, 70024}, arg2: true);
             }
 
             public override void Execute() {
@@ -477,26 +461,10 @@ namespace Maple2.Trigger._52020016_qd {
             internal State자기장생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {300002});
-                context.DestroyMonster(arg1: new[] {310001});
-                context.DestroyMonster(arg1: new[] {310002});
-                context.DestroyMonster(arg1: new[] {310003});
-                context.DestroyMonster(arg1: new[] {310004});
-                context.SetMesh(arg1: new[] {5001, 5002, 5003, 5004, 5005}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetEffect(
-                    arg1: new[] {
-                        70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010, 70011, 70012, 70013,
-                        70014, 70015, 70016, 70017, 70018, 70019, 70020, 70021, 70022, 70023, 70024
-                    }, arg2: false);
-                context.SetEffect(
-                    arg1: new[]
-                        {72001, 72002, 72003, 72004, 72005, 72006, 72007, 72008, 72009, 72010, 72011, 72012},
-                    arg2: true);
-                context.SetEffect(
-                    arg1: new[]
-                        {73001, 73002, 73003, 73004, 73005, 73006, 73007, 73008, 73009, 73010, 73011, 73012},
-                    arg2: true);
+                context.DestroyMonster(arg1: new[] {300002, 310001, 310002, 310003, 310004});
+                context.SetMesh(arg1: new[] {5001, 5002, 5003, 5004, 5005}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010, 70011, 70012, 70013, 70014, 70015, 70016, 70017, 70018, 70019, 70020, 70021, 70022, 70023, 70024}, arg2: false);
+                context.SetEffect(arg1: new[] {72001, 72002, 72003, 72004, 72005, 72006, 72007, 72008, 72009, 72010, 72011, 72012, 73001, 73002, 73003, 73004, 73005, 73006, 73007, 73008, 73009, 73010, 73011, 73012}, arg2: true);
                 context.SetAmbientLight(arg1: new Vector3(180f, 180f, 149f));
                 context.SetDirectionalLight(arg1: new Vector3(219f, 204f, 182f), arg2: new Vector3(219f, 204f, 182f));
             }
@@ -603,10 +571,7 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {4000101})
-                    && context.MonsterDead(arg1: new[] {4000102})
-                    && context.MonsterDead(arg1: new[] {4000103})
-                    && context.MonsterDead(arg1: new[] {4000104})) {
+                if (context.MonsterDead(arg1: new[] {4000101}) && context.MonsterDead(arg1: new[] {4000102}) && context.MonsterDead(arg1: new[] {4000103}) && context.MonsterDead(arg1: new[] {4000104})) {
                     context.State = new State시간종료_3(context);
                     return;
                 }
@@ -660,10 +625,7 @@ namespace Maple2.Trigger._52020016_qd {
             internal State몬스터등장_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(
-                    arg1: new[]
-                        {72001, 72002, 72003, 72004, 72005, 72006, 72007, 72008, 72009, 72010, 72011, 72012},
-                    arg2: false);
+                context.SetEffect(arg1: new[] {72001, 72002, 72003, 72004, 72005, 72006, 72007, 72008, 72009, 72010, 72011, 72012}, arg2: false);
                 context.SetMesh(arg1: new[] {5104}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "여기서 쓰러질 순 없어!", arg4: 3, arg5: 0);
                 context.SetUserValue(triggerId: 909, key: "respawn_phase_3", value: 1);
@@ -720,11 +682,7 @@ namespace Maple2.Trigger._52020016_qd {
             internal State이동_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(
-                    arg1: new[] {
-                        70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010, 70011, 70012, 70013,
-                        70014, 70015, 70016, 70017, 70018, 70019, 70020, 70021, 70022, 70023, 70024
-                    }, arg2: true);
+                context.SetEffect(arg1: new[] {70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010, 70011, 70012, 70013, 70014, 70015, 70016, 70017, 70018, 70019, 70020, 70021, 70022, 70023, 70024}, arg2: true);
                 context.SetMesh(arg1: new[] {5001, 5002, 5003, 5004, 5005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "아니! 이 녀석들은??!!", arg4: 3, arg5: 0);
             }

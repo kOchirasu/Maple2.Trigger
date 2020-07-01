@@ -4,25 +4,21 @@ namespace Maple2.Trigger._52000116_qd {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/Sound/Eff_Object_Castle_Door_Open_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_Object_Castle_Door_Open_01.xml");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100001},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100001}, arg3: new byte[] {1})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100001},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100001}, arg3: new byte[] {2})) {
                     context.State = new Statefadeout(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100001},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100001}, arg3: new byte[] {3})) {
                     context.State = new Statefadeout(context);
                     return;
                 }
@@ -37,8 +33,7 @@ namespace Maple2.Trigger._52000116_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003163, illustId: "Nelf_normal", msg: "$52000116_QD__MAIN__0$",
-                    duration: 4000, align: "Right");
+                context.AddCinematicTalk(npcId: 11003163, illustId: "Nelf_normal", msg: "$52000116_QD__MAIN__0$", duration: 4000, align: "Right");
                 context.SetSceneSkip(arg1: "fadeout", arg2: "nextState");
             }
 
@@ -57,8 +52,7 @@ namespace Maple2.Trigger._52000116_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000116, arg2: 2);
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/Sound/Eff_Object_Castle_Door_Open_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_Object_Castle_Door_Open_01.xml");
                 context.CreateMonster(arg1: new[] {102}, arg2: true);
                 context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
             }
@@ -77,8 +71,7 @@ namespace Maple2.Trigger._52000116_qd {
             internal Statejordyhelp(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/Sound/Eff_Object_Castle_Door_Open_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/Sound/Eff_Object_Castle_Door_Open_01.xml");
                 context.SetConversation(arg1: 2, arg2: 11001838, arg3: "$52000116_QD__MAIN__1$", arg4: 1, arg5: 0);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_3002");
             }
@@ -340,8 +333,7 @@ namespace Maple2.Trigger._52000116_qd {
             internal Stateendready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000116_QD__MAIN__8$",
-                    desc: "$52000116_QD__MAIN__9$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
+                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000116_QD__MAIN__8$", desc: "$52000116_QD__MAIN__9$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
                 context.SetSceneSkip();
             }
 

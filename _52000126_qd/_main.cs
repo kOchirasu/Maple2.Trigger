@@ -5,15 +5,11 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100210},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100210}, arg3: new byte[] {1})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -54,9 +50,7 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Talk_A");
                 context.AddCinematicTalk(npcId: 11003209, msg: "$52000126_QD__MAIN__0$", duration: 2000, align: "Left");
-                context.CreateMonster(arg1: new[] {301}, arg2: true);
-                context.CreateMonster(arg1: new[] {302}, arg2: true);
-                context.CreateMonster(arg1: new[] {303}, arg2: true);
+                context.CreateMonster(arg1: new[] {301, 302, 303}, arg2: true);
             }
 
             public override void Execute() {
@@ -152,12 +146,8 @@ namespace Maple2.Trigger._52000126_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4005, 4006, 4007}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003214, msg: "$52000126_QD__MAIN__5$", duration: 3000, align: "Left");
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
-                context.SetEffect(arg1: new[] {5004}, arg2: true);
-                context.SetOnetimeEffect(id: 20, enable: true,
-                    path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: true);
+                context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
             }
 
             public override void Execute() {

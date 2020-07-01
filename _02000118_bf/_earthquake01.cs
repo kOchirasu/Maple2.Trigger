@@ -22,10 +22,7 @@ namespace Maple2.Trigger._02000118_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {2001}, arg2: true);
-                context.SetSkill(arg1: new[] {2002}, arg2: true);
-                context.SetSkill(arg1: new[] {2003}, arg2: true);
-                context.SetSkill(arg1: new[] {2004}, arg2: true);
+                context.SetSkill(arg1: new[] {2001, 2002, 2003, 2004}, arg2: true);
             }
 
             public override void Execute() {
@@ -43,10 +40,7 @@ namespace Maple2.Trigger._02000118_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 10);
-                context.SetSkill(arg1: new[] {2001}, arg2: false);
-                context.SetSkill(arg1: new[] {2002}, arg2: false);
-                context.SetSkill(arg1: new[] {2003}, arg2: false);
-                context.SetSkill(arg1: new[] {2004}, arg2: false);
+                context.SetSkill(arg1: new[] {2001, 2002, 2003, 2004}, arg2: false);
             }
 
             public override void Execute() {

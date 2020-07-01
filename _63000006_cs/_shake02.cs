@@ -19,10 +19,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal State다리흔들기준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {910}, arg2: false);
-                context.SetSkill(arg1: new[] {911}, arg2: false);
-                context.SetSkill(arg1: new[] {912}, arg2: false);
-                context.SetSkill(arg1: new[] {913}, arg2: false);
+                context.SetSkill(arg1: new[] {910, 911, 912, 913}, arg2: false);
             }
 
             public override void Execute() {
@@ -40,10 +37,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 42);
-                context.SetSkill(arg1: new[] {910}, arg2: true);
-                context.SetSkill(arg1: new[] {911}, arg2: true);
-                context.SetSkill(arg1: new[] {912}, arg2: true);
-                context.SetSkill(arg1: new[] {913}, arg2: true);
+                context.SetSkill(arg1: new[] {910, 911, 912, 913}, arg2: true);
             }
 
             public override void Execute() {
@@ -65,10 +59,7 @@ namespace Maple2.Trigger._63000006_cs {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {910}, arg2: false);
-                context.SetSkill(arg1: new[] {911}, arg2: false);
-                context.SetSkill(arg1: new[] {912}, arg2: false);
-                context.SetSkill(arg1: new[] {913}, arg2: false);
+                context.SetSkill(arg1: new[] {910, 911, 912, 913}, arg2: false);
             }
 
             public override void Execute() { }

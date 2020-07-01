@@ -4,10 +4,8 @@ namespace Maple2.Trigger._80000014_bonus {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3123, 3124, 3125, 3126, 3127, 3128, 3129}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3121}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3122}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3123, 3124, 3125, 3126, 3127, 3128, 3129}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3121, 3122}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3701, 3702, 3703}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 

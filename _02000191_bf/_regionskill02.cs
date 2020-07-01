@@ -19,8 +19,7 @@ namespace Maple2.Trigger._02000191_bf {
             internal State스킬작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {301}, arg2: true);
-                context.SetSkill(arg1: new[] {303}, arg2: true);
+                context.SetSkill(arg1: new[] {301, 303}, arg2: true);
             }
 
             public override void Execute() {
@@ -37,8 +36,7 @@ namespace Maple2.Trigger._02000191_bf {
             internal State트리거초기화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {301}, arg2: false);
-                context.SetSkill(arg1: new[] {303}, arg2: false);
+                context.SetSkill(arg1: new[] {301, 303}, arg2: false);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 

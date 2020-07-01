@@ -4,38 +4,11 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001}, arg2: false);
                 context.CreateMonster(arg1: new[] {101, 201, 301, 401, 501}, arg2: false);
-                context.SetAgent(arg1: "8000", arg2: true);
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
-                context.SetAgent(arg1: "8004", arg2: true);
-                context.SetAgent(arg1: "8005", arg2: true);
-                context.SetAgent(arg1: "8006", arg2: true);
-                context.SetAgent(arg1: "8007", arg2: true);
-                context.SetAgent(arg1: "8008", arg2: true);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: true);
                 context.SetSkill(arg1: new[] {7000}, arg2: false);
-                context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
-                context.SetEffect(arg1: new[] {6001}, arg2: false);
-                context.SetEffect(arg1: new[] {7100}, arg2: false);
-                context.SetEffect(arg1: new[] {7101}, arg2: false);
-                context.SetEffect(arg1: new[] {7102}, arg2: false);
-                context.SetEffect(arg1: new[] {7103}, arg2: false);
-                context.SetEffect(arg1: new[] {7200}, arg2: false);
-                context.SetEffect(arg1: new[] {7201}, arg2: false);
-                context.SetEffect(arg1: new[] {7202}, arg2: false);
-                context.SetEffect(arg1: new[] {7203}, arg2: false);
-                context.SetEffect(arg1: new[] {7204}, arg2: false);
-                context.SetEffect(arg1: new[] {7205}, arg2: false);
-                context.SetEffect(arg1: new[] {7206}, arg2: false);
-                context.SetEffect(arg1: new[] {7207}, arg2: false);
-                context.SetEffect(arg1: new[] {7208}, arg2: false);
-                context.SetEffect(arg1: new[] {7209}, arg2: false);
-                context.SetEffect(arg1: new[] {7210}, arg2: false);
-                context.SetEffect(arg1: new[] {7211}, arg2: false);
+                context.SetEffect(arg1: new[] {7001, 6000, 6001, 7100, 7101, 7102, 7103, 7200, 7201, 7202, 7203, 7204, 7205, 7206, 7207, 7208, 7209, 7210, 7211}, arg2: false);
             }
 
             public override void Execute() {
@@ -362,15 +335,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 700, arg2: false);
-                context.SetAgent(arg1: "8000", arg2: false);
-                context.SetAgent(arg1: "8001", arg2: false);
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
-                context.SetAgent(arg1: "8004", arg2: false);
-                context.SetAgent(arg1: "8005", arg2: false);
-                context.SetAgent(arg1: "8006", arg2: false);
-                context.SetAgent(arg1: "8007", arg2: false);
-                context.SetAgent(arg1: "8008", arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: false);
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
             }
 
@@ -406,8 +371,7 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6001}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {6001, 5001}, arg2: true);
                 context.HideGuideSummary(entityId: 10025010);
             }
 
@@ -522,15 +486,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.DestroyMonster(arg1: new[] {902});
                 context.CreateMonster(arg1: new[] {912}, arg2: false);
                 context.CameraSelect(arg1: 700, arg2: true);
-                context.SetAgent(arg1: "8000", arg2: true);
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
-                context.SetAgent(arg1: "8004", arg2: true);
-                context.SetAgent(arg1: "8005", arg2: true);
-                context.SetAgent(arg1: "8006", arg2: true);
-                context.SetAgent(arg1: "8007", arg2: true);
-                context.SetAgent(arg1: "8008", arg2: true);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: true);
             }
 
             public override void Execute() {
@@ -575,15 +531,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 700, arg2: false);
-                context.SetAgent(arg1: "8000", arg2: false);
-                context.SetAgent(arg1: "8001", arg2: false);
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
-                context.SetAgent(arg1: "8004", arg2: false);
-                context.SetAgent(arg1: "8005", arg2: false);
-                context.SetAgent(arg1: "8006", arg2: false);
-                context.SetAgent(arg1: "8007", arg2: false);
-                context.SetAgent(arg1: "8008", arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: false);
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
             }
 
@@ -619,8 +567,7 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6001}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {6001, 5001}, arg2: true);
                 context.HideGuideSummary(entityId: 10025020);
             }
 
@@ -735,15 +682,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.DestroyMonster(arg1: new[] {903});
                 context.CreateMonster(arg1: new[] {913}, arg2: false);
                 context.CameraSelect(arg1: 700, arg2: true);
-                context.SetAgent(arg1: "8000", arg2: true);
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
-                context.SetAgent(arg1: "8004", arg2: true);
-                context.SetAgent(arg1: "8005", arg2: true);
-                context.SetAgent(arg1: "8006", arg2: true);
-                context.SetAgent(arg1: "8007", arg2: true);
-                context.SetAgent(arg1: "8008", arg2: true);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: true);
             }
 
             public override void Execute() {
@@ -788,15 +727,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 700, arg2: false);
-                context.SetAgent(arg1: "8000", arg2: false);
-                context.SetAgent(arg1: "8001", arg2: false);
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
-                context.SetAgent(arg1: "8004", arg2: false);
-                context.SetAgent(arg1: "8005", arg2: false);
-                context.SetAgent(arg1: "8006", arg2: false);
-                context.SetAgent(arg1: "8007", arg2: false);
-                context.SetAgent(arg1: "8008", arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: false);
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
             }
 
@@ -832,8 +763,7 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateDelay03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6001}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {6001, 5001}, arg2: true);
                 context.HideGuideSummary(entityId: 10025030);
             }
 
@@ -1311,15 +1241,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.DestroyMonster(arg1: new[] {900});
                 context.CreateMonster(arg1: new[] {924}, arg2: false);
                 context.CameraSelect(arg1: 700, arg2: true);
-                context.SetAgent(arg1: "8000", arg2: true);
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
-                context.SetAgent(arg1: "8004", arg2: true);
-                context.SetAgent(arg1: "8005", arg2: true);
-                context.SetAgent(arg1: "8006", arg2: true);
-                context.SetAgent(arg1: "8007", arg2: true);
-                context.SetAgent(arg1: "8008", arg2: true);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: true);
             }
 
             public override void Execute() {
@@ -1471,15 +1393,7 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateBattleStart02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8000", arg2: false);
-                context.SetAgent(arg1: "8001", arg2: false);
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
-                context.SetAgent(arg1: "8004", arg2: false);
-                context.SetAgent(arg1: "8005", arg2: false);
-                context.SetAgent(arg1: "8006", arg2: false);
-                context.SetAgent(arg1: "8007", arg2: false);
-                context.SetAgent(arg1: "8008", arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: false);
                 context.ShowGuideSummary(entityId: 10025040, textId: 10025040);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
             }

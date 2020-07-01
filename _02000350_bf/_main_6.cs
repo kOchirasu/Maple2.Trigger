@@ -5,8 +5,7 @@ namespace Maple2.Trigger._02000350_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3601}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {6601}, arg2: false);
-                context.SetEffect(arg1: new[] {6602}, arg2: false);
+                context.SetEffect(arg1: new[] {6601, 6602}, arg2: false);
                 context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
             }
 

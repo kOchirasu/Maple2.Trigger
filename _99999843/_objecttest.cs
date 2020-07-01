@@ -5,9 +5,7 @@ namespace Maple2.Trigger._99999843 {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000401}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000400}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000402}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000403}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000400, 12000402, 12000403}, arg2: 2);
             }
 
             public override void Execute() {
@@ -27,8 +25,7 @@ namespace Maple2.Trigger._99999843 {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.PatrolConditionUser(patrolName: "MS2PatrolData0", patrolIndex: 1,
-                        additionalEffectId: 73000006);
+                    context.PatrolConditionUser(patrolName: "MS2PatrolData0", patrolIndex: 1, additionalEffectId: 73000006);
                     context.State = new StatePC_MOVE_02_Delay(context);
                     return;
                 }

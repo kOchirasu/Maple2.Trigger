@@ -446,8 +446,7 @@ namespace Maple2.Trigger._02000392_bf {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.DestroyMonster(arg1: new[] {1098, 1099});
-                context.DestroyMonster(arg1: new[] {1096, 1097});
+                context.DestroyMonster(arg1: new[] {1098, 1099, 1096, 1097});
                 context.CreateMonster(arg1: new[] {1096, 1097}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);

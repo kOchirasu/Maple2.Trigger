@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52000050_qd {
             public override void OnEnter() {
                 context.SetActor(arg1: 7001, arg2: false, arg3: "Sit_Down_A");
                 context.SetActor(arg1: 7002, arg2: false, arg3: "Down_Idle_A");
-                context.SetMesh(arg1: new[] {6020, 6021, 6022, 6023, 6024, 6025, 6026, 6027, 6028, 6029, 6030},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {6020, 6021, 6022, 6023, 6024, 6025, 6026, 6027, 6028, 6029, 6030}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {6011}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000478}, arg2: 1);
                 context.SetEffect(arg1: new[] {7010}, arg2: false);
@@ -16,20 +15,17 @@ namespace Maple2.Trigger._52000050_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003059},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003059}, arg3: new byte[] {1})) {
                     context.State = new Statestart_c(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003058},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003058}, arg3: new byte[] {2})) {
                     context.State = new Statestart_c(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003058},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003058}, arg3: new byte[] {1})) {
                     context.State = new Statestart_b(context);
                     return;
                 }
@@ -43,10 +39,8 @@ namespace Maple2.Trigger._52000050_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7011}, arg2: true);
-                context.SetMesh(arg1: new[] {6020, 6021, 6022, 6023, 6024, 6025}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMeshAnimation(arg1: new[] {6020, 6021, 6022, 6023, 6024, 6025}, arg2: true, arg3: 0,
-                    arg4: 0);
+                context.SetMesh(arg1: new[] {6020, 6021, 6022, 6023, 6024, 6025}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMeshAnimation(arg1: new[] {6020, 6021, 6022, 6023, 6024, 6025}, arg2: true, arg3: 0, arg4: 0);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 111, 112, 121, 122});
                 context.SetActor(arg1: 7001, arg2: true, arg3: "Sit_Down_A");
                 context.SetActor(arg1: 7002, arg2: true, arg3: "Down_Idle_A");
@@ -87,8 +81,7 @@ namespace Maple2.Trigger._52000050_qd {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6020, 6021, 6022, 6023, 6024}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMeshAnimation(arg1: new[] {6020, 6021, 6022, 6023, 6024, 6025}, arg2: true, arg3: 0,
-                    arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {6020, 6021, 6022, 6023, 6024, 6025}, arg2: true, arg3: 0, arg4: 0);
                 context.DestroyMonster(arg1: new[] {101, 102, 111, 112, 121, 122});
                 context.SetActor(arg1: 7001, arg2: true, arg3: "Sit_Down_A");
                 context.SetActor(arg1: 7002, arg2: true, arg3: "Down_Idle_A");
@@ -98,8 +91,7 @@ namespace Maple2.Trigger._52000050_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003059},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003059}, arg3: new byte[] {1})) {
                     context.MoveUser(arg1: 52000050, arg2: 2);
                     context.State = new Statestart_c_02(context);
                     return;
@@ -113,8 +105,7 @@ namespace Maple2.Trigger._52000050_qd {
             internal Statestart_c_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {6020, 6021, 6022, 6023, 6024, 6025}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {6020, 6021, 6022, 6023, 6024, 6025}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {6026, 6027, 6028, 6029, 6030}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMeshAnimation(arg1: new[] {6026, 6027, 6028, 6029, 6030}, arg2: true, arg3: 0, arg4: 0);
                 context.SetProductionUI(arg1: 1);
@@ -178,8 +169,7 @@ namespace Maple2.Trigger._52000050_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.SetMesh(arg1: new[] {6026, 6027, 6028, 6029, 6030}, arg2: false, arg3: 0, arg4: 0,
-                        arg5: 0f);
+                    context.SetMesh(arg1: new[] {6026, 6027, 6028, 6029, 6030}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new Statestart_c_06(context);
                     return;
                 }

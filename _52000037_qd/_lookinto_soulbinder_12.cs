@@ -10,14 +10,12 @@ namespace Maple2.Trigger._52000037_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100065}, arg3: new byte[] {2},
-                    arg4: 110)) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100065}, arg3: new byte[] {2}, arg4: 110)) {
                     context.State = new State연출01조건(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100065}, arg3: new byte[] {3},
-                    arg4: 110)) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100065}, arg3: new byte[] {3}, arg4: 110)) {
                     context.State = new StateNPC만배치(context);
                     return;
                 }
@@ -60,8 +58,7 @@ namespace Maple2.Trigger._52000037_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9300}, arg2: new[] {60100065}, arg3: new byte[] {2},
-                    arg4: 110)) {
+                if (context.QuestUserDetected(arg1: new[] {9300}, arg2: new[] {60100065}, arg3: new byte[] {2}, arg4: 110)) {
                     context.State = new State연출01시작(context);
                     return;
                 }
@@ -94,8 +91,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__0$", arg4: 2,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__0$", arg4: 2, arg5: 0);
             }
 
             public override void Execute() {
@@ -112,8 +108,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__1$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__1$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -130,8 +125,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__2$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__2$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -148,8 +142,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__3$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__3$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -166,8 +159,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__4$", arg4: 5,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__4$", arg4: 5, arg5: 0);
             }
 
             public override void Execute() {
@@ -186,8 +178,7 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9301}, arg2: new[] {60100065}, arg3: new byte[] {2},
-                    arg4: 110)) {
+                if (context.QuestUserDetected(arg1: new[] {9301}, arg2: new[] {60100065}, arg3: new byte[] {2}, arg4: 110)) {
                     context.State = new StatePC말풍선07(context);
                     return;
                 }
@@ -200,8 +191,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__5$", arg4: 2,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__LOOKINTO_SOULBINDER_12__5$", arg4: 2, arg5: 0);
             }
 
             public override void Execute() {
@@ -222,8 +212,7 @@ namespace Maple2.Trigger._52000037_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9302}, arg2: new[] {60100065}, arg3: new byte[] {2},
-                    arg4: 110)) {
+                if (context.QuestUserDetected(arg1: new[] {9302}, arg2: new[] {60100065}, arg3: new byte[] {2}, arg4: 110)) {
                     context.State = new State연출종료(context);
                     return;
                 }

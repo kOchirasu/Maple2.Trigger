@@ -6,18 +6,8 @@ namespace Maple2.Trigger._61000004_me {
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                 context.SetMesh(arg1: new[] {301, 302, 303}, arg2: true, arg3: 0, arg4: 0);
-                context.SetMesh(arg1: new[] {3101, 3102, 3201, 3202, 3301, 3302, 3401, 3402, 3403, 3404},
-                    arg2: false, arg3: 0, arg4: 0);
-                context.SetEffect(arg1: new[] {71011}, arg2: false);
-                context.SetEffect(arg1: new[] {71012}, arg2: false);
-                context.SetEffect(arg1: new[] {71021}, arg2: false);
-                context.SetEffect(arg1: new[] {71022}, arg2: false);
-                context.SetEffect(arg1: new[] {72011}, arg2: false);
-                context.SetEffect(arg1: new[] {72021}, arg2: false);
-                context.SetEffect(arg1: new[] {73011}, arg2: false);
-                context.SetEffect(arg1: new[] {73021}, arg2: false);
-                context.SetEffect(arg1: new[] {73022}, arg2: false);
-                context.SetEffect(arg1: new[] {73023}, arg2: false);
+                context.SetMesh(arg1: new[] {3101, 3102, 3201, 3202, 3301, 3302, 3401, 3402, 3403, 3404}, arg2: false, arg3: 0, arg4: 0);
+                context.SetEffect(arg1: new[] {71011, 71012, 71021, 71022, 72011, 72021, 73011, 73021, 73022, 73023}, arg2: false);
             }
 
             public override void Execute() {
@@ -38,16 +28,14 @@ namespace Maple2.Trigger._61000004_me {
             public override void Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3101}, arg2: true, arg3: 0, arg4: 0);
-                    context.SetEffect(arg1: new[] {71011}, arg2: true);
-                    context.SetEffect(arg1: new[] {71012}, arg2: true);
+                    context.SetEffect(arg1: new[] {71011, 71012}, arg2: true);
                     context.State = new State랜덤블록02(context);
                     return;
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3102}, arg2: true, arg3: 0, arg4: 0);
-                    context.SetEffect(arg1: new[] {71021}, arg2: true);
-                    context.SetEffect(arg1: new[] {71022}, arg2: true);
+                    context.SetEffect(arg1: new[] {71021, 71022}, arg2: true);
                     context.State = new State랜덤블록02(context);
                     return;
                 }
@@ -95,9 +83,7 @@ namespace Maple2.Trigger._61000004_me {
 
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3302}, arg2: true, arg3: 0, arg4: 0);
-                    context.SetEffect(arg1: new[] {73021}, arg2: true);
-                    context.SetEffect(arg1: new[] {73022}, arg2: true);
-                    context.SetEffect(arg1: new[] {73023}, arg2: true);
+                    context.SetEffect(arg1: new[] {73021, 73022, 73023}, arg2: true);
                     context.State = new State랜덤블록04(context);
                     return;
                 }

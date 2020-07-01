@@ -41,8 +41,7 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {40002651},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {40002651}, arg3: new byte[] {1})) {
                     context.State = new State가이드출력(context);
                     return;
                 }

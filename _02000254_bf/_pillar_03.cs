@@ -6,9 +6,7 @@ namespace Maple2.Trigger._02000254_bf {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000442}, arg2: 0);
                 context.SetSkill(arg1: new[] {703}, arg2: false);
-                context.SetEffect(arg1: new[] {446}, arg2: false);
-                context.SetEffect(arg1: new[] {447}, arg2: false);
-                context.SetEffect(arg1: new[] {462}, arg2: false);
+                context.SetEffect(arg1: new[] {446, 447, 462}, arg2: false);
             }
 
             public override void Execute() {
@@ -47,9 +45,7 @@ namespace Maple2.Trigger._02000254_bf {
             internal State스턴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {446}, arg2: true);
-                context.SetEffect(arg1: new[] {447}, arg2: true);
-                context.SetEffect(arg1: new[] {462}, arg2: true);
+                context.SetEffect(arg1: new[] {446, 447, 462}, arg2: true);
                 context.SetSkill(arg1: new[] {703}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 2);
             }

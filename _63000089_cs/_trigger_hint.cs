@@ -4,10 +4,7 @@ namespace Maple2.Trigger._63000089_cs {
             internal State힌트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetRandomMesh(
-                    arg1: new[]
-                        {801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818},
-                    arg2: true, arg3: 2, arg4: 0, arg5: 1000);
+                context.SetRandomMesh(arg1: new[] {801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818}, arg2: true, arg3: 2, arg4: 0, arg5: 1000);
                 context.SetTimer(arg1: "99", arg2: 3, arg3: false);
             }
 
@@ -25,10 +22,7 @@ namespace Maple2.Trigger._63000089_cs {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[]
-                        {801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818},
-                    arg2: false);
+                context.SetMesh(arg1: new[] {801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818}, arg2: false);
                 context.SetTimer(arg1: "41", arg2: 30, arg3: false);
             }
 

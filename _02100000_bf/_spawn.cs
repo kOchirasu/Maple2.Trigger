@@ -13,9 +13,7 @@ namespace Maple2.Trigger._02100000_bf {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new[] {81003}, arg2: true);
-                context.CreateMonster(arg1: new[] {810031}, arg2: true);
-                context.CreateMonster(arg1: new[] {810032}, arg2: true);
+                context.CreateMonster(arg1: new[] {81003, 810031, 810032}, arg2: true);
             }
         }
 

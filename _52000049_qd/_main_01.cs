@@ -6,26 +6,21 @@ namespace Maple2.Trigger._52000049_qd {
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {8099}, arg2: false);
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306}, arg2: false);
-                context.SetMesh(arg1: new[] {2116}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {2201, 2202, 2203, 2204, 2205, 2206}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {2116, 2201, 2202, 2203, 2204, 2205, 2206}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053}, arg3: new byte[] {1})) {
                     context.State = new Statestart(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053}, arg3: new byte[] {2})) {
                     context.State = new Statestart_23(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053}, arg3: new byte[] {3})) {
                     context.State = new Statestart_23(context);
                     return;
                 }
@@ -59,10 +54,7 @@ namespace Maple2.Trigger._52000049_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7012}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115
-                    }, arg2: false, arg3: 0, arg4: 100, arg5: 8f);
+                context.SetMesh(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115}, arg2: false, arg3: 0, arg4: 100, arg5: 8f);
                 context.SetMesh(arg1: new[] {2116}, arg2: true, arg3: 0, arg4: 100, arg5: 3f);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_2002");
@@ -410,11 +402,7 @@ namespace Maple2.Trigger._52000049_qd {
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "HeroJunta");
-                    context.SetMesh(
-                        arg1: new[] {
-                            2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114,
-                            2115
-                        }, arg2: true, arg3: 0, arg4: 100, arg5: 8f);
+                    context.SetMesh(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115}, arg2: true, arg3: 0, arg4: 100, arg5: 8f);
                     context.DestroyMonster(arg1: new[] {101});
                     context.CameraSelectPath(arg1: new[] {8013}, arg2: true);
                     context.SetProductionUI(arg1: 0);
@@ -433,8 +421,7 @@ namespace Maple2.Trigger._52000049_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053}, arg3: new byte[] {2})) {
                     context.DestroyMonster(arg1: new[] {501});
                     context.CreateMonster(arg1: new[] {502}, arg2: false);
                     context.State = new Statestart_22(context);
@@ -451,8 +438,7 @@ namespace Maple2.Trigger._52000049_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003054},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003054}, arg3: new byte[] {1})) {
                     context.MoveUser(arg1: 52000050, arg2: 1);
                     context.State = new Stateend(context);
                     return;

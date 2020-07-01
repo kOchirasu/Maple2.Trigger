@@ -5,10 +5,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {4000}, arg2: false);
-                context.SetEffect(arg1: new[] {400}, arg2: true);
-                context.SetEffect(arg1: new[] {401}, arg2: true);
-                context.SetEffect(arg1: new[] {402}, arg2: true);
-                context.SetEffect(arg1: new[] {403}, arg2: true);
+                context.SetEffect(arg1: new[] {400, 401, 402, 403}, arg2: true);
             }
 
             public override void Execute() {

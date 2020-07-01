@@ -135,8 +135,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__1$", duration: 2500,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__1$", duration: 2500, align: "right");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2001");
                 context.SetSceneSkip(arg1: "오스카퇴장_02", arg2: "nextState");
             }
@@ -155,8 +154,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__2$", duration: 3000,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__2$", duration: 3000, align: "left");
             }
 
             public override void Execute() {
@@ -173,8 +171,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__3$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__3$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -191,8 +188,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__4$", duration: 3000,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__4$", duration: 3000, align: "left");
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
             }
 
@@ -210,8 +206,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__5$", duration: 4000,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__5$", duration: 4000, align: "left");
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
             }
 
@@ -229,8 +224,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__6$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__6$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -247,11 +241,9 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__7$", duration: 3000,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__7$", duration: 3000, align: "left");
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__8$", duration: 4000,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__8$", duration: 4000, align: "left");
             }
 
             public override void Execute() {
@@ -285,10 +277,8 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__9$", duration: 3000,
-                    align: "right");
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__10$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__9$", duration: 3000, align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__10$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -322,8 +312,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__11$", duration: 2500,
-                    illustId: "Oskhal_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__11$", duration: 2500, illustId: "Oskhal_normal", align: "left");
             }
 
             public override void Execute() {
@@ -340,10 +329,8 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__12$", duration: 3000,
-                    align: "right");
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__13$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__12$", duration: 3000, align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__13$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -360,12 +347,9 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__14$", duration: 3500,
-                    illustId: "Oskhal_normal", align: "left");
-                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__15$", duration: 3500,
-                    illustId: "Oskhal_normal", align: "left");
-                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__16$", duration: 2500,
-                    illustId: "Oskhal_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__14$", duration: 3500, illustId: "Oskhal_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__15$", duration: 3500, illustId: "Oskhal_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__16$", duration: 2500, illustId: "Oskhal_normal", align: "left");
             }
 
             public override void Execute() {
@@ -382,12 +366,9 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__17$", duration: 2500,
-                    align: "right");
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__18$", duration: 4000,
-                    align: "right");
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__19$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__17$", duration: 2500, align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__18$", duration: 4000, align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__19$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -404,8 +385,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__20$", duration: 3000,
-                    illustId: "Oskhal_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__20$", duration: 3000, illustId: "Oskhal_normal", align: "left");
             }
 
             public override void Execute() {
@@ -422,8 +402,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__21$", duration: 4000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__21$", duration: 4000, align: "right");
             }
 
             public override void Execute() {
@@ -440,10 +419,8 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__22$", duration: 3000,
-                    illustId: "Oskhal_normal", align: "left");
-                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__23$", duration: 3000,
-                    illustId: "Oskhal_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__22$", duration: 3000, illustId: "Oskhal_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__23$", duration: 3000, illustId: "Oskhal_normal", align: "left");
             }
 
             public override void Execute() {
@@ -460,8 +437,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__24$", duration: 2500,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__24$", duration: 2500, align: "right");
             }
 
             public override void Execute() {
@@ -478,8 +454,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State오스카와대화_19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__25$", duration: 3000,
-                    illustId: "Oskhal_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11003380, msg: "$52000148_QD__52000148_MAIN__25$", duration: 3000, illustId: "Oskhal_normal", align: "left");
             }
 
             public override void Execute() {
@@ -548,8 +523,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State독백_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__26$", duration: 2500,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__26$", duration: 2500, align: "right");
                 context.SetSceneSkip(arg1: "마무리_01", arg2: "nextState");
             }
 
@@ -585,8 +559,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State독백_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__27$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__27$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -620,8 +593,7 @@ namespace Maple2.Trigger._52000148_qd {
             internal State독백_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__28$", duration: 3500,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__28$", duration: 3500, align: "right");
                 context.FaceEmotion(spawnPointId: 0);
             }
 

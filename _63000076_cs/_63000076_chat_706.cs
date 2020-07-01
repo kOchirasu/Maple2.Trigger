@@ -19,8 +19,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State706잡담_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 118, msg: "$63000076_CS__63000076_CHAT_706__0$", duration: 2500,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 118, msg: "$63000076_CS__63000076_CHAT_706__0$", duration: 2500, delayTick: 0);
             }
 
             public override void Execute() {

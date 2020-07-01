@@ -10,164 +10,135 @@ namespace Maple2.Trigger._52000039_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003054},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003054}, arg3: new byte[] {3})) {
                     context.State = new StateNextMapPortalOpen(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003054},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003054}, arg3: new byte[] {2})) {
                     context.State = new StateNextMapPortalOpen(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003054},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003054}, arg3: new byte[] {1})) {
                     context.State = new StateNextMapPortalOpen(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053}, arg3: new byte[] {3})) {
                     context.State = new StateNextMapPortalOpen(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053}, arg3: new byte[] {2})) {
                     context.State = new StateNextMapPortalOpen(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003053}, arg3: new byte[] {1})) {
                     context.State = new StateNextMapPortalOpen(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003052},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003052}, arg3: new byte[] {3})) {
                     context.State = new StateNextMapPortalOpen(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003052},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003052}, arg3: new byte[] {2})) {
                     context.State = new StateNextMapPortalOpen(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003052},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003052}, arg3: new byte[] {1})) {
                     context.State = new StateNextMapPortalOpen(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003051},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003051}, arg3: new byte[] {3})) {
                     context.State = new StateNextMapPortalOpen(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003051},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003051}, arg3: new byte[] {2})) {
                     context.State = new StateNextMapPortalOpen(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003051},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003051}, arg3: new byte[] {1})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
-                    context.SetMesh(arg1: new[] {6001}, arg2: false);
-                    context.SetMesh(arg1: new[] {6010}, arg2: false);
+                    context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
                     context.State = new StatePCPatrol01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {3})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
-                    context.SetMesh(arg1: new[] {6001}, arg2: false);
-                    context.SetMesh(arg1: new[] {6010}, arg2: false);
+                    context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
                     context.State = new Statescene_c_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {2})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
-                    context.SetMesh(arg1: new[] {6001}, arg2: false);
-                    context.SetMesh(arg1: new[] {6010}, arg2: false);
+                    context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
                     context.State = new Statescene_c_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {1})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
-                    context.SetMesh(arg1: new[] {6001}, arg2: false);
-                    context.SetMesh(arg1: new[] {6010}, arg2: false);
+                    context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
                     context.State = new Statescene_c_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002634},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002634}, arg3: new byte[] {3})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
-                    context.SetMesh(arg1: new[] {6001}, arg2: false);
-                    context.SetMesh(arg1: new[] {6010}, arg2: false);
+                    context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
                     context.State = new Statescene_b_07(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002634},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002634}, arg3: new byte[] {2})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
-                    context.SetMesh(arg1: new[] {6001}, arg2: false);
-                    context.SetMesh(arg1: new[] {6010}, arg2: false);
+                    context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
                     context.State = new Statescene_b_07(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {1})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
-                    context.SetMesh(arg1: new[] {6001}, arg2: false);
-                    context.SetMesh(arg1: new[] {6010}, arg2: false);
+                    context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
                     context.State = new Statescene_c_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002633},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002633}, arg3: new byte[] {1})) {
                     context.State = new Stateready_02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002633},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002633}, arg3: new byte[] {2})) {
                     context.CreateMonster(arg1: new[] {101}, arg2: true);
                     context.State = new Statescene_b_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002633},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002633}, arg3: new byte[] {3})) {
                     context.CreateMonster(arg1: new[] {101}, arg2: true);
                     context.State = new Statescene_b_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002634},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002634}, arg3: new byte[] {1})) {
                     context.CreateMonster(arg1: new[] {101}, arg2: true);
                     context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2001");
                     context.CreateMonster(arg1: new[] {122}, arg2: true);
@@ -175,11 +146,9 @@ namespace Maple2.Trigger._52000039_qd {
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {2})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
-                    context.SetMesh(arg1: new[] {6001}, arg2: false);
-                    context.SetMesh(arg1: new[] {6010}, arg2: false);
+                    context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
                     context.State = new Statescene_c_01(context);
                     return;
@@ -187,8 +156,7 @@ namespace Maple2.Trigger._52000039_qd {
 
                 if (context.UserDetected(arg1: new[] {701}, arg2: 110)) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
-                    context.SetMesh(arg1: new[] {6001}, arg2: false);
-                    context.SetMesh(arg1: new[] {6010}, arg2: false);
+                    context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
                     context.State = new Statescene_c_01(context);
                     return;
@@ -207,8 +175,7 @@ namespace Maple2.Trigger._52000039_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002633},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002633}, arg3: new byte[] {1})) {
                     context.State = new Statestart(context);
                     return;
                 }
@@ -287,8 +254,7 @@ namespace Maple2.Trigger._52000039_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002634},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002634}, arg3: new byte[] {1})) {
                     context.DestroyMonster(arg1: new[] {112});
                     context.CreateMonster(arg1: new[] {122}, arg2: true);
                     context.State = new Statescene_b_02(context);
@@ -470,8 +436,7 @@ namespace Maple2.Trigger._52000039_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {1})) {
                     context.State = new Statescene_c_01(context);
                     return;
                 }
@@ -517,8 +482,7 @@ namespace Maple2.Trigger._52000039_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
-                context.SetMesh(arg1: new[] {6001}, arg2: false);
-                context.SetMesh(arg1: new[] {6010}, arg2: false);
+                context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                 context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }

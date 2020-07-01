@@ -7,14 +7,12 @@ namespace Maple2.Trigger._02000244_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {798, 799}, arg2: true);
-                context.SetEffect(arg1: new[] {2001}, arg2: false);
-                context.SetEffect(arg1: new[] {2002}, arg2: false);
+                context.SetEffect(arg1: new[] {2001, 2002}, arg2: false);
             }
 
             public override void Execute() {
                 if (context.GetUserCount(boxId: 205) == 1) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }

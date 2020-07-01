@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52000194_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003427},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003427}, arg3: new byte[] {2})) {
                     context.State = new StateWait_02(context);
                     return;
                 }
@@ -20,8 +19,7 @@ namespace Maple2.Trigger._52000194_qd {
             internal StateWait_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 52000194, arg2: 5001);
             }
@@ -63,8 +61,7 @@ namespace Maple2.Trigger._52000194_qd {
             internal State시공의균열(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -83,9 +80,7 @@ namespace Maple2.Trigger._52000194_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$52000194_QD__52000194__0$",
-                    desc: "$52000194_QD__52000194__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 5000, scale: 2.5f);
+                context.ShowCaption(type: "VerticalCaption", title: "$52000194_QD__52000194__0$", desc: "$52000194_QD__52000194__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
 
             public override void Execute() {

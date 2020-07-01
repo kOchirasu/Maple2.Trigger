@@ -38,8 +38,7 @@ namespace Maple2.Trigger._02020101_bf {
             internal State보스전_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 23501001, illust: "Turned_Yuperia_normal",
-                    script: "$02020101_BF__MAIN__0$", duration: 5670, voice: @"ko/Npc/00002206");
+                context.SideNpcTalk(type: "talk", npcId: 23501001, illust: "Turned_Yuperia_normal", script: "$02020101_BF__MAIN__0$", duration: 5670, voice: @"ko/Npc/00002206");
                 context.DungeonResetTime(seconds: 420);
                 context.CreateMonster(arg1: new[] {101});
             }
@@ -60,8 +59,7 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {101})
-                    && context.GetDungeonPlayTime() < 420) {
+                if (context.MonsterDead(arg1: new[] {101}) && context.GetDungeonPlayTime() < 420) {
                     context.State = new State보스전_성공(context);
                     return;
                 }
@@ -156,8 +154,7 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 23038005);
                 context.DungeonSetEndTime();
-                context.SideNpcTalk(type: "talk", npcId: 23501001, illust: "Turned_Yuperia_normal",
-                    script: "$02020101_BF__MAIN__1$", duration: 7940, voice: @"ko/Npc/00002207");
+                context.SideNpcTalk(type: "talk", npcId: 23501001, illust: "Turned_Yuperia_normal", script: "$02020101_BF__MAIN__1$", duration: 7940, voice: @"ko/Npc/00002207");
             }
 
             public override void Execute() {

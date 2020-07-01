@@ -8,8 +8,7 @@ namespace Maple2.Trigger._52010015_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002824},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002824}, arg3: new byte[] {2})) {
                     context.State = new State딜레이01(context);
                     return;
                 }

@@ -73,14 +73,12 @@ namespace Maple2.Trigger._52100013_qd {
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090}, arg3: new byte[] {1})) {
                     context.State = new Stateend(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100080},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100080}, arg3: new byte[] {2})) {
                     context.State = new Stateend(context);
                     return;
                 }
@@ -102,14 +100,12 @@ namespace Maple2.Trigger._52100013_qd {
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090}, arg3: new byte[] {1})) {
                     context.State = new Stateend(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100080},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100080}, arg3: new byte[] {2})) {
                     context.State = new Stateend(context);
                     return;
                 }

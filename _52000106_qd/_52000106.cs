@@ -8,26 +8,22 @@ namespace Maple2.Trigger._52000106_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002323},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002323}, arg3: new byte[] {1})) {
                     context.State = new State그림자의침략01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002323},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002323}, arg3: new byte[] {2})) {
                     context.State = new State그림자의침략완료02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002325},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002325}, arg3: new byte[] {2})) {
                     context.State = new State리엔을떠나다01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002323},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002323}, arg3: new byte[] {3})) {
                     context.State = new State그림자의침략완료02(context);
                     return;
                 }
@@ -41,8 +37,7 @@ namespace Maple2.Trigger._52000106_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -60,8 +55,7 @@ namespace Maple2.Trigger._52000106_qd {
             internal State그림자의침략02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {1000, 1001}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
             }
@@ -191,15 +185,9 @@ namespace Maple2.Trigger._52000106_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 4);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_ririn_Turn");
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraReset(interpolationTime: 0.5f);
-                context.CreateMonster(arg1: new[] {700, 701, 702, 703}, arg2: false);
-                context.CreateMonster(arg1: new[] {704, 705, 706, 707}, arg2: false);
-                context.CreateMonster(arg1: new[] {708, 709, 710, 711}, arg2: false);
-                context.CreateMonster(arg1: new[] {712, 713, 714, 715}, arg2: false);
-                context.CreateMonster(arg1: new[] {716, 717, 718, 719}, arg2: false);
-                context.CreateMonster(arg1: new[] {716, 717, 718, 719}, arg2: false);
+                context.CreateMonster(arg1: new[] {700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 716, 717, 718, 719}, arg2: false);
             }
 
             public override void Execute() {
@@ -222,15 +210,12 @@ namespace Maple2.Trigger._52000106_qd {
                 context.CameraReset(interpolationTime: 0.5f);
                 context.ShowGuideSummary(entityId: 25201061, textId: 25201061, duration: 5000);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_ririn_go");
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000106_QD__52000106__0$", duration: 6000,
-                    delayTick: 1000);
-                context.AddBalloonTalk(spawnPointId: 101, msg: "$52000106_QD__52000106__1$", duration: 6000,
-                    delayTick: 2000);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000106_QD__52000106__0$", duration: 6000, delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$52000106_QD__52000106__1$", duration: 6000, delayTick: 2000);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002323},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002323}, arg3: new byte[] {2})) {
                     context.State = new State그림자의침략완료01(context);
                     return;
                 }
@@ -243,8 +228,7 @@ namespace Maple2.Trigger._52000106_qd {
             internal State그림자의침략완료01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000106_QD__52000106__2$", duration: 6000,
-                    delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000106_QD__52000106__2$", duration: 6000, delayTick: 1000);
             }
 
             public override void Execute() {
@@ -262,13 +246,9 @@ namespace Maple2.Trigger._52000106_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.SetOnetimeEffect(id: 20, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
+                context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.DestroyMonster(arg1: new[] {101});
-                context.DestroyMonster(arg1: new[] {
-                    700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719
-                });
+                context.DestroyMonster(arg1: new[] {101, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719});
             }
 
             public override void Execute() {
@@ -288,26 +268,22 @@ namespace Maple2.Trigger._52000106_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.5f);
-                context.SetOnetimeEffect(id: 20, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
+                context.SetOnetimeEffect(id: 20, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
                 context.MoveUser(arg1: 52000106, arg2: 3);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002324},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002324}, arg3: new byte[] {1})) {
                     context.State = new State할아버지의물품조사01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002324},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002324}, arg3: new byte[] {2})) {
                     context.State = new State할아버지의물품조사01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002324},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002324}, arg3: new byte[] {3})) {
                     context.State = new State할아버지의물품조사01(context);
                     return;
                 }
@@ -325,8 +301,7 @@ namespace Maple2.Trigger._52000106_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002325},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002325}, arg3: new byte[] {2})) {
                     context.State = new State리엔을떠나다01(context);
                     return;
                 }
@@ -343,8 +318,7 @@ namespace Maple2.Trigger._52000106_qd {
                 context.DestroyMonster(arg1: new[] {102});
                 context.CreateMonster(arg1: new[] {103}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_ririn_goodBye_0");
-                context.SetOnetimeEffect(id: 30, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 30, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -363,8 +337,7 @@ namespace Maple2.Trigger._52000106_qd {
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: false);
-                context.SetOnetimeEffect(id: 30, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 30, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {1004, 1005}, arg2: false);
             }
 
@@ -383,8 +356,7 @@ namespace Maple2.Trigger._52000106_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003174, msg: "$52000106_QD__52000106__3$", duration: 4000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11003174, msg: "$52000106_QD__52000106__3$", duration: 4000, align: "right");
                 context.CameraSelectPath(arg1: new[] {1006, 1007}, arg2: false);
             }
 
@@ -402,8 +374,7 @@ namespace Maple2.Trigger._52000106_qd {
             internal State리엔을떠나다04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003174, msg: "$52000106_QD__52000106__4$", duration: 5000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11003174, msg: "$52000106_QD__52000106__4$", duration: 5000, align: "right");
             }
 
             public override void Execute() {
@@ -421,8 +392,7 @@ namespace Maple2.Trigger._52000106_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {1008, 1009}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003174, illustId: "Ririn_normal", msg: "$52000106_QD__52000106__5$",
-                    duration: 4000, align: "right");
+                context.AddCinematicTalk(npcId: 11003174, illustId: "Ririn_normal", msg: "$52000106_QD__52000106__5$", duration: 4000, align: "right");
             }
 
             public override void Execute() {
@@ -439,8 +409,7 @@ namespace Maple2.Trigger._52000106_qd {
             internal State리엔을떠나다06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003174, illustId: "Ririn_normal", msg: "$52000106_QD__52000106__6$",
-                    duration: 4000, align: "right");
+                context.AddCinematicTalk(npcId: 11003174, illustId: "Ririn_normal", msg: "$52000106_QD__52000106__6$", duration: 4000, align: "right");
             }
 
             public override void Execute() {
@@ -457,8 +426,7 @@ namespace Maple2.Trigger._52000106_qd {
             internal State리엔을떠나다07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 40, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 40, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {
@@ -477,9 +445,7 @@ namespace Maple2.Trigger._52000106_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.ShowCaption(type: "VerticalCaption", title: "$52000106_QD__52000106__7$",
-                    desc: "$52000106_QD__52000106__8$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 10000, scale: 2.5f);
+                context.ShowCaption(type: "VerticalCaption", title: "$52000106_QD__52000106__7$", desc: "$52000106_QD__52000106__8$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 10000, scale: 2.5f);
             }
 
             public override void Execute() {

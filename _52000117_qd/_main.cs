@@ -8,8 +8,7 @@ namespace Maple2.Trigger._52000117_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100015},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100015}, arg3: new byte[] {1})) {
                     context.State = new Statefadeout(context);
                     return;
                 }
@@ -62,8 +61,7 @@ namespace Maple2.Trigger._52000117_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
-                context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__0$", duration: 3000,
-                    illustId: "Jordy_normal", align: "Left");
+                context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__0$", duration: 3000, illustId: "Jordy_normal", align: "Left");
                 context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__1$", duration: 3000);
                 context.SetSceneSkip(arg1: "end", arg2: "exit");
             }

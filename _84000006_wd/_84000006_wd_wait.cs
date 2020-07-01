@@ -21,8 +21,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 102, msg: "$84000006_WD__84000006_WD_WAIT__0$", duration: 5000,
-                    delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 102, msg: "$84000006_WD__84000006_WD_WAIT__0$", duration: 5000, delayTick: 1000);
                 context.ShowGuideSummary(entityId: 28500001, textId: 28500001, duration: 5000);
             }
 
@@ -50,8 +49,7 @@ namespace Maple2.Trigger._84000006_wd {
             internal State대기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 102, msg: "$84000006_WD__84000006_WD_WAIT__1$", duration: 5000,
-                    delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 102, msg: "$84000006_WD__84000006_WD_WAIT__1$", duration: 5000, delayTick: 1000);
                 context.ShowGuideSummary(entityId: 28500002, textId: 28500002, duration: 5000);
             }
 

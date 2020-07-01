@@ -45,8 +45,7 @@ namespace Maple2.Trigger._99999896 {
                     context.SetEventUI(arg1: 1, arg2: "$99999896__02_COIN__2$", arg3: 2000);
                     context.CreateItem(arg1: new[] {22, 23, 24, 25, 26, 27, 28, 29, 30});
                     context.SetEventUI(arg1: 3, arg2: "$99999896__02_COIN__3$", arg3: 2000);
-                    context.CreateItem(arg1: new[]
-                        {31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48});
+                    context.CreateItem(arg1: new[] {31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48});
                     context.State = new State완료(context);
                     return;
                 }

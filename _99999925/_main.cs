@@ -4,11 +4,7 @@ namespace Maple2.Trigger._99999925 {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207}, arg2: false);
-                context.CreateMonster(arg1: new[] {211}, arg2: false);
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.CreateMonster(arg1: new[] {221, 222, 223, 224, 225, 226, 227, 228}, arg2: false);
-                context.CreateMonster(arg1: new[] {230, 231, 232, 233}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 211, 101, 221, 222, 223, 224, 225, 226, 227, 228, 230, 231, 232, 233}, arg2: false);
                 context.SetMesh(arg1: new[] {301}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.MoveNpc(arg1: 230, arg2: "MS2PatrolData0");
                 context.MoveNpc(arg1: 231, arg2: "MS2PatrolData1");
@@ -180,8 +176,7 @@ namespace Maple2.Trigger._99999925 {
             internal StateBrokenWood(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {411}, arg2: true);
-                context.SetSkill(arg1: new[] {412}, arg2: true);
+                context.SetSkill(arg1: new[] {411, 412}, arg2: true);
             }
 
             public override void Execute() {

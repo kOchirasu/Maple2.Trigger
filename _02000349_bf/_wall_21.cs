@@ -4,11 +4,7 @@ namespace Maple2.Trigger._02000349_bf {
             internal State벽재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        32101, 32102, 32103, 32104, 32105, 32106, 32107, 32108, 32109, 32110, 32111, 32112, 32113,
-                        32114, 32115, 32116, 32117
-                    }, arg2: true, arg3: 0, arg4: 10, arg5: 3f);
+                context.SetMesh(arg1: new[] {32101, 32102, 32103, 32104, 32105, 32106, 32107, 32108, 32109, 32110, 32111, 32112, 32113, 32114, 32115, 32116, 32117}, arg2: true, arg3: 0, arg4: 10, arg5: 3f);
             }
 
             public override void Execute() {
@@ -25,11 +21,7 @@ namespace Maple2.Trigger._02000349_bf {
             internal State벽삭제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        32101, 32102, 32103, 32104, 32105, 32106, 32107, 32108, 32109, 32110, 32111, 32112, 32113,
-                        32114, 32115, 32116, 32117
-                    }, arg2: false, arg3: 0, arg4: 10, arg5: 3f);
+                context.SetMesh(arg1: new[] {32101, 32102, 32103, 32104, 32105, 32106, 32107, 32108, 32109, 32110, 32111, 32112, 32113, 32114, 32115, 32116, 32117}, arg2: false, arg3: 0, arg4: 10, arg5: 3f);
             }
 
             public override void Execute() {

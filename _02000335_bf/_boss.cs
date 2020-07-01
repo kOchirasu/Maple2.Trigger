@@ -111,10 +111,8 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {141, 142, 143, 144, 145, 146, 147, 148});
-                context.SetSkill(arg1: new[] {5801}, arg2: true);
-                context.SetSkill(arg1: new[] {5802}, arg2: true);
-                context.SetEffect(arg1: new[] {6911}, arg2: true);
-                context.SetEffect(arg1: new[] {6912}, arg2: true);
+                context.SetSkill(arg1: new[] {5801, 5802}, arg2: true);
+                context.SetEffect(arg1: new[] {6911, 6912}, arg2: true);
                 context.CreateMonster(arg1: new[] {199}, arg2: false);
                 context.MoveNpc(arg1: 199, arg2: "MS2PatrolData_1003");
                 context.SetTimer(arg1: "1", arg2: 1, arg4: false);
@@ -139,10 +137,8 @@ namespace Maple2.Trigger._02000335_bf {
             internal State보스등장연출_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {5803}, arg2: true);
-                context.SetSkill(arg1: new[] {5804}, arg2: true);
-                context.SetEffect(arg1: new[] {6913}, arg2: true);
-                context.SetEffect(arg1: new[] {6914}, arg2: true);
+                context.SetSkill(arg1: new[] {5803, 5804}, arg2: true);
+                context.SetEffect(arg1: new[] {6913, 6914}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1, arg4: false);
             }
 
@@ -165,10 +161,8 @@ namespace Maple2.Trigger._02000335_bf {
             internal State보스등장연출_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {5805}, arg2: true);
-                context.SetSkill(arg1: new[] {5806}, arg2: true);
-                context.SetEffect(arg1: new[] {6915}, arg2: true);
-                context.SetEffect(arg1: new[] {6916}, arg2: true);
+                context.SetSkill(arg1: new[] {5805, 5806}, arg2: true);
+                context.SetEffect(arg1: new[] {6915, 6916}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1, arg4: false);
             }
 

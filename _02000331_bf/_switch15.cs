@@ -38,8 +38,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State스위치준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {777703}, arg2: false);
-                context.SetEffect(arg1: new[] {777804}, arg2: false);
+                context.SetEffect(arg1: new[] {777703, 777804}, arg2: false);
             }
 
             public override void Execute() {
@@ -79,8 +78,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {90008}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetRandomMesh(arg1: new[] {10040, 10041, 10042, 10043, 10044}, arg2: true, arg3: 5,
-                    arg4: 100, arg5: 100);
+                context.SetRandomMesh(arg1: new[] {10040, 10041, 10042, 10043, 10044}, arg2: true, arg3: 5, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777703}, arg2: true);
                 context.SetEffect(arg1: new[] {4200}, arg2: false);
             }
@@ -101,8 +99,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.SetMesh(arg1: new[] {90008}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetRandomMesh(arg1: new[] {10040, 10041, 10042, 10043, 10044}, arg2: true, arg3: 5,
-                    arg4: 150, arg5: 150);
+                context.SetRandomMesh(arg1: new[] {10040, 10041, 10042, 10043, 10044}, arg2: true, arg3: 5, arg4: 150, arg5: 150);
             }
 
             public override void Execute() {

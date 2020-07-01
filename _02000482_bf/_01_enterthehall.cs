@@ -8,12 +8,9 @@ namespace Maple2.Trigger._02000482_bf {
                 context.SetActor(arg1: 4004, arg2: true, arg3: "Closed");
                 context.SetLadder(arg1: 511, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 512, arg2: false, arg3: false, arg4: 0);
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3007}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.DestroyMonster(arg1: new[] {101, 102});
-                context.DestroyMonster(arg1: new[] {901, 902, 903});
-                context.SetAgent(arg1: "8006,8007,8008,8009", arg2: true);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.DestroyMonster(arg1: new[] {101, 102, 901, 902, 903});
+                context.SetAgent(arg1: new[] {8006, 8007, 8008, 8009}, arg2: true);
                 context.SetUserValue(key: "MobClear", value: 0);
                 context.SetUserValue(key: "FindWay", value: 0);
             }
@@ -70,8 +67,7 @@ namespace Maple2.Trigger._02000482_bf {
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000482_BF__01_ENTERTHEHALL__0$", arg4: 3,
-                    arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000482_BF__01_ENTERTHEHALL__0$", arg4: 3, arg5: 1);
                 context.SetSkip(arg1: "BlackeyeApp02Skip");
             }
 
@@ -107,8 +103,7 @@ namespace Maple2.Trigger._02000482_bf {
             internal StateBlackeyeApp03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000482_BF__01_ENTERTHEHALL__1$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000482_BF__01_ENTERTHEHALL__1$", arg4: 3, arg5: 0);
                 context.SetSkip(arg1: "BlackeyeApp03Skip");
             }
 
@@ -167,12 +162,9 @@ namespace Maple2.Trigger._02000482_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {901, 902, 903}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 901, arg3: "$02000482_BF__01_ENTERTHEHALL__2$", arg4: 2,
-                    arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 902, arg3: "$02000482_BF__01_ENTERTHEHALL__3$", arg4: 2,
-                    arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 903, arg3: "$02000482_BF__01_ENTERTHEHALL__4$", arg4: 2,
-                    arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 901, arg3: "$02000482_BF__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 902, arg3: "$02000482_BF__01_ENTERTHEHALL__3$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 903, arg3: "$02000482_BF__01_ENTERTHEHALL__4$", arg4: 2, arg5: 1);
                 context.SetSkip(arg1: "EnemyApp03Skip");
             }
 
@@ -273,8 +265,7 @@ namespace Maple2.Trigger._02000482_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000482_BF__01_ENTERTHEHALL__6$", arg4: 3,
-                    arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000482_BF__01_ENTERTHEHALL__6$", arg4: 3, arg5: 1);
                 context.SetLadder(arg1: 511, arg2: true, arg3: true, arg4: 1);
                 context.SetLadder(arg1: 512, arg2: true, arg3: true, arg4: 1);
                 context.SetUserValue(triggerId: 2, key: "MobAttack", value: 1);
@@ -315,7 +306,7 @@ namespace Maple2.Trigger._02000482_bf {
             internal StateMoveToUpstairs01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8006,8007,8008,8009", arg2: false);
+                context.SetAgent(arg1: new[] {8006, 8007, 8008, 8009}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_102");
                 context.SetEffect(arg1: new[] {5004}, arg2: true);
                 context.SetActor(arg1: 4004, arg2: true, arg3: "Opened");
@@ -397,8 +388,7 @@ namespace Maple2.Trigger._02000482_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$02000482_BF__01_ENTERTHEHALL__8$", arg3: 4000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000482_BF__01_ENTERTHEHALL__8$", arg3: 4000, arg4: "0");
                 context.SetUserValue(triggerId: 4, key: "SearchStart", value: 1);
             }
 
@@ -446,8 +436,7 @@ namespace Maple2.Trigger._02000482_bf {
             internal StateNpcMonologue01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000482_BF__01_ENTERTHEHALL__9$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000482_BF__01_ENTERTHEHALL__9$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -469,8 +458,7 @@ namespace Maple2.Trigger._02000482_bf {
             internal StateNpcMonologue02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000482_BF__01_ENTERTHEHALL__10$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000482_BF__01_ENTERTHEHALL__10$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -492,8 +480,7 @@ namespace Maple2.Trigger._02000482_bf {
             internal StateNpcMonologue03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000482_BF__01_ENTERTHEHALL__11$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000482_BF__01_ENTERTHEHALL__11$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -515,8 +502,7 @@ namespace Maple2.Trigger._02000482_bf {
             internal StateNpcMonologue04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000482_BF__01_ENTERTHEHALL__12$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000482_BF__01_ENTERTHEHALL__12$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {

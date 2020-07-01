@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52020010_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2006}, arg2: new[] {60200055},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2006}, arg2: new[] {60200055}, arg3: new byte[] {1})) {
                     context.State = new StateObject_Check(context);
                     return;
                 }
@@ -223,14 +222,12 @@ namespace Maple2.Trigger._52020010_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2006}, arg2: new[] {60200050},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2006}, arg2: new[] {60200050}, arg3: new byte[] {1})) {
                     context.State = new StateMission_Clear(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2006}, arg2: new[] {60200055},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2006}, arg2: new[] {60200055}, arg3: new byte[] {2})) {
                     context.State = new StateEvent_07(context);
                     return;
                 }
@@ -245,8 +242,7 @@ namespace Maple2.Trigger._52020010_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003603, illustId: "0", msg: "인간! 파편이 돌아왔다! 어서 이리 와라!", duration: 2800,
-                    align: "Left");
+                context.AddCinematicTalk(npcId: 11003603, illustId: "0", msg: "인간! 파편이 돌아왔다! 어서 이리 와라!", duration: 2800, align: "Left");
             }
 
             public override void Execute() {

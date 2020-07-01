@@ -6,8 +6,7 @@ namespace Maple2.Trigger._02010039_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {5002}, arg2: new[] {40002110},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {5002}, arg2: new[] {40002110}, arg3: new byte[] {1})) {
                     context.State = new State업적발생(context);
                     return;
                 }

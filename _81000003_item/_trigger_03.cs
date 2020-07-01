@@ -78,10 +78,8 @@ namespace Maple2.Trigger._81000003_item {
                 context.SetUserValue(triggerId: 999111, key: "gameStart", value: 1);
                 context.SetTimer(arg1: "160", arg2: 160, arg3: false, arg4: true); // trigger_03.xml 시작 타이머 설정
                 context.SetMesh(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000224}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000214}, arg2: 1);
-                context.StartMiniGame(isShowResultUI: "false", boxId: 499, round: 1,
-                    gameName: "UserMassive_Crazyrunner");
+                context.SetInteractObject(arg1: new[] {10000224, 10000214}, arg2: 1);
+                context.StartMiniGame(isShowResultUI: "false", boxId: 499, round: 1, gameName: "UserMassive_Crazyrunner");
                 context.StartMiniGameRound(boxId: 499, round: 1);
                 context.MoveUserToBox(boxId: 400, portalId: true);
             }
@@ -107,8 +105,7 @@ namespace Maple2.Trigger._81000003_item {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.EndMiniGameRound(winnerBoxId: 401, expRate: 0.133333333f, isGainLoserBonus: true,
-                        gameName: "UserMassive_Crazyrunner");
+                    context.EndMiniGameRound(winnerBoxId: 401, expRate: 0.133333333f, isGainLoserBonus: true, gameName: "UserMassive_Crazyrunner");
                     context.EndMiniGame(winnerBoxId: 401, gameName: "UserMassive_Crazyrunner");
                     context.State = new State강제이동(context);
                     return;

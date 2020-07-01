@@ -5,11 +5,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 199, arg2: 99910140);
-                context.SetInteractObject(arg1: new[] {10002060}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10002061}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10002062}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10002063}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10002068}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002060, 10002061, 10002062, 10002063, 10002068}, arg2: 2);
             }
 
             public override void Execute() {
@@ -97,11 +93,7 @@ namespace Maple2.Trigger._52100031_qd {
             public override void Execute() {
                 if (context.GetUserValue(key: "DungeonClear") == 1) {
                     context.DestroyMonster(arg1: new[] {1101, 1102, 1103, 1104, 1104}, arg2: false);
-                    context.SetInteractObject(arg1: new[] {10002060}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {10002061}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {10002062}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {10002063}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {10002068}, arg2: 0);
+                    context.SetInteractObject(arg1: new[] {10002060, 10002061, 10002062, 10002063, 10002068}, arg2: 0);
                     context.RemoveBuff(arg1: 199, arg2: 99910140);
                     context.State = new State종료(context);
                     return;

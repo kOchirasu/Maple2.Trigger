@@ -21,8 +21,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2097}, arg2: false);
                 context.SpawnNpcRange(rangeId: new[] {2008, 2009, 2010}, isAutoTargeting: true);
-                context.SpawnNpcRange(rangeId: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107},
-                    isAutoTargeting: true);
+                context.SpawnNpcRange(rangeId: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107}, isAutoTargeting: true);
             }
 
             public override void Execute() {

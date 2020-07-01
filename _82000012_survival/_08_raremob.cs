@@ -42,11 +42,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateMobSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-                        27, 28, 29, 30, 31, 32, 33, 34, 35, 36
-                    }, isStart: true);
+                context.StartCombineSpawn(groupId: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36}, isStart: true);
             }
 
             public override void Execute() {
@@ -63,11 +59,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-                        27, 28, 29, 30, 31, 32, 33, 34, 35, 36
-                    }, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36}, isStart: false);
             }
 
             public override void Execute() { }

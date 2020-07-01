@@ -8,110 +8,92 @@ namespace Maple2.Trigger._52000073_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667}, arg3: new byte[] {3})) {
                     context.State = new StateNpcRemove01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667}, arg3: new byte[] {2})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667}, arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002666},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002666}, arg3: new byte[] {3})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002666},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002666}, arg3: new byte[] {2})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002666},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002666}, arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002665},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002665}, arg3: new byte[] {3})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002665},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002665}, arg3: new byte[] {2})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002665},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002665}, arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002664},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002664}, arg3: new byte[] {3})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002664},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002664}, arg3: new byte[] {2})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002664},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002664}, arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002663},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002663}, arg3: new byte[] {3})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002663},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002663}, arg3: new byte[] {2})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002663},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002663}, arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002662},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002662}, arg3: new byte[] {3})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002662},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002662}, arg3: new byte[] {2})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002662},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002662}, arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }

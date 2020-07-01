@@ -115,8 +115,7 @@ namespace Maple2.Trigger._52010056_qd {
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1.0f);
                 context.RemoveBuff(arg1: 2001, arg2: 70000107);
-                context.SetEventUI(arg1: 1, arg2: "$52010056_QD__EventSection_B__1$", arg3: 3000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$52010056_QD__EventSection_B__1$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() { }

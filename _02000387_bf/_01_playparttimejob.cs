@@ -7,23 +7,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(arg1: new[] {2000, 2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {2005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {2006}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031},
-                    arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "ry_functobj_door_E01_off");
                 context.SetActor(arg1: 4001, arg2: true, arg3: "ry_functobj_door_E01_off");
                 context.SetActor(arg1: 4002, arg2: true, arg3: "ry_functobj_door_E01_off");
                 context.SetActor(arg1: 4003, arg2: true, arg3: "ry_functobj_door_E01_off");
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5101}, arg2: false);
-                context.SetEffect(arg1: new[] {5102}, arg2: false);
-                context.SetEffect(arg1: new[] {5103}, arg2: false);
-                context.SetEffect(arg1: new[] {5104}, arg2: false);
-                context.SetEffect(arg1: new[] {5105}, arg2: false);
-                context.SetEffect(arg1: new[] {5106}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5101, 5102, 5103, 5104, 5105, 5106}, arg2: false);
             }
 
             public override void Execute() {
@@ -45,8 +34,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -274,8 +262,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetActor(arg1: 4001, arg2: true, arg3: "ry_functobj_door_E01_on");
                 context.SetActor(arg1: 4002, arg2: true, arg3: "ry_functobj_door_E01_on");
                 context.SetActor(arg1: 4003, arg2: true, arg3: "ry_functobj_door_E01_on");
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__4$", arg3: 3000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__4$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {
@@ -293,11 +280,9 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__5$", arg3: 3000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__5$", arg3: 3000, arg4: "0");
                 context.SetEventUI(arg1: 0, arg2: "1,3");
-                context.SetEffect(arg1: new[] {5105}, arg2: true);
-                context.SetEffect(arg1: new[] {5106}, arg2: true);
+                context.SetEffect(arg1: new[] {5105, 5106}, arg2: true);
             }
 
             public override void Execute() {
@@ -488,8 +473,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__6$", arg3: 3000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__6$", arg3: 3000, arg4: "0");
                 context.SetEventUI(arg1: 0, arg2: "2,3");
             }
 
@@ -859,8 +843,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__7$", arg3: 3000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__7$", arg3: 3000, arg4: "0");
                 context.SetEventUI(arg1: 0, arg2: "3,3");
             }
 
@@ -1434,8 +1417,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePCLeave01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__10$", arg3: 5000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__10$", arg3: 5000, arg4: "0");
             }
 
             public override void Execute() {

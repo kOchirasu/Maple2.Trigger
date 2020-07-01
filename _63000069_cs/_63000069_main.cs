@@ -6,8 +6,7 @@ namespace Maple2.Trigger._63000069_cs {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109}, arg2: false);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602}, arg2: false);
                 context.SetMesh(arg1: new[] {4001}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_01_girl");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_02_man");
@@ -39,20 +38,17 @@ namespace Maple2.Trigger._63000069_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {3})) {
                     context.State = new Statefin(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {2})) {
                     context.State = new Statescene1_ready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {1})) {
                     context.State = new Statesearching_check(context);
                     return;
                 }
@@ -69,8 +65,7 @@ namespace Maple2.Trigger._63000069_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {2})) {
                     context.State = new Statescene1_ready(context);
                     return;
                 }
@@ -109,8 +104,7 @@ namespace Maple2.Trigger._63000069_cs {
             }
 
             public override void Execute() {
-                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356},
-                    arg3: new byte[] {2})) {
+                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {2})) {
                     context.State = new Statequestcheck(context);
                     return;
                 }

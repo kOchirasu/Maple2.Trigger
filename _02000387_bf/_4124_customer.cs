@@ -212,8 +212,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5104}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000628);
-                context.AddEffectNif(spawnPointId: 4124, nifPath: @"Map/Kerningcity/Indoor/ke_in_prop_display_C01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 4124, nifPath: @"Map/Kerningcity/Indoor/ke_in_prop_display_C01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -252,8 +251,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5104}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000630);
-                context.AddEffectNif(spawnPointId: 4124, nifPath: @"Map/Kerningcity/Indoor/ke_in_prop_display_C02.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 4124, nifPath: @"Map/Kerningcity/Indoor/ke_in_prop_display_C02.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {

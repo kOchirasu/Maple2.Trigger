@@ -22,8 +22,7 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002821},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002821}, arg3: new byte[] {2})) {
                     context.State = new StateQ2_미카등장01(context);
                     return;
                 }

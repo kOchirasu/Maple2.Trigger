@@ -23,10 +23,7 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new[] {1601}, arg2: false);
-                context.CreateMonster(arg1: new[] {1602}, arg2: false);
-                context.CreateMonster(arg1: new[] {1603}, arg2: false);
-                context.CreateMonster(arg1: new[] {1604}, arg2: false);
+                context.CreateMonster(arg1: new[] {1601, 1602, 1603, 1604}, arg2: false);
                 context.SetSkip(arg1: "연출종료");
             }
 

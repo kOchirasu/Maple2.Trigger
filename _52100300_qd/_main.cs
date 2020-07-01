@@ -29,8 +29,7 @@ namespace Maple2.Trigger._52100300_qd {
             internal State연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 52100300, arg2: 5001);
                 context.CreateMonster(arg1: new[] {351});
@@ -50,8 +49,7 @@ namespace Maple2.Trigger._52100300_qd {
             internal State연출시작_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {4004, 4005}, arg2: false);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
@@ -106,8 +104,7 @@ namespace Maple2.Trigger._52100300_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$52100300_QD__MAIN__12$", align: "bottomLeft",
-                    offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2.5f);
+                context.ShowCaption(type: "VerticalCaption", title: "$52100300_QD__MAIN__12$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2.5f);
             }
 
             public override void Execute() {
@@ -127,8 +124,7 @@ namespace Maple2.Trigger._52100300_qd {
                 context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
                 context.SetProductionUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 0, msg: "$52100300_QD__MAIN__13$", duration: 3500);
-                context.AddCinematicTalk(npcId: 11004682, illustId: "11004022", align: "right",
-                    msg: "$52100300_QD__MAIN__14$", duration: 3500);
+                context.AddCinematicTalk(npcId: 11004682, illustId: "11004022", align: "right", msg: "$52100300_QD__MAIN__14$", duration: 3500);
             }
 
             public override void Execute() {
@@ -146,8 +142,7 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 351, arg2: "MS2PatrolData_3001");
-                context.AddCinematicTalk(npcId: 11004682, illustId: "11004022", align: "right",
-                    msg: "$52100300_QD__MAIN__15$", duration: 3500);
+                context.AddCinematicTalk(npcId: 11004682, illustId: "11004022", align: "right", msg: "$52100300_QD__MAIN__15$", duration: 3500);
                 context.AddCinematicTalk(npcId: 0, msg: "$52100300_QD__MAIN__16$", duration: 3500);
             }
 
@@ -184,10 +179,8 @@ namespace Maple2.Trigger._52100300_qd {
             internal StateSkip_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetOnetimeEffect(id: 2, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.DestroyMonster(arg1: new[] {351});
             }
@@ -233,8 +226,7 @@ namespace Maple2.Trigger._52100300_qd {
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SetUserValue(triggerId: 99990004, key: "Laser", value: 1);
-                    context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal",
-                        script: "$52100300_QD__MAIN__1$", duration: 5000);
+                    context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$52100300_QD__MAIN__1$", duration: 5000);
                     context.State = new State추가대사_02(context);
                     return;
                 }
@@ -250,8 +242,7 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103})) {
-                    context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal",
-                        script: "$52100300_QD__MAIN__2$", duration: 5000);
+                    context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$52100300_QD__MAIN__2$", duration: 5000);
                     context.State = new State추가대사_03(context);
                     return;
                 }
@@ -267,8 +258,7 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_normal",
-                        script: "$52100300_QD__MAIN__3$", duration: 5000);
+                    context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_normal", script: "$52100300_QD__MAIN__3$", duration: 5000);
                     context.State = new State엘리베이터_체크(context);
                     return;
                 }
@@ -284,8 +274,7 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal",
-                        script: "$52100300_QD__MAIN__4$", duration: 5000);
+                    context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$52100300_QD__MAIN__4$", duration: 5000);
                     context.State = new State엘리베이터_스위치(context);
                     return;
                 }
@@ -387,8 +376,7 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304}, arg2: false);
-                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: true);
-                context.SetMesh(arg1: new[] {30000, 30010, 30020, 30030}, arg2: true);
+                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 30000, 30010, 30020, 30030}, arg2: true);
             }
 
             public override void Execute() {
@@ -405,8 +393,7 @@ namespace Maple2.Trigger._52100300_qd {
             internal State웨이브_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_unfair",
-                    script: "$52100300_QD__MAIN__6$", duration: 5000);
+                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_unfair", script: "$52100300_QD__MAIN__6$", duration: 5000);
             }
 
             public override void Execute() {
@@ -424,10 +411,8 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990002, key: "Spawn", value: 1);
-                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: false);
-                context.SetMesh(arg1: new[] {30000, 30010, 30020, 30030}, arg2: false);
-                context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal",
-                    script: "$52100300_QD__MAIN__7$", duration: 5000);
+                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 30000, 30010, 30020, 30030}, arg2: false);
+                context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$52100300_QD__MAIN__7$", duration: 5000);
             }
 
             public override void Execute() {
@@ -446,8 +431,7 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1001}, arg2: false);
-                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: true);
-                context.SetMesh(arg1: new[] {30000, 30010, 30020, 30030}, arg2: true);
+                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 30000, 30010, 30020, 30030}, arg2: true);
             }
 
             public override void Execute() {
@@ -473,8 +457,7 @@ namespace Maple2.Trigger._52100300_qd {
                 context.SetMesh(arg1: new[] {5001}, arg2: false);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003}, arg2: true);
                 context.SetUserValue(triggerId: 99990003, key: "RandomBomb", value: 1);
-                context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal",
-                    script: "$52100300_QD__MAIN__8$", duration: 5000);
+                context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$52100300_QD__MAIN__8$", duration: 5000);
             }
 
             public override void Execute() {
@@ -491,8 +474,7 @@ namespace Maple2.Trigger._52100300_qd {
             internal State추가대사_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal",
-                    script: "$52100300_QD__MAIN__9$", duration: 5000);
+                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$52100300_QD__MAIN__9$", duration: 5000);
             }
 
             public override void Execute() {
@@ -509,8 +491,7 @@ namespace Maple2.Trigger._52100300_qd {
             internal State추가대사_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_normal",
-                    script: "$52100300_QD__MAIN__10$", duration: 5000);
+                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_normal", script: "$52100300_QD__MAIN__10$", duration: 5000);
             }
 
             public override void Execute() {
@@ -528,8 +509,7 @@ namespace Maple2.Trigger._52100300_qd {
             internal State보스전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal",
-                    script: "$52100300_QD__MAIN__11$", duration: 5000);
+                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$52100300_QD__MAIN__11$", duration: 5000);
                 context.SetActor(arg1: 9002, arg2: true, arg3: "sf_fi_funct_darkdoor_A01_start");
                 context.SetMesh(arg1: new[] {3001}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);

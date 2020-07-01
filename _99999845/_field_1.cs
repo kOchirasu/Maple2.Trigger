@@ -6,9 +6,7 @@ namespace Maple2.Trigger._99999845 {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000304}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000305}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000306}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000304, 12000305, 12000306}, arg2: 2);
             }
 
             public override void Execute() {
@@ -43,9 +41,7 @@ namespace Maple2.Trigger._99999845 {
                 if (context.MonsterDead(arg1: new[] {1104})) {
                     context.SetVisibleBreakableObject(arg1: new[] {1004}, arg2: true);
                     context.SetInteractObject(arg1: new[] {12000304}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1107}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1108}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1109}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1107, 1108, 1109}, arg2: false);
                     context.State = new StateCableOn_04(context);
                     return;
                 }
@@ -63,9 +59,7 @@ namespace Maple2.Trigger._99999845 {
                 if (context.MonsterDead(arg1: new[] {1105})) {
                     context.SetVisibleBreakableObject(arg1: new[] {1005}, arg2: true);
                     context.SetInteractObject(arg1: new[] {12000305}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1107}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1108}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1109}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1107, 1108, 1109}, arg2: false);
                     context.State = new StateCableOn_05(context);
                     return;
                 }
@@ -83,9 +77,7 @@ namespace Maple2.Trigger._99999845 {
                 if (context.MonsterDead(arg1: new[] {1106})) {
                     context.SetVisibleBreakableObject(arg1: new[] {1006}, arg2: true);
                     context.SetInteractObject(arg1: new[] {12000306}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1107}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1108}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1109}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1107, 1108, 1109}, arg2: false);
                     context.State = new StateCableOn_06(context);
                     return;
                 }
@@ -102,8 +94,7 @@ namespace Maple2.Trigger._99999845 {
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000304}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000304}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(-12687.7676f, -1071.39685f, 2530f),
-                        rot: new Vector3(0f, 0f, 0f));
+                    context.MoveUserToPos(pos: new Vector3(-12687.7676f, -1071.39685f, 2530f), rot: new Vector3(0f, 0f, 0f));
                     context.State = new StateCableDelay_04(context);
                     return;
                 }
@@ -120,8 +111,7 @@ namespace Maple2.Trigger._99999845 {
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000305}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000305}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(-11673.0137f, -6377.65674f, 1639f),
-                        rot: new Vector3(0f, 0f, 0f));
+                    context.MoveUserToPos(pos: new Vector3(-11673.0137f, -6377.65674f, 1639f), rot: new Vector3(0f, 0f, 0f));
                     context.State = new StateCableDelay_05(context);
                     return;
                 }
@@ -138,8 +128,7 @@ namespace Maple2.Trigger._99999845 {
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000306}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000306}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(-11221.6494f, 6215.7334f, 433f),
-                        rot: new Vector3(0f, 0f, 0f));
+                    context.MoveUserToPos(pos: new Vector3(-11221.6494f, 6215.7334f, 433f), rot: new Vector3(0f, 0f, 0f));
                     context.State = new StateCableDelay_06(context);
                     return;
                 }

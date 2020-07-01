@@ -31,14 +31,7 @@ namespace Maple2.Trigger._61000002_me_002 {
                 context.SetActor(arg1: 259, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 260, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 261, arg2: true, arg3: "Eff_MassiveEvent_Door_Opened");
-                context.SetMesh(
-                    arg1: new[] {
-                        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-                        27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
-                        51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74,
-                        75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98,
-                        99, 100
-                    }, arg2: true);
+                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
                 context.SetPortal(arg1: 777, arg2: false, arg3: true, arg4: false);
                 context.SetPortal(arg1: 778, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 779, arg2: true, arg3: true, arg4: true);
@@ -251,14 +244,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             public override void OnEnter() {
                 context.StartMiniGameRound(boxId: 301, round: 1);
                 context.SetTimer(arg1: "1", arg2: 40);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-                        27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
-                        51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74,
-                        75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98,
-                        99, 100
-                    }, arg2: false, arg3: 20, arg4: 0, arg5: 2000);
+                context.SetRandomMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: false, arg3: 20, arg4: 0, arg5: 2000);
             }
 
             public override void Execute() {
@@ -340,14 +326,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             public override void OnEnter() {
                 context.StartMiniGameRound(boxId: 301, round: 2);
                 context.SetTimer(arg1: "1", arg2: 30);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-                        27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
-                        51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74,
-                        75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98,
-                        99, 100
-                    }, arg2: false, arg3: 30, arg4: 0, arg5: 1000);
+                context.SetRandomMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: false, arg3: 30, arg4: 0, arg5: 1000);
             }
 
             public override void Execute() {
@@ -429,14 +408,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             public override void OnEnter() {
                 context.StartMiniGameRound(boxId: 301, round: 3);
                 context.SetTimer(arg1: "1", arg2: 15);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-                        27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
-                        51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74,
-                        75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98,
-                        99, 100
-                    }, arg2: false, arg3: 30, arg4: 0, arg5: 500);
+                context.SetRandomMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: false, arg3: 30, arg4: 0, arg5: 500);
             }
 
             public override void Execute() {
@@ -518,14 +490,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             public override void OnEnter() {
                 context.StartMiniGameRound(boxId: 301, round: 4);
                 context.SetTimer(arg1: "1", arg2: 5);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-                        27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
-                        51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74,
-                        75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98,
-                        99, 100
-                    }, arg2: false, arg3: 15, arg4: 0, arg5: 200);
+                context.SetRandomMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: false, arg3: 15, arg4: 0, arg5: 200);
             }
 
             public override void Execute() {
@@ -567,14 +532,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
-                    context.SetMesh(
-                        arg1: new[] {
-                            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
-                            26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48,
-                            49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71,
-                            72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94,
-                            95, 96, 97, 98, 99, 100
-                        }, arg2: true);
+                    context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
                     context.State = new State우승자카메라연출(context);
                     return;
                 }
@@ -595,10 +553,8 @@ namespace Maple2.Trigger._61000002_me_002 {
                 context.MiniGameCameraDirection(boxId: 301, cameraId: 901);
                 context.SetEventUI(arg1: 0, arg2: "0,0");
                 context.PlaySystemSoundInBox(arg2: "ME_002_Massive01_07");
-                context.SetEventUI(arg1: 3, arg2: "$61000002_ME_002__MASSIVE01__7$", arg3: 7000,
-                    arg4: "301");
-                context.SetEventUI(arg1: 6, arg2: "$61000002_ME_002__MASSIVE01__8$", arg3: 7000,
-                    arg4: "!301");
+                context.SetEventUI(arg1: 3, arg2: "$61000002_ME_002__MASSIVE01__7$", arg3: 7000, arg4: "301");
+                context.SetEventUI(arg1: 6, arg2: "$61000002_ME_002__MASSIVE01__8$", arg3: 7000, arg4: "!301");
             }
 
             public override void Execute() {
@@ -617,10 +573,8 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {301}, arg2: "ME_001_Massive00_10");
-                context.SetEventUI(arg1: 3, arg2: "$61000002_ME_002__MASSIVE01__9$", arg3: 5000,
-                    arg4: "301");
-                context.SetEventUI(arg1: 6, arg2: "$61000002_ME_002__MASSIVE01__10$", arg3: 5000,
-                    arg4: "!301");
+                context.SetEventUI(arg1: 3, arg2: "$61000002_ME_002__MASSIVE01__9$", arg3: 5000, arg4: "301");
+                context.SetEventUI(arg1: 6, arg2: "$61000002_ME_002__MASSIVE01__10$", arg3: 5000, arg4: "!301");
                 context.AddBuff(arg1: new[] {301}, arg2: 70000019, arg3: 1);
                 context.MiniGameGiveReward(winnerBoxId: 301, contentType: "miniGame");
                 context.EndMiniGame(winnerBoxId: 301, gameName: "finalsurvivor");
@@ -642,15 +596,7 @@ namespace Maple2.Trigger._61000002_me_002 {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, arg2: "0,0");
-                context.SetMesh(
-                    arg1: new[] {
-                        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-                        27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
-                        51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74,
-                        75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98,
-                        99, 100
-                    }, arg2: true);
-                context.SetMesh(arg1: new[] {201, 202, 203, 204, 205}, arg2: true);
+                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 201, 202, 203, 204, 205}, arg2: true);
                 context.SetActor(arg1: 251, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 252, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                 context.SetActor(arg1: 253, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
@@ -727,14 +673,7 @@ namespace Maple2.Trigger._61000002_me_002 {
                 context.SetEventUI(arg1: 0, arg2: "0,0");
                 context.PlaySystemSoundInBox(arg1: new[] {301}, arg2: "ME_001_Massive00_14");
                 context.SetEventUI(arg1: 5, arg2: "$61000002_ME_002__MASSIVE01__13$", arg3: 5000);
-                context.SetMesh(
-                    arg1: new[] {
-                        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-                        27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
-                        51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74,
-                        75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98,
-                        99, 100
-                    }, arg2: true);
+                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
                 context.SetPortal(arg1: 777, arg2: false, arg3: true, arg4: false);
                 context.SetMesh(arg1: new[] {201, 202, 203, 204, 205}, arg2: true);
                 context.SetActor(arg1: 251, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
@@ -788,8 +727,7 @@ namespace Maple2.Trigger._61000002_me_002 {
             internal State유저이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000007_ME__MAINPROCESS_SPRINGBEACH__23$", arg3: 5000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$61000007_ME__MAINPROCESS_SPRINGBEACH__23$", arg3: 5000, arg4: "0");
             }
 
             public override void Execute() {

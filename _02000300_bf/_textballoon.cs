@@ -254,12 +254,9 @@ namespace Maple2.Trigger._02000300_bf {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    context.SetConversation(arg1: 1, arg2: 1001, arg3: "$02000300_BF__TEXTBALLOON__4$", arg4: 3,
-                        arg5: 0);
-                    context.SetConversation(arg1: 1, arg2: 1003, arg3: "$02000300_BF__TEXTBALLOON__5$", arg4: 2,
-                        arg5: 2);
-                    context.SetConversation(arg1: 1, arg2: 1002, arg3: "$02000300_BF__TEXTBALLOON__6$", arg4: 2,
-                        arg5: 4);
+                    context.SetConversation(arg1: 1, arg2: 1001, arg3: "$02000300_BF__TEXTBALLOON__4$", arg4: 3, arg5: 0);
+                    context.SetConversation(arg1: 1, arg2: 1003, arg3: "$02000300_BF__TEXTBALLOON__5$", arg4: 2, arg5: 2);
+                    context.SetConversation(arg1: 1, arg2: 1002, arg3: "$02000300_BF__TEXTBALLOON__6$", arg4: 2, arg5: 4);
                     context.State = new State종료(context);
                     return;
                 }

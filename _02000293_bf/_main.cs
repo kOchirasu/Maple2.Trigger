@@ -6,27 +6,12 @@ namespace Maple2.Trigger._02000293_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {
-                    2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
-                    2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2028, 2029, 2030, 2031, 2032, 2033, 2034,
-                    2035, 2036
-                });
+                context.DestroyMonster(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036});
                 context.DestroyMonster(arg1: new[] {25000, 25001, 25002, 25003, 25004, 25005, 25006, 25007, 25008});
                 context.SetInteractObject(arg1: new[] {10000509}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000504}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000505}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000520}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000521}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000522}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000523}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000524}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000529}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000530}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000531}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000504, 10000505, 10000520, 10000521, 10000522, 10000523, 10000524, 10000529, 10000530, 10000531}, arg2: 0);
                 context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: true);
-                context.SetMesh(arg1: new[] {510000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {510000, 3001, 3002, 3003, 3004, 3005, 3006}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -46,8 +31,7 @@ namespace Maple2.Trigger._02000293_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -82,8 +66,7 @@ namespace Maple2.Trigger._02000293_bf {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 600, arg2: false);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: false, arg3: 0, arg4: 100,
-                    arg5: 2f);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: false, arg3: 0, arg4: 100, arg5: 2f);
                 context.SetSkip();
             }
 
@@ -102,11 +85,7 @@ namespace Maple2.Trigger._02000293_bf {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20002931, textId: 20002931);
-                context.CreateMonster(
-                    arg1: new[] {
-                        2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
-                        2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025
-                    }, arg2: false);
+                context.CreateMonster(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025}, arg2: false);
             }
 
             public override void Execute() {
@@ -143,12 +122,7 @@ namespace Maple2.Trigger._02000293_bf {
             internal State1번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000523}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000505}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000509}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000520}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000521}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000522}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000523, 10000505, 10000509, 10000520, 10000521, 10000522}, arg2: 1);
             }
 
             public override void Execute() {
@@ -193,12 +167,7 @@ namespace Maple2.Trigger._02000293_bf {
             internal State2번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000504}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000524}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000509}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000520}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000521}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000522}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000504, 10000524, 10000509, 10000520, 10000521, 10000522}, arg2: 1);
             }
 
             public override void Execute() {
@@ -243,12 +212,7 @@ namespace Maple2.Trigger._02000293_bf {
             internal State3번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000504}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000505}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000509}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000529}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000521}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000522}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000504, 10000505, 10000509, 10000529, 10000521, 10000522}, arg2: 1);
             }
 
             public override void Execute() {
@@ -293,12 +257,7 @@ namespace Maple2.Trigger._02000293_bf {
             internal State4번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000504}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000505}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000509}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000520}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000530}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000522}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000504, 10000505, 10000509, 10000520, 10000530, 10000522}, arg2: 1);
             }
 
             public override void Execute() {
@@ -343,12 +302,7 @@ namespace Maple2.Trigger._02000293_bf {
             internal State5번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000504}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000505}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000509}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000520}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000521}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000531}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000504, 10000505, 10000509, 10000520, 10000521, 10000531}, arg2: 1);
             }
 
             public override void Execute() {
@@ -411,11 +365,7 @@ namespace Maple2.Trigger._02000293_bf {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 20002932);
-                context.DestroyMonster(arg1: new[] {
-                    2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
-                    2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2028, 2029, 2030, 2031, 2032, 2033, 2034,
-                    2035, 2036
-                });
+                context.DestroyMonster(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036});
                 context.DestroyMonster(arg1: new[] {25000, 25001, 25002, 25003, 25004, 25005, 25006, 25007, 25008});
             }
 
@@ -434,11 +384,7 @@ namespace Maple2.Trigger._02000293_bf {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 20002932);
-                context.DestroyMonster(arg1: new[] {
-                    2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
-                    2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2028, 2029, 2030, 2031, 2032, 2033, 2034,
-                    2035, 2036
-                });
+                context.DestroyMonster(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036});
             }
 
             public override void Execute() { }

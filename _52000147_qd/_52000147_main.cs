@@ -4,12 +4,8 @@ namespace Maple2.Trigger._52000147_qd {
             internal State준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101}, arg2: true);
-                context.CreateMonster(arg1: new[] {102}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetEffect(arg1: new[] {5005}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102}, arg2: true);
+                context.SetEffect(arg1: new[] {5001, 5003, 5004, 5005}, arg2: false);
                 context.SetMesh(arg1: new[] {4001, 4002}, arg2: true);
                 context.SetMeshAnimation(arg1: new[] {4001, 4002}, arg2: true, arg3: 0, arg4: 0);
                 context.SetMesh(arg1: new[] {4003, 4004, 4005, 4006}, arg2: true);
@@ -64,8 +60,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State뚜벅뚜벅_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000147_QD__52000147_MAIN__0$", duration: 2500,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000147_QD__52000147_MAIN__0$", duration: 2500, align: "right");
             }
 
             public override void Execute() {
@@ -208,8 +203,7 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "삼자대화_01");
-                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__1$", duration: 4000,
-                    illustId: "DarkLord_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__1$", duration: 4000, illustId: "DarkLord_normal", align: "right");
             }
 
             public override void Execute() {
@@ -297,8 +291,7 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "하스터와전투_01", arg2: "nextState");
-                context.AddCinematicTalk(npcId: 0, msg: "$52000147_QD__52000147_MAIN__2$", duration: 3500,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000147_QD__52000147_MAIN__2$", duration: 3500, align: "right");
             }
 
             public override void Execute() {
@@ -350,8 +343,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__3$", duration: 3000,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__3$", duration: 3000, align: "left");
             }
 
             public override void Execute() {
@@ -385,8 +377,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__4$", duration: 3000,
-                    illustId: "DarkLord_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__4$", duration: 3000, illustId: "DarkLord_normal", align: "right");
             }
 
             public override void Execute() {
@@ -403,8 +394,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__5$", duration: 2500,
-                    illustId: "Hastur_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__5$", duration: 2500, illustId: "Hastur_normal", align: "left");
             }
 
             public override void Execute() {
@@ -421,10 +411,8 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__6$", duration: 4000,
-                    illustId: "DarkLord_normal", align: "right");
-                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__7$", duration: 3000,
-                    illustId: "DarkLord_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__6$", duration: 4000, illustId: "DarkLord_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__7$", duration: 3000, illustId: "DarkLord_normal", align: "right");
             }
 
             public override void Execute() {
@@ -441,8 +429,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000147_QD__52000147_MAIN__8$", duration: 4000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000147_QD__52000147_MAIN__8$", duration: 4000, align: "right");
             }
 
             public override void Execute() {
@@ -459,8 +446,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__9$", duration: 3000,
-                    illustId: "Hastur_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__9$", duration: 3000, illustId: "Hastur_normal", align: "left");
             }
 
             public override void Execute() {
@@ -477,10 +463,8 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__10$", duration: 3000,
-                    illustId: "DarkLord_normal", align: "right");
-                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__11$", duration: 3000,
-                    illustId: "DarkLord_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__10$", duration: 3000, illustId: "DarkLord_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__11$", duration: 3000, illustId: "DarkLord_normal", align: "right");
             }
 
             public override void Execute() {
@@ -497,8 +481,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__12$", duration: 3000,
-                    illustId: "Hastur_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__12$", duration: 3000, illustId: "Hastur_normal", align: "left");
             }
 
             public override void Execute() {
@@ -515,8 +498,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__13$", duration: 3000,
-                    illustId: "DarkLord_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__13$", duration: 3000, illustId: "DarkLord_normal", align: "right");
             }
 
             public override void Execute() {
@@ -533,8 +515,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000147_QD__52000147_MAIN__14$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000147_QD__52000147_MAIN__14$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -568,8 +549,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__15$", duration: 2500,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__15$", duration: 2500, align: "left");
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Attack_Idle_A", arg3: 4000f);
             }
 
@@ -667,8 +647,7 @@ namespace Maple2.Trigger._52000147_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {103});
                 context.CreateMonster(arg1: new[] {104}, arg2: true);
-                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__16$", duration: 2500,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__16$", duration: 2500, align: "left");
                 context.MoveUser(arg1: 52000147, arg2: 99);
             }
 
@@ -721,8 +700,7 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "전투후대화_02");
-                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__17$", duration: 3000,
-                    illustId: "DarkLord_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__17$", duration: 3000, illustId: "DarkLord_normal", align: "right");
             }
 
             public override void Execute() {
@@ -759,8 +737,7 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "전투후대화_03_01");
-                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__18$", duration: 3000,
-                    illustId: "Hastur_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__18$", duration: 3000, illustId: "Hastur_normal", align: "left");
             }
 
             public override void Execute() {
@@ -796,10 +773,8 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "전투후대화_05");
-                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__19$", duration: 3000,
-                    illustId: "DarkLord_normal", align: "right");
-                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__20$", duration: 2500,
-                    illustId: "DarkLord_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__19$", duration: 3000, illustId: "DarkLord_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__20$", duration: 2500, illustId: "DarkLord_normal", align: "right");
             }
 
             public override void Execute() {
@@ -903,8 +878,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State전투후대화_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5005}, arg2: true);
-                context.SetEffect(arg1: new[] {5004}, arg2: true);
+                context.SetEffect(arg1: new[] {5005, 5004}, arg2: true);
             }
 
             public override void Execute() {
@@ -922,8 +896,7 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "전투후대화_12");
-                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__21$", duration: 3000,
-                    illustId: "Hastur_normal", align: "left");
+                context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__21$", duration: 3000, illustId: "Hastur_normal", align: "left");
             }
 
             public override void Execute() {
@@ -993,8 +966,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State전투후대화_15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000147_QD__52000147_MAIN__22$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000147_QD__52000147_MAIN__22$", duration: 3000, align: "right");
             }
 
             public override void Execute() {

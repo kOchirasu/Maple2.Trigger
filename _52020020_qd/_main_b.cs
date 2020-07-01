@@ -4,20 +4,16 @@ namespace Maple2.Trigger._52020020_qd {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200135},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200135}, arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001},
-                    arg2: new[] {60200135, 60200136, 60200137, 60200138, 60200139, 60200140},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200135, 60200136, 60200137, 60200138, 60200139, 60200140}, arg3: new byte[] {3})) {
                     context.State = new StateEndReady(context);
                     return;
                 }

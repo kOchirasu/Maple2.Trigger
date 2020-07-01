@@ -4,10 +4,8 @@ namespace Maple2.Trigger._02000253_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "9003", arg2: true);
-                context.SetAgent(arg1: "9004", arg2: true);
-                context.SetMesh(arg1: new[] {503, 504}, arg2: true);
-                context.SetMesh(arg1: new[] {604, 605, 606}, arg2: true);
+                context.SetAgent(arg1: new[] {9003, 9004}, arg2: true);
+                context.SetMesh(arg1: new[] {503, 504, 604, 605, 606}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000438}, arg2: 1);
             }
 
@@ -25,10 +23,8 @@ namespace Maple2.Trigger._02000253_bf {
             internal State열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "9003", arg2: false);
-                context.SetAgent(arg1: "9004", arg2: false);
-                context.SetMesh(arg1: new[] {503, 504}, arg2: false);
-                context.SetMesh(arg1: new[] {604, 605, 606}, arg2: false);
+                context.SetAgent(arg1: new[] {9003, 9004}, arg2: false);
+                context.SetMesh(arg1: new[] {503, 504, 604, 605, 606}, arg2: false);
             }
 
             public override void Execute() { }

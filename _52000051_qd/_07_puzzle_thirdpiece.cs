@@ -9,10 +9,7 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetUserValue(key: "CorrectThirdPiece", value: 0);
                 context.SetUserValue(key: "ResetThirdPiece", value: 0);
                 context.SetUserValue(key: "LockThirdPiece", value: 0);
-                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

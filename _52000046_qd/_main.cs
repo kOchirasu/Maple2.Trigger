@@ -6,14 +6,12 @@ namespace Maple2.Trigger._52000046_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {60100215},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {60100215}, arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {60100215},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {60100215}, arg3: new byte[] {3})) {
                     context.State = new Statescene_04(context);
                     return;
                 }
@@ -81,8 +79,7 @@ namespace Maple2.Trigger._52000046_qd {
             internal Statescene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000046_QD__MAIN__1$",
-                    desc: "$52000046_QD__MAIN__2$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
+                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000046_QD__MAIN__1$", desc: "$52000046_QD__MAIN__2$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
             }
 
             public override void Execute() {
@@ -116,8 +113,7 @@ namespace Maple2.Trigger._52000046_qd {
             internal Statescene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1001, 1002, 2002});
-                context.DestroyMonster(arg1: new[] {101});
+                context.DestroyMonster(arg1: new[] {1001, 1002, 2002, 101});
                 context.CreateMonster(arg1: new[] {102}, arg2: true);
                 context.CameraReset(interpolationTime: 1.0f);
             }

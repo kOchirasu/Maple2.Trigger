@@ -108,8 +108,7 @@ namespace Maple2.Trigger._02000551_bf {
             internal State일러스트대화창(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 23000101, illust: "BlackBean_Smile",
-                    script: "$02000551_BF__BOSSSPAWN__0$", duration: 7000);
+                context.SideNpcTalk(type: "talk", npcId: 23000101, illust: "BlackBean_Smile", script: "$02000551_BF__BOSSSPAWN__0$", duration: 7000);
             }
 
             public override void Execute() {

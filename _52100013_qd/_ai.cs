@@ -84,14 +84,12 @@ namespace Maple2.Trigger._52100013_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090}, arg3: new byte[] {2})) {
                     context.State = new StateQuestEnd_warp(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100080},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100080}, arg3: new byte[] {2})) {
                     context.State = new StateEnding(context);
                     return;
                 }
@@ -124,8 +122,7 @@ namespace Maple2.Trigger._52100013_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090}, arg3: new byte[] {1})) {
                     context.State = new StateEnding(context);
                     return;
                 }
@@ -157,8 +154,7 @@ namespace Maple2.Trigger._52100013_qd {
                 context.EnableSpawnPointPc(spawnPointId: 11001, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 11002, isEnable: true);
                 context.RemoveBuff(arg1: 701, arg2: 99910120);
-                context.SetMesh(arg1: new[] {1001, 1002}, arg2: false);
-                context.SetMesh(arg1: new[] {1004, 1005, 1006}, arg2: false);
+                context.SetMesh(arg1: new[] {1001, 1002, 1004, 1005, 1006}, arg2: false);
                 context.SetLocalCamera(cameraId: 8002, enable: true);
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$52100013_QD__AI__7$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$52100013_QD__AI__0$", arg4: 2, arg5: 0);
@@ -214,10 +210,8 @@ namespace Maple2.Trigger._52100013_qd {
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Stun_A", arg3: 9000000f);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2008");
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_2007");
-                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$52100013_QD__AI__1$",
-                    align: "right", duration: 2000);
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$52100013_QD__AI__2$",
-                    align: "left", duration: 2000);
+                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$52100013_QD__AI__1$", align: "right", duration: 2000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$52100013_QD__AI__2$", align: "left", duration: 2000);
             }
 
             public override void Execute() {
@@ -235,10 +229,8 @@ namespace Maple2.Trigger._52100013_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 202, arg3: "$52100013_QD__AI__3$", arg4: 2, arg5: 0);
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$52100013_QD__AI__4$",
-                    align: "left", duration: 2000);
-                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$52100013_QD__AI__5$",
-                    align: "right", duration: 2000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$52100013_QD__AI__4$", align: "left", duration: 2000);
+                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$52100013_QD__AI__5$", align: "right", duration: 2000);
                 context.SetConversation(arg1: 1, arg2: 202, arg3: "$52100013_QD__AI__6$", arg4: 2, arg5: 6);
             }
 
@@ -341,8 +333,7 @@ namespace Maple2.Trigger._52100013_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090}, arg3: new byte[] {2})) {
                     context.State = new StateQuestEnd_warp(context);
                     return;
                 }
@@ -363,8 +354,7 @@ namespace Maple2.Trigger._52100013_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090}, arg3: new byte[] {2})) {
                     context.State = new StateQuestEnd_warp(context);
                     return;
                 }

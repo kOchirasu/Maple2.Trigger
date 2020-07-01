@@ -4,12 +4,10 @@ namespace Maple2.Trigger._52000064_qd {
             internal State시작대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010},
-                    arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.CreateMonster(arg1: new[] {1001, 1002, 1003}, arg2: false);
-                context.CreateMonster(arg1: new[] {1101, 1102, 1103}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1101, 1102, 1103}, arg2: false);
             }
 
             public override void Execute() {
@@ -43,8 +41,7 @@ namespace Maple2.Trigger._52000064_qd {
             internal State완료대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -67,8 +64,7 @@ namespace Maple2.Trigger._52000064_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000650},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000650}, arg3: new byte[] {3})) {
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.State = new State종료(context);
                     return;

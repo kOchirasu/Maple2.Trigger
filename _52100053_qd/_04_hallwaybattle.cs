@@ -41,12 +41,9 @@ namespace Maple2.Trigger._52100053_qd {
             internal StateMobTrapOn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 901, arg3: "$52100053_QD__04_HALLWAYBATTLE__0$", arg4: 2,
-                    arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 902, arg3: "$52100053_QD__04_HALLWAYBATTLE__0$", arg4: 2,
-                    arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 903, arg3: "$52100053_QD__04_HALLWAYBATTLE__0$", arg4: 2,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 901, arg3: "$52100053_QD__04_HALLWAYBATTLE__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 902, arg3: "$52100053_QD__04_HALLWAYBATTLE__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 903, arg3: "$52100053_QD__04_HALLWAYBATTLE__0$", arg4: 2, arg5: 0);
             }
 
             public override void Execute() {

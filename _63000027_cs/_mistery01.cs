@@ -4,17 +4,8 @@ namespace Maple2.Trigger._63000027_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5200}, arg2: false);
-                context.SetEffect(arg1: new[] {5300}, arg2: false);
-                context.SetEffect(arg1: new[] {5400}, arg2: false);
-                context.SetEffect(arg1: new[] {5401}, arg2: false);
-                context.SetEffect(arg1: new[] {5402}, arg2: false);
-                context.SetEffect(arg1: new[] {5500}, arg2: false);
-                context.SetMesh(arg1: new[] {3100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3103}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {5000, 5200, 5300, 5400, 5401, 5402, 5500}, arg2: false);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "CollapseEnd", value: 0);
                 context.SetUserValue(key: "ZoomIn", value: 0);
             }
@@ -39,20 +30,17 @@ namespace Maple2.Trigger._63000027_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000451},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000451}, arg3: new byte[] {1})) {
                     context.State = new StateQuestOnGoing01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000450},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000450}, arg3: new byte[] {3})) {
                     context.State = new StateQuestOnGoing11(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000450},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000450}, arg3: new byte[] {2})) {
                     context.State = new StateDelay01(context);
                     return;
                 }
@@ -354,8 +342,7 @@ namespace Maple2.Trigger._63000027_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000450},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000450}, arg3: new byte[] {3})) {
                     context.State = new StateSecondQuestStart01(context);
                     return;
                 }
@@ -375,8 +362,7 @@ namespace Maple2.Trigger._63000027_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000451},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000451}, arg3: new byte[] {1})) {
                     context.State = new StateTimeToLeave01(context);
                     return;
                 }
@@ -542,10 +528,7 @@ namespace Maple2.Trigger._63000027_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5200}, arg2: true);
                 context.CameraSelect(arg1: 710, arg2: true);
-                context.SetMesh(arg1: new[] {3100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3101}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3102}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3103}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(triggerId: 2, key: "CollapseStart", value: 1);
                 context.SetEffect(arg1: new[] {5300}, arg2: true);
             }

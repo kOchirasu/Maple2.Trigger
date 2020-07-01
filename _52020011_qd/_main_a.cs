@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52020011_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200015},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200015}, arg3: new byte[] {2})) {
                     context.State = new StateReady(context);
                     return;
                 }
@@ -64,8 +63,7 @@ namespace Maple2.Trigger._52020011_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$map:52020011$", desc: "$NpcName:11003599$의 임시 거처",
-                    align: "centerLeft", offsetRateX: 0.05f, offsetRateY: 0.15f, duration: 3000, scale: 1.5f);
+                context.ShowCaption(type: "VerticalCaption", title: "$map:52020011$", desc: "$NpcName:11003599$의 임시 거처", align: "centerLeft", offsetRateX: 0.05f, offsetRateY: 0.15f, duration: 3000, scale: 1.5f);
             }
 
             public override void Execute() {
@@ -118,8 +116,7 @@ namespace Maple2.Trigger._52020011_qd {
             internal Statescene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(type: "NameCaption", title: "$NpcName:11003599$", desc: "크리티아스 왕녀",
-                    align: "centerLeft", offsetRateX: 0.05f, offsetRateY: 0.15f, duration: 3000, scale: 2.0f);
+                context.ShowCaption(type: "NameCaption", title: "$NpcName:11003599$", desc: "크리티아스 왕녀", align: "centerLeft", offsetRateX: 0.05f, offsetRateY: 0.15f, duration: 3000, scale: 2.0f);
                 context.AddCinematicTalk(npcId: 11003599, msg: "그래, 반갑구나.", duration: 2800);
                 context.SetSceneSkip();
             }

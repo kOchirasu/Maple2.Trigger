@@ -5,8 +5,7 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 21, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(arg1: new[] {4024}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {4024, 3004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3104}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMeshAnimation(arg1: new[] {3004}, arg2: true, arg3: 0, arg4: 0);
                 context.SetMeshAnimation(arg1: new[] {3104}, arg2: false, arg3: 0, arg4: 0);
@@ -148,8 +147,7 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateRound04_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1004}, arg2: false);
-                context.CreateMonster(arg1: new[] {2004}, arg2: false);
+                context.CreateMonster(arg1: new[] {1004, 2004}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 1004, arg3: "$52000052_QD__04_FINDWAY__2$", arg4: 3, arg5: 2);
                 context.SetUserValue(triggerId: 904, key: "MobWaveStart", value: 1);
             }

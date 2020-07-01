@@ -6,14 +6,12 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {6001}, arg2: new[] {91000076},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {6001}, arg2: new[] {91000076}, arg3: new byte[] {3})) {
                     context.State = new State칼리브해안전경(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {6001}, arg2: new[] {91000076},
-                    arg3: new byte[] {3})) {
+                if (!context.QuestUserDetected(arg1: new[] {6001}, arg2: new[] {91000076}, arg3: new byte[] {3})) {
                     context.State = new State맵이동(context);
                     return;
                 }
@@ -65,8 +63,7 @@ namespace Maple2.Trigger._52010061_qd {
             internal State칼리브해안전경_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(type: "VerticalCaption", title: "$52010061_QD__main__0$", align: "centerLeft",
-                    offsetRateX: 0f, offsetRateY: 0f, duration: 2800, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "$52010061_QD__main__0$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 2800, scale: 2f);
             }
 
             public override void Execute() {
@@ -176,8 +173,7 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4009}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 6000f);
-                context.AddCinematicTalk(npcId: 11003844, illustId: "Yuperia_normal", msg: "$52010061_QD__main__3$",
-                    duration: 4800, align: "left");
+                context.AddCinematicTalk(npcId: 11003844, illustId: "Yuperia_normal", msg: "$52010061_QD__main__3$", duration: 4800, align: "left");
             }
 
             public override void Execute() {
@@ -196,8 +192,7 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 5000f);
                 context.CameraSelectPath(arg1: new[] {4005}, arg2: false);
-                context.AddCinematicTalk(npcId: 11001567, illustId: "Renduebian_normal", msg: "$52010061_QD__main__4$",
-                    duration: 4800, align: "left");
+                context.AddCinematicTalk(npcId: 11001567, illustId: "Renduebian_normal", msg: "$52010061_QD__main__4$", duration: 4800, align: "left");
             }
 
             public override void Execute() {
@@ -216,8 +211,7 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
                 context.CameraSelectPath(arg1: new[] {4005}, arg2: false);
-                context.AddCinematicTalk(npcId: 11001567, illustId: "Renduebian_normal", msg: "$52010061_QD__main__5$",
-                    duration: 3800, align: "left");
+                context.AddCinematicTalk(npcId: 11001567, illustId: "Renduebian_normal", msg: "$52010061_QD__main__5$", duration: 3800, align: "left");
             }
 
             public override void Execute() {
@@ -236,8 +230,7 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4009}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 4000f);
-                context.AddCinematicTalk(npcId: 11003844, illustId: "Yuperia_normal", msg: "$52010061_QD__main__6$",
-                    duration: 3800, align: "left");
+                context.AddCinematicTalk(npcId: 11003844, illustId: "Yuperia_normal", msg: "$52010061_QD__main__6$", duration: 3800, align: "left");
             }
 
             public override void Execute() {
@@ -256,8 +249,7 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
                 context.CameraSelectPath(arg1: new[] {4010}, arg2: false);
-                context.AddCinematicTalk(npcId: 11001567, illustId: "Renduebian_normal", msg: "$52010061_QD__main__7$",
-                    duration: 3800, align: "left");
+                context.AddCinematicTalk(npcId: 11001567, illustId: "Renduebian_normal", msg: "$52010061_QD__main__7$", duration: 3800, align: "left");
             }
 
             public override void Execute() {
@@ -328,8 +320,7 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 104, arg2: "Talk_A", arg3: 4000f);
-                context.AddCinematicTalk(npcId: 11003845, illustId: "Ishura_normal", msg: "$52010061_QD__main__9$",
-                    duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003845, illustId: "Ishura_normal", msg: "$52010061_QD__main__9$", duration: 3000, align: "left");
             }
 
             public override void Execute() {
@@ -398,10 +389,7 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: true);
-                context.DestroyMonster(arg1: new[] {101});
-                context.DestroyMonster(arg1: new[] {102});
-                context.DestroyMonster(arg1: new[] {103});
-                context.DestroyMonster(arg1: new[] {104});
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104});
                 context.CameraReset(interpolationTime: 2.0f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);

@@ -5,20 +5,11 @@ namespace Maple2.Trigger._02010040_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new[] {4201}, arg2: false);
-                context.SetEffect(arg1: new[] {4202}, arg2: false);
-                context.SetMesh(arg1: new[] {1200}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {1201}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {4201, 4202}, arg2: false);
+                context.SetMesh(arg1: new[] {1200, 1201}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 2200, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 2201, arg2: true, arg3: "Closed");
-                context.SetAgent(arg1: "3201", arg2: true);
-                context.SetAgent(arg1: "3202", arg2: true);
-                context.SetAgent(arg1: "3203", arg2: true);
-                context.SetAgent(arg1: "3204", arg2: true);
-                context.SetAgent(arg1: "3205", arg2: true);
-                context.SetAgent(arg1: "3206", arg2: true);
-                context.SetAgent(arg1: "3207", arg2: true);
-                context.SetAgent(arg1: "3208", arg2: true);
+                context.SetAgent(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208}, arg2: true);
             }
 
             public override void Execute() {
@@ -35,14 +26,11 @@ namespace Maple2.Trigger._02010040_bf {
             internal State전투시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(
-                    arg1: new[] {301, 302, 303, 304, 305, 306, 401, 402, 403, 404, 405, 406, 407, 408},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306, 401, 402, 403, 404, 405, 406, 407, 408}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[]
-                    {301, 302, 303, 304, 305, 306, 401, 402, 403, 404, 405, 406, 407, 408})) {
+                if (context.MonsterDead(arg1: new[] {301, 302, 303, 304, 305, 306, 401, 402, 403, 404, 405, 406, 407, 408})) {
                     context.State = new State문열기(context);
                     return;
                 }
@@ -55,20 +43,11 @@ namespace Maple2.Trigger._02010040_bf {
             internal State문열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1200}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {1201}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {4201}, arg2: true);
-                context.SetEffect(arg1: new[] {4202}, arg2: true);
+                context.SetMesh(arg1: new[] {1200, 1201}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {4201, 4202}, arg2: true);
                 context.SetActor(arg1: 2200, arg2: true, arg3: "Opened");
                 context.SetActor(arg1: 2201, arg2: true, arg3: "Opened");
-                context.SetAgent(arg1: "3201", arg2: false);
-                context.SetAgent(arg1: "3202", arg2: false);
-                context.SetAgent(arg1: "3203", arg2: false);
-                context.SetAgent(arg1: "3204", arg2: false);
-                context.SetAgent(arg1: "3205", arg2: false);
-                context.SetAgent(arg1: "3206", arg2: false);
-                context.SetAgent(arg1: "3207", arg2: false);
-                context.SetAgent(arg1: "3208", arg2: false);
+                context.SetAgent(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208}, arg2: false);
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
             }
 

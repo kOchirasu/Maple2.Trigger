@@ -4,24 +4,9 @@ namespace Maple2.Trigger._52010038_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
-                context.SetAgent(arg1: "8004", arg2: true);
-                context.SetAgent(arg1: "8005", arg2: true);
-                context.SetAgent(arg1: "8006", arg2: true);
-                context.SetAgent(arg1: "8007", arg2: true);
-                context.SetAgent(arg1: "8008", arg2: true);
-                context.SetAgent(arg1: "8009", arg2: true);
-                context.SetAgent(arg1: "8010", arg2: true);
-                context.SetAgent(arg1: "8011", arg2: true);
-                context.SetAgent(arg1: "8012", arg2: true);
-                context.SetAgent(arg1: "8013", arg2: true);
-                context.SetSkill(arg1: new[] {710}, arg2: false);
-                context.SetSkill(arg1: new[] {711}, arg2: false);
-                context.SetEffect(arg1: new[] {6110}, arg2: false);
-                context.SetEffect(arg1: new[] {6111}, arg2: false);
-                context.SetEffect(arg1: new[] {6298}, arg2: false);
+                context.SetAgent(arg1: new[] {8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013}, arg2: true);
+                context.SetSkill(arg1: new[] {710, 711}, arg2: false);
+                context.SetEffect(arg1: new[] {6110, 6111, 6298}, arg2: false);
                 context.SetActor(arg1: 220, arg2: false);
                 context.SetActor(arg1: 221, arg2: false);
                 context.SetActor(arg1: 222, arg2: false);
@@ -97,15 +82,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State감지대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8005", arg2: false);
-                context.SetAgent(arg1: "8006", arg2: false);
-                context.SetAgent(arg1: "8007", arg2: false);
-                context.SetAgent(arg1: "8008", arg2: false);
-                context.SetAgent(arg1: "8009", arg2: false);
-                context.SetAgent(arg1: "8010", arg2: false);
-                context.SetAgent(arg1: "8011", arg2: false);
-                context.SetAgent(arg1: "8012", arg2: false);
-                context.SetAgent(arg1: "8013", arg2: false);
+                context.SetAgent(arg1: new[] {8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 1200, arg3: "$52010038_QD__EVENT__2$", arg4: 3, arg5: 2);
             }
 
@@ -202,10 +179,8 @@ namespace Maple2.Trigger._52010038_qd {
             internal State점수(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {4010}, arg2: false);
-                context.CreateMonster(arg1: new[] {4030}, arg2: false);
-                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000,
-                    script: "$52010038_QD__event__4$", voice: @"ko/Npc/00002105");
+                context.CreateMonster(arg1: new[] {4010, 4030}, arg2: false);
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000, script: "$52010038_QD__event__4$", voice: @"ko/Npc/00002105");
             }
 
             public override void Execute() {

@@ -4,16 +4,8 @@ namespace Maple2.Trigger._02000303_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000601}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000602}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000603}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000604}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000605}, arg2: 0);
-                context.SetEffect(arg1: new[] {60601}, arg2: false);
-                context.SetEffect(arg1: new[] {60602}, arg2: false);
-                context.SetEffect(arg1: new[] {60603}, arg2: false);
-                context.SetEffect(arg1: new[] {60604}, arg2: false);
-                context.SetEffect(arg1: new[] {60605}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000601, 10000602, 10000603, 10000604, 10000605}, arg2: 0);
+                context.SetEffect(arg1: new[] {60601, 60602, 60603, 60604, 60605}, arg2: false);
             }
 
             public override void Execute() {

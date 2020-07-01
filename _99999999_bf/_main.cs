@@ -4,15 +4,8 @@ namespace Maple2.Trigger._99999999_bf {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {5000}, arg2: true);
-                context.SetMesh(arg1: new[] {8900}, arg2: true);
-                context.SetMesh(arg1: new[] {8901}, arg2: true);
-                context.SetMesh(arg1: new[] {8902}, arg2: true);
-                context.SetMesh(arg1: new[] {8903}, arg2: true);
-                context.SetMesh(arg1: new[] {8904}, arg2: true);
-                context.SetMesh(arg1: new[] {8905}, arg2: true);
-                context.SetEffect(arg1: new[] {8000}, arg2: false);
-                context.SetEffect(arg1: new[] {8001}, arg2: false);
+                context.SetMesh(arg1: new[] {5000, 8900, 8901, 8902, 8903, 8904, 8905}, arg2: true);
+                context.SetEffect(arg1: new[] {8000, 8001}, arg2: false);
                 context.SetSkill(arg1: new[] {9000}, arg2: false);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
@@ -113,8 +106,7 @@ namespace Maple2.Trigger._99999999_bf {
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: true);
                 context.CreateMonster(arg1: new[] {102, 1022, 1023, 1024, 1025}, arg2: true);
-                context.SideNpcTalk(npcId: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000,
-                    script: "인간? 이게 얼마 만에 맡아보는 인간 냄새인지... 아주 향긋하군. 천천히 어둠 속으로 내려오라고.");
+                context.SideNpcTalk(npcId: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000, script: "인간? 이게 얼마 만에 맡아보는 인간 냄새인지... 아주 향긋하군. 천천히 어둠 속으로 내려오라고.");
             }
 
             public override void Execute() {
@@ -148,8 +140,7 @@ namespace Maple2.Trigger._99999999_bf {
             internal State702마무리2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
-                    script: "불쌍한 인간... 샘은 이미 너를 주시하고 있어. 어둠이 너를 쫓을거야.");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "불쌍한 인간... 샘은 이미 너를 주시하고 있어. 어둠이 너를 쫓을거야.");
             }
 
             public override void Execute() {
@@ -185,10 +176,8 @@ namespace Maple2.Trigger._99999999_bf {
             internal State703진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"어둠의 샘이 당신의 존재를 눈치챘습니다.\n생명을 탐하는 검은 화살이 당신을 뒤쫓습니다.",
-                    arg3: 3000);
-                context.CreateMonster(arg1: new[] {109}, arg2: true);
-                context.CreateMonster(arg1: new[] {103, 1031, 1032, 1033, 1034}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: @"어둠의 샘이 당신의 존재를 눈치챘습니다.\n생명을 탐하는 검은 화살이 당신을 뒤쫓습니다.", arg3: 3000);
+                context.CreateMonster(arg1: new[] {109, 103, 1031, 1032, 1033, 1034}, arg2: true);
             }
 
             public override void Execute() {
@@ -223,8 +212,7 @@ namespace Maple2.Trigger._99999999_bf {
             internal State703마무리2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
-                    script: "수백년간 잠들어 있던 샘이 깨어났어. 샘은 영혼을 원해. 가까이 다가가지 않는게 좋아.");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "수백년간 잠들어 있던 샘이 깨어났어. 샘은 영혼을 원해. 가까이 다가가지 않는게 좋아.");
             }
 
             public override void Execute() {
@@ -260,8 +248,7 @@ namespace Maple2.Trigger._99999999_bf {
             internal State704진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
-                    script: "거미... 난 거미가 싫어... 거미는 영혼을 옭아매는 자...");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "거미... 난 거미가 싫어... 거미는 영혼을 옭아매는 자...");
             }
 
             public override void Execute() {
@@ -279,8 +266,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {8903}, arg2: false);
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
-                    script: "샘은 거미의 눈을 빌려 모든걸 감시하고 있어. 조심하는게 좋아.");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "샘은 거미의 눈을 빌려 모든걸 감시하고 있어. 조심하는게 좋아.");
             }
 
             public override void Execute() {
@@ -316,8 +302,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {105, 1051, 1052, 1053, 1054}, arg2: true);
-                context.SideNpcTalk(npcId: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000,
-                    script: "얼마 안남았어. 조금 더... 조금 더 내려와봐.");
+                context.SideNpcTalk(npcId: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000, script: "얼마 안남았어. 조금 더... 조금 더 내려와봐.");
             }
 
             public override void Execute() {
@@ -352,8 +337,7 @@ namespace Maple2.Trigger._99999999_bf {
             internal State버프걸어주기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
-                    script: "여기 들어온 순간...");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "여기 들어온 순간...");
                 context.SetSkill(arg1: new[] {9000}, arg2: true);
             }
 
@@ -371,8 +355,7 @@ namespace Maple2.Trigger._99999999_bf {
             internal State706시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
-                    script: "어둠을 만나게 되면... 다신 올라올 수 없어.");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "어둠을 만나게 되면... 다신 올라올 수 없어.");
                 context.EnableSpawnPointPc(spawnPointId: 4, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 5, isEnable: true);
                 context.CreateMonster(arg1: new[] {106, 1061, 1063, 1064, 1065}, arg2: true);
@@ -393,8 +376,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {8905}, arg2: false);
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
-                    script: "그래 마치 우리처럼...");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "그래 마치 우리처럼...");
             }
 
             public override void Execute() {
@@ -414,8 +396,7 @@ namespace Maple2.Trigger._99999999_bf {
                 context.EnableSpawnPointPc(spawnPointId: 5, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 6, isEnable: true);
                 context.CreateMonster(arg1: new[] {108}, arg2: true);
-                context.SideNpcTalk(npcId: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000,
-                    script: "캬하하! 여기까지 오다니, 재미있겠는걸. 네 영혼도 여기에 묶어주마.");
+                context.SideNpcTalk(npcId: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000, script: "캬하하! 여기까지 오다니, 재미있겠는걸. 네 영혼도 여기에 묶어주마.");
             }
 
             public override void Execute() {
@@ -452,8 +433,7 @@ namespace Maple2.Trigger._99999999_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {109});
                 context.CreateMonster(arg1: new[] {1091}, arg2: true);
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
-                    script: "잠깐, 더 내려 갈거야? 여기서 어디로 갈지 우린 알 수 없어. 여긴 뒤틀린 미지의 공간. 모든 것은 샘의 뜻대로...");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "잠깐, 더 내려 갈거야? 여기서 어디로 갈지 우린 알 수 없어. 여긴 뒤틀린 미지의 공간. 모든 것은 샘의 뜻대로...");
             }
 
             public override void Execute() {

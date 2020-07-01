@@ -84,9 +84,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6920}, arg2: true);
-                context.SetSkill(arg1: new[] {5807}, arg2: true);
-                context.SetSkill(arg1: new[] {5808}, arg2: true);
-                context.SetSkill(arg1: new[] {5809}, arg2: true);
+                context.SetSkill(arg1: new[] {5807, 5808, 5809}, arg2: true);
                 context.SetMesh(arg1: new[] {7071, 7072, 7073, 7074}, arg2: false, arg4: 15, arg5: 8f);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
@@ -146,8 +144,7 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 106, textId: 20003362);
-                context.SetMesh(arg1: new[] {6211, 6212, 6213, 6214, 6215, 6216, 6217, 6218}, arg2: false, arg4: 0,
-                    arg5: 10f);
+                context.SetMesh(arg1: new[] {6211, 6212, 6213, 6214, 6215, 6216, 6217, 6218}, arg2: false, arg4: 0, arg5: 10f);
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 

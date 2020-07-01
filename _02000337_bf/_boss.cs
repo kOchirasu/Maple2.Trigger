@@ -4,15 +4,7 @@ namespace Maple2.Trigger._02000337_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7301}, arg2: false);
-                context.SetEffect(arg1: new[] {7302}, arg2: false);
-                context.SetEffect(arg1: new[] {7303}, arg2: false);
-                context.SetEffect(arg1: new[] {7304}, arg2: false);
-                context.SetEffect(arg1: new[] {7305}, arg2: false);
-                context.SetEffect(arg1: new[] {7306}, arg2: false);
-                context.SetEffect(arg1: new[] {7307}, arg2: false);
-                context.SetEffect(arg1: new[] {7308}, arg2: false);
-                context.SetEffect(arg1: new[] {7309}, arg2: false);
+                context.SetEffect(arg1: new[] {7301, 7302, 7303, 7304, 7305, 7306, 7307, 7308, 7309}, arg2: false);
                 context.SetEffect(arg1: new[] {7310}, arg2: true);
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
             }
@@ -54,8 +46,7 @@ namespace Maple2.Trigger._02000337_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7306}, arg2: true);
-                context.SetSkill(arg1: new[] {8306}, arg2: true);
-                context.SetSkill(arg1: new[] {8307}, arg2: true);
+                context.SetSkill(arg1: new[] {8306, 8307}, arg2: true);
                 context.SetTimer(arg1: "2", arg2: 2, arg4: false);
             }
 
@@ -121,17 +112,7 @@ namespace Maple2.Trigger._02000337_bf {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {201});
                 context.CreateMonster(arg1: new[] {202});
-                context.SetEffect(arg1: new[] {7301}, arg2: false);
-                context.SetEffect(arg1: new[] {7302}, arg2: false);
-                context.SetEffect(arg1: new[] {7303}, arg2: false);
-                context.SetEffect(arg1: new[] {7304}, arg2: false);
-                context.SetEffect(arg1: new[] {7305}, arg2: false);
-                context.SetEffect(arg1: new[] {7306}, arg2: false);
-                context.SetEffect(arg1: new[] {7307}, arg2: false);
-                context.SetEffect(arg1: new[] {7308}, arg2: false);
-                context.SetEffect(arg1: new[] {7309}, arg2: false);
-                context.SetEffect(arg1: new[] {7310}, arg2: false);
-                context.SetEffect(arg1: new[] {7311}, arg2: false);
+                context.SetEffect(arg1: new[] {7301, 7302, 7303, 7304, 7305, 7306, 7307, 7308, 7309, 7310, 7311}, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_Dark_Ending_Chord_01");
                 context.SetActor(arg1: 5001, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 5002, arg2: true, arg3: "sf_quest_light_A01_Off");

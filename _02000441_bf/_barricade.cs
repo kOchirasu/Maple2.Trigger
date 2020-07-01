@@ -105,9 +105,7 @@ namespace Maple2.Trigger._02000441_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 2038801, key: "start", value: 1);
-                context.SetEffect(arg1: new[] {70001}, arg2: false);
-                context.SetEffect(arg1: new[] {70002}, arg2: false);
-                context.SetEffect(arg1: new[] {70003}, arg2: false);
+                context.SetEffect(arg1: new[] {70001, 70002, 70003}, arg2: false);
                 context.SetMesh(arg1: new[] {80000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -158,9 +156,7 @@ namespace Maple2.Trigger._02000441_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {80000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {70001}, arg2: true);
-                context.SetEffect(arg1: new[] {70002}, arg2: true);
-                context.SetEffect(arg1: new[] {70003}, arg2: true);
+                context.SetEffect(arg1: new[] {70001, 70002, 70003}, arg2: true);
             }
 
             public override void Execute() {

@@ -4,22 +4,8 @@ namespace Maple2.Trigger._02000297_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {6100});
-                context.DestroyMonster(arg1: new[] {6200});
-                context.SetAgent(arg1: "101", arg2: false);
-                context.SetAgent(arg1: "102", arg2: false);
-                context.SetAgent(arg1: "103", arg2: false);
-                context.SetAgent(arg1: "104", arg2: false);
-                context.SetAgent(arg1: "105", arg2: false);
-                context.SetAgent(arg1: "106", arg2: false);
-                context.SetAgent(arg1: "121", arg2: false);
-                context.SetAgent(arg1: "122", arg2: false);
-                context.SetAgent(arg1: "123", arg2: false);
-                context.SetAgent(arg1: "124", arg2: false);
-                context.SetAgent(arg1: "125", arg2: false);
-                context.SetAgent(arg1: "126", arg2: false);
-                context.SetAgent(arg1: "127", arg2: false);
-                context.SetAgent(arg1: "128", arg2: false);
+                context.DestroyMonster(arg1: new[] {6100, 6200});
+                context.SetAgent(arg1: new[] {101, 102, 103, 104, 105, 106, 121, 122, 123, 124, 125, 126, 127, 128}, arg2: false);
                 context.SetUserValue(key: "BattleStart", value: 0);
             }
 
@@ -69,20 +55,7 @@ namespace Maple2.Trigger._02000297_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "System_ShowGuideSummary_01");
                 context.SetEventUI(arg1: 1, arg2: "$02000297_BF__MAIN__0$", arg3: 5000, arg4: "0");
-                context.SetAgent(arg1: "101", arg2: true);
-                context.SetAgent(arg1: "102", arg2: true);
-                context.SetAgent(arg1: "103", arg2: true);
-                context.SetAgent(arg1: "104", arg2: true);
-                context.SetAgent(arg1: "105", arg2: true);
-                context.SetAgent(arg1: "106", arg2: true);
-                context.SetAgent(arg1: "121", arg2: true);
-                context.SetAgent(arg1: "122", arg2: true);
-                context.SetAgent(arg1: "123", arg2: true);
-                context.SetAgent(arg1: "124", arg2: true);
-                context.SetAgent(arg1: "125", arg2: true);
-                context.SetAgent(arg1: "126", arg2: true);
-                context.SetAgent(arg1: "127", arg2: true);
-                context.SetAgent(arg1: "128", arg2: true);
+                context.SetAgent(arg1: new[] {101, 102, 103, 104, 105, 106, 121, 122, 123, 124, 125, 126, 127, 128}, arg2: true);
             }
 
             public override void Execute() {

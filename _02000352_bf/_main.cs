@@ -5,11 +5,7 @@ namespace Maple2.Trigger._02000352_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new[] {900001}, arg2: false);
-                context.SetEffect(arg1: new[] {900002}, arg2: false);
-                context.SetEffect(arg1: new[] {900003}, arg2: false);
-                context.SetEffect(arg1: new[] {900004}, arg2: false);
-                context.SetEffect(arg1: new[] {900005}, arg2: false);
+                context.SetEffect(arg1: new[] {900001, 900002, 900003, 900004, 900005}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000822}, arg2: 0);
             }
 
@@ -93,8 +89,7 @@ namespace Maple2.Trigger._02000352_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 111, textId: 20000080);
-                context.SetInteractObject(arg1: new[] {10000823}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000824}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000823, 10000824}, arg2: 1);
             }
 
             public override void Execute() {

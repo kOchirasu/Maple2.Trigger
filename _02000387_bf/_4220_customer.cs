@@ -192,8 +192,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5104}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000695);
-                context.AddEffectNif(spawnPointId: 4220, nifPath: @"Npc/Etc/UGC_SportsCar_Npc/UGC_SportsCar_Npc_02.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 315);
+                context.AddEffectNif(spawnPointId: 4220, nifPath: @"Npc/Etc/UGC_SportsCar_Npc/UGC_SportsCar_Npc_02.nif", isOutline: true, scale: 1.2f, rotateZ: 315);
             }
 
             public override void Execute() {

@@ -34,8 +34,7 @@ namespace Maple2.Trigger._99999874 {
             internal StateNPCTalkOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 15401, msg: "쳇!! 요즘 애들은 너무 인사성이 없어!!", duration: 3000,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 15401, msg: "쳇!! 요즘 애들은 너무 인사성이 없어!!", duration: 3000, delayTick: 0);
             }
 
             public override void Execute() {

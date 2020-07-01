@@ -3,8 +3,7 @@ namespace Maple2.Trigger._dungeon_common {
         public class StateCheckUserCount : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateCheckUserCount(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateCheckUserCount(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -43,8 +42,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount04_Wait01 : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount04_Wait01(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount04_Wait01(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -68,8 +66,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount04_Wait02 : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount04_Wait02(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount04_Wait02(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -95,8 +92,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount04_Wait03 : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount04_Wait03(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount04_Wait03(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -122,8 +118,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount04_Wait04 : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount04_Wait04(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount04_Wait04(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -149,8 +144,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount03_Wait01 : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount03_Wait01(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount03_Wait01(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -174,8 +168,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount03_Wait02 : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount03_Wait02(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount03_Wait02(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -201,8 +194,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount03_Wait03 : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount03_Wait03(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount03_Wait03(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -228,8 +220,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount03_Wait04 : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount03_Wait04(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount03_Wait04(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -255,8 +246,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount02_Wait01 : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount02_Wait01(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount02_Wait01(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -280,8 +270,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount02_Wait02 : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount02_Wait02(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount02_Wait02(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -307,8 +296,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount02_Wait03 : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount02_Wait03(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount02_Wait03(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -334,8 +322,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount02_Wait04 : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount02_Wait04(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount02_Wait04(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -361,8 +348,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount01_Wait01 : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount01_Wait01(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount01_Wait01(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 

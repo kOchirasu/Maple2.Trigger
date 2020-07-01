@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52000020_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {60001022},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {60001022}, arg3: new byte[] {1})) {
                     context.State = new Statecamera_01(context);
                     return;
                 }

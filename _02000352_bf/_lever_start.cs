@@ -6,14 +6,8 @@ namespace Maple2.Trigger._02000352_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6201}, arg2: false, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000821}, arg2: 1);
-                context.SetMesh(
-                    arg1: new[]
-                        {6150, 6151, 6152, 6153, 6154, 6155, 6156, 6157, 6158, 6159, 6160, 6161, 6162, 6163},
-                    arg2: true, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[]
-                        {6150, 6151, 6152, 6153, 6154, 6155, 6156, 6157, 6158, 6159, 6160, 6161, 6162, 6163},
-                    arg2: false, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {6150, 6151, 6152, 6153, 6154, 6155, 6156, 6157, 6158, 6159, 6160, 6161, 6162, 6163}, arg2: true, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {6150, 6151, 6152, 6153, 6154, 6155, 6156, 6157, 6158, 6159, 6160, 6161, 6162, 6163}, arg2: false, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

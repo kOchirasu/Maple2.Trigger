@@ -9,9 +9,7 @@ namespace Maple2.Trigger._99999949 {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {9051})) {
-                    context.AddEffectNif(spawnPointId: 11000064,
-                        nifPath: @"Map\Royalcity\Indoor\ry_in_cubric_mat_A01.nif", isOutline: true, scale: 0.5f,
-                        rotateZ: 45);
+                    context.AddEffectNif(spawnPointId: 11000064, nifPath: @"Map\Royalcity\Indoor\ry_in_cubric_mat_A01.nif", isOutline: true, scale: 0.5f, rotateZ: 45);
                     context.FaceEmotion(emotionName: "Ride_Idle_000");
                     context.State = new StateWait2(context);
                     return;
@@ -49,9 +47,7 @@ namespace Maple2.Trigger._99999949 {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9050},
-                    arg2: new[] {40002673, 40002674, 40002675, 40002676, 40002677, 40002678, 40002679},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9050}, arg2: new[] {40002673, 40002674, 40002675, 40002676, 40002677, 40002678, 40002679}, arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }

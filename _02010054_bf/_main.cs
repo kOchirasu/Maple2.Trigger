@@ -10,72 +10,20 @@ namespace Maple2.Trigger._02010054_bf {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
                 context.SetGravity(gravity: -9.8f);
-                context.SetInteractObject(arg1: new[] {10000856}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000857}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000858}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000859}, arg2: 2);
-                context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115,
-                        3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215,
-                        3216, 3217, 3218, 3219, 3220, 3221, 3222
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3315, 3316, 3317, 3318, 3319, 3320, 3321}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3130, 3131, 3132, 3133, 3134, 3135, 3136}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607, 3608, 3609, 3610, 3611, 3612, 3613, 3614, 3615,
-                        3616, 3617, 3618, 3619, 3620
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512, 3513, 3514, 3515,
-                        3516, 3517, 3518, 3519, 3520
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3330}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {10000856, 10000857, 10000858, 10000859}, arg2: 2);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3130, 3131, 3132, 3133, 3134, 3135, 3136, 3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607, 3608, 3609, 3610, 3611, 3612, 3613, 3614, 3615, 3616, 3617, 3618, 3619, 3620, 3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512, 3513, 3514, 3515, 3516, 3517, 3518, 3519, 3520, 3330}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {600}, arg2: true);
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
-                context.SetEffect(arg1: new[] {6001}, arg2: false);
-                context.SetEffect(arg1: new[] {6002}, arg2: false);
-                context.SetEffect(arg1: new[] {6003}, arg2: false);
-                context.SetEffect(arg1: new[] {6004}, arg2: false);
-                context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetEffect(arg1: new[] {603}, arg2: true);
-                context.SetEffect(arg1: new[] {604}, arg2: true);
-                context.SetEffect(arg1: new[] {607}, arg2: true);
-                context.SetEffect(arg1: new[] {608}, arg2: true);
-                context.SetEffect(arg1: new[] {609}, arg2: true);
-                context.SetEffect(arg1: new[] {612}, arg2: true);
-                context.SetEffect(arg1: new[] {613}, arg2: true);
-                context.SetEffect(arg1: new[] {614}, arg2: true);
-                context.SetEffect(arg1: new[] {615}, arg2: true);
-                context.SetEffect(arg1: new[] {616}, arg2: true);
-                context.SetEffect(arg1: new[] {620}, arg2: false);
-                context.SetEffect(arg1: new[] {621}, arg2: false);
-                context.SetEffect(arg1: new[] {622}, arg2: false);
-                context.SetEffect(arg1: new[] {625}, arg2: true);
-                context.SetEffect(arg1: new[] {626}, arg2: true);
-                context.SetEffect(arg1: new[] {627}, arg2: true);
-                context.SetEffect(arg1: new[] {628}, arg2: true);
-                context.SetEffect(arg1: new[] {629}, arg2: true);
+                context.SetEffect(arg1: new[] {6000, 6001, 6002, 6003, 6004}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602, 603, 604, 607, 608, 609, 612, 613, 614, 615, 616}, arg2: true);
+                context.SetEffect(arg1: new[] {620, 621, 622}, arg2: false);
+                context.SetEffect(arg1: new[] {625, 626, 627, 628, 629}, arg2: true);
                 context.CreateMonster(arg1: new[] {2099}, arg2: false);
             }
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -152,12 +100,7 @@ namespace Maple2.Trigger._02010054_bf {
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20105407, textId: 20105407, duration: 3500);
-                context.SetEffect(arg1: new[] {600}, arg2: false);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
+                context.SetEffect(arg1: new[] {600, 601, 602, 603, 604, 6000}, arg2: false);
                 context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.CreateMonster(arg1: new[] {2001, 2002, 2003}, arg2: false);
             }
@@ -217,32 +160,13 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000858}, arg2: 0)) {
-                    context.SetEffect(arg1: new[] {607}, arg2: false);
-                    context.SetEffect(arg1: new[] {608}, arg2: false);
-                    context.SetEffect(arg1: new[] {609}, arg2: false);
-                    context.SetEffect(arg1: new[] {6001}, arg2: false);
+                    context.SetEffect(arg1: new[] {607, 608, 609, 6001}, arg2: false);
                     context.SetEffect(arg1: new[] {6002}, arg2: true);
                     context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.SetMesh(
-                        arg1: new[] {
-                            3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214,
-                            3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222
-                        }, arg2: true, arg3: 0, arg4: 50, arg5: 1f);
-                    context.SetMesh(
-                        arg1: new[] {
-                            3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114,
-                            3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123
-                        }, arg2: true, arg3: 0, arg4: 50, arg5: 1f);
-                    context.SetMesh(
-                        arg1: new[] {
-                            3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607, 3608, 3609, 3610, 3611, 3612, 3613, 3614,
-                            3615, 3616, 3617, 3618, 3619, 3620
-                        }, arg2: true, arg3: 0, arg4: 50, arg5: 1f);
-                    context.SetMesh(
-                        arg1: new[] {
-                            3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512, 3513, 3514,
-                            3515, 3516, 3517, 3518, 3519, 3520
-                        }, arg2: true, arg3: 0, arg4: 50, arg5: 1f);
+                    context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222}, arg2: true, arg3: 0, arg4: 50, arg5: 1f);
+                    context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123}, arg2: true, arg3: 0, arg4: 50, arg5: 1f);
+                    context.SetMesh(arg1: new[] {3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607, 3608, 3609, 3610, 3611, 3612, 3613, 3614, 3615, 3616, 3617, 3618, 3619, 3620}, arg2: true, arg3: 0, arg4: 50, arg5: 1f);
+                    context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512, 3513, 3514, 3515, 3516, 3517, 3518, 3519, 3520}, arg2: true, arg3: 0, arg4: 50, arg5: 1f);
                     context.CreateMonster(arg1: new[] {2011, 2014, 2015, 2020, 2021}, arg2: false);
                     context.SetGravity(gravity: -9.8f);
                     context.State = new State인원체크(context);
@@ -312,8 +236,7 @@ namespace Maple2.Trigger._02010054_bf {
             internal State반응대기05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000857}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000859}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000857, 10000859}, arg2: 1);
                 context.ShowGuideSummary(entityId: 20105401, textId: 20105401);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
@@ -334,15 +257,13 @@ namespace Maple2.Trigger._02010054_bf {
             internal State별생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3315, 3316, 3317, 3318, 3319, 3320, 3321}, arg2: true, arg3: 0,
-                    arg4: 500, arg5: 3f);
+                context.SetMesh(arg1: new[] {3315, 3316, 3317, 3318, 3319, 3320, 3321}, arg2: true, arg3: 0, arg4: 500, arg5: 3f);
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.SetMesh(arg1: new[] {3315, 3316, 3317, 3318, 3319, 3320, 3321}, arg2: false, arg3: 0,
-                        arg4: 900, arg5: 2f);
+                    context.SetMesh(arg1: new[] {3315, 3316, 3317, 3318, 3319, 3320, 3321}, arg2: false, arg3: 0, arg4: 900, arg5: 2f);
                     context.State = new State반응대기06(context);
                     return;
                 }
@@ -391,11 +312,7 @@ namespace Maple2.Trigger._02010054_bf {
             internal State골렘소환대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {612}, arg2: false);
-                context.SetEffect(arg1: new[] {613}, arg2: false);
-                context.SetEffect(arg1: new[] {614}, arg2: false);
-                context.SetEffect(arg1: new[] {615}, arg2: false);
-                context.SetEffect(arg1: new[] {616}, arg2: false);
+                context.SetEffect(arg1: new[] {612, 613, 614, 615, 616}, arg2: false);
                 context.SetMesh(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -467,12 +384,7 @@ namespace Maple2.Trigger._02010054_bf {
             internal State그라즈나전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {625}, arg2: false);
-                context.SetEffect(arg1: new[] {626}, arg2: false);
-                context.SetEffect(arg1: new[] {627}, arg2: false);
-                context.SetEffect(arg1: new[] {628}, arg2: false);
-                context.SetEffect(arg1: new[] {629}, arg2: false);
-                context.SetEffect(arg1: new[] {6004}, arg2: false);
+                context.SetEffect(arg1: new[] {625, 626, 627, 628, 629, 6004}, arg2: false);
                 context.SetMesh(arg1: new[] {3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -505,8 +417,7 @@ namespace Maple2.Trigger._02010054_bf {
             internal State포털생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3130, 3131, 3132, 3133, 3134, 3135, 3136}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3130, 3131, 3132, 3133, 3134, 3135, 3136}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                 context.SetTimer(arg1: "4", arg2: 4);
                 context.DungeonClear();

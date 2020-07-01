@@ -22,9 +22,7 @@ namespace Maple2.Trigger._99999912 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001129}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001130}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001131}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001129, 10001130, 10001131}, arg2: 1);
             }
 
             public override void Execute() {
@@ -48,8 +46,7 @@ namespace Maple2.Trigger._99999912 {
                 context.ShowEventResult(type: "notice", text: @"2팀 안녕?\n줄바꿈확인", duration: 3000, userTagId: 2);
                 context.PlaySystemSoundByUserTag(userTagId: 1, soundKey: "System_ShowGuideSummary_01");
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_PartTimeJob_Right_01");
-                context.GuildVsGameScoreByUser(triggerBoxId: 9000, score: true,
-                    desc: "9000 트리거 박스 안의 유저수가 많은 팀에 1점을 추가한다.");
+                context.GuildVsGameScoreByUser(triggerBoxId: 9000, score: true, desc: "9000 트리거 박스 안의 유저수가 많은 팀에 1점을 추가한다.");
                 context.GuildVsGameGiveReward(type: "exp", teamId: 1, isWin: true, desc: "길드 경험치를 지급한다.");
                 context.GuildVsGameGiveReward(type: "fund", teamId: 1, isWin: true, desc: "길드 기금을 지급한다.");
                 context.GuildVsGameGiveContribution(teamId: 1, isWin: true, desc: "길드 기여도를 지급한다.");

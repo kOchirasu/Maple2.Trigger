@@ -12,70 +12,24 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetActor(arg1: 205, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 206, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 207, arg2: true, arg3: "Idle_A");
-                context.SetInteractObject(arg1: new[] {10000806}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000806}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000807}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000808}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000809}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000810}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000811}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000812}, arg2: 2);
-                context.SetMesh(arg1: new[] {39101, 39102, 39103, 39104, 39105, 39106}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {600}, arg2: false);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {6101}, arg2: false);
-                context.SetEffect(arg1: new[] {6102}, arg2: false);
-                context.SetEffect(arg1: new[] {6103}, arg2: false);
-                context.SetEffect(arg1: new[] {6104}, arg2: false);
-                context.SetEffect(arg1: new[] {6105}, arg2: false);
-                context.SetEffect(arg1: new[] {6106}, arg2: false);
-                context.SetEffect(arg1: new[] {6107}, arg2: false);
-                context.SetEffect(arg1: new[] {6108}, arg2: false);
-                context.SetEffect(arg1: new[] {6201}, arg2: false);
-                context.SetEffect(arg1: new[] {6202}, arg2: false);
-                context.SetEffect(arg1: new[] {6203}, arg2: false);
-                context.SetEffect(arg1: new[] {6204}, arg2: false);
-                context.SetEffect(arg1: new[] {6205}, arg2: false);
-                context.SetSkill(arg1: new[] {701}, arg2: false);
-                context.SetSkill(arg1: new[] {702}, arg2: false);
-                context.SetSkill(arg1: new[] {703}, arg2: false);
-                context.SetSkill(arg1: new[] {704}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000806, 10000806, 10000807, 10000808, 10000809, 10000810, 10000811, 10000812}, arg2: 2);
+                context.SetMesh(arg1: new[] {39101, 39102, 39103, 39104, 39105, 39106, 3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {600, 601, 602, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6201, 6202, 6203, 6204, 6205}, arg2: false);
+                context.SetSkill(arg1: new[] {701, 702, 703, 704}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetAgent(arg1: "901", arg2: true);
-                context.SetAgent(arg1: "902", arg2: true);
-                context.SetAgent(arg1: "903", arg2: true);
-                context.SetAgent(arg1: "904", arg2: true);
+                context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetOnetimeEffect(id: 11, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
-                context.SetOnetimeEffect(id: 12, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
-                context.SetOnetimeEffect(id: 13, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
-                context.SetOnetimeEffect(id: 14, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
-                context.SetOnetimeEffect(id: 15, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
-                context.SetOnetimeEffect(id: 16, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
-                context.SetOnetimeEffect(id: 17, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
-                context.SetOnetimeEffect(id: 18, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
-                context.SetOnetimeEffect(id: 19, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
-                context.SetOnetimeEffect(id: 20, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
+                context.SetOnetimeEffect(id: 11, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
+                context.SetOnetimeEffect(id: 12, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
+                context.SetOnetimeEffect(id: 13, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
+                context.SetOnetimeEffect(id: 14, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
+                context.SetOnetimeEffect(id: 15, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
+                context.SetOnetimeEffect(id: 16, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
+                context.SetOnetimeEffect(id: 17, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
+                context.SetOnetimeEffect(id: 18, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
+                context.SetOnetimeEffect(id: 19, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
+                context.SetOnetimeEffect(id: 20, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
                 context.SetUserValue(key: "saveEveIntheDark", value: 0);
             }
 
@@ -99,14 +53,12 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {40002688},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {40002688}, arg3: new byte[] {1})) {
                     context.State = new StateDungeonReady(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {40002688},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {40002688}, arg3: new byte[] {2})) {
                     context.State = new StateQuestOnGoing01(context);
                     return;
                 }
@@ -457,10 +409,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000812}, arg2: 0)) {
-                    context.DestroyMonster(arg1: new[] {
-                        1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016,
-                        1017, 1018, 1019, 1020
-                    });
+                    context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020});
                     context.HideGuideSummary(entityId: 20003495);
                     context.State = new State레논구출(context);
                     return;
@@ -939,12 +888,8 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetSceneSkip();
                 context.ShowGuideSummary(entityId: 20003502, textId: 20003502, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.DestroyMonster(arg1: new[] {1025, 1026});
-                context.DestroyMonster(arg1: new[] {1099});
-                context.SetAgent(arg1: "901", arg2: false);
-                context.SetAgent(arg1: "902", arg2: false);
-                context.SetAgent(arg1: "903", arg2: false);
-                context.SetAgent(arg1: "904", arg2: false);
+                context.DestroyMonster(arg1: new[] {1025, 1026, 1099});
+                context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: false);
                 context.DestroyMonster(arg1: new[] {2007});
                 context.CreateMonster(arg1: new[] {2006}, arg2: false);
                 context.CameraSelectPath(arg1: new[] {302}, arg2: true);
@@ -985,16 +930,9 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateBossBattleStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1025, 1026}, arg2: false);
-                context.CreateMonster(arg1: new[] {1099}, arg2: false);
-                context.SetAgent(arg1: "901", arg2: true);
-                context.SetAgent(arg1: "902", arg2: true);
-                context.SetAgent(arg1: "903", arg2: true);
-                context.SetAgent(arg1: "904", arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816
-                    }, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
+                context.CreateMonster(arg1: new[] {1025, 1026, 1099}, arg2: false);
+                context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: true);
+                context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
             }
 
             public override void Execute() {
@@ -1019,14 +957,8 @@ namespace Maple2.Trigger._52000076_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetAgent(arg1: "901", arg2: false);
-                context.SetAgent(arg1: "902", arg2: false);
-                context.SetAgent(arg1: "903", arg2: false);
-                context.SetAgent(arg1: "904", arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetAgent(arg1: new[] {901, 902, 903, 904}, arg2: false);
+                context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808, 3809, 3810, 3811, 3812, 3813, 3814, 3815, 3816}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
             }
 
             public override void Execute() {
@@ -1156,8 +1088,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveEnter04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 11, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
+                context.SetOnetimeEffect(id: 11, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
                 context.SetConversation(arg1: 1, arg2: 1200, arg3: "$52000076_QD__MAIN__3$", arg4: 2, arg5: 0);
             }
 
@@ -1169,8 +1100,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 11, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
+                context.SetOnetimeEffect(id: 11, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001901.xml");
             }
         }
 
@@ -1179,8 +1109,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 314, arg2: true);
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__4$",
-                    duration: 5000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__4$", duration: 5000, align: "center");
                 context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
             }
 
@@ -1216,8 +1145,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__5$",
-                    duration: 5000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__5$", duration: 5000, align: "center");
                 context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
             }
 
@@ -1361,8 +1289,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 12, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
+                context.SetOnetimeEffect(id: 12, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__8$", arg4: 7);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
@@ -1375,8 +1302,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 12, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
+                context.SetOnetimeEffect(id: 12, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001902.xml");
             }
         }
 
@@ -1402,8 +1328,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 13, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
+                context.SetOnetimeEffect(id: 13, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__9$", arg4: 7);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
@@ -1416,8 +1341,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 13, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
+                context.SetOnetimeEffect(id: 13, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001903.xml");
             }
         }
 
@@ -1443,8 +1367,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 14, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
+                context.SetOnetimeEffect(id: 14, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__10$", arg4: 6);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
@@ -1457,8 +1380,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 14, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
+                context.SetOnetimeEffect(id: 14, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001904.xml");
             }
         }
 
@@ -1502,8 +1424,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__11$",
-                    duration: 5000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__11$", duration: 5000, align: "center");
             }
 
             public override void Execute() {
@@ -1540,8 +1461,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1400, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__12$",
-                    duration: 7000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__12$", duration: 7000, align: "center");
             }
 
             public override void Execute() {
@@ -1614,8 +1534,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 15, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
+                context.SetOnetimeEffect(id: 15, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__14$", arg4: 6);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
@@ -1628,8 +1547,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 15, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
+                context.SetOnetimeEffect(id: 15, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001905.xml");
             }
         }
 
@@ -1691,8 +1609,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 16, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
+                context.SetOnetimeEffect(id: 16, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__16$", arg4: 5);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
@@ -1705,8 +1622,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 16, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
+                context.SetOnetimeEffect(id: 16, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001906.xml");
             }
         }
 
@@ -1733,8 +1649,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 17, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
+                context.SetOnetimeEffect(id: 17, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__17$", arg4: 6);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
@@ -1747,8 +1662,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 17, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
+                context.SetOnetimeEffect(id: 17, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001907.xml");
             }
         }
 
@@ -1775,8 +1689,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 18, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
+                context.SetOnetimeEffect(id: 18, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__18$", arg4: 5);
             }
 
@@ -1788,8 +1701,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 18, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
+                context.SetOnetimeEffect(id: 18, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001908.xml");
             }
         }
 
@@ -1868,8 +1780,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk31(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 19, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
+                context.SetOnetimeEffect(id: 19, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__20$", arg4: 9);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
@@ -1882,8 +1793,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 19, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
+                context.SetOnetimeEffect(id: 19, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001909.xml");
             }
         }
 
@@ -1909,8 +1819,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEvilKatvanTalk32(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 20, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
+                context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$52000076_QD__MAIN__21$", arg4: 6);
                 context.SetNpcEmotionSequence(arg1: 1200, arg2: "Talk_A");
             }
@@ -1923,8 +1832,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void OnExit() {
-                context.SetOnetimeEffect(id: 20, enable: false,
-                    path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
+                context.SetOnetimeEffect(id: 20, enable: false, path: @"BG/Common/Sound/Eff_Sound_52000076_EvilKatvan_DarkRoots_00001910.xml");
             }
         }
 
@@ -2131,8 +2039,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1410, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__25$",
-                    duration: 6000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__25$", duration: 6000, align: "center");
             }
 
             public override void Execute() {
@@ -2168,8 +2075,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1410, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__26$",
-                    duration: 6000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__26$", duration: 6000, align: "center");
             }
 
             public override void Execute() {
@@ -2241,8 +2147,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1410, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__28$",
-                    duration: 3000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__28$", duration: 3000, align: "center");
             }
 
             public override void Execute() {
@@ -2278,8 +2183,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateEveTalk31(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__29$",
-                    duration: 5000, align: "center");
+                context.AddCinematicTalk(npcId: 11000523, illustId: "Eve_serious", msg: "$52000076_QD__MAIN__29$", duration: 5000, align: "center");
             }
 
             public override void Execute() {
@@ -2317,10 +2221,7 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnEnter() {
                 context.SetAchievement(arg1: 100, arg2: "trigger", arg3: "saveEveIntheDark");
                 context.SetEffect(arg1: new[] {6205}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: false);
             }
 
@@ -2345,8 +2246,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {40002688},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {40002688}, arg3: new byte[] {2})) {
                     context.State = new StateQuestComplete03(context);
                     return;
                 }

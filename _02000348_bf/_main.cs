@@ -22,8 +22,7 @@ namespace Maple2.Trigger._02000348_bf {
 
             public override void Execute() {
                 if (context.GetUserCount(boxId: 60001) == 1) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -315,8 +314,7 @@ namespace Maple2.Trigger._02000348_bf {
                 context.CameraSelectPath(arg1: new[] {8811, 8810}, arg2: true);
                 context.SetEventUI(arg1: 1, arg2: "$02000348_BF__MAIN__13$", arg3: 3000);
                 context.SetEffect(arg1: new[] {7001}, arg2: true);
-                context.SetSkill(arg1: new[] {7702}, arg2: true);
-                context.SetSkill(arg1: new[] {7703}, arg2: true);
+                context.SetSkill(arg1: new[] {7702, 7703}, arg2: true);
             }
 
             public override void Execute() {
@@ -373,8 +371,7 @@ namespace Maple2.Trigger._02000348_bf {
                 context.RemoveBuff(arg1: 60002, arg2: 99910040);
                 context.RemoveBuff(arg1: 60002, arg2: 70000106);
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009}, arg2: true,
-                    arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009}, arg2: true, arg4: 0, arg5: 10f);
                 context.SetMesh(arg1: new[] {6010}, arg2: false, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000789}, arg2: 1);
                 context.SetTimer(arg1: "5", arg2: 5);

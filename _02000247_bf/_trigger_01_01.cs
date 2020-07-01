@@ -45,8 +45,7 @@ namespace Maple2.Trigger._02000247_bf {
                 context.SetAchievement(arg1: 999, arg2: "trigger", arg3: "GoldenTower3rd");
                 context.DungeonClear();
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetMesh(arg1: new[] {711, 712}, arg2: false);
-                context.SetMesh(arg1: new[] {705, 706}, arg2: false);
+                context.SetMesh(arg1: new[] {711, 712, 705, 706}, arg2: false);
             }
 
             public override void Execute() {

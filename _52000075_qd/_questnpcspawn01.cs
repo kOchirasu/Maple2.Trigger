@@ -4,46 +4,38 @@ namespace Maple2.Trigger._52000075_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(
-                    arg1: "8000,8001,8002,8003,8004,8005,8006,8007,8008,8009,8010,8011,8012,8013,8014,8015,8016,8017",
-                    arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017}, arg2: false);
                 context.CreateMonster(arg1: new[] {101, 201}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002668},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002668}, arg3: new byte[] {3})) {
                     context.State = new StateRemoveNpc01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002668},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002668}, arg3: new byte[] {2})) {
                     context.State = new StateGuardDown01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002668},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002668}, arg3: new byte[] {1})) {
                     context.State = new StateGuardDown01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667}, arg3: new byte[] {3})) {
                     context.State = new StateGuardDown01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667}, arg3: new byte[] {2})) {
                     context.State = new StateGuardDown01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667}, arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
@@ -68,9 +60,7 @@ namespace Maple2.Trigger._52000075_qd {
             internal StateNpcChange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(
-                    arg1: "8000,8001,8002,8003,8004,8005,8006,8007,8008,8009,8010,8011,8012,8013,8014,8015,8016,8017",
-                    arg2: true);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017}, arg2: true);
                 context.DestroyMonster(arg1: new[] {101, 201});
                 context.CreateMonster(arg1: new[] {202, 900, 901, 902}, arg2: false);
             }

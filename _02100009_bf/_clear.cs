@@ -23,8 +23,7 @@ namespace Maple2.Trigger._02100009_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 100000001) <= 0.5f
-                    && context.GetNpcHpRate(spawnPointId: 100000002) <= 0.5f) {
+                if (context.GetNpcHpRate(spawnPointId: 100000001) <= 0.5f && context.GetNpcHpRate(spawnPointId: 100000002) <= 0.5f) {
                     context.State = new State끝3(context);
                     return;
                 }

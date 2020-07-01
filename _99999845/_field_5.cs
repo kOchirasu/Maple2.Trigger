@@ -45,8 +45,7 @@ namespace Maple2.Trigger._99999845 {
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000322}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000322}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(-12687.7676f, -1071.39685f, 2530f),
-                        rot: new Vector3(0f, 0f, 0f));
+                    context.MoveUserToPos(pos: new Vector3(-12687.7676f, -1071.39685f, 2530f), rot: new Vector3(0f, 0f, 0f));
                     context.State = new StateCableDelay_04(context);
                     return;
                 }
@@ -161,9 +160,7 @@ namespace Maple2.Trigger._99999845 {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SetVisibleBreakableObject(arg1: new[] {1004}, arg2: false);
-                    context.SetVisibleBreakableObject(arg1: new[] {1005}, arg2: false);
-                    context.SetVisibleBreakableObject(arg1: new[] {1006}, arg2: false);
+                    context.SetVisibleBreakableObject(arg1: new[] {1004, 1005, 1006}, arg2: false);
                 }
             }
 

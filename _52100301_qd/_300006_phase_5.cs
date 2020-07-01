@@ -19,10 +19,8 @@ namespace Maple2.Trigger._52100301_qd {
             internal State패이즈_5_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair",
-                    script: "$52100301_QD__300006_PHASE_5__0$", duration: 3176);
-                context.SetEffect(arg1: new[] {200021, 200022, 200023, 200024, 200025, 200026, 200027, 200028},
-                    arg2: false);
+                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$52100301_QD__300006_PHASE_5__0$", duration: 3176);
+                context.SetEffect(arg1: new[] {200021, 200022, 200023, 200024, 200025, 200026, 200027, 200028}, arg2: false);
                 context.SetUserValue(key: "AI_Phase", value: 0);
             }
 
@@ -44,10 +42,8 @@ namespace Maple2.Trigger._52100301_qd {
                 context.SetUserValue(triggerId: 3000052, key: "Phase_4_Interect_02", value: 0);
                 context.SetUserValue(triggerId: 3000053, key: "Phase_4_Interect_03", value: 0);
                 context.SetUserValue(triggerId: 3000054, key: "Phase_4_Interect_04", value: 0);
-                context.SetEffect(arg1: new[] {200001, 200002, 200003, 200004, 200005, 200006, 200007, 200008},
-                    arg2: false);
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair",
-                    script: "$52100301_QD__300006_PHASE_5__1$", duration: 3176);
+                context.SetEffect(arg1: new[] {200001, 200002, 200003, 200004, 200005, 200006, 200007, 200008}, arg2: false);
+                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$52100301_QD__300006_PHASE_5__1$", duration: 3176);
             }
 
             public override void Execute() {

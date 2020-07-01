@@ -11,21 +11,7 @@ namespace Maple2.Trigger._02000388_bf {
                 context.SetActor(arg1: 3001, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 3002, arg2: true, arg3: "Closed");
                 context.SetInteractObject(arg1: new[] {10001096}, arg2: 1);
-                context.SetBreakable(
-                    arg1: new[] {
-                        1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816,
-                        1817, 1818, 1819, 1820, 1821
-                    }, arg2: false);
-                context.SetBreakable(
-                    arg1: new[] {
-                        1830, 1831, 1832, 1833, 1834, 1835, 1836, 1837, 1838, 1839, 1840, 1841, 1842, 1843, 1844, 1845,
-                        1846, 1847, 1848, 1849, 1850
-                    }, arg2: false);
-                context.SetBreakable(
-                    arg1: new[] {
-                        1851, 1852, 1853, 1854, 1855, 1856, 1857, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866,
-                        1867, 1868, 1869, 1870, 1871
-                    }, arg2: false);
+                context.SetBreakable(arg1: new[] {1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1817, 1818, 1819, 1820, 1821, 1830, 1831, 1832, 1833, 1834, 1835, 1836, 1837, 1838, 1839, 1840, 1841, 1842, 1843, 1844, 1845, 1846, 1847, 1848, 1849, 1850, 1851, 1852, 1853, 1854, 1855, 1856, 1857, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1867, 1868, 1869, 1870, 1871}, arg2: false);
             }
 
             public override void Execute() {
@@ -45,8 +31,7 @@ namespace Maple2.Trigger._02000388_bf {
 
             public override void Execute() {
                 if (context.IsDungeonRoom()) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
 
@@ -84,20 +69,17 @@ namespace Maple2.Trigger._02000388_bf {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {50001517},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {50001517}, arg3: new byte[] {1})) {
                     context.State = new Statemermaid_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {50001517},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {50001517}, arg3: new byte[] {2})) {
                     context.State = new Statemoveuser_00(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {50001518},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {50001518}, arg3: new byte[] {1})) {
                     context.State = new Statemoveuser_00(context);
                     return;
                 }
@@ -256,11 +238,7 @@ namespace Maple2.Trigger._02000388_bf {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetLocalCamera(cameraId: 8100, enable: true);
-                context.SetBreakable(
-                    arg1: new[] {
-                        1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816,
-                        1817, 1818, 1819, 1820, 1821
-                    }, arg2: true);
+                context.SetBreakable(arg1: new[] {1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1817, 1818, 1819, 1820, 1821}, arg2: true);
                 context.SetEffect(arg1: new[] {7101}, arg2: true);
                 context.SetSkip();
                 context.SetProductionUI(arg1: 0);
@@ -368,11 +346,7 @@ namespace Maple2.Trigger._02000388_bf {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2008");
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000388_BF__MAIN__11$", arg4: 2, arg5: 1);
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000388_BF__MAIN__12$", arg4: 2, arg5: 0);
-                context.SetBreakable(
-                    arg1: new[] {
-                        1830, 1831, 1832, 1833, 1834, 1835, 1836, 1837, 1838, 1839, 1840, 1841, 1842, 1843, 1844, 1845,
-                        1846, 1847, 1848, 1849, 1850
-                    }, arg2: true);
+                context.SetBreakable(arg1: new[] {1830, 1831, 1832, 1833, 1834, 1835, 1836, 1837, 1838, 1839, 1840, 1841, 1842, 1843, 1844, 1845, 1846, 1847, 1848, 1849, 1850}, arg2: true);
                 context.SetEffect(arg1: new[] {7102}, arg2: true);
                 context.CreateMonster(arg1: new[] {205, 206, 207, 208, 209}, arg2: true);
             }
@@ -410,11 +384,7 @@ namespace Maple2.Trigger._02000388_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7103}, arg2: true);
-                context.SetBreakable(
-                    arg1: new[] {
-                        1851, 1852, 1853, 1854, 1855, 1856, 1857, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866,
-                        1867, 1868, 1869, 1870, 1871
-                    }, arg2: true);
+                context.SetBreakable(arg1: new[] {1851, 1852, 1853, 1854, 1855, 1856, 1857, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1867, 1868, 1869, 1870, 1871}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000388_BF__MAIN__15$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000388_BF__MAIN__16$", arg4: 2, arg5: 2);
             }
@@ -594,10 +564,7 @@ namespace Maple2.Trigger._02000388_bf {
             internal Stateend(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7101}, arg2: false);
-                context.SetEffect(arg1: new[] {7102}, arg2: false);
-                context.SetEffect(arg1: new[] {7103}, arg2: false);
-                context.SetEffect(arg1: new[] {7104}, arg2: false);
+                context.SetEffect(arg1: new[] {7101, 7102, 7103, 7104}, arg2: false);
                 context.DestroyMonster(arg1: new[] {101, 102});
             }
 

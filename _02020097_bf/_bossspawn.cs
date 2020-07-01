@@ -8,18 +8,7 @@ namespace Maple2.Trigger._02020097_bf {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 28, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119,
-                        120, 121
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {201, 202, 203, 204, 205, 206, 207}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229,
-                        230, 231, 232, 233, 234, 235, 236, 237, 238, 239
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 201, 202, 203, 204, 205, 206, 207, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -99,8 +88,7 @@ namespace Maple2.Trigger._02020097_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {301}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {201, 202, 203, 204, 205, 206, 207}, arg2: true, arg3: 1, arg4: 120,
-                    arg5: 0.5f);
+                context.SetMesh(arg1: new[] {201, 202, 203, 204, 205, 206, 207}, arg2: true, arg3: 1, arg4: 120, arg5: 0.5f);
                 context.SetUserValue(key: "StairsOk", value: 0);
             }
 
@@ -133,11 +121,7 @@ namespace Maple2.Trigger._02020097_bf {
             internal State계단생성2nd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229,
-                        230, 231, 232, 233, 234, 235, 236, 237, 238, 239
-                    }, arg2: true, arg3: 1, arg4: 50, arg5: 0.5f);
+                context.SetMesh(arg1: new[] {211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239}, arg2: true, arg3: 1, arg4: 50, arg5: 0.5f);
                 context.SetUserValue(key: "StairsOk2nd", value: 0);
             }
 

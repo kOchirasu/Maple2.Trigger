@@ -62,8 +62,7 @@ namespace Maple2.Trigger._52020001_qd {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new[] {6000041}, arg2: false);
-                context.CreateMonster(arg1: new[] {6000042}, arg2: false);
+                context.CreateMonster(arg1: new[] {6000041, 6000042}, arg2: false);
                 context.AddBuff(arg1: new[] {6000041}, arg2: 49286001, arg3: 1, arg4: true);
                 context.AddBuff(arg1: new[] {6000042}, arg2: 49286001, arg3: 1, arg4: true);
             }

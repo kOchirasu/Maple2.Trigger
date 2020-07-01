@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52010032_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003079},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003079}, arg3: new byte[] {1})) {
                     context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                     context.State = new StateReady(context);
                     return;
@@ -21,9 +20,7 @@ namespace Maple2.Trigger._52010032_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {202});
-                context.DestroyMonster(arg1: new[] {301});
-                context.DestroyMonster(arg1: new[] {302});
+                context.DestroyMonster(arg1: new[] {202, 301, 302});
             }
 
             public override void Execute() {
@@ -44,9 +41,7 @@ namespace Maple2.Trigger._52010032_qd {
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
                 context.FaceEmotion(spawnPointId: 401, emotionName: "Trigger_angry");
-                context.CreateMonster(arg1: new[] {401}, arg2: true);
-                context.CreateMonster(arg1: new[] {301}, arg2: true);
-                context.CreateMonster(arg1: new[] {302}, arg2: true);
+                context.CreateMonster(arg1: new[] {401, 301, 302}, arg2: true);
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_3003");
                 context.MoveNpc(arg1: 302, arg2: "MS2PatrolData_3004");
             }
@@ -268,8 +263,7 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 4);
-                context.DestroyMonster(arg1: new[] {302});
-                context.DestroyMonster(arg1: new[] {401});
+                context.DestroyMonster(arg1: new[] {302, 401});
                 context.CameraReset(interpolationTime: 0.5f);
                 context.SetAchievement(arg1: 2001, arg2: "trigger", arg3: "Namid");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -290,8 +284,7 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0f);
-                context.DestroyMonster(arg1: new[] {302});
-                context.DestroyMonster(arg1: new[] {401});
+                context.DestroyMonster(arg1: new[] {302, 401});
                 context.CreateMonster(arg1: new[] {202}, arg2: true);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);

@@ -8,8 +8,7 @@ namespace Maple2.Trigger._52020031_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000334},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000334}, arg3: new byte[] {1})) {
                     context.State = new State세번째전투끝나고(context);
                     return;
                 }
@@ -80,8 +79,7 @@ namespace Maple2.Trigger._52020031_qd {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.FaceEmotion(spawnPointId: 0, emotionName: "defaultBattle");
                 context.SetPcEmotionLoop(arg1: "Idle_A", arg2: 5000f);
-                context.AddCinematicTalk(npcId: 0, msg: @"역시 너희 흑성회는 믿을 만한 사람들이 아니었군.\n천공의 심장은 내가 가져가겠어.",
-                    duration: 5000);
+                context.AddCinematicTalk(npcId: 0, msg: @"역시 너희 흑성회는 믿을 만한 사람들이 아니었군.\n천공의 심장은 내가 가져가겠어.", duration: 5000);
             }
 
             public override void Execute() {

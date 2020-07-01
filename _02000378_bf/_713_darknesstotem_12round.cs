@@ -4,10 +4,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[]
-                        {3900, 3901, 3902, 3903, 3904, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3900, 3901, 3902, 3903, 3904, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "TotemApp", value: 0);
             }
 
@@ -27,10 +24,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {2212});
                 context.CreateMonster(arg1: new[] {2313}, arg2: false);
-                context.SetMesh(
-                    arg1: new[]
-                        {3900, 3901, 3902, 3903, 3904, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913},
-                    arg2: true, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetMesh(arg1: new[] {3900, 3901, 3902, 3903, 3904, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913}, arg2: true, arg3: 0, arg4: 0, arg5: 5f);
                 context.CreateMonster(arg1: new[] {926}, arg2: false);
             }
 
@@ -48,8 +42,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateJuntaReady01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 2313, arg3: "$02000378_BF__713_DARKNESSTOTEM_12ROUND__0$",
-                    arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 2313, arg3: "$02000378_BF__713_DARKNESSTOTEM_12ROUND__0$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -100,9 +93,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateJuntaReturn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {926});
-                context.DestroyMonster(arg1: new[] {2313});
-                context.DestroyMonster(arg1: new[] {2113});
+                context.DestroyMonster(arg1: new[] {926, 2313, 2113});
             }
 
             public override void Execute() {
@@ -136,10 +127,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[]
-                        {3900, 3901, 3902, 3903, 3904, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetMesh(arg1: new[] {3900, 3901, 3902, 3903, 3904, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
             }
 
             public override void Execute() { }

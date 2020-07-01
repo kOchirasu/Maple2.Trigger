@@ -4,11 +4,7 @@ namespace Maple2.Trigger._63000038_cs {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(
-                    arg1: new[] {
-                        7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015,
-                        7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023
-                    }, arg2: false);
+                context.SetBreakable(arg1: new[] {7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10001024}, arg2: 0);
             }
 
@@ -45,11 +41,7 @@ namespace Maple2.Trigger._63000038_cs {
             internal State이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(
-                    arg1: new[] {
-                        7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015,
-                        7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023
-                    }, arg2: true);
+                context.SetBreakable(arg1: new[] {7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023}, arg2: true);
             }
 
             public override void Execute() {

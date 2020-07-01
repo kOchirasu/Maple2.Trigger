@@ -230,10 +230,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State생성랜덤(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1401}, arg2: false);
-                context.CreateMonster(arg1: new[] {1402}, arg2: false);
-                context.CreateMonster(arg1: new[] {1403}, arg2: false);
-                context.CreateMonster(arg1: new[] {1404}, arg2: false);
+                context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404}, arg2: false);
             }
 
             public override void Execute() {
@@ -250,10 +247,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1401});
-                context.DestroyMonster(arg1: new[] {1402});
-                context.DestroyMonster(arg1: new[] {1403});
-                context.DestroyMonster(arg1: new[] {1404});
+                context.DestroyMonster(arg1: new[] {1401, 1402, 1403, 1404});
             }
 
             public override void Execute() {

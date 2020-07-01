@@ -23,14 +23,12 @@ namespace Maple2.Trigger._52000199_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003416},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003416}, arg3: new byte[] {2})) {
                     context.State = new StateCameraEffect01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003417},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003417}, arg3: new byte[] {1})) {
                     context.State = new StateWait_02(context);
                     return;
                 }
@@ -43,8 +41,7 @@ namespace Maple2.Trigger._52000199_qd {
             internal StateCameraEffect01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {
@@ -79,8 +76,7 @@ namespace Maple2.Trigger._52000199_qd {
             internal StateCameraEffect03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {
@@ -98,8 +94,7 @@ namespace Maple2.Trigger._52000199_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$52000199_QD__52000199__0$", align: "bottomLeft",
-                    offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
+                context.ShowCaption(type: "VerticalCaption", title: "$52000199_QD__52000199__0$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
 
             public override void Execute() {
@@ -140,8 +135,7 @@ namespace Maple2.Trigger._52000199_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003417},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003417}, arg3: new byte[] {1})) {
                     context.State = new StateWait_02(context);
                     return;
                 }
@@ -154,8 +148,7 @@ namespace Maple2.Trigger._52000199_qd {
             internal StateWait_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -196,8 +189,7 @@ namespace Maple2.Trigger._52000199_qd {
             internal State바깥으로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 30, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
+                context.SetOnetimeEffect(id: 30, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
                 context.SetAchievement(arg1: 2001, arg3: "KiliansTruth");
             }
 

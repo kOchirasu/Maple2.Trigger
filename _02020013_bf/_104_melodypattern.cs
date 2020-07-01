@@ -207,14 +207,7 @@ namespace Maple2.Trigger._02020013_bf {
                 context.SetActor(arg1: 11106, arg2: false, arg3: "ks_quest_musical_A01_off");
                 context.SetActor(arg1: 11107, arg2: false, arg3: "ks_quest_musical_A01_off");
                 context.SetActor(arg1: 11108, arg2: false, arg3: "ks_quest_musical_A01_off");
-                context.SetInteractObject(arg1: new[] {12000058}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000059}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000060}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000061}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000062}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000063}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000064}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000065}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000058, 12000059, 12000060, 12000061, 12000062, 12000063, 12000064, 12000065}, arg2: 1);
                 context.SetUserValue(triggerId: 11001, key: "PlayC", value: 1);
                 context.SetUserValue(triggerId: 11002, key: "PlayD", value: 1);
                 context.SetUserValue(triggerId: 11003, key: "PlayE", value: 1);
@@ -618,14 +611,7 @@ namespace Maple2.Trigger._02020013_bf {
                 context.SetUserValue(triggerId: 11007, key: "PlayB", value: 0);
                 context.SetUserValue(triggerId: 11008, key: "PlayHighC", value: 0);
                 context.SetUserValue(triggerId: 11000, key: "AnswerIsRight", value: 1);
-                context.SetInteractObject(arg1: new[] {12000058}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000059}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000060}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000061}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000062}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000063}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000064}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000065}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000058, 12000059, 12000060, 12000061, 12000062, 12000063, 12000064, 12000065}, arg2: 0);
             }
 
             public override void Execute() {
@@ -673,14 +659,7 @@ namespace Maple2.Trigger._02020013_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 11000, key: "AnswerIsWrong", value: 1);
-                context.SetInteractObject(arg1: new[] {12000058}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000059}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000060}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000061}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000062}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000063}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000064}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000065}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000058, 12000059, 12000060, 12000061, 12000062, 12000063, 12000064, 12000065}, arg2: 0);
             }
 
             public override void Execute() {

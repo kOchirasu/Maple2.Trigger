@@ -38,8 +38,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State보스전_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 23501001, illust: "Turned_Yuperia_normal",
-                    script: "$02020101_BF__MAIN__0$", duration: 5670, voice: @"ko/Npc/00002206");
+                context.SideNpcTalk(type: "talk", npcId: 23501001, illust: "Turned_Yuperia_normal", script: "$02020101_BF__MAIN__0$", duration: 5670, voice: @"ko/Npc/00002206");
                 context.CreateMonster(arg1: new[] {101});
             }
 
@@ -74,8 +73,7 @@ namespace Maple2.Trigger._02020144_bf {
             public override void OnEnter() {
                 context.SetAchievement(arg2: "trigger", arg3: "ClearGreenLapenta_Quest");
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SideNpcTalk(type: "talk", npcId: 23501001, illust: "Turned_Yuperia_normal",
-                    script: "$02020101_BF__MAIN__1$", duration: 7940, voice: @"ko/Npc/00002207");
+                context.SideNpcTalk(type: "talk", npcId: 23501001, illust: "Turned_Yuperia_normal", script: "$02020101_BF__MAIN__1$", duration: 7940, voice: @"ko/Npc/00002207");
             }
 
             public override void Execute() {

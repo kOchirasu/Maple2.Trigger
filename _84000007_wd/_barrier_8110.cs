@@ -6,8 +6,7 @@ namespace Maple2.Trigger._84000007_wd {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {8111, 8112, 8113, 8114}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {8110}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000938}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000954}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000938, 10000954}, arg2: 2);
             }
 
             public override void Execute() {
@@ -91,8 +90,7 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetUserValue(triggerId: 7110, key: "Color11", value: 1);
                 context.SetMesh(arg1: new[] {8111, 8112, 8113, 8114}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {8110}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000938}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000954}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000938, 10000954}, arg2: 0);
             }
 
             public override void Execute() {
@@ -251,8 +249,7 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetUserValue(triggerId: 7110, key: "Color11", value: 1);
                 context.SetMesh(arg1: new[] {8111, 8112, 8113, 8114}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {8110}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000938}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000954}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000938, 10000954}, arg2: 0);
             }
 
             public override void Execute() {
@@ -411,8 +408,7 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetUserValue(triggerId: 7110, key: "Color11", value: 1);
                 context.SetMesh(arg1: new[] {8111, 8112, 8113, 8114}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {8110}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000938}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000954}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000938, 10000954}, arg2: 0);
             }
 
             public override void Execute() {
@@ -571,8 +567,7 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetUserValue(triggerId: 7110, key: "Color11", value: 1);
                 context.SetMesh(arg1: new[] {8111, 8112, 8113, 8114}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {8110}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000938}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000954}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000938, 10000954}, arg2: 0);
             }
 
             public override void Execute() {
@@ -730,8 +725,7 @@ namespace Maple2.Trigger._84000007_wd {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {8111, 8112, 8113, 8114}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {8110}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000938}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000954}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000938, 10000954}, arg2: 0);
                 context.SetUserValue(key: "Barrier11", value: 0);
             }
 

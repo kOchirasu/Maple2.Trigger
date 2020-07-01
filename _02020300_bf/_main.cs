@@ -50,8 +50,7 @@ namespace Maple2.Trigger._02020300_bf {
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SetUserValue(triggerId: 99990004, key: "Laser", value: 1);
-                    context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal",
-                        script: "$02020300_BF__MAIN__1$", duration: 5000);
+                    context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$02020300_BF__MAIN__1$", duration: 5000);
                     context.State = new State추가대사_02(context);
                     return;
                 }
@@ -67,8 +66,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override void Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103})) {
-                    context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal",
-                        script: "$02020300_BF__MAIN__2$", duration: 5000);
+                    context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__2$", duration: 5000);
                     context.State = new State추가대사_03(context);
                     return;
                 }
@@ -84,8 +82,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_normal",
-                        script: "$02020300_BF__MAIN__3$", duration: 5000);
+                    context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_normal", script: "$02020300_BF__MAIN__3$", duration: 5000);
                     context.State = new State엘리베이터_체크(context);
                     return;
                 }
@@ -101,8 +98,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal",
-                        script: "$02020300_BF__MAIN__4$", duration: 5000);
+                    context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__4$", duration: 5000);
                     context.State = new State엘리베이터_스위치(context);
                     return;
                 }
@@ -205,8 +201,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304}, arg2: false);
-                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: true);
-                context.SetMesh(arg1: new[] {30000, 30010, 30020, 30030}, arg2: true);
+                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 30000, 30010, 30020, 30030}, arg2: true);
             }
 
             public override void Execute() {
@@ -223,14 +218,12 @@ namespace Maple2.Trigger._02020300_bf {
             internal State웨이브_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_unfair",
-                    script: "$02020300_BF__MAIN__6$", duration: 5000);
+                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_unfair", script: "$02020300_BF__MAIN__6$", duration: 5000);
             }
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: false);
-                    context.SetMesh(arg1: new[] {30000, 30010, 30020, 30030}, arg2: false);
+                    context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 30000, 30010, 30020, 30030}, arg2: false);
                     context.State = new State추가대사_04(context);
                     return;
                 }
@@ -243,8 +236,7 @@ namespace Maple2.Trigger._02020300_bf {
             internal State추가대사_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal",
-                    script: "$02020300_BF__MAIN__7$", duration: 5000);
+                context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$02020300_BF__MAIN__7$", duration: 5000);
                 context.SetUserValue(triggerId: 99990002, key: "Spawn", value: 1);
             }
 
@@ -264,8 +256,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1001}, arg2: false);
-                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: true);
-                context.SetMesh(arg1: new[] {30000, 30010, 30020, 30030}, arg2: true);
+                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 30000, 30010, 30020, 30030}, arg2: true);
             }
 
             public override void Execute() {
@@ -291,8 +282,7 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SetMesh(arg1: new[] {5001}, arg2: false);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003}, arg2: true);
                 context.SetUserValue(triggerId: 99990003, key: "RandomBomb", value: 1);
-                context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal",
-                    script: "$02020300_BF__MAIN__8$", duration: 5000);
+                context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$02020300_BF__MAIN__8$", duration: 5000);
             }
 
             public override void Execute() {
@@ -309,8 +299,7 @@ namespace Maple2.Trigger._02020300_bf {
             internal State추가대사_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal",
-                    script: "$02020300_BF__MAIN__9$", duration: 5000);
+                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__9$", duration: 5000);
             }
 
             public override void Execute() {
@@ -327,8 +316,7 @@ namespace Maple2.Trigger._02020300_bf {
             internal State추가대사_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_normal",
-                    script: "$02020300_BF__MAIN__10$", duration: 5000);
+                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_normal", script: "$02020300_BF__MAIN__10$", duration: 5000);
             }
 
             public override void Execute() {
@@ -346,8 +334,7 @@ namespace Maple2.Trigger._02020300_bf {
             internal State보스전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal",
-                    script: "$02020300_BF__MAIN__11$", duration: 5000);
+                context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__11$", duration: 5000);
                 context.SetActor(arg1: 9002, arg2: true, arg3: "sf_fi_funct_darkdoor_A01_start");
                 context.SetMesh(arg1: new[] {3001}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);

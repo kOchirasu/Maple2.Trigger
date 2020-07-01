@@ -4,11 +4,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal State벽재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        31001, 31002, 31003, 31004, 31005, 31006, 31007, 31008, 31009, 31010, 31011, 31012, 31013,
-                        31014, 31015, 31016, 31017, 31018, 31019, 31020, 31021, 31022, 31023, 31024
-                    }, arg2: true, arg3: 0, arg4: 10, arg5: 3f);
+                context.SetMesh(arg1: new[] {31001, 31002, 31003, 31004, 31005, 31006, 31007, 31008, 31009, 31010, 31011, 31012, 31013, 31014, 31015, 31016, 31017, 31018, 31019, 31020, 31021, 31022, 31023, 31024}, arg2: true, arg3: 0, arg4: 10, arg5: 3f);
             }
 
             public override void Execute() {
@@ -25,11 +21,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal State벽삭제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        31001, 31002, 31003, 31004, 31005, 31006, 31007, 31008, 31009, 31010, 31011, 31012, 31013,
-                        31014, 31015, 31016, 31017, 31018, 31019, 31020, 31021, 31022, 31023, 31024
-                    }, arg2: false, arg3: 0, arg4: 10, arg5: 3f);
+                context.SetMesh(arg1: new[] {31001, 31002, 31003, 31004, 31005, 31006, 31007, 31008, 31009, 31010, 31011, 31012, 31013, 31014, 31015, 31016, 31017, 31018, 31019, 31020, 31021, 31022, 31023, 31024}, arg2: false, arg3: 0, arg4: 10, arg5: 3f);
             }
 
             public override void Execute() {

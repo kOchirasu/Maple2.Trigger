@@ -4,14 +4,7 @@ namespace Maple2.Trigger._02020025_bf {
             internal State입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "9001", arg2: true);
-                context.SetAgent(arg1: "9002", arg2: true);
-                context.SetAgent(arg1: "9003", arg2: true);
-                context.SetAgent(arg1: "9004", arg2: true);
-                context.SetAgent(arg1: "9005", arg2: true);
-                context.SetAgent(arg1: "9006", arg2: true);
-                context.SetAgent(arg1: "9007", arg2: true);
-                context.SetAgent(arg1: "9008", arg2: true);
+                context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008}, arg2: true);
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
@@ -56,9 +49,7 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {5001, 5002}, arg2: true);
-                context.ShowCaption(type: "VerticalCaption", title: "$02020025_BF__main__3$",
-                    desc: "$02020025_BF__main__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 5000, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "$02020025_BF__main__3$", desc: "$02020025_BF__main__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2f);
             }
 
             public override void Execute() {
@@ -146,8 +137,7 @@ namespace Maple2.Trigger._02020025_bf {
             internal State카메라_콘대르설명2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 24110001, illustId: "Conder_normal", msg: "$02020025_BF__main__1$",
-                    duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 24110001, illustId: "Conder_normal", msg: "$02020025_BF__main__1$", duration: 4000, align: "left");
             }
 
             public override void Execute() {
@@ -164,8 +154,7 @@ namespace Maple2.Trigger._02020025_bf {
             internal State카메라_콘대르설명3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 24110001, illustId: "Conder_normal", msg: "$02020025_BF__main__2$",
-                    duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 24110001, illustId: "Conder_normal", msg: "$02020025_BF__main__2$", duration: 4000, align: "left");
             }
 
             public override void Execute() {
@@ -182,8 +171,7 @@ namespace Maple2.Trigger._02020025_bf {
             internal State카메라_콘대르설명4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 24110001, illustId: "Conder_normal", msg: "$02020025_BF__main__7$",
-                    duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 24110001, illustId: "Conder_normal", msg: "$02020025_BF__main__7$", duration: 4000, align: "left");
                 context.SetSceneSkip();
             }
 
@@ -238,14 +226,7 @@ namespace Maple2.Trigger._02020025_bf {
             internal State전투_진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "9001", arg2: false);
-                context.SetAgent(arg1: "9002", arg2: false);
-                context.SetAgent(arg1: "9003", arg2: false);
-                context.SetAgent(arg1: "9004", arg2: false);
-                context.SetAgent(arg1: "9005", arg2: false);
-                context.SetAgent(arg1: "9006", arg2: false);
-                context.SetAgent(arg1: "9007", arg2: false);
-                context.SetAgent(arg1: "9008", arg2: false);
+                context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008}, arg2: false);
                 context.SetUserValue(triggerId: 99990002, key: "battlesetting", value: 1);
             }
 
@@ -266,15 +247,13 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override void Execute() {
                 if (context.GetDungeonFirstUserMissionScore() >= 1500) {
-                    context.SideNpcTalk(npcId: 24110001, illust: "Conder_normal", duration: 5000,
-                        script: "$02020025_BF__main__8$", voice: @"ko/Npc/00002146");
+                    context.SideNpcTalk(npcId: 24110001, illust: "Conder_normal", duration: 5000, script: "$02020025_BF__main__8$", voice: @"ko/Npc/00002146");
                     context.State = new State던전종료_A랭크이상(context);
                     return;
                 }
 
                 if (context.GetDungeonFirstUserMissionScore() < 1500) {
-                    context.SideNpcTalk(npcId: 24110001, illust: "Conder_smile", duration: 5000,
-                        script: "$02020025_BF__main__9$", voice: @"ko/Npc/00002145");
+                    context.SideNpcTalk(npcId: 24110001, illust: "Conder_smile", duration: 5000, script: "$02020025_BF__main__9$", voice: @"ko/Npc/00002145");
                     context.State = new State던전종료_A랭크미만(context);
                     return;
                 }

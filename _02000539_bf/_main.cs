@@ -18,20 +18,12 @@ namespace Maple2.Trigger._02000539_bf {
                 context.SetOnetimeEffect(id: 105, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetOnetimeEffect(id: 106, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetMesh(arg1: new[] {904, 905, 906, 907, 908, 909}, arg2: true);
-                context.SetMesh(
-                    arg1: new[]
-                        {910, 911, 912, 913, 921, 914, 915, 922, 916, 917, 918, 919, 920, 923, 924, 925, 926, 927},
-                    arg2: false);
-                context.SetMesh(arg1: new[] {928, 929, 930, 931, 932, 933, 934, 935, 936, 937}, arg2: false);
+                context.SetMesh(arg1: new[] {910, 911, 912, 913, 921, 914, 915, 922, 916, 917, 918, 919, 920, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937}, arg2: false);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 2, isEnable: false);
                 context.SetSkill(arg1: new[] {2000}, arg2: false);
-                context.SetEffect(arg1: new[] {3000}, arg2: false);
-                context.SetEffect(arg1: new[] {3001}, arg2: false);
-                context.SetEffect(arg1: new[] {3002}, arg2: false);
-                context.SetEffect(arg1: new[] {3003}, arg2: false);
-                context.SetEffect(arg1: new[] {3004}, arg2: false);
+                context.SetEffect(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: false);
             }
 
             public override void Execute() {
@@ -100,8 +92,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal State잠시쉬기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
-                    script: "$02000539_BF__MAIN__0$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "$02000539_BF__MAIN__0$");
             }
 
             public override void Execute() {
@@ -154,8 +145,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal State다음몬스터생성조건체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
-                    script: "$02000539_BF__MAIN__1$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "$02000539_BF__MAIN__1$");
                 context.CreateMonster(arg1: new[] {107, 1071, 1072}, arg2: true);
             }
 
@@ -190,8 +180,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal StateNPC생성1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000,
-                    script: "$02000539_BF__MAIN__2$");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000539_BF__MAIN__2$");
                 context.SetEffect(arg1: new[] {3000}, arg2: true);
                 context.CreateMonster(arg1: new[] {201}, arg2: false);
             }
@@ -210,8 +199,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal StateNPC생성2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000,
-                    script: "$02000539_BF__MAIN__3$");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000539_BF__MAIN__3$");
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_500");
             }
 
@@ -247,8 +235,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal State다리만들기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000,
-                    script: "$02000539_BF__MAIN__4$");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000539_BF__MAIN__4$");
                 context.SetMesh(arg1: new[] {912, 913, 921}, arg2: true);
             }
 
@@ -336,8 +323,7 @@ namespace Maple2.Trigger._02000539_bf {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {202}, arg2: false);
                 context.CreateMonster(arg1: new[] {111, 1111, 1112, 112, 1121}, arg2: true);
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000,
-                    script: "$02000539_BF__MAIN__5$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000, script: "$02000539_BF__MAIN__5$");
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: true);
             }
@@ -356,8 +342,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal State다음몬스터생성조건체크2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000,
-                    script: "$02000539_BF__MAIN__6$");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000539_BF__MAIN__6$");
                 context.CreateMonster(arg1: new[] {113, 1131, 1132, 1133, 1134}, arg2: true);
             }
 
@@ -393,8 +378,7 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {204}, arg2: false);
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000,
-                    script: "$02000539_BF__MAIN__7$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000, script: "$02000539_BF__MAIN__7$");
             }
 
             public override void Execute() {
@@ -426,8 +410,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal State두번째사다리생성하기1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
-                    script: "$02000539_BF__MAIN__8$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "$02000539_BF__MAIN__8$");
                 context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetMesh(arg1: new[] {928, 929, 930, 931, 932, 933, 934, 935, 936, 937}, arg2: true);
                 context.SetLadder(arg1: 604, arg2: true, arg3: true);
@@ -499,8 +482,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal State보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000,
-                    script: "$02000539_BF__MAIN__9$");
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000, script: "$02000539_BF__MAIN__9$");
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 2, isEnable: true);
                 context.CreateMonster(arg1: new[] {119}, arg2: true);
@@ -521,9 +503,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal State보스등장3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {3002}, arg2: true);
-                context.SetEffect(arg1: new[] {3003}, arg2: true);
-                context.SetEffect(arg1: new[] {3004}, arg2: true);
+                context.SetEffect(arg1: new[] {3002, 3003, 3004}, arg2: true);
                 context.SetSkill(arg1: new[] {2000}, arg2: true);
             }
 
@@ -541,8 +521,7 @@ namespace Maple2.Trigger._02000539_bf {
             internal State잠시쉬기4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000,
-                    script: "$02000539_BF__MAIN__10$");
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000539_BF__MAIN__10$");
             }
 
             public override void Execute() {

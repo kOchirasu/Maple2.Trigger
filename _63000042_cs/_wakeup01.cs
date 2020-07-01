@@ -9,8 +9,7 @@ namespace Maple2.Trigger._63000042_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001484},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001484}, arg3: new byte[] {2})) {
                     context.State = new StateLodingDelay00(context);
                     return;
                 }

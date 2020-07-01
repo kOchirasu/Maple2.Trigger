@@ -91,9 +91,7 @@ namespace Maple2.Trigger._02000253_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002528, textId: 20002528);
                 context.SetTimer(arg1: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4002}, arg2: true);
-                context.CreateMonster(arg1: new[] {4004}, arg2: true);
-                context.CreateMonster(arg1: new[] {4008}, arg2: true);
+                context.CreateMonster(arg1: new[] {4002, 4004, 4008}, arg2: true);
             }
 
             public override void Execute() {
@@ -113,9 +111,7 @@ namespace Maple2.Trigger._02000253_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002529, textId: 20002529);
                 context.SetTimer(arg1: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4001}, arg2: true);
-                context.CreateMonster(arg1: new[] {4003}, arg2: true);
-                context.CreateMonster(arg1: new[] {4007}, arg2: true);
+                context.CreateMonster(arg1: new[] {4001, 4003, 4007}, arg2: true);
             }
 
             public override void Execute() {
@@ -135,10 +131,7 @@ namespace Maple2.Trigger._02000253_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002530, textId: 20002530);
                 context.SetTimer(arg1: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4001}, arg2: true);
-                context.CreateMonster(arg1: new[] {4002}, arg2: true);
-                context.CreateMonster(arg1: new[] {4003}, arg2: true);
-                context.CreateMonster(arg1: new[] {4004}, arg2: true);
+                context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004}, arg2: true);
             }
 
             public override void Execute() {
@@ -158,10 +151,7 @@ namespace Maple2.Trigger._02000253_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002531, textId: 20002531);
                 context.SetTimer(arg1: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4005}, arg2: true);
-                context.CreateMonster(arg1: new[] {4006}, arg2: true);
-                context.CreateMonster(arg1: new[] {4007}, arg2: true);
-                context.CreateMonster(arg1: new[] {4008}, arg2: true);
+                context.CreateMonster(arg1: new[] {4005, 4006, 4007, 4008}, arg2: true);
             }
 
             public override void Execute() {
@@ -181,11 +171,7 @@ namespace Maple2.Trigger._02000253_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002532, textId: 20002532);
                 context.SetTimer(arg1: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4001}, arg2: true);
-                context.CreateMonster(arg1: new[] {4002}, arg2: true);
-                context.CreateMonster(arg1: new[] {4003}, arg2: true);
-                context.CreateMonster(arg1: new[] {4004}, arg2: true);
-                context.CreateMonster(arg1: new[] {4005}, arg2: true);
+                context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004, 4005}, arg2: true);
             }
 
             public override void Execute() {
@@ -205,14 +191,7 @@ namespace Maple2.Trigger._02000253_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002533, textId: 20002533);
                 context.SetTimer(arg1: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4001}, arg2: true);
-                context.CreateMonster(arg1: new[] {4002}, arg2: true);
-                context.CreateMonster(arg1: new[] {4003}, arg2: true);
-                context.CreateMonster(arg1: new[] {4004}, arg2: true);
-                context.CreateMonster(arg1: new[] {4005}, arg2: true);
-                context.CreateMonster(arg1: new[] {4006}, arg2: true);
-                context.CreateMonster(arg1: new[] {4007}, arg2: true);
-                context.CreateMonster(arg1: new[] {4008}, arg2: true);
+                context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true);
             }
 
             public override void Execute() {
@@ -230,14 +209,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4001}, arg2: true);
-                context.CreateMonster(arg1: new[] {4002}, arg2: true);
-                context.CreateMonster(arg1: new[] {4003}, arg2: true);
-                context.CreateMonster(arg1: new[] {4004}, arg2: true);
-                context.CreateMonster(arg1: new[] {4005}, arg2: true);
-                context.CreateMonster(arg1: new[] {4006}, arg2: true);
-                context.CreateMonster(arg1: new[] {4007}, arg2: true);
-                context.CreateMonster(arg1: new[] {4008}, arg2: true);
+                context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true);
             }
 
             public override void Execute() {
@@ -255,14 +227,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4001}, arg2: true);
-                context.CreateMonster(arg1: new[] {4002}, arg2: true);
-                context.CreateMonster(arg1: new[] {4003}, arg2: true);
-                context.CreateMonster(arg1: new[] {4004}, arg2: true);
-                context.CreateMonster(arg1: new[] {4005}, arg2: true);
-                context.CreateMonster(arg1: new[] {4006}, arg2: true);
-                context.CreateMonster(arg1: new[] {4007}, arg2: true);
-                context.CreateMonster(arg1: new[] {4008}, arg2: true);
+                context.CreateMonster(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true);
             }
 
             public override void Execute() {
@@ -282,14 +247,7 @@ namespace Maple2.Trigger._02000253_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002533, textId: 20002533);
                 context.SetTimer(arg1: "1", arg2: 20);
-                context.CreateMonster(arg1: new[] {4009}, arg2: true);
-                context.CreateMonster(arg1: new[] {4010}, arg2: true);
-                context.CreateMonster(arg1: new[] {4011}, arg2: true);
-                context.CreateMonster(arg1: new[] {4012}, arg2: true);
-                context.CreateMonster(arg1: new[] {4013}, arg2: true);
-                context.CreateMonster(arg1: new[] {4014}, arg2: true);
-                context.CreateMonster(arg1: new[] {4015}, arg2: true);
-                context.CreateMonster(arg1: new[] {4016}, arg2: true);
+                context.CreateMonster(arg1: new[] {4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016}, arg2: true);
             }
 
             public override void Execute() {

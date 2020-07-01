@@ -30,22 +30,19 @@ namespace Maple2.Trigger._02020023_bf {
             }
 
             public override void Execute() {
-                if (context.GetDungeonPlayTime() <= 180
-                    && context.MonsterDead(arg1: new[] {101})) {
+                if (context.GetDungeonPlayTime() <= 180 && context.MonsterDead(arg1: new[] {101})) {
                     context.DungeonMissionComplete(missionId: 24091005);
                     context.State = new State전투_종료(context);
                     return;
                 }
 
-                if (context.GetDungeonPlayTime() <= 70
-                    && context.MonsterDead(arg1: new[] {101})) {
+                if (context.GetDungeonPlayTime() <= 70 && context.MonsterDead(arg1: new[] {101})) {
                     context.DungeonMissionComplete(missionId: 24091006);
                     context.State = new State전투_종료(context);
                     return;
                 }
 
-                if (context.GetDungeonPlayTime() <= 270
-                    && context.MonsterDead(arg1: new[] {101})) {
+                if (context.GetDungeonPlayTime() <= 270 && context.MonsterDead(arg1: new[] {101})) {
                     context.DungeonMissionComplete(missionId: 24091010);
                     context.State = new State전투_종료(context);
                     return;
@@ -77,8 +74,7 @@ namespace Maple2.Trigger._02020023_bf {
                 context.DungeonSetEndTime();
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetNpcDuelHpBar(isOpen: false, spawnPointId: 101, durationTick: 300000);
-                context.SideNpcTalk(npcId: 23200083, illust: "Bliche_nomal", duration: 4000,
-                    script: "$02020023_BF__battle__0$", voice: @"ko/Npc/00002062");
+                context.SideNpcTalk(npcId: 23200083, illust: "Bliche_nomal", duration: 4000, script: "$02020023_BF__battle__0$", voice: @"ko/Npc/00002062");
             }
 
             public override void Execute() {

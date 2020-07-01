@@ -39,14 +39,12 @@ namespace Maple2.Trigger._52000187_qd {
 
             public override void OnEnter() {
                 context.SetQuestAccept(questId: 90000008);
-                context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000,
-                    script: "$52000187_QD__TUTORIAL__0$");
+                context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000, script: "$52000187_QD__TUTORIAL__0$");
             }
 
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {11000071}, arg2: 0)) {
-                    context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000,
-                        script: "$52000187_QD__TUTORIAL__1$");
+                    context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000, script: "$52000187_QD__TUTORIAL__1$");
                     context.SetQuestComplete(questId: 90000008);
                     context.State = new State머쉬킹대화1(context);
                     return;
@@ -65,20 +63,17 @@ namespace Maple2.Trigger._52000187_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {99999}, arg2: new[] {90000007},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {99999}, arg2: new[] {90000007}, arg3: new byte[] {1})) {
                     context.State = new State머쉬킹대화2(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {99999}, arg2: new[] {90000007},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {99999}, arg2: new[] {90000007}, arg3: new byte[] {2})) {
                     context.State = new State머쉬킹대화2(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {99999}, arg2: new[] {90000007},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {99999}, arg2: new[] {90000007}, arg3: new byte[] {3})) {
                     context.State = new State머쉬킹대화2(context);
                     return;
                 }
@@ -96,8 +91,7 @@ namespace Maple2.Trigger._52000187_qd {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {90003})) {
-                    context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000,
-                        script: "$52000187_QD__TUTORIAL__2$");
+                    context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000, script: "$52000187_QD__TUTORIAL__2$");
                     context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_lazy_1");
                     context.State = new State머쉬킹대화3(context);
                     return;
@@ -114,8 +108,7 @@ namespace Maple2.Trigger._52000187_qd {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {90004})) {
-                    context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000,
-                        script: "$52000187_QD__TUTORIAL__3$");
+                    context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000, script: "$52000187_QD__TUTORIAL__3$");
                     context.State = new State머쉬킹대화4(context);
                     return;
                 }
@@ -163,8 +156,7 @@ namespace Maple2.Trigger._52000187_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_mokum_0");
                 context.AddBalloonTalk(spawnPointId: 102, msg: "$52000187_QD__TUTORIAL__5$");
-                context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000,
-                    script: "$52000187_QD__TUTORIAL__6$");
+                context.SideNpcTalk(npcId: 29000403, illust: "Mushking_normal", duration: 4000, script: "$52000187_QD__TUTORIAL__6$");
                 context.AddBuff(arg1: new[] {99999}, arg2: 71000077, arg3: 1, arg4: false, arg5: false);
             }
 
@@ -234,8 +226,7 @@ namespace Maple2.Trigger._52000187_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {99999}, arg2: new[] {90000007},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {99999}, arg2: new[] {90000007}, arg3: new byte[] {3})) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                 }
             }

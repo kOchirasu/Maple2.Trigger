@@ -27,22 +27,19 @@ namespace Maple2.Trigger._02020025_bf {
             }
 
             public override void Execute() {
-                if (context.GetDungeonPlayTime() <= 180
-                    && context.MonsterDead(arg1: new[] {201})) {
+                if (context.GetDungeonPlayTime() <= 180 && context.MonsterDead(arg1: new[] {201})) {
                     context.DungeonMissionComplete(missionId: 24092005);
                     context.State = new State전투_종료(context);
                     return;
                 }
 
-                if (context.GetDungeonPlayTime() <= 70
-                    && context.MonsterDead(arg1: new[] {201})) {
+                if (context.GetDungeonPlayTime() <= 70 && context.MonsterDead(arg1: new[] {201})) {
                     context.DungeonMissionComplete(missionId: 24092006);
                     context.State = new State전투_종료(context);
                     return;
                 }
 
-                if (context.GetDungeonPlayTime() <= 270
-                    && context.MonsterDead(arg1: new[] {201})) {
+                if (context.GetDungeonPlayTime() <= 270 && context.MonsterDead(arg1: new[] {201})) {
                     context.DungeonMissionComplete(missionId: 24092010);
                     context.State = new State전투_종료(context);
                     return;
@@ -73,8 +70,7 @@ namespace Maple2.Trigger._02020025_bf {
             public override void OnEnter() {
                 context.DungeonSetEndTime();
                 context.DestroyMonster(arg1: new[] {-1});
-                context.SideNpcTalk(npcId: 24110001, illust: "Conder_normal", duration: 4000,
-                    script: "$02020025_BF__02020025_battle__0$", voice: @"ko/Npc/00002258");
+                context.SideNpcTalk(npcId: 24110001, illust: "Conder_normal", duration: 4000, script: "$02020025_BF__02020025_battle__0$", voice: @"ko/Npc/00002258");
                 context.SetNpcDuelHpBar(isOpen: false, spawnPointId: 201);
             }
 

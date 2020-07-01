@@ -86,8 +86,7 @@ namespace Maple2.Trigger._99999883 {
             internal State04그림자원정대게이지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShadowExpedition(type: "OpenBossGauge", title: "$02000401_BF__MADRICANSIEGE_Gauge$",
-                    maxGaugePoint: 1000);
+                context.ShadowExpedition(type: "OpenBossGauge", title: "$02000401_BF__MADRICANSIEGE_Gauge$", maxGaugePoint: 1000);
                 context.DebugString(message: "그림자원정대게이지테스트");
             }
 
@@ -106,8 +105,7 @@ namespace Maple2.Trigger._99999883 {
 
             public override void OnEnter() {
                 context.MoveUserToPos(pos: new Vector3(907f, 758f, 151f), rot: new Vector3(0f, 0f, 315f));
-                context.MoveNpcToPos(spawnPointId: 101, pos: new Vector3(702f, 767f, 151f),
-                    rot: new Vector3(0f, 0f, 45f));
+                context.MoveNpcToPos(spawnPointId: 101, pos: new Vector3(702f, 767f, 151f), rot: new Vector3(0f, 0f, 45f));
                 context.DebugString(message: "05PC NPC이동테스트");
             }
 

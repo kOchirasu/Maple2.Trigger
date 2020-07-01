@@ -45,8 +45,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "999", arg2: 10, arg3: true, arg4: true);
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise",
-                    script: "$02020051_BF__101_MAIN__0$", duration: 5684, voice: @"ko/Npc/00002201");
+                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", script: "$02020051_BF__101_MAIN__0$", duration: 5684, voice: @"ko/Npc/00002201");
                 context.RemoveBuff(arg1: 11, arg2: 90000900);
             }
 
@@ -85,8 +84,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise",
-                    script: "$02020051_BF__101_MAIN__1$", duration: 5684, voice: @"ko/Npc/00002201");
+                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", script: "$02020051_BF__101_MAIN__1$", duration: 5684, voice: @"ko/Npc/00002201");
             }
 
             public override void Execute() {

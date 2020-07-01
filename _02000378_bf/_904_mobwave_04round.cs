@@ -39,8 +39,7 @@ namespace Maple2.Trigger._02000378_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000378_BF__904_MOBWAVE_04ROUND__0$", arg3: 6000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000378_BF__904_MOBWAVE_04ROUND__0$", arg3: 6000, arg4: "0");
                 context.SetUserValue(key: "WaveTime", value: 1);
                 context.SetEffect(arg1: new[] {5104}, arg2: true);
             }
@@ -1437,13 +1436,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    90400, 90401, 90402, 90403, 90404, 90405, 90406, 90407, 90408, 90410, 90410, 90411, 90412, 90413,
-                    90414, 90415, 90416, 90417, 90418, 90419, 90420, 90421, 90422, 90423, 90424, 90425, 90426, 90427,
-                    90428, 90429, 90430, 90431, 90432, 90433, 90434, 90435, 90436, 90437, 90438, 90439, 90440, 90441,
-                    90442, 90443, 90444, 90445, 90446, 90447, 90448, 90449, 90480, 90481, 90482, 90483, 90484, 90485,
-                    90486, 90487, 90488, 90489, 90490, 90491, 90492, 90493, 90494, 90495, 90496, 90497, 90498, 90499
-                })) {
+                if (context.MonsterDead(arg1: new[] {90400, 90401, 90402, 90403, 90404, 90405, 90406, 90407, 90408, 90410, 90410, 90411, 90412, 90413, 90414, 90415, 90416, 90417, 90418, 90419, 90420, 90421, 90422, 90423, 90424, 90425, 90426, 90427, 90428, 90429, 90430, 90431, 90432, 90433, 90434, 90435, 90436, 90437, 90438, 90439, 90440, 90441, 90442, 90443, 90444, 90445, 90446, 90447, 90448, 90449, 90480, 90481, 90482, 90483, 90484, 90485, 90486, 90487, 90488, 90489, 90490, 90491, 90492, 90493, 90494, 90495, 90496, 90497, 90498, 90499})) {
                     context.State = new StateDefenceSucess02(context);
                     return;
                 }
@@ -1483,10 +1476,8 @@ namespace Maple2.Trigger._02000378_bf {
                 context.DestroyMonster(arg1: new[] {1004});
                 context.CreateMonster(arg1: new[] {1104}, arg2: false);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000378_BF__904_MOBWAVE_04ROUND__1$", arg3: 4000,
-                    arg4: "0");
-                context.SetConversation(arg1: 1, arg2: 1104, arg3: "$02000378_BF__904_MOBWAVE_04ROUND__2$", arg4: 4,
-                    arg5: 4);
+                context.SetEventUI(arg1: 1, arg2: "$02000378_BF__904_MOBWAVE_04ROUND__1$", arg3: 4000, arg4: "0");
+                context.SetConversation(arg1: 1, arg2: 1104, arg3: "$02000378_BF__904_MOBWAVE_04ROUND__2$", arg4: 4, arg5: 4);
             }
 
             public override void Execute() {
@@ -1520,8 +1511,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.SetUserValue(key: "PenaltyFinish", value: 0);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000378_BF__904_MOBWAVE_04ROUND__3$", arg3: 4000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000378_BF__904_MOBWAVE_04ROUND__3$", arg3: 4000, arg4: "0");
                 context.DestroyMonster(arg1: new[] {1104});
                 context.CreateMonster(arg1: new[] {1004}, arg2: false);
                 context.RemoveBalloonTalk(spawnPointId: 1104);

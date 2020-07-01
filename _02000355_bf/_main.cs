@@ -8,24 +8,16 @@ namespace Maple2.Trigger._02000355_bf {
             public override void OnEnter() {
                 context.SetActor(arg1: 299, arg2: true, arg3: "Dead_Idle_A");
                 context.CreateMonster(arg1: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, arg2: false);
-                context.SetEffect(arg1: new[] {600}, arg2: false);
-                context.SetEffect(arg1: new[] {699}, arg2: false);
-                context.SetMesh(arg1: new[] {3999}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3900}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {600, 699}, arg2: false);
+                context.SetMesh(arg1: new[] {3999, 3900, 3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkill(arg1: new[] {7001}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
             }
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -94,10 +86,7 @@ namespace Maple2.Trigger._02000355_bf {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7001}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3701, 3702, 3703, 3704, 3705, 3706, 3707, 3708, 3709, 3710, 3711, 3712, 3713, 3714, 3715, 3716}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.CameraSelectPath(arg1: new[] {301}, arg2: true);
             }
 
@@ -214,8 +203,7 @@ namespace Maple2.Trigger._02000355_bf {
             public override void Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     context.DungeonClear();
-                    context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808}, arg2: true,
-                        arg3: 0, arg4: 50, arg5: 2f);
+                    context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805, 3806, 3807, 3808}, arg2: true, arg3: 0, arg4: 50, arg5: 2f);
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.State = new State종료(context);
                     return;

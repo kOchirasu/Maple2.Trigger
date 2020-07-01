@@ -25,8 +25,7 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnEnter() {
                 context.SetActor(arg1: 202, arg2: true, arg3: "Opened");
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {6602}, arg2: false);
+                context.SetEffect(arg1: new[] {602, 6602}, arg2: false);
                 context.SetEffect(arg1: new[] {6802}, arg2: true);
             }
 

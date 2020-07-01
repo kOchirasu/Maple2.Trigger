@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52000020_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60100095},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60100095}, arg3: new byte[] {1})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -25,9 +24,7 @@ namespace Maple2.Trigger._52000020_qd {
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
                 context.DestroyMonster(arg1: new[] {201});
-                context.CreateMonster(arg1: new[] {202}, arg2: true);
-                context.CreateMonster(arg1: new[] {302}, arg2: true);
-                context.CreateMonster(arg1: new[] {404, 405, 406, 407, 408, 409, 410, 411}, arg2: true);
+                context.CreateMonster(arg1: new[] {202, 302, 404, 405, 406, 407, 408, 409, 410, 411}, arg2: true);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetSceneSkip(arg1: "battle_ready", arg2: "nextState");
             }
@@ -83,8 +80,7 @@ namespace Maple2.Trigger._52000020_qd {
             public override void OnEnter() {
                 context.SetSound(arg1: 7001, arg2: false);
                 context.SetSound(arg1: 7002, arg2: true);
-                context.AddCinematicTalk(npcId: 11003193, msg: "$52000020_QD__MAIN_02__0$", duration: 2000,
-                    align: "center");
+                context.AddCinematicTalk(npcId: 11003193, msg: "$52000020_QD__MAIN_02__0$", duration: 2000, align: "center");
             }
 
             public override void Execute() {
@@ -120,8 +116,7 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 302, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 29000266, msg: "$52000020_QD__MAIN_02__1$", duration: 2000,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 29000266, msg: "$52000020_QD__MAIN_02__1$", duration: 2000, align: "left");
             }
 
             public override void Execute() {
@@ -139,8 +134,7 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 302, arg2: "Emotion_Angry_A");
-                context.AddCinematicTalk(npcId: 29000266, msg: "$52000020_QD__MAIN_02__2$", duration: 2000,
-                    align: "center");
+                context.AddCinematicTalk(npcId: 29000266, msg: "$52000020_QD__MAIN_02__2$", duration: 2000, align: "center");
             }
 
             public override void Execute() {
@@ -158,8 +152,7 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 302, arg2: "ChatUp_A");
-                context.AddCinematicTalk(npcId: 29000266, msg: "$52000020_QD__MAIN_02__3$", duration: 2000,
-                    align: "center");
+                context.AddCinematicTalk(npcId: 29000266, msg: "$52000020_QD__MAIN_02__3$", duration: 2000, align: "center");
             }
 
             public override void Execute() {
@@ -185,22 +178,14 @@ namespace Maple2.Trigger._52000020_qd {
                 context.SetNpcEmotionSequence(arg1: 409, arg2: "ChatUp_A");
                 context.SetNpcEmotionSequence(arg1: 410, arg2: "ChatUp_A");
                 context.SetNpcEmotionSequence(arg1: 411, arg2: "ChatUp_A");
-                context.AddBalloonTalk(spawnPointId: 404, msg: "$52000020_QD__MAIN_02__4$", duration: 2000,
-                    delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 405, msg: "$52000020_QD__MAIN_02__5$", duration: 2000,
-                    delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 406, msg: "$52000020_QD__MAIN_02__6$", duration: 2000,
-                    delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 407, msg: "$52000020_QD__MAIN_02__7$", duration: 2000,
-                    delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 408, msg: "$52000020_QD__MAIN_02__8$", duration: 2000,
-                    delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 409, msg: "$52000020_QD__MAIN_02__9$", duration: 2000,
-                    delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 410, msg: "$52000020_QD__MAIN_02__10$", duration: 2000,
-                    delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 411, msg: "$52000020_QD__MAIN_02__11$", duration: 2000,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 404, msg: "$52000020_QD__MAIN_02__4$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 405, msg: "$52000020_QD__MAIN_02__5$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 406, msg: "$52000020_QD__MAIN_02__6$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 407, msg: "$52000020_QD__MAIN_02__7$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 408, msg: "$52000020_QD__MAIN_02__8$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 409, msg: "$52000020_QD__MAIN_02__9$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 410, msg: "$52000020_QD__MAIN_02__10$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 411, msg: "$52000020_QD__MAIN_02__11$", duration: 2000, delayTick: 0);
             }
 
             public override void Execute() {
@@ -218,8 +203,7 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 502, arg2: "Bore_A");
-                context.AddCinematicTalk(npcId: 29000266, msg: "$52000020_QD__MAIN_02__12$", duration: 2000,
-                    align: "center");
+                context.AddCinematicTalk(npcId: 29000266, msg: "$52000020_QD__MAIN_02__12$", duration: 2000, align: "center");
                 context.SetSceneSkip();
             }
 

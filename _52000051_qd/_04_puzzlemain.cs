@@ -8,14 +8,10 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetUserValue(key: "CorrectSecondPiece", value: 0);
                 context.SetUserValue(key: "CorrectThirdPiece", value: 0);
                 context.SetUserValue(key: "CorrectFouthPiece", value: 0);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
+                context.SetEffect(arg1: new[] {5002, 5003}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10001023}, arg2: 0);
                 context.SetUserValue(key: "PuzzleStart", value: 0);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3020}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3001, 3002, 3003, 3004, 3020}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

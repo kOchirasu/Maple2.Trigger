@@ -7,23 +7,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetMesh(arg1: new[] {10000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {20000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {30000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {9990, 9991, 9992, 9993}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016,
-                        1017
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {10000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 20000, 30000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 9990, 9991, 9992, 9993, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {7000, 7001, 7002, 7003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -44,8 +28,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -57,8 +40,7 @@ namespace Maple2.Trigger._02010049_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {102, 103, 104, 105, 107, 108}, arg2: false);
-                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206}, arg2: false);
+                context.CreateMonster(arg1: new[] {102, 103, 104, 105, 107, 108, 201, 202, 203, 204, 205, 206}, arg2: false);
                 context.ShowGuideSummary(entityId: 20104901, textId: 20104901, duration: 3000);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
             }
@@ -121,11 +103,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {9990, 9991, 9992, 9993}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016,
-                        1017
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
             }
 
             public override void Execute() {
@@ -161,10 +139,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {10000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 20104903, textId: 20104903, duration: 5000);
             }
@@ -220,10 +195,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {20000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 20104903, textId: 20104903, duration: 5000);
             }
@@ -242,9 +214,7 @@ namespace Maple2.Trigger._02010049_bf {
             internal State전투지역03시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {399}, arg2: false);
-                context.CreateMonster(arg1: new[] {302, 303, 304, 305, 306, 307}, arg2: false);
-                context.CreateMonster(arg1: new[] {309}, arg2: false);
+                context.CreateMonster(arg1: new[] {399, 302, 303, 304, 305, 306, 307, 309}, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 20104902, textId: 20104902, duration: 5000);
             }
@@ -341,8 +311,7 @@ namespace Maple2.Trigger._02010049_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {400});
                 context.SetMesh(arg1: new[] {30000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetRandomMesh(arg1: new[] {7000, 7001, 7002, 7003}, arg2: true, arg3: 4, arg4: 100,
-                    arg5: 100);
+                context.SetRandomMesh(arg1: new[] {7000, 7001, 7002, 7003}, arg2: true, arg3: 4, arg4: 100, arg5: 100);
                 context.ShowGuideSummary(entityId: 20104905, textId: 20104905, duration: 6000);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
             }

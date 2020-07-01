@@ -86,8 +86,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State전멸던전실패연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11000144, illust: "tristan_normal", duration: 4000,
-                    script: "$02000410_BF__ClearCheck__0$", voice: @"ko/Npc/00002171");
+                context.SideNpcTalk(npcId: 11000144, illust: "tristan_normal", duration: 4000, script: "$02000410_BF__ClearCheck__0$", voice: @"ko/Npc/00002171");
             }
 
             public override void Execute() {
@@ -104,8 +103,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State전멸던전실패연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 4000,
-                    script: "$02000410_BF__ClearCheck__1$", voice: @"ko/Npc/00002156");
+                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 4000, script: "$02000410_BF__ClearCheck__1$", voice: @"ko/Npc/00002156");
             }
 
             public override void Execute() {
@@ -166,8 +164,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() {
                 context.SetAiExtraData(key: "EventClear", value: 1);
-                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 3000,
-                    script: "$02000410_BF__ClearCheck__2$", voice: @"ko/Npc/00002182");
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 3000, script: "$02000410_BF__ClearCheck__2$", voice: @"ko/Npc/00002182");
             }
 
             public override void Execute() {
@@ -185,8 +182,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene5.usm", duration: 0);
-                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 8000,
-                    script: "$02000410_BF__ClearCheck__3$", voice: @"ko/Npc/00002177");
+                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 8000, script: "$02000410_BF__ClearCheck__3$", voice: @"ko/Npc/00002177");
             }
 
             public override void Execute() {
@@ -245,8 +241,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() {
                 context.SetAiExtraData(key: "EventLeave", value: 1);
-                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 3000,
-                    script: "$02000410_BF__ClearCheck__4$");
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 3000, script: "$02000410_BF__ClearCheck__4$");
             }
 
             public override void Execute() {
@@ -264,8 +259,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene5.usm", duration: 0);
-                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 8000,
-                    script: "$02000410_BF__ClearCheck__5$");
+                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 8000, script: "$02000410_BF__ClearCheck__5$");
             }
 
             public override void Execute() {
@@ -282,8 +276,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State실패연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003795, illust: "infernog_nomal", duration: 4000,
-                    script: "$02000410_BF__ClearCheck__6$", voice: @"ko/Monster/60000722");
+                context.SideNpcTalk(npcId: 11003795, illust: "infernog_nomal", duration: 4000, script: "$02000410_BF__ClearCheck__6$", voice: @"ko/Monster/60000722");
             }
 
             public override void Execute() {
@@ -300,8 +293,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State실패연출03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003795, illust: "infernog_nomal", duration: 4000,
-                    script: "$02000410_BF__ClearCheck__7$", voice: @"ko/Monster/60000723");
+                context.SideNpcTalk(npcId: 11003795, illust: "infernog_nomal", duration: 4000, script: "$02000410_BF__ClearCheck__7$", voice: @"ko/Monster/60000723");
             }
 
             public override void Execute() {
@@ -318,8 +310,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State실패연출05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 4000,
-                    script: "$02000410_BF__ClearCheck__8$", voice: @"ko/Npc/00002165");
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 4000, script: "$02000410_BF__ClearCheck__8$", voice: @"ko/Npc/00002165");
             }
 
             public override void Execute() {
@@ -336,8 +327,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State실패연출06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_closeEye", duration: 4000,
-                    script: "$02000410_BF__ClearCheck__9$", voice: @"ko/Npc/00002155");
+                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_closeEye", duration: 4000, script: "$02000410_BF__ClearCheck__9$", voice: @"ko/Npc/00002155");
             }
 
             public override void Execute() {

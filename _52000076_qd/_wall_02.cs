@@ -4,11 +4,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal State벽재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        32001, 32002, 32003, 32004, 32005, 32006, 32007, 32008, 32009, 32010, 32011, 32012, 32013,
-                        32014, 32015, 32016, 32017, 32018, 32019, 32020, 32021
-                    }, arg2: true, arg3: 0, arg4: 10, arg5: 3f);
+                context.SetMesh(arg1: new[] {32001, 32002, 32003, 32004, 32005, 32006, 32007, 32008, 32009, 32010, 32011, 32012, 32013, 32014, 32015, 32016, 32017, 32018, 32019, 32020, 32021}, arg2: true, arg3: 0, arg4: 10, arg5: 3f);
             }
 
             public override void Execute() {
@@ -25,11 +21,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal State벽삭제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        32001, 32002, 32003, 32004, 32005, 32006, 32007, 32008, 32009, 32010, 32011, 32012, 32013,
-                        32014, 32015, 32016, 32017, 32018, 32019, 32020, 32021
-                    }, arg2: false, arg3: 0, arg4: 10, arg5: 3f);
+                context.SetMesh(arg1: new[] {32001, 32002, 32003, 32004, 32005, 32006, 32007, 32008, 32009, 32010, 32011, 32012, 32013, 32014, 32015, 32016, 32017, 32018, 32019, 32020, 32021}, arg2: false, arg3: 0, arg4: 10, arg5: 3f);
             }
 
             public override void Execute() {

@@ -6,14 +6,12 @@ namespace Maple2.Trigger._52020017_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200115},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200115}, arg3: new byte[] {1})) {
                     context.State = new StateReady(context);
                     return;
                 }
@@ -26,33 +24,11 @@ namespace Maple2.Trigger._52020017_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
-                context.CreateMonster(arg1: new[] {202}, arg2: true);
-                context.CreateMonster(arg1: new[] {203}, arg2: true);
-                context.CreateMonster(arg1: new[] {204}, arg2: true);
-                context.CreateMonster(arg1: new[] {205}, arg2: true);
-                context.CreateMonster(arg1: new[] {206}, arg2: true);
-                context.CreateMonster(arg1: new[] {207}, arg2: true);
-                context.CreateMonster(arg1: new[] {208}, arg2: true);
-                context.CreateMonster(arg1: new[] {209}, arg2: true);
-                context.CreateMonster(arg1: new[] {210}, arg2: true);
-                context.CreateMonster(arg1: new[] {211}, arg2: true);
-                context.CreateMonster(arg1: new[] {212}, arg2: true);
-                context.CreateMonster(arg1: new[] {213}, arg2: true);
-                context.CreateMonster(arg1: new[] {214}, arg2: true);
-                context.CreateMonster(arg1: new[] {215}, arg2: true);
-                context.CreateMonster(arg1: new[] {216}, arg2: true);
-                context.CreateMonster(arg1: new[] {217}, arg2: true);
-                context.CreateMonster(arg1: new[] {218}, arg2: true);
-                context.CreateMonster(arg1: new[] {219}, arg2: true);
-                context.CreateMonster(arg1: new[] {220}, arg2: true);
-                context.CreateMonster(arg1: new[] {301}, arg2: true);
-                context.CreateMonster(arg1: new[] {302}, arg2: true);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 301, 302}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60200115},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60200115}, arg3: new byte[] {1})) {
                     context.State = new StateObject_Off(context);
                     return;
                 }
@@ -88,8 +64,7 @@ namespace Maple2.Trigger._52020017_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003624, msg: "아아…. 드디어 극의 주인공을 찾은 것 같네.", duration: 2800,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 11003624, msg: "아아…. 드디어 극의 주인공을 찾은 것 같네.", duration: 2800, align: "left");
                 context.SetSceneSkip(arg2: "nextState");
             }
 
@@ -199,8 +174,7 @@ namespace Maple2.Trigger._52020017_qd {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcId: 11003624, msg: "자, 그럼 극을 시작해볼까?", duration: 2800,
-                    illustId: "RobotMaidBrownHair_normal", align: "Center");
+                context.AddCinematicTalk(npcId: 11003624, msg: "자, 그럼 극을 시작해볼까?", duration: 2800, illustId: "RobotMaidBrownHair_normal", align: "Center");
             }
 
             public override void Execute() {
@@ -311,9 +285,7 @@ namespace Maple2.Trigger._52020017_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620
-                })) {
+                if (context.MonsterDead(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620})) {
                     context.State = new StateBattle_B_Ready(context);
                     return;
                 }
@@ -360,8 +332,7 @@ namespace Maple2.Trigger._52020017_qd {
 
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(1f, 1f, 1f));
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
                 context.DestroyMonster(arg1: new[] {101});
                 context.SetInteractObject(arg1: new[] {10001282}, arg2: 1);
             }

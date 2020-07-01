@@ -7,8 +7,7 @@ namespace Maple2.Trigger._02000292_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 101, arg2: true, arg3: "Closed");
-                context.SetMesh(arg1: new[] {102, 103, 104}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {105, 106, 107, 108}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {102, 103, 104, 105, 106, 107, 108}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -28,8 +27,7 @@ namespace Maple2.Trigger._02000292_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }

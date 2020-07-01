@@ -104,12 +104,10 @@ namespace Maple2.Trigger._02000482_bf {
             internal State1stBridgeOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8000", arg2: false);
-                context.SetAgent(arg1: "8001", arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001}, arg2: false);
                 context.DestroyMonster(arg1: new[] {901, 902, 903});
                 context.SetMesh(arg1: new[] {3110}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109},
-                    arg2: true, arg3: 0, arg4: 100, arg5: 10f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109}, arg2: true, arg3: 0, arg4: 100, arg5: 10f);
                 context.SetUserValue(triggerId: 101, key: "BridgeOpen", value: 1);
                 context.SetUserValue(triggerId: 102, key: "BridgeOpen", value: 1);
             }
@@ -145,12 +143,10 @@ namespace Maple2.Trigger._02000482_bf {
             internal State2ndBridgeOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
+                context.SetAgent(arg1: new[] {8002, 8003}, arg2: false);
                 context.DestroyMonster(arg1: new[] {904, 905, 906});
                 context.SetMesh(arg1: new[] {3210}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209},
-                    arg2: true, arg3: 0, arg4: 100, arg5: 10f);
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209}, arg2: true, arg3: 0, arg4: 100, arg5: 10f);
                 context.SetUserValue(triggerId: 101, key: "BridgeOpen", value: 2);
                 context.SetUserValue(triggerId: 102, key: "BridgeOpen", value: 2);
                 context.SetUserValue(triggerId: 103, key: "BridgeOpen", value: 2);
@@ -189,12 +185,10 @@ namespace Maple2.Trigger._02000482_bf {
             internal State3rdBridgeOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8004", arg2: false);
-                context.SetAgent(arg1: "8005", arg2: false);
+                context.SetAgent(arg1: new[] {8004, 8005}, arg2: false);
                 context.DestroyMonster(arg1: new[] {907, 908, 909});
                 context.SetMesh(arg1: new[] {3310}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309},
-                    arg2: true, arg3: 0, arg4: 100, arg5: 10f);
+                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309}, arg2: true, arg3: 0, arg4: 100, arg5: 10f);
                 context.SetUserValue(triggerId: 101, key: "BridgeOpen", value: 3);
                 context.SetUserValue(triggerId: 102, key: "BridgeOpen", value: 3);
                 context.SetUserValue(triggerId: 103, key: "BridgeOpen", value: 3);

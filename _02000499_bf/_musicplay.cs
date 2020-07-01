@@ -4,11 +4,7 @@ namespace Maple2.Trigger._02000499_bf {
             internal Statewait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5101}, arg2: false);
-                context.SetEffect(arg1: new[] {5103}, arg2: false);
-                context.SetEffect(arg1: new[] {5102}, arg2: false);
-                context.SetEffect(arg1: new[] {5104}, arg2: false);
-                context.SetEffect(arg1: new[] {5105}, arg2: false);
+                context.SetEffect(arg1: new[] {5101, 5103, 5102, 5104, 5105}, arg2: false);
                 context.SetInteractObject(arg1: new[] {11000093}, arg2: 1, arg3: false);
                 context.DestroyMonster(arg1: new[] {210});
             }
@@ -47,11 +43,7 @@ namespace Maple2.Trigger._02000499_bf {
             internal StatePCPlayMusic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5101}, arg2: true);
-                context.SetEffect(arg1: new[] {5103}, arg2: true);
-                context.SetEffect(arg1: new[] {5102}, arg2: true);
-                context.SetEffect(arg1: new[] {5104}, arg2: true);
-                context.SetEffect(arg1: new[] {5105}, arg2: true);
+                context.SetEffect(arg1: new[] {5101, 5103, 5102, 5104, 5105}, arg2: true);
                 context.CreateMonster(arg1: new[] {210}, arg2: false, arg3: 0);
                 context.SetNpcEmotionLoop(arg1: 201, arg2: "Play_A", arg3: 30500f);
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Play_A", arg3: 30500f);
@@ -72,11 +64,7 @@ namespace Maple2.Trigger._02000499_bf {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5101}, arg2: false);
-                context.SetEffect(arg1: new[] {5103}, arg2: false);
-                context.SetEffect(arg1: new[] {5102}, arg2: false);
-                context.SetEffect(arg1: new[] {5104}, arg2: false);
-                context.SetEffect(arg1: new[] {5105}, arg2: false);
+                context.SetEffect(arg1: new[] {5101, 5103, 5102, 5104, 5105}, arg2: false);
                 context.DestroyMonster(arg1: new[] {210});
             }
 

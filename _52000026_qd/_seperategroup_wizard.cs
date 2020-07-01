@@ -5,28 +5,11 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 10000, arg2: false);
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetEffect(arg1: new[] {6001}, arg2: false);
-                context.SetEffect(arg1: new[] {6002}, arg2: false);
-                context.SetEffect(arg1: new[] {6003}, arg2: false);
-                context.SetEffect(arg1: new[] {6004}, arg2: false);
-                context.SetEffect(arg1: new[] {6005}, arg2: false);
-                context.SetEffect(arg1: new[] {6006}, arg2: false);
-                context.SetEffect(arg1: new[] {6007}, arg2: false);
-                context.SetEffect(arg1: new[] {6101}, arg2: false);
-                context.SetEffect(arg1: new[] {6102}, arg2: false);
-                context.SetEffect(arg1: new[] {6103}, arg2: false);
-                context.SetEffect(arg1: new[] {6104}, arg2: false);
-                context.SetEffect(arg1: new[] {6105}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6101, 6102, 6103, 6104, 6105}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002947}, arg3: new byte[] {1},
-                    arg4: 30)) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002947}, arg3: new byte[] {1}, arg4: 30)) {
                     context.State = new State연출준비01(context);
                     return;
                 }
@@ -138,8 +121,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State1차입장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000601, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__0$",
-                    arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000601, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__0$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "2차입장01");
             }
 
@@ -218,8 +200,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6104}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__1$",
-                    arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__1$", arg4: 3, arg5: 0);
                 context.SetSkip(arg1: "2차입장05");
             }
 
@@ -300,8 +281,7 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 3102, arg2: true);
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__2$",
-                    arg4: 7, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__2$", arg4: 7, arg5: 0);
                 context.SetSkip(arg1: "4차입장01");
             }
 
@@ -360,8 +340,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State4차입장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001581, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__3$",
-                    arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001581, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__3$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "4차입장04");
             }
 
@@ -401,8 +380,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State4차입장05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__4$",
-                    arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__4$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "4차입장06");
             }
 
@@ -475,8 +453,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001583, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__5$",
-                    arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001583, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__5$", arg4: 3, arg5: 0);
                 context.SetSkip(arg1: "5차입장04");
             }
 
@@ -515,8 +492,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__6$",
-                    arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__6$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "5차입장06");
             }
 
@@ -555,8 +531,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__7$",
-                    arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__7$", arg4: 3, arg5: 0);
                 context.SetSkip(arg1: "5차입장08");
             }
 
@@ -613,8 +588,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001586, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__8$",
-                    arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001586, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__8$", arg4: 3, arg5: 0);
                 context.SetSkip(arg1: "5차입장11");
             }
 
@@ -652,8 +626,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State5차입장12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__9$",
-                    arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__9$", arg4: 3, arg5: 0);
                 context.SetSkip(arg1: "입장완료01");
             }
 
@@ -692,8 +665,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6002}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__10$",
-                    arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__10$", arg4: 5, arg5: 0);
                 context.SetSkip(arg1: "정렬02");
             }
 
@@ -808,8 +780,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6003}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__11$",
-                    arg4: 10, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__11$", arg4: 10, arg5: 0);
                 context.SetSkip(arg1: "본론02");
             }
 
@@ -847,8 +818,7 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6003}, arg2: false);
                 context.SetEffect(arg1: new[] {6004}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__12$",
-                    arg4: 6, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__12$", arg4: 6, arg5: 0);
                 context.SetSkip(arg1: "본론04");
             }
 
@@ -924,8 +894,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6102}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__13$",
-                    arg4: 5, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__13$", arg4: 5, arg5: 0);
                 context.SetSkip(arg1: "영상01");
             }
 
@@ -1022,8 +991,7 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 3600, arg2: true);
                 context.SetEffect(arg1: new[] {6105}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__14$",
-                    arg4: 6, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__14$", arg4: 6, arg5: 0);
                 context.SetSkip(arg1: "정리02");
             }
 
@@ -1060,8 +1028,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State반대01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__15$",
-                    arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__15$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "반대02");
             }
 
@@ -1098,8 +1065,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State반대03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001586, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__16$",
-                    arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001586, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__16$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "반대04");
             }
 
@@ -1153,8 +1119,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State반대06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__17$",
-                    arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__17$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "반대07");
             }
 
@@ -1193,8 +1158,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 3604, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__18$",
-                    arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__18$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "반대09");
             }
 
@@ -1267,8 +1231,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1101, 901});
-                context.SetConversation(arg1: 2, arg2: 11000601, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__19$",
-                    arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000601, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__19$", arg4: 3, arg5: 0);
                 context.SetSkip(arg1: "요약03");
             }
 
@@ -1304,8 +1267,7 @@ namespace Maple2.Trigger._52000026_qd {
             internal State요약04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000601, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__20$",
-                    arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000601, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__20$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "요약04");
             }
 
@@ -1343,8 +1305,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6005}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__21$",
-                    arg4: 9, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__21$", arg4: 9, arg5: 0);
                 context.SetSkip(arg1: "요약07");
             }
 
@@ -1382,8 +1343,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6006}, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__22$",
-                    arg4: 4, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_WIZARD__22$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "연출종료01");
             }
 

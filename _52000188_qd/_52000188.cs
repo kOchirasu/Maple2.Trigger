@@ -6,14 +6,12 @@ namespace Maple2.Trigger._52000188_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002794},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002794}, arg3: new byte[] {2})) {
                     context.State = new State바베니로_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2})) {
                     context.State = new State컷씬준비(context);
                     return;
                 }
@@ -31,8 +29,7 @@ namespace Maple2.Trigger._52000188_qd {
             internal Statewait_01_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 52000188, arg2: 1);
             }
@@ -51,8 +48,7 @@ namespace Maple2.Trigger._52000188_qd {
             internal State동굴도착_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {
@@ -124,10 +120,8 @@ namespace Maple2.Trigger._52000188_qd {
             internal StateSkip_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetOnetimeEffect(id: 2, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
             public override void Execute() {
@@ -167,8 +161,7 @@ namespace Maple2.Trigger._52000188_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2})) {
                     context.State = new State컷씬준비(context);
                     return;
                 }
@@ -181,8 +174,7 @@ namespace Maple2.Trigger._52000188_qd {
             internal State컷씬준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 30, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
+                context.SetOnetimeEffect(id: 30, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -202,68 +194,57 @@ namespace Maple2.Trigger._52000188_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
-                    arg4: 10)) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2}, arg4: 10)) {
                     context.State = new State나이트컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
-                    arg4: 20)) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2}, arg4: 20)) {
                     context.State = new State버서커컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
-                    arg4: 30)) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2}, arg4: 30)) {
                     context.State = new State위자드컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
-                    arg4: 40)) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2}, arg4: 40)) {
                     context.State = new State프리스트컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
-                    arg4: 50)) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2}, arg4: 50)) {
                     context.State = new State레인저컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
-                    arg4: 60)) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2}, arg4: 60)) {
                     context.State = new State헤비거너컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
-                    arg4: 70)) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2}, arg4: 70)) {
                     context.State = new State시프컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
-                    arg4: 80)) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2}, arg4: 80)) {
                     context.State = new State어쌔신컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
-                    arg4: 90)) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2}, arg4: 90)) {
                     context.State = new State룬블컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
-                    arg4: 100)) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2}, arg4: 100)) {
                     context.State = new State스커컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
-                    arg4: 110)) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2}, arg4: 110)) {
                     context.State = new State소바컷씬(context);
                     return;
                 }
@@ -529,8 +510,7 @@ namespace Maple2.Trigger._52000188_qd {
             internal State영상재생_end(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 30, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
+                context.SetOnetimeEffect(id: 30, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
             }
 
             public override void Execute() {
@@ -552,8 +532,7 @@ namespace Maple2.Trigger._52000188_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002794},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002794}, arg3: new byte[] {2})) {
                     context.State = new State바베니로_01(context);
                     return;
                 }
@@ -566,8 +545,7 @@ namespace Maple2.Trigger._52000188_qd {
             internal State바베니로_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
             }
 

@@ -3,8 +3,7 @@ namespace Maple2.Trigger._dungeon_common {
         public class StateCheckUser10_GuildRaid : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateCheckUser10_GuildRaid(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateCheckUser10_GuildRaid(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -30,8 +29,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount10_Wait : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount10_Wait(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount10_Wait(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 
@@ -62,8 +60,7 @@ namespace Maple2.Trigger._dungeon_common {
         private class StateMaxCount10_Start : TriggerState {
             private readonly TriggerState startDungeon;
 
-            internal StateMaxCount10_Start(ITriggerContext context, TriggerState startDungeon) :
-                base(context) {
+            internal StateMaxCount10_Start(ITriggerContext context, TriggerState startDungeon) : base(context) {
                 this.startDungeon = startDungeon;
             }
 

@@ -6,10 +6,8 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000585}, arg2: 0);
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: false);
-                context.CreateMonster(arg1: new[] {1099}, arg2: false);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1099}, arg2: false);
             }
 
             public override void Execute() {

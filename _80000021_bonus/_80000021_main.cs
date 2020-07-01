@@ -4,10 +4,7 @@ namespace Maple2.Trigger._80000021_bonus {
             internal State입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[]
-                        {180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198},
-                    arg2: true);
+                context.SetMesh(arg1: new[] {180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198}, arg2: true);
                 context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
             }

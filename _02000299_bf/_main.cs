@@ -14,12 +14,10 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetActor(arg1: 297, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 298, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.CreateMonster(arg1: new[] {1010, 1011, 1012, 1013}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Closed_A");
-                context.SetInteractObject(arg1: new[] {10000494, 10000495, 10000496, 10000497, 10000498, 10000499},
-                    arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000494, 10000495, 10000496, 10000497, 10000498, 10000499}, arg2: 0);
             }
 
             public override void Execute() {
@@ -36,14 +34,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State클리어체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {605}, arg2: false);
-                context.SetEffect(arg1: new[] {606}, arg2: false);
-                context.SetEffect(arg1: new[] {607}, arg2: false);
-                context.SetEffect(arg1: new[] {610}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 610}, arg2: false);
             }
 
             public override void Execute() {
@@ -60,8 +51,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State클리어체크2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 5f);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
             }
 
             public override void Execute() {
@@ -140,8 +130,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State미래시간(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {606}, arg2: true);
-                context.SetEffect(arg1: new[] {604}, arg2: true);
+                context.SetEffect(arg1: new[] {606, 604}, arg2: true);
                 context.ShowGuideSummary(entityId: 20002987, textId: 20002987);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetInteractObject(arg1: new[] {10000495}, arg2: 0);
@@ -181,8 +170,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State과거시간(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {606}, arg2: true);
-                context.SetEffect(arg1: new[] {604}, arg2: true);
+                context.SetEffect(arg1: new[] {606, 604}, arg2: true);
                 context.ShowGuideSummary(entityId: 20002988, textId: 20002988);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetInteractObject(arg1: new[] {10000494}, arg2: 0);
@@ -245,9 +233,7 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000299, arg2: 2, arg3: 104);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetEffect(arg1: new[] {604}, arg2: true);
+                context.SetEffect(arg1: new[] {601, 602, 604}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Opened_A");
                 context.ShowCountUI(text: "$02000299_BF__MAIN__3$", stage: 1, count: 3);
                 context.SetActor(arg1: 290, arg2: true, arg3: "sf_quest_light_A01_On");
@@ -277,8 +263,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
-                context.SetEffect(arg1: new[] {603}, arg2: true);
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {603, 601}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Closed_A");
                 context.SetEffect(arg1: new[] {605}, arg2: true);
             }
@@ -335,8 +320,7 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000299, arg2: 2, arg3: 104);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetEffect(arg1: new[] {602}, arg2: true);
+                context.SetEffect(arg1: new[] {601, 602}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Opened_A");
                 context.SetEffect(arg1: new[] {604}, arg2: true);
                 context.ShowCountUI(text: "$02000299_BF__MAIN__5$", stage: 1, count: 3);
@@ -367,8 +351,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
-                context.SetEffect(arg1: new[] {603}, arg2: true);
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {603, 601}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Closed_A");
                 context.SetEffect(arg1: new[] {605}, arg2: true);
             }
@@ -425,8 +408,7 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000299, arg2: 2, arg3: 104);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetEffect(arg1: new[] {602}, arg2: true);
+                context.SetEffect(arg1: new[] {601, 602}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Opened_A");
                 context.SetEffect(arg1: new[] {604}, arg2: true);
                 context.ShowCountUI(text: "$02000299_BF__MAIN__7$", stage: 1, count: 3);
@@ -457,8 +439,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
-                context.SetEffect(arg1: new[] {603}, arg2: true);
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {603, 601}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Closed_A");
                 context.SetEffect(arg1: new[] {605}, arg2: true);
             }
@@ -515,8 +496,7 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000299, arg2: 2, arg3: 104);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetEffect(arg1: new[] {602}, arg2: true);
+                context.SetEffect(arg1: new[] {601, 602}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Opened_A");
                 context.SetEffect(arg1: new[] {604}, arg2: true);
                 context.ShowCountUI(text: "$02000299_BF__MAIN__9$", stage: 1, count: 3);
@@ -547,8 +527,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
-                context.SetEffect(arg1: new[] {603}, arg2: true);
-                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {603, 601}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "Closed_A");
                 context.SetEffect(arg1: new[] {605}, arg2: true);
             }
@@ -603,8 +582,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State그런거없음2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {606}, arg2: false);
-                context.SetEffect(arg1: new[] {607}, arg2: false);
+                context.SetEffect(arg1: new[] {606, 607}, arg2: false);
                 context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetTimer(arg1: "4", arg2: 4);
                 context.ShowGuideSummary(entityId: 20002994, textId: 20002994);
@@ -626,8 +604,7 @@ namespace Maple2.Trigger._02000299_bf {
             internal State방어모드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetEffect(arg1: new[] {610}, arg2: true);
+                context.SetEffect(arg1: new[] {601, 610}, arg2: true);
                 context.SetActor(arg1: 290, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 291, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 292, arg2: true, arg3: "sf_quest_light_A01_On");
@@ -705,14 +682,10 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);
-                context.SetEffect(arg1: new[] {603}, arg2: true);
-                context.SetEffect(arg1: new[] {610}, arg2: true);
+                context.SetEffect(arg1: new[] {603, 610}, arg2: true);
                 context.ShowGuideSummary(entityId: 20002997, textId: 20002997);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEffect(arg1: new[] {603}, arg2: true);
-                context.SetEffect(arg1: new[] {605}, arg2: true);
-                context.SetEffect(arg1: new[] {606}, arg2: true);
-                context.SetEffect(arg1: new[] {607}, arg2: true);
+                context.SetEffect(arg1: new[] {603, 605, 606, 607}, arg2: true);
                 context.SetActor(arg1: 290, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 291, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 292, arg2: true, arg3: "sf_quest_light_A01_On");

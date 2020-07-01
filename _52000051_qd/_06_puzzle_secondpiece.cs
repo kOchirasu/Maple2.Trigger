@@ -18,10 +18,7 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetUserValue(key: "CorrectSecondPiece", value: 0);
                 context.SetUserValue(key: "ResetSecondPiece", value: 0);
                 context.SetUserValue(key: "LockSecondPiece", value: 0);
-                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

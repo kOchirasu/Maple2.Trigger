@@ -5,16 +5,7 @@ namespace Maple2.Trigger._02000292_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {117, 118, 119, 120}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.DestroyMonster(arg1: new[] {1020});
-                context.DestroyMonster(arg1: new[] {1021});
-                context.DestroyMonster(arg1: new[] {1022});
-                context.DestroyMonster(arg1: new[] {1023});
-                context.DestroyMonster(arg1: new[] {1024});
-                context.DestroyMonster(arg1: new[] {2020});
-                context.DestroyMonster(arg1: new[] {2021});
-                context.DestroyMonster(arg1: new[] {2022});
-                context.DestroyMonster(arg1: new[] {2023});
-                context.DestroyMonster(arg1: new[] {2024});
+                context.DestroyMonster(arg1: new[] {1020, 1021, 1022, 1023, 1024, 2020, 2021, 2022, 2023, 2024});
                 context.SetEffect(arg1: new[] {5004}, arg2: false);
             }
 
@@ -32,11 +23,7 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateMobSpawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1020}, arg2: false);
-                context.CreateMonster(arg1: new[] {1021}, arg2: false);
-                context.CreateMonster(arg1: new[] {1022}, arg2: false);
-                context.CreateMonster(arg1: new[] {1023}, arg2: false);
-                context.CreateMonster(arg1: new[] {1024}, arg2: false);
+                context.CreateMonster(arg1: new[] {1020, 1021, 1022, 1023, 1024}, arg2: false);
             }
 
             public override void Execute() {

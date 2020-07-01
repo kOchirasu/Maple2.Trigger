@@ -267,8 +267,7 @@ namespace Maple2.Trigger._52010008_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02010019, arg2: 2, arg3: 9000);
-                context.DestroyMonster(arg1: new[] {101, 201, 301});
-                context.DestroyMonster(arg1: new[] {901, 902, 903, 904, 905, 906});
+                context.DestroyMonster(arg1: new[] {101, 201, 301, 901, 902, 903, 904, 905, 906});
             }
 
             public override void Execute() { }

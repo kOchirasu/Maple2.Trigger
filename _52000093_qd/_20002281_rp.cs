@@ -6,14 +6,12 @@ namespace Maple2.Trigger._52000093_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {50100560},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {50100560}, arg3: new byte[] {3})) {
                     context.State = new State연출시작(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {20002281},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {20002281}, arg3: new byte[] {3})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -34,8 +32,7 @@ namespace Maple2.Trigger._52000093_qd {
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SpawnNpcRange(rangeId: new[] {1101, 1102, 1103, 1104, 1105, 1106}, isAutoTargeting: false);
-                context.SpawnNpcRange(rangeId: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109},
-                    isAutoTargeting: false);
+                context.SpawnNpcRange(rangeId: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109}, isAutoTargeting: false);
             }
 
             public override void Execute() {
@@ -74,8 +71,7 @@ namespace Maple2.Trigger._52000093_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52000093_QD__20002281_RP__1$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52000093_QD__20002281_RP__1$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {

@@ -4,14 +4,9 @@ namespace Maple2.Trigger._02000252_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {8902}, arg2: false);
-                context.SetEffect(arg1: new[] {605}, arg2: false);
+                context.SetEffect(arg1: new[] {8902, 605}, arg2: false);
                 context.SetMesh(arg1: new[] {2113, 2114, 2115, 2116, 2117, 2118}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140,
-                        2141, 2142, 2143, 2144, 2145
-                    }, arg2: false);
+                context.SetMesh(arg1: new[] {2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140, 2141, 2142, 2143, 2144, 2145}, arg2: false);
             }
 
             public override void Execute() {
@@ -29,11 +24,7 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {2113, 2114, 2115, 2116, 2117, 2118}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140,
-                        2141, 2142, 2143, 2144, 2145
-                    }, arg2: false);
+                context.SetMesh(arg1: new[] {2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140, 2141, 2142, 2143, 2144, 2145}, arg2: false);
             }
 
             public override void Execute() {
@@ -196,21 +187,8 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.CreateMonster(arg1: new[] {202}, arg2: false);
-                context.CreateMonster(arg1: new[] {1102}, arg2: false);
-                context.CreateMonster(arg1: new[] {1103}, arg2: false);
-                context.CreateMonster(arg1: new[] {1104}, arg2: false);
-                context.CreateMonster(arg1: new[] {1105}, arg2: false);
-                context.CreateMonster(arg1: new[] {1106}, arg2: false);
-                context.CreateMonster(arg1: new[] {1107}, arg2: false);
-                context.CreateMonster(arg1: new[] {1108}, arg2: false);
-                context.CreateMonster(arg1: new[] {1109}, arg2: false);
-                context.CreateMonster(arg1: new[] {1110}, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140,
-                        2141, 2142, 2143, 2144, 2145
-                    }, arg2: false);
+                context.CreateMonster(arg1: new[] {202, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110}, arg2: false);
+                context.SetMesh(arg1: new[] {2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140, 2141, 2142, 2143, 2144, 2145}, arg2: false);
             }
 
             public override void Execute() {
@@ -228,11 +206,7 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetMesh(
-                    arg1: new[] {
-                        2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140,
-                        2141, 2142, 2143, 2144, 2145
-                    }, arg2: true);
+                context.SetMesh(arg1: new[] {2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140, 2141, 2142, 2143, 2144, 2145}, arg2: true);
             }
 
             public override void Execute() {
@@ -267,12 +241,7 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8902}, arg2: true);
-                context.SetMesh(arg1: new[] {2113, 2114, 2115, 2116, 2117, 2118}, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140,
-                        2141, 2142, 2143, 2144, 2145
-                    }, arg2: false);
+                context.SetMesh(arg1: new[] {2113, 2114, 2115, 2116, 2117, 2118, 2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140, 2141, 2142, 2143, 2144, 2145}, arg2: false);
             }
 
             public override void Execute() { }

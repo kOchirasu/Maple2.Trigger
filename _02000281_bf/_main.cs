@@ -16,8 +16,7 @@ namespace Maple2.Trigger._02000281_bf {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -31,10 +30,7 @@ namespace Maple2.Trigger._02000281_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(
-                    arg1: new[]
-                        {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000414}, arg2: 1);
                 context.CameraSelect(arg1: 3001, arg2: true);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);

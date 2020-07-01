@@ -28,8 +28,7 @@ namespace Maple2.Trigger._02000268_bf {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    context.SetMesh(arg1: new[] {305, 304, 303, 302, 301}, arg2: false, arg3: 0, arg4: 500,
-                        arg5: 0f);
+                    context.SetMesh(arg1: new[] {305, 304, 303, 302, 301}, arg2: false, arg3: 0, arg4: 500, arg5: 0f);
                     context.State = new State재사용대기(context);
                     return;
                 }

@@ -5,11 +5,7 @@ namespace Maple2.Trigger._52000066_qd {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10001071}, arg2: 0);
-                context.SetMesh(
-                    arg1: new[] {
-                        2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027,
-                        2028, 2029
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMesh(arg1: new[] {2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029}, arg2: true, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetEffect(arg1: new[] {5000}, arg2: false);
                 context.SetUserValue(key: "TrapLeverOn", value: 0);
             }
@@ -54,11 +50,7 @@ namespace Maple2.Trigger._52000066_qd {
                 context.SetEffect(arg1: new[] {5000}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10001071}, arg2: 0);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Closed");
-                context.SetMesh(
-                    arg1: new[] {
-                        2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027,
-                        2028, 2029
-                    }, arg2: true, arg3: 500, arg4: 50, arg5: 1f);
+                context.SetMesh(arg1: new[] {2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029}, arg2: true, arg3: 500, arg4: 50, arg5: 1f);
             }
 
             public override void Execute() {

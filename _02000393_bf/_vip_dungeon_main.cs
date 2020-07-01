@@ -7,9 +7,7 @@ namespace Maple2.Trigger._02000393_bf {
                 context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
                 context.SetEffect(arg1: new[] {601, 602, 603}, arg2: false);
                 context.MoveUser(arg1: 02000393, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001083}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001084}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001085}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001083, 10001084, 10001085}, arg2: 1);
                 context.CameraSelect(arg1: 299, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);

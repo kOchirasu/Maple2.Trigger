@@ -4,14 +4,11 @@ namespace Maple2.Trigger._52010009_qd {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000866}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000880}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10000915}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000866, 10000880, 10000915}, arg2: 0);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {20002091},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {20002091}, arg3: new byte[] {1})) {
                     context.State = new StateEvent_01_Idle(context);
                     return;
                 }

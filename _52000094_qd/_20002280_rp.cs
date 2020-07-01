@@ -6,14 +6,12 @@ namespace Maple2.Trigger._52000094_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {50100550},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {50100550}, arg3: new byte[] {3})) {
                     context.State = new State연출시작(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {20002280},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {20002280}, arg3: new byte[] {3})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -33,8 +31,7 @@ namespace Maple2.Trigger._52000094_qd {
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SpawnNpcRange(rangeId: new[] {1001, 1002, 1003, 1004, 1005}, isAutoTargeting: false);
-                context.SpawnNpcRange(rangeId: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107},
-                    isAutoTargeting: false);
+                context.SpawnNpcRange(rangeId: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107}, isAutoTargeting: false);
             }
 
             public override void Execute() {
@@ -74,8 +71,7 @@ namespace Maple2.Trigger._52000094_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$52000094_QD__20002280_RP__1$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$52000094_QD__20002280_RP__1$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -201,8 +197,7 @@ namespace Maple2.Trigger._52000094_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CreateMonster(arg1: new[] {2200}, arg2: true);
-                context.CreateMonster(arg1: new[] {2201}, arg2: true);
+                context.CreateMonster(arg1: new[] {2200, 2201}, arg2: true);
                 context.RemoveBuff(arg1: 9100, arg2: 99910170);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetAchievement(arg1: 9100, arg2: "trigger", arg3: "BlackEyeRpClear");

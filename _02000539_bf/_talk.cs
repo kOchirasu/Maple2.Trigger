@@ -25,8 +25,7 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override void OnEnter() {
                 context.AddBalloonTalk(spawnPointId: 201, msg: "$02000539_BF__TALK__0$", duration: 3500, delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 201, msg: "$02000539_BF__TALK__1$", duration: 3500,
-                    delayTick: 3500);
+                context.AddBalloonTalk(spawnPointId: 201, msg: "$02000539_BF__TALK__1$", duration: 3500, delayTick: 3500);
             }
 
             public override void Execute() {
@@ -44,10 +43,8 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override void OnEnter() {
                 context.AddBalloonTalk(spawnPointId: 202, msg: "$02000539_BF__TALK__2$", duration: 3500, delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 202, msg: "$02000539_BF__TALK__3$", duration: 3500,
-                    delayTick: 3500);
-                context.AddBalloonTalk(spawnPointId: 202, msg: "$02000539_BF__TALK__4$", duration: 3500,
-                    delayTick: 7000);
+                context.AddBalloonTalk(spawnPointId: 202, msg: "$02000539_BF__TALK__3$", duration: 3500, delayTick: 3500);
+                context.AddBalloonTalk(spawnPointId: 202, msg: "$02000539_BF__TALK__4$", duration: 3500, delayTick: 7000);
             }
 
             public override void Execute() {

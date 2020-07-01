@@ -19,36 +19,7 @@ namespace Maple2.Trigger._02000213_bf {
             internal State잡몹소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1001});
-                context.DestroyMonster(arg1: new[] {1002});
-                context.DestroyMonster(arg1: new[] {1003});
-                context.DestroyMonster(arg1: new[] {1004});
-                context.DestroyMonster(arg1: new[] {1005});
-                context.DestroyMonster(arg1: new[] {1006});
-                context.DestroyMonster(arg1: new[] {1007});
-                context.DestroyMonster(arg1: new[] {1008});
-                context.DestroyMonster(arg1: new[] {1009});
-                context.DestroyMonster(arg1: new[] {1010});
-                context.DestroyMonster(arg1: new[] {1011});
-                context.DestroyMonster(arg1: new[] {1012});
-                context.DestroyMonster(arg1: new[] {1013});
-                context.DestroyMonster(arg1: new[] {1014});
-                context.DestroyMonster(arg1: new[] {1015});
-                context.DestroyMonster(arg1: new[] {1016});
-                context.DestroyMonster(arg1: new[] {1017});
-                context.DestroyMonster(arg1: new[] {1018});
-                context.DestroyMonster(arg1: new[] {1019});
-                context.DestroyMonster(arg1: new[] {1020});
-                context.DestroyMonster(arg1: new[] {1021});
-                context.DestroyMonster(arg1: new[] {1022});
-                context.DestroyMonster(arg1: new[] {1023});
-                context.DestroyMonster(arg1: new[] {1024});
-                context.DestroyMonster(arg1: new[] {1025});
-                context.DestroyMonster(arg1: new[] {1026});
-                context.DestroyMonster(arg1: new[] {1027});
-                context.DestroyMonster(arg1: new[] {1028});
-                context.DestroyMonster(arg1: new[] {1029});
-                context.DestroyMonster(arg1: new[] {1030});
+                context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030});
             }
 
             public override void Execute() {

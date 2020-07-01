@@ -34,8 +34,7 @@ namespace Maple2.Trigger._02020006_bf {
             internal StateNPCTalkOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 15401, msg: "$02020006_BF__1000051_NPCTALK__0$", duration: 3000,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 15401, msg: "$02020006_BF__1000051_NPCTALK__0$", duration: 3000, delayTick: 0);
             }
 
             public override void Execute() {

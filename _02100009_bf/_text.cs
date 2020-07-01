@@ -21,14 +21,12 @@ namespace Maple2.Trigger._02100009_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.GetNpcHpRate(spawnPointId: 100000001) <= 0.5f
-                    || context.GetNpcHpRate(spawnPointId: 100000002) <= 0.5f) {
+                if (context.GetNpcHpRate(spawnPointId: 100000001) <= 0.5f || context.GetNpcHpRate(spawnPointId: 100000002) <= 0.5f) {
                     context.State = new State알림_2(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {100000001})
-                    && context.MonsterDead(arg1: new[] {100000002})) {
+                if (context.MonsterDead(arg1: new[] {100000001}) && context.MonsterDead(arg1: new[] {100000002})) {
                     context.State = new State완료알림(context);
                     return;
                 }
@@ -67,8 +65,7 @@ namespace Maple2.Trigger._02100009_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {100000001})
-                    && context.MonsterDead(arg1: new[] {100000002})) {
+                if (context.MonsterDead(arg1: new[] {100000001}) && context.MonsterDead(arg1: new[] {100000002})) {
                     context.State = new State완료알림(context);
                     return;
                 }

@@ -4,12 +4,7 @@ namespace Maple2.Trigger._02020310_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000313}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000314}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000315}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000316}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000317}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000318}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000313, 12000314, 12000315, 12000316, 12000317, 12000318}, arg2: 2);
             }
 
             public override void Execute() {
@@ -71,15 +66,7 @@ namespace Maple2.Trigger._02020310_bf {
                 if (context.MonsterDead(arg1: new[] {1110, 1303, 1304, 1309, 1310, 1311, 1312, 1313, 1314})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
                     context.SetInteractObject(arg1: new[] {12000313}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
-                        arg2: false);
+                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointId: 106, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 108, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 109, isEnable: true);
@@ -100,15 +87,7 @@ namespace Maple2.Trigger._02020310_bf {
                 if (context.MonsterDead(arg1: new[] {1110, 1303, 1304, 1309, 1310, 1311, 1312, 1313, 1314})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
                     context.SetInteractObject(arg1: new[] {12000313}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
-                        arg2: false);
+                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointId: 106, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 108, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 109, isEnable: true);
@@ -149,17 +128,8 @@ namespace Maple2.Trigger._02020310_bf {
 
                 if (context.MonsterDead(arg1: new[] {1111, 1301, 1302, 1321, 1322, 1323, 1324, 1325, 1326})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new[] {12000314}, arg2: 1);
-                    context.SetInteractObject(arg1: new[] {12000315}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
-                        arg2: false);
+                    context.SetInteractObject(arg1: new[] {12000314, 12000315}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointId: 106, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 107, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 110, isEnable: true);
@@ -179,17 +149,8 @@ namespace Maple2.Trigger._02020310_bf {
             public override void Execute() {
                 if (context.MonsterDead(arg1: new[] {1111, 1301, 1302, 1321, 1322, 1323, 1324, 1325, 1326})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new[] {12000314}, arg2: 1);
-                    context.SetInteractObject(arg1: new[] {12000315}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
-                        arg2: false);
+                    context.SetInteractObject(arg1: new[] {12000314, 12000315}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointId: 106, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 107, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 110, isEnable: true);
@@ -230,17 +191,8 @@ namespace Maple2.Trigger._02020310_bf {
 
                 if (context.MonsterDead(arg1: new[] {1112, 1307, 1308, 1327, 1328, 1329, 1330, 1331, 1332})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new[] {12000316}, arg2: 1);
-                    context.SetInteractObject(arg1: new[] {12000317}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
-                        arg2: false);
+                    context.SetInteractObject(arg1: new[] {12000316, 12000317}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointId: 107, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 111, isEnable: true);
                     context.State = new StateCableOn_16_17(context);
@@ -259,17 +211,8 @@ namespace Maple2.Trigger._02020310_bf {
             public override void Execute() {
                 if (context.MonsterDead(arg1: new[] {1112, 1307, 1308, 1327, 1328, 1329, 1330, 1331, 1332})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new[] {12000316}, arg2: 1);
-                    context.SetInteractObject(arg1: new[] {12000317}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
-                        arg2: false);
+                    context.SetInteractObject(arg1: new[] {12000316, 12000317}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointId: 107, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 111, isEnable: true);
                     context.State = new StateCableOn_16_17(context);
@@ -310,15 +253,7 @@ namespace Maple2.Trigger._02020310_bf {
                 if (context.MonsterDead(arg1: new[] {1113, 1305, 1306, 1315, 1316, 1317, 1318, 1319, 1320})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
                     context.SetInteractObject(arg1: new[] {12000318}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
-                        arg2: false);
+                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointId: 108, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 112, isEnable: true);
                     context.State = new StateCableOn_18(context);
@@ -338,15 +273,7 @@ namespace Maple2.Trigger._02020310_bf {
                 if (context.MonsterDead(arg1: new[] {1113, 1305, 1306, 1315, 1316, 1317, 1318, 1319, 1320})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
                     context.SetInteractObject(arg1: new[] {12000318}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
-                        arg2: false);
-                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
-                        arg2: false);
+                    context.CreateMonster(arg1: new[] {1114, 1115, 1116, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430}, arg2: false);
                     context.EnableSpawnPointPc(spawnPointId: 108, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 112, isEnable: true);
                     context.State = new StateCableOn_18(context);
@@ -365,10 +292,7 @@ namespace Maple2.Trigger._02020310_bf {
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000313}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000313}, arg2: 0);
-                    context.SetMesh(
-                        arg1: new[]
-                            {1110001, 1110002, 1110003, 1110004, 1110005, 1110006, 1110007, 1110008, 1110009, 1110010},
-                        arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {1110001, 1110002, 1110003, 1110004, 1110005, 1110006, 1110007, 1110008, 1110009, 1110010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateCableDelay_13(context);
                     return;
                 }
@@ -384,24 +308,16 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000314}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000314}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {12000315}, arg2: 0);
-                    context.SetMesh(
-                        arg1: new[]
-                            {1120001, 1120002, 1120003, 1120004, 1120005, 1120006, 1120007, 1120008, 1120009, 1120010},
-                        arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetInteractObject(arg1: new[] {12000314, 12000315}, arg2: 0);
+                    context.SetMesh(arg1: new[] {1120001, 1120002, 1120003, 1120004, 1120005, 1120006, 1120007, 1120008, 1120009, 1120010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateCableDelay_14(context);
                     return;
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000315}, arg2: 0)) {
                     context.SetVisibleBreakableObject(arg1: new[] {1016}, arg2: false);
-                    context.SetInteractObject(arg1: new[] {12000314}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {12000315}, arg2: 0);
-                    context.SetMesh(
-                        arg1: new[]
-                            {1130001, 1130002, 1130003, 1130004, 1130005, 1130006, 1130007, 1130008, 1130009, 1130010},
-                        arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetInteractObject(arg1: new[] {12000314, 12000315}, arg2: 0);
+                    context.SetMesh(arg1: new[] {1130001, 1130002, 1130003, 1130004, 1130005, 1130006, 1130007, 1130008, 1130009, 1130010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateCableDelay_15(context);
                     return;
                 }
@@ -417,23 +333,15 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000316}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000316}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {12000317}, arg2: 0);
-                    context.SetMesh(
-                        arg1: new[]
-                            {1140001, 1140002, 1140003, 1140004, 1140005, 1140006, 1140007, 1140008, 1140009, 1140010},
-                        arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetInteractObject(arg1: new[] {12000316, 12000317}, arg2: 0);
+                    context.SetMesh(arg1: new[] {1140001, 1140002, 1140003, 1140004, 1140005, 1140006, 1140007, 1140008, 1140009, 1140010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateCableDelay_16(context);
                     return;
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000317}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000316}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {12000317}, arg2: 0);
-                    context.SetMesh(
-                        arg1: new[]
-                            {1150001, 1150002, 1150003, 1150004, 1150005, 1150006, 1150007, 1150008, 1150009, 1150010},
-                        arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetInteractObject(arg1: new[] {12000316, 12000317}, arg2: 0);
+                    context.SetMesh(arg1: new[] {1150001, 1150002, 1150003, 1150004, 1150005, 1150006, 1150007, 1150008, 1150009, 1150010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateCableDelay_17(context);
                     return;
                 }
@@ -450,10 +358,7 @@ namespace Maple2.Trigger._02020310_bf {
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000318}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000318}, arg2: 0);
-                    context.SetMesh(
-                        arg1: new[]
-                            {1160001, 1160002, 1160003, 1160004, 1160005, 1160006, 1160007, 1160008, 1160009, 1160010},
-                        arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {1160001, 1160002, 1160003, 1160004, 1160005, 1160006, 1160007, 1160008, 1160009, 1160010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateCableDelay_18(context);
                     return;
                 }

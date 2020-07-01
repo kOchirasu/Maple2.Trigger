@@ -9,32 +9,27 @@ namespace Maple2.Trigger._52000057_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611}, arg3: new byte[] {2})) {
                     context.State = new State오필리아리젠(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611}, arg3: new byte[] {1})) {
                     context.State = new State오필리아리젠(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000610},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000610}, arg3: new byte[] {3})) {
                     context.State = new State오필리아리젠상시(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000610},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000610}, arg3: new byte[] {2})) {
                     context.State = new State오필리아리젠상시(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000610},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000610}, arg3: new byte[] {1})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -83,10 +78,8 @@ namespace Maple2.Trigger._52000057_qd {
             internal State시네마틱대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001871, arg3: "$52000057_QD__GUIdESCENE_01__0$", arg4: 2,
-                    arg5: 0);
-                context.SetConversation(arg1: 2, arg2: 11001871, arg3: "$52000057_QD__GUIdESCENE_01__1$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001871, arg3: "$52000057_QD__GUIdESCENE_01__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001871, arg3: "$52000057_QD__GUIdESCENE_01__1$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -124,8 +117,7 @@ namespace Maple2.Trigger._52000057_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611}, arg3: new byte[] {1})) {
                     context.State = new State오필리아대사연출01(context);
                     return;
                 }
@@ -157,8 +149,7 @@ namespace Maple2.Trigger._52000057_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001871, arg3: "$52000057_QD__GUIdESCENE_01__2$", arg4: 2,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001871, arg3: "$52000057_QD__GUIdESCENE_01__2$", arg4: 2, arg5: 0);
             }
 
             public override void Execute() {
@@ -196,8 +187,7 @@ namespace Maple2.Trigger._52000057_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611}, arg3: new byte[] {1})) {
                     context.State = new State오필리아대사연출01(context);
                     return;
                 }

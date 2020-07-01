@@ -6,8 +6,7 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.GetUserValue(key: "10002024clear") != 1
-                    && context.GetUserValue(key: "SpawnCheck") == 1) {
+                if (context.GetUserValue(key: "10002024clear") != 1 && context.GetUserValue(key: "SpawnCheck") == 1) {
                     context.State = new Statespawn(context);
                     return;
                 }

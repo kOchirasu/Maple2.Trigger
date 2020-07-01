@@ -5,19 +5,16 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CreateMonster(arg1: new[] {121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001563},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001563}, arg3: new byte[] {1})) {
                     context.State = new State연출준비(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001563},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001563}, arg3: new byte[] {2})) {
                     context.State = new State최종맵이동(context);
                     return;
                 }
@@ -600,8 +597,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 106, emotionName: "Cry");
-                context.AddCinematicTalk(npcId: 11003364, msg: "$52000121_QD__MAIN__10$", duration: 1500,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 11003364, msg: "$52000121_QD__MAIN__10$", duration: 1500, align: "left");
             }
 
             public override void Execute() {
@@ -619,8 +615,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Stun_A", arg3: 3000f);
-                context.AddCinematicTalk(npcId: 11003309, illustId: "Oskhal_normal", msg: "$52000121_QD__MAIN__11$",
-                    duration: 2000, align: "left");
+                context.AddCinematicTalk(npcId: 11003309, illustId: "Oskhal_normal", msg: "$52000121_QD__MAIN__11$", duration: 2000, align: "left");
                 context.SetSkip(arg1: "오스칼멘붕_skip");
             }
 
@@ -1328,8 +1323,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8050}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003364, msg: "$52000121_QD__MAIN__26$", duration: 4000,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 11003364, msg: "$52000121_QD__MAIN__26$", duration: 4000, align: "left");
                 context.SetSceneSkip();
             }
 

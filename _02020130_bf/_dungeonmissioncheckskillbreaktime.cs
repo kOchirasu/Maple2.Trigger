@@ -50,37 +50,27 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.GetUserValue(key: "IshuraSkillBreakClear") == 1
-                    && context.GetUserValue(key: "YuperiaSkillBreakClear") == 1
-                    && context.GetUserValue(key: "RenduebianSkillBreakClear") == 1) {
+                if (context.GetUserValue(key: "IshuraSkillBreakClear") == 1 && context.GetUserValue(key: "YuperiaSkillBreakClear") == 1 && context.GetUserValue(key: "RenduebianSkillBreakClear") == 1) {
                     context.State = new State던전미션_스킬브레이크저지_성공(context);
                     return;
                 }
 
-                if (context.GetNpcExtraData(spawnPointId: 701, extraDataKey: "brokenShieldRemainTick") >= 6000
-                    && context.CheckNpcAdditionalEffect(spawnPointId: 701, additionalEffectId: 70002171, level: 1)
-                    && context.GetNpcExtraData(spawnPointId: 702, extraDataKey: "brokenShieldRemainTick") >= 6000
-                    && context.CheckNpcAdditionalEffect(spawnPointId: 702, additionalEffectId: 70002171, level: 1)
-                    && context.GetNpcExtraData(spawnPointId: 703, extraDataKey: "brokenShieldRemainTick") >= 6000
-                    && context.CheckNpcAdditionalEffect(spawnPointId: 703, additionalEffectId: 70002171, level: 1)) {
+                if (context.GetNpcExtraData(spawnPointId: 701, extraDataKey: "brokenShieldRemainTick") >= 6000 && context.CheckNpcAdditionalEffect(spawnPointId: 701, additionalEffectId: 70002171, level: 1) && context.GetNpcExtraData(spawnPointId: 702, extraDataKey: "brokenShieldRemainTick") >= 6000 && context.CheckNpcAdditionalEffect(spawnPointId: 702, additionalEffectId: 70002171, level: 1) && context.GetNpcExtraData(spawnPointId: 703, extraDataKey: "brokenShieldRemainTick") >= 6000 && context.CheckNpcAdditionalEffect(spawnPointId: 703, additionalEffectId: 70002171, level: 1)) {
                     context.State = new State던전미션_3개변수1셋팅(context);
                     return;
                 }
 
-                if (context.GetNpcExtraData(spawnPointId: 701, extraDataKey: "brokenShieldRemainTick") >= 8000
-                    && context.CheckNpcAdditionalEffect(spawnPointId: 701, additionalEffectId: 70002171, level: 1)) {
+                if (context.GetNpcExtraData(spawnPointId: 701, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 701, additionalEffectId: 70002171, level: 1)) {
                     context.State = new State이슈라미션_변수1셋팅(context);
                     return;
                 }
 
-                if (context.GetNpcExtraData(spawnPointId: 702, extraDataKey: "brokenShieldRemainTick") >= 8000
-                    && context.CheckNpcAdditionalEffect(spawnPointId: 702, additionalEffectId: 70002171, level: 1)) {
+                if (context.GetNpcExtraData(spawnPointId: 702, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 702, additionalEffectId: 70002171, level: 1)) {
                     context.State = new State유페리아미션_변수1셋팅(context);
                     return;
                 }
 
-                if (context.GetNpcExtraData(spawnPointId: 703, extraDataKey: "brokenShieldRemainTick") >= 8000
-                    && context.CheckNpcAdditionalEffect(spawnPointId: 703, additionalEffectId: 70002171, level: 1)) {
+                if (context.GetNpcExtraData(spawnPointId: 703, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 703, additionalEffectId: 70002171, level: 1)) {
                     context.State = new State렌듀비앙미션_변수1셋팅(context);
                     return;
                 }

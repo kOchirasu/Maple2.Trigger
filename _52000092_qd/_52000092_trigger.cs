@@ -7,13 +7,7 @@ namespace Maple2.Trigger._52000092_qd {
                 context.SetGravity(gravity: -39.0f);
                 context.CreateMonster(arg1: new[] {800}, arg2: false);
                 context.SetMesh(arg1: new[] {900}, arg2: false);
-                context.SetEffect(arg1: new[] {901}, arg2: false);
-                context.SetEffect(arg1: new[] {902}, arg2: false);
-                context.SetEffect(arg1: new[] {903}, arg2: false);
-                context.SetEffect(arg1: new[] {904}, arg2: false);
-                context.SetEffect(arg1: new[] {905}, arg2: false);
-                context.SetEffect(arg1: new[] {906}, arg2: false);
-                context.SetEffect(arg1: new[] {907}, arg2: false);
+                context.SetEffect(arg1: new[] {901, 902, 903, 904, 905, 906, 907}, arg2: false);
             }
 
             public override void Execute() {
@@ -32,20 +26,17 @@ namespace Maple2.Trigger._52000092_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520}, arg3: new byte[] {3})) {
                     context.State = new State52000091이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520}, arg3: new byte[] {2})) {
                     context.State = new State52000091이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520}, arg3: new byte[] {1})) {
                     context.State = new State52000091이동(context);
                     return;
                 }
@@ -62,14 +53,12 @@ namespace Maple2.Trigger._52000092_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100510},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100510}, arg3: new byte[] {1})) {
                     context.State = new State20002276진행중일때(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002276},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002276}, arg3: new byte[] {1})) {
                     context.State = new State20002276진행중일때(context);
                     return;
                 }
@@ -86,14 +75,12 @@ namespace Maple2.Trigger._52000092_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100510},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100510}, arg3: new byte[] {2})) {
                     context.State = new State20002276완료가능할때(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002276},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002276}, arg3: new byte[] {2})) {
                     context.State = new State20002276완료가능할때(context);
                     return;
                 }
@@ -107,24 +94,16 @@ namespace Maple2.Trigger._52000092_qd {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {900}, arg2: false, arg3: 0, arg4: 0, arg5: 100f);
-                context.SetEffect(arg1: new[] {901}, arg2: true);
-                context.SetEffect(arg1: new[] {902}, arg2: true);
-                context.SetEffect(arg1: new[] {903}, arg2: true);
-                context.SetEffect(arg1: new[] {904}, arg2: true);
-                context.SetEffect(arg1: new[] {905}, arg2: true);
-                context.SetEffect(arg1: new[] {906}, arg2: true);
-                context.SetEffect(arg1: new[] {907}, arg2: true);
+                context.SetEffect(arg1: new[] {901, 902, 903, 904, 905, 906, 907}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520}, arg3: new byte[] {2})) {
                     context.State = new State50100520완료시01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002277},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002277}, arg3: new byte[] {2})) {
                     // context.State = new State20002277완료시01(context);
                     return;
                 }
@@ -137,8 +116,7 @@ namespace Maple2.Trigger._52000092_qd {
             internal State50100520완료시01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -156,8 +134,7 @@ namespace Maple2.Trigger._52000092_qd {
             internal State20002277완료시02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {
@@ -261,8 +238,7 @@ namespace Maple2.Trigger._52000092_qd {
             internal State20002277완료시08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
+                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
             }
 
             public override void Execute() {

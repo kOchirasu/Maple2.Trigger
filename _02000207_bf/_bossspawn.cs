@@ -56,8 +56,7 @@ namespace Maple2.Trigger._02000207_bf {
                 context.SetUserValue(triggerId: 999102, key: "BattleEnd2", value: 1);
                 context.SetUserValue(triggerId: 999108, key: "BattleEnd2", value: 1);
                 context.SetUserValue(triggerId: 999109, key: "BattleEnd2", value: 1);
-                context.SetMesh(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3002, 3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -78,8 +77,7 @@ namespace Maple2.Trigger._02000207_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetUserValue(triggerId: 999103, key: "BattleEnd", value: 1);
-                context.SetMesh(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3002, 3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

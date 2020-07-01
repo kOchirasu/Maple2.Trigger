@@ -4,8 +4,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {4030}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3010}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {4030, 3010}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3110}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMeshAnimation(arg1: new[] {3010}, arg2: true, arg3: 0, arg4: 0);
                 context.SetMeshAnimation(arg1: new[] {3110}, arg2: false, arg3: 0, arg4: 0);
@@ -40,8 +39,7 @@ namespace Maple2.Trigger._02000378_bf {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new[] {110}, arg2: false);
-                context.CreateMonster(arg1: new[] {2010}, arg2: false);
+                context.CreateMonster(arg1: new[] {110, 2010}, arg2: false);
             }
         }
 

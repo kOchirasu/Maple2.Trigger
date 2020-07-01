@@ -6,8 +6,7 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {1001}, arg2: new[] {10002041},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {1001}, arg2: new[] {10002041}, arg3: new byte[] {1})) {
                     context.State = new State지원군생성(context);
                     return;
                 }

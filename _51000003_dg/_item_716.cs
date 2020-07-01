@@ -4,8 +4,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateSpawn_check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7716}, arg2: false);
-                context.SetEffect(arg1: new[] {7726}, arg2: false);
+                context.SetEffect(arg1: new[] {7716, 7726}, arg2: false);
             }
 
             public override void Execute() {

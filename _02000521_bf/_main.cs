@@ -4,10 +4,7 @@ namespace Maple2.Trigger._02000521_bf {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {6001}, arg2: false);
-                context.SetMesh(arg1: new[] {6002}, arg2: false);
-                context.SetMesh(arg1: new[] {6003}, arg2: false);
-                context.SetMesh(arg1: new[] {6004}, arg2: false);
+                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004}, arg2: false);
             }
 
             public override void Execute() {

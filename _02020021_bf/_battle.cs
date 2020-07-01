@@ -55,8 +55,7 @@ namespace Maple2.Trigger._02020021_bf {
             internal State전투_2라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23200085, illust: "Schatten_normal", duration: 4000,
-                    script: "$02020021_BF__battle__0$", voice: @"ko/Npc/00002245");
+                context.SideNpcTalk(npcId: 23200085, illust: "Schatten_normal", duration: 4000, script: "$02020021_BF__battle__0$", voice: @"ko/Npc/00002245");
                 context.CreateMonster(arg1: new[] {301}, arg2: false);
             }
 
@@ -84,8 +83,7 @@ namespace Maple2.Trigger._02020021_bf {
             internal State전투_3라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23200085, illust: "Schatten_normal", duration: 4000,
-                    script: "$02020021_BF__battle__1$", voice: @"ko/Npc/00002246");
+                context.SideNpcTalk(npcId: 23200085, illust: "Schatten_normal", duration: 4000, script: "$02020021_BF__battle__1$", voice: @"ko/Npc/00002246");
             }
 
             public override void Execute() {
@@ -131,8 +129,7 @@ namespace Maple2.Trigger._02020021_bf {
             internal State전투_4라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23200085, illust: "Schatten_normal", duration: 4000,
-                    script: "$02020021_BF__battle__2$", voice: @"ko/Npc/00002247");
+                context.SideNpcTalk(npcId: 23200085, illust: "Schatten_normal", duration: 4000, script: "$02020021_BF__battle__2$", voice: @"ko/Npc/00002247");
             }
 
             public override void Execute() {
@@ -154,22 +151,19 @@ namespace Maple2.Trigger._02020021_bf {
             }
 
             public override void Execute() {
-                if (context.GetDungeonPlayTime() <= 180
-                    && context.MonsterDead(arg1: new[] {201})) {
+                if (context.GetDungeonPlayTime() <= 180 && context.MonsterDead(arg1: new[] {201})) {
                     context.DungeonMissionComplete(missionId: 24095005);
                     context.State = new State전투_종료(context);
                     return;
                 }
 
-                if (context.GetDungeonPlayTime() <= 70
-                    && context.MonsterDead(arg1: new[] {201})) {
+                if (context.GetDungeonPlayTime() <= 70 && context.MonsterDead(arg1: new[] {201})) {
                     context.DungeonMissionComplete(missionId: 24095006);
                     context.State = new State전투_종료(context);
                     return;
                 }
 
-                if (context.GetDungeonPlayTime() <= 270
-                    && context.MonsterDead(arg1: new[] {201})) {
+                if (context.GetDungeonPlayTime() <= 270 && context.MonsterDead(arg1: new[] {201})) {
                     context.DungeonMissionComplete(missionId: 24095010);
                     context.State = new State전투_종료(context);
                     return;
@@ -201,8 +195,7 @@ namespace Maple2.Trigger._02020021_bf {
                 context.DungeonSetEndTime();
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetNpcDuelHpBar(isOpen: false, spawnPointId: 201);
-                context.SideNpcTalk(npcId: 23200085, illust: "Schatten_normal", duration: 4000,
-                    script: "$02020021_BF__battle__3$", voice: @"ko/Npc/00002244");
+                context.SideNpcTalk(npcId: 23200085, illust: "Schatten_normal", duration: 4000, script: "$02020021_BF__battle__3$", voice: @"ko/Npc/00002244");
             }
 
             public override void Execute() {

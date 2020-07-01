@@ -7,31 +7,17 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 5, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetEffect(arg1: new[] {7002}, arg2: false);
-                context.SetEffect(arg1: new[] {81004}, arg2: false);
-                context.CreateMonster(arg1: new[] {101, 102, 103, 107, 108, 109, 110, 111, 112}, arg2: false);
-                context.CreateMonster(
-                    arg1: new[]
-                        {401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417},
-                    arg2: false);
-                context.CreateMonster(arg1: new[] {421, 422, 423}, arg2: false);
-                context.CreateMonster(arg1: new[] {431, 432, 433, 434, 435, 436, 437}, arg2: false);
-                context.CreateMonster(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613},
-                    arg2: false);
+                context.SetEffect(arg1: new[] {7001, 7002, 81004}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102, 103, 107, 108, 109, 110, 111, 112, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 421, 422, 423, 431, 432, 433, 434, 435, 436, 437, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613}, arg2: false);
                 context.SetTimer(arg1: "1", arg2: 1, arg4: false);
                 context.SetMesh(arg1: new[] {75011, 75012, 75013}, arg2: true, arg3: 1000, arg4: 500, arg5: 8f);
                 context.SetMesh(arg1: new[] {75001, 75002, 75003}, arg2: false, arg3: 1000, arg4: 500, arg5: 8f);
-                context.CreateMonster(arg1: new[] {991}, arg2: false);
-                context.CreateMonster(arg1: new[] {992}, arg2: false);
-                context.CreateMonster(arg1: new[] {993}, arg2: false);
-                context.CreateMonster(arg1: new[] {994}, arg2: false);
+                context.CreateMonster(arg1: new[] {991, 992, 993, 994}, arg2: false);
             }
 
             public override void Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -61,17 +47,7 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {80010, 80011}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        22201, 22202, 22203, 22204, 22205, 22206, 22207, 22208, 22209, 22210, 22211, 22212, 22213,
-                        22214, 22215, 22216, 22217, 22218, 22219, 22220, 22221, 22222, 22223, 22224, 22225, 22226,
-                        22227, 22228, 22229, 22230, 22231, 22232, 22233, 22234, 22235, 22236, 22237, 22238, 22239,
-                        22240, 22241, 22242, 22243, 22244, 22245, 22246, 22247, 22248, 22249, 22250, 22251, 22252,
-                        22253, 22254, 22255, 22256, 22257, 22258, 22259, 22260, 22261, 22262, 22263, 22264, 22265,
-                        22266, 22267, 22268, 22269, 22270, 22271, 22272, 22273, 22274, 22275, 22276, 22277, 22278,
-                        22279, 22280, 22281, 22282, 22283, 22284, 22285, 22286, 22287, 22288, 22289, 22290, 22291,
-                        22292, 22293, 22294, 22295, 22296, 22297, 22298, 22299
-                    }, arg2: false, arg3: 800, arg4: 100, arg5: 0f);
+                context.SetMesh(arg1: new[] {22201, 22202, 22203, 22204, 22205, 22206, 22207, 22208, 22209, 22210, 22211, 22212, 22213, 22214, 22215, 22216, 22217, 22218, 22219, 22220, 22221, 22222, 22223, 22224, 22225, 22226, 22227, 22228, 22229, 22230, 22231, 22232, 22233, 22234, 22235, 22236, 22237, 22238, 22239, 22240, 22241, 22242, 22243, 22244, 22245, 22246, 22247, 22248, 22249, 22250, 22251, 22252, 22253, 22254, 22255, 22256, 22257, 22258, 22259, 22260, 22261, 22262, 22263, 22264, 22265, 22266, 22267, 22268, 22269, 22270, 22271, 22272, 22273, 22274, 22275, 22276, 22277, 22278, 22279, 22280, 22281, 22282, 22283, 22284, 22285, 22286, 22287, 22288, 22289, 22290, 22291, 22292, 22293, 22294, 22295, 22296, 22297, 22298, 22299}, arg2: false, arg3: 800, arg4: 100, arg5: 0f);
             }
 
             public override void Execute() {

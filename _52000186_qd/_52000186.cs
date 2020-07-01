@@ -4,8 +4,7 @@ namespace Maple2.Trigger._52000186_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -47,8 +46,7 @@ namespace Maple2.Trigger._52000186_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {8000, 8001, 8002, 8003}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
@@ -68,9 +66,7 @@ namespace Maple2.Trigger._52000186_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8004, 8005}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$52000186_QD__52000186__0$",
-                    desc: "$52000186_QD__52000186__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 7000, scale: 2.5f);
+                context.ShowCaption(type: "VerticalCaption", title: "$52000186_QD__52000186__0$", desc: "$52000186_QD__52000186__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 7000, scale: 2.5f);
             }
 
             public override void Execute() {
@@ -87,8 +83,7 @@ namespace Maple2.Trigger._52000186_qd {
             internal State묘지전경씬03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
+                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
             public override void Execute() {
@@ -105,8 +100,7 @@ namespace Maple2.Trigger._52000186_qd {
             internal StateQuit01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
+                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
                 context.SetSceneSkip();
             }
 
@@ -125,10 +119,8 @@ namespace Maple2.Trigger._52000186_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 4);
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetOnetimeEffect(id: 2, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
             public override void Execute() {
@@ -148,86 +140,63 @@ namespace Maple2.Trigger._52000186_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000186_QD__52000186__2$", duration: 6000,
-                    delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000186_QD__52000186__2$", duration: 6000, delayTick: 1000);
                 context.ShowGuideSummary(entityId: 25201861, textId: 25201861, duration: 10000);
-                context.CreateMonster(arg1: new[] {4000}, arg2: false);
-                context.CreateMonster(arg1: new[] {4001}, arg2: false);
-                context.CreateMonster(arg1: new[] {4002}, arg2: false);
-                context.CreateMonster(arg1: new[] {4003}, arg2: false);
-                context.CreateMonster(arg1: new[] {4004}, arg2: false);
-                context.CreateMonster(arg1: new[] {4005}, arg2: false);
-                context.CreateMonster(arg1: new[] {4006}, arg2: false);
-                context.CreateMonster(arg1: new[] {4007}, arg2: false);
-                context.CreateMonster(arg1: new[] {4008}, arg2: false);
-                context.CreateMonster(arg1: new[] {4009}, arg2: false);
-                context.CreateMonster(arg1: new[] {4010}, arg2: false);
-                context.CreateMonster(arg1: new[] {2000}, arg2: false);
+                context.CreateMonster(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 2000}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002777},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002777}, arg3: new byte[] {3})) {
                     context.State = new State출범연설시작01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002778},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002778}, arg3: new byte[] {3})) {
                     context.State = new State출범연설시작01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002779},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002779}, arg3: new byte[] {3})) {
                     context.State = new State출범연설시작01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002780},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002780}, arg3: new byte[] {3})) {
                     context.State = new State출범연설시작01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002781},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002781}, arg3: new byte[] {3})) {
                     context.State = new State출범연설시작01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002782},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002782}, arg3: new byte[] {3})) {
                     context.State = new State출범연설시작01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002783},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002783}, arg3: new byte[] {3})) {
                     context.State = new State출범연설시작01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002784},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002784}, arg3: new byte[] {3})) {
                     context.State = new State출범연설시작01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002785},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002785}, arg3: new byte[] {3})) {
                     context.State = new State출범연설시작01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002786},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002786}, arg3: new byte[] {3})) {
                     context.State = new State출범연설시작01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002787},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {40002787}, arg3: new byte[] {3})) {
                     context.State = new State출범연설시작01(context);
                     return;
                 }
@@ -240,8 +209,7 @@ namespace Maple2.Trigger._52000186_qd {
             internal State출범연설시작01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 10, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 10, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -260,35 +228,8 @@ namespace Maple2.Trigger._52000186_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000186, arg2: 20);
-                context.DestroyMonster(arg1: new[] {4000});
-                context.DestroyMonster(arg1: new[] {4001});
-                context.DestroyMonster(arg1: new[] {4002});
-                context.DestroyMonster(arg1: new[] {4003});
-                context.DestroyMonster(arg1: new[] {4004});
-                context.DestroyMonster(arg1: new[] {4005});
-                context.DestroyMonster(arg1: new[] {4006});
-                context.DestroyMonster(arg1: new[] {4007});
-                context.DestroyMonster(arg1: new[] {4008});
-                context.DestroyMonster(arg1: new[] {4009});
-                context.DestroyMonster(arg1: new[] {4010});
-                context.CreateMonster(arg1: new[] {5000}, arg2: false);
-                context.CreateMonster(arg1: new[] {5001}, arg2: false);
-                context.CreateMonster(arg1: new[] {5002}, arg2: false);
-                context.CreateMonster(arg1: new[] {5003}, arg2: false);
-                context.CreateMonster(arg1: new[] {5004}, arg2: false);
-                context.CreateMonster(arg1: new[] {5005}, arg2: false);
-                context.CreateMonster(arg1: new[] {5006}, arg2: false);
-                context.CreateMonster(arg1: new[] {5007}, arg2: false);
-                context.CreateMonster(arg1: new[] {5008}, arg2: false);
-                context.CreateMonster(arg1: new[] {5009}, arg2: false);
-                context.CreateMonster(arg1: new[] {5010}, arg2: false);
-                context.CreateMonster(arg1: new[] {3000}, arg2: false);
-                context.CreateMonster(arg1: new[] {3001}, arg2: false);
-                context.CreateMonster(arg1: new[] {3002}, arg2: false);
-                context.CreateMonster(arg1: new[] {3003}, arg2: false);
-                context.CreateMonster(arg1: new[] {3004}, arg2: false);
-                context.CreateMonster(arg1: new[] {3005}, arg2: false);
-                context.CreateMonster(arg1: new[] {3006}, arg2: false);
+                context.DestroyMonster(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010});
+                context.CreateMonster(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 3000, 3001, 3002, 3003, 3004, 3005, 3006}, arg2: false);
             }
 
             public override void Execute() {
@@ -305,15 +246,13 @@ namespace Maple2.Trigger._52000186_qd {
             internal State출범연설시작03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 10, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 10, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002388},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002388}, arg3: new byte[] {3})) {
                     context.State = new State베아트리체움직임01(context);
                     return;
                 }
@@ -331,8 +270,7 @@ namespace Maple2.Trigger._52000186_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002389},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002389}, arg3: new byte[] {3})) {
                     context.State = new State연설시퀀스종료01(context);
                     return;
                 }
@@ -345,8 +283,7 @@ namespace Maple2.Trigger._52000186_qd {
             internal State연설시퀀스종료01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 20, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -364,24 +301,7 @@ namespace Maple2.Trigger._52000186_qd {
             internal State연설시퀀스종료02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {5000});
-                context.DestroyMonster(arg1: new[] {5001});
-                context.DestroyMonster(arg1: new[] {5002});
-                context.DestroyMonster(arg1: new[] {5003});
-                context.DestroyMonster(arg1: new[] {5004});
-                context.DestroyMonster(arg1: new[] {5005});
-                context.DestroyMonster(arg1: new[] {5006});
-                context.DestroyMonster(arg1: new[] {5007});
-                context.DestroyMonster(arg1: new[] {5008});
-                context.DestroyMonster(arg1: new[] {5009});
-                context.DestroyMonster(arg1: new[] {5010});
-                context.DestroyMonster(arg1: new[] {3000});
-                context.DestroyMonster(arg1: new[] {3001});
-                context.DestroyMonster(arg1: new[] {3002});
-                context.DestroyMonster(arg1: new[] {3003});
-                context.DestroyMonster(arg1: new[] {3004});
-                context.DestroyMonster(arg1: new[] {3005});
-                context.DestroyMonster(arg1: new[] {3006});
+                context.DestroyMonster(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 3000, 3001, 3002, 3003, 3004, 3005, 3006});
                 context.MoveUser(arg1: 52010068, arg2: 1);
             }
 
@@ -399,8 +319,7 @@ namespace Maple2.Trigger._52000186_qd {
             internal State연설시퀀스종료03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 20, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 20, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }

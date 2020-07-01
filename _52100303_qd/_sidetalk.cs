@@ -7,8 +7,7 @@ namespace Maple2.Trigger._52100303_qd {
 
             public override void Execute() {
                 if (context.GetUserValue(key: "Sidetalk") == 1) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_serious",
-                        script: "$52100303_QD__SIdETALK__0$", duration: 3000);
+                    context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_serious", script: "$52100303_QD__SIdETALK__0$", duration: 3000);
                     context.State = new State세번째(context);
                     return;
                 }
@@ -24,8 +23,7 @@ namespace Maple2.Trigger._52100303_qd {
 
             public override void Execute() {
                 if (context.GetUserValue(key: "Sidetalk") == 2) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_serious",
-                        script: "$52100303_QD__SIdETALK__1$", duration: 3000);
+                    context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_serious", script: "$52100303_QD__SIdETALK__1$", duration: 3000);
                     context.State = new State네번째(context);
                     return;
                 }
@@ -41,8 +39,7 @@ namespace Maple2.Trigger._52100303_qd {
 
             public override void Execute() {
                 if (context.GetUserValue(key: "Sidetalk") == 3) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_serious",
-                        script: "$52100303_QD__SIdETALK__2$", duration: 3000);
+                    context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_serious", script: "$52100303_QD__SIdETALK__2$", duration: 3000);
                     context.State = new State대사대기(context);
                     return;
                 }
@@ -73,8 +70,7 @@ namespace Maple2.Trigger._52100303_qd {
 
             public override void Execute() {
                 if (context.MonsterInCombat(arg1: new[] {101})) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_serious",
-                        script: "$52100303_QD__SIdETALK__3$", duration: 3000);
+                    context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_serious", script: "$52100303_QD__SIdETALK__3$", duration: 3000);
                     context.State = new State종료(context);
                     return;
                 }

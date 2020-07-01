@@ -19,8 +19,7 @@ namespace Maple2.Trigger._02000335_bf {
             internal State벽면처리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {7061, 7062, 7063, 7064, 7065, 7066, 7067, 7068, 7069, 7070},
-                    arg2: false, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {7061, 7062, 7063, 7064, 7065, 7066, 7067, 7068, 7069, 7070}, arg2: false, arg4: 0, arg5: 10f);
             }
 
             public override void Execute() { }

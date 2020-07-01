@@ -9,14 +9,12 @@ namespace Maple2.Trigger._52010003_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002802},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002802}, arg3: new byte[] {1})) {
                     context.State = new StateEvent_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002836},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002836}, arg3: new byte[] {1})) {
                     context.State = new StateB_Event_01(context);
                     return;
                 }

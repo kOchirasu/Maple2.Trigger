@@ -5,26 +5,8 @@ namespace Maple2.Trigger._82000012_survival {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {4000, 4100, 4200, 4300, 4400, 4500, 4600, 4700, 4800}, arg2: false);
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3700, 3701, 3702, 3703, 3704, 3705, 3706, 3707}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3800, 3801, 3802, 3803, 3804, 3805, 3806, 3807}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {11000037}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {11000039}, arg2: 1);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407, 3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507, 3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607, 3700, 3701, 3702, 3703, 3704, 3705, 3706, 3707, 3800, 3801, 3802, 3803, 3804, 3805, 3806, 3807}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {11000037, 11000039}, arg2: 1);
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 20001, arg2: false);
                 context.SetLocalCamera(cameraId: 100, enable: false);
@@ -48,8 +30,7 @@ namespace Maple2.Trigger._82000012_survival {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 90, arg3: true, arg4: true, arg5: -80);
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000,
-                    script: "$82000012_survival__01_SURVIVAL__0$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__0$");
                 context.WriteLog(arg1: "Survival", arg3: "Waiting_Start");
             }
 
@@ -72,8 +53,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateWait_Talk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000,
-                    script: "$82000012_survival__01_SURVIVAL__1$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__1$");
             }
 
             public override void Execute() {
@@ -95,8 +75,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateWait_Talk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000,
-                    script: "$82000012_survival__01_SURVIVAL__2$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__2$");
             }
 
             public override void Execute() {
@@ -118,8 +97,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateWait_Talk04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000,
-                    script: "$82000012_survival__01_SURVIVAL__3$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__3$");
             }
 
             public override void Execute() {
@@ -141,8 +119,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateWait_Talk05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000,
-                    script: "$82000012_survival__01_SURVIVAL__4$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__4$");
             }
 
             public override void Execute() {
@@ -164,8 +141,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateWait_Talk06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000,
-                    script: "$82000012_survival__01_SURVIVAL__5$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__5$");
             }
 
             public override void Execute() {
@@ -227,8 +203,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateMatchingSuccess(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000,
-                    script: "$82000012_survival__01_SURVIVAL__17$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__17$");
             }
 
             public override void Execute() {
@@ -245,8 +220,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateReadyToMoveStartPosition(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 3000,
-                    script: "$82000012_survival__01_SURVIVAL__11$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 3000, script: "$82000012_survival__01_SURVIVAL__11$");
             }
 
             public override void Execute() {
@@ -481,8 +455,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateStartGameExplain(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 6000,
-                    script: "$82000012_survival__01_SURVIVAL__6$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 6000, script: "$82000012_survival__01_SURVIVAL__6$");
             }
 
             public override void Execute() {
@@ -499,8 +472,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateGameExplain01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 6000,
-                    script: "$82000012_survival__01_SURVIVAL__7$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 6000, script: "$82000012_survival__01_SURVIVAL__7$");
             }
 
             public override void Execute() {
@@ -517,8 +489,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateGameExplain02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 3500,
-                    script: "$82000012_survival__01_SURVIVAL__8$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 3500, script: "$82000012_survival__01_SURVIVAL__8$");
             }
 
             public override void Execute() {
@@ -535,8 +506,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateGameExplain03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 3500,
-                    script: "$82000012_survival__01_SURVIVAL__9$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 3500, script: "$82000012_survival__01_SURVIVAL__9$");
             }
 
             public override void Execute() {
@@ -553,8 +523,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateGameExplain04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 5000,
-                    script: "$82000012_survival__01_SURVIVAL__10$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 5000, script: "$82000012_survival__01_SURVIVAL__10$");
             }
 
             public override void Execute() {
@@ -571,8 +540,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateGameExplain05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 5000,
-                    script: "$82000012_survival__01_SURVIVAL__12$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 5000, script: "$82000012_survival__01_SURVIVAL__12$");
             }
 
             public override void Execute() {
@@ -589,8 +557,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StatePVPReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000,
-                    script: "$82000012_survival__01_SURVIVAL__13$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__13$");
             }
 
             public override void Execute() {
@@ -662,15 +629,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateAreaOpen(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
-                        61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84,
-                        85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106,
-                        107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125,
-                        126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144,
-                        145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159
-                    }, isStart: true);
+                context.StartCombineSpawn(groupId: new[] {37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159}, isStart: true);
                 context.SetUserValue(triggerId: 5, key: "RareBoxOnCount", value: 1);
                 context.SetUserValue(triggerId: 8, key: "RareMobOnCount", value: 1);
                 context.SetUserValue(triggerId: 9, key: "NormaBoxOnCount", value: 1);
@@ -678,24 +637,15 @@ namespace Maple2.Trigger._82000012_survival {
                 context.SetUserValue(triggerId: 4, key: "InvincibleOff", value: 1);
                 context.AddBuff(arg1: new[] {9000}, arg2: 71000053, arg3: 1, arg4: false, arg5: false);
                 context.SetEffect(arg1: new[] {4000, 4100, 4200, 4300, 4400, 4500, 4600, 4700, 4800}, arg2: false);
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 1f);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 1f);
-                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 1f);
-                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 1f);
-                context.SetMesh(arg1: new[] {3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 1f);
-                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 1f);
-                context.SetMesh(arg1: new[] {3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 1f);
-                context.SetMesh(arg1: new[] {3700, 3701, 3702, 3703, 3704, 3705, 3706, 3707}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 1f);
-                context.SetMesh(arg1: new[] {3800, 3801, 3802, 3803, 3804, 3805, 3806, 3807}, arg2: false,
-                    arg3: 1000, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007}, arg2: false, arg3: 1000, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: false, arg3: 1000, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: false, arg3: 1000, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307}, arg2: false, arg3: 1000, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407}, arg2: false, arg3: 1000, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507}, arg2: false, arg3: 1000, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607}, arg2: false, arg3: 1000, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {3700, 3701, 3702, 3703, 3704, 3705, 3706, 3707}, arg2: false, arg3: 1000, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {3800, 3801, 3802, 3803, 3804, 3805, 3806, 3807}, arg2: false, arg3: 1000, arg4: 0, arg5: 1f);
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 20001, arg2: true);
                 context.WriteLog(arg1: "Survival", arg3: "Start");
@@ -755,8 +705,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateMatchingFail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000,
-                    script: "$82000012_survival__01_SURVIVAL__15$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__15$");
             }
 
             public override void Execute() {
@@ -773,8 +722,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateGameCancel(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000,
-                    script: "$82000012_survival__01_SURVIVAL__16$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__16$");
             }
 
             public override void Execute() {
@@ -791,8 +739,7 @@ namespace Maple2.Trigger._82000012_survival {
             internal StateReadyToKickOut(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$82000012_survival__01_SURVIVAL__18$", arg3: 4000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$82000012_survival__01_SURVIVAL__18$", arg3: 4000, arg4: "0");
             }
 
             public override void Execute() {
@@ -829,19 +776,10 @@ namespace Maple2.Trigger._82000012_survival {
                 context.SetUserValue(triggerId: 5, key: "RareBoxOff", value: 1);
                 context.SetUserValue(triggerId: 8, key: "RareMobOff", value: 1);
                 context.SetUserValue(triggerId: 9, key: "NormaBoxOff", value: 1);
-                context.SetInteractObject(arg1: new[] {11000037}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {11000039}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {11000037, 11000039}, arg2: 0);
                 context.DestroyMonster(arg1: new[] {-1});
                 context.MoveUser(arg1: 0, arg2: 0);
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
-                        61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84,
-                        85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106,
-                        107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125,
-                        126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144,
-                        145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159
-                    }, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159}, isStart: false);
             }
 
             public override void Execute() { }

@@ -20,20 +20,7 @@ namespace Maple2.Trigger._52100101_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.DestroyMonster(arg1: new[] {101});
-                context.DestroyMonster(arg1: new[] {102});
-                context.DestroyMonster(arg1: new[] {103});
-                context.DestroyMonster(arg1: new[] {104});
-                context.DestroyMonster(arg1: new[] {105});
-                context.DestroyMonster(arg1: new[] {106});
-                context.DestroyMonster(arg1: new[] {107});
-                context.DestroyMonster(arg1: new[] {108});
-                context.DestroyMonster(arg1: new[] {109});
-                context.DestroyMonster(arg1: new[] {110});
-                context.DestroyMonster(arg1: new[] {111});
-                context.DestroyMonster(arg1: new[] {112});
-                context.DestroyMonster(arg1: new[] {113});
-                context.DestroyMonster(arg1: new[] {114});
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114});
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Dead_A");
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
@@ -55,14 +42,12 @@ namespace Maple2.Trigger._52100101_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100860},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100860}, arg3: new byte[] {2})) {
                     context.State = new Statewait_01_02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {50100870},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {50100870}, arg3: new byte[] {3})) {
                     context.State = new Statewait_01_03(context);
                     return;
                 }
@@ -75,8 +60,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal Statewait_01_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {
@@ -111,8 +95,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal State구릉도착(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {
@@ -280,8 +263,7 @@ namespace Maple2.Trigger._52100101_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {50100870},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {50100870}, arg3: new byte[] {3})) {
                     context.State = new Statewait_01_03(context);
                     return;
                 }
@@ -294,8 +276,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal Statewait_01_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -315,11 +296,7 @@ namespace Maple2.Trigger._52100101_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 52100101, arg2: 3);
-                context.CreateMonster(arg1: new[] {109}, arg2: false);
-                context.CreateMonster(arg1: new[] {110}, arg2: false);
-                context.CreateMonster(arg1: new[] {111}, arg2: false);
-                context.CreateMonster(arg1: new[] {112}, arg2: false);
-                context.CreateMonster(arg1: new[] {113}, arg2: false);
+                context.CreateMonster(arg1: new[] {109, 110, 111, 112, 113}, arg2: false);
             }
 
             public override void Execute() {
@@ -336,8 +313,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal State클라디아바라봄(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {
@@ -510,12 +486,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal State잠시후_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {109});
-                context.DestroyMonster(arg1: new[] {110});
-                context.DestroyMonster(arg1: new[] {111});
-                context.DestroyMonster(arg1: new[] {112});
-                context.DestroyMonster(arg1: new[] {113});
-                context.DestroyMonster(arg1: new[] {114});
+                context.DestroyMonster(arg1: new[] {109, 110, 111, 112, 113, 114});
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);

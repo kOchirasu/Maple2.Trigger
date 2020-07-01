@@ -4,9 +4,7 @@ namespace Maple2.Trigger._63000036_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001, 5002}, arg2: false);
             }
 
             public override void Execute() {
@@ -29,14 +27,12 @@ namespace Maple2.Trigger._63000036_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000455},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000455}, arg3: new byte[] {1})) {
                     context.State = new StateCameraWalk01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000455},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000455}, arg3: new byte[] {2})) {
                     context.State = new StateCameraWalk01(context);
                     return;
                 }

@@ -4,11 +4,7 @@ namespace Maple2.Trigger._52000062_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1001}, arg2: false);
-                context.CreateMonster(arg1: new[] {1002}, arg2: false);
-                context.CreateMonster(arg1: new[] {1003}, arg2: false);
-                context.CreateMonster(arg1: new[] {1004}, arg2: false);
-                context.CreateMonster(arg1: new[] {1007}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1007}, arg2: false);
                 context.SetEffect(arg1: new[] {601}, arg2: false);
             }
 
@@ -28,20 +24,17 @@ namespace Maple2.Trigger._52000062_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000561},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000561}, arg3: new byte[] {3})) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000561},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000561}, arg3: new byte[] {2})) {
                     context.State = new State연퀘감지2(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000560, 90000561},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000560, 90000561}, arg3: new byte[] {1})) {
                     context.State = new State연퀘감지(context);
                     return;
                 }
@@ -78,10 +71,8 @@ namespace Maple2.Trigger._52000062_qd {
             internal State페르시카대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001176, arg3: "$52000062_QD__GUIdESCENE_01__0$", arg4: 3,
-                    arg5: 0);
-                context.SetConversation(arg1: 2, arg2: 11001176, arg3: "$52000062_QD__GUIdESCENE_01__1$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001176, arg3: "$52000062_QD__GUIdESCENE_01__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11001176, arg3: "$52000062_QD__GUIdESCENE_01__1$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -121,8 +112,7 @@ namespace Maple2.Trigger._52000062_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000561},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000561}, arg3: new byte[] {2})) {
                     context.State = new StatePC이동(context);
                     return;
                 }

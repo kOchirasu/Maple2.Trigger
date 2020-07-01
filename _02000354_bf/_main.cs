@@ -6,17 +6,12 @@ namespace Maple2.Trigger._02000354_bf {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7701}, arg2: false);
-                context.SetEffect(arg1: new[] {7702}, arg2: false);
-                context.SetEffect(arg1: new[] {7703}, arg2: false);
-                context.SetEffect(arg1: new[] {7704}, arg2: false);
-                context.SetEffect(arg1: new[] {7705}, arg2: false);
+                context.SetEffect(arg1: new[] {7701, 7702, 7703, 7704, 7705}, arg2: false);
             }
 
             public override void Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -44,9 +39,7 @@ namespace Maple2.Trigger._02000354_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7701}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012},
-                    arg2: false, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012}, arg2: false, arg4: 0, arg5: 10f);
             }
 
             public override void Execute() {
@@ -87,9 +80,7 @@ namespace Maple2.Trigger._02000354_bf {
                 context.SetEffect(arg1: new[] {7702}, arg2: true);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 113, textId: 40011);
-                context.SetMesh(
-                    arg1: new[] {6021, 6022, 6023, 6024, 6025, 6026, 6027, 6028, 6029, 6030, 6031, 6032, 6033},
-                    arg2: false, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {6021, 6022, 6023, 6024, 6025, 6026, 6027, 6028, 6029, 6030, 6031, 6032, 6033}, arg2: false, arg4: 0, arg5: 10f);
             }
 
             public override void Execute() {
@@ -130,12 +121,7 @@ namespace Maple2.Trigger._02000354_bf {
                 context.SetEffect(arg1: new[] {7703}, arg2: true);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 113, textId: 40011);
-                context.SetMesh(
-                    arg1: new[] {
-                        6051, 6052, 6053, 6054, 6055, 6056, 6057, 6058, 6059, 6060, 6061, 6062, 6063, 6064, 6065, 6066,
-                        6067, 6068, 6069, 6070, 6071, 6072, 6073, 6074, 6075, 6076, 6077, 6078, 6079, 6080, 6081, 6082,
-                        6083
-                    }, arg2: false, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {6051, 6052, 6053, 6054, 6055, 6056, 6057, 6058, 6059, 6060, 6061, 6062, 6063, 6064, 6065, 6066, 6067, 6068, 6069, 6070, 6071, 6072, 6073, 6074, 6075, 6076, 6077, 6078, 6079, 6080, 6081, 6082, 6083}, arg2: false, arg4: 0, arg5: 10f);
             }
 
             public override void Execute() {
@@ -174,9 +160,7 @@ namespace Maple2.Trigger._02000354_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7704}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {6111, 6112, 6113, 6114, 6115, 6116, 6117, 6118, 6119, 6120, 6121, 6122, 6123},
-                    arg2: false, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {6111, 6112, 6113, 6114, 6115, 6116, 6117, 6118, 6119, 6120, 6121, 6122, 6123}, arg2: false, arg4: 0, arg5: 10f);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 113, textId: 40011);
             }
@@ -219,10 +203,7 @@ namespace Maple2.Trigger._02000354_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7705}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        6151, 6152, 6153, 6154, 6155, 6156, 6157, 6158, 6159, 6160, 6161, 6162, 6163, 6164, 6165, 6166
-                    }, arg2: false, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {6151, 6152, 6153, 6154, 6155, 6156, 6157, 6158, 6159, 6160, 6161, 6162, 6163, 6164, 6165, 6166}, arg2: false, arg4: 0, arg5: 10f);
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 113, textId: 40011);
             }

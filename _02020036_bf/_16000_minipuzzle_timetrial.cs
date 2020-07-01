@@ -9,10 +9,8 @@ namespace Maple2.Trigger._02020036_bf {
                 context.ResetTimer(arg1: "100");
                 context.SetMesh(arg1: new[] {16001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {12000263}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000079}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000098}, arg2: 0);
-                context.SetEffect(arg1: new[] {16200}, arg2: false);
-                context.SetEffect(arg1: new[] {16201}, arg2: false);
+                context.SetInteractObject(arg1: new[] {12000079, 12000098}, arg2: 0);
+                context.SetEffect(arg1: new[] {16200, 16201}, arg2: false);
             }
 
             public override void Execute() {
@@ -88,8 +86,7 @@ namespace Maple2.Trigger._02020036_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 16100, additionalEffectId: 71001271,
-                    level: true)) {
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 16100, additionalEffectId: 71001271, level: true)) {
                     context.AddBuff(arg1: new[] {160001}, arg2: 71001062, arg3: 1, arg4: false, arg5: false);
                     context.SetTimer(arg1: "100", arg2: 60, arg3: true, arg4: false, arg5: 0);
                     context.State = new StateTimeTrial_Success(context);

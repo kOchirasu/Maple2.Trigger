@@ -24,32 +24,27 @@ namespace Maple2.Trigger._52100110_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101040},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101040}, arg3: new byte[] {1})) {
                     context.State = new State화이트박스제거(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {3})) {
                     context.State = new State52100105로텔레포트(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {2})) {
                     context.State = new State퀘스트용몬스터스폰(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {1})) {
                     context.State = new State퀘스트용몬스터스폰(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101020},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101020}, arg3: new byte[] {3})) {
                     context.State = new State퀘스트용몬스터스폰(context);
                     return;
                 }
@@ -64,14 +59,12 @@ namespace Maple2.Trigger._52100110_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101040},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101040}, arg3: new byte[] {1})) {
                     context.State = new State화이트박스제거(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {3})) {
                     // context.State = new State(context);
                     return;
                 }

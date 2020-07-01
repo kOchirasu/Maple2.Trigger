@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52020029_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000329},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000329}, arg3: new byte[] {2})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -41,8 +40,7 @@ namespace Maple2.Trigger._52020029_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.MoveUser(arg1: 52020029, arg2: 6001);
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102}, arg2: false);
             }
 
             public override void Execute() {
@@ -175,10 +173,8 @@ namespace Maple2.Trigger._52020029_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52020029, arg2: 6002);
-                context.DestroyMonster(arg1: new[] {101});
-                context.DestroyMonster(arg1: new[] {102});
-                context.CreateMonster(arg1: new[] {104}, arg2: false);
-                context.CreateMonster(arg1: new[] {105}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101, 102});
+                context.CreateMonster(arg1: new[] {104, 105}, arg2: false);
             }
 
             public override void Execute() {

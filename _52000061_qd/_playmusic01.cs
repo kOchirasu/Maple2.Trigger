@@ -4,27 +4,19 @@ namespace Maple2.Trigger._52000061_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetEffect(arg1: new[] {5100}, arg2: false);
-                context.SetEffect(arg1: new[] {5200}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5100, 5200}, arg2: false);
                 context.SetSound(arg1: 10000, arg2: false);
                 context.CreateMonster(arg1: new[] {101, 201, 202, 203, 204}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000550},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000550}, arg3: new byte[] {1})) {
                     context.State = new StateLodingDelay01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000550},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000550}, arg3: new byte[] {2})) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -230,11 +222,7 @@ namespace Maple2.Trigger._52000061_qd {
             internal StatePCPlayMusic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
-                context.SetEffect(arg1: new[] {5004}, arg2: true);
+                context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004}, arg2: true);
                 context.SetNpcEmotionLoop(arg1: 201, arg2: "Play_A", arg3: 30500f);
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Play_A", arg3: 30500f);
                 context.SetNpcEmotionLoop(arg1: 203, arg2: "Play_A", arg3: 30500f);
@@ -256,11 +244,7 @@ namespace Maple2.Trigger._52000061_qd {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 10000, arg2: false);
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004}, arg2: false);
                 context.SetEffect(arg1: new[] {5200}, arg2: true);
             }
 
@@ -321,8 +305,7 @@ namespace Maple2.Trigger._52000061_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000550},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000550}, arg3: new byte[] {3})) {
                     context.State = new StateQuit(context);
                     return;
                 }

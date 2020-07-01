@@ -6,9 +6,7 @@ namespace Maple2.Trigger._02000241_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {307}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {707, 708}, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324},
-                    arg2: false);
+                context.SetMesh(arg1: new[] {309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324}, arg2: false);
                 context.SetActor(arg1: 507, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 508, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 509, arg2: true, arg3: "Closed");

@@ -4,8 +4,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {7100, 7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {7100, 7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

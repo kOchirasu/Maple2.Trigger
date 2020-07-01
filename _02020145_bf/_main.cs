@@ -8,10 +8,7 @@ namespace Maple2.Trigger._02020145_bf {
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(183f, 189f, 201f));
                 context.SetDirectionalLight(arg1: new Vector3(192f, 210f, 211f), arg2: new Vector3(170f, 170f, 170f));
-                context.SetEffect(arg1: new[] {200031, 200032, 200033, 200034, 200035}, arg2: false);
-                context.SetEffect(arg1: new[] {200001, 200002, 200003, 200004, 200005}, arg2: false);
-                context.SetEffect(arg1: new[] {200021, 200022, 200023, 200024, 200025}, arg2: false);
-                context.SetEffect(arg1: new[] {200011, 200012, 200013, 200014, 200015}, arg2: false);
+                context.SetEffect(arg1: new[] {200031, 200032, 200033, 200034, 200035, 200001, 200002, 200003, 200004, 200005, 200021, 200022, 200023, 200024, 200025, 200011, 200012, 200013, 200014, 200015}, arg2: false);
             }
 
             public override void Execute() {
@@ -45,8 +42,7 @@ namespace Maple2.Trigger._02020145_bf {
             internal State보스전_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal",
-                    script: "$02020111_BF__MAIN__0$", duration: 5684, voice: @"ko/Npc/00002201");
+                context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__MAIN__0$", duration: 5684, voice: @"ko/Npc/00002201");
                 context.CreateMonster(arg1: new[] {101});
             }
 
@@ -179,8 +175,7 @@ namespace Maple2.Trigger._02020145_bf {
 
             public override void OnEnter() {
                 context.SetAchievement(arg2: "trigger", arg3: "ClearBlueLapenta_Quest");
-                context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal",
-                    script: "$02020111_BF__MAIN__1$", duration: 3176, voice: @"ko/Npc/00002202");
+                context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__MAIN__1$", duration: 3176, voice: @"ko/Npc/00002202");
                 context.DestroyMonster(arg1: new[] {121, 122, 123, 124, 125, 131, 132, 133, 134});
             }
 

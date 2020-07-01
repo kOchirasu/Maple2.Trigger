@@ -21,11 +21,8 @@ namespace Maple2.Trigger._52010017_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {102}, arg2: new[] {10002851},
-                    arg3: new byte[] {1})) {
-                    context.CreateMonster(arg1: new[] {1002}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1003}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1004}, arg2: false);
+                if (context.QuestUserDetected(arg1: new[] {102}, arg2: new[] {10002851}, arg3: new byte[] {1})) {
+                    context.CreateMonster(arg1: new[] {1002, 1003, 1004}, arg2: false);
                     context.CreateMonster(arg1: new[] {2001}, arg2: true);
                     context.State = new State카메라연출01(context);
                     return;

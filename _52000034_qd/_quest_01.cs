@@ -6,14 +6,12 @@ namespace Maple2.Trigger._52000034_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {40002600},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {40002600}, arg3: new byte[] {3})) {
                     context.State = new State기본NPC배치(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {40002600},
-                    arg3: new byte[] {3})) {
+                if (!context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {40002600}, arg3: new byte[] {3})) {
                     context.State = new State제이시추가배치(context);
                     return;
                 }
@@ -30,14 +28,12 @@ namespace Maple2.Trigger._52000034_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {40002603},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {40002603}, arg3: new byte[] {2})) {
                     context.State = new State연출01시작(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {40002603},
-                    arg3: new byte[] {2})) {
+                if (!context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {40002603}, arg3: new byte[] {2})) {
                     context.State = new State종료(context);
                     return;
                 }

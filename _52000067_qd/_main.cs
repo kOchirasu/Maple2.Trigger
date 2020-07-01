@@ -10,33 +10,7 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetTimeScale(enable: false, startScale: 1f, endScale: 1f, duration: 0f, interpolator: 0);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetInteractObject(arg1: new[] {10001073}, arg2: 2);
-                context.SetEffect(arg1: new[] {7005}, arg2: false);
-                context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetEffect(arg1: new[] {7010}, arg2: false);
-                context.SetEffect(arg1: new[] {7011}, arg2: false);
-                context.SetEffect(arg1: new[] {7012}, arg2: false);
-                context.SetEffect(arg1: new[] {7013}, arg2: false);
-                context.SetEffect(arg1: new[] {7014}, arg2: false);
-                context.SetEffect(arg1: new[] {7015}, arg2: false);
-                context.SetEffect(arg1: new[] {7016}, arg2: false);
-                context.SetEffect(arg1: new[] {7110}, arg2: false);
-                context.SetEffect(arg1: new[] {7111}, arg2: false);
-                context.SetEffect(arg1: new[] {7112}, arg2: false);
-                context.SetEffect(arg1: new[] {7113}, arg2: false);
-                context.SetEffect(arg1: new[] {7114}, arg2: false);
-                context.SetEffect(arg1: new[] {7115}, arg2: false);
-                context.SetEffect(arg1: new[] {7116}, arg2: false);
-                context.SetEffect(arg1: new[] {7301}, arg2: false);
-                context.SetEffect(arg1: new[] {7302}, arg2: false);
-                context.SetEffect(arg1: new[] {7303}, arg2: false);
-                context.SetEffect(arg1: new[] {7304}, arg2: false);
-                context.SetEffect(arg1: new[] {7305}, arg2: false);
-                context.SetEffect(arg1: new[] {7306}, arg2: false);
-                context.SetEffect(arg1: new[] {7307}, arg2: false);
-                context.SetEffect(arg1: new[] {7308}, arg2: false);
-                context.SetEffect(arg1: new[] {7309}, arg2: false);
-                context.SetEffect(arg1: new[] {7310}, arg2: false);
-                context.SetEffect(arg1: new[] {7117}, arg2: false);
+                context.SetEffect(arg1: new[] {7005, 7001, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7110, 7111, 7112, 7113, 7114, 7115, 7116, 7301, 7302, 7303, 7304, 7305, 7306, 7307, 7308, 7309, 7310, 7117}, arg2: false);
                 context.SetActor(arg1: 4999, arg2: false, arg3: "Regen_A");
                 context.SetActor(arg1: 4001, arg2: false, arg3: "Attack_02_H");
                 context.SetActor(arg1: 4002, arg2: false, arg3: "Dead_Idle_A");
@@ -84,19 +58,8 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.RemoveBuff(arg1: 702, arg2: 99910070);
-                context.CreateMonster(
-                    arg1: new[]
-                        {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119},
-                    arg2: true);
-                context.CreateMonster(
-                    arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514}, arg2: true);
-                context.CreateMonster(arg1: new[] {551, 552, 553, 554, 555}, arg2: true);
-                context.CreateMonster(
-                    arg1: new[]
-                        {520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536},
-                    arg2: true);
-                context.CreateMonster(arg1: new[] {121, 121, 123}, arg2: false);
-                context.CreateMonster(arg1: new[] {752, 753, 754}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 551, 552, 553, 554, 555, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536}, arg2: true);
+                context.CreateMonster(arg1: new[] {121, 121, 123, 752, 753, 754}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_1002");
                 context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
             }
@@ -115,8 +78,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Stateportal_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7301}, arg2: true);
-                context.SetEffect(arg1: new[] {7010}, arg2: true);
+                context.SetEffect(arg1: new[] {7301, 7010}, arg2: true);
             }
 
             public override void Execute() {
@@ -133,8 +95,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Stateportal_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7302}, arg2: true);
-                context.SetEffect(arg1: new[] {7016}, arg2: true);
+                context.SetEffect(arg1: new[] {7302, 7016}, arg2: true);
             }
 
             public override void Execute() {
@@ -151,8 +112,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Stateportal_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7303}, arg2: true);
-                context.SetEffect(arg1: new[] {7013}, arg2: true);
+                context.SetEffect(arg1: new[] {7303, 7013}, arg2: true);
             }
 
             public override void Execute() {
@@ -169,9 +129,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Stateportal_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7304}, arg2: true);
-                context.SetEffect(arg1: new[] {7012}, arg2: true);
-                context.SetEffect(arg1: new[] {7014}, arg2: true);
+                context.SetEffect(arg1: new[] {7304, 7012, 7014}, arg2: true);
             }
 
             public override void Execute() {
@@ -509,16 +467,8 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetProductionUI(arg1: 4);
                 context.RemoveBuff(arg1: 702, arg2: 99910070);
                 context.DestroyMonster(arg1: new[] {201});
-                context.DestroyMonster(arg1: new[] {
-                    101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 121,
-                    122, 123
-                });
-                context.DestroyMonster(arg1: new[]
-                    {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514});
-                context.DestroyMonster(arg1: new[]
-                    {520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 531, 532, 533, 534, 535, 536, 537, 538, 539});
-                context.DestroyMonster(arg1: new[] {551, 552, 553, 554, 555, 556, 557, 558, 559});
-                context.DestroyMonster(arg1: new[] {751, 752, 753, 754, 756, 757, 758, 759, 761, 762});
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 121, 122, 123});
+                context.DestroyMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 531, 532, 533, 534, 535, 536, 537, 538, 539, 551, 552, 553, 554, 555, 556, 557, 558, 559, 751, 752, 753, 754, 756, 757, 758, 759, 761, 762});
             }
 
             public override void Execute() {
@@ -536,30 +486,12 @@ namespace Maple2.Trigger._52000067_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {201});
-                context.CreateMonster(
-                    arg1: new[]
-                        {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119},
-                    arg2: true);
-                context.CreateMonster(
-                    arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514}, arg2: true);
-                context.CreateMonster(arg1: new[] {551, 552, 553, 554, 555}, arg2: true);
-                context.CreateMonster(
-                    arg1: new[]
-                        {520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536},
-                    arg2: true);
-                context.CreateMonster(arg1: new[] {121, 121, 123}, arg2: false);
-                context.CreateMonster(arg1: new[] {752, 753, 754}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 551, 552, 553, 554, 555, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536}, arg2: true);
+                context.CreateMonster(arg1: new[] {121, 121, 123, 752, 753, 754}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_1002");
                 context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
                 context.SetActor(arg1: 4001, arg2: true, arg3: "Regen_A");
-                context.SetEffect(arg1: new[] {7001}, arg2: true);
-                context.SetEffect(arg1: new[] {7010}, arg2: true);
-                context.SetEffect(arg1: new[] {7011}, arg2: true);
-                context.SetEffect(arg1: new[] {7012}, arg2: true);
-                context.SetEffect(arg1: new[] {7013}, arg2: true);
-                context.SetEffect(arg1: new[] {7014}, arg2: true);
-                context.SetEffect(arg1: new[] {7015}, arg2: true);
-                context.SetEffect(arg1: new[] {7016}, arg2: true);
+                context.SetEffect(arg1: new[] {7001, 7010, 7011, 7012, 7013, 7014, 7015, 7016}, arg2: true);
             }
 
             public override void Execute() {
@@ -625,8 +557,7 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetEffect(arg1: new[] {7310}, arg2: true);
                 context.HideGuideSummary(entityId: 25200671);
                 context.SetConversation(arg1: 1, arg2: 201, arg3: "$52000067_QD__MAIN__8$", arg4: 3, arg5: 0);
-                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 10f);
+                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
                 context.SetInteractObject(arg1: new[] {10001073}, arg2: 2);
             }
 
@@ -688,17 +619,8 @@ namespace Maple2.Trigger._52000067_qd {
                 context.MoveUser(arg1: 52000067, arg2: 2);
                 context.SetEffect(arg1: new[] {7005}, arg2: false);
                 context.CameraSelectPath(arg1: new[] {8008, 8009}, arg2: false);
-                context.DestroyMonster(arg1: new[] {
-                    101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 121,
-                    122, 123
-                });
-                context.DestroyMonster(arg1: new[]
-                    {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514});
-                context.DestroyMonster(arg1: new[]
-                    {520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 531, 532, 533, 534, 535, 536, 537, 538, 539});
-                context.DestroyMonster(arg1: new[] {551, 552, 553, 554, 555, 556, 557, 558, 559});
-                context.DestroyMonster(arg1: new[] {801, 802, 803, 804, 805, 806, 807});
-                context.DestroyMonster(arg1: new[] {751, 752, 753, 754, 756, 757, 758, 759, 761, 762});
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 121, 122, 123});
+                context.DestroyMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 531, 532, 533, 534, 535, 536, 537, 538, 539, 551, 552, 553, 554, 555, 556, 557, 558, 559, 801, 802, 803, 804, 805, 806, 807, 751, 752, 753, 754, 756, 757, 758, 759, 761, 762});
             }
 
             public override void Execute() {
@@ -858,12 +780,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Stateending_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {6300, 6301, 6302, 6303, 6304, 6305, 6306, 6307, 6308, 6309, 6310}, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {6311, 6312, 6313, 6314, 6315, 6316, 6317, 6318, 6319, 6320, 6321}, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {6322, 6323, 6324, 6325, 6326, 6327, 6328, 6329, 6330, 6331}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {6300, 6301, 6302, 6303, 6304, 6305, 6306, 6307, 6308, 6309, 6310, 6311, 6312, 6313, 6314, 6315, 6316, 6317, 6318, 6319, 6320, 6321, 6322, 6323, 6324, 6325, 6326, 6327, 6328, 6329, 6330, 6331}, arg2: false);
                 context.RemoveBuff(arg1: 702, arg2: 99910070);
                 context.SetProductionUI(arg1: 9, arg2: "$52000067_QD__MAIN__10$", arg3: false);
             }
@@ -882,8 +799,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Stateending_02_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {851, 852, 853, 854, 855, 856, 857, 858, 859, 860}, arg2: true);
-                context.CreateMonster(arg1: new[] {861, 862, 863, 864, 865, 866, 867, 868, 869, 870}, arg2: true);
+                context.CreateMonster(arg1: new[] {851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870}, arg2: true);
             }
 
             public override void Execute() {

@@ -5,16 +5,8 @@ namespace Maple2.Trigger._02000086_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000159}, arg2: 1);
-                context.SetEffect(
-                    arg1: new[] {
-                        301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319,
-                        320, 321, 322, 323, 324, 325, 326
-                    }, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219,
-                        220, 221, 222, 223, 224, 225, 226
-                    }, arg2: false);
+                context.SetEffect(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326}, arg2: false);
+                context.SetMesh(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226}, arg2: false);
                 context.SetActor(arg1: 501, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 502, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 503, arg2: true, arg3: "Closed");
@@ -37,16 +29,8 @@ namespace Maple2.Trigger._02000086_bf {
             internal State딜레이1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(
-                    arg1: new[] {
-                        301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319,
-                        320, 321, 322, 323, 324, 325, 326
-                    }, arg2: true);
-                context.SetMesh(
-                    arg1: new[] {
-                        201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219,
-                        220, 221, 222, 223, 224, 225, 226
-                    }, arg2: true);
+                context.SetEffect(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326}, arg2: true);
+                context.SetMesh(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226}, arg2: true);
                 context.SetTimer(arg1: "3", arg2: 2);
                 context.SetActor(arg1: 501, arg2: true, arg3: "Opened");
                 context.SetActor(arg1: 502, arg2: true, arg3: "Opened");
@@ -205,16 +189,8 @@ namespace Maple2.Trigger._02000086_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000159}, arg2: 1);
-                context.SetEffect(
-                    arg1: new[] {
-                        301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319,
-                        320, 321, 322, 323, 324, 325, 326
-                    }, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219,
-                        220, 221, 222, 223, 224, 225, 226
-                    }, arg2: false);
+                context.SetEffect(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326}, arg2: false);
+                context.SetMesh(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226}, arg2: false);
                 context.SetActor(arg1: 501, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 502, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 503, arg2: true, arg3: "Closed");

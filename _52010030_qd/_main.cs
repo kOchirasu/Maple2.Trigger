@@ -208,8 +208,7 @@ namespace Maple2.Trigger._52010030_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {2002, 4003}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003470, msg: "$52010030_QD__MAIN__10$", duration: 3000,
-                    align: "Left");
+                context.AddCinematicTalk(npcId: 11003470, msg: "$52010030_QD__MAIN__10$", duration: 3000, align: "Left");
             }
 
             public override void Execute() {

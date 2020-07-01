@@ -7,20 +7,12 @@ namespace Maple2.Trigger._02000099_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105, 3106}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311},
-                    arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3101, 3102, 3103, 3104, 3105, 3106, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -58,8 +50,7 @@ namespace Maple2.Trigger._02000099_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20000992, textId: 20000992, duration: 3000);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -96,8 +87,7 @@ namespace Maple2.Trigger._02000099_bf {
 
             public override void Execute() {
                 if (context.GetUserValue(key: "SetSkillA") == 1) {
-                    context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105, 3106}, arg2: false, arg3: 0, arg4: 0,
-                        arg5: 0f);
+                    context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105, 3106}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new State2차등장대기(context);
                     return;
                 }
@@ -130,8 +120,7 @@ namespace Maple2.Trigger._02000099_bf {
 
             public override void Execute() {
                 if (context.GetUserValue(key: "SetSkillB") == 1) {
-                    context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208}, arg2: false,
-                        arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new State엘리트등장(context);
                     return;
                 }
@@ -150,8 +139,7 @@ namespace Maple2.Trigger._02000099_bf {
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                     context.ShowGuideSummary(entityId: 20000993, textId: 20000993, duration: 5000);
-                    context.SetMesh(arg1: new[] {3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311},
-                        arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new State엘리트처치(context);
                     return;
                 }

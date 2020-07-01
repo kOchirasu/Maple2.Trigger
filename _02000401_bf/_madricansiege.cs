@@ -6,18 +6,11 @@ namespace Maple2.Trigger._02000401_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8001,8002,8003,8004,8005,8006", arg2: true);
-                context.SetAgent(arg1: "8101,8102,8103,8104,8105,8106", arg2: true);
-                context.SetAgent(arg1: "8201,8202,8203,8204,8205,8206", arg2: true);
+                context.SetAgent(arg1: new[] {8001, 8002, 8003, 8004, 8005, 8006, 8101, 8102, 8103, 8104, 8105, 8106, 8201, 8202, 8203, 8204, 8205, 8206}, arg2: true);
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005}, arg2: false);
-                context.CreateMonster(arg1: new[] {2000, 2001}, arg2: false);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3101, 3102, 3103, 3104, 3105, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3801, 3802, 3803, 3804}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 2000, 2001}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetActor(arg1: 201, arg2: false, arg3: "Dead_A");
                 context.SetActor(arg1: 202, arg2: false, arg3: "Dead_A");
@@ -33,8 +26,7 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -50,8 +42,7 @@ namespace Maple2.Trigger._02000401_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000401_BF__MADRICANSIEGE__0$", arg4: 4,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000401_BF__MADRICANSIEGE__0$", arg4: 4, arg5: 0);
             }
 
             public override void Execute() {
@@ -69,8 +60,7 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 5f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 300, arg2: false);
@@ -91,15 +81,14 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetAgent(arg1: "8001,8002,8003,8004,8005,8006", arg2: false);
+                context.SetAgent(arg1: new[] {8001, 8002, 8003, 8004, 8005, 8006}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 1001, arg3: "$02000401_BF__MADRICANSIEGE__1$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
                 if (context.MonsterDead(arg1: new[] {2000, 2001})) {
-                    context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105}, arg2: false, arg3: 0, arg4: 0,
-                        arg5: 5f);
-                    context.SetAgent(arg1: "8101,8102,8103,8104,8105,8106", arg2: false);
+                    context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
+                    context.SetAgent(arg1: new[] {8101, 8102, 8103, 8104, 8105, 8106}, arg2: false);
                     context.MoveNpc(arg1: 1102, arg2: "MS2PatrolData_1001A");
                     context.State = new State1차지원(context);
                     return;
@@ -113,11 +102,7 @@ namespace Maple2.Trigger._02000401_bf {
             internal State1차지원(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(
-                    rangeId: new[] {
-                        2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,
-                        2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030
-                    }, isAutoTargeting: false);
+                context.SpawnNpcRange(rangeId: new[] {2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030}, isAutoTargeting: false);
                 context.CreateMonster(arg1: new[] {2002, 2003, 2004, 2005}, arg2: false);
                 context.SetUserValue(triggerId: 99999101, key: "cannon01", value: 1);
                 context.SetUserValue(triggerId: 99999099, key: "faction01", value: 1);
@@ -154,9 +139,8 @@ namespace Maple2.Trigger._02000401_bf {
             internal State다리건넘(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8201,8202,8203,8204,8205,8206", arg2: false);
-                context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 5f);
+                context.SetAgent(arg1: new[] {8201, 8202, 8203, 8204, 8205, 8206}, arg2: false);
+                context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                 context.SetUserValue(triggerId: 99999102, key: "cannon02", value: 1);
                 context.SetUserValue(triggerId: 99999103, key: "cannon03", value: 1);
                 context.SetUserValue(triggerId: 99999104, key: "cannon04", value: 1);
@@ -279,17 +263,8 @@ namespace Maple2.Trigger._02000401_bf {
                 context.SetUserValue(triggerId: 99999098, key: "DungeonClear", value: 1);
                 context.SetUserValue(triggerId: 99999097, key: "DungeonClear", value: 1);
                 context.SetUserValue(triggerId: 99999096, key: "DungeonClear", value: 1);
-                context.DestroyMonster(
-                    arg1: new[] {
-                        2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017,
-                        2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033,
-                        2034, 2035, 2036, 2099, 2901, 2902, 2903, 2904, 2905
-                    }, arg2: false);
-                context.SpawnNpcRange(
-                    rangeId: new[] {
-                        1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916,
-                        1917, 1918, 1919
-                    }, isAutoTargeting: false);
+                context.DestroyMonster(arg1: new[] {2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2099, 2901, 2902, 2903, 2904, 2905}, arg2: false);
+                context.SpawnNpcRange(rangeId: new[] {1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 1917, 1918, 1919}, isAutoTargeting: false);
                 context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: true);
             }
 

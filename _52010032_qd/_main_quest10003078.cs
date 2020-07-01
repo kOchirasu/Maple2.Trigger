@@ -8,8 +8,7 @@ namespace Maple2.Trigger._52010032_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003078},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003078}, arg3: new byte[] {2})) {
                     context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                     context.State = new StateReady(context);
                     return;
@@ -25,8 +24,7 @@ namespace Maple2.Trigger._52010032_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new[] {301}, arg2: true);
-                context.CreateMonster(arg1: new[] {302}, arg2: true);
+                context.CreateMonster(arg1: new[] {301, 302}, arg2: true);
                 context.MoveUser(arg1: 52010032, arg2: 6001);
             }
 
@@ -63,13 +61,9 @@ namespace Maple2.Trigger._52010032_qd {
                 context.MoveUserPath(arg1: "MS2PatrolData_3005");
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_3003");
                 context.MoveNpc(arg1: 302, arg2: "MS2PatrolData_3004");
-                context.ShowCaption(type: "VerticalCaption", title: "$52010032_QD__MAIN_QUEST10003078__0$",
-                    desc: "$52010032_QD__MAIN_QUEST10003078__1$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 3000, scale: 2f);
-                context.AddBalloonTalk(spawnPointId: 301, msg: "$52010032_QD__MAIN_QUEST10003078__2$", duration: 2000,
-                    delayTick: 1000);
-                context.AddBalloonTalk(spawnPointId: 302, msg: "$52010032_QD__MAIN_QUEST10003078__3$", duration: 2000,
-                    delayTick: 2000);
+                context.ShowCaption(type: "VerticalCaption", title: "$52010032_QD__MAIN_QUEST10003078__0$", desc: "$52010032_QD__MAIN_QUEST10003078__1$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);
+                context.AddBalloonTalk(spawnPointId: 301, msg: "$52010032_QD__MAIN_QUEST10003078__2$", duration: 2000, delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 302, msg: "$52010032_QD__MAIN_QUEST10003078__3$", duration: 2000, delayTick: 2000);
             }
 
             public override void Execute() {

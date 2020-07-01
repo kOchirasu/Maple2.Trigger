@@ -4,8 +4,7 @@ namespace Maple2.Trigger._02000441_bf {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1500, 1501, 1502, 1503, 1504}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 10f);
+                context.SetMesh(arg1: new[] {1500, 1501, 1502, 1503, 1504}, arg2: true, arg3: 0, arg4: 0, arg5: 10f);
             }
 
             public override void Execute() {
@@ -22,8 +21,7 @@ namespace Maple2.Trigger._02000441_bf {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1500, 1501, 1502, 1503, 1504}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 10f);
+                context.SetMesh(arg1: new[] {1500, 1501, 1502, 1503, 1504}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
             }
 
             public override void Execute() { }

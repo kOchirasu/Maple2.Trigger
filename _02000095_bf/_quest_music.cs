@@ -62,9 +62,7 @@ namespace Maple2.Trigger._02000095_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {101}, arg2: true);
-                context.DestroyMonster(arg1: new[] {892});
-                context.DestroyMonster(arg1: new[] {893});
-                context.DestroyMonster(arg1: new[] {894});
+                context.DestroyMonster(arg1: new[] {892, 893, 894});
                 context.SetTimer(arg1: "1", arg2: 10);
             }
 

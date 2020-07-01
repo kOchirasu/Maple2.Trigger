@@ -13,8 +13,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override void Execute() {
                 if (context.GetUserCount(boxId: 101) == 1) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }

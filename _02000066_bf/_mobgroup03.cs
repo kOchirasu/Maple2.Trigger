@@ -4,14 +4,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1501});
-                context.DestroyMonster(arg1: new[] {1502});
-                context.DestroyMonster(arg1: new[] {1503});
-                context.DestroyMonster(arg1: new[] {1504});
-                context.DestroyMonster(arg1: new[] {1505});
-                context.DestroyMonster(arg1: new[] {1506});
-                context.DestroyMonster(arg1: new[] {1507});
-                context.DestroyMonster(arg1: new[] {1508});
+                context.DestroyMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508});
             }
 
             public override void Execute() {
@@ -99,14 +92,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "14", arg2: 14);
-                context.CreateMonster(arg1: new[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508}, arg2: false);
             }
 
             public override void Execute() {
@@ -129,14 +115,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "6", arg2: 6);
-                context.CreateMonster(arg1: new[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508}, arg2: false);
             }
 
             public override void Execute() {
@@ -159,14 +138,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11", arg2: 11);
-                context.CreateMonster(arg1: new[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508}, arg2: false);
             }
 
             public override void Execute() {
@@ -189,14 +161,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11", arg2: 11);
-                context.CreateMonster(arg1: new[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508}, arg2: false);
             }
 
             public override void Execute() {
@@ -219,14 +184,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);
-                context.CreateMonster(arg1: new[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508}, arg2: false);
             }
 
             public override void Execute() {
@@ -249,14 +207,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 10);
-                context.CreateMonster(arg1: new[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508}, arg2: false);
             }
 
             public override void Execute() {
@@ -279,14 +230,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11", arg2: 11);
-                context.CreateMonster(arg1: new[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508}, arg2: false);
             }
 
             public override void Execute() {
@@ -309,14 +253,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);
-                context.CreateMonster(arg1: new[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508}, arg2: false);
             }
 
             public override void Execute() {
@@ -339,14 +276,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 10);
-                context.CreateMonster(arg1: new[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508}, arg2: false);
             }
 
             public override void Execute() {
@@ -369,14 +299,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "14", arg2: 14);
-                context.CreateMonster(arg1: new[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508}, arg2: false);
             }
 
             public override void Execute() {
@@ -399,14 +322,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "7", arg2: 7);
-                context.CreateMonster(arg1: new[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508}, arg2: false);
             }
 
             public override void Execute() {
@@ -429,14 +345,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "13", arg2: 13);
-                context.CreateMonster(arg1: new[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508}, arg2: false);
             }
 
             public override void Execute() {
@@ -458,14 +367,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1501});
-                context.DestroyMonster(arg1: new[] {1502});
-                context.DestroyMonster(arg1: new[] {1503});
-                context.DestroyMonster(arg1: new[] {1504});
-                context.DestroyMonster(arg1: new[] {1505});
-                context.DestroyMonster(arg1: new[] {1506});
-                context.DestroyMonster(arg1: new[] {1507});
-                context.DestroyMonster(arg1: new[] {1508});
+                context.DestroyMonster(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508});
             }
 
             public override void Execute() {

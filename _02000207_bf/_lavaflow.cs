@@ -270,9 +270,7 @@ namespace Maple2.Trigger._02000207_bf {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1001});
-                context.DestroyMonster(arg1: new[] {1002});
-                context.DestroyMonster(arg1: new[] {1003});
+                context.DestroyMonster(arg1: new[] {1001, 1002, 1003});
             }
 
             public override void Execute() { }

@@ -6,14 +6,12 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {6000}, arg2: new[] {50001677},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {6000}, arg2: new[] {50001677}, arg3: new byte[] {2})) {
                     context.State = new StateReturnMapReadyEP6(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {6000}, arg2: new[] {50001677},
-                    arg3: new byte[] {2})) {
+                if (!context.QuestUserDetected(arg1: new[] {6000}, arg2: new[] {50001677}, arg3: new byte[] {2})) {
                     context.State = new State한라봉에이드검사2(context);
                     return;
                 }
@@ -28,14 +26,12 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625}, arg3: new byte[] {2})) {
                     context.State = new StateReturnMapReadyEP5(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625},
-                    arg3: new byte[] {2})) {
+                if (!context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625}, arg3: new byte[] {2})) {
                     context.State = new State한라봉에이드검사3(context);
                     return;
                 }
@@ -50,14 +46,12 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {4000}, arg2: new[] {50001613},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {4000}, arg2: new[] {50001613}, arg3: new byte[] {2})) {
                     context.State = new StateReturnMapReadyEP4(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {4000}, arg2: new[] {50001613},
-                    arg3: new byte[] {2})) {
+                if (!context.QuestUserDetected(arg1: new[] {4000}, arg2: new[] {50001613}, arg3: new byte[] {2})) {
                     context.State = new StateStartCheckEP6(context);
                     return;
                 }
@@ -85,8 +79,7 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateReturnMapReadyEP6_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 9, arg2: "$52000035_QD__EPILOGUE4MOVIE__0$");
             }
@@ -132,8 +125,7 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateReturnMapReadyEP5_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 9, arg2: "$52000035_QD__EPILOGUE4MOVIE__1$");
             }
@@ -179,8 +171,7 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateReturnMapReadyEP4_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 9, arg2: "$52000035_QD__EPILOGUE4MOVIE__2$");
             }
@@ -213,14 +204,12 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {6000}, arg2: new[] {50001677},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {6000}, arg2: new[] {50001677}, arg3: new byte[] {3})) {
                     context.State = new State3번으로보내는스테이트(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {6000}, arg2: new[] {50001677},
-                    arg3: new byte[] {3})) {
+                if (!context.QuestUserDetected(arg1: new[] {6000}, arg2: new[] {50001677}, arg3: new byte[] {3})) {
                     context.State = new StateStartCheckEP5(context);
                     return;
                 }
@@ -235,14 +224,12 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625}, arg3: new byte[] {3})) {
                     context.State = new State2번으로보내는스테이트(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625},
-                    arg3: new byte[] {3})) {
+                if (!context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625}, arg3: new byte[] {3})) {
                     context.State = new StateStartCheckEP4(context);
                     return;
                 }
@@ -257,8 +244,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {4000}, arg2: new[] {50001613},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {4000}, arg2: new[] {50001613}, arg3: new byte[] {3})) {
                     context.State = new StateLoadingDelayA0(context);
                     return;
                 }
@@ -296,16 +282,11 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "Quit", arg2: "exit");
-                context.SetOnetimeEffect(id: 11100104, enable: true,
-                    path: @"BG/Common/Sound/Eff_AMB_DarkCorridor_01.xml");
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 11100104, enable: true, path: @"BG/Common/Sound/Eff_AMB_DarkCorridor_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new[] {900}, arg2: false);
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.CreateMonster(arg1: new[] {200}, arg2: false);
-                context.CreateMonster(arg1: new[] {300}, arg2: false);
+                context.CreateMonster(arg1: new[] {900, 102, 200, 300}, arg2: false);
             }
 
             public override void Execute() {
@@ -342,8 +323,7 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateCameraEffectA0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_EP4_DarkLord");
@@ -366,8 +346,7 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 9, arg2: "$52000035_QD__EPILOGUE4MOVIE__3$", arg3: false);
-                context.CameraSelectPath(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009},
-                    arg2: false);
+                context.CameraSelectPath(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009}, arg2: false);
             }
 
             public override void Execute() {
@@ -384,8 +363,7 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateCameraEffectA2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
             }
@@ -404,8 +382,7 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateCameraEffect1100(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {
@@ -422,10 +399,8 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateCameraEffect1101(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetOnetimeEffect(id: 02100276, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Chapter4_ZoomIn_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 02100276, enable: true, path: @"BG/Common/Sound/Eff_System_Chapter4_ZoomIn_01.xml");
                 context.CameraSelectPath(arg1: new[] {1100, 1101, 1104}, arg2: false);
             }
 
@@ -443,8 +418,7 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateCameraEffect_1103(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
             public override void Execute() {
@@ -461,10 +435,8 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateCameraEffect_1104(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
-                context.SetOnetimeEffect(id: 02100277, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Chapter4_DarkWizard_Appear_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
+                context.SetOnetimeEffect(id: 02100277, enable: true, path: @"BG/Common/Sound/Eff_System_Chapter4_DarkWizard_Appear_01.xml");
                 context.CameraSelectPath(arg1: new[] {1103, 1102, 1105}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 900, arg2: "Bore_A");
             }
@@ -500,8 +472,7 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateCameraEffect_1106(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
             public override void Execute() {
@@ -518,8 +489,7 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateCameraEffectA3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
                 context.CameraSelectPath(arg1: new[] {1200, 1201}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001957, arg3: "$52000035_QD__EPILOGUE4MOVIE__4$", arg4: 7);
                 context.SetSkip(arg1: "Epilogue4Talk1");
@@ -630,8 +600,7 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1915, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001915.xml");
+                context.SetOnetimeEffect(id: 1915, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001915.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE4MOVIE__7$", arg4: 6);
                 context.SetSkip(arg1: "Epilogue4Talk7");
             }
@@ -780,8 +749,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_TurkaToDark");
                 context.CameraSelectPath(arg1: new[] {2102, 2103}, arg2: false);
-                context.SetOnetimeEffect(id: 1916, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001916.xml");
+                context.SetOnetimeEffect(id: 1916, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001916.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE4MOVIE__11$", arg4: 13);
                 context.SetSkip(arg1: "Epilogue4Talk13");
             }
@@ -819,8 +787,7 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {2000, 2001}, arg2: false);
-                context.SetOnetimeEffect(id: 02100278, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Chapter4_DarkWizard_Attack_01.xml");
+                context.SetOnetimeEffect(id: 02100278, enable: true, path: @"BG/Common/Sound/Eff_System_Chapter4_DarkWizard_Attack_01.xml");
                 context.SetNpcEmotionSequence(arg1: 900, arg2: "Attack_01_A");
             }
 
@@ -839,8 +806,7 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.SetTimeScale(enable: true, startScale: 1f, endScale: 0.1f, duration: 2.5f, interpolator: 2);
-                context.SetOnetimeEffect(id: 1917, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001917.xml");
+                context.SetOnetimeEffect(id: 1917, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001917.xml");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_darkReturn");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_TurkaReturn");
             }
@@ -1228,8 +1194,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {1400, 1406}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001851, arg3: "$52000035_QD__EPILOGUE4MOVIE__19$", arg4: 8);
-                context.SetOnetimeEffect(id: 1978, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_01_00001978.xml");
+                context.SetOnetimeEffect(id: 1978, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_01_00001978.xml");
                 context.SetSkip(arg1: "Epilogue4Talk31");
             }
 
@@ -1267,8 +1232,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {1401}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001851, arg3: "$52000035_QD__EPILOGUE4MOVIE__20$", arg4: 6);
-                context.SetOnetimeEffect(id: 1979, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_02_00001979.xml");
+                context.SetOnetimeEffect(id: 1979, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_02_00001979.xml");
                 context.SetSkip(arg1: "Epilogue4Talk33");
             }
 
@@ -1341,12 +1305,10 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk36(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 02100279, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Chapter4_ZoomOut_01.xml");
+                context.SetOnetimeEffect(id: 02100279, enable: true, path: @"BG/Common/Sound/Eff_System_Chapter4_ZoomOut_01.xml");
                 context.CameraSelectPath(arg1: new[] {1403}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001851, arg3: "$52000035_QD__EPILOGUE4MOVIE__22$", arg4: 5);
-                context.SetOnetimeEffect(id: 1980, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_03_00001980.xml");
+                context.SetOnetimeEffect(id: 1980, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_03_00001980.xml");
                 context.SetSkip(arg1: "Epilogue4Talk37");
             }
 
@@ -1421,8 +1383,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {1407}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001851, arg3: "$52000035_QD__EPILOGUE4MOVIE__24$", arg4: 7);
-                context.SetOnetimeEffect(id: 1981, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_04_00001981.xml");
+                context.SetOnetimeEffect(id: 1981, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_04_00001981.xml");
                 context.SetSkip(arg1: "Epilogue4Talk41");
             }
 
@@ -1534,8 +1495,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {1404}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001851, arg3: "$52000035_QD__EPILOGUE4MOVIE__27$", arg4: 5);
-                context.SetOnetimeEffect(id: 1982, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_05_00001982.xml");
+                context.SetOnetimeEffect(id: 1982, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_05_00001982.xml");
                 context.SetSkip(arg1: "Epilogue4Talk47");
             }
 
@@ -1647,8 +1607,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_MadToDark");
                 context.CameraSelectPath(arg1: new[] {1405}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001851, arg3: "$52000035_QD__EPILOGUE4MOVIE__30$", arg4: 5);
-                context.SetOnetimeEffect(id: 1983, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_06_00001983.xml");
+                context.SetOnetimeEffect(id: 1983, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter4_End_06_00001983.xml");
                 context.SetSkip(arg1: "Epilogue4Talk53");
             }
 
@@ -1723,8 +1682,7 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {1100, 1101, 1104}, arg2: false);
-                context.SetOnetimeEffect(id: 1918, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001918.xml");
+                context.SetOnetimeEffect(id: 1918, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001918.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE4MOVIE__32$", arg4: 12);
                 context.SetSkip(arg1: "Epilogue4Talk58");
             }
@@ -1801,8 +1759,7 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {1300, 1301}, arg2: false);
-                context.SetOnetimeEffect(id: 1919, enable: true,
-                    path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001919.xml");
+                context.SetOnetimeEffect(id: 1919, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001919.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE4MOVIE__34$", arg4: 8);
                 context.SetSkip(arg1: "Epilogue4Talk62");
             }
@@ -1950,8 +1907,7 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateEpilogue4Talk69(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
                 context.RemoveCinematicTalk();
             }
 

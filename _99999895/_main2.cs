@@ -138,8 +138,7 @@ namespace Maple2.Trigger._99999895 {
             internal State몬스터스폰대기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "첫 전투에서 승리하셨습니다. 잠시만 기다려주세요 다음전투가 기다리고 있습니다!!",
-                    arg3: 5000);
+                context.SetEventUI(arg1: 1, arg2: "첫 전투에서 승리하셨습니다. 잠시만 기다려주세요 다음전투가 기다리고 있습니다!!", arg3: 5000);
             }
 
             public override void Execute() {
@@ -243,8 +242,7 @@ namespace Maple2.Trigger._99999895 {
             internal State몬스터스폰대기3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "두 번째 전투에서 승리하셨습니다. 잠시만 기다려주세요 마지막 전투가 기다리고 있습니다!!",
-                    arg3: 5000);
+                context.SetEventUI(arg1: 1, arg2: "두 번째 전투에서 승리하셨습니다. 잠시만 기다려주세요 마지막 전투가 기다리고 있습니다!!", arg3: 5000);
             }
 
             public override void Execute() {

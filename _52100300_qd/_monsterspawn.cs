@@ -93,9 +93,7 @@ namespace Maple2.Trigger._52100300_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    111, 112, 113, 114, 115, 121, 122, 123, 124, 125, 131, 132, 133, 134, 135, 141, 142, 143, 144, 145
-                })) {
+                if (context.MonsterDead(arg1: new[] {111, 112, 113, 114, 115, 121, 122, 123, 124, 125, 131, 132, 133, 134, 135, 141, 142, 143, 144, 145})) {
                     context.State = new State종료(context);
                     return;
                 }

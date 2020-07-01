@@ -37,8 +37,7 @@ namespace Maple2.Trigger._02020051_bf {
             internal State준비_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise",
-                    script: "$02020051_BF__104_END_1__0$", duration: 5684, voice: @"ko/Npc/00002201");
+                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", script: "$02020051_BF__104_END_1__0$", duration: 5684, voice: @"ko/Npc/00002201");
             }
 
             public override void Execute() {

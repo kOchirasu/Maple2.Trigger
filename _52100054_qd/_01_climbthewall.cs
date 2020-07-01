@@ -5,11 +5,7 @@ namespace Maple2.Trigger._52100054_qd {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5104, 5105, 5106}, arg2: false);
-                context.SetEffect(arg1: new[] {5200, 5201, 5202, 5203}, arg2: false);
-                context.SetEffect(arg1: new[] {5300, 5301, 5302, 5303, 5304}, arg2: false);
-                context.SetEffect(arg1: new[] {5400, 5401, 5402}, arg2: false);
-                context.SetEffect(arg1: new[] {5500, 5501, 5502, 5503, 5504}, arg2: false);
+                context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5104, 5105, 5106, 5200, 5201, 5202, 5203, 5300, 5301, 5302, 5303, 5304, 5400, 5401, 5402, 5500, 5501, 5502, 5503, 5504}, arg2: false);
                 context.SetLadder(arg1: 510, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 511, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 512, arg2: false, arg3: false, arg4: 0);
@@ -28,12 +24,9 @@ namespace Maple2.Trigger._52100054_qd {
                 context.SetLadder(arg1: 532, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 533, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 534, arg2: false, arg3: false, arg4: 0);
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: true,
-                    arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10002083}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10002084}, arg2: 1);
-                context.DestroyMonster(arg1: new[]
-                    {901, 902, 903, 910, 911, 912, 913, 920, 921, 922, 923, 930, 931, 932, 933, 934});
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {10002083, 10002084}, arg2: 1);
+                context.DestroyMonster(arg1: new[] {901, 902, 903, 910, 911, 912, 913, 920, 921, 922, 923, 930, 931, 932, 933, 934});
             }
 
             public override void Execute() {
@@ -85,12 +78,9 @@ namespace Maple2.Trigger._52100054_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {901, 902, 903}, arg2: false);
-                context.SetConversation(arg1: 1, arg2: 901, arg3: "$52100054_QD__01_CLIMBTHEWALL__0$", arg4: 2,
-                    arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 902, arg3: "$52100054_QD__01_CLIMBTHEWALL__0$", arg4: 2,
-                    arg5: 1);
-                context.SetConversation(arg1: 1, arg2: 903, arg3: "$52100054_QD__01_CLIMBTHEWALL__0$", arg4: 2,
-                    arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 901, arg3: "$52100054_QD__01_CLIMBTHEWALL__0$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 902, arg3: "$52100054_QD__01_CLIMBTHEWALL__0$", arg4: 2, arg5: 1);
+                context.SetConversation(arg1: 1, arg2: 903, arg3: "$52100054_QD__01_CLIMBTHEWALL__0$", arg4: 2, arg5: 1);
             }
 
             public override void Execute() {

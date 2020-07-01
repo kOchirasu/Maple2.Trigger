@@ -46,8 +46,7 @@ namespace Maple2.Trigger._02020111_bf {
                     return;
                 }
 
-                if (context.GetNpcExtraData(spawnPointId: 111, extraDataKey: "brokenShieldRemainTick") >= 8000
-                    && context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002171, level: 1)) {
+                if (context.GetNpcExtraData(spawnPointId: 111, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002171, level: 1)) {
                     context.State = new State던전미션1차_스킬브레이크저지_성공(context);
                     return;
                 }
@@ -134,8 +133,7 @@ namespace Maple2.Trigger._02020111_bf {
                     return;
                 }
 
-                if (context.GetNpcExtraData(spawnPointId: 115, extraDataKey: "brokenShieldRemainTick") >= 8000
-                    && context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002171, level: 1)) {
+                if (context.GetNpcExtraData(spawnPointId: 115, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002171, level: 1)) {
                     context.State = new State던전미션2차_스킬브레이크저지_성공(context);
                     return;
                 }

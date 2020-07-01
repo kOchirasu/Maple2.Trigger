@@ -5,9 +5,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 199, arg2: 99910150);
-                context.SetInteractObject(arg1: new[] {10002058}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10002059}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10002067}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002058, 10002059, 10002067}, arg2: 2);
             }
 
             public override void Execute() {
@@ -64,11 +62,8 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void Execute() {
                 if (context.MonsterDead(arg1: new[] {2901})) {
-                    context.SetInteractObject(arg1: new[] {10002058}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {10002059}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {10002067}, arg2: 0);
-                    context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52100031_QD__FACTION_01__2$", arg4: 5,
-                        arg5: 0);
+                    context.SetInteractObject(arg1: new[] {10002058, 10002059, 10002067}, arg2: 0);
+                    context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52100031_QD__FACTION_01__2$", arg4: 5, arg5: 0);
                     context.RemoveBuff(arg1: 199, arg2: 99910150);
                     context.State = new StateNPC삭제대기(context);
                     return;

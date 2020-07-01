@@ -8,8 +8,7 @@ namespace Maple2.Trigger._52010005_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002822},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002822}, arg3: new byte[] {1})) {
                     context.State = new StateQ3_딜레이01(context);
                     return;
                 }
@@ -44,8 +43,7 @@ namespace Maple2.Trigger._52010005_qd {
                 context.SetProductionUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {601}, arg2: false);
                 context.MoveNpc(arg1: 601, arg2: "MS2PatrolData_6010");
-                context.DestroyMonster(arg1: new[] {401});
-                context.DestroyMonster(arg1: new[] {101});
+                context.DestroyMonster(arg1: new[] {401, 101});
                 context.CreateMonster(arg1: new[] {501}, arg2: false);
             }
 
@@ -348,8 +346,7 @@ namespace Maple2.Trigger._52010005_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002823},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002823}, arg3: new byte[] {2})) {
                     context.State = new StateQ3_유저퇴장01(context);
                     return;
                 }

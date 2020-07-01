@@ -5,10 +5,7 @@ namespace Maple2.Trigger._02000037_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(
-                    arg1: new[]
-                        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25},
-                    arg2: true, arg3: 0, arg4: 0);
+                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25}, arg2: true, arg3: 0, arg4: 0);
             }
 
             public override void Execute() {
@@ -30,10 +27,7 @@ namespace Maple2.Trigger._02000037_bf {
             internal State발판(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[]
-                        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25},
-                    arg2: false, arg3: 0, arg4: 200);
+                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25}, arg2: false, arg3: 0, arg4: 200);
             }
 
             public override void Execute() {
@@ -68,10 +62,7 @@ namespace Maple2.Trigger._02000037_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(
-                    arg1: new[]
-                        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25},
-                    arg2: true, arg3: 0, arg4: 200);
+                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25}, arg2: true, arg3: 0, arg4: 200);
             }
 
             public override void Execute() {

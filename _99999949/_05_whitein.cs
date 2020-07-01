@@ -4,8 +4,7 @@ namespace Maple2.Trigger._99999949 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -80,8 +79,7 @@ namespace Maple2.Trigger._99999949 {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.DebugString(message: "SetOnetimeEffect 재생");
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
@@ -101,8 +99,7 @@ namespace Maple2.Trigger._99999949 {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.DebugString(message: "5초 후에 트리거가 리셋됩니다. 5번 영역 밖으로 나가세요.");
             }

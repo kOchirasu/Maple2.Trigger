@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52000199_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003448},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003448}, arg3: new byte[] {2})) {
                     context.State = new StateCameraEffect01(context);
                     return;
                 }
@@ -20,8 +19,7 @@ namespace Maple2.Trigger._52000199_qd {
             internal StateCameraEffect01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveUser(arg1: 52000199, arg2: 5001);
             }
 
@@ -56,8 +54,7 @@ namespace Maple2.Trigger._52000199_qd {
             internal StateCameraEffect02_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleUI(uiName: "MessengerBrowser,GroupMessengerBrowser,HighlightGameMenu",
-                    visible: false);
+                context.SetVisibleUI(uiName: "MessengerBrowser,GroupMessengerBrowser,HighlightGameMenu", visible: false);
                 context.AddBuff(arg1: new[] {2001}, arg2: 99910403, arg3: 1, arg4: false, arg5: true);
                 context.AddBuff(arg1: new[] {2001}, arg2: 99910403, arg3: 1, arg4: false, arg5: false);
             }
@@ -76,8 +73,7 @@ namespace Maple2.Trigger._52000199_qd {
             internal StateCameraEffect03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }

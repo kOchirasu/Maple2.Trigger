@@ -7,8 +7,7 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
                 context.SetEffect(arg1: new[] {6299}, arg2: false);
                 context.ShadowExpedition(type: "CloseBossGauge");
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -28,10 +27,8 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000109, arg3: 1, arg4: false, arg5: false);
-                context.CreateMonster(arg1: new[] {1805, 1806}, arg2: false);
-                context.CreateMonster(arg1: new[] {1201}, arg2: false);
-                context.SpawnNpcRange(rangeId: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008},
-                    isAutoTargeting: false);
+                context.CreateMonster(arg1: new[] {1805, 1806, 1201}, arg2: false);
+                context.SpawnNpcRange(rangeId: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, isAutoTargeting: false);
                 context.SpawnNpcRange(rangeId: new[] {1101, 1102, 1103, 1104, 1105, 1106}, isAutoTargeting: false);
                 context.SpawnNpcRange(rangeId: new[] {1801, 1802, 1803, 1804}, isAutoTargeting: false);
                 context.SetSkip(arg1: "시작");
@@ -75,8 +72,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State부상병발생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 7000,
-                    script: "$52010038_QD__main__4$", voice: @"ko/Npc/00002057");
+                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 7000, script: "$52010038_QD__main__4$", voice: @"ko/Npc/00002057");
                 context.SetUserValue(triggerId: 993001, key: "WoundStart", value: 1);
             }
 
@@ -134,8 +130,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "연출02종료");
-                context.AddCinematicTalk(npcId: 11003536, illustId: "Neirin_surprise", msg: "$52010038_QD__MAIN__0$",
-                    duration: 7000, align: "right");
+                context.AddCinematicTalk(npcId: 11003536, illustId: "Neirin_surprise", msg: "$52010038_QD__MAIN__0$", duration: 7000, align: "right");
             }
 
             public override void Execute() {
@@ -156,14 +151,12 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetSkip();
-                context.SideNpcTalk(npcId: 11003537, illust: "Mason_closeEye", duration: 7000,
-                    script: "$52010038_QD__main__5$", voice: @"ko/Npc/00002095");
+                context.SideNpcTalk(npcId: 11003537, illust: "Mason_closeEye", duration: 7000, script: "$52010038_QD__main__5$", voice: @"ko/Npc/00002095");
             }
 
             public override void Execute() {
                 if (context.MonsterDead(arg1: new[] {2008, 2009, 2010})) {
-                    context.CreateMonster(arg1: new[] {4020}, arg2: false);
-                    context.CreateMonster(arg1: new[] {4020}, arg2: false);
+                    context.CreateMonster(arg1: new[] {4020, 4020}, arg2: false);
                     context.ResetTimer(arg1: "99");
                     context.State = new State2차폭탄방어완료조건(context);
                     return;
@@ -185,8 +178,7 @@ namespace Maple2.Trigger._52010038_qd {
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 6000,
-                        script: "$52010038_QD__main__6$", voice: @"ko/Npc/00002106");
+                    context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 6000, script: "$52010038_QD__main__6$", voice: @"ko/Npc/00002106");
                     context.State = new State3층이벤트스킵(context);
                     return;
                 }
@@ -254,8 +246,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "보스연출종료");
-                context.AddCinematicTalk(npcId: 11003185, illustId: "ShadowClaw_normal", msg: "$52010038_QD__MAIN__2$",
-                    duration: 5000, align: "left");
+                context.AddCinematicTalk(npcId: 11003185, illustId: "ShadowClaw_normal", msg: "$52010038_QD__MAIN__2$", duration: 5000, align: "left");
             }
 
             public override void Execute() {
@@ -290,8 +281,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State카메라303(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003185, illustId: "ShadowClaw_normal", msg: "$52010038_QD__MAIN__3$",
-                    duration: 5000, align: "left");
+                context.AddCinematicTalk(npcId: 11003185, illustId: "ShadowClaw_normal", msg: "$52010038_QD__MAIN__3$", duration: 5000, align: "left");
                 context.CameraSelect(arg1: 303, arg2: true);
                 context.SetSkip(arg1: "보스연출종료");
             }
@@ -311,8 +301,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6299}, arg2: true);
-                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 7000,
-                    script: "$52010038_QD__main__8$", voice: @"ko/Npc/00002058");
+                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 7000, script: "$52010038_QD__main__8$", voice: @"ko/Npc/00002058");
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);

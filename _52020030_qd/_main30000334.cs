@@ -4,20 +4,16 @@ namespace Maple2.Trigger._52020030_qd {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000334},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000334}, arg3: new byte[] {1})) {
                     context.State = new State연출시작(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000334},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000334}, arg3: new byte[] {2})) {
                     context.State = new State크란츠습격04_01(context);
                     return;
                 }
@@ -276,8 +272,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4028}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003761, msg: "이런 귀중한 크리티아스의 보물을 당신과 같은 외지인에게 넘길 순 없어.",
-                    duration: 3000);
+                context.AddCinematicTalk(npcId: 11003761, msg: "이런 귀중한 크리티아스의 보물을 당신과 같은 외지인에게 넘길 순 없어.", duration: 3000);
             }
 
             public override void Execute() {

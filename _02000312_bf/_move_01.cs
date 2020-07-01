@@ -4,27 +4,12 @@ namespace Maple2.Trigger._02000312_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3001, 3100, 3101, 3102, 3103}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetAgent(arg1: "8000", arg2: true);
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
-                context.SetAgent(arg1: "8004", arg2: true);
-                context.SetAgent(arg1: "8005", arg2: true);
-                context.SetAgent(arg1: "8006", arg2: true);
-                context.SetAgent(arg1: "8007", arg2: true);
-                context.SetBreakable(arg1: new[] {4000}, arg2: false);
-                context.SetBreakable(arg1: new[] {4001}, arg2: false);
-                context.SetBreakable(arg1: new[] {4002}, arg2: false);
-                context.SetBreakable(arg1: new[] {4003}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4001}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4002}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4003}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007}, arg2: true);
+                context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
+                context.SetEffect(arg1: new[] {5003, 5002}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10001034}, arg2: 2);
                 context.SetUserValue(key: "BoardApp", value: 0);
             }
@@ -84,14 +69,8 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetEffect(arg1: new[] {5002}, arg2: true);
                 context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103}, arg2: false, arg3: 100, arg4: 0, arg5: 2f);
                 context.SetInteractObject(arg1: new[] {10001034}, arg2: 2);
-                context.SetBreakable(arg1: new[] {4000}, arg2: true);
-                context.SetBreakable(arg1: new[] {4001}, arg2: true);
-                context.SetBreakable(arg1: new[] {4002}, arg2: true);
-                context.SetBreakable(arg1: new[] {4003}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {4001}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {4002}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {4003}, arg2: true);
+                context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003}, arg2: true);
             }
 
             public override void Execute() {
@@ -108,14 +87,7 @@ namespace Maple2.Trigger._02000312_bf {
             internal StateBoardGoUp02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8000", arg2: false);
-                context.SetAgent(arg1: "8001", arg2: false);
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
-                context.SetAgent(arg1: "8004", arg2: false);
-                context.SetAgent(arg1: "8005", arg2: false);
-                context.SetAgent(arg1: "8006", arg2: false);
-                context.SetAgent(arg1: "8007", arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007}, arg2: false);
             }
 
             public override void Execute() {
@@ -149,14 +121,8 @@ namespace Maple2.Trigger._02000312_bf {
             internal StateBoardDisApp02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {4000}, arg2: false);
-                context.SetBreakable(arg1: new[] {4001}, arg2: false);
-                context.SetBreakable(arg1: new[] {4002}, arg2: false);
-                context.SetBreakable(arg1: new[] {4003}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4001}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4002}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4003}, arg2: false);
+                context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
             }
 
             public override void Execute() {

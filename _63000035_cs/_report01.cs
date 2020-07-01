@@ -4,10 +4,7 @@ namespace Maple2.Trigger._63000035_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
-                context.SetEffect(arg1: new[] {6001}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001, 6000, 6001}, arg2: false);
                 context.SetSound(arg1: 10000, arg2: false);
                 context.SetSound(arg1: 10001, arg2: false);
                 context.SetSound(arg1: 10002, arg2: false);

@@ -6,8 +6,7 @@ namespace Maple2.Trigger._99999949 {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
-                context.SetOnetimeEffect(id: 3, enable: false,
-                    path: @"BG/Common/Eff_co_targetBox_test_99999949_01.xml");
+                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/Eff_co_targetBox_test_99999949_01.xml");
             }
 
             public override void Execute() {
@@ -80,8 +79,7 @@ namespace Maple2.Trigger._99999949 {
 
             public override void OnEnter() {
                 context.SetTimeScale(enable: true, startScale: 0.2f, endScale: 1f, duration: 2f, interpolator: 2);
-                context.SetOnetimeEffect(id: 3, enable: false,
-                    path: @"BG/Common/Eff_co_targetBox_test_99999949_01.xml");
+                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/Eff_co_targetBox_test_99999949_01.xml");
                 context.DebugString(message: "5초 후에 트리거가 리셋됩니다. 3번 영역 밖으로 나가세요.");
             }
 

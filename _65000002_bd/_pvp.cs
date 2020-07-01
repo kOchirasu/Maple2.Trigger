@@ -6,8 +6,7 @@ namespace Maple2.Trigger._65000002_bd {
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetTimer(arg1: "60", arg2: 60, arg3: false, arg4: true);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602}, arg2: false);
             }
 
             public override void Execute() {

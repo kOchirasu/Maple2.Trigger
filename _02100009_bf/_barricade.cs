@@ -194,16 +194,12 @@ namespace Maple2.Trigger._02100009_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetEffect(arg1: new[] {7002}, arg2: false);
-                context.SetEffect(arg1: new[] {7003}, arg2: false);
-                context.SetEffect(arg1: new[] {7004}, arg2: false);
+                context.SetEffect(arg1: new[] {7001, 7002, 7003, 7004}, arg2: false);
                 context.SetMesh(arg1: new[] {8000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.MonsterInCombat(arg1: new[] {100000001})
-                    || context.MonsterInCombat(arg1: new[] {100000002})) {
+                if (context.MonsterInCombat(arg1: new[] {100000001}) || context.MonsterInCombat(arg1: new[] {100000002})) {
                     context.State = new State유저감지(context);
                     return;
                 }
@@ -249,10 +245,7 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {8000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {7001}, arg2: true);
-                context.SetEffect(arg1: new[] {7002}, arg2: true);
-                context.SetEffect(arg1: new[] {7003}, arg2: true);
-                context.SetEffect(arg1: new[] {7004}, arg2: true);
+                context.SetEffect(arg1: new[] {7001, 7002, 7003, 7004}, arg2: true);
             }
 
             public override void Execute() {
@@ -270,10 +263,7 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {8000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetEffect(arg1: new[] {7002}, arg2: false);
-                context.SetEffect(arg1: new[] {7003}, arg2: false);
-                context.SetEffect(arg1: new[] {7004}, arg2: false);
+                context.SetEffect(arg1: new[] {7001, 7002, 7003, 7004}, arg2: false);
             }
 
             public override void Execute() {

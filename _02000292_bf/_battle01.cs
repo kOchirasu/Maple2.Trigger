@@ -4,16 +4,7 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {1001});
-                context.DestroyMonster(arg1: new[] {1002});
-                context.DestroyMonster(arg1: new[] {1003});
-                context.DestroyMonster(arg1: new[] {1004});
-                context.DestroyMonster(arg1: new[] {1005});
-                context.DestroyMonster(arg1: new[] {2001});
-                context.DestroyMonster(arg1: new[] {2002});
-                context.DestroyMonster(arg1: new[] {2003});
-                context.DestroyMonster(arg1: new[] {2004});
-                context.DestroyMonster(arg1: new[] {2005});
+                context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 2001, 2002, 2003, 2004, 2005});
             }
 
             public override void Execute() {
@@ -30,11 +21,7 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateMobSpawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1001}, arg2: false);
-                context.CreateMonster(arg1: new[] {1002}, arg2: false);
-                context.CreateMonster(arg1: new[] {1003}, arg2: false);
-                context.CreateMonster(arg1: new[] {1004}, arg2: false);
-                context.CreateMonster(arg1: new[] {1005}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005}, arg2: false);
             }
 
             public override void Execute() {

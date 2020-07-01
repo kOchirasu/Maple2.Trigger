@@ -5,10 +5,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {2011, 2012, 2013, 2014}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: false);
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
@@ -40,12 +37,8 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__10_RANDOMPORTAL__0$", arg3: 3000,
-                    arg4: "0");
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
-                context.SetEffect(arg1: new[] {5004}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__10_RANDOMPORTAL__0$", arg3: 3000, arg4: "0");
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: true);
             }
 
             public override void Execute() {
@@ -349,10 +342,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetActor(arg1: 4102, arg2: true, arg3: "ry_functobj_door_B01_off");
                 context.SetActor(arg1: 4103, arg2: true, arg3: "ry_functobj_door_B01_off");
                 context.SetActor(arg1: 4104, arg2: true, arg3: "ry_functobj_door_B01_off");
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: false);
             }
 
             public override void Execute() {
@@ -439,8 +429,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateEndGame01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__10_RANDOMPORTAL__1$", arg3: 3000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__10_RANDOMPORTAL__1$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {

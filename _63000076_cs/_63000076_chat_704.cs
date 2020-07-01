@@ -19,8 +19,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State704잡담_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 107, msg: "$63000076_CS__63000076_CHAT_704__0$", duration: 2000,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 107, msg: "$63000076_CS__63000076_CHAT_704__0$", duration: 2000, delayTick: 0);
             }
 
             public override void Execute() {
@@ -37,8 +36,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State704잡담_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 105, msg: "$63000076_CS__63000076_CHAT_704__1$", duration: 2500,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 105, msg: "$63000076_CS__63000076_CHAT_704__1$", duration: 2500, delayTick: 0);
             }
 
             public override void Execute() {

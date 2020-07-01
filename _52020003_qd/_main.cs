@@ -23,44 +23,37 @@ namespace Maple2.Trigger._52020003_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001760},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001760}, arg3: new byte[] {3})) {
                     context.State = new State기본(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001760},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001760}, arg3: new byte[] {2})) {
                     context.State = new State제이든등장_완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001760},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001760}, arg3: new byte[] {1})) {
                     context.State = new State제이든등장_완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001759},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001759}, arg3: new byte[] {3})) {
                     context.State = new State제이든등장_완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001759},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001759}, arg3: new byte[] {2})) {
                     context.State = new State제이든등장_완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001759},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001759}, arg3: new byte[] {1})) {
                     context.State = new State흑성회전투_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001758},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001758}, arg3: new byte[] {3})) {
                     context.State = new State기본(context);
                     return;
                 }
@@ -201,8 +194,7 @@ namespace Maple2.Trigger._52020003_qd {
             internal State요원등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003666, msg: @"아주 멍청하지는 않구나.\n내 존재를 눈치채다니.", duration: 3000,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 11003666, msg: @"아주 멍청하지는 않구나.\n내 존재를 눈치채다니.", duration: 3000, align: "left");
             }
 
             public override void Execute() {
@@ -239,8 +231,7 @@ namespace Maple2.Trigger._52020003_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003666, msg: @"그건 알 필요 없고, 서로 바쁜데 시간 끌지 말자고~\n찾아낸 물건이 있으면 순순히 넘겨라.",
-                    duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003666, msg: @"그건 알 필요 없고, 서로 바쁜데 시간 끌지 말자고~\n찾아낸 물건이 있으면 순순히 넘겨라.", duration: 3000, align: "left");
             }
 
             public override void Execute() {
@@ -258,8 +249,7 @@ namespace Maple2.Trigger._52020003_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
-                context.AddCinematicTalk(npcId: 0, msg: @"그런 건 없고… 오히려 듣고 싶은 이야기가 많은데.\n여기서 뭘 하고 있었던 건지 말해 보라고.",
-                    duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 0, msg: @"그런 건 없고… 오히려 듣고 싶은 이야기가 많은데.\n여기서 뭘 하고 있었던 건지 말해 보라고.", duration: 3000, align: "left");
                 context.SetPcEmotionLoop(arg1: "Emotion_Cinematic_ShakeHead_A", arg2: 3000f);
             }
 
@@ -278,8 +268,7 @@ namespace Maple2.Trigger._52020003_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003666, msg: @"그럴 시간 없어. 우린 아주 바쁘거든.\n얘들아! 제압하자!", duration: 3000,
-                    align: "left");
+                context.AddCinematicTalk(npcId: 11003666, msg: @"그럴 시간 없어. 우린 아주 바쁘거든.\n얘들아! 제압하자!", duration: 3000, align: "left");
                 context.CreateMonster(arg1: new[] {111, 112}, arg2: false);
             }
 

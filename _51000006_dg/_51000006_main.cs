@@ -8,11 +8,7 @@ namespace Maple2.Trigger._51000006_dg {
             public override void OnEnter() {
                 context.MoveUser(arg1: 51000006, arg2: 10);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {610}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602, 603, 604, 610}, arg2: false);
                 context.SetActor(arg1: 611, arg2: false, arg3: "0", arg4: false, arg5: false);
                 context.SetActor(arg1: 612, arg2: false, arg3: "0", arg4: false, arg5: false);
                 context.SetActor(arg1: 613, arg2: false, arg3: "0", arg4: false, arg5: false);
@@ -164,8 +160,7 @@ namespace Maple2.Trigger._51000006_dg {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "BlackbeanThreeTwoOne_start");
-                context.WriteLog(arg1: "ThreeTwoOne_log", arg2: 9000, arg3: "char_event",
-                    arg5: "BlackbeanThreeTwoOnegamestart");
+                context.WriteLog(arg1: "ThreeTwoOne_log", arg2: 9000, arg3: "char_event", arg5: "BlackbeanThreeTwoOnegamestart");
                 context.ArcadeThreeTwoOne3(type: "StartGame", lifeCount: 5, initScore: 10000);
                 context.SetUserValue(triggerId: 4001, key: "Fail", value: 1);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$51000006_DG__51000006_MAIN__4$", duration: 3000);
@@ -186,11 +181,7 @@ namespace Maple2.Trigger._51000006_dg {
             internal State라운드준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {610}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602, 603, 604, 610}, arg2: false);
                 context.SetActor(arg1: 611, arg2: false, arg3: "0", arg4: false, arg5: false);
                 context.SetActor(arg1: 612, arg2: false, arg3: "0", arg4: false, arg5: false);
                 context.SetActor(arg1: 613, arg2: false, arg3: "0", arg4: false, arg5: false);
@@ -327,18 +318,14 @@ namespace Maple2.Trigger._51000006_dg {
             public override void OnEnter() {
                 context.InitNpcRotation(arg1: new[] {101});
                 context.SetPcRotation(rotation: new Vector3(0f, 0f, 0f));
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602, 603, 604}, arg2: false);
             }
 
             public override void Execute() {
                 if (context.GetUserValue(key: "ThreeTwoOneResult") == 1) {
                     context.SetNpcEmotionSequence(arg1: 101, arg2: "Dance_C_Ride", arg3: 3300);
                     context.SetPcEmotionLoop(arg1: "Emotion_Dance_E", arg2: 3300f);
-                    context.SetEffect(arg1: new[] {602}, arg2: true);
-                    context.SetEffect(arg1: new[] {604}, arg2: true);
+                    context.SetEffect(arg1: new[] {602, 604}, arg2: true);
                     context.AddBalloonTalk(spawnPointId: 101, msg: "$51000006_DG__51000006_MAIN__6$", duration: 3300);
                     context.AddBalloonTalk(msg: "$51000006_DG__51000006_MAIN__7$", duration: 3300);
                     context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Correct_01");
@@ -348,9 +335,7 @@ namespace Maple2.Trigger._51000006_dg {
 
                 if (context.GetUserValue(key: "ThreeTwoOneResult") == 0) {
                     context.SetNpcEmotionSequence(arg1: 101, arg2: "Event_Happy_A", arg3: 3300);
-                    context.SetEffect(arg1: new[] {601}, arg2: true);
-                    context.SetEffect(arg1: new[] {603}, arg2: true);
-                    context.SetEffect(arg1: new[] {610}, arg2: true);
+                    context.SetEffect(arg1: new[] {601, 603, 610}, arg2: true);
                     context.SetActor(arg1: 611, arg2: true, arg3: "Run_A");
                     context.SetActor(arg1: 612, arg2: true, arg3: "Run_A");
                     context.SetActor(arg1: 613, arg2: true, arg3: "Run_A");

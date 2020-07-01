@@ -12,15 +12,13 @@ namespace Maple2.Trigger._02000380_bf {
                 context.SetActor(arg1: 4007, arg2: true, arg3: "ry_functobj_door_A01_On");
                 context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {2005, 2006, 2007, 2008}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {2010, 2011, 2012}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {2020, 2021, 2022, 2023}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {2010, 2011, 2012, 2020, 2021, 2022, 2023}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
             }
 
             public override void Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }

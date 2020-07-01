@@ -19,12 +19,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal State대기시간(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {706}, arg2: false);
-                context.SetSkill(arg1: new[] {707}, arg2: false);
-                context.SetSkill(arg1: new[] {708}, arg2: false);
-                context.SetSkill(arg1: new[] {709}, arg2: false);
-                context.SetSkill(arg1: new[] {710}, arg2: false);
-                context.SetSkill(arg1: new[] {711}, arg2: false);
+                context.SetSkill(arg1: new[] {706, 707, 708, 709, 710, 711}, arg2: false);
             }
 
             public override void Execute() {

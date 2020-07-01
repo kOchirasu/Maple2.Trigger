@@ -4,10 +4,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetEffect(arg1: new[] {5005}, arg2: false);
-                context.SetEffect(arg1: new[] {5006}, arg2: false);
+                context.SetEffect(arg1: new[] {5003, 5004, 5005, 5006}, arg2: false);
             }
 
             public override void Execute() {
@@ -40,9 +37,7 @@ namespace Maple2.Trigger._52020010_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5003}, arg2: true);
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
-                context.CreateMonster(arg1: new[] {202}, arg2: true);
-                context.CreateMonster(arg1: new[] {203}, arg2: true);
+                context.CreateMonster(arg1: new[] {201, 202, 203}, arg2: true);
             }
 
             public override void Execute() {
@@ -150,8 +145,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 201, msg: "여보, 내 딸... 모두 미안하오...", duration: 2000,
-                    delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 201, msg: "여보, 내 딸... 모두 미안하오...", duration: 2000, delayTick: 1000);
             }
 
             public override void Execute() {
@@ -186,13 +180,8 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetEffect(arg1: new[] {5005}, arg2: false);
-                context.SetEffect(arg1: new[] {5006}, arg2: false);
-                context.DestroyMonster(arg1: new[] {201});
-                context.DestroyMonster(arg1: new[] {202});
-                context.DestroyMonster(arg1: new[] {203});
+                context.SetEffect(arg1: new[] {5003, 5004, 5005, 5006}, arg2: false);
+                context.DestroyMonster(arg1: new[] {201, 202, 203});
             }
 
             public override void Execute() { }

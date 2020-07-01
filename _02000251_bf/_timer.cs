@@ -4,9 +4,7 @@ namespace Maple2.Trigger._02000251_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {3001}, arg2: false);
-                context.SetEffect(arg1: new[] {3002}, arg2: false);
-                context.SetEffect(arg1: new[] {3003}, arg2: false);
+                context.SetEffect(arg1: new[] {3001, 3002, 3003}, arg2: false);
             }
 
             public override void Execute() {

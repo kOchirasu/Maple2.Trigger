@@ -16,8 +16,7 @@ namespace Maple2.Trigger._02000345_bf {
 
             public override void Execute() {
                 if (context.GetUserCount(boxId: 60001) == 1) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
 
@@ -331,8 +330,7 @@ namespace Maple2.Trigger._02000345_bf {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000345_BF__MAIN__18$", arg3: 3000);
-                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210}, arg2: true,
-                    arg3: 0);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210}, arg2: true, arg3: 0);
             }
 
             public override void Execute() {
@@ -516,8 +514,7 @@ namespace Maple2.Trigger._02000345_bf {
             public override void OnEnter() {
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
                 context.SetEventUI(arg1: 7, arg2: "$02000345_BF__MAIN1__1$", arg3: 3000);
-                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009}, arg2: true,
-                    arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009}, arg2: true, arg4: 0, arg5: 10f);
                 context.SetMesh(arg1: new[] {6010}, arg2: false, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000791}, arg2: 1);
                 context.SetTimer(arg1: "5", arg2: 5);

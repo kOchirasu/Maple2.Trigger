@@ -6,49 +6,9 @@ namespace Maple2.Trigger._52020026_qd {
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016,
-                        1017, 1018
-                    }, arg2: false);
-                context.SetAgent(arg1: "9001", arg2: true);
-                context.SetAgent(arg1: "9002", arg2: true);
-                context.SetAgent(arg1: "9003", arg2: true);
-                context.SetAgent(arg1: "9004", arg2: true);
-                context.SetAgent(arg1: "9005", arg2: true);
-                context.SetAgent(arg1: "9006", arg2: true);
-                context.SetAgent(arg1: "9007", arg2: true);
-                context.SetAgent(arg1: "9008", arg2: true);
-                context.SetAgent(arg1: "9009", arg2: true);
-                context.SetAgent(arg1: "9010", arg2: true);
-                context.SetAgent(arg1: "9011", arg2: true);
-                context.SetAgent(arg1: "9012", arg2: true);
-                context.SetAgent(arg1: "9013", arg2: true);
-                context.SetAgent(arg1: "9014", arg2: true);
-                context.SetAgent(arg1: "9015", arg2: true);
-                context.SetAgent(arg1: "9016", arg2: true);
-                context.SetAgent(arg1: "9017", arg2: true);
-                context.SetAgent(arg1: "9018", arg2: true);
-                context.SetAgent(arg1: "9019", arg2: true);
-                context.SetAgent(arg1: "9020", arg2: true);
-                context.SetAgent(arg1: "9021", arg2: true);
-                context.SetAgent(arg1: "9022", arg2: true);
-                context.SetAgent(arg1: "9023", arg2: true);
-                context.SetAgent(arg1: "9024", arg2: true);
-                context.SetAgent(arg1: "9025", arg2: true);
-                context.SetAgent(arg1: "9026", arg2: true);
-                context.SetAgent(arg1: "9027", arg2: true);
-                context.SetAgent(arg1: "9028", arg2: true);
-                context.SetAgent(arg1: "9029", arg2: true);
-                context.SetAgent(arg1: "9030", arg2: true);
-                context.SetAgent(arg1: "9031", arg2: true);
-                context.SetAgent(arg1: "9032", arg2: true);
-                context.SetInteractObject(arg1: new[] {10001320}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001321}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001322}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001323}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001324}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001325}, arg2: 2);
+                context.SetMesh(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018}, arg2: false);
+                context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028, 9029, 9030, 9031, 9032}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10001320, 10001321, 10001322, 10001323, 10001324, 10001325}, arg2: 2);
             }
 
             public override void Execute() {
@@ -150,8 +110,7 @@ namespace Maple2.Trigger._52020026_qd {
             internal State3층(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {103}, arg2: false);
-                context.CreateMonster(arg1: new[] {104}, arg2: false);
+                context.CreateMonster(arg1: new[] {103, 104}, arg2: false);
                 context.SetMesh(arg1: new[] {1004, 1005, 1006}, arg2: true, arg3: 0, arg4: 500, arg5: 3f);
             }
 
@@ -186,8 +145,7 @@ namespace Maple2.Trigger._52020026_qd {
             internal State4층(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {105}, arg2: false);
-                context.CreateMonster(arg1: new[] {106}, arg2: false);
+                context.CreateMonster(arg1: new[] {105, 106}, arg2: false);
                 context.SetMesh(arg1: new[] {1007, 1008, 1009}, arg2: true, arg3: 0, arg4: 500, arg5: 3f);
             }
 
@@ -240,22 +198,7 @@ namespace Maple2.Trigger._52020026_qd {
             internal State5층_벽부수기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "9001", arg2: false);
-                context.SetAgent(arg1: "9002", arg2: false);
-                context.SetAgent(arg1: "9003", arg2: false);
-                context.SetAgent(arg1: "9004", arg2: false);
-                context.SetAgent(arg1: "9005", arg2: false);
-                context.SetAgent(arg1: "9006", arg2: false);
-                context.SetAgent(arg1: "9007", arg2: false);
-                context.SetAgent(arg1: "9008", arg2: false);
-                context.SetAgent(arg1: "9009", arg2: false);
-                context.SetAgent(arg1: "9010", arg2: false);
-                context.SetAgent(arg1: "9011", arg2: false);
-                context.SetAgent(arg1: "9012", arg2: false);
-                context.SetAgent(arg1: "9013", arg2: false);
-                context.SetAgent(arg1: "9014", arg2: false);
-                context.SetAgent(arg1: "9015", arg2: false);
-                context.SetAgent(arg1: "9016", arg2: false);
+                context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016}, arg2: false);
                 context.CreateMonster(arg1: new[] {108}, arg2: true);
                 context.SetSkill(arg1: new[] {1}, arg2: true);
             }
@@ -291,8 +234,7 @@ namespace Maple2.Trigger._52020026_qd {
             internal State6층(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {109}, arg2: false);
-                context.CreateMonster(arg1: new[] {110}, arg2: false);
+                context.CreateMonster(arg1: new[] {109, 110}, arg2: false);
                 context.SetMesh(arg1: new[] {1013, 1014, 1015}, arg2: true, arg3: 0, arg4: 500, arg5: 3f);
             }
 
@@ -310,22 +252,7 @@ namespace Maple2.Trigger._52020026_qd {
             internal State6층_벽부수기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "9017", arg2: false);
-                context.SetAgent(arg1: "9018", arg2: false);
-                context.SetAgent(arg1: "9019", arg2: false);
-                context.SetAgent(arg1: "9020", arg2: false);
-                context.SetAgent(arg1: "9021", arg2: false);
-                context.SetAgent(arg1: "9022", arg2: false);
-                context.SetAgent(arg1: "9023", arg2: false);
-                context.SetAgent(arg1: "9024", arg2: false);
-                context.SetAgent(arg1: "9025", arg2: false);
-                context.SetAgent(arg1: "9026", arg2: false);
-                context.SetAgent(arg1: "9027", arg2: false);
-                context.SetAgent(arg1: "9028", arg2: false);
-                context.SetAgent(arg1: "9029", arg2: false);
-                context.SetAgent(arg1: "9030", arg2: false);
-                context.SetAgent(arg1: "9031", arg2: false);
-                context.SetAgent(arg1: "9032", arg2: false);
+                context.SetAgent(arg1: new[] {9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028, 9029, 9030, 9031, 9032}, arg2: false);
                 context.CreateMonster(arg1: new[] {111}, arg2: true);
                 context.SetSkill(arg1: new[] {2}, arg2: true);
             }

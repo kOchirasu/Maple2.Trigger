@@ -4,13 +4,11 @@ namespace Maple2.Trigger._52000005_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {103}, arg2: true);
-                context.CreateMonster(arg1: new[] {202}, arg2: true);
+                context.CreateMonster(arg1: new[] {103, 202}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002781},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002781}, arg3: new byte[] {1})) {
                     context.State = new State딜레이01(context);
                     return;
                 }
@@ -24,8 +22,7 @@ namespace Maple2.Trigger._52000005_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 4);
-                context.DestroyMonster(arg1: new[] {103});
-                context.DestroyMonster(arg1: new[] {202});
+                context.DestroyMonster(arg1: new[] {103, 202});
                 context.SetTimer(arg1: "1", arg2: 2);
             }
 
@@ -100,8 +97,7 @@ namespace Maple2.Trigger._52000005_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11000001, arg3: "$52000005_QD__ACT01__1$", arg4: 3);
-                context.CreateMonster(arg1: new[] {101}, arg2: true);
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {101, 201}, arg2: true);
                 context.SetSkip(arg1: "여제입장01");
             }
 

@@ -68,8 +68,7 @@ namespace Maple2.Trigger._99999926 {
             internal StateBattle03A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {421, 422, 423, 424, 425}, arg2: false);
-                context.CreateMonster(arg1: new[] {441}, arg2: false);
+                context.CreateMonster(arg1: new[] {421, 422, 423, 424, 425, 441}, arg2: false);
             }
 
             public override void Execute() {
@@ -86,8 +85,7 @@ namespace Maple2.Trigger._99999926 {
             internal StateBattle03B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {411, 412, 413, 414, 415}, arg2: false);
-                context.CreateMonster(arg1: new[] {441}, arg2: false);
+                context.CreateMonster(arg1: new[] {411, 412, 413, 414, 415, 441}, arg2: false);
             }
 
             public override void Execute() {

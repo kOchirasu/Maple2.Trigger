@@ -4,8 +4,7 @@ namespace Maple2.Trigger._52010001_qd {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000871}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000910}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000871, 10000910}, arg2: 1);
                 context.SetActor(arg1: 1001, arg2: true, arg3: "Down_Idle_A");
             }
 

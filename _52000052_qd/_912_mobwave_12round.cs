@@ -39,8 +39,7 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$52000052_QD__901_MOBWAVE_01ROUND__0$", arg3: 6000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$52000052_QD__901_MOBWAVE_01ROUND__0$", arg3: 6000, arg4: "0");
                 context.SetUserValue(key: "WaveTime", value: 1);
                 context.SetEffect(arg1: new[] {5112}, arg2: true);
                 context.CreateMonster(arg1: new[] {91200, 91202, 91204, 91206, 91208}, arg2: false);
@@ -1059,16 +1058,7 @@ namespace Maple2.Trigger._52000052_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {
-                    91200, 91201, 91202, 91203, 91204, 91205, 91206, 91207, 91208, 91209, 91210, 91211, 91212, 91213,
-                    91214, 91215, 91216, 91217, 91218, 91219, 91220, 91221, 91222, 91223, 91224, 91225, 91226, 91227,
-                    91228, 91229, 91230, 91231, 91232, 91233, 91234, 91235, 91236, 91237, 91238, 91239, 91240, 91241,
-                    91242, 91243, 91244, 91245, 91246, 91247, 91248, 91249, 91250, 91251, 91252, 91253, 91254, 91255,
-                    91256, 91257, 91258, 91259, 91260, 91261, 91262, 91263, 91264, 91265, 91266, 91267, 91268, 91269,
-                    91270, 91271, 91272, 91273, 91274, 91275, 91276, 91277, 91278, 91279, 91280, 91281, 91282, 91283,
-                    91284, 91285, 91286, 91287, 91288, 91289, 91290, 91291, 91292, 91293, 91294, 91295, 91296, 91297,
-                    91298, 91299
-                })) {
+                if (context.MonsterDead(arg1: new[] {91200, 91201, 91202, 91203, 91204, 91205, 91206, 91207, 91208, 91209, 91210, 91211, 91212, 91213, 91214, 91215, 91216, 91217, 91218, 91219, 91220, 91221, 91222, 91223, 91224, 91225, 91226, 91227, 91228, 91229, 91230, 91231, 91232, 91233, 91234, 91235, 91236, 91237, 91238, 91239, 91240, 91241, 91242, 91243, 91244, 91245, 91246, 91247, 91248, 91249, 91250, 91251, 91252, 91253, 91254, 91255, 91256, 91257, 91258, 91259, 91260, 91261, 91262, 91263, 91264, 91265, 91266, 91267, 91268, 91269, 91270, 91271, 91272, 91273, 91274, 91275, 91276, 91277, 91278, 91279, 91280, 91281, 91282, 91283, 91284, 91285, 91286, 91287, 91288, 91289, 91290, 91291, 91292, 91293, 91294, 91295, 91296, 91297, 91298, 91299})) {
                     context.State = new StateDefenceSucess02(context);
                     return;
                 }
@@ -1108,10 +1098,8 @@ namespace Maple2.Trigger._52000052_qd {
                 context.DestroyMonster(arg1: new[] {1012});
                 context.CreateMonster(arg1: new[] {1112}, arg2: false);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$52000052_QD__901_MOBWAVE_01ROUND__1$", arg3: 4000,
-                    arg4: "0");
-                context.SetConversation(arg1: 1, arg2: 1112, arg3: "$52000052_QD__901_MOBWAVE_01ROUND__2$", arg4: 4,
-                    arg5: 4);
+                context.SetEventUI(arg1: 1, arg2: "$52000052_QD__901_MOBWAVE_01ROUND__1$", arg3: 4000, arg4: "0");
+                context.SetConversation(arg1: 1, arg2: 1112, arg3: "$52000052_QD__901_MOBWAVE_01ROUND__2$", arg4: 4, arg5: 4);
             }
 
             public override void Execute() {
@@ -1145,8 +1133,7 @@ namespace Maple2.Trigger._52000052_qd {
             public override void OnEnter() {
                 context.SetUserValue(key: "PenaltyFinish", value: 0);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$52000052_QD__901_MOBWAVE_01ROUND__3$", arg3: 4000,
-                    arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$52000052_QD__901_MOBWAVE_01ROUND__3$", arg3: 4000, arg4: "0");
                 context.DestroyMonster(arg1: new[] {1112});
                 context.CreateMonster(arg1: new[] {1012}, arg2: false);
                 context.RemoveBalloonTalk(spawnPointId: 1112);

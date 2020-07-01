@@ -39,8 +39,7 @@ namespace Maple2.Trigger._99999840 {
             internal State쫄몹1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"방해쫄몹1이 생성되었습니다.\n모두 처치하기 전까지는 자원을 넣을 수 없습니다.",
-                    arg3: 5000);
+                context.SetEventUI(arg1: 1, arg2: @"방해쫄몹1이 생성되었습니다.\n모두 처치하기 전까지는 자원을 넣을 수 없습니다.", arg3: 5000);
             }
 
             public override void Execute() {
@@ -67,8 +66,7 @@ namespace Maple2.Trigger._99999840 {
             internal State쫄몹2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"방해쫄몹2가 생성되었습니다.\n모두 처치하기 전까지는 자원을 넣을 수 없습니다.",
-                    arg3: 5000);
+                context.SetEventUI(arg1: 1, arg2: @"방해쫄몹2가 생성되었습니다.\n모두 처치하기 전까지는 자원을 넣을 수 없습니다.", arg3: 5000);
             }
 
             public override void Execute() {
@@ -95,8 +93,7 @@ namespace Maple2.Trigger._99999840 {
             internal State쫄몹3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"방해쫄몹3이 생성되었습니다.\n모두 처치하기 전까지는 자원을 넣을 수 없습니다.",
-                    arg3: 5000);
+                context.SetEventUI(arg1: 1, arg2: @"방해쫄몹3이 생성되었습니다.\n모두 처치하기 전까지는 자원을 넣을 수 없습니다.", arg3: 5000);
             }
 
             public override void Execute() {

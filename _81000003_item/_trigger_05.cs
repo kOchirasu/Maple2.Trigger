@@ -5,10 +5,7 @@ namespace Maple2.Trigger._81000003_item {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000214}, arg2: 1);
-                context.SetMesh(
-                    arg1: new[]
-                        {551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568},
-                    arg2: true);
+                context.SetMesh(arg1: new[] {551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568}, arg2: true);
             }
 
             public override void Execute() {
@@ -26,10 +23,7 @@ namespace Maple2.Trigger._81000003_item {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "12", arg2: 200);
-                context.SetMesh(
-                    arg1: new[]
-                        {551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568},
-                    arg2: false);
+                context.SetMesh(arg1: new[] {551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568}, arg2: false);
             }
 
             public override void Execute() {

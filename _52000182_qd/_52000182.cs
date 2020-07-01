@@ -23,8 +23,7 @@ namespace Maple2.Trigger._52000182_qd {
             internal State영상재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CreateWidget(arg1: "SceneMovie");
                 context.PlaySceneMovie(fileName: "jobChangeStory.swf", movieId: 1);
             }
@@ -48,11 +47,8 @@ namespace Maple2.Trigger._52000182_qd {
             internal State병원전경씬01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CreateMonster(arg1: new[] {400}, arg2: false);
-                context.CreateMonster(arg1: new[] {401}, arg2: false);
-                context.CreateMonster(arg1: new[] {402}, arg2: false);
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.CreateMonster(arg1: new[] {400, 401, 402}, arg2: false);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
                 context.SetProductionUI(arg1: 1);
             }
@@ -71,8 +67,7 @@ namespace Maple2.Trigger._52000182_qd {
             internal State병원전경씬02_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_Walk");
                 context.CameraSelectPath(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
                 context.SetProductionUI(arg1: 1);
@@ -93,9 +88,7 @@ namespace Maple2.Trigger._52000182_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4004, 4005, 4006, 4007}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$52000182_QD__52000182__0$",
-                    desc: "$52000182_QD__52000182__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 5000, scale: 2.5f);
+                context.ShowCaption(type: "VerticalCaption", title: "$52000182_QD__52000182__0$", desc: "$52000182_QD__52000182__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
 
             public override void Execute() {
@@ -112,8 +105,7 @@ namespace Maple2.Trigger._52000182_qd {
             internal State병원전경씬03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
+                context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
             public override void Execute() {
@@ -130,8 +122,7 @@ namespace Maple2.Trigger._52000182_qd {
             internal StateQuit01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 2, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
+                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
                 context.SetSceneSkip();
             }
 
@@ -150,10 +141,8 @@ namespace Maple2.Trigger._52000182_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 4);
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetOnetimeEffect(id: 2, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
             public override void Execute() {
@@ -173,15 +162,13 @@ namespace Maple2.Trigger._52000182_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000182_QD__52000182__2$", duration: 6000,
-                    delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000182_QD__52000182__2$", duration: 6000, delayTick: 1000);
                 context.ShowGuideSummary(entityId: 52001821, textId: 52001821, duration: 10000);
                 context.CreateMonster(arg1: new[] {2000}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002337},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002337}, arg3: new byte[] {3})) {
                     context.State = new State치유마법전개01(context);
                     return;
                 }
@@ -195,8 +182,7 @@ namespace Maple2.Trigger._52000182_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.SetOnetimeEffect(id: 30, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
+                context.SetOnetimeEffect(id: 30, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
             }
 
             public override void Execute() {
@@ -213,8 +199,7 @@ namespace Maple2.Trigger._52000182_qd {
             internal State치유마법전개02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 30, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
+                context.SetOnetimeEffect(id: 30, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
             }
 
             public override void Execute() {
@@ -236,8 +221,7 @@ namespace Maple2.Trigger._52000182_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002340},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002340}, arg3: new byte[] {3})) {
                     context.State = new State수련장이동01(context);
                     return;
                 }
@@ -250,8 +234,7 @@ namespace Maple2.Trigger._52000182_qd {
             internal State수련장이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 30, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
+                context.SetOnetimeEffect(id: 30, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
                 context.SetProductionUI(arg1: 1);
             }
 

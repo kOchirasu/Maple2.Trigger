@@ -113,8 +113,7 @@ namespace Maple2.Trigger._52000144_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "스킵도착_01", arg2: "exit");
-                context.AddCinematicTalk(npcId: 0, msg: "$52000144_QD__52000144_MAIN__0$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000144_QD__52000144_MAIN__0$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -131,12 +130,9 @@ namespace Maple2.Trigger._52000144_qd {
             internal State로베와대화_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__1$", duration: 3000,
-                    illustId: "Robe_normal", align: "right");
-                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__2$", duration: 3500,
-                    illustId: "Robe_normal", align: "right");
-                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__3$", duration: 3500,
-                    illustId: "Robe_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__1$", duration: 3000, illustId: "Robe_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__2$", duration: 3500, illustId: "Robe_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__3$", duration: 3500, illustId: "Robe_normal", align: "right");
             }
 
             public override void Execute() {
@@ -153,8 +149,7 @@ namespace Maple2.Trigger._52000144_qd {
             internal State로베와대화_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000144_QD__52000144_MAIN__4$", duration: 4179,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000144_QD__52000144_MAIN__4$", duration: 4179, align: "right");
             }
 
             public override void Execute() {
@@ -171,12 +166,9 @@ namespace Maple2.Trigger._52000144_qd {
             internal State로베와대화_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__5$", duration: 3000,
-                    illustId: "Robe_normal", align: "right");
-                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__6$", duration: 3500,
-                    illustId: "Robe_normal", align: "right");
-                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__7$", duration: 4000,
-                    illustId: "Robe_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__5$", duration: 3000, illustId: "Robe_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__6$", duration: 3500, illustId: "Robe_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__7$", duration: 4000, illustId: "Robe_normal", align: "right");
             }
 
             public override void Execute() {
@@ -193,8 +185,7 @@ namespace Maple2.Trigger._52000144_qd {
             internal State로베와대화_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000144_QD__52000144_MAIN__8$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000144_QD__52000144_MAIN__8$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -228,10 +219,8 @@ namespace Maple2.Trigger._52000144_qd {
             internal State로베와대화_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__9$", duration: 3000,
-                    illustId: "Robe_normal", align: "right");
-                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__10$", duration: 2500,
-                    illustId: "Robe_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__9$", duration: 3000, illustId: "Robe_normal", align: "right");
+                context.AddCinematicTalk(npcId: 11003401, msg: "$52000144_QD__52000144_MAIN__10$", duration: 2500, illustId: "Robe_normal", align: "right");
             }
 
             public override void Execute() {
@@ -249,8 +238,7 @@ namespace Maple2.Trigger._52000144_qd {
 
             public override void OnEnter() {
                 context.SetPcEmotionSequence(arg1: "Knight_Bore_A");
-                context.AddCinematicTalk(npcId: 0, msg: "$52000144_QD__52000144_MAIN__11$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000144_QD__52000144_MAIN__11$", duration: 3000, align: "right");
             }
 
             public override void Execute() {

@@ -37,9 +37,7 @@ namespace Maple2.Trigger._52020010_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.CreateMonster(arg1: new[] {101}, arg2: true);
-                context.CreateMonster(arg1: new[] {102}, arg2: true);
-                context.CreateMonster(arg1: new[] {103}, arg2: true);
+                context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: true);
             }
 
             public override void Execute() {
@@ -107,8 +105,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 101, msg: "허허... 녀석 참. 그럼 한개만 먹는거다?", duration: 2500,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "허허... 녀석 참. 그럼 한개만 먹는거다?", duration: 2500, delayTick: 0);
                 context.AddBalloonTalk(spawnPointId: 103, msg: "여보!", duration: 2500, delayTick: 500);
             }
 
@@ -144,8 +141,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 101, msg: "당연하지! 왕국 제일의 기술자인 내가 못할 일은 없어!", duration: 2800,
-                    delayTick: 1500);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "당연하지! 왕국 제일의 기술자인 내가 못할 일은 없어!", duration: 2800, delayTick: 1500);
             }
 
             public override void Execute() {
@@ -162,8 +158,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 101, msg: "그런데 말이야. 일이 끝나갈 수록 기분이 영 찝찝해.", duration: 2800,
-                    delayTick: 1500);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "그런데 말이야. 일이 끝나갈 수록 기분이 영 찝찝해.", duration: 2800, delayTick: 1500);
             }
 
             public override void Execute() {
@@ -180,8 +175,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 101, msg: "도대체 왕은 무슨 생각을 하고 있는건지...", duration: 3000,
-                    delayTick: 1500);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "도대체 왕은 무슨 생각을 하고 있는건지...", duration: 3000, delayTick: 1500);
             }
 
             public override void Execute() {
@@ -199,9 +193,7 @@ namespace Maple2.Trigger._52020010_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.DestroyMonster(arg1: new[] {101});
-                context.DestroyMonster(arg1: new[] {102});
-                context.DestroyMonster(arg1: new[] {103});
+                context.DestroyMonster(arg1: new[] {101, 102, 103});
             }
 
             public override void Execute() { }

@@ -13,18 +13,12 @@ namespace Maple2.Trigger._52000127_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001},
-                    arg2: new[] {60100215, 60100216, 60100217, 60100218, 60100219, 60100220},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100215, 60100216, 60100217, 60100218, 60100219, 60100220}, arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001},
-                    arg2: new[] {
-                        60100220, 60100221, 60100222, 60100223, 60100224, 60100225, 60100226, 60100227, 60100228,
-                        60100229, 60100230
-                    }, arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100220, 60100221, 60100222, 60100223, 60100224, 60100225, 60100226, 60100227, 60100228, 60100229, 60100230}, arg3: new byte[] {2})) {
                     context.State = new Stateopen(context);
                     return;
                 }
@@ -224,9 +218,7 @@ namespace Maple2.Trigger._52000127_qd {
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 0, emotionName: "Stun");
-                context.ShowCaption(type: "VerticalCaption", title: "$52000127_QD__MAIN__12$",
-                    desc: "$52000127_QD__MAIN__13$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 3000, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "$52000127_QD__MAIN__12$", desc: "$52000127_QD__MAIN__13$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);
             }
 
             public override void Execute() {
@@ -244,8 +236,7 @@ namespace Maple2.Trigger._52000127_qd {
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 0, emotionName: "Stun");
-                context.AddCinematicTalk(npcId: 11003218, msg: "$52000127_QD__MAIN__7$", duration: 3000,
-                    illustId: "Jordy_normal", align: "Right");
+                context.AddCinematicTalk(npcId: 11003218, msg: "$52000127_QD__MAIN__7$", duration: 3000, illustId: "Jordy_normal", align: "Right");
             }
 
             public override void Execute() {
@@ -264,8 +255,7 @@ namespace Maple2.Trigger._52000127_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
                 context.FaceEmotion(spawnPointId: 0, emotionName: "Stun");
-                context.AddCinematicTalk(npcId: 11003218, msg: "$52000127_QD__MAIN__8$", duration: 3000,
-                    align: "Right");
+                context.AddCinematicTalk(npcId: 11003218, msg: "$52000127_QD__MAIN__8$", duration: 3000, align: "Right");
             }
 
             public override void Execute() {
@@ -283,8 +273,7 @@ namespace Maple2.Trigger._52000127_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
-                context.AddCinematicTalk(npcId: 11003218, msg: "$52000127_QD__MAIN__9$", duration: 3000,
-                    align: "Right");
+                context.AddCinematicTalk(npcId: 11003218, msg: "$52000127_QD__MAIN__9$", duration: 3000, align: "Right");
             }
 
             public override void Execute() {
@@ -322,8 +311,7 @@ namespace Maple2.Trigger._52000127_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
                 context.FaceEmotion(spawnPointId: 0, emotionName: "Ride_Sp_Run_005");
-                context.AddCinematicTalk(npcId: 11003218, msg: "$52000127_QD__MAIN__11$", duration: 3000,
-                    align: "Right");
+                context.AddCinematicTalk(npcId: 11003218, msg: "$52000127_QD__MAIN__11$", duration: 3000, align: "Right");
                 context.SetSceneSkip();
             }
 

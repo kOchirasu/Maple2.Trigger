@@ -4,9 +4,7 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7100, 7200, 7300, 7400, 7500, 7600, 7700, 7800}, arg2: false);
-                context.SetEffect(arg1: new[] {5100, 5200, 5300, 5400, 5500, 5600, 5700, 5800}, arg2: false);
-                context.SetEffect(arg1: new[] {6100, 6200, 6300, 6400, 6500, 6600, 6700, 6800}, arg2: false);
+                context.SetEffect(arg1: new[] {7100, 7200, 7300, 7400, 7500, 7600, 7700, 7800, 5100, 5200, 5300, 5400, 5500, 5600, 5700, 5800, 6100, 6200, 6300, 6400, 6500, 6600, 6700, 6800}, arg2: false);
                 context.SetUserValue(key: "SetRide", value: 0);
                 context.SetUserValue(key: "StartPatrol", value: 0);
             }

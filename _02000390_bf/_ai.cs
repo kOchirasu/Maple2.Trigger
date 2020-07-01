@@ -84,14 +84,12 @@ namespace Maple2.Trigger._02000390_bf {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518}, arg3: new byte[] {1})) {
                     context.State = new StateEnding(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001517},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001517}, arg3: new byte[] {2})) {
                     context.State = new StateEnding(context);
                     return;
                 }
@@ -124,8 +122,7 @@ namespace Maple2.Trigger._02000390_bf {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518}, arg3: new byte[] {1})) {
                     context.State = new StateEnding(context);
                     return;
                 }
@@ -157,8 +154,7 @@ namespace Maple2.Trigger._02000390_bf {
                 context.EnableSpawnPointPc(spawnPointId: 11001, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 11002, isEnable: true);
                 context.RemoveBuff(arg1: 701, arg2: 99910120);
-                context.SetMesh(arg1: new[] {1001, 1002}, arg2: false);
-                context.SetMesh(arg1: new[] {1004, 1005, 1006}, arg2: false);
+                context.SetMesh(arg1: new[] {1001, 1002, 1004, 1005, 1006}, arg2: false);
                 context.SetLocalCamera(cameraId: 8002, enable: true);
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000390_BF__AI__0$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000390_BF__AI__1$", arg4: 2, arg5: 2);
@@ -337,8 +333,7 @@ namespace Maple2.Trigger._02000390_bf {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518}, arg3: new byte[] {1})) {
                     context.State = new StateQuestEnd_warp(context);
                     return;
                 }
@@ -359,8 +354,7 @@ namespace Maple2.Trigger._02000390_bf {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518}, arg3: new byte[] {1})) {
                     context.State = new StateQuestEnd_warp(context);
                     return;
                 }

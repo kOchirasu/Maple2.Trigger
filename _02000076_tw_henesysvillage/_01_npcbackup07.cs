@@ -6,8 +6,7 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {1001}, arg2: new[] {10002041},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {1001}, arg2: new[] {10002041}, arg3: new byte[] {1})) {
                     context.State = new State지원군생성(context);
                     return;
                 }
@@ -38,8 +37,7 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
             internal State지원군이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 104, arg3: "$02000076_TW_HenesysVillage__01_NPCBACKUP07__0$",
-                    arg4: 1);
+                context.SetConversation(arg1: 1, arg2: 104, arg3: "$02000076_TW_HenesysVillage__01_NPCBACKUP07__0$", arg4: 1);
                 context.MoveNpc(arg1: 107, arg2: "MS2PatrolData_107");
             }
 

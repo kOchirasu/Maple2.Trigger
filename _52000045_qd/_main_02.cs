@@ -170,10 +170,8 @@ namespace Maple2.Trigger._52000045_qd {
             internal Statestart_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPcEmotionSequence(
-                    arg1: "Down2_A,Down_Idle_A,Down_Idle_A,Down_Idle_A,Down_Idle_A,Down_Idle_A");
-                context.SetEffect(arg1: new[] {7005}, arg2: true);
-                context.SetEffect(arg1: new[] {7004}, arg2: true);
+                context.SetPcEmotionSequence(arg1: "Down2_A,Down_Idle_A,Down_Idle_A,Down_Idle_A,Down_Idle_A,Down_Idle_A");
+                context.SetEffect(arg1: new[] {7005, 7004}, arg2: true);
                 context.CreateMonster(arg1: new[] {872, 873}, arg2: false);
             }
 

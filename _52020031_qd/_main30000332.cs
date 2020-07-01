@@ -8,8 +8,7 @@ namespace Maple2.Trigger._52020031_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000332},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000332}, arg3: new byte[] {1})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -60,8 +59,7 @@ namespace Maple2.Trigger._52020031_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4005, 4001}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.ShowCaption(type: "VerticalCaption", title: "천공의 제단", desc: "천공의 심장의 보관소", align: "centerLeft",
-                    offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "천공의 제단", desc: "천공의 심장의 보관소", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
                 context.SetSceneSkip(arg1: "끝", arg2: "exit");
             }
 
@@ -313,8 +311,7 @@ namespace Maple2.Trigger._52020031_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4010}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "하렌", desc: "흑성회의 제 3 간부", align: "centerLeft",
-                    offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "하렌", desc: "흑성회의 제 3 간부", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
                 context.AddCinematicTalk(npcId: 11003756, msg: "...이렇게 만나다니 우연이네.", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003756, msg: "혼자 이것저것 하기 힘들지? 후후.", duration: 3000);

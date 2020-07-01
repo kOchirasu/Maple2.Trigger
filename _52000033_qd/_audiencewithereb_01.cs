@@ -4,12 +4,8 @@ namespace Maple2.Trigger._52000033_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(
-                    arg1: new[] {101, 201, 301, 401, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510},
-                    arg2: false);
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 201, 301, 401, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001, 5002}, arg2: false);
             }
 
             public override void Execute() {
@@ -32,20 +28,17 @@ namespace Maple2.Trigger._52000033_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001301},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001301}, arg3: new byte[] {3})) {
                     context.State = new StateQuestOngoing02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001300},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001300}, arg3: new byte[] {3})) {
                     context.State = new StateQuestOngoing01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001300},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001300}, arg3: new byte[] {2})) {
                     context.State = new StatePCWalkIn01(context);
                     return;
                 }
@@ -231,8 +224,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000033_QD__AUDIENCEWITHEREB_01__0$", arg4: 4,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000033_QD__AUDIENCEWITHEREB_01__0$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "ErebTalk03");
             }
 
@@ -290,8 +282,7 @@ namespace Maple2.Trigger._52000033_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001300},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001300}, arg3: new byte[] {3})) {
                     context.State = new StateSecondQuestCheck02(context);
                     return;
                 }
@@ -306,8 +297,7 @@ namespace Maple2.Trigger._52000033_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001301},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001301}, arg3: new byte[] {3})) {
                     context.State = new StatePCGoCenter01(context);
                     return;
                 }
@@ -407,8 +397,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StatePCSpotLighting01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5000, 5001}, arg2: true);
             }
 
             public override void Execute() {
@@ -460,8 +449,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000033_QD__AUDIENCEWITHEREB_01__1$", arg4: 5,
-                    arg5: 0);
+                context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000033_QD__AUDIENCEWITHEREB_01__1$", arg4: 5, arg5: 0);
                 context.SetSkip(arg1: "ErebTalk12");
             }
 
@@ -508,8 +496,7 @@ namespace Maple2.Trigger._52000033_qd {
             }
 
             public override void OnExit() {
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001}, arg2: false);
             }
         }
 

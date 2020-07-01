@@ -4,8 +4,7 @@ namespace Maple2.Trigger._02020027_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -22,8 +21,7 @@ namespace Maple2.Trigger._02020027_bf {
             internal State문열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
             }
 
             public override void Execute() {
@@ -40,8 +38,7 @@ namespace Maple2.Trigger._02020027_bf {
             internal State문닫힘(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 10f);
+                context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006}, arg2: true, arg3: 0, arg4: 0, arg5: 10f);
                 context.SetMesh(arg1: new[] {9007}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 

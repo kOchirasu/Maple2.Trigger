@@ -5,60 +5,8 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 100, key: "Fencebreak", value: 0);
-                context.SetMesh(arg1: new[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008}, arg2: true,
-                    arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(arg1: new[] {1000001}, arg2: true);
-                context.SetSkill(arg1: new[] {1000002}, arg2: true);
-                context.SetSkill(arg1: new[] {1000003}, arg2: true);
-                context.SetSkill(arg1: new[] {1000004}, arg2: true);
-                context.SetSkill(arg1: new[] {1000005}, arg2: true);
-                context.SetSkill(arg1: new[] {1000006}, arg2: true);
-                context.SetSkill(arg1: new[] {1000007}, arg2: true);
-                context.SetSkill(arg1: new[] {1000008}, arg2: true);
-                context.SetSkill(arg1: new[] {1000008}, arg2: true);
-                context.SetSkill(arg1: new[] {1000008}, arg2: true);
-                context.SetSkill(arg1: new[] {1000008}, arg2: true);
-                context.SetSkill(arg1: new[] {1000008}, arg2: true);
-                context.SetSkill(arg1: new[] {1000009}, arg2: true);
-                context.SetSkill(arg1: new[] {1000010}, arg2: true);
-                context.SetSkill(arg1: new[] {1000011}, arg2: true);
-                context.SetSkill(arg1: new[] {1000012}, arg2: true);
-                context.SetSkill(arg1: new[] {1000013}, arg2: true);
-                context.SetSkill(arg1: new[] {1000014}, arg2: true);
-                context.SetSkill(arg1: new[] {1000015}, arg2: true);
-                context.SetSkill(arg1: new[] {1000016}, arg2: true);
-                context.SetSkill(arg1: new[] {1000017}, arg2: true);
-                context.SetSkill(arg1: new[] {1000018}, arg2: true);
-                context.SetSkill(arg1: new[] {1000019}, arg2: true);
-                context.SetSkill(arg1: new[] {1000020}, arg2: true);
-                context.SetSkill(arg1: new[] {1000021}, arg2: true);
-                context.SetSkill(arg1: new[] {1000022}, arg2: true);
-                context.SetSkill(arg1: new[] {1000023}, arg2: true);
-                context.SetSkill(arg1: new[] {1000024}, arg2: true);
-                context.SetSkill(arg1: new[] {1000025}, arg2: true);
-                context.SetSkill(arg1: new[] {1000026}, arg2: true);
-                context.SetSkill(arg1: new[] {1000027}, arg2: true);
-                context.SetSkill(arg1: new[] {1000028}, arg2: true);
-                context.SetSkill(arg1: new[] {1000029}, arg2: true);
-                context.SetSkill(arg1: new[] {1000030}, arg2: true);
-                context.SetSkill(arg1: new[] {1000031}, arg2: true);
-                context.SetSkill(arg1: new[] {1000032}, arg2: true);
-                context.SetSkill(arg1: new[] {1000033}, arg2: true);
-                context.SetSkill(arg1: new[] {1000034}, arg2: true);
-                context.SetSkill(arg1: new[] {1000035}, arg2: true);
-                context.SetSkill(arg1: new[] {1000036}, arg2: true);
-                context.SetSkill(arg1: new[] {1000037}, arg2: true);
-                context.SetSkill(arg1: new[] {1000038}, arg2: true);
-                context.SetSkill(arg1: new[] {1000039}, arg2: true);
-                context.SetSkill(arg1: new[] {1000040}, arg2: true);
-                context.SetSkill(arg1: new[] {1000041}, arg2: true);
-                context.SetSkill(arg1: new[] {1000042}, arg2: true);
-                context.SetSkill(arg1: new[] {1000043}, arg2: true);
-                context.SetSkill(arg1: new[] {1000044}, arg2: true);
-                context.SetSkill(arg1: new[] {1000045}, arg2: true);
-                context.SetSkill(arg1: new[] {1000046}, arg2: true);
-                context.SetSkill(arg1: new[] {1000047}, arg2: true);
-                context.SetSkill(arg1: new[] {1000048}, arg2: true);
+                context.SetMesh(arg1: new[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetSkill(arg1: new[] {1000001, 1000002, 1000003, 1000004, 1000005, 1000006, 1000007, 1000008, 1000008, 1000008, 1000008, 1000008, 1000009, 1000010, 1000011, 1000012, 1000013, 1000014, 1000015, 1000016, 1000017, 1000018, 1000019, 1000020, 1000021, 1000022, 1000023, 1000024, 1000025, 1000026, 1000027, 1000028, 1000029, 1000030, 1000031, 1000032, 1000033, 1000034, 1000035, 1000036, 1000037, 1000038, 1000039, 1000040, 1000041, 1000042, 1000043, 1000044, 1000045, 1000046, 1000047, 1000048}, arg2: true);
             }
 
             public override void Execute() {
@@ -105,60 +53,8 @@ namespace Maple2.Trigger._02100009_bf {
             internal State길막삭제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008}, arg2: false,
-                    arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(arg1: new[] {1000001}, arg2: false);
-                context.SetSkill(arg1: new[] {1000002}, arg2: false);
-                context.SetSkill(arg1: new[] {1000003}, arg2: false);
-                context.SetSkill(arg1: new[] {1000004}, arg2: false);
-                context.SetSkill(arg1: new[] {1000005}, arg2: false);
-                context.SetSkill(arg1: new[] {1000006}, arg2: false);
-                context.SetSkill(arg1: new[] {1000007}, arg2: false);
-                context.SetSkill(arg1: new[] {1000008}, arg2: false);
-                context.SetSkill(arg1: new[] {1000008}, arg2: false);
-                context.SetSkill(arg1: new[] {1000008}, arg2: false);
-                context.SetSkill(arg1: new[] {1000008}, arg2: false);
-                context.SetSkill(arg1: new[] {1000008}, arg2: false);
-                context.SetSkill(arg1: new[] {1000009}, arg2: false);
-                context.SetSkill(arg1: new[] {1000010}, arg2: false);
-                context.SetSkill(arg1: new[] {1000011}, arg2: false);
-                context.SetSkill(arg1: new[] {1000012}, arg2: false);
-                context.SetSkill(arg1: new[] {1000013}, arg2: false);
-                context.SetSkill(arg1: new[] {1000014}, arg2: false);
-                context.SetSkill(arg1: new[] {1000015}, arg2: false);
-                context.SetSkill(arg1: new[] {1000016}, arg2: false);
-                context.SetSkill(arg1: new[] {1000017}, arg2: false);
-                context.SetSkill(arg1: new[] {1000018}, arg2: false);
-                context.SetSkill(arg1: new[] {1000019}, arg2: false);
-                context.SetSkill(arg1: new[] {1000020}, arg2: false);
-                context.SetSkill(arg1: new[] {1000021}, arg2: false);
-                context.SetSkill(arg1: new[] {1000022}, arg2: false);
-                context.SetSkill(arg1: new[] {1000023}, arg2: false);
-                context.SetSkill(arg1: new[] {1000024}, arg2: false);
-                context.SetSkill(arg1: new[] {1000025}, arg2: false);
-                context.SetSkill(arg1: new[] {1000026}, arg2: false);
-                context.SetSkill(arg1: new[] {1000027}, arg2: false);
-                context.SetSkill(arg1: new[] {1000028}, arg2: false);
-                context.SetSkill(arg1: new[] {1000029}, arg2: false);
-                context.SetSkill(arg1: new[] {1000030}, arg2: false);
-                context.SetSkill(arg1: new[] {1000031}, arg2: false);
-                context.SetSkill(arg1: new[] {1000032}, arg2: false);
-                context.SetSkill(arg1: new[] {1000033}, arg2: false);
-                context.SetSkill(arg1: new[] {1000034}, arg2: false);
-                context.SetSkill(arg1: new[] {1000035}, arg2: false);
-                context.SetSkill(arg1: new[] {1000036}, arg2: false);
-                context.SetSkill(arg1: new[] {1000037}, arg2: false);
-                context.SetSkill(arg1: new[] {1000038}, arg2: false);
-                context.SetSkill(arg1: new[] {1000039}, arg2: false);
-                context.SetSkill(arg1: new[] {1000040}, arg2: false);
-                context.SetSkill(arg1: new[] {1000041}, arg2: false);
-                context.SetSkill(arg1: new[] {1000042}, arg2: false);
-                context.SetSkill(arg1: new[] {1000043}, arg2: false);
-                context.SetSkill(arg1: new[] {1000044}, arg2: false);
-                context.SetSkill(arg1: new[] {1000045}, arg2: false);
-                context.SetSkill(arg1: new[] {1000046}, arg2: false);
-                context.SetSkill(arg1: new[] {1000047}, arg2: false);
-                context.SetSkill(arg1: new[] {1000048}, arg2: false);
+                context.SetMesh(arg1: new[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetSkill(arg1: new[] {1000001, 1000002, 1000003, 1000004, 1000005, 1000006, 1000007, 1000008, 1000008, 1000008, 1000008, 1000008, 1000009, 1000010, 1000011, 1000012, 1000013, 1000014, 1000015, 1000016, 1000017, 1000018, 1000019, 1000020, 1000021, 1000022, 1000023, 1000024, 1000025, 1000026, 1000027, 1000028, 1000029, 1000030, 1000031, 1000032, 1000033, 1000034, 1000035, 1000036, 1000037, 1000038, 1000039, 1000040, 1000041, 1000042, 1000043, 1000044, 1000045, 1000046, 1000047, 1000048}, arg2: false);
             }
 
             public override void Execute() {

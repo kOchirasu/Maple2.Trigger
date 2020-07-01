@@ -222,8 +222,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5104}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000641);
-                context.AddEffectNif(spawnPointId: 4108, nifPath: @"Map/Henesys/Indoor/he_in_prop_kettle_A01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 4108, nifPath: @"Map/Henesys/Indoor/he_in_prop_kettle_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -262,8 +261,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5104}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000647);
-                context.AddEffectNif(spawnPointId: 4108, nifPath: @"Map/UGC/Indoor/ugc_in_funct_alchemy_B01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 4108, nifPath: @"Map/UGC/Indoor/ugc_in_funct_alchemy_B01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -302,8 +300,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5104}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000648);
-                context.AddEffectNif(spawnPointId: 4108, nifPath: @"Map/UGC/Indoor/ugc_in_funct_alchemy_A01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 4108, nifPath: @"Map/UGC/Indoor/ugc_in_funct_alchemy_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -342,8 +339,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5104}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000711);
-                context.AddEffectNif(spawnPointId: 4108, nifPath: @"Map/UGC/Indoor/ugc_in_funct_workstone_G01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 4108, nifPath: @"Map/UGC/Indoor/ugc_in_funct_workstone_G01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {

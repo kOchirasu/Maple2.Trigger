@@ -40,8 +40,7 @@ namespace Maple2.Trigger._02100009_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {100000001})
-                    && context.MonsterDead(arg1: new[] {100000002})) {
+                if (context.MonsterDead(arg1: new[] {100000001}) && context.MonsterDead(arg1: new[] {100000002})) {
                     context.State = new State성공(context);
                     return;
                 }

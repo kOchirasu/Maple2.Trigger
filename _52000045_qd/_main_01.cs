@@ -25,9 +25,7 @@ namespace Maple2.Trigger._52000045_qd {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.AddBuff(arg1: new[] {701}, arg2: 70000105, arg3: 1);
                 context.SetConversation(arg1: 2, arg2: 11001560, arg3: "$52000045_QD__MAIN_01__0$", arg4: 5);
-                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206}, arg2: false);
-                context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306}, arg2: false);
-                context.CreateMonster(arg1: new[] {401, 402, 403, 404, 405}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 301, 302, 303, 304, 305, 306, 401, 402, 403, 404, 405}, arg2: false);
             }
 
             public override void Execute() {
@@ -82,8 +80,7 @@ namespace Maple2.Trigger._52000045_qd {
                     context.CreateMonster(arg1: new[] {101}, arg2: false);
                     context.RemoveBuff(arg1: 701, arg2: 70000105);
                     context.CameraSelectPath(arg1: new[] {8004}, arg2: true);
-                    context.DestroyMonster(arg1: new[] {101});
-                    context.DestroyMonster(arg1: new[] {401, 402, 403, 404, 405});
+                    context.DestroyMonster(arg1: new[] {101, 401, 402, 403, 404, 405});
                     context.SetActor(arg1: 5001, arg2: false, arg3: "Idle_A");
                     context.SetActor(arg1: 5002, arg2: false, arg3: "Idle_A");
                     context.SetActor(arg1: 5003, arg2: false, arg3: "Idle_A");

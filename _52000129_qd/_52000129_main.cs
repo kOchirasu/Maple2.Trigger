@@ -4,29 +4,22 @@ namespace Maple2.Trigger._52000129_qd {
             internal State준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101}, arg2: true);
-                context.CreateMonster(arg1: new[] {102}, arg2: true);
-                context.CreateMonster(arg1: new[] {103}, arg2: true);
-                context.CreateMonster(arg1: new[] {104}, arg2: true);
-                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102, 103, 104}, arg2: true);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002691},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002691}, arg3: new byte[] {1})) {
                     context.State = new State퀘스트진행_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002691},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002691}, arg3: new byte[] {2})) {
                     context.State = new State퀘스트완료가능_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002691},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002691}, arg3: new byte[] {3})) {
                     context.State = new State페이드아웃_01(context);
                     return;
                 }
@@ -78,9 +71,7 @@ namespace Maple2.Trigger._52000129_qd {
             internal State카메라이동_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(type: "VerticalCaption", title: "$52000129_QD__52000129_MAIN__0$",
-                    desc: "$52000129_QD__52000129_MAIN__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 4000, scale: 2.5f);
+                context.ShowCaption(type: "VerticalCaption", title: "$52000129_QD__52000129_MAIN__0$", desc: "$52000129_QD__52000129_MAIN__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2.5f);
             }
 
             public override void Execute() {
@@ -117,8 +108,7 @@ namespace Maple2.Trigger._52000129_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.ShowGuideSummary(entityId: 25201291, textId: 25201291);
-                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011},
-                    arg2: true);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011}, arg2: true);
             }
 
             public override void Execute() {
@@ -136,14 +126,12 @@ namespace Maple2.Trigger._52000129_qd {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 25201291);
-                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011},
-                    arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011}, arg2: false);
                 context.ShowGuideSummary(entityId: 25201292, textId: 25201292);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002691},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002691}, arg3: new byte[] {1})) {
                     context.State = new State퀘스트진행_01(context);
                     return;
                 }
@@ -162,8 +150,7 @@ namespace Maple2.Trigger._52000129_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002691},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002691}, arg3: new byte[] {2})) {
                     context.State = new State퀘스트완료가능_01(context);
                     return;
                 }
@@ -183,8 +170,7 @@ namespace Maple2.Trigger._52000129_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002691},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002691}, arg3: new byte[] {3})) {
                     context.State = new State페이드아웃_01(context);
                     return;
                 }

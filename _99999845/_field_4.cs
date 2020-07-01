@@ -6,9 +6,7 @@ namespace Maple2.Trigger._99999845 {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000319}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000320}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000321}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000319, 12000320, 12000321}, arg2: 2);
             }
 
             public override void Execute() {
@@ -113,8 +111,7 @@ namespace Maple2.Trigger._99999845 {
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000320}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000320}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(3971.3916f, -4325.10742f, 1492f),
-                        rot: new Vector3(0f, 0f, 0f));
+                    context.MoveUserToPos(pos: new Vector3(3971.3916f, -4325.10742f, 1492f), rot: new Vector3(0f, 0f, 0f));
                     context.State = new StateCableDelay_20(context);
                     return;
                 }
@@ -131,8 +128,7 @@ namespace Maple2.Trigger._99999845 {
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000321}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000321}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(3528.33643f, 2824.1394f, 2528f),
-                        rot: new Vector3(0f, 0f, 0f));
+                    context.MoveUserToPos(pos: new Vector3(3528.33643f, 2824.1394f, 2528f), rot: new Vector3(0f, 0f, 0f));
                     context.State = new StateCableDelay_21(context);
                     return;
                 }

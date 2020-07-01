@@ -8,146 +8,122 @@ namespace Maple2.Trigger._52000025_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002942}, arg3: new byte[] {1},
-                    arg4: 30)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002942}, arg3: new byte[] {1}, arg4: 30)) {
                     context.State = new Statestart(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002942}, arg3: new byte[] {2},
-                    arg4: 30)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002942}, arg3: new byte[] {2}, arg4: 30)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002942}, arg3: new byte[] {3},
-                    arg4: 30)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002942}, arg3: new byte[] {3}, arg4: 30)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002951}, arg3: new byte[] {1},
-                    arg4: 40)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002951}, arg3: new byte[] {1}, arg4: 40)) {
                     context.State = new Statestart(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002951}, arg3: new byte[] {2},
-                    arg4: 40)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002951}, arg3: new byte[] {2}, arg4: 40)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002951}, arg3: new byte[] {3},
-                    arg4: 40)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002951}, arg3: new byte[] {3}, arg4: 40)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002961}, arg3: new byte[] {1},
-                    arg4: 20)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002961}, arg3: new byte[] {1}, arg4: 20)) {
                     context.State = new Statestart(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002961}, arg3: new byte[] {2},
-                    arg4: 20)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002961}, arg3: new byte[] {2}, arg4: 20)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002961}, arg3: new byte[] {3},
-                    arg4: 20)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002961}, arg3: new byte[] {3}, arg4: 20)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002971}, arg3: new byte[] {1},
-                    arg4: 50)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002971}, arg3: new byte[] {1}, arg4: 50)) {
                     context.State = new Statestart(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002971}, arg3: new byte[] {2},
-                    arg4: 50)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002971}, arg3: new byte[] {2}, arg4: 50)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002971}, arg3: new byte[] {3},
-                    arg4: 50)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002971}, arg3: new byte[] {3}, arg4: 50)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {1},
-                    arg4: 10)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {1}, arg4: 10)) {
                     context.State = new Statestart(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {2},
-                    arg4: 10)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {2}, arg4: 10)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {3},
-                    arg4: 10)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {3}, arg4: 10)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {1},
-                    arg4: 01)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {1}, arg4: 01)) {
                     context.State = new Statestart(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {2},
-                    arg4: 01)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {2}, arg4: 01)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {3},
-                    arg4: 01)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {3}, arg4: 01)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002991}, arg3: new byte[] {1},
-                    arg4: 60)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002991}, arg3: new byte[] {1}, arg4: 60)) {
                     context.State = new Statestart(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002991}, arg3: new byte[] {2},
-                    arg4: 60)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002991}, arg3: new byte[] {2}, arg4: 60)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002991}, arg3: new byte[] {3},
-                    arg4: 60)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002991}, arg3: new byte[] {3}, arg4: 60)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003001}, arg3: new byte[] {1},
-                    arg4: 70)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003001}, arg3: new byte[] {1}, arg4: 70)) {
                     context.State = new Statestart(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003001}, arg3: new byte[] {2},
-                    arg4: 70)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003001}, arg3: new byte[] {2}, arg4: 70)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003001}, arg3: new byte[] {3},
-                    arg4: 70)) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003001}, arg3: new byte[] {3}, arg4: 70)) {
                     context.State = new Statestart_B(context);
                     return;
                 }
@@ -173,8 +149,7 @@ namespace Maple2.Trigger._52000025_qd {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {201, 203, 204}, arg2: false);
-                context.CreateMonster(arg1: new[] {101, 102}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 203, 204, 101, 102}, arg2: false);
             }
 
             public override void Execute() {

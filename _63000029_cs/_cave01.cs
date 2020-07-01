@@ -5,139 +5,18 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetEffect(arg1: new[] {5005}, arg2: false);
-                context.SetEffect(arg1: new[] {5100}, arg2: false);
-                context.SetEffect(arg1: new[] {5200}, arg2: false);
-                context.SetEffect(arg1: new[] {5201}, arg2: false);
-                context.SetEffect(arg1: new[] {5202}, arg2: false);
-                context.SetEffect(arg1: new[] {5203}, arg2: false);
-                context.SetEffect(arg1: new[] {5300}, arg2: false);
-                context.SetEffect(arg1: new[] {5400}, arg2: false);
-                context.SetEffect(arg1: new[] {5500}, arg2: false);
-                context.SetEffect(arg1: new[] {5501}, arg2: false);
-                context.SetEffect(arg1: new[] {5502}, arg2: false);
-                context.SetEffect(arg1: new[] {5503}, arg2: false);
-                context.SetEffect(arg1: new[] {5504}, arg2: false);
-                context.SetEffect(arg1: new[] {5505}, arg2: false);
-                context.SetEffect(arg1: new[] {5506}, arg2: false);
-                context.SetEffect(arg1: new[] {5507}, arg2: false);
-                context.SetEffect(arg1: new[] {5700}, arg2: false);
-                context.SetEffect(arg1: new[] {5701}, arg2: false);
-                context.SetEffect(arg1: new[] {5702}, arg2: false);
-                context.SetEffect(arg1: new[] {5703}, arg2: false);
-                context.SetEffect(arg1: new[] {5704}, arg2: false);
-                context.SetEffect(arg1: new[] {5705}, arg2: false);
-                context.SetEffect(arg1: new[] {5706}, arg2: false);
-                context.SetEffect(arg1: new[] {5707}, arg2: false);
-                context.SetEffect(arg1: new[] {5708}, arg2: false);
-                context.SetEffect(arg1: new[] {5709}, arg2: false);
-                context.SetEffect(arg1: new[] {5600}, arg2: false);
-                context.SetEffect(arg1: new[] {5800}, arg2: false);
-                context.SetEffect(arg1: new[] {5801}, arg2: false);
-                context.SetEffect(arg1: new[] {5820}, arg2: false);
-                context.SetEffect(arg1: new[] {5821}, arg2: false);
-                context.SetEffect(arg1: new[] {5900}, arg2: false);
-                context.SetEffect(arg1: new[] {5901}, arg2: false);
-                context.SetEffect(arg1: new[] {5920}, arg2: false);
-                context.SetEffect(arg1: new[] {5921}, arg2: false);
-                context.SetEffect(arg1: new[] {5922}, arg2: false);
-                context.SetEffect(arg1: new[] {5930}, arg2: false);
-                context.SetEffect(arg1: new[] {5931}, arg2: false);
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
-                context.SetEffect(arg1: new[] {6001}, arg2: false);
-                context.SetEffect(arg1: new[] {6002}, arg2: false);
-                context.SetEffect(arg1: new[] {6003}, arg2: false);
-                context.SetEffect(arg1: new[] {6004}, arg2: false);
-                context.SetEffect(arg1: new[] {6005}, arg2: false);
-                context.SetEffect(arg1: new[] {6006}, arg2: false);
-                context.SetEffect(arg1: new[] {6007}, arg2: false);
-                context.SetEffect(arg1: new[] {6008}, arg2: false);
-                context.SetEffect(arg1: new[] {6009}, arg2: false);
-                context.SetEffect(arg1: new[] {6010}, arg2: false);
-                context.SetEffect(arg1: new[] {6100}, arg2: false);
-                context.SetEffect(arg1: new[] {6101}, arg2: false);
-                context.SetEffect(arg1: new[] {6102}, arg2: false);
-                context.SetEffect(arg1: new[] {6103}, arg2: false);
-                context.SetEffect(arg1: new[] {6104}, arg2: false);
-                context.SetEffect(arg1: new[] {6105}, arg2: false);
-                context.SetEffect(arg1: new[] {6106}, arg2: false);
-                context.SetEffect(arg1: new[] {6107}, arg2: false);
-                context.SetEffect(arg1: new[] {6200}, arg2: false);
-                context.SetEffect(arg1: new[] {6201}, arg2: false);
-                context.SetEffect(arg1: new[] {6300}, arg2: false);
-                context.SetEffect(arg1: new[] {6301}, arg2: false);
-                context.SetEffect(arg1: new[] {6400}, arg2: false);
-                context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5100, 5200, 5201, 5202, 5203, 5300, 5400, 5500, 5501, 5502, 5503, 5504, 5505, 5506, 5507, 5700, 5701, 5702, 5703, 5704, 5705, 5706, 5707, 5708, 5709, 5600, 5800, 5801, 5820, 5821, 5900, 5901, 5920, 5921, 5922, 5930, 5931, 6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6200, 6201, 6300, 6301, 6400}, arg2: false);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, arg2: false,
-                    arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315,
-                        3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325, 3326, 3327, 3328, 3329, 3330, 3331,
-                        3332, 3333, 3334, 3335
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415,
-                        3416
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325, 3326, 3327, 3328, 3329, 3330, 3331, 3332, 3333, 3334, 3335, 3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 4500, arg2: true, arg3: "or_fi_struc_stonegate_A01_off");
-                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetAgent(arg1: "8000", arg2: false);
-                context.SetAgent(arg1: "8001", arg2: false);
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
-                context.SetAgent(arg1: "8004", arg2: false);
-                context.SetAgent(arg1: "8005", arg2: false);
-                context.SetAgent(arg1: "8006", arg2: false);
-                context.SetAgent(arg1: "8007", arg2: false);
-                context.SetAgent(arg1: "8008", arg2: false);
-                context.SetAgent(arg1: "8009", arg2: false);
-                context.SetAgent(arg1: "8010", arg2: false);
-                context.SetAgent(arg1: "8011", arg2: false);
-                context.SetAgent(arg1: "8012", arg2: false);
-                context.SetAgent(arg1: "8013", arg2: false);
-                context.SetAgent(arg1: "8014", arg2: false);
-                context.SetAgent(arg1: "8015", arg2: false);
-                context.SetAgent(arg1: "8016", arg2: false);
-                context.SetAgent(arg1: "8017", arg2: false);
-                context.SetAgent(arg1: "8018", arg2: false);
-                context.SetAgent(arg1: "8019", arg2: false);
-                context.SetAgent(arg1: "8020", arg2: false);
-                context.SetAgent(arg1: "8021", arg2: false);
-                context.SetAgent(arg1: "8022", arg2: false);
-                context.SetAgent(arg1: "8023", arg2: false);
-                context.SetAgent(arg1: "8024", arg2: false);
-                context.SetAgent(arg1: "8025", arg2: false);
-                context.SetAgent(arg1: "8026", arg2: false);
-                context.SetAgent(arg1: "8027", arg2: false);
+                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019, 8020, 8021, 8022, 8023, 8024, 8025, 8026, 8027}, arg2: false);
                 context.CreateMonster(arg1: new[] {101, 201}, arg2: false);
-                context.SetSkill(arg1: new[] {7000}, arg2: false);
-                context.SetSkill(arg1: new[] {7001}, arg2: false);
-                context.SetSkill(arg1: new[] {7002}, arg2: false);
-                context.SetSkill(arg1: new[] {7003}, arg2: false);
-                context.SetSkill(arg1: new[] {7100}, arg2: false);
-                context.SetSkill(arg1: new[] {7101}, arg2: false);
-                context.SetSkill(arg1: new[] {7102}, arg2: false);
-                context.SetSkill(arg1: new[] {7103}, arg2: false);
-                context.SetSkill(arg1: new[] {7104}, arg2: false);
-                context.SetSkill(arg1: new[] {7105}, arg2: false);
-                context.SetSkill(arg1: new[] {7106}, arg2: false);
-                context.SetSkill(arg1: new[] {7107}, arg2: false);
-                context.SetSkill(arg1: new[] {7108}, arg2: false);
-                context.SetSkill(arg1: new[] {7109}, arg2: false);
-                context.SetBreakable(arg1: new[] {4000}, arg2: false);
-                context.SetBreakable(arg1: new[] {4001}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4001}, arg2: false);
+                context.SetSkill(arg1: new[] {7000, 7001, 7002, 7003, 7100, 7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109}, arg2: false);
+                context.SetBreakable(arg1: new[] {4000, 4001}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -156,32 +35,27 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000453},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000453}, arg3: new byte[] {3})) {
                     context.State = new StateQuestOnGiong11(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000453},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000453}, arg3: new byte[] {2})) {
                     context.State = new StateQuestOnGiong01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000453},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000453}, arg3: new byte[] {1})) {
                     context.State = new StateLiftRock01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000452},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000452}, arg3: new byte[] {3})) {
                     context.State = new StateSecondQuestStart01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000452},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000452}, arg3: new byte[] {2})) {
                     context.State = new StateFirstQuestEnd01(context);
                     return;
                 }
@@ -217,8 +91,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.DestroyMonster(arg1: new[] {101, 201});
                 context.CreateMonster(arg1: new[] {110, 210, 302}, arg2: false);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetRandomMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108},
-                    arg2: true, arg3: 9, arg4: 0, arg5: 0);
+                context.SetRandomMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, arg2: true, arg3: 9, arg4: 0, arg5: 0);
             }
 
             public override void Execute() {
@@ -276,8 +149,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.DestroyMonster(arg1: new[] {101, 201});
                 context.CreateMonster(arg1: new[] {102, 202}, arg2: false);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetRandomMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108},
-                    arg2: true, arg3: 9, arg4: 0, arg5: 0);
+                context.SetRandomMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, arg2: true, arg3: 9, arg4: 0, arg5: 0);
             }
 
             public override void Execute() {
@@ -336,8 +208,7 @@ namespace Maple2.Trigger._63000029_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000452},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000452}, arg3: new byte[] {3})) {
                     context.State = new StateSecondQuestStart01(context);
                     return;
                 }
@@ -357,8 +228,7 @@ namespace Maple2.Trigger._63000029_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000453},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000453}, arg3: new byte[] {1})) {
                     context.State = new StateLiftRock01(context);
                     return;
                 }
@@ -375,8 +245,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.ShowGuideSummary(entityId: 10036010, textId: 10036010);
-                context.SetEffect(arg1: new[] {5300}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5300, 5001}, arg2: true);
             }
 
             public override void Execute() {
@@ -398,11 +267,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetEffect(arg1: new[] {5300}, arg2: false);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.ShowGuideSummary(entityId: 10036011, textId: 10036011);
-                context.SetEffect(arg1: new[] {5100}, arg2: true);
-                context.SetEffect(arg1: new[] {5200}, arg2: true);
-                context.SetEffect(arg1: new[] {5201}, arg2: true);
-                context.SetEffect(arg1: new[] {5202}, arg2: true);
-                context.SetEffect(arg1: new[] {5203}, arg2: true);
+                context.SetEffect(arg1: new[] {5100, 5200, 5201, 5202, 5203}, arg2: true);
             }
 
             public override void Execute() {
@@ -422,12 +287,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5100}, arg2: false);
-                context.SetEffect(arg1: new[] {5200}, arg2: false);
-                context.SetEffect(arg1: new[] {5201}, arg2: false);
-                context.SetEffect(arg1: new[] {5202}, arg2: false);
-                context.SetEffect(arg1: new[] {5203}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5100, 5200, 5201, 5202, 5203}, arg2: false);
             }
 
             public override void Execute() {
@@ -488,8 +348,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetProductionUI(arg1: 3);
                 context.SetEffect(arg1: new[] {5003}, arg2: true);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetRandomMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108},
-                    arg2: true, arg3: 9, arg4: 100, arg5: 100);
+                context.SetRandomMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, arg2: true, arg3: 9, arg4: 100, arg5: 100);
             }
 
             public override void Execute() {
@@ -769,14 +628,12 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateSecondQuestEnd01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEffect(arg1: new[] {5002, 5000}, arg2: true);
                 context.ShowGuideSummary(entityId: 10036030, textId: 10036030);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000453},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000453}, arg3: new byte[] {3})) {
                     context.State = new StateDelay01(context);
                     return;
                 }
@@ -849,8 +706,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.CameraSelect(arg1: 610, arg2: true);
                 context.DestroyMonster(arg1: new[] {102, 202, 302, 110, 210});
                 context.CreateMonster(arg1: new[] {103, 203, 303}, arg2: false);
-                context.SetRandomMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108},
-                    arg2: false, arg3: 9, arg4: 100, arg5: 100);
+                context.SetRandomMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, arg2: false, arg3: 9, arg4: 100, arg5: 100);
             }
 
             public override void Execute() {
@@ -874,14 +730,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetSkill(arg1: new[] {7001}, arg2: true);
                 context.CreateMonster(arg1: new[] {401}, arg2: false);
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_401");
-                context.SetEffect(arg1: new[] {5500}, arg2: true);
-                context.SetEffect(arg1: new[] {5501}, arg2: true);
-                context.SetEffect(arg1: new[] {5502}, arg2: true);
-                context.SetEffect(arg1: new[] {5503}, arg2: true);
-                context.SetEffect(arg1: new[] {5504}, arg2: true);
-                context.SetEffect(arg1: new[] {5505}, arg2: true);
-                context.SetEffect(arg1: new[] {5506}, arg2: true);
-                context.SetEffect(arg1: new[] {5507}, arg2: true);
+                context.SetEffect(arg1: new[] {5500, 5501, 5502, 5503, 5504, 5505, 5506, 5507}, arg2: true);
             }
 
             public override void Execute() {
@@ -898,8 +747,7 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateKahnWalkIn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5901}, arg2: true);
-                context.SetEffect(arg1: new[] {6100}, arg2: true);
+                context.SetEffect(arg1: new[] {5901, 6100}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 401, arg3: "$63000029_CS__CAVE01__9$", arg4: 3, arg5: 0);
                 context.CreateMonster(arg1: new[] {900, 901, 902, 903}, arg2: false);
                 context.MoveNpc(arg1: 900, arg2: "MS2PatrolData_900");
@@ -979,8 +827,7 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateKahnWalkIn05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931}, arg2: false);
             }
 
             public override void Execute() {
@@ -1720,18 +1567,8 @@ namespace Maple2.Trigger._63000029_cs {
                 context.MoveUser(arg1: 63000029, arg2: 12, arg3: 9900);
                 context.DestroyMonster(arg1: new[] {103, 203, 303, 401});
                 context.CreateMonster(arg1: new[] {105, 205, 305, 403}, arg2: false);
-                context.DestroyMonster(arg1: new[] {
-                    900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929,
-                    930, 931, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957,
-                    958, 959
-                });
-                context.CreateMonster(
-                    arg1: new[] {
-                        1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115,
-                        1116, 1117, 1118, 1119, 1120, 1121, 1122, 1123, 1124, 1125, 1126, 1127, 1128, 1129, 1130, 1131,
-                        1132, 1133, 1134, 1135, 1136, 1137, 1138, 1139, 1140, 1141, 1142, 1143, 1144, 1145, 1146, 1147,
-                        1148, 1149, 1150
-                    }, arg2: true);
+                context.DestroyMonster(arg1: new[] {900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959});
+                context.CreateMonster(arg1: new[] {1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115, 1116, 1117, 1118, 1119, 1120, 1121, 1122, 1123, 1124, 1125, 1126, 1127, 1128, 1129, 1130, 1131, 1132, 1133, 1134, 1135, 1136, 1137, 1138, 1139, 1140, 1141, 1142, 1143, 1144, 1145, 1146, 1147, 1148, 1149, 1150}, arg2: true);
             }
 
             public override void Execute() {
@@ -1865,17 +1702,8 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetEffect(arg1: new[] {5901}, arg2: false);
                 context.SetEffect(arg1: new[] {5005}, arg2: true);
                 context.SetMesh(arg1: new[] {3002, 3003, 3004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315,
-                        3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325, 3326, 3327, 3328, 3329, 3330, 3331,
-                        3332, 3333, 3334, 3335
-                    }, arg2: false, arg3: 36, arg4: 0, arg5: 25);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415,
-                        3416
-                    }, arg2: false, arg3: 17, arg4: 0, arg5: 25);
+                context.SetRandomMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325, 3326, 3327, 3328, 3329, 3330, 3331, 3332, 3333, 3334, 3335}, arg2: false, arg3: 36, arg4: 0, arg5: 25);
+                context.SetRandomMesh(arg1: new[] {3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416}, arg2: false, arg3: 17, arg4: 0, arg5: 25);
             }
 
             public override void Execute() {
@@ -1892,16 +1720,7 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateLaozSplitGround04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5700}, arg2: true);
-                context.SetEffect(arg1: new[] {5701}, arg2: true);
-                context.SetEffect(arg1: new[] {5702}, arg2: true);
-                context.SetEffect(arg1: new[] {5703}, arg2: true);
-                context.SetEffect(arg1: new[] {5704}, arg2: true);
-                context.SetEffect(arg1: new[] {5705}, arg2: true);
-                context.SetEffect(arg1: new[] {5706}, arg2: true);
-                context.SetEffect(arg1: new[] {5707}, arg2: true);
-                context.SetEffect(arg1: new[] {5708}, arg2: true);
-                context.SetEffect(arg1: new[] {5709}, arg2: true);
+                context.SetEffect(arg1: new[] {5700, 5701, 5702, 5703, 5704, 5705, 5706, 5707, 5708, 5709}, arg2: true);
             }
 
             public override void Execute() {
@@ -1939,34 +1758,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetNpcEmotionSequence(arg1: 303, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {6008}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__29$", arg4: 8);
-                context.SetAgent(arg1: "8000", arg2: true);
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
-                context.SetAgent(arg1: "8004", arg2: true);
-                context.SetAgent(arg1: "8005", arg2: true);
-                context.SetAgent(arg1: "8006", arg2: true);
-                context.SetAgent(arg1: "8007", arg2: true);
-                context.SetAgent(arg1: "8008", arg2: true);
-                context.SetAgent(arg1: "8009", arg2: true);
-                context.SetAgent(arg1: "8010", arg2: true);
-                context.SetAgent(arg1: "8011", arg2: true);
-                context.SetAgent(arg1: "8012", arg2: true);
-                context.SetAgent(arg1: "8013", arg2: true);
-                context.SetAgent(arg1: "8014", arg2: true);
-                context.SetAgent(arg1: "8015", arg2: true);
-                context.SetAgent(arg1: "8016", arg2: true);
-                context.SetAgent(arg1: "8017", arg2: true);
-                context.SetAgent(arg1: "8018", arg2: true);
-                context.SetAgent(arg1: "8019", arg2: true);
-                context.SetAgent(arg1: "8020", arg2: true);
-                context.SetAgent(arg1: "8021", arg2: true);
-                context.SetAgent(arg1: "8022", arg2: true);
-                context.SetAgent(arg1: "8023", arg2: true);
-                context.SetAgent(arg1: "8024", arg2: true);
-                context.SetAgent(arg1: "8025", arg2: true);
-                context.SetAgent(arg1: "8026", arg2: true);
-                context.SetAgent(arg1: "8027", arg2: true);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019, 8020, 8021, 8022, 8023, 8024, 8025, 8026, 8027}, arg2: true);
             }
 
             public override void Execute() {
@@ -2262,8 +2054,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 650, arg2: true);
-                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509},
-                    arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -2376,10 +2167,8 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {305, 403});
-                context.SetBreakable(arg1: new[] {4000}, arg2: true);
-                context.SetBreakable(arg1: new[] {4001}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {4001}, arg2: true);
+                context.SetBreakable(arg1: new[] {4000, 4001}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001}, arg2: true);
             }
 
             public override void Execute() {
@@ -2397,8 +2186,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetEffect(arg1: new[] {5820}, arg2: false);
-                context.SetEffect(arg1: new[] {5821}, arg2: false);
+                context.SetEffect(arg1: new[] {5820, 5821}, arg2: false);
                 context.SetSkill(arg1: new[] {7000}, arg2: true);
                 context.SetEffect(arg1: new[] {6300}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 105, arg3: "$63000029_CS__CAVE01__35$", arg4: 3, arg5: 0);
@@ -2418,10 +2206,8 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateCollapaseGround03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {4000}, arg2: false);
-                context.SetBreakable(arg1: new[] {4001}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4001}, arg2: false);
+                context.SetBreakable(arg1: new[] {4000, 4001}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -2440,10 +2226,8 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7003}, arg2: true);
                 context.SetEffect(arg1: new[] {5801}, arg2: true);
-                context.SetBreakable(arg1: new[] {4000}, arg2: true);
-                context.SetBreakable(arg1: new[] {4001}, arg2: true);
-                context.SetEffect(arg1: new[] {5820}, arg2: false);
-                context.SetEffect(arg1: new[] {5821}, arg2: false);
+                context.SetBreakable(arg1: new[] {4000, 4001}, arg2: true);
+                context.SetEffect(arg1: new[] {5820, 5821}, arg2: false);
             }
 
             public override void Execute() {
@@ -2462,14 +2246,11 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7000}, arg2: true);
                 context.SetEffect(arg1: new[] {6300}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {4001}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 105, arg3: "$63000029_CS__CAVE01__35$", arg4: 3, arg5: 0);
                 context.DestroyMonster(arg1: new[] {305, 403});
-                context.SetBreakable(arg1: new[] {4000}, arg2: false);
-                context.SetBreakable(arg1: new[] {4001}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4001}, arg2: false);
+                context.SetBreakable(arg1: new[] {4000, 4001}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001}, arg2: false);
             }
 
             public override void Execute() {

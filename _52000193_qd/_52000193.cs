@@ -19,8 +19,7 @@ namespace Maple2.Trigger._52000193_qd {
             internal StateCameraEffect01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {
@@ -58,26 +57,22 @@ namespace Maple2.Trigger._52000193_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003406},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003406}, arg3: new byte[] {2})) {
                     context.State = new StateCameraEffect02_02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003407},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003407}, arg3: new byte[] {3})) {
                     context.State = new State이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003407},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003407}, arg3: new byte[] {2})) {
                     context.State = new State변신_02(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003407},
-                    arg3: new byte[] {2})) {
+                if (!context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003407}, arg3: new byte[] {2})) {
                     context.State = new State변신_02(context);
                     return;
                 }
@@ -107,8 +102,7 @@ namespace Maple2.Trigger._52000193_qd {
             internal StateCameraEffect03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 1);
@@ -129,8 +123,7 @@ namespace Maple2.Trigger._52000193_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$52000193_QD__52000193__1$", align: "bottomLeft",
-                    offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
+                context.ShowCaption(type: "VerticalCaption", title: "$52000193_QD__52000193__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
 
             public override void Execute() {
@@ -167,8 +160,7 @@ namespace Maple2.Trigger._52000193_qd {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.DestroyMonster(arg1: new[] {201});
                 context.VisibleMyPc(isVisible: true);
-                context.SetVisibleUI(uiName: "MessengerBrowser,GroupMessengerBrowser,HighlightGameMenu",
-                    visible: false);
+                context.SetVisibleUI(uiName: "MessengerBrowser,GroupMessengerBrowser,HighlightGameMenu", visible: false);
                 context.AddBuff(arg1: new[] {2001}, arg2: 99910402, arg3: 1, arg4: false, arg5: true);
                 context.AddBuff(arg1: new[] {2001}, arg2: 99910402, arg3: 1, arg4: false, arg5: false);
             }
@@ -191,8 +183,7 @@ namespace Maple2.Trigger._52000193_qd {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.DestroyMonster(arg1: new[] {201});
                 context.VisibleMyPc(isVisible: true);
-                context.SetVisibleUI(uiName: "MessengerBrowser,GroupMessengerBrowser,HighlightGameMenu",
-                    visible: false);
+                context.SetVisibleUI(uiName: "MessengerBrowser,GroupMessengerBrowser,HighlightGameMenu", visible: false);
                 context.AddBuff(arg1: new[] {2001}, arg2: 99910402, arg3: 1, arg4: false, arg5: true);
                 context.AddBuff(arg1: new[] {2001}, arg2: 99910402, arg3: 1, arg4: false, arg5: false);
             }
@@ -211,8 +202,7 @@ namespace Maple2.Trigger._52000193_qd {
             internal StateCameraEffect03_6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -235,8 +225,7 @@ namespace Maple2.Trigger._52000193_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003407},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003407}, arg3: new byte[] {3})) {
                     context.State = new State이동(context);
                     return;
                 }

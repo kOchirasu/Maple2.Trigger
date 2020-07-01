@@ -35,13 +35,7 @@ namespace Maple2.Trigger._02000384_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105}, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915,
-                        1916, 1917
-                    }, arg2: false);
-                context.SetMesh(arg1: new[] {1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809},
-                    arg2: false);
+                context.SetMesh(arg1: new[] {1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 1917, 1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809}, arg2: false);
                 context.SetLadder(arg1: 1101, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 1102, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 1103, arg2: false, arg3: false, arg4: 0);
@@ -166,11 +160,7 @@ namespace Maple2.Trigger._02000384_bf {
             internal Statestep_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915,
-                        1916, 1917
-                    }, arg2: true);
+                context.SetMesh(arg1: new[] {1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 1917}, arg2: true);
                 context.SetLadder(arg1: 1101, arg2: true, arg3: true, arg4: 1);
                 context.SetLadder(arg1: 1102, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 1103, arg2: true, arg3: true, arg4: 3);
@@ -342,8 +332,7 @@ namespace Maple2.Trigger._02000384_bf {
             internal Statestep_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809},
-                    arg2: true);
+                context.SetMesh(arg1: new[] {1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809}, arg2: true);
                 context.SetLadder(arg1: 1601, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 1602, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 1603, arg2: true, arg3: true, arg4: 2);

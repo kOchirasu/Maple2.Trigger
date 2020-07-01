@@ -4,11 +4,7 @@ namespace Maple2.Trigger._02020120_bf {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        1920, 1921, 1922, 1923, 1924, 1925, 1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935,
-                        1936, 1937
-                    }, arg2: false);
+                context.SetMesh(arg1: new[] {1920, 1921, 1922, 1923, 1924, 1925, 1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935, 1936, 1937}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetUserValue(key: "DungeonReset", value: 0);
             }
@@ -28,8 +24,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() {
                 context.DungeonResetTime(seconds: 720);
-                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle",
-                    script: "$02020120_BF__BOSSSPAWN__0$", duration: 4000, voice: @"ko/Npc/00002192");
+                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__0$", duration: 4000, voice: @"ko/Npc/00002192");
                 context.CreateMonster(arg1: new[] {99}, arg2: false);
                 context.SetPortal(arg1: 9901, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 9902, arg2: false, arg3: false, arg4: false);
@@ -66,8 +61,7 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnEnter() {
                 context.MoveUser(arg1: 02020120, arg2: 9903);
                 context.SetSound(arg1: 19601, arg2: true);
-                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_smile",
-                    script: "$02020120_BF__BOSSSPAWN__1$", duration: 7000, voice: @"ko/Npc/00002193");
+                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_smile", script: "$02020120_BF__BOSSSPAWN__1$", duration: 7000, voice: @"ko/Npc/00002193");
                 context.DestroyMonster(arg1: new[] {-1});
             }
 
@@ -103,14 +97,12 @@ namespace Maple2.Trigger._02020120_bf {
             internal State종료딜레이(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle",
-                    script: "$02020120_BF__BOSSSPAWN__2$", duration: 6576, voice: @"ko/Npc/00002194");
+                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__2$", duration: 6576, voice: @"ko/Npc/00002194");
             }
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.SetSkill(arg1: new[] {2222}, arg2: false);
-                    context.SetSkill(arg1: new[] {1212}, arg2: false);
+                    context.SetSkill(arg1: new[] {2222, 1212}, arg2: false);
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.DungeonClear();
                     context.DungeonSetEndTime();
@@ -132,8 +124,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.SetSkill(arg1: new[] {2222}, arg2: false);
-                    context.SetSkill(arg1: new[] {1212}, arg2: false);
+                    context.SetSkill(arg1: new[] {2222, 1212}, arg2: false);
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.DungeonFail();
                     context.State = new State종료(context);

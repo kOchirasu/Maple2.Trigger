@@ -5,13 +5,7 @@ namespace Maple2.Trigger._52020025_qd {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1001}, arg2: true);
-                context.SetAgent(arg1: "9001", arg2: true);
-                context.SetAgent(arg1: "9002", arg2: true);
-                context.SetAgent(arg1: "9003", arg2: true);
-                context.SetAgent(arg1: "9004", arg2: true);
-                context.SetAgent(arg1: "9005", arg2: true);
-                context.SetAgent(arg1: "9006", arg2: true);
-                context.SetAgent(arg1: "9007", arg2: true);
+                context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: true);
             }
 
             public override void Execute() {
@@ -109,13 +103,7 @@ namespace Maple2.Trigger._52020025_qd {
                 context.CameraReset(interpolationTime: 0.1f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.SetAgent(arg1: "9001", arg2: false);
-                context.SetAgent(arg1: "9002", arg2: false);
-                context.SetAgent(arg1: "9003", arg2: false);
-                context.SetAgent(arg1: "9004", arg2: false);
-                context.SetAgent(arg1: "9005", arg2: false);
-                context.SetAgent(arg1: "9006", arg2: false);
-                context.SetAgent(arg1: "9007", arg2: false);
+                context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: false);
             }
 
             public override void Execute() {
@@ -154,8 +142,7 @@ namespace Maple2.Trigger._52020025_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {102});
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG\Common\ScreenMask\Eff_CameraMasking_white.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG\Common\ScreenMask\Eff_CameraMasking_white.xml");
             }
 
             public override void Execute() {

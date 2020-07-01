@@ -20,41 +20,7 @@ namespace Maple2.Trigger._51000001_dg {
             internal State인트로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(ids: new[] {5000, 5001, 5002, 5003}, isVisible: false);
-                context.SetCube(ids: new[] {5101, 5102, 5103, 5104, 5105}, isVisible: false);
-                context.SetCube(ids: new[] {5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209},
-                    isVisible: false);
-                context.SetCube(ids: new[] {5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311},
-                    isVisible: false);
-                context.SetCube(
-                    ids: new[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414},
-                    isVisible: false);
-                context.SetCube(ids: new[] {5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512},
-                    isVisible: false);
-                context.SetCube(
-                    ids: new[] {
-                        5601, 5602, 5603, 5604, 5605, 5606, 5607, 5608, 5609, 5610, 5611, 5612, 5613, 5614, 5615, 5616,
-                        5617, 5618, 5619, 5620, 5621
-                    }, isVisible: false);
-                context.SetCube(
-                    ids: new[] {
-                        5701, 5702, 5703, 5704, 5705, 5706, 5707, 5708, 5709, 5710, 5711, 5712, 5713, 5714, 5715, 5716,
-                        5717, 5718, 5719, 5720, 5721
-                    }, isVisible: false);
-                context.SetCube(
-                    ids: new[] {
-                        5801, 5802, 5803, 5804, 5805, 5806, 5807, 5808, 5809, 5810, 5811, 5812, 5813, 5814, 5815, 5816,
-                        5817, 5818, 5819, 5820, 5821, 5822
-                    }, isVisible: false);
-                context.SetCube(
-                    ids: new[]
-                        {5901, 5902, 5903, 5904, 5905, 5906, 5907, 5908, 5909, 5910, 5911, 5912, 5913, 5914, 5915},
-                    isVisible: false);
-                context.SetCube(
-                    ids: new[] {
-                        51001, 51002, 51003, 51004, 51005, 51006, 51007, 51008, 51009, 51010, 51011, 51012, 51013,
-                        51014, 51015, 51016, 51017, 51018, 51019, 51020, 51021, 51022, 51023, 51024
-                    }, isVisible: false);
+                context.SetCube(ids: new[] {5000, 5001, 5002, 5003, 5101, 5102, 5103, 5104, 5105, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311, 5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414, 5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512, 5601, 5602, 5603, 5604, 5605, 5606, 5607, 5608, 5609, 5610, 5611, 5612, 5613, 5614, 5615, 5616, 5617, 5618, 5619, 5620, 5621, 5701, 5702, 5703, 5704, 5705, 5706, 5707, 5708, 5709, 5710, 5711, 5712, 5713, 5714, 5715, 5716, 5717, 5718, 5719, 5720, 5721, 5801, 5802, 5803, 5804, 5805, 5806, 5807, 5808, 5809, 5810, 5811, 5812, 5813, 5814, 5815, 5816, 5817, 5818, 5819, 5820, 5821, 5822, 5901, 5902, 5903, 5904, 5905, 5906, 5907, 5908, 5909, 5910, 5911, 5912, 5913, 5914, 5915, 51001, 51002, 51003, 51004, 51005, 51006, 51007, 51008, 51009, 51010, 51011, 51012, 51013, 51014, 51015, 51016, 51017, 51018, 51019, 51020, 51021, 51022, 51023, 51024}, isVisible: false);
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3, arg2: "$51000001_DG__MAIN__0$");
@@ -199,8 +165,7 @@ namespace Maple2.Trigger._51000001_dg {
                 context.ArcadeSpringFarm(type: "SetInteractScore", id: 11000016, score: 10000);
                 context.ArcadeSpringFarm(type: "SetInteractScore", id: 11000017, score: 10000);
                 context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {1001, 1002, 1003}, score: 5000);
-                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 1, timeScoreType: "remain",
-                    timeScoreRate: 500, roundDuration: 120000);
+                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 1, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetTimer(arg1: "100001", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
                 context.SetEventUI(arg1: 0, arg2: "1,5,1", arg4: "120");
             }
@@ -300,12 +265,9 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "100002", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
-                context.SetCube(ids: new[] {5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209}, randomCount: 5,
-                    isVisible: true);
-                context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {1101, 1102, 1103, 1104},
-                    score: 5000);
-                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 2, timeScoreType: "remain",
-                    timeScoreRate: 500, roundDuration: 120000);
+                context.SetCube(ids: new[] {5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209}, randomCount: 5, isVisible: true);
+                context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {1101, 1102, 1103, 1104}, score: 5000);
+                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 2, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, arg2: "2,5,1", arg4: "120");
             }
 
@@ -406,12 +368,9 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "100003", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
-                context.SetCube(ids: new[] {5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311},
-                    randomCount: 6, isVisible: true);
-                context.ArcadeSpringFarm(type: "SpawnMonster",
-                    spawnId: new[] {1201, 1202, 1203, 1204, 1205, 1206, 1207}, score: 5000);
-                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 3, timeScoreType: "remain",
-                    timeScoreRate: 500, roundDuration: 120000);
+                context.SetCube(ids: new[] {5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311}, randomCount: 6, isVisible: true);
+                context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {1201, 1202, 1203, 1204, 1205, 1206, 1207}, score: 5000);
+                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 3, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, arg2: "3,5,1", arg4: "120");
             }
 
@@ -511,14 +470,10 @@ namespace Maple2.Trigger._51000001_dg {
             internal State4라운드대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(
-                    ids: new[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414},
-                    randomCount: 7, isVisible: true);
+                context.SetCube(ids: new[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414}, randomCount: 7, isVisible: true);
                 context.SetTimer(arg1: "100004", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
-                context.ArcadeSpringFarm(type: "SpawnMonster",
-                    spawnId: new[] {1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308}, score: 5000);
-                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 4, timeScoreType: "remain",
-                    timeScoreRate: 500, roundDuration: 120000);
+                context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308}, score: 5000);
+                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 4, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, arg2: "4,5,1", arg4: "120");
             }
 
@@ -618,13 +573,10 @@ namespace Maple2.Trigger._51000001_dg {
             internal State5라운드대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(ids: new[] {5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512},
-                    randomCount: 6, isVisible: true);
+                context.SetCube(ids: new[] {5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512}, randomCount: 6, isVisible: true);
                 context.SetTimer(arg1: "100005", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
-                context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {1401, 1402, 1403, 1404, 1405},
-                    score: 5000);
-                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 5, timeScoreType: "remain",
-                    timeScoreRate: 500, roundDuration: 120000);
+                context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {1401, 1402, 1403, 1404, 1405}, score: 5000);
+                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 5, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, arg2: "5,5,1", arg4: "120");
             }
 
@@ -724,16 +676,10 @@ namespace Maple2.Trigger._51000001_dg {
             internal State6라운드대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(
-                    ids: new[] {
-                        5601, 5602, 5603, 5604, 5605, 5606, 5607, 5608, 5609, 5610, 5611, 5612, 5613, 5614, 5615, 5616,
-                        5617, 5618, 5619, 5620, 5621
-                    }, randomCount: 10, isVisible: true);
+                context.SetCube(ids: new[] {5601, 5602, 5603, 5604, 5605, 5606, 5607, 5608, 5609, 5610, 5611, 5612, 5613, 5614, 5615, 5616, 5617, 5618, 5619, 5620, 5621}, randomCount: 10, isVisible: true);
                 context.SetTimer(arg1: "100006", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
-                context.ArcadeSpringFarm(type: "SpawnMonster",
-                    spawnId: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508, 1509, 1510}, score: 5000);
-                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 6, timeScoreType: "remain",
-                    timeScoreRate: 500, roundDuration: 120000);
+                context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508, 1509, 1510}, score: 5000);
+                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 6, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, arg2: "6,10,6", arg4: "120");
             }
 
@@ -833,16 +779,10 @@ namespace Maple2.Trigger._51000001_dg {
             internal State7라운드대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(
-                    ids: new[] {
-                        5701, 5702, 5703, 5704, 5705, 5706, 5707, 5708, 5709, 5710, 5711, 5712, 5713, 5714, 5715, 5716,
-                        5717, 5718, 5719, 5720, 5721
-                    }, randomCount: 12, isVisible: true);
+                context.SetCube(ids: new[] {5701, 5702, 5703, 5704, 5705, 5706, 5707, 5708, 5709, 5710, 5711, 5712, 5713, 5714, 5715, 5716, 5717, 5718, 5719, 5720, 5721}, randomCount: 12, isVisible: true);
                 context.SetTimer(arg1: "100007", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
-                context.ArcadeSpringFarm(type: "SpawnMonster",
-                    spawnId: new[] {1601, 1602, 1603, 1604, 1605, 1606, 1607, 1608, 1609, 1610}, score: 5000);
-                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 7, timeScoreType: "remain",
-                    timeScoreRate: 500, roundDuration: 120000);
+                context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {1601, 1602, 1603, 1604, 1605, 1606, 1607, 1608, 1609, 1610}, score: 5000);
+                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 7, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, arg2: "7,10,6", arg4: "120");
             }
 
@@ -942,16 +882,10 @@ namespace Maple2.Trigger._51000001_dg {
             internal State8라운드대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(
-                    ids: new[] {
-                        5801, 5802, 5803, 5804, 5805, 5806, 5807, 5808, 5809, 5810, 5811, 5812, 5813, 5814, 5815, 5816,
-                        5817, 5818, 5819, 5820, 5821, 5822
-                    }, randomCount: 12, isVisible: true);
+                context.SetCube(ids: new[] {5801, 5802, 5803, 5804, 5805, 5806, 5807, 5808, 5809, 5810, 5811, 5812, 5813, 5814, 5815, 5816, 5817, 5818, 5819, 5820, 5821, 5822}, randomCount: 12, isVisible: true);
                 context.SetTimer(arg1: "100008", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
-                context.ArcadeSpringFarm(type: "SpawnMonster",
-                    spawnId: new[] {1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711}, score: 5000);
-                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 8, timeScoreType: "remain",
-                    timeScoreRate: 500, roundDuration: 120000);
+                context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711}, score: 5000);
+                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 8, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, arg2: "8,10,6", arg4: "120");
             }
 
@@ -978,8 +912,7 @@ namespace Maple2.Trigger._51000001_dg {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[]
-                    {1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711})) {
+                if (context.MonsterDead(arg1: new[] {1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711})) {
                     context.AddBuff(arg1: new[] {199}, arg2: 70000091, arg3: 1, arg5: false);
                     context.State = new State8라운드종료(context);
                     return;
@@ -1052,17 +985,10 @@ namespace Maple2.Trigger._51000001_dg {
             internal State9라운드대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(
-                    ids: new[]
-                        {5901, 5902, 5903, 5904, 5905, 5906, 5907, 5908, 5909, 5910, 5911, 5912, 5913, 5914, 5915},
-                    randomCount: 8, isVisible: true);
+                context.SetCube(ids: new[] {5901, 5902, 5903, 5904, 5905, 5906, 5907, 5908, 5909, 5910, 5911, 5912, 5913, 5914, 5915}, randomCount: 8, isVisible: true);
                 context.SetTimer(arg1: "100009", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
-                context.ArcadeSpringFarm(type: "SpawnMonster",
-                    spawnId: new[]
-                        {1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915},
-                    score: 5000);
-                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 9, timeScoreType: "remain",
-                    timeScoreRate: 500, roundDuration: 120000);
+                context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915}, score: 5000);
+                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 9, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, arg2: "9,10,6", arg4: "120");
             }
 
@@ -1089,8 +1015,7 @@ namespace Maple2.Trigger._51000001_dg {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[]
-                    {1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915})) {
+                if (context.MonsterDead(arg1: new[] {1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915})) {
                     context.AddBuff(arg1: new[] {199}, arg2: 70000091, arg3: 1, arg5: false);
                     context.State = new State9라운드종료(context);
                     return;
@@ -1163,17 +1088,11 @@ namespace Maple2.Trigger._51000001_dg {
             internal State10라운드대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(
-                    ids: new[] {
-                        51001, 51002, 51003, 51004, 51005, 51006, 51007, 51008, 51009, 51010, 51011, 51012, 51013,
-                        51014, 51015, 51016, 51017, 51018, 51019, 51020, 51021, 51022, 51023, 51024
-                    }, randomCount: 6, isVisible: true);
+                context.SetCube(ids: new[] {51001, 51002, 51003, 51004, 51005, 51006, 51007, 51008, 51009, 51010, 51011, 51012, 51013, 51014, 51015, 51016, 51017, 51018, 51019, 51020, 51021, 51022, 51023, 51024}, randomCount: 6, isVisible: true);
                 context.SetTimer(arg1: "100010", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
                 context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {2001}, score: 10000);
-                context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {2002, 2003, 2004, 2005},
-                    score: 5000);
-                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 10, timeScoreType: "remain",
-                    timeScoreRate: 500, roundDuration: 120000);
+                context.ArcadeSpringFarm(type: "SpawnMonster", spawnId: new[] {2002, 2003, 2004, 2005}, score: 5000);
+                context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 10, timeScoreType: "remain", timeScoreRate: 500, roundDuration: 120000);
                 context.SetEventUI(arg1: 0, arg2: "10,10,6", arg4: "120");
             }
 

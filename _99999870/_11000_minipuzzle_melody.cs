@@ -7,16 +7,7 @@ namespace Maple2.Trigger._99999870 {
                 context.ResetTimer(arg1: "1");
                 context.ResetTimer(arg1: "2");
                 context.EnableLocalCamera(isEnable: false);
-                context.SetInteractObject(arg1: new[] {12000066}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000074}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000058}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000059}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000060}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000061}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000062}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000063}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000064}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000065}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000066, 12000074, 12000058, 12000059, 12000060, 12000061, 12000062, 12000063, 12000064, 12000065}, arg2: 2);
                 context.SetUserValue(key: "AnswerIsRight", value: 0);
                 context.SetUserValue(key: "AnswerIsWrong", value: 0);
                 context.SetActor(arg1: 11001, arg2: true, arg3: "ks_quest_musical_B01_off");
@@ -35,17 +26,7 @@ namespace Maple2.Trigger._99999870 {
                 context.SetActor(arg1: 11106, arg2: true, arg3: "ks_quest_musical_A01_off");
                 context.SetActor(arg1: 11107, arg2: true, arg3: "ks_quest_musical_A01_off");
                 context.SetActor(arg1: 11108, arg2: true, arg3: "ks_quest_musical_A01_off");
-                context.SetEffect(arg1: new[] {11201}, arg2: false);
-                context.SetEffect(arg1: new[] {11202}, arg2: false);
-                context.SetEffect(arg1: new[] {11203}, arg2: false);
-                context.SetEffect(arg1: new[] {11204}, arg2: false);
-                context.SetEffect(arg1: new[] {11205}, arg2: false);
-                context.SetEffect(arg1: new[] {11206}, arg2: false);
-                context.SetEffect(arg1: new[] {11207}, arg2: false);
-                context.SetEffect(arg1: new[] {11208}, arg2: false);
-                context.SetEffect(arg1: new[] {11300}, arg2: false);
-                context.SetEffect(arg1: new[] {11301}, arg2: false);
-                context.SetEffect(arg1: new[] {11302}, arg2: false);
+                context.SetEffect(arg1: new[] {11201, 11202, 11203, 11204, 11205, 11206, 11207, 11208, 11300, 11301, 11302}, arg2: false);
             }
 
             public override void Execute() {

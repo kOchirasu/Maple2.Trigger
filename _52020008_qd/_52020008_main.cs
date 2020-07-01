@@ -5,41 +5,10 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {9991}, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {6001, 6002}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {7001, 7002}, arg2: false);
-                context.SetBreakable(arg1: new[] {6001, 6002}, arg2: false);
-                context.SetBreakable(arg1: new[] {7001, 7002}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 6001, 6002, 7001, 7002}, arg2: false);
+                context.SetBreakable(arg1: new[] {6001, 6002, 7001, 7002}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false);
-                context.SetAgent(arg1: "9001", arg2: true);
-                context.SetAgent(arg1: "9002", arg2: true);
-                context.SetAgent(arg1: "9003", arg2: true);
-                context.SetAgent(arg1: "9004", arg2: true);
-                context.SetAgent(arg1: "9005", arg2: true);
-                context.SetAgent(arg1: "9006", arg2: true);
-                context.SetAgent(arg1: "9007", arg2: true);
-                context.SetAgent(arg1: "9008", arg2: true);
-                context.SetAgent(arg1: "9009", arg2: true);
-                context.SetAgent(arg1: "9010", arg2: true);
-                context.SetAgent(arg1: "9011", arg2: true);
-                context.SetAgent(arg1: "9012", arg2: true);
-                context.SetAgent(arg1: "9013", arg2: true);
-                context.SetAgent(arg1: "9014", arg2: true);
-                context.SetAgent(arg1: "9015", arg2: true);
-                context.SetAgent(arg1: "9016", arg2: true);
-                context.SetAgent(arg1: "9017", arg2: true);
-                context.SetAgent(arg1: "9018", arg2: true);
-                context.SetAgent(arg1: "9019", arg2: true);
-                context.SetAgent(arg1: "9020", arg2: true);
-                context.SetAgent(arg1: "9021", arg2: true);
-                context.SetAgent(arg1: "9022", arg2: true);
-                context.SetAgent(arg1: "9023", arg2: true);
-                context.SetAgent(arg1: "9024", arg2: true);
-                context.SetAgent(arg1: "9025", arg2: true);
-                context.SetAgent(arg1: "9026", arg2: true);
-                context.SetAgent(arg1: "9027", arg2: true);
-                context.SetAgent(arg1: "9028", arg2: true);
+                context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028}, arg2: true);
             }
 
             public override void Execute() {
@@ -57,8 +26,7 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "연출종료", arg2: "exit");
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102}, arg2: false);
                 context.CreateMonster(arg1: new[] {103}, arg2: false, arg3: 30000);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
@@ -135,8 +103,7 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 505, arg2: true);
-                context.SetConversation(arg1: 2, arg2: 11003674,
-                    arg3: @"시커먼 속내를 가진 건 메이플 연합도 마찬가지 아닌가요? \n크리티아스의 힘은 누구에게도 이용당하게 두지 않겠어요!", arg4: 5);
+                context.SetConversation(arg1: 2, arg2: 11003674, arg3: @"시커먼 속내를 가진 건 메이플 연합도 마찬가지 아닌가요? \n크리티아스의 힘은 누구에게도 이용당하게 두지 않겠어요!", arg4: 5);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
             }
 
@@ -175,8 +142,7 @@ namespace Maple2.Trigger._52020008_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 501, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11003660, arg3: "이제 어떻게 하실려나?", arg4: 3);
-                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207}, arg2: false);
-                context.CreateMonster(arg1: new[] {104, 105, 106}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 104, 105, 106}, arg2: false);
             }
 
             public override void Execute() {
@@ -266,10 +232,8 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 504, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {6001, 6002}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {7001, 7002}, arg2: true);
-                context.SetBreakable(arg1: new[] {6001, 6002}, arg2: true);
-                context.SetBreakable(arg1: new[] {7001, 7002}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {6001, 6002, 7001, 7002}, arg2: true);
+                context.SetBreakable(arg1: new[] {6001, 6002, 7001, 7002}, arg2: true);
                 context.FaceEmotion(spawnPointId: 103, emotionName: "Trigger_bore1");
                 context.SetConversation(arg1: 2, arg2: 11003660, arg3: "아으... 귀찮아.", arg4: 3);
             }
@@ -308,10 +272,8 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 502, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {6001, 6002}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {7001, 7002}, arg2: false);
-                context.SetBreakable(arg1: new[] {6001, 6002}, arg2: false);
-                context.SetBreakable(arg1: new[] {7001, 7002}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {6001, 6002, 7001, 7002}, arg2: false);
+                context.SetBreakable(arg1: new[] {6001, 6002, 7001, 7002}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003661, arg3: "왕녀는 우리가 접수하겠다. 얘들아 처리해라!", arg4: 3);
             }
 
@@ -372,46 +334,15 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {9991}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {6001, 6002}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {7001, 7002}, arg2: false);
-                context.SetBreakable(arg1: new[] {6001, 6002}, arg2: false);
-                context.SetBreakable(arg1: new[] {7001, 7002}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {6001, 6002, 7001, 7002}, arg2: false);
+                context.SetBreakable(arg1: new[] {6001, 6002, 7001, 7002}, arg2: false);
                 context.DestroyMonster(arg1: new[] {-1});
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: false);
-                context.SetBreakable(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009},
-                    arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: false);
+                context.SetBreakable(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: false);
                 context.CameraReset(interpolationTime: 0.1f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.SetAgent(arg1: "9001", arg2: false);
-                context.SetAgent(arg1: "9002", arg2: false);
-                context.SetAgent(arg1: "9003", arg2: false);
-                context.SetAgent(arg1: "9004", arg2: false);
-                context.SetAgent(arg1: "9005", arg2: false);
-                context.SetAgent(arg1: "9006", arg2: false);
-                context.SetAgent(arg1: "9007", arg2: false);
-                context.SetAgent(arg1: "9008", arg2: false);
-                context.SetAgent(arg1: "9009", arg2: false);
-                context.SetAgent(arg1: "9010", arg2: false);
-                context.SetAgent(arg1: "9011", arg2: false);
-                context.SetAgent(arg1: "9012", arg2: false);
-                context.SetAgent(arg1: "9013", arg2: false);
-                context.SetAgent(arg1: "9014", arg2: false);
-                context.SetAgent(arg1: "9015", arg2: false);
-                context.SetAgent(arg1: "9016", arg2: false);
-                context.SetAgent(arg1: "9017", arg2: false);
-                context.SetAgent(arg1: "9018", arg2: false);
-                context.SetAgent(arg1: "9019", arg2: false);
-                context.SetAgent(arg1: "9020", arg2: false);
-                context.SetAgent(arg1: "9021", arg2: false);
-                context.SetAgent(arg1: "9022", arg2: false);
-                context.SetAgent(arg1: "9023", arg2: false);
-                context.SetAgent(arg1: "9024", arg2: false);
-                context.SetAgent(arg1: "9025", arg2: false);
-                context.SetAgent(arg1: "9026", arg2: false);
-                context.SetAgent(arg1: "9027", arg2: false);
-                context.SetAgent(arg1: "9028", arg2: false);
+                context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028}, arg2: false);
             }
 
             public override void Execute() {

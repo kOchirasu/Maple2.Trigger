@@ -26,12 +26,9 @@ namespace Maple2.Trigger._02000533_bf {
                 context.SetNpcEmotionLoop(arg1: 608, arg2: "Sit_Down_A", arg3: 10000000f);
                 context.SetNpcEmotionLoop(arg1: 610, arg2: "Bore_A", arg3: 10000000f);
                 context.AddBalloonTalk(spawnPointId: 601, msg: "$02000533_BF__MAIN2__0$", duration: 3500, delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 602, msg: "$02000533_BF__MAIN2__1$", duration: 3500,
-                    delayTick: 500);
-                context.AddBalloonTalk(spawnPointId: 601, msg: "$02000533_BF__MAIN2__2$", duration: 3500,
-                    delayTick: 1500);
-                context.AddBalloonTalk(spawnPointId: 607, msg: "$02000533_BF__MAIN2__3$", duration: 3500,
-                    delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 602, msg: "$02000533_BF__MAIN2__1$", duration: 3500, delayTick: 500);
+                context.AddBalloonTalk(spawnPointId: 601, msg: "$02000533_BF__MAIN2__2$", duration: 3500, delayTick: 1500);
+                context.AddBalloonTalk(spawnPointId: 607, msg: "$02000533_BF__MAIN2__3$", duration: 3500, delayTick: 500);
             }
 
             public override void Execute() {

@@ -192,8 +192,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5102}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000701);
-                context.AddEffectNif(spawnPointId: 2214, nifPath: @"Map/Common/Indoor/co_in_prop_security_A01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 2214, nifPath: @"Map/Common/Indoor/co_in_prop_security_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {

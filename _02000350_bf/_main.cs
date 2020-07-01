@@ -4,33 +4,9 @@ namespace Maple2.Trigger._02000350_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {600}, arg2: false);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {610}, arg2: false);
-                context.SetEffect(arg1: new[] {6010}, arg2: false);
-                context.SetEffect(arg1: new[] {6011}, arg2: false);
-                context.SetEffect(arg1: new[] {6012}, arg2: false);
-                context.SetEffect(arg1: new[] {6013}, arg2: false);
-                context.SetEffect(arg1: new[] {6015}, arg2: false);
-                context.SetEffect(arg1: new[] {6110}, arg2: false);
-                context.SetEffect(arg1: new[] {6111}, arg2: false);
-                context.SetEffect(arg1: new[] {6112}, arg2: false);
-                context.SetEffect(arg1: new[] {6113}, arg2: false);
-                context.SetEffect(arg1: new[] {6101}, arg2: false);
-                context.SetSkill(arg1: new[] {701}, arg2: false);
-                context.SetSkill(arg1: new[] {702}, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016,
-                        3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116,
-                        3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132,
-                        3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {600, 601, 602, 610, 6010, 6011, 6012, 6013, 6015, 6110, 6111, 6112, 6113, 6101}, arg2: false);
+                context.SetSkill(arg1: new[] {701, 702}, arg2: false);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132, 3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -47,11 +23,7 @@ namespace Maple2.Trigger._02000350_bf {
             internal State시작대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6010}, arg2: true);
-                context.SetEffect(arg1: new[] {6011}, arg2: true);
-                context.SetEffect(arg1: new[] {6012}, arg2: true);
-                context.SetEffect(arg1: new[] {6013}, arg2: true);
-                context.SetEffect(arg1: new[] {6015}, arg2: true);
+                context.SetEffect(arg1: new[] {6010, 6011, 6012, 6013, 6015}, arg2: true);
                 context.SetEventUI(arg1: 1, arg2: "$02000350_BF__MAIN__0$", arg3: 3000, arg4: "0");
                 context.SetTimer(arg1: "3", arg2: 3);
             }
@@ -127,15 +99,8 @@ namespace Maple2.Trigger._02000350_bf {
                 context.DarkStream(type: "StartGame", round: 30);
                 context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetSkill(arg1: new[] {701}, arg2: true);
-                context.SetEffect(arg1: new[] {6010}, arg2: false);
-                context.SetEffect(arg1: new[] {6011}, arg2: false);
-                context.SetEffect(arg1: new[] {6012}, arg2: false);
-                context.SetEffect(arg1: new[] {6013}, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016,
-                        3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {6010, 6011, 6012, 6013}, arg2: false);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -152,10 +117,7 @@ namespace Maple2.Trigger._02000350_bf {
             internal State1라운드대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6110}, arg2: true);
-                context.SetEffect(arg1: new[] {6111}, arg2: true);
-                context.SetEffect(arg1: new[] {6112}, arg2: true);
-                context.SetEffect(arg1: new[] {6113}, arg2: true);
+                context.SetEffect(arg1: new[] {6110, 6111, 6112, 6113}, arg2: true);
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.DarkStream(type: "StartRound", round: 1, uiDuration: 3000, damagePenalty: 5);
                 context.SetEventUI(arg1: 0, arg2: "1,5,1");
@@ -359,18 +321,9 @@ namespace Maple2.Trigger._02000350_bf {
             public override void Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.SetEffect(arg1: new[] {610}, arg2: true);
-                    context.SetEffect(arg1: new[] {6110}, arg2: false);
-                    context.SetEffect(arg1: new[] {6111}, arg2: false);
-                    context.SetEffect(arg1: new[] {6112}, arg2: false);
-                    context.SetEffect(arg1: new[] {6113}, arg2: false);
+                    context.SetEffect(arg1: new[] {6110, 6111, 6112, 6113}, arg2: false);
                     context.SetSkill(arg1: new[] {702}, arg2: true);
-                    context.SetMesh(
-                        arg1: new[] {
-                            3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115,
-                            3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130,
-                            3131, 3132, 3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145,
-                            3146
-                        }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132, 3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.SetEventUI(arg1: 0, arg2: "0,0");
                     context.State = new State종료(context);
                     return;

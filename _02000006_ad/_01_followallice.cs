@@ -5,14 +5,8 @@ namespace Maple2.Trigger._02000006_ad {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {51, 52, 53, 54});
-                context.SetMesh(
-                    arg1: new[]
-                        {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118},
-                    arg2: false);
-                context.SetEffect(
-                    arg1: new[]
-                        {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218},
-                    arg2: false);
+                context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118}, arg2: false);
+                context.SetEffect(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218}, arg2: false);
                 context.SetLadder(arg1: 151, arg2: false, arg3: false);
                 context.SetLadder(arg1: 152, arg2: false, arg3: false);
                 context.SetLadder(arg1: 153, arg2: false, arg3: false);
@@ -167,14 +161,8 @@ namespace Maple2.Trigger._02000006_ad {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {52}, arg2: true);
-                context.SetMesh(
-                    arg1: new[]
-                        {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118},
-                    arg2: false);
-                context.SetEffect(
-                    arg1: new[]
-                        {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218},
-                    arg2: false);
+                context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118}, arg2: false);
+                context.SetEffect(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218}, arg2: false);
                 context.SetTimer(arg1: "2", arg2: 15);
             }
 
@@ -350,14 +338,8 @@ namespace Maple2.Trigger._02000006_ad {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {53}, arg2: true);
-                context.SetMesh(
-                    arg1: new[]
-                        {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118},
-                    arg2: false);
-                context.SetEffect(
-                    arg1: new[]
-                        {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218},
-                    arg2: false);
+                context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118}, arg2: false);
+                context.SetEffect(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218}, arg2: false);
                 context.SetTimer(arg1: "2", arg2: 15);
             }
 
@@ -476,14 +458,8 @@ namespace Maple2.Trigger._02000006_ad {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {54}, arg2: true);
-                context.SetMesh(
-                    arg1: new[]
-                        {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118},
-                    arg2: false);
-                context.SetEffect(
-                    arg1: new[]
-                        {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218},
-                    arg2: false);
+                context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118}, arg2: false);
+                context.SetEffect(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218}, arg2: false);
                 context.SetTimer(arg1: "2", arg2: 15);
             }
 

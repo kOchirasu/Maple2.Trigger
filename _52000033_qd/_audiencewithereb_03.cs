@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52000033_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100245},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100245}, arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -59,8 +58,7 @@ namespace Maple2.Trigger._52000033_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {700}, arg2: false);
-                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_normal",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_03__0$", duration: 3000, delayTick: 0, align: "left");
+                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_03__0$", duration: 3000, delayTick: 0, align: "left");
             }
 
             public override void Execute() {
@@ -78,8 +76,7 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {901}, arg2: false);
-                context.AddCinematicTalk(npcId: 11001663, msg: "$52000033_QD__AUDIENCEWITHEREB_03__1$", duration: 3000,
-                    delayTick: 0, align: "left");
+                context.AddCinematicTalk(npcId: 11001663, msg: "$52000033_QD__AUDIENCEWITHEREB_03__1$", duration: 3000, delayTick: 0, align: "left");
             }
 
             public override void Execute() {
@@ -202,8 +199,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_surprise",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_03__5$", duration: 3000, delayTick: 0, align: "left");
+                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_surprise", msg: "$52000033_QD__AUDIENCEWITHEREB_03__5$", duration: 3000, delayTick: 0, align: "left");
             }
 
             public override void Execute() {
@@ -221,8 +217,7 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 7001, arg2: true);
-                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_closeEye",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_03__6$", duration: 3000, delayTick: 0, align: "left");
+                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_closeEye", msg: "$52000033_QD__AUDIENCEWITHEREB_03__6$", duration: 3000, delayTick: 0, align: "left");
                 context.AddBalloonTalk(spawnPointId: 401, msg: "$52000033_QD__AUDIENCEWITHEREB_03__7$", duration: 3000);
             }
 
@@ -240,8 +235,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_serious",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_03__8$", duration: 3000, delayTick: 0, align: "left");
+                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_serious", msg: "$52000033_QD__AUDIENCEWITHEREB_03__8$", duration: 3000, delayTick: 0, align: "left");
                 context.MoveNpc(arg1: 601, arg2: "MS2PatrolData_1006");
             }
 
@@ -259,8 +253,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_closeEye",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_03__9$", duration: 3000, delayTick: 0, align: "left");
+                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_closeEye", msg: "$52000033_QD__AUDIENCEWITHEREB_03__9$", duration: 3000, delayTick: 0, align: "left");
                 context.DestroyMonster(arg1: new[] {601});
                 context.SetSceneSkip();
             }

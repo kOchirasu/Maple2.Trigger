@@ -39,18 +39,7 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.NpcDetected(arg1: 102, arg2: new[] {2001})
-                    && !context.NpcDetected(arg1: 102, arg2: new[] {2002})
-                    && !context.NpcDetected(arg1: 102, arg2: new[] {2003})
-                    && !context.NpcDetected(arg1: 102, arg2: new[] {2004})
-                    && !context.NpcDetected(arg1: 102, arg2: new[] {2005})
-                    && !context.NpcDetected(arg1: 102, arg2: new[] {2006})
-                    && !context.NpcDetected(arg1: 102, arg2: new[] {2008})
-                    && !context.NpcDetected(arg1: 102, arg2: new[] {2009})
-                    && !context.NpcDetected(arg1: 102, arg2: new[] {2010})
-                    && !context.NpcDetected(arg1: 102, arg2: new[] {2011})
-                    && !context.NpcDetected(arg1: 102, arg2: new[] {2012})
-                    && !context.NpcDetected(arg1: 102, arg2: new[] {2013})) {
+                if (!context.NpcDetected(arg1: 102, arg2: new[] {2001}) && !context.NpcDetected(arg1: 102, arg2: new[] {2002}) && !context.NpcDetected(arg1: 102, arg2: new[] {2003}) && !context.NpcDetected(arg1: 102, arg2: new[] {2004}) && !context.NpcDetected(arg1: 102, arg2: new[] {2005}) && !context.NpcDetected(arg1: 102, arg2: new[] {2006}) && !context.NpcDetected(arg1: 102, arg2: new[] {2008}) && !context.NpcDetected(arg1: 102, arg2: new[] {2009}) && !context.NpcDetected(arg1: 102, arg2: new[] {2010}) && !context.NpcDetected(arg1: 102, arg2: new[] {2011}) && !context.NpcDetected(arg1: 102, arg2: new[] {2012}) && !context.NpcDetected(arg1: 102, arg2: new[] {2013})) {
                     context.State = new StateCheckSuccess(context);
                     return;
                 }

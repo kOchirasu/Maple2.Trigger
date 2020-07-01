@@ -222,8 +222,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5103}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000677);
-                context.AddEffectNif(spawnPointId: 3103, nifPath: @"Map/Royalcity/Field/ry_fi_prop_plane_A01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 3103, nifPath: @"Map/Royalcity/Field/ry_fi_prop_plane_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -262,8 +261,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5103}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000679);
-                context.AddEffectNif(spawnPointId: 3103, nifPath: @"Map/Royalcity/Field/ry_fi_prop_yacht_A02.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 3103, nifPath: @"Map/Royalcity/Field/ry_fi_prop_yacht_A02.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -302,8 +300,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5103}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000684);
-                context.AddEffectNif(spawnPointId: 3103, nifPath: @"Map/Ludibrium/Field/lu_fi_prop_rocket_A01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 3103, nifPath: @"Map/Ludibrium/Field/lu_fi_prop_rocket_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -342,8 +339,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5103}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000697);
-                context.AddEffectNif(spawnPointId: 3103, nifPath: @"Npc/Etc/UGC_Poclain/UGC_Poclain_01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 315);
+                context.AddEffectNif(spawnPointId: 3103, nifPath: @"Npc/Etc/UGC_Poclain/UGC_Poclain_01.nif", isOutline: true, scale: 1.2f, rotateZ: 315);
             }
 
             public override void Execute() {

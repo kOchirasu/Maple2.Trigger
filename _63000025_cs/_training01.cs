@@ -6,54 +6,7 @@ namespace Maple2.Trigger._63000025_cs {
             public override void OnEnter() {
                 context.CreateWidget(arg1: "Guide");
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5100}, arg2: false);
-                context.SetEffect(arg1: new[] {5101}, arg2: false);
-                context.SetEffect(arg1: new[] {5102}, arg2: false);
-                context.SetEffect(arg1: new[] {5103}, arg2: false);
-                context.SetEffect(arg1: new[] {5104}, arg2: false);
-                context.SetEffect(arg1: new[] {5105}, arg2: false);
-                context.SetEffect(arg1: new[] {5200}, arg2: false);
-                context.SetEffect(arg1: new[] {5203}, arg2: false);
-                context.SetEffect(arg1: new[] {5301}, arg2: false);
-                context.SetEffect(arg1: new[] {5400}, arg2: false);
-                context.SetEffect(arg1: new[] {5401}, arg2: false);
-                context.SetEffect(arg1: new[] {5402}, arg2: false);
-                context.SetEffect(arg1: new[] {5403}, arg2: false);
-                context.SetEffect(arg1: new[] {5404}, arg2: false);
-                context.SetEffect(arg1: new[] {5405}, arg2: false);
-                context.SetEffect(arg1: new[] {5406}, arg2: false);
-                context.SetEffect(arg1: new[] {5407}, arg2: false);
-                context.SetEffect(arg1: new[] {5408}, arg2: false);
-                context.SetEffect(arg1: new[] {5409}, arg2: false);
-                context.SetEffect(arg1: new[] {5410}, arg2: false);
-                context.SetEffect(arg1: new[] {5500}, arg2: false);
-                context.SetEffect(arg1: new[] {5501}, arg2: false);
-                context.SetEffect(arg1: new[] {5502}, arg2: false);
-                context.SetEffect(arg1: new[] {5503}, arg2: false);
-                context.SetEffect(arg1: new[] {5504}, arg2: false);
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
-                context.SetEffect(arg1: new[] {6001}, arg2: false);
-                context.SetEffect(arg1: new[] {6002}, arg2: false);
-                context.SetEffect(arg1: new[] {6003}, arg2: false);
-                context.SetEffect(arg1: new[] {6004}, arg2: false);
-                context.SetEffect(arg1: new[] {6005}, arg2: false);
-                context.SetEffect(arg1: new[] {6006}, arg2: false);
-                context.SetEffect(arg1: new[] {6100}, arg2: false);
-                context.SetEffect(arg1: new[] {6101}, arg2: false);
-                context.SetEffect(arg1: new[] {6102}, arg2: false);
-                context.SetEffect(arg1: new[] {6103}, arg2: false);
-                context.SetEffect(arg1: new[] {6104}, arg2: false);
-                context.SetEffect(arg1: new[] {6105}, arg2: false);
-                context.SetEffect(arg1: new[] {6106}, arg2: false);
-                context.SetEffect(arg1: new[] {6107}, arg2: false);
-                context.SetEffect(arg1: new[] {6108}, arg2: false);
-                context.SetEffect(arg1: new[] {6109}, arg2: false);
-                context.SetEffect(arg1: new[] {6110}, arg2: false);
-                context.SetEffect(arg1: new[] {6111}, arg2: false);
-                context.SetEffect(arg1: new[] {6112}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001, 5002, 5100, 5101, 5102, 5103, 5104, 5105, 5200, 5203, 5301, 5400, 5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5500, 5501, 5502, 5503, 5504, 6000, 6001, 6002, 6003, 6004, 6005, 6006, 6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111, 6112}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10001003}, arg2: 0);
             }
 
@@ -77,74 +30,62 @@ namespace Maple2.Trigger._63000025_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000448},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000448}, arg3: new byte[] {1})) {
                     context.State = new StateTimeToLeave02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000447},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000447}, arg3: new byte[] {3})) {
                     context.State = new StateReadyToMove02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000447},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000447}, arg3: new byte[] {2})) {
                     context.State = new StateQuestOnGoing41(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000447},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000447}, arg3: new byte[] {1})) {
                     context.State = new StateQuestOnGoing41(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000446},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000446}, arg3: new byte[] {3})) {
                     context.State = new StateQuestOnGoing41(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000446},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000446}, arg3: new byte[] {2})) {
                     context.State = new StateQuestOnGoing41(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000446},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000446}, arg3: new byte[] {1})) {
                     context.State = new StateQuestOnGoing41(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000445},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000445}, arg3: new byte[] {3})) {
                     context.State = new StateQuestOnGoing31(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000445},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000445}, arg3: new byte[] {2})) {
                     context.State = new StateQuestOnGoing21(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000445},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000445}, arg3: new byte[] {1})) {
                     context.State = new StateQuestOnGoing11(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000444},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000444}, arg3: new byte[] {3})) {
                     context.State = new StateQuestOnGoing01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000444},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000444}, arg3: new byte[] {2})) {
                     context.State = new StateEnter02(context);
                     return;
                 }
@@ -631,8 +572,7 @@ namespace Maple2.Trigger._63000025_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000444},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000444}, arg3: new byte[] {3})) {
                     context.State = new StateSecondQuestStart01(context);
                     return;
                 }
@@ -651,8 +591,7 @@ namespace Maple2.Trigger._63000025_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000445},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000445}, arg3: new byte[] {1})) {
                     context.State = new StateJumpPointGuide01(context);
                     return;
                 }
@@ -667,17 +606,7 @@ namespace Maple2.Trigger._63000025_cs {
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 10031020);
                 context.ShowGuideSummary(entityId: 10031030, textId: 10031030);
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetEffect(arg1: new[] {5100}, arg2: true);
-                context.SetEffect(arg1: new[] {5101}, arg2: true);
-                context.SetEffect(arg1: new[] {5102}, arg2: true);
-                context.SetEffect(arg1: new[] {5103}, arg2: true);
-                context.SetEffect(arg1: new[] {5104}, arg2: true);
-                context.SetEffect(arg1: new[] {5105}, arg2: true);
-                context.SetEffect(arg1: new[] {5200}, arg2: true);
-                context.SetEffect(arg1: new[] {5203}, arg2: true);
-                context.SetEffect(arg1: new[] {5301}, arg2: true);
+                context.SetEffect(arg1: new[] {5000, 5001, 5100, 5101, 5102, 5103, 5104, 5105, 5200, 5203, 5301}, arg2: true);
                 context.DestroyMonster(arg1: new[] {102, 202});
                 context.CreateMonster(arg1: new[] {103, 203}, arg2: false);
             }
@@ -739,19 +668,11 @@ namespace Maple2.Trigger._63000025_cs {
                 context.HideGuideSummary(entityId: 10031031);
                 context.ShowGuideSummary(entityId: 10031032, textId: 10031032);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEffect(arg1: new[] {5301}, arg2: false);
-                context.SetEffect(arg1: new[] {5100}, arg2: false);
-                context.SetEffect(arg1: new[] {5101}, arg2: false);
-                context.SetEffect(arg1: new[] {5102}, arg2: false);
-                context.SetEffect(arg1: new[] {5103}, arg2: false);
-                context.SetEffect(arg1: new[] {5104}, arg2: false);
-                context.SetEffect(arg1: new[] {5105}, arg2: false);
-                context.SetEffect(arg1: new[] {5200}, arg2: false);
+                context.SetEffect(arg1: new[] {5301, 5100, 5101, 5102, 5103, 5104, 5105, 5200}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000445},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000445}, arg3: new byte[] {2})) {
                     context.State = new StateSecondQuestEnd01(context);
                     return;
                 }
@@ -768,15 +689,10 @@ namespace Maple2.Trigger._63000025_cs {
             internal StateSecondQuestEnd01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5203}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5203}, arg2: false);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.ShowGuideSummary(entityId: 10031050, textId: 10031050);
-                context.SetEffect(arg1: new[] {5500}, arg2: true);
-                context.SetEffect(arg1: new[] {5501}, arg2: true);
-                context.SetEffect(arg1: new[] {5502}, arg2: true);
-                context.SetEffect(arg1: new[] {5503}, arg2: true);
-                context.SetEffect(arg1: new[] {5504}, arg2: true);
+                context.SetEffect(arg1: new[] {5500, 5501, 5502, 5503, 5504}, arg2: true);
             }
 
             public override void Execute() {
@@ -788,13 +704,7 @@ namespace Maple2.Trigger._63000025_cs {
 
             public override void OnExit() {
                 context.HideGuideSummary(entityId: 10031050);
-                context.SetEffect(arg1: new[] {5500}, arg2: false);
-                context.SetEffect(arg1: new[] {5501}, arg2: false);
-                context.SetEffect(arg1: new[] {5502}, arg2: false);
-                context.SetEffect(arg1: new[] {5503}, arg2: false);
-                context.SetEffect(arg1: new[] {5504}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5203}, arg2: false);
+                context.SetEffect(arg1: new[] {5500, 5501, 5502, 5503, 5504, 5001, 5203}, arg2: false);
             }
         }
 
@@ -807,8 +717,7 @@ namespace Maple2.Trigger._63000025_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000445},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000445}, arg3: new byte[] {3})) {
                     context.State = new StateSkillUseGuide01(context);
                     return;
                 }
@@ -840,8 +749,7 @@ namespace Maple2.Trigger._63000025_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000447},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000447}, arg3: new byte[] {3})) {
                     context.State = new StateDelay01(context);
                     return;
                 }
@@ -1301,8 +1209,7 @@ namespace Maple2.Trigger._63000025_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000448},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000448}, arg3: new byte[] {1})) {
                     context.State = new StateDelay02(context);
                     return;
                 }
@@ -1579,8 +1486,7 @@ namespace Maple2.Trigger._63000025_cs {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.DestroyMonster(arg1: new[] {107});
-                context.DestroyMonster(arg1: new[] {207});
+                context.DestroyMonster(arg1: new[] {107, 207});
             }
 
             public override void Execute() {
@@ -1602,18 +1508,7 @@ namespace Maple2.Trigger._63000025_cs {
                 context.CameraSelect(arg1: 702, arg2: false);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.ShowGuideSummary(entityId: 10020012, textId: 10020012);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetEffect(arg1: new[] {5400}, arg2: true);
-                context.SetEffect(arg1: new[] {5401}, arg2: true);
-                context.SetEffect(arg1: new[] {5402}, arg2: true);
-                context.SetEffect(arg1: new[] {5403}, arg2: true);
-                context.SetEffect(arg1: new[] {5404}, arg2: true);
-                context.SetEffect(arg1: new[] {5405}, arg2: true);
-                context.SetEffect(arg1: new[] {5406}, arg2: true);
-                context.SetEffect(arg1: new[] {5407}, arg2: true);
-                context.SetEffect(arg1: new[] {5408}, arg2: true);
-                context.SetEffect(arg1: new[] {5409}, arg2: true);
-                context.SetEffect(arg1: new[] {5410}, arg2: true);
+                context.SetEffect(arg1: new[] {5001, 5400, 5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410}, arg2: true);
             }
 
             public override void Execute() {
@@ -1632,8 +1527,7 @@ namespace Maple2.Trigger._63000025_cs {
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 10020012);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEffect(arg1: new[] {5002, 5000}, arg2: true);
                 context.ShowGuideSummary(entityId: 1060, textId: 1060);
             }
 
@@ -1654,17 +1548,7 @@ namespace Maple2.Trigger._63000025_cs {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.HideGuideSummary(entityId: 1060);
-                context.SetEffect(arg1: new[] {5400}, arg2: false);
-                context.SetEffect(arg1: new[] {5401}, arg2: false);
-                context.SetEffect(arg1: new[] {5402}, arg2: false);
-                context.SetEffect(arg1: new[] {5403}, arg2: false);
-                context.SetEffect(arg1: new[] {5404}, arg2: false);
-                context.SetEffect(arg1: new[] {5405}, arg2: false);
-                context.SetEffect(arg1: new[] {5406}, arg2: false);
-                context.SetEffect(arg1: new[] {5407}, arg2: false);
-                context.SetEffect(arg1: new[] {5408}, arg2: false);
-                context.SetEffect(arg1: new[] {5409}, arg2: false);
-                context.SetEffect(arg1: new[] {5410}, arg2: false);
+                context.SetEffect(arg1: new[] {5400, 5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410}, arg2: false);
             }
 
             public override void Execute() { }

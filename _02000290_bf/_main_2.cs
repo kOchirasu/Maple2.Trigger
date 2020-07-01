@@ -4,10 +4,7 @@ namespace Maple2.Trigger._02000290_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "905", arg2: true);
-                context.SetAgent(arg1: "906", arg2: true);
-                context.SetAgent(arg1: "907", arg2: true);
-                context.SetAgent(arg1: "908", arg2: true);
+                context.SetAgent(arg1: new[] {905, 906, 907, 908}, arg2: true);
                 context.SetLadder(arg1: 531, arg2: false, arg3: false);
                 context.SetLadder(arg1: 532, arg2: false, arg3: false);
                 context.SetLadder(arg1: 533, arg2: false, arg3: false);
@@ -15,35 +12,18 @@ namespace Maple2.Trigger._02000290_bf {
                 context.SetLadder(arg1: 535, arg2: false, arg3: false);
                 context.SetLadder(arg1: 536, arg2: false, arg3: false);
                 context.SetMesh(arg1: new[] {3089}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3108}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 3110, arg2: true, arg3: "Closed");
-                context.SetMesh(arg1: new[] {3111}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3112, 3113, 3114, 3115, 3116, 3117}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {3111, 3112, 3113, 3114, 3115, 3116, 3117}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 3120, arg2: true, arg3: "Closed");
-                context.SetMesh(arg1: new[] {3121}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132},
-                    arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {5101}, arg2: false);
-                context.DestroyMonster(arg1: new[] {1011});
-                context.DestroyMonster(arg1: new[] {1012});
-                context.DestroyMonster(arg1: new[] {1013});
-                context.DestroyMonster(arg1: new[] {1014});
-                context.DestroyMonster(arg1: new[] {1015});
-                context.DestroyMonster(arg1: new[] {1016});
-                context.DestroyMonster(arg1: new[] {1017});
-                context.DestroyMonster(arg1: new[] {1018});
-                context.DestroyMonster(arg1: new[] {1019});
+                context.DestroyMonster(arg1: new[] {1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019});
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new[] {6003}, arg2: false);
-                context.SetEffect(arg1: new[] {6004}, arg2: false);
-                context.SetEffect(arg1: new[] {6005}, arg2: false);
-                context.SetEffect(arg1: new[] {6006}, arg2: false);
+                context.SetEffect(arg1: new[] {6003, 6004, 6005, 6006}, arg2: false);
             }
 
             public override void Execute() {
@@ -60,8 +40,7 @@ namespace Maple2.Trigger._02000290_bf {
             internal State준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2001}, arg2: false);
-                context.CreateMonster(arg1: new[] {2002}, arg2: false);
+                context.CreateMonster(arg1: new[] {2001, 2002}, arg2: false);
             }
 
             public override void Execute() {
@@ -129,13 +108,10 @@ namespace Maple2.Trigger._02000290_bf {
             internal State트리거10시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "905", arg2: false);
-                context.SetAgent(arg1: "906", arg2: false);
+                context.SetAgent(arg1: new[] {905, 906}, arg2: false);
                 context.SetMesh(arg1: new[] {3089}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209},
-                    arg2: true, arg3: 0, arg4: 200, arg5: 2f);
-                context.CreateMonster(arg1: new[] {1012}, arg2: false);
-                context.CreateMonster(arg1: new[] {1013}, arg2: false);
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209}, arg2: true, arg3: 0, arg4: 200, arg5: 2f);
+                context.CreateMonster(arg1: new[] {1012, 1013}, arg2: false);
             }
 
             public override void Execute() {
@@ -157,14 +133,10 @@ namespace Maple2.Trigger._02000290_bf {
             internal State트리거11시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "907", arg2: false);
-                context.SetAgent(arg1: "908", arg2: false);
+                context.SetAgent(arg1: new[] {907, 908}, arg2: false);
                 context.SetMesh(arg1: new[] {3108}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: true, arg3: 0,
-                    arg4: 200, arg5: 2f);
-                context.CreateMonster(arg1: new[] {1014}, arg2: false);
-                context.CreateMonster(arg1: new[] {1015}, arg2: false);
-                context.CreateMonster(arg1: new[] {1016}, arg2: false);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: true, arg3: 0, arg4: 200, arg5: 2f);
+                context.CreateMonster(arg1: new[] {1014, 1015, 1016}, arg2: false);
             }
 
             public override void Execute() {
@@ -188,9 +160,7 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnEnter() {
                 context.SetActor(arg1: 3110, arg2: true, arg3: "Opened");
                 context.SetMesh(arg1: new[] {3111}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {1017}, arg2: false);
-                context.CreateMonster(arg1: new[] {1018}, arg2: false);
-                context.CreateMonster(arg1: new[] {1019}, arg2: false);
+                context.CreateMonster(arg1: new[] {1017, 1018, 1019}, arg2: false);
             }
 
             public override void Execute() {
@@ -208,8 +178,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 3110, arg2: false, arg3: "Opened");
-                context.SetMesh(arg1: new[] {3112, 3113, 3114, 3115, 3116, 3117}, arg2: false, arg3: 0, arg4: 200,
-                    arg5: 2f);
+                context.SetMesh(arg1: new[] {3112, 3113, 3114, 3115, 3116, 3117}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
             }
 
             public override void Execute() {
@@ -250,8 +219,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 3120, arg2: false, arg3: "Opened");
-                context.SetMesh(arg1: new[] {3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132},
-                    arg2: false, arg3: 0, arg4: 200, arg5: 2f);
+                context.SetMesh(arg1: new[] {3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 9991, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 9992, isEnable: true);
@@ -292,8 +260,7 @@ namespace Maple2.Trigger._02000290_bf {
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 801, arg2: true);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504}, arg2: false, arg3: 0, arg4: 300,
-                    arg5: 3f);
+                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504}, arg2: false, arg3: 0, arg4: 300, arg5: 3f);
                 context.SetSkip(arg1: "연출종료");
             }
 

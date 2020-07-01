@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52000046_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {60100220},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {60100220}, arg3: new byte[] {1})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -94,8 +93,7 @@ namespace Maple2.Trigger._52000046_qd {
             internal Statescene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003215, msg: "$52000046_QD__MAIN_01__0$", duration: 3735,
-                    align: "Left");
+                context.AddCinematicTalk(npcId: 11003215, msg: "$52000046_QD__MAIN_01__0$", duration: 3735, align: "Left");
             }
 
             public override void Execute() {
@@ -112,8 +110,7 @@ namespace Maple2.Trigger._52000046_qd {
             internal Statescene_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003215, msg: "$52000046_QD__MAIN_01__1$", duration: 2000,
-                    align: "Left");
+                context.AddCinematicTalk(npcId: 11003215, msg: "$52000046_QD__MAIN_01__1$", duration: 2000, align: "Left");
             }
 
             public override void Execute() {
@@ -130,8 +127,7 @@ namespace Maple2.Trigger._52000046_qd {
             internal Statescene_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003215, msg: "$52000046_QD__MAIN_01__2$", duration: 2000,
-                    align: "Left");
+                context.AddCinematicTalk(npcId: 11003215, msg: "$52000046_QD__MAIN_01__2$", duration: 2000, align: "Left");
             }
 
             public override void Execute() {
@@ -148,8 +144,7 @@ namespace Maple2.Trigger._52000046_qd {
             internal Statescene_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003215, msg: "$52000046_QD__MAIN_01__3$", duration: 2000,
-                    align: "Left");
+                context.AddCinematicTalk(npcId: 11003215, msg: "$52000046_QD__MAIN_01__3$", duration: 2000, align: "Left");
             }
 
             public override void Execute() {

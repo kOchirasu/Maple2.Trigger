@@ -4,29 +4,22 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5011}, arg2: false);
-                context.SetEffect(arg1: new[] {5012}, arg2: false);
-                context.SetEffect(arg1: new[] {5013}, arg2: false);
-                context.SetEffect(arg1: new[] {5014}, arg2: false);
-                context.SetEffect(arg1: new[] {5015}, arg2: false);
+                context.SetEffect(arg1: new[] {5011, 5012, 5013, 5014, 5015}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10001275}, arg2: 0);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2005}, arg2: new[] {60200050},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2005}, arg2: new[] {60200050}, arg3: new byte[] {1})) {
                     context.State = new StateReady(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2005}, arg2: new[] {60200050},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2005}, arg2: new[] {60200050}, arg3: new byte[] {2})) {
                     context.State = new StateReady_A(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2005}, arg2: new[] {60200050},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2005}, arg2: new[] {60200050}, arg3: new byte[] {3})) {
                     context.State = new StateReady_A(context);
                     return;
                 }
@@ -56,8 +49,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5011}, arg2: true);
-                context.SetEffect(arg1: new[] {5012}, arg2: true);
+                context.SetEffect(arg1: new[] {5011, 5012}, arg2: true);
                 context.CreateMonster(arg1: new[] {401}, arg2: true);
             }
 
@@ -182,11 +174,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5011}, arg2: false);
-                context.SetEffect(arg1: new[] {5012}, arg2: false);
-                context.SetEffect(arg1: new[] {5013}, arg2: false);
-                context.SetEffect(arg1: new[] {5014}, arg2: false);
-                context.SetEffect(arg1: new[] {5015}, arg2: false);
+                context.SetEffect(arg1: new[] {5011, 5012, 5013, 5014, 5015}, arg2: false);
                 context.DestroyMonster(arg1: new[] {401});
             }
 
@@ -216,8 +204,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_Start_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5011}, arg2: true);
-                context.SetEffect(arg1: new[] {5012}, arg2: true);
+                context.SetEffect(arg1: new[] {5011, 5012}, arg2: true);
                 context.CreateMonster(arg1: new[] {401}, arg2: true);
             }
 
@@ -341,11 +328,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_End_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5011}, arg2: false);
-                context.SetEffect(arg1: new[] {5012}, arg2: false);
-                context.SetEffect(arg1: new[] {5013}, arg2: false);
-                context.SetEffect(arg1: new[] {5014}, arg2: false);
-                context.SetEffect(arg1: new[] {5015}, arg2: false);
+                context.SetEffect(arg1: new[] {5011, 5012, 5013, 5014, 5015}, arg2: false);
                 context.DestroyMonster(arg1: new[] {401});
             }
 

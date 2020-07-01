@@ -6,20 +6,17 @@ namespace Maple2.Trigger._52000024_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {20002233},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {20002233}, arg3: new byte[] {1})) {
                     context.State = new Statestart(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {20002233},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {20002233}, arg3: new byte[] {2})) {
                     context.State = new Statestart(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {20002233},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {20002233}, arg3: new byte[] {3})) {
                     context.State = new Statestart_B(context);
                     return;
                 }
@@ -32,8 +29,7 @@ namespace Maple2.Trigger._52000024_qd {
             internal Statestart_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {106}, arg2: false);
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {106, 101}, arg2: false);
             }
 
             public override void Execute() { }
@@ -49,9 +45,7 @@ namespace Maple2.Trigger._52000024_qd {
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
                 context.MoveUserPath(arg1: "MS2PatrolData_2101");
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
-                context.CreateMonster(arg1: new[] {103}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
                 context.CameraSelectPath(arg1: new[] {8001, 8002, 8003}, arg2: false);
             }
 
@@ -307,8 +301,7 @@ namespace Maple2.Trigger._52000024_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {20002233},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {20002233}, arg3: new byte[] {3})) {
                     context.State = new StatestartC_01(context);
                     return;
                 }

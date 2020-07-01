@@ -49,9 +49,7 @@ namespace Maple2.Trigger._02000536_bf {
                 context.SetSceneSkip(arg1: "전투시작", arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {7000, 7003}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.ShowCaption(type: "VerticalCaption", title: "$02000536_BF__MAIN__0$",
-                    desc: "$02000536_BF__MAIN__1$", align: "centerRight", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 3000, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "$02000536_BF__MAIN__0$", desc: "$02000536_BF__MAIN__1$", align: "centerRight", offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);
             }
 
             public override void Execute() {
@@ -70,8 +68,7 @@ namespace Maple2.Trigger._02000536_bf {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {7003, 7001}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Bore_A", arg3: 5000f);
-                context.AddCinematicTalk(npcId: 23300001, msg: "$02000536_BF__MAIN__2$", align: "center",
-                    duration: 4000);
+                context.AddCinematicTalk(npcId: 23300001, msg: "$02000536_BF__MAIN__2$", align: "center", duration: 4000);
             }
 
             public override void Execute() {
@@ -89,8 +86,7 @@ namespace Maple2.Trigger._02000536_bf {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Attack_01_E,Attack_01_B");
-                context.AddCinematicTalk(npcId: 23300001, msg: "$02000536_BF__MAIN__3$", align: "center",
-                    duration: 4000);
+                context.AddCinematicTalk(npcId: 23300001, msg: "$02000536_BF__MAIN__3$", align: "center", duration: 4000);
             }
 
             public override void Execute() {
@@ -130,8 +126,7 @@ namespace Maple2.Trigger._02000536_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304}, arg2: false);
-                context.SideNpcTalk(npcId: 23300001, illust: "Haren_serious", duration: 4000,
-                    script: "$02000536_BF__MAIN__5$");
+                context.SideNpcTalk(npcId: 23300001, illust: "Haren_serious", duration: 4000, script: "$02000536_BF__MAIN__5$");
             }
 
             public override void Execute() {
@@ -165,8 +160,7 @@ namespace Maple2.Trigger._02000536_bf {
             internal State몬스터사망체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23300001, illust: "Haren_serious", duration: 4000,
-                    script: "$02000536_BF__MAIN__6$");
+                context.SideNpcTalk(npcId: 23300001, illust: "Haren_serious", duration: 4000, script: "$02000536_BF__MAIN__6$");
                 context.CreateMonster(arg1: new[] {201, 202, 203, 204}, arg2: false);
             }
 
@@ -184,8 +178,7 @@ namespace Maple2.Trigger._02000536_bf {
             internal State던전클리어(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23300001, illust: "Haren_serious", duration: 3000,
-                    script: "$02000536_BF__MAIN__8$");
+                context.SideNpcTalk(npcId: 23300001, illust: "Haren_serious", duration: 3000, script: "$02000536_BF__MAIN__8$");
                 context.SetMesh(arg1: new[] {9999}, arg2: false);
                 context.DestroyMonster(arg1: new[] {-1});
                 context.DungeonClear();

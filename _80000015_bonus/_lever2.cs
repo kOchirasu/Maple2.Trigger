@@ -6,8 +6,7 @@ namespace Maple2.Trigger._80000015_bonus {
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7102}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10001315}, arg2: 1);
-                context.SetMesh(arg1: new[] {3006, 3007, 3008, 3009, 3010, 3011}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {3006, 3007, 3008, 3009, 3010, 3011}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -68,8 +67,7 @@ namespace Maple2.Trigger._80000015_bonus {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
                 context.SpawnNpcRange(rangeId: new[] {2002}, isAutoTargeting: false, score: 1500);
-                context.SetMesh(arg1: new[] {3006, 3007, 3008, 3009, 3010, 3011}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {3006, 3007, 3008, 3009, 3010, 3011}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

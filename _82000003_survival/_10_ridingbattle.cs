@@ -4,11 +4,7 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        10000507, 10000508, 10000509, 10000510, 10000511, 10000512, 10000513, 10000514, 10000515,
-                        10000516, 10000517, 10000518
-                    }, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {10000507, 10000508, 10000509, 10000510, 10000511, 10000512, 10000513, 10000514, 10000515, 10000516, 10000517, 10000518}, isStart: false);
                 context.SetUserValue(key: "BattleRidingOnCount", value: 0);
                 context.SetUserValue(key: "BattleRidingOff", value: 0);
             }
@@ -27,9 +23,7 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateRidingSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {10000507, 10000508, 10000509, 10000510, 10000511, 10000512, 10000513, 10000514},
-                    isStart: true);
+                context.StartCombineSpawn(groupId: new[] {10000507, 10000508, 10000509, 10000510, 10000511, 10000512, 10000513, 10000514}, isStart: true);
             }
 
             public override void Execute() {
@@ -281,11 +275,7 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        10000507, 10000508, 10000509, 10000510, 10000511, 10000512, 10000513, 10000514, 10000515,
-                        10000516, 10000517, 10000518
-                    }, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {10000507, 10000508, 10000509, 10000510, 10000511, 10000512, 10000513, 10000514, 10000515, 10000516, 10000517, 10000518}, isStart: false);
             }
 
             public override void Execute() { }

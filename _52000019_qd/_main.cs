@@ -5,9 +5,7 @@ namespace Maple2.Trigger._52000019_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2002}, arg2: false);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602, 603}, arg2: false);
             }
 
             public override void Execute() {
@@ -26,8 +24,7 @@ namespace Maple2.Trigger._52000019_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {60001012},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {60001012}, arg3: new byte[] {1})) {
                     context.State = new State시작(context);
                     return;
                 }

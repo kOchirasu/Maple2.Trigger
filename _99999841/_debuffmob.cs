@@ -60,8 +60,7 @@ namespace Maple2.Trigger._99999841 {
             internal State랜덤확률(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"디버프 몬스터가 생성되었습니다.\n몬스터를 처치하면 상대팀에 디버프를 겁니다.",
-                    arg3: 5000);
+                context.SetEventUI(arg1: 1, arg2: @"디버프 몬스터가 생성되었습니다.\n몬스터를 처치하면 상대팀에 디버프를 겁니다.", arg3: 5000);
             }
 
             public override void Execute() {

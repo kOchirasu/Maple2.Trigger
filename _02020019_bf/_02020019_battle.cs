@@ -30,8 +30,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.ShowRoundUI(round: 1, duration: 3000);
                 context.SetEventUI(arg1: 0, arg2: "1,5");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
-                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000,
-                    script: "$02020019_BF__02020019_battle__0$", voice: @"ko/Npc/00002116");
+                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__0$", voice: @"ko/Npc/00002116");
             }
 
             public override void Execute() {
@@ -106,8 +105,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.ShowRoundUI(round: 2, duration: 3000);
                 context.SetEventUI(arg1: 0, arg2: "2,5");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
-                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000,
-                    script: "$02020019_BF__02020019_battle__1$", voice: @"ko/Npc/00002121");
+                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__1$", voice: @"ko/Npc/00002121");
             }
 
             public override void Execute() {
@@ -192,8 +190,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.ShowRoundUI(round: 3, duration: 3000);
                 context.SetEventUI(arg1: 0, arg2: "3,5");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
-                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000,
-                    script: "$02020019_BF__02020019_battle__2$", voice: @"ko/Npc/00002241");
+                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__2$", voice: @"ko/Npc/00002241");
             }
 
             public override void Execute() {
@@ -247,8 +244,7 @@ namespace Maple2.Trigger._02020019_bf {
             internal State전투_3라운드버프(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_serious", duration: 5000,
-                    script: "$02020019_BF__02020019_battle__3$", voice: @"ko/Npc/00002117");
+                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_serious", duration: 5000, script: "$02020019_BF__02020019_battle__3$", voice: @"ko/Npc/00002117");
                 context.AddBuff(arg1: new[] {221}, arg2: 49219001, arg3: 1, arg4: true);
             }
 
@@ -306,8 +302,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.ShowRoundUI(round: 4, duration: 3000);
                 context.SetEventUI(arg1: 0, arg2: "4,5");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
-                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000,
-                    script: "$02020019_BF__02020019_battle__4$", voice: @"ko/Npc/00002242");
+                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__4$", voice: @"ko/Npc/00002242");
             }
 
             public override void Execute() {
@@ -335,8 +330,7 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {231, 232, 233, 234, 235, 236, 237}, arg2: true);
-                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000,
-                    script: "$02020019_BF__02020019_battle__5$", voice: @"ko/Npc/00002243");
+                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__5$", voice: @"ko/Npc/00002243");
                 context.SetAiExtraData(key: "Autofire", value: 1);
             }
 
@@ -364,8 +358,7 @@ namespace Maple2.Trigger._02020019_bf {
             internal State전투_4라운드버프(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_serious", duration: 5000,
-                    script: "$02020019_BF__02020019_battle__6$", voice: @"ko/Npc/00002118");
+                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_serious", duration: 5000, script: "$02020019_BF__02020019_battle__6$", voice: @"ko/Npc/00002118");
                 context.AddBuff(arg1: new[] {231}, arg2: 49219001, arg3: 1, arg4: true);
             }
 
@@ -424,8 +417,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.ShowRoundUI(round: 5, duration: 3000);
                 context.SetEventUI(arg1: 0, arg2: "5,5");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_B", arg3: 4800f);
-                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000,
-                    script: "$02020019_BF__02020019_battle__7$", voice: @"ko/Npc/00002122");
+                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_normal", duration: 5000, script: "$02020019_BF__02020019_battle__7$", voice: @"ko/Npc/00002122");
             }
 
             public override void Execute() {
@@ -485,31 +477,27 @@ namespace Maple2.Trigger._02020019_bf {
             internal State전투_5라운드버프(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_serious", duration: 5000,
-                    script: "$02020019_BF__02020019_battle__8$", voice: @"ko/Npc/00002119");
+                context.SideNpcTalk(npcId: 24100001, illust: "Neirin_serious", duration: 5000, script: "$02020019_BF__02020019_battle__8$", voice: @"ko/Npc/00002119");
                 context.AddBuff(arg1: new[] {241}, arg2: 49219001, arg3: 1, arg4: true);
                 context.AddBuff(arg1: new[] {242}, arg2: 49219001, arg3: 1, arg4: true);
             }
 
             public override void Execute() {
-                if (context.GetDungeonPlayTime() <= 180
-                    && context.MonsterDead(arg1: new[] {241, 242, 243, 244, 245, 246, 247, 248})) {
+                if (context.GetDungeonPlayTime() <= 180 && context.MonsterDead(arg1: new[] {241, 242, 243, 244, 245, 246, 247, 248})) {
                     context.DungeonMissionComplete(missionId: 24093004);
                     context.DungeonMissionComplete(missionId: 24093005);
                     context.State = new State전투_종료(context);
                     return;
                 }
 
-                if (context.GetDungeonPlayTime() <= 70
-                    && context.MonsterDead(arg1: new[] {241, 242, 243, 244, 245, 246, 247, 248})) {
+                if (context.GetDungeonPlayTime() <= 70 && context.MonsterDead(arg1: new[] {241, 242, 243, 244, 245, 246, 247, 248})) {
                     context.DungeonMissionComplete(missionId: 24093004);
                     context.DungeonMissionComplete(missionId: 24093006);
                     context.State = new State전투_종료(context);
                     return;
                 }
 
-                if (context.GetDungeonPlayTime() <= 270
-                    && context.MonsterDead(arg1: new[] {241, 242, 243, 244, 245, 246, 247, 248})) {
+                if (context.GetDungeonPlayTime() <= 270 && context.MonsterDead(arg1: new[] {241, 242, 243, 244, 245, 246, 247, 248})) {
                     context.DungeonMissionComplete(missionId: 24093004);
                     context.DungeonMissionComplete(missionId: 24093007);
                     context.State = new State전투_종료(context);
@@ -545,11 +533,7 @@ namespace Maple2.Trigger._02020019_bf {
                 context.SetAiExtraData(key: "Autofire", value: 0);
                 context.SetEventUI(arg1: 0, arg2: "0,0");
                 context.InitNpcRotation(arg1: new[] {102, 103});
-                context.DestroyMonster(arg1: new[] {201});
-                context.DestroyMonster(arg1: new[] {211});
-                context.DestroyMonster(arg1: new[] {221, 222, 223, 224, 225, 226, 227});
-                context.DestroyMonster(arg1: new[] {231, 232, 233, 234, 235, 236, 237});
-                context.DestroyMonster(arg1: new[] {241, 242, 243, 244, 245, 246, 247, 248});
+                context.DestroyMonster(arg1: new[] {201, 211, 221, 222, 223, 224, 225, 226, 227, 231, 232, 233, 234, 235, 236, 237, 241, 242, 243, 244, 245, 246, 247, 248});
             }
 
             public override void Execute() {

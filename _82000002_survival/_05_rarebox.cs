@@ -4,14 +4,7 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        10000342, 10000343, 10000344, 10000345, 10000346, 10000347, 10000348, 10000349, 10000350,
-                        10000351, 10000352, 10000353, 10000354, 10000355, 10000356, 10000357, 10000358, 10000359,
-                        10000360, 10000361, 10000362, 10000363, 10000364, 10000365, 10000366, 10000367, 10000368,
-                        10000369, 10000370, 10000371, 10000372, 10000373, 10000374, 10000375, 10000376, 10000377,
-                        10000378, 10000379, 10000380, 10000381
-                    }, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {10000342, 10000343, 10000344, 10000345, 10000346, 10000347, 10000348, 10000349, 10000350, 10000351, 10000352, 10000353, 10000354, 10000355, 10000356, 10000357, 10000358, 10000359, 10000360, 10000361, 10000362, 10000363, 10000364, 10000365, 10000366, 10000367, 10000368, 10000369, 10000370, 10000371, 10000372, 10000373, 10000374, 10000375, 10000376, 10000377, 10000378, 10000379, 10000380, 10000381}, isStart: false);
                 context.SetUserValue(key: "RareBoxOnCount", value: 0);
                 context.SetUserValue(key: "RareBoxOff", value: 0);
                 context.SetUserValue(key: "RareBoxStartTowerNumber", value: 0);
@@ -154,11 +147,7 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateTower01to10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        10000342, 10000343, 10000344, 10000345, 10000346, 10000347, 10000348, 10000349, 10000350,
-                        10000351
-                    }, isStart: true);
+                context.StartCombineSpawn(groupId: new[] {10000342, 10000343, 10000344, 10000345, 10000346, 10000347, 10000348, 10000349, 10000350, 10000351}, isStart: true);
             }
 
             public override void Execute() {
@@ -180,11 +169,7 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateTower11to20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        10000352, 10000353, 10000354, 10000355, 10000356, 10000357, 10000358, 10000359, 10000360,
-                        10000361
-                    }, isStart: true);
+                context.StartCombineSpawn(groupId: new[] {10000352, 10000353, 10000354, 10000355, 10000356, 10000357, 10000358, 10000359, 10000360, 10000361}, isStart: true);
             }
 
             public override void Execute() {
@@ -206,11 +191,7 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateTower21to30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        10000362, 10000363, 10000364, 10000365, 10000366, 10000367, 10000368, 10000369, 10000370,
-                        10000371
-                    }, isStart: true);
+                context.StartCombineSpawn(groupId: new[] {10000362, 10000363, 10000364, 10000365, 10000366, 10000367, 10000368, 10000369, 10000370, 10000371}, isStart: true);
             }
 
             public override void Execute() {
@@ -232,11 +213,7 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateTower31to40(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        10000372, 10000373, 10000374, 10000375, 10000376, 10000377, 10000378, 10000379, 10000380,
-                        10000381
-                    }, isStart: true);
+                context.StartCombineSpawn(groupId: new[] {10000372, 10000373, 10000374, 10000375, 10000376, 10000377, 10000378, 10000379, 10000380, 10000381}, isStart: true);
             }
 
             public override void Execute() {
@@ -258,8 +235,7 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateBoxOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 5000,
-                    script: "$82000002_survival__05_RAREBOX__0$");
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 5000, script: "$82000002_survival__05_RAREBOX__0$");
             }
 
             public override void Execute() {
@@ -276,14 +252,7 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(
-                    groupId: new[] {
-                        10000342, 10000343, 10000344, 10000345, 10000346, 10000347, 10000348, 10000349, 10000350,
-                        10000351, 10000352, 10000353, 10000354, 10000355, 10000356, 10000357, 10000358, 10000359,
-                        10000360, 10000361, 10000362, 10000363, 10000364, 10000365, 10000366, 10000367, 10000368,
-                        10000369, 10000370, 10000371, 10000372, 10000373, 10000374, 10000375, 10000376, 10000377,
-                        10000378, 10000379, 10000380, 10000381
-                    }, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {10000342, 10000343, 10000344, 10000345, 10000346, 10000347, 10000348, 10000349, 10000350, 10000351, 10000352, 10000353, 10000354, 10000355, 10000356, 10000357, 10000358, 10000359, 10000360, 10000361, 10000362, 10000363, 10000364, 10000365, 10000366, 10000367, 10000368, 10000369, 10000370, 10000371, 10000372, 10000373, 10000374, 10000375, 10000376, 10000377, 10000378, 10000379, 10000380, 10000381}, isStart: false);
             }
 
             public override void Execute() { }

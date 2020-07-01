@@ -55,8 +55,7 @@ namespace Maple2.Trigger._02020146_bf {
             internal State연출대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle",
-                    script: "$02020120_BF__BOSSSPAWN__0$", duration: 4000, voice: @"ko/Npc/00002192");
+                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__0$", duration: 4000, voice: @"ko/Npc/00002192");
             }
 
             public override void Execute() {
@@ -107,8 +106,7 @@ namespace Maple2.Trigger._02020146_bf {
             internal State마무리연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle",
-                    script: "$02020120_BF__BOSSSPAWN__2$", duration: 6576, voice: @"ko/Npc/00002194");
+                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__2$", duration: 6576, voice: @"ko/Npc/00002194");
             }
 
             public override void Execute() {

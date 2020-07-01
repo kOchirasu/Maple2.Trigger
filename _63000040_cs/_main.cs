@@ -8,20 +8,17 @@ namespace Maple2.Trigger._63000040_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652}, arg3: new byte[] {3})) {
                     context.State = new Statestart_02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652}, arg3: new byte[] {2})) {
                     context.State = new Statestart_02_ready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652}, arg3: new byte[] {1})) {
                     context.State = new Statestart(context);
                     return;
                 }
@@ -39,8 +36,7 @@ namespace Maple2.Trigger._63000040_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652}, arg3: new byte[] {2})) {
                     context.State = new Statestart_02_ready(context);
                     return;
                 }
@@ -58,8 +54,7 @@ namespace Maple2.Trigger._63000040_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652}, arg3: new byte[] {3})) {
                     context.State = new Statestart_02(context);
                     return;
                 }

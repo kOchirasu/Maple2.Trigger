@@ -114,8 +114,7 @@ namespace Maple2.Trigger._02020112_bf {
                 context.CameraReset(interpolationTime: 1f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CreateMonster(arg1: new[] {120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130}, arg2: false);
             }
 
             public override void Execute() {

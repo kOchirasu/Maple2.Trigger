@@ -19,9 +19,7 @@ namespace Maple2.Trigger._02000487_bf {
             internal State보스등장대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {111}, arg2: true);
-                context.CreateMonster(arg1: new[] {121}, arg2: true);
-                context.CreateMonster(arg1: new[] {131}, arg2: true);
+                context.CreateMonster(arg1: new[] {111, 121, 131}, arg2: true);
             }
 
             public override void Execute() {
@@ -41,9 +39,7 @@ namespace Maple2.Trigger._02000487_bf {
                 context.DestroyMonster(arg1: new[] {111}, arg2: true);
                 context.DestroyMonster(arg1: new[] {121}, arg2: true);
                 context.DestroyMonster(arg1: new[] {131}, arg2: true);
-                context.CreateMonster(arg1: new[] {11}, arg2: true);
-                context.CreateMonster(arg1: new[] {21}, arg2: true);
-                context.CreateMonster(arg1: new[] {31}, arg2: true);
+                context.CreateMonster(arg1: new[] {11, 21, 31}, arg2: true);
             }
 
             public override void Execute() {

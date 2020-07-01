@@ -4,8 +4,7 @@ namespace Maple2.Trigger._02000533_bf {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {901}, arg2: true);
-                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003}, arg2: true);
+                context.SetMesh(arg1: new[] {901, 3000, 3001, 3002, 3003}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10003144}, arg2: 0);
                 context.SetPortal(arg1: 2, arg2: false);
                 context.SetEffect(arg1: new[] {7000}, arg2: false);
@@ -31,8 +30,7 @@ namespace Maple2.Trigger._02000533_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false);
-                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 3000,
-                    script: "$02000533_BF__MAIN__0$");
+                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 3000, script: "$02000533_BF__MAIN__0$");
             }
 
             public override void Execute() {
@@ -71,8 +69,7 @@ namespace Maple2.Trigger._02000533_bf {
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003}, arg2: false);
                 context.CreateMonster(arg1: new[] {501, 502}, arg2: true);
                 context.AddBalloonTalk(spawnPointId: 501, msg: "$02000533_BF__MAIN__2$", duration: 3500, delayTick: 0);
-                context.SideNpcTalk(npcId: 21450001, illust: "Mafia1_normal", duration: 4000,
-                    script: "$02000533_BF__MAIN__3$");
+                context.SideNpcTalk(npcId: 21450001, illust: "Mafia1_normal", duration: 4000, script: "$02000533_BF__MAIN__3$");
             }
 
             public override void Execute() {
@@ -90,8 +87,7 @@ namespace Maple2.Trigger._02000533_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {503, 5503}, arg2: true);
-                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000,
-                    script: "$02000533_BF__MAIN__4$");
+                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000, script: "$02000533_BF__MAIN__4$");
             }
 
             public override void Execute() {
@@ -109,10 +105,8 @@ namespace Maple2.Trigger._02000533_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {504, 5504, 505, 506, 509}, arg2: true);
-                context.AddBalloonTalk(spawnPointId: 5504, msg: "$02000533_BF__MAIN__5$", duration: 3500,
-                    delayTick: 2000);
-                context.AddBalloonTalk(spawnPointId: 505, msg: "$02000533_BF__MAIN__6$", duration: 3500,
-                    delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 5504, msg: "$02000533_BF__MAIN__5$", duration: 3500, delayTick: 2000);
+                context.AddBalloonTalk(spawnPointId: 505, msg: "$02000533_BF__MAIN__6$", duration: 3500, delayTick: 1000);
             }
 
             public override void Execute() {
@@ -163,8 +157,7 @@ namespace Maple2.Trigger._02000533_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000,
-                    script: "$02000533_BF__MAIN__7$");
+                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000, script: "$02000533_BF__MAIN__7$");
                 context.SetUserValue(key: "GameLogicEnd", value: 999);
                 context.WidgetAction(arg1: "Round", arg2: "InitWidgetRound");
                 context.SetUserValue(triggerId: 9002, key: "GameLogicStart", value: 999);
@@ -330,8 +323,7 @@ namespace Maple2.Trigger._02000533_bf {
             internal State문을부시고이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000,
-                    script: "$02000533_BF__MAIN__13$");
+                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000, script: "$02000533_BF__MAIN__13$");
                 context.CreateMonster(arg1: new[] {507}, arg2: true);
             }
 
@@ -368,8 +360,7 @@ namespace Maple2.Trigger._02000533_bf {
             internal State이동하자(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000,
-                    script: "$02000533_BF__MAIN__14$");
+                context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000, script: "$02000533_BF__MAIN__14$");
                 context.SetMesh(arg1: new[] {901}, arg2: false, arg3: 1);
                 context.SetPortal(arg1: 2, arg2: true);
                 context.SetProductionUI(arg1: 0);

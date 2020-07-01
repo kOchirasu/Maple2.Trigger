@@ -4,8 +4,7 @@ namespace Maple2.Trigger._52020009_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5201}, arg2: false);
-                context.SetEffect(arg1: new[] {5202}, arg2: false);
+                context.SetEffect(arg1: new[] {5201, 5202}, arg2: false);
             }
 
             public override void Execute() {
@@ -57,9 +56,7 @@ namespace Maple2.Trigger._52020009_qd {
             internal StateEvent_Ready_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001267}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001268}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001269}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001267, 10001268, 10001269}, arg2: 1);
                 context.AddBalloonTalk(spawnPointId: 101, msg: "이름... 내 이름이 기억나지 않아...", duration: 2800, delayTick: 0);
             }
 
@@ -124,8 +121,7 @@ namespace Maple2.Trigger._52020009_qd {
             internal StateEvent_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 101, msg: "아니야! 그건 내 이름이 적힌 책이 아니라고!", duration: 2800,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "아니야! 그건 내 이름이 적힌 책이 아니라고!", duration: 2800, delayTick: 0);
             }
 
             public override void Execute() {
@@ -142,8 +138,7 @@ namespace Maple2.Trigger._52020009_qd {
             internal StateEvent_A_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 101, msg: "그건 왕의 비밀병기와 관련된 책이란 말이야!", duration: 2800,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "그건 왕의 비밀병기와 관련된 책이란 말이야!", duration: 2800, delayTick: 0);
             }
 
             public override void Execute() {
@@ -177,8 +172,7 @@ namespace Maple2.Trigger._52020009_qd {
             internal StateEvent_B_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 101, msg: "그런 책에 내 이름이 적혀 있을 리가 없잖아!", duration: 2800,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "그런 책에 내 이름이 적혀 있을 리가 없잖아!", duration: 2800, delayTick: 0);
             }
 
             public override void Execute() {
@@ -247,8 +241,7 @@ namespace Maple2.Trigger._52020009_qd {
             internal StateEvent_D(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 102, msg: "내 이름은 $npcName:11003602$.", duration: 2800,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 102, msg: "내 이름은 $npcName:11003602$.", duration: 2800, delayTick: 0);
             }
 
             public override void Execute() {
@@ -265,9 +258,7 @@ namespace Maple2.Trigger._52020009_qd {
             internal StateEvent_D_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001267}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10001268}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10001269}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10001267, 10001268, 10001269}, arg2: 0);
                 context.AddBalloonTalk(spawnPointId: 102, msg: "크리티아스의 관찰자.", duration: 2800, delayTick: 0);
             }
 

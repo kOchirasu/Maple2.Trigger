@@ -6,14 +6,7 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115,
-                        3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "ShipMove", value: 0);
             }
 
@@ -31,14 +24,12 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateLoadingDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305}, arg2: false);
-                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205}, arg2: false);
+                context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 201, 202, 203, 204, 205}, arg2: false);
             }
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -94,11 +85,7 @@ namespace Maple2.Trigger._02000318_bf {
                 context.PlaySystemSoundInBox(arg1: new[] {102}, arg2: "System_ShowGuideSummary_01");
                 context.SetEventUI(arg1: 1, arg2: "$02000318_BF__MOBSPAWN_01__0$", arg3: 3000, arg4: "0");
                 context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115,
-                        3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128
-                    }, arg2: false, arg3: 29, arg4: 500, arg5: 30);
+                context.SetRandomMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128}, arg2: false, arg3: 29, arg4: 500, arg5: 30);
             }
 
             public override void Execute() {
@@ -227,8 +214,7 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateBattle12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {211, 212, 213, 214, 215, 216, 217, 218, 219, 502, 503},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {211, 212, 213, 214, 215, 216, 217, 218, 219, 502, 503}, arg2: false);
             }
 
             public override void Execute() {

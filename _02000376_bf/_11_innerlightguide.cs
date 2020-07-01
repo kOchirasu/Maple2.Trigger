@@ -5,11 +5,7 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "DungeonStart", value: 0);
-                context.SetEffect(arg1: new[] {5100}, arg2: false);
-                context.SetEffect(arg1: new[] {5101}, arg2: false);
-                context.SetEffect(arg1: new[] {5102}, arg2: false);
-                context.SetEffect(arg1: new[] {5103}, arg2: false);
-                context.SetEffect(arg1: new[] {5104}, arg2: false);
+                context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5104}, arg2: false);
             }
 
             public override void Execute() {
@@ -42,13 +38,8 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000376_BF__11_INNERLIGHTGUIdE__0$", arg3: 4000,
-                    arg4: "0");
-                context.SetEffect(arg1: new[] {5100}, arg2: true);
-                context.SetEffect(arg1: new[] {5101}, arg2: true);
-                context.SetEffect(arg1: new[] {5102}, arg2: true);
-                context.SetEffect(arg1: new[] {5103}, arg2: true);
-                context.SetEffect(arg1: new[] {5104}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$02000376_BF__11_INNERLIGHTGUIdE__0$", arg3: 4000, arg4: "0");
+                context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5104}, arg2: true);
             }
 
             public override void Execute() {
@@ -65,11 +56,7 @@ namespace Maple2.Trigger._02000376_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5100}, arg2: false);
-                context.SetEffect(arg1: new[] {5101}, arg2: false);
-                context.SetEffect(arg1: new[] {5102}, arg2: false);
-                context.SetEffect(arg1: new[] {5103}, arg2: false);
-                context.SetEffect(arg1: new[] {5104}, arg2: false);
+                context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5104}, arg2: false);
             }
 
             public override void Execute() { }

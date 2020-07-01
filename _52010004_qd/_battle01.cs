@@ -4,17 +4,13 @@ namespace Maple2.Trigger._52010004_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "10000", arg2: false);
-                context.SetAgent(arg1: "10001", arg2: false);
-                context.SetAgent(arg1: "10002", arg2: false);
-                context.SetAgent(arg1: "10003", arg2: false);
+                context.SetAgent(arg1: new[] {10000, 10001, 10002, 10003}, arg2: false);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.SetMesh(arg1: new[] {7000, 7001, 7002, 7003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002800},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002800}, arg3: new byte[] {2})) {
                     context.State = new State둔바교체01(context);
                     return;
                 }
@@ -180,10 +176,7 @@ namespace Maple2.Trigger._52010004_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "20", arg2: 1);
-                context.SetAgent(arg1: "10000", arg2: true);
-                context.SetAgent(arg1: "10001", arg2: true);
-                context.SetAgent(arg1: "10002", arg2: true);
-                context.SetAgent(arg1: "10003", arg2: true);
+                context.SetAgent(arg1: new[] {10000, 10001, 10002, 10003}, arg2: true);
                 context.DestroyMonster(arg1: new[] {102});
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
             }

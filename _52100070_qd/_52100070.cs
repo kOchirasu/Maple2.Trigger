@@ -5,14 +5,7 @@ namespace Maple2.Trigger._52100070_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 400, arg2: true);
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetEffect(arg1: new[] {5005}, arg2: false);
-                context.SetEffect(arg1: new[] {5006}, arg2: false);
-                context.SetEffect(arg1: new[] {5007}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -71,9 +64,7 @@ namespace Maple2.Trigger._52100070_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {400, 401}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$52100070_QD__52100070__1$",
-                    desc: "$52100070_QD__52100070__2$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 5000, scale: 2.5f);
+                context.ShowCaption(type: "VerticalCaption", title: "$52100070_QD__52100070__1$", desc: "$52100070_QD__52100070__2$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
 
             public override void Execute() {
@@ -126,10 +117,7 @@ namespace Maple2.Trigger._52100070_qd {
             internal State퐈이야(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetEffect(arg1: new[] {5004}, arg2: true);
-                context.SetEffect(arg1: new[] {5007}, arg2: true);
+                context.SetEffect(arg1: new[] {5001, 5002, 5004, 5007}, arg2: true);
             }
 
             public override void Execute() {
@@ -253,8 +241,7 @@ namespace Maple2.Trigger._52100070_qd {
             internal State이슈라이동1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5005}, arg2: true);
-                context.SetEffect(arg1: new[] {5006}, arg2: true);
+                context.SetEffect(arg1: new[] {5005, 5006}, arg2: true);
                 context.SetTimeScale(enable: true, startScale: 0.3f, endScale: 0.3f, duration: 50.0f, interpolator: 1);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_11003866");
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -274,14 +261,7 @@ namespace Maple2.Trigger._52100070_qd {
             internal State연출끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetEffect(arg1: new[] {5005}, arg2: false);
-                context.SetEffect(arg1: new[] {5006}, arg2: false);
-                context.SetEffect(arg1: new[] {5007}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007}, arg2: false);
                 context.SetTimeScale(enable: false, startScale: 0.5f, endScale: 0.5f, duration: 50.0f, interpolator: 1);
                 context.DestroyMonster(arg1: new[] {101, 102, 103}, arg2: false);
                 context.SetSkip();

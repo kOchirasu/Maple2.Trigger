@@ -4,14 +4,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10001258}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001259}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001260}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001261}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001262}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001263}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001264}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001265}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001258, 10001259, 10001260, 10001261, 10001262, 10001263, 10001264, 10001265}, arg2: 2);
             }
 
             public override void Execute() {

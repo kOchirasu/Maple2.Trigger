@@ -10,14 +10,8 @@ namespace Maple2.Trigger._02020144_bf {
                 context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
                 context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
                 context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10002124}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002125}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002126}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002127}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 0);
-                context.SetSkill(arg1: new[] {901}, arg2: false);
-                context.SetSkill(arg1: new[] {902}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, arg2: 0);
+                context.SetSkill(arg1: new[] {901, 902}, arg2: false);
             }
 
             public override void Execute() {
@@ -227,8 +221,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State씨앗패턴1_1_심기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
             public override void Execute() {
@@ -242,8 +235,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0)
-                    || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
                     context.State = new State씨앗패턴1_종료(context);
                     return;
                 }
@@ -256,8 +248,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State씨앗패턴1_2_심기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
             public override void Execute() {
@@ -271,8 +262,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0)
-                    || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
                     context.State = new State씨앗패턴1_종료(context);
                     return;
                 }
@@ -285,8 +275,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State씨앗패턴1_3_심기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
             public override void Execute() {
@@ -300,8 +289,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0)
-                    || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
                     context.State = new State씨앗패턴1_종료(context);
                     return;
                 }
@@ -314,8 +302,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State씨앗패턴1_4_심기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
             public override void Execute() {
@@ -329,8 +316,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0)
-                    || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
                     context.State = new State씨앗패턴1_종료(context);
                     return;
                 }
@@ -344,10 +330,8 @@ namespace Maple2.Trigger._02020144_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900005, key: "TimerStart", value: 0);
-                context.SetSkill(arg1: new[] {901}, arg2: true);
-                context.SetSkill(arg1: new[] {902}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 2);
+                context.SetSkill(arg1: new[] {901, 902}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 2);
                 context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_On");
                 context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_On");
             }
@@ -377,17 +361,11 @@ namespace Maple2.Trigger._02020144_bf {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {1003}, arg2: 70002110, arg3: 1, arg5: false);
-                context.SetSkill(arg1: new[] {901}, arg2: false);
-                context.SetSkill(arg1: new[] {902}, arg2: false);
+                context.SetSkill(arg1: new[] {901, 902}, arg2: false);
                 context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
                 context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
                 context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10002124}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002125}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002126}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002127}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, arg2: 0);
             }
 
             public override void Execute() {
@@ -567,8 +545,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State씨앗패턴2_1_심기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
             public override void Execute() {
@@ -582,8 +559,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0)
-                    || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
                     context.State = new State씨앗패턴2_종료(context);
                     return;
                 }
@@ -596,8 +572,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State씨앗패턴2_2_심기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
             public override void Execute() {
@@ -611,8 +586,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0)
-                    || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
                     context.State = new State씨앗패턴2_종료(context);
                     return;
                 }
@@ -625,8 +599,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State씨앗패턴2_3_심기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
             public override void Execute() {
@@ -640,8 +613,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0)
-                    || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
                     context.State = new State씨앗패턴2_종료(context);
                     return;
                 }
@@ -654,8 +626,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State씨앗패턴2_4_심기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
             public override void Execute() {
@@ -669,8 +640,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0)
-                    || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
                     context.State = new State씨앗패턴2_종료(context);
                     return;
                 }
@@ -684,10 +654,8 @@ namespace Maple2.Trigger._02020144_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900005, key: "TimerStart", value: 0);
-                context.SetSkill(arg1: new[] {901}, arg2: true);
-                context.SetSkill(arg1: new[] {902}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 2);
+                context.SetSkill(arg1: new[] {901, 902}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 2);
                 context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_On");
                 context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_On");
             }
@@ -717,17 +685,11 @@ namespace Maple2.Trigger._02020144_bf {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {1003}, arg2: 70002110, arg3: 1, arg5: false);
-                context.SetSkill(arg1: new[] {901}, arg2: false);
-                context.SetSkill(arg1: new[] {902}, arg2: false);
+                context.SetSkill(arg1: new[] {901, 902}, arg2: false);
                 context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
                 context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
                 context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10002124}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002125}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002126}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002127}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, arg2: 0);
             }
 
             public override void Execute() {
@@ -907,8 +869,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State씨앗패턴3_1_심기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
             public override void Execute() {
@@ -922,8 +883,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0)
-                    || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
                     context.State = new State씨앗패턴3_종료(context);
                     return;
                 }
@@ -936,8 +896,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State씨앗패턴3_2_심기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
             public override void Execute() {
@@ -951,8 +910,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0)
-                    || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
                     context.State = new State씨앗패턴3_종료(context);
                     return;
                 }
@@ -965,8 +923,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State씨앗패턴3_3_심기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
             public override void Execute() {
@@ -980,8 +937,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0)
-                    || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
                     context.State = new State씨앗패턴3_종료(context);
                     return;
                 }
@@ -994,8 +950,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State씨앗패턴3_4_심기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
             public override void Execute() {
@@ -1009,8 +964,7 @@ namespace Maple2.Trigger._02020144_bf {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0)
-                    || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
                     context.State = new State씨앗패턴3_종료(context);
                     return;
                 }
@@ -1023,10 +977,8 @@ namespace Maple2.Trigger._02020144_bf {
             internal State씨앗패턴3_종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {901}, arg2: true);
-                context.SetSkill(arg1: new[] {902}, arg2: true);
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 2);
+                context.SetSkill(arg1: new[] {901, 902}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 2);
                 context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_On");
                 context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_On");
             }
@@ -1057,17 +1009,11 @@ namespace Maple2.Trigger._02020144_bf {
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {1003}, arg2: 70002110, arg3: 1, arg5: false);
                 context.SetUserValue(triggerId: 900005, key: "TimerStart", value: 9);
-                context.SetSkill(arg1: new[] {901}, arg2: false);
-                context.SetSkill(arg1: new[] {902}, arg2: false);
+                context.SetSkill(arg1: new[] {901, 902}, arg2: false);
                 context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
                 context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_Off");
                 context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10002124}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002125}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002126}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002127}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002128}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10002129}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, arg2: 0);
             }
 
             public override void Execute() { }

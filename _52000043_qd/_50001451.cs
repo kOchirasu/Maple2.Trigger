@@ -4,19 +4,16 @@ namespace Maple2.Trigger._52000043_qd {
             internal State시작조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001451},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001451}, arg3: new byte[] {1})) {
                     context.State = new State연출시작(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001451},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001451}, arg3: new byte[] {2})) {
                     context.State = new StateNPC만배치(context);
                     return;
                 }
@@ -30,11 +27,7 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1001, 2001}, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
-                        3016, 3017
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -55,11 +48,7 @@ namespace Maple2.Trigger._52000043_qd {
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(arg1: new[] {1001, 2001}, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
-                        3016, 3017
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

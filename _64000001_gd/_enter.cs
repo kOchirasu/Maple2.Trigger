@@ -4,14 +4,12 @@ namespace Maple2.Trigger._64000001_gd {
             internal StatePvP(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {701}, arg2: false);
-                context.SetEffect(arg1: new[] {702}, arg2: false);
+                context.SetEffect(arg1: new[] {701, 702}, arg2: false);
             }
 
             public override void Execute() {
                 if (true) {
-                    context.SetPvpZone(arg1: 101, arg2: 30, arg3: 120, arg4: 90001002, arg5: 4,
-                        arg6: new byte[] {102, 103, 112, 113, 10, 11, 1, 3});
+                    context.SetPvpZone(arg1: 101, arg2: 30, arg3: 120, arg4: 90001002, arg5: 4, arg6: new byte[] {102, 103, 112, 113, 10, 11, 1, 3});
                     context.State = new StatePvP종료(context);
                     return;
                 }

@@ -4,9 +4,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {501}, arg2: false);
-                context.CreateMonster(arg1: new[] {502}, arg2: false);
-                context.CreateMonster(arg1: new[] {503}, arg2: false);
+                context.CreateMonster(arg1: new[] {501, 502, 503}, arg2: false);
             }
 
             public override void Execute() {

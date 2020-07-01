@@ -4,13 +4,8 @@ namespace Maple2.Trigger._99999873 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000069}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000077}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000088}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000089}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000090}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000091}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000092}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000069, 12000077}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000088, 12000089, 12000090, 12000091, 12000092}, arg2: 0);
                 context.SetActor(arg1: 14011, arg2: false, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14021, arg2: false, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14022, arg2: false, arg3: "Interaction_luminous_A02_off");
@@ -26,9 +21,7 @@ namespace Maple2.Trigger._99999873 {
                 context.SetActor(arg1: 14053, arg2: false, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14054, arg2: false, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14055, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetEffect(arg1: new[] {14200}, arg2: false);
-                context.SetEffect(arg1: new[] {14201}, arg2: false);
-                context.SetEffect(arg1: new[] {14202}, arg2: false);
+                context.SetEffect(arg1: new[] {14200, 14201, 14202}, arg2: false);
             }
 
             public override void Execute() {
@@ -104,11 +97,7 @@ namespace Maple2.Trigger._99999873 {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {14201}, arg2: true);
-                context.SetInteractObject(arg1: new[] {12000088}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000089}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000090}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000091}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000092}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000088, 12000089, 12000090, 12000091, 12000092}, arg2: 1);
                 context.SetActor(arg1: 14011, arg2: true, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14021, arg2: true, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14022, arg2: true, arg3: "Interaction_luminous_A02_off");
@@ -406,11 +395,7 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Fail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000088}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000089}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000090}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000091}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {12000092}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000088, 12000089, 12000090, 12000091, 12000092}, arg2: 0);
                 context.SetActor(arg1: 14011, arg2: false, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14021, arg2: false, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14022, arg2: false, arg3: "Interaction_luminous_A02_off");

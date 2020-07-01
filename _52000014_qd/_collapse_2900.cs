@@ -5,14 +5,8 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(arg1: new[] {2900, 2901, 2902, 2903, 2904, 2905}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetEffect(arg1: new[] {12900}, arg2: false);
-                context.SetEffect(arg1: new[] {22900}, arg2: false);
-                context.SetEffect(arg1: new[] {12901}, arg2: false);
-                context.SetEffect(arg1: new[] {22901}, arg2: false);
-                context.SetEffect(arg1: new[] {12902}, arg2: false);
-                context.SetEffect(arg1: new[] {22902}, arg2: false);
+                context.SetMesh(arg1: new[] {2900, 2901, 2902, 2903, 2904, 2905}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {12900, 22900, 12901, 22901, 12902, 22902}, arg2: false);
             }
 
             public override void Execute() {
@@ -49,10 +43,8 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetTimer(arg1: "2", arg2: 2);
-                context.SetEffect(arg1: new[] {12900}, arg2: true);
-                context.SetEffect(arg1: new[] {22900}, arg2: true);
-                context.SetRandomMesh(arg1: new[] {2900, 2901, 2902, 2903, 2904, 2905}, arg2: false, arg3: 6,
-                    arg4: 100, arg5: 200);
+                context.SetEffect(arg1: new[] {12900, 22900}, arg2: true);
+                context.SetRandomMesh(arg1: new[] {2900, 2901, 2902, 2903, 2904, 2905}, arg2: false, arg3: 6, arg4: 100, arg5: 200);
             }
 
             public override void Execute() {
@@ -145,8 +137,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 5);
-                context.SetEffect(arg1: new[] {12901}, arg2: true);
-                context.SetEffect(arg1: new[] {22901}, arg2: true);
+                context.SetEffect(arg1: new[] {12901, 22901}, arg2: true);
             }
 
             public override void Execute() {
@@ -196,8 +187,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "20", arg2: 4);
-                context.SetEffect(arg1: new[] {12902}, arg2: true);
-                context.SetEffect(arg1: new[] {22902}, arg2: true);
+                context.SetEffect(arg1: new[] {12902, 22902}, arg2: true);
                 context.SetEventUI(arg1: 1, arg2: "$52000014_QD__COLLAPSE_2900__2$", arg3: 4000, arg4: "0");
             }
 
@@ -219,146 +209,122 @@ namespace Maple2.Trigger._52000014_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001250},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001250}, arg3: new byte[] {2})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001251},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001251}, arg3: new byte[] {2})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001252},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001252}, arg3: new byte[] {2})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001253},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001253}, arg3: new byte[] {2})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001254},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001254}, arg3: new byte[] {2})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001255},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001255}, arg3: new byte[] {2})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001256},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001256}, arg3: new byte[] {2})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001257},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001257}, arg3: new byte[] {2})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001258},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001258}, arg3: new byte[] {2})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001259},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001259}, arg3: new byte[] {2})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001370},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001370}, arg3: new byte[] {2})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001371},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001371}, arg3: new byte[] {2})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001250},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001250}, arg3: new byte[] {3})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001251},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001251}, arg3: new byte[] {3})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001252},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001252}, arg3: new byte[] {3})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001253},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001253}, arg3: new byte[] {3})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001254},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001254}, arg3: new byte[] {3})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001255},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001255}, arg3: new byte[] {3})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001256},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001256}, arg3: new byte[] {3})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001257},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001257}, arg3: new byte[] {3})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001258},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001258}, arg3: new byte[] {3})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001259},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001259}, arg3: new byte[] {3})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001370},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001370}, arg3: new byte[] {3})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001371},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001371}, arg3: new byte[] {3})) {
                     context.State = new State포털생성01(context);
                     return;
                 }
@@ -388,12 +354,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {12900}, arg2: false);
-                context.SetEffect(arg1: new[] {22900}, arg2: false);
-                context.SetEffect(arg1: new[] {12901}, arg2: false);
-                context.SetEffect(arg1: new[] {22901}, arg2: false);
-                context.SetEffect(arg1: new[] {12902}, arg2: false);
-                context.SetEffect(arg1: new[] {22902}, arg2: false);
+                context.SetEffect(arg1: new[] {12900, 22900, 12901, 22901, 12902, 22902}, arg2: false);
             }
 
             public override void Execute() { }

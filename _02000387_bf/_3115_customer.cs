@@ -242,8 +242,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5103}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000617);
-                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Common/Field/co_fi_prop_game_A01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Common/Field/co_fi_prop_game_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -282,8 +281,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5103}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000618);
-                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Common/Field/co_fi_prop_game_A02.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Common/Field/co_fi_prop_game_A02.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -322,8 +320,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5103}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000668);
-                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Royalcity/Indoor/ry_in_prop_cranegame_A01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Royalcity/Indoor/ry_in_prop_cranegame_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -362,9 +359,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5103}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000671);
-                context.AddEffectNif(spawnPointId: 3115,
-                    nifPath: @"Map/Royalcity/Indoor/ry_in_prop_photosticker_A01.nif", isOutline: true, scale: 1.2f,
-                    rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Royalcity/Indoor/ry_in_prop_photosticker_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -403,8 +398,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5103}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000672);
-                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Royalcity/Indoor/ry_in_prop_pingpong_A01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Royalcity/Indoor/ry_in_prop_pingpong_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -443,8 +437,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5103}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000673);
-                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Royalcity/Indoor/ry_in_prop_pooltable_A01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Royalcity/Indoor/ry_in_prop_pooltable_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -483,8 +476,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5103}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000674);
-                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Royalcity/Indoor/ry_in_prop_pump_A01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Royalcity/Indoor/ry_in_prop_pump_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -523,9 +515,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5103}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000676);
-                context.AddEffectNif(spawnPointId: 3115,
-                    nifPath: @"Map/Royalcity/Indoor/ry_in_prop_soccertable_A01.nif", isOutline: true, scale: 1.2f,
-                    rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 3115, nifPath: @"Map/Royalcity/Indoor/ry_in_prop_soccertable_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {

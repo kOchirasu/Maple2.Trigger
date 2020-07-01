@@ -11,11 +11,8 @@ namespace Maple2.Trigger._52100300_qd {
                 context.SetLadder(arg1: 1012, arg2: false, arg3: true);
                 context.SetLadder(arg1: 1013, arg2: false, arg3: true);
                 context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209}, arg2: true);
-                context.SetMesh(arg1: new[] {29991, 29992, 29993, 29994, 29995, 29996, 29997, 29998, 29999},
-                    arg2: false);
-                context.SetEffect(arg1: new[] {7010}, arg2: true);
-                context.SetEffect(arg1: new[] {7011}, arg2: true);
-                context.SetEffect(arg1: new[] {7012}, arg2: true);
+                context.SetMesh(arg1: new[] {29991, 29992, 29993, 29994, 29995, 29996, 29997, 29998, 29999}, arg2: false);
+                context.SetEffect(arg1: new[] {7010, 7011, 7012}, arg2: true);
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 991, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 992, isEnable: false);
@@ -24,8 +21,7 @@ namespace Maple2.Trigger._52100300_qd {
 
             public override void Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -186,8 +182,7 @@ namespace Maple2.Trigger._52100300_qd {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.ShowGuideSummary(entityId: 110, textId: 40010);
-                context.CreateMonster(arg1: new[] {121, 122, 123, 124, 125, 126, 127, 128, 129}, arg2: true);
-                context.CreateMonster(arg1: new[] {994}, arg2: true);
+                context.CreateMonster(arg1: new[] {121, 122, 123, 124, 125, 126, 127, 128, 129, 994}, arg2: true);
             }
 
             public override void Execute() {

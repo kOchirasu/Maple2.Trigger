@@ -6,12 +6,7 @@ namespace Maple2.Trigger._99999845 {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {12000307}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000308}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000309}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000310}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000311}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000312}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000307, 12000308, 12000309, 12000310, 12000311, 12000312}, arg2: 2);
             }
 
             public override void Execute() {
@@ -44,14 +39,9 @@ namespace Maple2.Trigger._99999845 {
 
             public override void Execute() {
                 if (context.MonsterDead(arg1: new[] {1107})) {
-                    context.SetVisibleBreakableObject(arg1: new[] {1007}, arg2: true);
-                    context.SetVisibleBreakableObject(arg1: new[] {1008}, arg2: true);
-                    context.SetInteractObject(arg1: new[] {12000307}, arg2: 1);
-                    context.SetInteractObject(arg1: new[] {12000308}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1110}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1111}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1112}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1113}, arg2: false);
+                    context.SetVisibleBreakableObject(arg1: new[] {1007, 1008}, arg2: true);
+                    context.SetInteractObject(arg1: new[] {12000307, 12000308}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1110, 1111, 1112, 1113}, arg2: false);
                     context.State = new StateCableOn_07_08(context);
                     return;
                 }
@@ -67,14 +57,9 @@ namespace Maple2.Trigger._99999845 {
 
             public override void Execute() {
                 if (context.MonsterDead(arg1: new[] {1108})) {
-                    context.SetVisibleBreakableObject(arg1: new[] {1009}, arg2: true);
-                    context.SetVisibleBreakableObject(arg1: new[] {1010}, arg2: true);
-                    context.SetInteractObject(arg1: new[] {12000309}, arg2: 1);
-                    context.SetInteractObject(arg1: new[] {12000310}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1110}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1111}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1112}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1113}, arg2: false);
+                    context.SetVisibleBreakableObject(arg1: new[] {1009, 1010}, arg2: true);
+                    context.SetInteractObject(arg1: new[] {12000309, 12000310}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1110, 1111, 1112, 1113}, arg2: false);
                     context.State = new StateCableOn_09_10(context);
                     return;
                 }
@@ -90,14 +75,9 @@ namespace Maple2.Trigger._99999845 {
 
             public override void Execute() {
                 if (context.MonsterDead(arg1: new[] {1109})) {
-                    context.SetVisibleBreakableObject(arg1: new[] {1011}, arg2: true);
-                    context.SetVisibleBreakableObject(arg1: new[] {1012}, arg2: true);
-                    context.SetInteractObject(arg1: new[] {12000311}, arg2: 1);
-                    context.SetInteractObject(arg1: new[] {12000312}, arg2: 1);
-                    context.CreateMonster(arg1: new[] {1110}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1111}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1112}, arg2: false);
-                    context.CreateMonster(arg1: new[] {1113}, arg2: false);
+                    context.SetVisibleBreakableObject(arg1: new[] {1011, 1012}, arg2: true);
+                    context.SetInteractObject(arg1: new[] {12000311, 12000312}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1110, 1111, 1112, 1113}, arg2: false);
                     context.State = new StateCableOn_11_12(context);
                     return;
                 }
@@ -113,19 +93,15 @@ namespace Maple2.Trigger._99999845 {
 
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000307}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000307}, arg2: 2);
-                    context.SetInteractObject(arg1: new[] {12000308}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(-8476.297f, -3480.99072f, 1343f),
-                        rot: new Vector3(0f, 0f, 0f));
+                    context.SetInteractObject(arg1: new[] {12000307, 12000308}, arg2: 2);
+                    context.MoveUserToPos(pos: new Vector3(-8476.297f, -3480.99072f, 1343f), rot: new Vector3(0f, 0f, 0f));
                     context.State = new StateCableDelay_07(context);
                     return;
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000308}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000307}, arg2: 2);
-                    context.SetInteractObject(arg1: new[] {12000308}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(-6726.70264f, -377.953552f, 1343f),
-                        rot: new Vector3(0f, 0f, 0f));
+                    context.SetInteractObject(arg1: new[] {12000307, 12000308}, arg2: 2);
+                    context.MoveUserToPos(pos: new Vector3(-6726.70264f, -377.953552f, 1343f), rot: new Vector3(0f, 0f, 0f));
                     context.State = new StateCableDelay_08(context);
                     return;
                 }
@@ -141,17 +117,14 @@ namespace Maple2.Trigger._99999845 {
 
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000309}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000309}, arg2: 2);
-                    context.SetInteractObject(arg1: new[] {12000310}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(-8321.446f, -7475.03271f, 135f),
-                        rot: new Vector3(0f, 0f, 0f));
+                    context.SetInteractObject(arg1: new[] {12000309, 12000310}, arg2: 2);
+                    context.MoveUserToPos(pos: new Vector3(-8321.446f, -7475.03271f, 135f), rot: new Vector3(0f, 0f, 0f));
                     context.State = new StateCableDelay_09(context);
                     return;
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000310}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000309}, arg2: 2);
-                    context.SetInteractObject(arg1: new[] {12000310}, arg2: 2);
+                    context.SetInteractObject(arg1: new[] {12000309, 12000310}, arg2: 2);
                     context.MoveUserToPos(pos: new Vector3(-6576.207f, -9063.119f, 135f), rot: new Vector3(0f, 0f, 0f));
                     context.State = new StateCableDelay_10(context);
                     return;
@@ -168,19 +141,15 @@ namespace Maple2.Trigger._99999845 {
 
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000311}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000311}, arg2: 2);
-                    context.SetInteractObject(arg1: new[] {12000312}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(-7723.194f, 5673.29346f, 2690f),
-                        rot: new Vector3(0f, 0f, 0f));
+                    context.SetInteractObject(arg1: new[] {12000311, 12000312}, arg2: 2);
+                    context.MoveUserToPos(pos: new Vector3(-7723.194f, 5673.29346f, 2690f), rot: new Vector3(0f, 0f, 0f));
                     context.State = new StateCableDelay_11(context);
                     return;
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000312}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new[] {12000311}, arg2: 2);
-                    context.SetInteractObject(arg1: new[] {12000312}, arg2: 2);
-                    context.MoveUserToPos(pos: new Vector3(-6276.41748f, 8028.68164f, 2690f),
-                        rot: new Vector3(0f, 0f, 0f));
+                    context.SetInteractObject(arg1: new[] {12000311, 12000312}, arg2: 2);
+                    context.MoveUserToPos(pos: new Vector3(-6276.41748f, 8028.68164f, 2690f), rot: new Vector3(0f, 0f, 0f));
                     context.State = new StateCableDelay_12(context);
                     return;
                 }

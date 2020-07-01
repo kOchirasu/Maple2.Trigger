@@ -5,8 +5,7 @@ namespace Maple2.Trigger._80000014_bonus {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10001314}, arg2: 1);
-                context.SetMesh(arg1: new[] {3501, 3502, 3503, 3504, 3505, 3506}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {3501, 3502, 3503, 3504, 3505, 3506}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -65,8 +64,7 @@ namespace Maple2.Trigger._80000014_bonus {
             internal State문열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {3501, 3502, 3503, 3504, 3505, 3506}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {3501, 3502, 3503, 3504, 3505, 3506}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

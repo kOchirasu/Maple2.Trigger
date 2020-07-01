@@ -4,16 +4,9 @@ namespace Maple2.Trigger._02000498_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316,
-                        3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325, 3326, 3327, 3328, 3329, 3330, 3331, 3332,
-                        3333, 3334, 3335, 3336, 3337, 3338, 3339, 3340, 3341, 3342, 3343, 3344
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325, 3326, 3327, 3328, 3329, 3330, 3331, 3332, 3333, 3334, 3335, 3336, 3337, 3338, 3339, 3340, 3341, 3342, 3343, 3344}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkill(arg1: new[] {704}, arg2: false);
-                context.SetEffect(arg1: new[] {630}, arg2: false);
-                context.SetEffect(arg1: new[] {620}, arg2: false);
-                context.SetEffect(arg1: new[] {6301}, arg2: false);
+                context.SetEffect(arg1: new[] {630, 620, 6301}, arg2: false);
             }
 
             public override void Execute() {
@@ -231,12 +224,7 @@ namespace Maple2.Trigger._02000498_bf {
                 if (context.TimeExpired(arg1: "3")) {
                     context.SetEffect(arg1: new[] {630}, arg2: true);
                     context.SetSkill(arg1: new[] {704}, arg2: true);
-                    context.SetMesh(
-                        arg1: new[] {
-                            3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315,
-                            3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325, 3326, 3327, 3328, 3329, 3330,
-                            3331, 3332, 3333, 3334, 3335, 3336, 3337, 3338, 3339, 3340, 3341, 3342, 3343, 3344
-                        }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325, 3326, 3327, 3328, 3329, 3330, 3331, 3332, 3333, 3334, 3335, 3336, 3337, 3338, 3339, 3340, 3341, 3342, 3343, 3344}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new State종료(context);
                     return;
                 }

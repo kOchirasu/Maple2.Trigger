@@ -6,9 +6,7 @@ namespace Maple2.Trigger._61000022_me {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {710}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new[] {700}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new[] {711, 712, 713, 714, 715}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {701, 702, 703, 704, 705, 706, 707, 708, 709}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {711, 712, 713, 714, 715, 701, 702, 703, 704, 705, 706, 707, 708, 709}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -27,9 +25,7 @@ namespace Maple2.Trigger._61000022_me {
             internal StateSetBanner(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
             public override void Execute() {

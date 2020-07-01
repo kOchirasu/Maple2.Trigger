@@ -38,9 +38,7 @@ namespace Maple2.Trigger._02020062_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})
-                    && context.MonsterDead(arg1: new[] {922})
-                    && context.MonsterDead(arg1: new[] {923})) {
+                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -63,9 +61,7 @@ namespace Maple2.Trigger._02020062_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})
-                    && context.MonsterDead(arg1: new[] {922})
-                    && context.MonsterDead(arg1: new[] {923})) {
+                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -92,9 +88,7 @@ namespace Maple2.Trigger._02020062_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})
-                    && context.MonsterDead(arg1: new[] {922})
-                    && context.MonsterDead(arg1: new[] {923})) {
+                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -121,9 +115,7 @@ namespace Maple2.Trigger._02020062_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})
-                    && context.MonsterDead(arg1: new[] {922})
-                    && context.MonsterDead(arg1: new[] {923})) {
+                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -148,9 +140,7 @@ namespace Maple2.Trigger._02020062_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new[] {921})
-                    && context.MonsterDead(arg1: new[] {922})
-                    && context.MonsterDead(arg1: new[] {923})) {
+                if (context.MonsterDead(arg1: new[] {921}) && context.MonsterDead(arg1: new[] {922}) && context.MonsterDead(arg1: new[] {923})) {
                     context.State = new State종료(context);
                     return;
                 }

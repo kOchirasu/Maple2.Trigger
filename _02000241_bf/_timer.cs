@@ -6,16 +6,13 @@ namespace Maple2.Trigger._02000241_bf {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {2001}, arg2: false);
-                context.SetEffect(arg1: new[] {2002}, arg2: false);
-                context.SetEffect(arg1: new[] {2003}, arg2: false);
+                context.SetEffect(arg1: new[] {2001, 2002, 2003}, arg2: false);
                 context.SetMesh(arg1: new[] {709, 710}, arg2: true);
             }
 
             public override void Execute() {
                 if (context.GetUserCount(boxId: 205) == 1) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }

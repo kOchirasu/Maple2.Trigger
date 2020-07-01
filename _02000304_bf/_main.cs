@@ -7,8 +7,7 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetActor(arg1: 201, arg2: false, arg3: "Closed_A");
                 context.SetActor(arg1: 202, arg2: false, arg3: "Closed_A");
                 context.SetActor(arg1: 203, arg2: true, arg3: "sf_functobj_monitor_C01_On");
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
+                context.SetEffect(arg1: new[] {602, 603}, arg2: false);
                 context.SetPortal(arg1: 98, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 99, arg2: false, arg3: false, arg4: false);
                 context.SetInteractObject(arg1: new[] {10000646}, arg2: 2);

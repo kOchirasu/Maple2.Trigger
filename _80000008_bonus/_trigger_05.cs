@@ -4,8 +4,7 @@ namespace Maple2.Trigger._80000008_bonus {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {801, 802, 803, 804, 805}, arg2: false);
-                context.SetEffect(arg1: new[] {806, 807, 808, 809, 810}, arg2: false);
+                context.SetEffect(arg1: new[] {801, 802, 803, 804, 805, 806, 807, 808, 809, 810}, arg2: false);
                 context.SetMesh(arg1: new[] {201, 202, 203, 204, 205}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000212}, arg2: 1);
             }
@@ -45,8 +44,7 @@ namespace Maple2.Trigger._80000008_bonus {
                 context.DestroyMonster(arg1: new[] {105});
                 context.SetTimer(arg1: "5", arg2: 1);
                 context.SetTimer(arg1: "6", arg2: 1, arg3: true);
-                context.SetEffect(arg1: new[] {801, 802, 803, 804, 805}, arg2: true);
-                context.SetEffect(arg1: new[] {806, 807, 808, 809, 810}, arg2: true);
+                context.SetEffect(arg1: new[] {801, 802, 803, 804, 805, 806, 807, 808, 809, 810}, arg2: true);
             }
 
             public override void Execute() {
@@ -63,17 +61,9 @@ namespace Maple2.Trigger._80000008_bonus {
             internal State꽝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {101});
-                context.DestroyMonster(arg1: new[] {102});
-                context.DestroyMonster(arg1: new[] {103});
-                context.DestroyMonster(arg1: new[] {104});
-                context.DestroyMonster(arg1: new[] {105});
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105});
                 context.SetMesh(arg1: new[] {201, 202, 203, 204, 205}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10000208}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000209}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000210}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000211}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000212}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000208, 10000209, 10000210, 10000211, 10000212}, arg2: 2);
             }
 
             public override void Execute() { }

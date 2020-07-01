@@ -23,8 +23,7 @@ namespace Maple2.Trigger._03000145_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000471}, arg2: 1);
-                context.CreateMonster(arg1: new[] {501}, arg2: false);
-                context.CreateMonster(arg1: new[] {502}, arg2: false);
+                context.CreateMonster(arg1: new[] {501, 502}, arg2: false);
             }
 
             public override void Execute() {
@@ -43,10 +42,8 @@ namespace Maple2.Trigger._03000145_bf {
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
                 context.SetMesh(arg1: new[] {5001}, arg2: true, arg5: 1f);
-                context.DestroyMonster(arg1: new[] {501});
-                context.DestroyMonster(arg1: new[] {502});
-                context.CreateMonster(arg1: new[] {511}, arg2: false);
-                context.CreateMonster(arg1: new[] {512}, arg2: false);
+                context.DestroyMonster(arg1: new[] {501, 502});
+                context.CreateMonster(arg1: new[] {511, 512}, arg2: false);
             }
 
             public override void Execute() {
@@ -137,8 +134,7 @@ namespace Maple2.Trigger._03000145_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "7", arg2: 10);
-                context.DestroyMonster(arg1: new[] {511});
-                context.DestroyMonster(arg1: new[] {512});
+                context.DestroyMonster(arg1: new[] {511, 512});
             }
 
             public override void Execute() {

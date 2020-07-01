@@ -5,12 +5,7 @@ namespace Maple2.Trigger._52000029_qd {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {605}, arg2: false);
-                context.SetEffect(arg1: new[] {606}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602, 603, 604, 605, 606}, arg2: false);
             }
 
             public override void Execute() {
@@ -28,12 +23,7 @@ namespace Maple2.Trigger._52000029_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.CreateMonster(arg1: new[] {1001, 2001}, arg2: false);
-                context.CreateMonster(arg1: new[] {1002}, arg2: false);
-                context.CreateMonster(arg1: new[] {1003}, arg2: false);
-                context.CreateMonster(arg1: new[] {1004}, arg2: false);
-                context.CreateMonster(arg1: new[] {1005}, arg2: false);
-                context.CreateMonster(arg1: new[] {1006}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 2001, 1002, 1003, 1004, 1005, 1006}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
             }
@@ -271,16 +261,7 @@ namespace Maple2.Trigger._52000029_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1001, 1002, 1004, 1005, 1006});
-                context.CreateMonster(arg1: new[] {1007}, arg2: false);
-                context.CreateMonster(arg1: new[] {1008}, arg2: false);
-                context.CreateMonster(arg1: new[] {1009}, arg2: false);
-                context.CreateMonster(arg1: new[] {1010}, arg2: false);
-                context.CreateMonster(arg1: new[] {1011}, arg2: false);
-                context.CreateMonster(arg1: new[] {1101}, arg2: false);
-                context.CreateMonster(arg1: new[] {1102}, arg2: false);
-                context.CreateMonster(arg1: new[] {1104}, arg2: false);
-                context.CreateMonster(arg1: new[] {1105}, arg2: false);
-                context.CreateMonster(arg1: new[] {1106}, arg2: false);
+                context.CreateMonster(arg1: new[] {1007, 1008, 1009, 1010, 1011, 1101, 1102, 1104, 1105, 1106}, arg2: false);
             }
 
             public override void Execute() {

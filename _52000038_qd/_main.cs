@@ -8,8 +8,7 @@ namespace Maple2.Trigger._52000038_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002632},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002632}, arg3: new byte[] {3})) {
                     context.SetActor(arg1: 3001, arg2: false, arg3: "Dead_A");
                     context.SetActor(arg1: 3002, arg2: false, arg3: "Dead_A");
                     context.SetActor(arg1: 3003, arg2: false, arg3: "Dead_A");
@@ -19,20 +18,7 @@ namespace Maple2.Trigger._52000038_qd {
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002632},
-                    arg3: new byte[] {2})) {
-                    context.SetActor(arg1: 3001, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3002, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3003, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3004, arg2: false, arg3: "Dead_A");
-                    context.SetActor(arg1: 3005, arg2: false, arg3: "Dead_A");
-                    context.CreateMonster(arg1: new[] {131, 132}, arg2: true);
-                    context.State = new Statescene_c_01(context);
-                    return;
-                }
-
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002632}, arg3: new byte[] {2})) {
                     context.SetActor(arg1: 3001, arg2: false, arg3: "Dead_A");
                     context.SetActor(arg1: 3002, arg2: false, arg3: "Dead_A");
                     context.SetActor(arg1: 3003, arg2: false, arg3: "Dead_A");
@@ -43,8 +29,7 @@ namespace Maple2.Trigger._52000038_qd {
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631}, arg3: new byte[] {3})) {
                     context.SetActor(arg1: 3001, arg2: false, arg3: "Dead_A");
                     context.SetActor(arg1: 3002, arg2: false, arg3: "Dead_A");
                     context.SetActor(arg1: 3003, arg2: false, arg3: "Dead_A");
@@ -55,27 +40,34 @@ namespace Maple2.Trigger._52000038_qd {
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631}, arg3: new byte[] {2})) {
+                    context.SetActor(arg1: 3001, arg2: false, arg3: "Dead_A");
+                    context.SetActor(arg1: 3002, arg2: false, arg3: "Dead_A");
+                    context.SetActor(arg1: 3003, arg2: false, arg3: "Dead_A");
+                    context.SetActor(arg1: 3004, arg2: false, arg3: "Dead_A");
+                    context.SetActor(arg1: 3005, arg2: false, arg3: "Dead_A");
+                    context.CreateMonster(arg1: new[] {131, 132}, arg2: true);
+                    context.State = new Statescene_c_01(context);
+                    return;
+                }
+
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631}, arg3: new byte[] {1})) {
                     context.CreateMonster(arg1: new[] {121, 122}, arg2: true);
                     context.State = new Statescene_b_02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002630},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002630}, arg3: new byte[] {3})) {
                     context.State = new Statescene_b_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002630},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002630}, arg3: new byte[] {2})) {
                     context.State = new Statescene_b_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002630},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002630}, arg3: new byte[] {1})) {
                     context.State = new Stateready_02(context);
                     return;
                 }
@@ -92,8 +84,7 @@ namespace Maple2.Trigger._52000038_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002630},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002630}, arg3: new byte[] {1})) {
                     context.State = new Statestart(context);
                     return;
                 }
@@ -215,10 +206,7 @@ namespace Maple2.Trigger._52000038_qd {
             internal Statestart_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {202}, arg2: true);
-                context.CreateMonster(arg1: new[] {203}, arg2: true);
-                context.CreateMonster(arg1: new[] {204}, arg2: true);
-                context.CreateMonster(arg1: new[] {205}, arg2: true);
+                context.CreateMonster(arg1: new[] {202, 203, 204, 205}, arg2: true);
             }
 
             public override void Execute() {
@@ -267,8 +255,7 @@ namespace Maple2.Trigger._52000038_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631}, arg3: new byte[] {1})) {
                     context.DestroyMonster(arg1: new[] {111, 112});
                     context.CreateMonster(arg1: new[] {121, 122}, arg2: true);
                     context.State = new Statescene_b_02(context);
@@ -325,8 +312,7 @@ namespace Maple2.Trigger._52000038_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002631}, arg3: new byte[] {2})) {
                     context.DestroyMonster(arg1: new[] {121, 122});
                     context.CreateMonster(arg1: new[] {131, 132}, arg2: true);
                     context.HideGuideSummary(entityId: 20020010);

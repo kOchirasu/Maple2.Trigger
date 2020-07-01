@@ -6,14 +6,12 @@ namespace Maple2.Trigger._52000022_qd {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.CreateMonster(arg1: new[] {111}, arg2: false);
-                context.CreateMonster(arg1: new[] {211}, arg2: false);
+                context.CreateMonster(arg1: new[] {111, 211}, arg2: false);
                 context.SetProductionUI(arg1: 4);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60001041},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60001041}, arg3: new byte[] {1})) {
                     context.State = new State연출준비(context);
                     return;
                 }
@@ -27,10 +25,8 @@ namespace Maple2.Trigger._52000022_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.DestroyMonster(arg1: new[] {111});
-                context.DestroyMonster(arg1: new[] {211});
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.CreateMonster(arg1: new[] {201}, arg2: false);
+                context.DestroyMonster(arg1: new[] {111, 211});
+                context.CreateMonster(arg1: new[] {101, 201}, arg2: false);
             }
 
             public override void Execute() {
@@ -271,10 +267,8 @@ namespace Maple2.Trigger._52000022_qd {
                 context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetTimer(arg1: "2", arg2: 2);
                 context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.DestroyMonster(arg1: new[] {101});
-                context.DestroyMonster(arg1: new[] {201});
-                context.CreateMonster(arg1: new[] {111}, arg2: false);
-                context.CreateMonster(arg1: new[] {211}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101, 201});
+                context.CreateMonster(arg1: new[] {111, 211}, arg2: false);
             }
 
             public override void Execute() {

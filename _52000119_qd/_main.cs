@@ -4,23 +4,13 @@ namespace Maple2.Trigger._52000119_qd {
             internal Stateintro(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(
-                    arg1: new[] {
-                        901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919,
-                        920
-                    }, arg2: true);
-                context.CreateMonster(arg1: new[] {921, 922, 923, 924, 925, 926, 927, 928, 929}, arg2: true);
-                context.CreateMonster(arg1: new[] {104, 105}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
-                context.SetEffect(arg1: new[] {5005}, arg2: false);
+                context.CreateMonster(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920}, arg2: true);
+                context.CreateMonster(arg1: new[] {921, 922, 923, 924, 925, 926, 927, 928, 929, 104, 105}, arg2: true);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100030},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100030}, arg3: new byte[] {1})) {
                     context.State = new Statefadeout_01(context);
                     return;
                 }
@@ -74,8 +64,7 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcId: 11003169, illustId: "Jordy_normal", msg: "$52000119_QD__MAIN__0$",
-                    duration: 3000, align: "Left");
+                context.AddCinematicTalk(npcId: 11003169, illustId: "Jordy_normal", msg: "$52000119_QD__MAIN__0$", duration: 3000, align: "Left");
                 context.SetSceneSkip(arg1: "fadeout_02", arg2: "nextState");
             }
 
@@ -287,11 +276,7 @@ namespace Maple2.Trigger._52000119_qd {
             internal Statefadeout_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {
-                    901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920
-                });
-                context.DestroyMonster(arg1: new[] {921, 922, 923, 924, 925, 926, 927, 928, 929});
-                context.DestroyMonster(arg1: new[] {101, 102, 103});
+                context.DestroyMonster(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 101, 102, 103});
                 context.CreateMonster(arg1: new[] {104, 105, 106}, arg2: true);
                 context.MoveUser(arg1: 52000119, arg2: 6002);
                 context.SetProductionUI(arg1: 1);

@@ -41,12 +41,9 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateMobTrapOn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 901, arg3: "$02000397_BF__04_HALLWAYBATTLE__0$", arg4: 2,
-                    arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 902, arg3: "$02000397_BF__04_HALLWAYBATTLE__1$", arg4: 2,
-                    arg5: 0);
-                context.SetConversation(arg1: 1, arg2: 903, arg3: "$02000397_BF__04_HALLWAYBATTLE__2$", arg4: 2,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 901, arg3: "$02000397_BF__04_HALLWAYBATTLE__0$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 902, arg3: "$02000397_BF__04_HALLWAYBATTLE__1$", arg4: 2, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 903, arg3: "$02000397_BF__04_HALLWAYBATTLE__2$", arg4: 2, arg5: 0);
             }
 
             public override void Execute() {

@@ -4,61 +4,12 @@ namespace Maple2.Trigger._52010056_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5501}, arg2: false);
-                context.SetEffect(arg1: new[] {5502}, arg2: false);
-                context.SetEffect(arg1: new[] {5503}, arg2: false);
-                context.SetEffect(arg1: new[] {5504}, arg2: false);
-                context.SetEffect(arg1: new[] {5505}, arg2: false);
-                context.SetEffect(arg1: new[] {5506}, arg2: false);
-                context.SetEffect(arg1: new[] {5507}, arg2: false);
-                context.SetEffect(arg1: new[] {5508}, arg2: false);
-                context.SetEffect(arg1: new[] {5509}, arg2: false);
-                context.SetEffect(arg1: new[] {5510}, arg2: false);
-                context.SetEffect(arg1: new[] {5511}, arg2: false);
-                context.SetEffect(arg1: new[] {5512}, arg2: false);
-                context.SetEffect(arg1: new[] {5513}, arg2: false);
-                context.SetEffect(arg1: new[] {5514}, arg2: false);
-                context.SetEffect(arg1: new[] {5515}, arg2: false);
-                context.SetEffect(arg1: new[] {5516}, arg2: false);
-                context.SetEffect(arg1: new[] {5517}, arg2: false);
-                context.SetEffect(arg1: new[] {5518}, arg2: false);
-                context.SetEffect(arg1: new[] {5519}, arg2: false);
-                context.SetEffect(arg1: new[] {5520}, arg2: false);
-                context.SetEffect(arg1: new[] {5521}, arg2: false);
-                context.SetEffect(arg1: new[] {5522}, arg2: false);
-                context.SetEffect(arg1: new[] {5523}, arg2: false);
-                context.SetEffect(arg1: new[] {5524}, arg2: false);
-                context.SetEffect(arg1: new[] {5525}, arg2: false);
-                context.SetEffect(arg1: new[] {5526}, arg2: false);
-                context.SetEffect(arg1: new[] {5527}, arg2: false);
-                context.SetEffect(arg1: new[] {5528}, arg2: false);
-                context.SetEffect(arg1: new[] {5529}, arg2: false);
-                context.SetEffect(arg1: new[] {5530}, arg2: false);
-                context.SetEffect(arg1: new[] {5531}, arg2: false);
-                context.SetEffect(arg1: new[] {5532}, arg2: false);
-                context.SetEffect(arg1: new[] {5533}, arg2: false);
-                context.SetEffect(arg1: new[] {5534}, arg2: false);
-                context.SetEffect(arg1: new[] {5535}, arg2: false);
-                context.SetEffect(arg1: new[] {5536}, arg2: false);
-                context.SetEffect(arg1: new[] {5537}, arg2: false);
-                context.SetEffect(arg1: new[] {5538}, arg2: false);
-                context.SetEffect(arg1: new[] {5539}, arg2: false);
-                context.SetEffect(arg1: new[] {5540}, arg2: false);
-                context.SetEffect(arg1: new[] {5541}, arg2: false);
-                context.SetEffect(arg1: new[] {5542}, arg2: false);
-                context.SetEffect(arg1: new[] {5543}, arg2: false);
-                context.SetEffect(arg1: new[] {5544}, arg2: false);
-                context.SetEffect(arg1: new[] {5545}, arg2: false);
-                context.SetEffect(arg1: new[] {5546}, arg2: false);
-                context.SetEffect(arg1: new[] {5547}, arg2: false);
-                context.SetEffect(arg1: new[] {5548}, arg2: false);
-                context.SetEffect(arg1: new[] {5549}, arg2: false);
+                context.SetEffect(arg1: new[] {5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512, 5513, 5514, 5515, 5516, 5517, 5518, 5519, 5520, 5521, 5522, 5523, 5524, 5525, 5526, 5527, 5528, 5529, 5530, 5531, 5532, 5533, 5534, 5535, 5536, 5537, 5538, 5539, 5540, 5541, 5542, 5543, 5544, 5545, 5546, 5547, 5548, 5549}, arg2: false);
                 context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2009}, arg2: new[] {91000053},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2009}, arg2: new[] {91000053}, arg3: new byte[] {2})) {
                     context.State = new StateReady(context);
                     return;
                 }
@@ -71,12 +22,7 @@ namespace Maple2.Trigger._52010056_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {601}, arg2: true);
-                context.CreateMonster(arg1: new[] {602}, arg2: true);
-                context.CreateMonster(arg1: new[] {603}, arg2: true);
-                context.CreateMonster(arg1: new[] {604}, arg2: true);
-                context.CreateMonster(arg1: new[] {605}, arg2: true);
-                context.CreateMonster(arg1: new[] {606}, arg2: true);
+                context.CreateMonster(arg1: new[] {601, 602, 603, 604, 605, 606}, arg2: true);
             }
 
             public override void Execute() {
@@ -93,8 +39,7 @@ namespace Maple2.Trigger._52010056_qd {
             internal State크림슨발록_지시(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 603, msg: "$52010056_QD__EventSection_E_Monster__0$",
-                    duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 603, msg: "$52010056_QD__EventSection_E_Monster__0$", duration: 2000, delayTick: 0);
             }
 
             public override void Execute() {
@@ -111,66 +56,13 @@ namespace Maple2.Trigger._52010056_qd {
             internal State크림슨스피어_대답(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 601, msg: "$52010056_QD__EventSection_E_Monster__1$",
-                    duration: 1500, delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 602, msg: "$52010056_QD__EventSection_E_Monster__1$",
-                    duration: 1500, delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 604, msg: "$52010056_QD__EventSection_E_Monster__1$",
-                    duration: 1500, delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 605, msg: "$52010056_QD__EventSection_E_Monster__1$",
-                    duration: 1500, delayTick: 0);
-                context.AddBalloonTalk(spawnPointId: 606, msg: "$52010056_QD__EventSection_E_Monster__1$",
-                    duration: 1500, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 601, msg: "$52010056_QD__EventSection_E_Monster__1$", duration: 1500, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 602, msg: "$52010056_QD__EventSection_E_Monster__1$", duration: 1500, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 604, msg: "$52010056_QD__EventSection_E_Monster__1$", duration: 1500, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 605, msg: "$52010056_QD__EventSection_E_Monster__1$", duration: 1500, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 606, msg: "$52010056_QD__EventSection_E_Monster__1$", duration: 1500, delayTick: 0);
                 context.SetMesh(arg1: new[] {9002, 9003, 9004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {5501}, arg2: true);
-                context.SetEffect(arg1: new[] {5502}, arg2: true);
-                context.SetEffect(arg1: new[] {5503}, arg2: true);
-                context.SetEffect(arg1: new[] {5504}, arg2: true);
-                context.SetEffect(arg1: new[] {5505}, arg2: true);
-                context.SetEffect(arg1: new[] {5506}, arg2: true);
-                context.SetEffect(arg1: new[] {5507}, arg2: true);
-                context.SetEffect(arg1: new[] {5508}, arg2: true);
-                context.SetEffect(arg1: new[] {5509}, arg2: true);
-                context.SetEffect(arg1: new[] {5510}, arg2: true);
-                context.SetEffect(arg1: new[] {5511}, arg2: true);
-                context.SetEffect(arg1: new[] {5512}, arg2: true);
-                context.SetEffect(arg1: new[] {5513}, arg2: true);
-                context.SetEffect(arg1: new[] {5514}, arg2: true);
-                context.SetEffect(arg1: new[] {5515}, arg2: true);
-                context.SetEffect(arg1: new[] {5516}, arg2: true);
-                context.SetEffect(arg1: new[] {5517}, arg2: true);
-                context.SetEffect(arg1: new[] {5518}, arg2: true);
-                context.SetEffect(arg1: new[] {5519}, arg2: true);
-                context.SetEffect(arg1: new[] {5520}, arg2: true);
-                context.SetEffect(arg1: new[] {5521}, arg2: true);
-                context.SetEffect(arg1: new[] {5522}, arg2: true);
-                context.SetEffect(arg1: new[] {5523}, arg2: true);
-                context.SetEffect(arg1: new[] {5524}, arg2: true);
-                context.SetEffect(arg1: new[] {5525}, arg2: true);
-                context.SetEffect(arg1: new[] {5526}, arg2: true);
-                context.SetEffect(arg1: new[] {5527}, arg2: true);
-                context.SetEffect(arg1: new[] {5528}, arg2: true);
-                context.SetEffect(arg1: new[] {5529}, arg2: true);
-                context.SetEffect(arg1: new[] {5530}, arg2: true);
-                context.SetEffect(arg1: new[] {5531}, arg2: true);
-                context.SetEffect(arg1: new[] {5532}, arg2: true);
-                context.SetEffect(arg1: new[] {5533}, arg2: true);
-                context.SetEffect(arg1: new[] {5534}, arg2: true);
-                context.SetEffect(arg1: new[] {5535}, arg2: true);
-                context.SetEffect(arg1: new[] {5536}, arg2: true);
-                context.SetEffect(arg1: new[] {5537}, arg2: true);
-                context.SetEffect(arg1: new[] {5538}, arg2: true);
-                context.SetEffect(arg1: new[] {5539}, arg2: true);
-                context.SetEffect(arg1: new[] {5540}, arg2: true);
-                context.SetEffect(arg1: new[] {5541}, arg2: true);
-                context.SetEffect(arg1: new[] {5542}, arg2: true);
-                context.SetEffect(arg1: new[] {5543}, arg2: true);
-                context.SetEffect(arg1: new[] {5544}, arg2: true);
-                context.SetEffect(arg1: new[] {5545}, arg2: true);
-                context.SetEffect(arg1: new[] {5546}, arg2: true);
-                context.SetEffect(arg1: new[] {5547}, arg2: true);
-                context.SetEffect(arg1: new[] {5548}, arg2: true);
-                context.SetEffect(arg1: new[] {5549}, arg2: true);
+                context.SetEffect(arg1: new[] {5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512, 5513, 5514, 5515, 5516, 5517, 5518, 5519, 5520, 5521, 5522, 5523, 5524, 5525, 5526, 5527, 5528, 5529, 5530, 5531, 5532, 5533, 5534, 5535, 5536, 5537, 5538, 5539, 5540, 5541, 5542, 5543, 5544, 5545, 5546, 5547, 5548, 5549}, arg2: true);
             }
 
             public override void Execute() {
@@ -187,55 +79,7 @@ namespace Maple2.Trigger._52010056_qd {
             internal StateMeshOff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5501}, arg2: false);
-                context.SetEffect(arg1: new[] {5502}, arg2: false);
-                context.SetEffect(arg1: new[] {5503}, arg2: false);
-                context.SetEffect(arg1: new[] {5504}, arg2: false);
-                context.SetEffect(arg1: new[] {5505}, arg2: false);
-                context.SetEffect(arg1: new[] {5506}, arg2: false);
-                context.SetEffect(arg1: new[] {5507}, arg2: false);
-                context.SetEffect(arg1: new[] {5508}, arg2: false);
-                context.SetEffect(arg1: new[] {5509}, arg2: false);
-                context.SetEffect(arg1: new[] {5510}, arg2: false);
-                context.SetEffect(arg1: new[] {5511}, arg2: false);
-                context.SetEffect(arg1: new[] {5512}, arg2: false);
-                context.SetEffect(arg1: new[] {5513}, arg2: false);
-                context.SetEffect(arg1: new[] {5514}, arg2: false);
-                context.SetEffect(arg1: new[] {5515}, arg2: false);
-                context.SetEffect(arg1: new[] {5516}, arg2: false);
-                context.SetEffect(arg1: new[] {5517}, arg2: false);
-                context.SetEffect(arg1: new[] {5518}, arg2: false);
-                context.SetEffect(arg1: new[] {5519}, arg2: false);
-                context.SetEffect(arg1: new[] {5520}, arg2: false);
-                context.SetEffect(arg1: new[] {5521}, arg2: false);
-                context.SetEffect(arg1: new[] {5522}, arg2: false);
-                context.SetEffect(arg1: new[] {5523}, arg2: false);
-                context.SetEffect(arg1: new[] {5524}, arg2: false);
-                context.SetEffect(arg1: new[] {5525}, arg2: false);
-                context.SetEffect(arg1: new[] {5526}, arg2: false);
-                context.SetEffect(arg1: new[] {5527}, arg2: false);
-                context.SetEffect(arg1: new[] {5528}, arg2: false);
-                context.SetEffect(arg1: new[] {5529}, arg2: false);
-                context.SetEffect(arg1: new[] {5530}, arg2: false);
-                context.SetEffect(arg1: new[] {5531}, arg2: false);
-                context.SetEffect(arg1: new[] {5532}, arg2: false);
-                context.SetEffect(arg1: new[] {5533}, arg2: false);
-                context.SetEffect(arg1: new[] {5534}, arg2: false);
-                context.SetEffect(arg1: new[] {5535}, arg2: false);
-                context.SetEffect(arg1: new[] {5536}, arg2: false);
-                context.SetEffect(arg1: new[] {5537}, arg2: false);
-                context.SetEffect(arg1: new[] {5538}, arg2: false);
-                context.SetEffect(arg1: new[] {5539}, arg2: false);
-                context.SetEffect(arg1: new[] {5540}, arg2: false);
-                context.SetEffect(arg1: new[] {5541}, arg2: false);
-                context.SetEffect(arg1: new[] {5542}, arg2: false);
-                context.SetEffect(arg1: new[] {5543}, arg2: false);
-                context.SetEffect(arg1: new[] {5544}, arg2: false);
-                context.SetEffect(arg1: new[] {5545}, arg2: false);
-                context.SetEffect(arg1: new[] {5546}, arg2: false);
-                context.SetEffect(arg1: new[] {5547}, arg2: false);
-                context.SetEffect(arg1: new[] {5548}, arg2: false);
-                context.SetEffect(arg1: new[] {5549}, arg2: false);
+                context.SetEffect(arg1: new[] {5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512, 5513, 5514, 5515, 5516, 5517, 5518, 5519, 5520, 5521, 5522, 5523, 5524, 5525, 5526, 5527, 5528, 5529, 5530, 5531, 5532, 5533, 5534, 5535, 5536, 5537, 5538, 5539, 5540, 5541, 5542, 5543, 5544, 5545, 5546, 5547, 5548, 5549}, arg2: false);
                 context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 

@@ -4,14 +4,9 @@ namespace Maple2.Trigger._02000284_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000428}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000430}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000431}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000432}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000433}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000428, 10000430, 10000431, 10000432, 10000433}, arg2: 2);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -96,8 +91,7 @@ namespace Maple2.Trigger._02000284_bf {
                 if (context.ObjectInteracted(arg1: new[] {10000428}, arg2: 0)) {
                     context.HideGuideSummary(entityId: 20002814);
                     context.DungeonClear();
-                    context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308}, arg2: true, arg3: 0,
-                        arg4: 100, arg5: 0f);
+                    context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308}, arg2: true, arg3: 0, arg4: 100, arg5: 0f);
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.State = new State소멸대기(context);
                     return;

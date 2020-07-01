@@ -24,8 +24,7 @@ namespace Maple2.Trigger._02000432_bf {
             internal State소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(rangeId: new[] {1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909},
-                    isAutoTargeting: true, randomPickCount: 3);
+                context.SpawnNpcRange(rangeId: new[] {1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909}, isAutoTargeting: true, randomPickCount: 3);
             }
 
             public override void Execute() {

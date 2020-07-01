@@ -19,10 +19,8 @@ namespace Maple2.Trigger._02020200_bf {
             internal State대사1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000,
-                    script: "$02020200_BF__11_BALLOONTALK__0$");
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$02020200_BF__11_BALLOONTALK__1$", duration: 5000,
-                    delayTick: 1000);
+                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020200_BF__11_BALLOONTALK__0$");
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$02020200_BF__11_BALLOONTALK__1$", duration: 5000, delayTick: 1000);
             }
 
             public override void Execute() {
@@ -54,8 +52,7 @@ namespace Maple2.Trigger._02020200_bf {
             internal State대사2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$02020200_BF__11_BALLOONTALK__2$", duration: 5000,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$02020200_BF__11_BALLOONTALK__2$", duration: 5000, delayTick: 0);
             }
 
             public override void Execute() {
@@ -72,10 +69,8 @@ namespace Maple2.Trigger._02020200_bf {
             internal State대사3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000,
-                    script: "$02020200_BF__11_BALLOONTALK__3$");
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$02020200_BF__11_BALLOONTALK__4$", duration: 5000,
-                    delayTick: 0);
+                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020200_BF__11_BALLOONTALK__3$");
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$02020200_BF__11_BALLOONTALK__4$", duration: 5000, delayTick: 0);
             }
 
             public override void Execute() {

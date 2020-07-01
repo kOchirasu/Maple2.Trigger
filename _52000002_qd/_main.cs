@@ -4,19 +4,13 @@ namespace Maple2.Trigger._52000002_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010});
-                context.DestroyMonster(arg1: new[] {2099});
+                context.DestroyMonster(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2099});
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetMesh(arg1: new[] {3007, 3008, 3009, 3010, 3011, 3012, 3013}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10000606}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000607, 10000608, 10000609, 10000610, 10000611}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000612, 10000613, 10000614, 10000615, 10000616}, arg2: 2);
-                context.CreateMonster(arg1: new[] {1099}, arg2: false);
-                context.CreateMonster(arg1: new[] {1101}, arg2: false);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3007, 3008, 3009, 3010, 3011, 3012, 3013}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {10000606, 10000607, 10000608, 10000609, 10000610, 10000611, 10000612, 10000613, 10000614, 10000615, 10000616}, arg2: 2);
+                context.CreateMonster(arg1: new[] {1099, 1101}, arg2: false);
             }
 
             public override void Execute() {
@@ -92,8 +86,7 @@ namespace Maple2.Trigger._52000002_qd {
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000607, 10000608, 10000609, 10000610, 10000611},
-                    arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000607, 10000608, 10000609, 10000610, 10000611}, arg2: 0)) {
                     context.State = new State2단계준비(context);
                     return;
                 }
@@ -158,8 +151,7 @@ namespace Maple2.Trigger._52000002_qd {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: true, arg3: 0, arg4: 300,
-                    arg5: 3f);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: true, arg3: 0, arg4: 300, arg5: 3f);
             }
 
             public override void Execute() {
@@ -214,8 +206,7 @@ namespace Maple2.Trigger._52000002_qd {
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000612, 10000613, 10000614, 10000615, 10000616},
-                    arg2: 2)) {
+                if (context.ObjectInteracted(arg1: new[] {10000612, 10000613, 10000614, 10000615, 10000616}, arg2: 2)) {
                     context.State = new State3단계준비(context);
                     return;
                 }
@@ -257,8 +248,7 @@ namespace Maple2.Trigger._52000002_qd {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 25200202);
-                context.SetMesh(arg1: new[] {3007, 3008, 3009, 3010, 3011, 3012, 3013}, arg2: false, arg3: 0,
-                    arg4: 200, arg5: 2f);
+                context.SetMesh(arg1: new[] {3007, 3008, 3009, 3010, 3011, 3012, 3013}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
             }
 
             public override void Execute() {
@@ -308,8 +298,7 @@ namespace Maple2.Trigger._52000002_qd {
             internal State늑대생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {2006, 2007, 2008, 2009, 2010}, arg2: false);
-                context.CreateMonster(arg1: new[] {2099}, arg2: false);
+                context.CreateMonster(arg1: new[] {2006, 2007, 2008, 2009, 2010, 2099}, arg2: false);
             }
 
             public override void Execute() {
@@ -406,17 +395,10 @@ namespace Maple2.Trigger._52000002_qd {
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 25200203);
                 context.HideGuideSummary(entityId: 25200202);
-                context.DestroyMonster(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010});
-                context.DestroyMonster(arg1: new[] {2099});
-                context.DestroyMonster(arg1: new[] {1099});
-                context.DestroyMonster(arg1: new[] {1101});
-                context.DestroyMonster(arg1: new[] {1102});
+                context.DestroyMonster(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2099, 1099, 1101, 1102});
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetInteractObject(arg1: new[] {10000606}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000607, 10000608, 10000609, 10000610, 10000611}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10000612, 10000613, 10000614, 10000615, 10000616}, arg2: 2);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {10000606, 10000607, 10000608, 10000609, 10000610, 10000611, 10000612, 10000613, 10000614, 10000615, 10000616}, arg2: 2);
             }
 
             public override void Execute() {

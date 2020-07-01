@@ -5,9 +5,7 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 199, arg2: 99910150);
-                context.SetInteractObject(arg1: new[] {12000021}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000022}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000037}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000021, 12000022, 12000037}, arg2: 2);
             }
 
             public override void Execute() {
@@ -64,8 +62,7 @@ namespace Maple2.Trigger._02000401_bf {
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20040101, textId: 20040101, duration: 3500);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetInteractObject(arg1: new[] {12000021}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {12000022}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000021, 12000022}, arg2: 1);
             }
 
             public override void Execute() {
@@ -104,11 +101,8 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void Execute() {
                 if (context.MonsterDead(arg1: new[] {2901})) {
-                    context.SetInteractObject(arg1: new[] {12000021}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {12000022}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {12000037}, arg2: 0);
-                    context.SetConversation(arg1: 1, arg2: 1001, arg3: "$02000401_BF__FACTION_01__2$", arg4: 5,
-                        arg5: 0);
+                    context.SetInteractObject(arg1: new[] {12000021, 12000022, 12000037}, arg2: 0);
+                    context.SetConversation(arg1: 1, arg2: 1001, arg3: "$02000401_BF__FACTION_01__2$", arg4: 5, arg5: 0);
                     context.RemoveBuff(arg1: 199, arg2: 99910150);
                     context.State = new StateNPC삭제대기(context);
                     return;

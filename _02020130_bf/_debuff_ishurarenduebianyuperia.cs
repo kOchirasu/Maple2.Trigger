@@ -23,9 +23,7 @@ namespace Maple2.Trigger._02020130_bf {
             internal State1셋트전투판스킬트리거셋팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {1301}, arg2: true);
-                context.SetSkill(arg1: new[] {1302}, arg2: true);
-                context.SetSkill(arg1: new[] {1303}, arg2: true);
+                context.SetSkill(arg1: new[] {1301, 1302, 1303}, arg2: true);
             }
 
             public override void Execute() {

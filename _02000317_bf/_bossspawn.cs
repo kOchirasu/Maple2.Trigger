@@ -13,8 +13,7 @@ namespace Maple2.Trigger._02000317_bf {
 
             public override void Execute() {
                 if (context.GetUserCount(boxId: 101) == 1) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -63,27 +62,7 @@ namespace Maple2.Trigger._02000317_bf {
             public override void OnEnter() {
                 context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7}, arg2: false);
-                context.CreateMonster(arg1: new[] {201}, arg2: false);
-                context.CreateMonster(arg1: new[] {202}, arg2: false);
-                context.CreateMonster(arg1: new[] {203}, arg2: false);
-                context.CreateMonster(arg1: new[] {204}, arg2: false);
-                context.CreateMonster(arg1: new[] {205}, arg2: false);
-                context.CreateMonster(arg1: new[] {206}, arg2: false);
-                context.CreateMonster(arg1: new[] {207}, arg2: false);
-                context.CreateMonster(arg1: new[] {208}, arg2: false);
-                context.CreateMonster(arg1: new[] {301}, arg2: false);
-                context.CreateMonster(arg1: new[] {302}, arg2: false);
-                context.CreateMonster(arg1: new[] {303}, arg2: false);
-                context.CreateMonster(arg1: new[] {304}, arg2: false);
-                context.CreateMonster(arg1: new[] {305}, arg2: false);
-                context.CreateMonster(arg1: new[] {306}, arg2: false);
-                context.CreateMonster(arg1: new[] {307}, arg2: false);
-                context.CreateMonster(arg1: new[] {401}, arg2: false);
-                context.CreateMonster(arg1: new[] {402}, arg2: false);
-                context.CreateMonster(arg1: new[] {403}, arg2: false);
-                context.CreateMonster(arg1: new[] {404}, arg2: false);
-                context.CreateMonster(arg1: new[] {405}, arg2: false);
-                context.CreateMonster(arg1: new[] {406}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 301, 302, 303, 304, 305, 306, 307, 401, 402, 403, 404, 405, 406}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
             }
 

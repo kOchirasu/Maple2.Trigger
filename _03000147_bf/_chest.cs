@@ -5,12 +5,8 @@ namespace Maple2.Trigger._03000147_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {11000023}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {11000008}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {11000009}, arg2: 2);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
+                context.SetInteractObject(arg1: new[] {11000008, 11000009}, arg2: 2);
+                context.SetEffect(arg1: new[] {601, 602, 603, 604}, arg2: false);
             }
 
             public override void Execute() {
@@ -29,8 +25,7 @@ namespace Maple2.Trigger._03000147_bf {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 23000003, textId: 23000003, duration: 5000);
-                context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetEffect(arg1: new[] {603}, arg2: true);
+                context.SetEffect(arg1: new[] {602, 603}, arg2: true);
             }
 
             public override void Execute() {

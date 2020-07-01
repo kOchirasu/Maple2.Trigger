@@ -8,9 +8,7 @@ namespace Maple2.Trigger._63000042_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900},
-                    arg2: new[] {60100005, 60100006, 60100007, 60100008, 60100009, 60100010},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100005, 60100006, 60100007, 60100008, 60100009, 60100010}, arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -26,8 +24,7 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {102});
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.MoveUser(arg1: 63000042, arg2: 10);
             }
@@ -219,8 +216,7 @@ namespace Maple2.Trigger._63000042_cs {
             internal Statefadein(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CreateMonster(arg1: new[] {103}, arg2: false);
             }
 
@@ -239,8 +235,7 @@ namespace Maple2.Trigger._63000042_cs {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_103");
-                context.AddCinematicTalk(npcId: 11003165, illustId: "Fray_normal", msg: "$63000042_CS__WAKEUP02__9$",
-                    duration: 3000, align: "Left");
+                context.AddCinematicTalk(npcId: 11003165, illustId: "Fray_normal", msg: "$63000042_CS__WAKEUP02__9$", duration: 3000, align: "Left");
                 context.SetSceneSkip(arg1: "end", arg2: "exit");
             }
 
@@ -276,8 +271,7 @@ namespace Maple2.Trigger._63000042_cs {
             internal Statepray(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(scale: 2.5f, type: "NameCaption", title: "$63000042_CS__WAKEUP02__11$",
-                    desc: "$63000042_CS__WAKEUP02__12$", align: "centerRight", offsetRateX: 0.5f, duration: 4000);
+                context.ShowCaption(scale: 2.5f, type: "NameCaption", title: "$63000042_CS__WAKEUP02__11$", desc: "$63000042_CS__WAKEUP02__12$", align: "centerRight", offsetRateX: 0.5f, duration: 4000);
                 context.CameraSelectPath(arg1: new[] {502, 503}, arg2: false);
                 context.SetSceneSkip();
             }
@@ -304,8 +298,7 @@ namespace Maple2.Trigger._63000042_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100010},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100010}, arg3: new byte[] {1})) {
                     context.State = new Statewarp(context);
                     return;
                 }

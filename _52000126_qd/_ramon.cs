@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52000126_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100205},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100205}, arg3: new byte[] {2})) {
                     context.State = new Statefadein(context);
                     return;
                 }
@@ -110,11 +109,9 @@ namespace Maple2.Trigger._52000126_qd {
             internal Statecamera_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
-                context.AddCinematicTalk(npcId: 11003209, msg: "$52000126_QD__RAMON__0$", duration: 2000,
-                    align: "Left");
+                context.AddCinematicTalk(npcId: 11003209, msg: "$52000126_QD__RAMON__0$", duration: 2000, align: "Left");
             }
 
             public override void Execute() {

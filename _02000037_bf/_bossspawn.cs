@@ -5,18 +5,10 @@ namespace Maple2.Trigger._02000037_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000931}, arg2: 2);
-                context.SetMesh(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[]
-                        {4020, 4021, 4022, 4023, 4024, 4025, 4026, 4027, 4028, 4029, 4030, 4031, 4032, 4033, 4034},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {4040, 4041, 4042, 4043, 4044, 4045, 4046}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4020, 4021, 4022, 4023, 4024, 4025, 4026, 4027, 4028, 4029, 4030, 4031, 4032, 4033, 4034, 4040, 4041, 4042, 4043, 4044, 4045, 4046}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {4050}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 5001}, arg2: false);
             }
 
             public override void Execute() {
@@ -122,16 +114,10 @@ namespace Maple2.Trigger._02000037_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {4050}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetRandomMesh(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009},
-                    arg2: true, arg3: 10, arg4: 0, arg5: 50);
-                context.SetRandomMesh(arg1: new[] {4040, 4041, 4042, 4043, 4044, 4045, 4046}, arg2: true, arg3: 7,
-                    arg4: 400, arg5: 50);
-                context.SetRandomMesh(
-                    arg1: new[]
-                        {4020, 4021, 4022, 4023, 4024, 4025, 4026, 4027, 4028, 4029, 4030, 4031, 4032, 4033, 4034},
-                    arg2: true, arg3: 15, arg4: 800, arg5: 50);
+                context.SetEffect(arg1: new[] {5000, 5001}, arg2: true);
+                context.SetRandomMesh(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009}, arg2: true, arg3: 10, arg4: 0, arg5: 50);
+                context.SetRandomMesh(arg1: new[] {4040, 4041, 4042, 4043, 4044, 4045, 4046}, arg2: true, arg3: 7, arg4: 400, arg5: 50);
+                context.SetRandomMesh(arg1: new[] {4020, 4021, 4022, 4023, 4024, 4025, 4026, 4027, 4028, 4029, 4030, 4031, 4032, 4033, 4034}, arg2: true, arg3: 15, arg4: 800, arg5: 50);
             }
 
             public override void Execute() { }

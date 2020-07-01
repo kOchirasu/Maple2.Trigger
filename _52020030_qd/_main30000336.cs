@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2003}, arg2: new[] {30000336},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2003}, arg2: new[] {30000336}, arg3: new byte[] {2})) {
                     context.State = new State체크2(context);
                     return;
                 }
@@ -24,8 +23,7 @@ namespace Maple2.Trigger._52020030_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
-                context.CreateMonster(arg1: new[] {107}, arg2: false);
-                context.CreateMonster(arg1: new[] {108}, arg2: false);
+                context.CreateMonster(arg1: new[] {107, 108}, arg2: false);
                 context.SetSceneSkip(arg1: "세번째연출대화진행05", arg2: "exit");
             }
 

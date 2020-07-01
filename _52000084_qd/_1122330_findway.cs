@@ -4,32 +4,10 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {8000}, arg2: false);
-                context.SetSkill(arg1: new[] {8001}, arg2: false);
-                context.SetSkill(arg1: new[] {8002}, arg2: false);
-                context.SetSkill(arg1: new[] {8003}, arg2: false);
-                context.SetSkill(arg1: new[] {8004}, arg2: false);
-                context.SetSkill(arg1: new[] {8005}, arg2: false);
-                context.SetSkill(arg1: new[] {8006}, arg2: false);
-                context.SetSkill(arg1: new[] {8007}, arg2: false);
-                context.SetSkill(arg1: new[] {8008}, arg2: false);
-                context.SetSkill(arg1: new[] {8009}, arg2: false);
-                context.SetSkill(arg1: new[] {8010}, arg2: false);
-                context.SetSkill(arg1: new[] {8011}, arg2: false);
-                context.SetSkill(arg1: new[] {8012}, arg2: false);
-                context.SetSkill(arg1: new[] {8013}, arg2: false);
-                context.SetSkill(arg1: new[] {8014}, arg2: false);
-                context.SetSkill(arg1: new[] {8015}, arg2: false);
-                context.SetSkill(arg1: new[] {8016}, arg2: false);
-                context.SetSkill(arg1: new[] {8017}, arg2: false);
+                context.SetSkill(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017}, arg2: false);
                 context.DestroyMonster(arg1: new[] {101});
                 context.SetActor(arg1: 4000, arg2: true, arg3: "ic_fi_funct_icedoor_A01_off");
-                context.SetMesh(arg1: new[] {3000, 3001, 3002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115,
-                        3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
@@ -54,20 +32,17 @@ namespace Maple2.Trigger._52000084_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280}, arg3: new byte[] {1})) {
                     context.State = new StateDungeonStart(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280}, arg3: new byte[] {2})) {
                     context.State = new Stateteleport52100085(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280}, arg3: new byte[] {3})) {
                     context.State = new Stateteleport52100085(context);
                     return;
                 }
@@ -117,8 +92,7 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateNpcTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal",
-                    msg: "$52000084_QD__1122330_FINDWAY__0$", align: "right", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000084_QD__1122330_FINDWAY__0$", align: "right", duration: 4000);
                 context.SetSkip(arg1: "NpcTalk01Skip");
             }
 
@@ -154,8 +128,7 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateNpcTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal",
-                    msg: "$52000084_QD__1122330_FINDWAY__1$", align: "right", duration: 5000);
+                context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000084_QD__1122330_FINDWAY__1$", align: "right", duration: 5000);
                 context.SetSkip(arg1: "NpcTalk02Skip");
             }
 
@@ -251,11 +224,7 @@ namespace Maple2.Trigger._52000084_qd {
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20038101, textId: 20038101, duration: 4000);
                 context.SetActor(arg1: 4000, arg2: false, arg3: "ic_fi_funct_icedoor_A01_on");
-                context.SetMesh(
-                    arg1: new[] {
-                        3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115,
-                        3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129
-                    }, arg2: false, arg3: 2000, arg4: 70, arg5: 2f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129}, arg2: false, arg3: 2000, arg4: 70, arg5: 2f);
             }
 
             public override void Execute() {
@@ -333,24 +302,7 @@ namespace Maple2.Trigger._52000084_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {8000}, arg2: true);
-                context.SetSkill(arg1: new[] {8001}, arg2: true);
-                context.SetSkill(arg1: new[] {8002}, arg2: true);
-                context.SetSkill(arg1: new[] {8003}, arg2: true);
-                context.SetSkill(arg1: new[] {8004}, arg2: true);
-                context.SetSkill(arg1: new[] {8005}, arg2: true);
-                context.SetSkill(arg1: new[] {8006}, arg2: true);
-                context.SetSkill(arg1: new[] {8007}, arg2: true);
-                context.SetSkill(arg1: new[] {8008}, arg2: true);
-                context.SetSkill(arg1: new[] {8009}, arg2: true);
-                context.SetSkill(arg1: new[] {8010}, arg2: true);
-                context.SetSkill(arg1: new[] {8011}, arg2: true);
-                context.SetSkill(arg1: new[] {8012}, arg2: true);
-                context.SetSkill(arg1: new[] {8013}, arg2: true);
-                context.SetSkill(arg1: new[] {8014}, arg2: true);
-                context.SetSkill(arg1: new[] {8015}, arg2: true);
-                context.SetSkill(arg1: new[] {8016}, arg2: true);
-                context.SetSkill(arg1: new[] {8017}, arg2: true);
+                context.SetSkill(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017}, arg2: true);
             }
 
             public override void Execute() { }

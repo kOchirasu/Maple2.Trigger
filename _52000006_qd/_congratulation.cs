@@ -4,8 +4,7 @@ namespace Maple2.Trigger._52000006_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {200}, arg2: false);
-                context.SetEffect(arg1: new[] {201}, arg2: false);
+                context.SetEffect(arg1: new[] {200, 201}, arg2: false);
             }
 
             public override void Execute() {
@@ -37,8 +36,7 @@ namespace Maple2.Trigger._52000006_qd {
             internal State축하1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {200}, arg2: true);
-                context.SetEffect(arg1: new[] {201}, arg2: true);
+                context.SetEffect(arg1: new[] {200, 201}, arg2: true);
             }
 
             public override void Execute() {
@@ -68,8 +66,7 @@ namespace Maple2.Trigger._52000006_qd {
             }
 
             public override void OnExit() {
-                context.SetEffect(arg1: new[] {200}, arg2: false);
-                context.SetEffect(arg1: new[] {201}, arg2: false);
+                context.SetEffect(arg1: new[] {200, 201}, arg2: false);
             }
         }
 

@@ -4,8 +4,7 @@ namespace Maple2.Trigger._52000065_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {2000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1000, 2000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 20, arg2: false, arg3: false, arg4: false);
@@ -109,8 +108,7 @@ namespace Maple2.Trigger._52000065_qd {
             internal State해제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {2000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1000, 2000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.GuideEvent(eventId: 260);
             }
 

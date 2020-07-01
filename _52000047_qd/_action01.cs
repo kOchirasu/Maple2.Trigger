@@ -4,33 +4,9 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5100}, arg2: false);
-                context.SetEffect(arg1: new[] {5101}, arg2: false);
-                context.SetEffect(arg1: new[] {5200}, arg2: false);
-                context.SetEffect(arg1: new[] {5201}, arg2: false);
-                context.SetEffect(arg1: new[] {5202}, arg2: false);
-                context.SetEffect(arg1: new[] {5203}, arg2: false);
-                context.SetEffect(arg1: new[] {5204}, arg2: false);
-                context.SetEffect(arg1: new[] {5205}, arg2: false);
-                context.SetEffect(arg1: new[] {5206}, arg2: false);
-                context.SetEffect(arg1: new[] {5207}, arg2: false);
-                context.SetEffect(arg1: new[] {5208}, arg2: false);
-                context.SetEffect(arg1: new[] {5209}, arg2: false);
-                context.SetEffect(arg1: new[] {5210}, arg2: false);
-                context.SetEffect(arg1: new[] {5220}, arg2: false);
-                context.SetEffect(arg1: new[] {5221}, arg2: false);
-                context.SetEffect(arg1: new[] {5300}, arg2: false);
-                context.SetSkill(arg1: new[] {7000}, arg2: false);
-                context.SetSkill(arg1: new[] {7001}, arg2: false);
-                context.SetSkill(arg1: new[] {7002}, arg2: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
-                        3016, 3017, 3018, 3019, 3020, 3021
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {5000, 5001, 5100, 5101, 5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5210, 5220, 5221, 5300}, arg2: false);
+                context.SetSkill(arg1: new[] {7000, 7001, 7002}, arg2: false);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "VasaraTired", value: 0);
             }
 
@@ -54,32 +30,27 @@ namespace Maple2.Trigger._52000047_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003044},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003044}, arg3: new byte[] {2})) {
                     context.State = new StateQuit(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003044},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003044}, arg3: new byte[] {1})) {
                     context.State = new StateQuestOnGoing01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003043},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003043}, arg3: new byte[] {3})) {
                     context.State = new StateQuestOnGoing01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003043},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003043}, arg3: new byte[] {2})) {
                     context.State = new StateQuestOnGoing01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003043},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003043}, arg3: new byte[] {1})) {
                     context.State = new StateLoadingDelay02(context);
                     return;
                 }
@@ -97,8 +68,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateQuestOnGoing01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {101, 201, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {101, 201, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539}, arg2: false);
                 context.MoveUser(arg1: 52000047, arg2: 3, arg3: 9900);
             }
 
@@ -691,8 +661,7 @@ namespace Maple2.Trigger._52000047_qd {
 
             public override void OnExit() {
                 context.DestroyMonster(arg1: new[] {100, 200, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529});
-                context.CreateMonster(arg1: new[] {101, 201, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {101, 201, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }
@@ -721,8 +690,7 @@ namespace Maple2.Trigger._52000047_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003044},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003044}, arg3: new byte[] {1})) {
                     context.State = new StatePositionArrange01(context);
                     return;
                 }
@@ -1425,22 +1393,8 @@ namespace Maple2.Trigger._52000047_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5220}, arg2: true);
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
-                        3016, 3017, 3018, 3019, 3020, 3021
-                    }, arg2: true, arg3: 22, arg4: 50, arg5: 80);
-                context.SetEffect(arg1: new[] {5200}, arg2: true);
-                context.SetEffect(arg1: new[] {5201}, arg2: true);
-                context.SetEffect(arg1: new[] {5202}, arg2: true);
-                context.SetEffect(arg1: new[] {5203}, arg2: true);
-                context.SetEffect(arg1: new[] {5204}, arg2: true);
-                context.SetEffect(arg1: new[] {5205}, arg2: true);
-                context.SetEffect(arg1: new[] {5206}, arg2: true);
-                context.SetEffect(arg1: new[] {5207}, arg2: true);
-                context.SetEffect(arg1: new[] {5208}, arg2: true);
-                context.SetEffect(arg1: new[] {5209}, arg2: true);
-                context.SetEffect(arg1: new[] {5210}, arg2: true);
+                context.SetRandomMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021}, arg2: true, arg3: 22, arg4: 50, arg5: 80);
+                context.SetEffect(arg1: new[] {5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5210}, arg2: true);
             }
 
             public override void Execute() {

@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52000033_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {60100010},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {60100010}, arg3: new byte[] {1})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -98,9 +97,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebintroduce(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000033_QD__AUDIENCEWITHEREB_02__18$",
-                    desc: "$52000033_QD__AUDIENCEWITHEREB_02__19$", align: "centerLeft", offsetRateX: -0.15f,
-                    duration: 3000);
+                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000033_QD__AUDIENCEWITHEREB_02__18$", desc: "$52000033_QD__AUDIENCEWITHEREB_02__19$", align: "centerLeft", offsetRateX: -0.15f, duration: 3000);
             }
 
             public override void Execute() {
@@ -136,8 +133,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateKaltalk_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001665, msg: "$52000033_QD__AUDIENCEWITHEREB_02__4$", duration: 3000,
-                    illustId: "Karl_normal", align: "Left");
+                context.AddCinematicTalk(npcId: 11001665, msg: "$52000033_QD__AUDIENCEWITHEREB_02__4$", duration: 3000, illustId: "Karl_normal", align: "Left");
             }
 
             public override void Execute() {
@@ -174,9 +170,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal Statekaltroduce(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000033_QD__AUDIENCEWITHEREB_02__20$",
-                    desc: "$52000033_QD__AUDIENCEWITHEREB_02__21$", align: "centerLeft", offsetRateX: -0.15f,
-                    duration: 3000);
+                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000033_QD__AUDIENCEWITHEREB_02__20$", desc: "$52000033_QD__AUDIENCEWITHEREB_02__21$", align: "centerLeft", offsetRateX: -0.15f, duration: 3000);
             }
 
             public override void Execute() {
@@ -194,10 +188,8 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {601}, arg2: false);
-                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_normal",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_02__7$", duration: 1000, delayTick: 0, align: "left");
-                context.AddCinematicTalk(npcId: 11001665, illustId: "Karl_normal",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_02__8$", duration: 3000, delayTick: 0, align: "right");
+                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_02__7$", duration: 1000, delayTick: 0, align: "left");
+                context.AddCinematicTalk(npcId: 11001665, illustId: "Karl_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_02__8$", duration: 3000, delayTick: 0, align: "right");
             }
 
             public override void Execute() {
@@ -214,12 +206,9 @@ namespace Maple2.Trigger._52000033_qd {
             internal Statetalk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001666, illustId: "Fray_serious",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_02__9$", duration: 3000, delayTick: 3, align: "center");
-                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_closeEye",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_02__10$", duration: 1000, delayTick: 0, align: "left");
-                context.AddCinematicTalk(npcId: 11001665, illustId: "Karl_normal",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_02__11$", duration: 1000, delayTick: 0, align: "right");
+                context.AddCinematicTalk(npcId: 11001666, illustId: "Fray_serious", msg: "$52000033_QD__AUDIENCEWITHEREB_02__9$", duration: 3000, delayTick: 3, align: "center");
+                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_closeEye", msg: "$52000033_QD__AUDIENCEWITHEREB_02__10$", duration: 1000, delayTick: 0, align: "left");
+                context.AddCinematicTalk(npcId: 11001665, illustId: "Karl_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_02__11$", duration: 1000, delayTick: 0, align: "right");
             }
 
             public override void Execute() {
@@ -236,10 +225,8 @@ namespace Maple2.Trigger._52000033_qd {
             internal Statetalk_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001666, illustId: "Fray_normal",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_02__12$", duration: 3000, align: "Right");
-                context.AddCinematicTalk(npcId: 11001666, illustId: "Fray_normal",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_02__13$", duration: 3000, align: "Right");
+                context.AddCinematicTalk(npcId: 11001666, illustId: "Fray_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_02__12$", duration: 3000, align: "Right");
+                context.AddCinematicTalk(npcId: 11001666, illustId: "Fray_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_02__13$", duration: 3000, align: "Right");
             }
 
             public override void Execute() {
@@ -256,10 +243,8 @@ namespace Maple2.Trigger._52000033_qd {
             internal Statetalk_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001666, illustId: "Fray_normal",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_02__14$", duration: 3000, align: "Right");
-                context.AddCinematicTalk(npcId: 11001666, illustId: "Fray_normal",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_02__15$", duration: 3000, align: "Right");
+                context.AddCinematicTalk(npcId: 11001666, illustId: "Fray_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_02__14$", duration: 3000, align: "Right");
+                context.AddCinematicTalk(npcId: 11001666, illustId: "Fray_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_02__15$", duration: 3000, align: "Right");
             }
 
             public override void Execute() {
@@ -276,10 +261,8 @@ namespace Maple2.Trigger._52000033_qd {
             internal Statetalk_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_normal",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_02__16$", duration: 3000, delayTick: 0, align: "left");
-                context.AddCinematicTalk(npcId: 11001665, illustId: "Karl_normal",
-                    msg: "$52000033_QD__AUDIENCEWITHEREB_02__17$", duration: 3000, delayTick: 3, align: "right");
+                context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_02__16$", duration: 3000, delayTick: 0, align: "left");
+                context.AddCinematicTalk(npcId: 11001665, illustId: "Karl_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_02__17$", duration: 3000, delayTick: 3, align: "right");
                 context.SetSceneSkip();
             }
 
@@ -304,8 +287,7 @@ namespace Maple2.Trigger._52000033_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {60100010},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {60100010}, arg3: new byte[] {1})) {
                     context.State = new Stateend(context);
                     return;
                 }

@@ -23,14 +23,12 @@ namespace Maple2.Trigger._02020143_bf {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003330},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003330}, arg3: new byte[] {2})) {
                     context.State = new State이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003330},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003330}, arg3: new byte[] {3})) {
                     context.State = new State이동(context);
                     return;
                 }
@@ -221,8 +219,7 @@ namespace Maple2.Trigger._02020143_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003330},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003330}, arg3: new byte[] {2})) {
                     context.State = new State이동(context);
                     return;
                 }

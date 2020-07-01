@@ -4,15 +4,9 @@ namespace Maple2.Trigger._02000498_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512, 3513, 3514, 3515, 3516,
-                        3517, 3518, 3519, 3520, 3521, 3522, 3523, 3524, 3525, 3526, 3527, 3528
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512, 3513, 3514, 3515, 3516, 3517, 3518, 3519, 3520, 3521, 3522, 3523, 3524, 3525, 3526, 3527, 3528}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkill(arg1: new[] {705}, arg2: false);
-                context.SetEffect(arg1: new[] {6401}, arg2: false);
-                context.SetEffect(arg1: new[] {640}, arg2: false);
-                context.SetEffect(arg1: new[] {630}, arg2: false);
+                context.SetEffect(arg1: new[] {6401, 640, 630}, arg2: false);
             }
 
             public override void Execute() {
@@ -229,11 +223,7 @@ namespace Maple2.Trigger._02000498_bf {
                 if (context.TimeExpired(arg1: "3")) {
                     context.SetEffect(arg1: new[] {640}, arg2: true);
                     context.SetSkill(arg1: new[] {705}, arg2: true);
-                    context.SetMesh(
-                        arg1: new[] {
-                            3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512, 3513, 3514, 3515,
-                            3516, 3517, 3518, 3519, 3520, 3521, 3522, 3523, 3524, 3525, 3526, 3527, 3528
-                        }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512, 3513, 3514, 3515, 3516, 3517, 3518, 3519, 3520, 3521, 3522, 3523, 3524, 3525, 3526, 3527, 3528}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new State종료(context);
                     return;
                 }

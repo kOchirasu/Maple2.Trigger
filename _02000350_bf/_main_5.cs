@@ -4,16 +4,9 @@ namespace Maple2.Trigger._02000350_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416,
-                        3417, 3418, 3419, 3420, 3421, 3422, 3423, 3424
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416, 3417, 3418, 3419, 3420, 3421, 3422, 3423, 3424}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkill(arg1: new[] {706}, arg2: false);
-                context.SetEffect(arg1: new[] {640}, arg2: false);
-                context.SetEffect(arg1: new[] {650}, arg2: false);
-                context.SetEffect(arg1: new[] {6501}, arg2: false);
-                context.SetEffect(arg1: new[] {6502}, arg2: false);
+                context.SetEffect(arg1: new[] {640, 650, 6501, 6502}, arg2: false);
             }
 
             public override void Execute() {
@@ -188,8 +181,7 @@ namespace Maple2.Trigger._02000350_bf {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, arg2: "25,25,21");
-                context.SetEffect(arg1: new[] {6501}, arg2: true);
-                context.SetEffect(arg1: new[] {6502}, arg2: true);
+                context.SetEffect(arg1: new[] {6501, 6502}, arg2: true);
                 context.DarkStream(type: "StartRound", round: 25, uiDuration: 3000, damagePenalty: 100);
                 context.SetTimer(arg1: "3", arg2: 3);
             }
@@ -235,11 +227,7 @@ namespace Maple2.Trigger._02000350_bf {
                 if (context.TimeExpired(arg1: "3")) {
                     context.SetEffect(arg1: new[] {650}, arg2: true);
                     context.SetSkill(arg1: new[] {706}, arg2: true);
-                    context.SetMesh(
-                        arg1: new[] {
-                            3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415,
-                            3416, 3417, 3418, 3419, 3420, 3421, 3422, 3423, 3424
-                        }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416, 3417, 3418, 3419, 3420, 3421, 3422, 3423, 3424}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new State종료(context);
                     return;
                 }

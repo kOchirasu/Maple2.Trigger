@@ -5,8 +5,7 @@ namespace Maple2.Trigger._02000428_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6010, 6011}, arg2: true, arg3: 1, arg4: 1);
-                context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003}, arg2: false);
-                context.SetMesh(arg1: new[] {6004, 6005}, arg2: false);
+                context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
             }
 
@@ -66,8 +65,7 @@ namespace Maple2.Trigger._02000428_bf {
             internal State두번째페이즈_인페르녹전함(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 0.5f);
+                context.SetMesh(arg1: new[] {6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg3: 0, arg4: 0, arg5: 0.5f);
             }
 
             public override void Execute() {
@@ -164,8 +162,7 @@ namespace Maple2.Trigger._02000428_bf {
             internal State전멸던전실패연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003536, illust: "tristan_normal", duration: 4000,
-                    script: "$02000410_BF__ClearCheck__10$");
+                context.SideNpcTalk(npcId: 11003536, illust: "tristan_normal", duration: 4000, script: "$02000410_BF__ClearCheck__10$");
             }
 
             public override void Execute() {
@@ -182,8 +179,7 @@ namespace Maple2.Trigger._02000428_bf {
             internal State전멸던전실패연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 6200,
-                    script: "$02000410_BF__ClearCheck__1$", voice: @"ko/Npc/00002156");
+                context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 6200, script: "$02000410_BF__ClearCheck__1$", voice: @"ko/Npc/00002156");
             }
 
             public override void Execute() {
@@ -236,8 +232,7 @@ namespace Maple2.Trigger._02000428_bf {
             internal State성공연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 3000,
-                    script: "$02000410_BF__ClearCheck__2$", voice: @"ko/Npc/00002182");
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 3000, script: "$02000410_BF__ClearCheck__2$", voice: @"ko/Npc/00002182");
             }
 
             public override void Execute() {
@@ -255,8 +250,7 @@ namespace Maple2.Trigger._02000428_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene5.usm", duration: 0);
-                context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 8000,
-                    script: "$02000410_BF__ClearCheck__3$", voice: @"ko/Npc/00002177");
+                context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 8000, script: "$02000410_BF__ClearCheck__3$", voice: @"ko/Npc/00002177");
             }
 
             public override void Execute() {

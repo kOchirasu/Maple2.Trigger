@@ -69,8 +69,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20041003, textId: 20041003);
-                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000,
-                    script: "$02000410_BF__Event01__0$", voice: @"ko/Npc/00002167");
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000, script: "$02000410_BF__Event01__0$", voice: @"ko/Npc/00002167");
             }
 
             public override void Execute() {
@@ -87,8 +86,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State인페르녹전함파괴연출2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 5000,
-                    script: "$02000410_BF__Event01__1$", voice: @"ko/Npc/00002158");
+                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 5000, script: "$02000410_BF__Event01__1$", voice: @"ko/Npc/00002158");
             }
 
             public override void Execute() {
@@ -123,8 +121,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20041004, textId: 20041004);
-                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000,
-                    script: "$02000410_BF__Event01__2$", voice: @"ko/Npc/00002168");
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000, script: "$02000410_BF__Event01__2$", voice: @"ko/Npc/00002168");
             }
 
             public override void Execute() {
@@ -143,8 +140,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State인페르녹전함파괴_인페르녹등장연출2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 3000,
-                    script: "$02000410_BF__Event01__3$", voice: @"ko/Npc/00002169");
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 3000, script: "$02000410_BF__Event01__3$", voice: @"ko/Npc/00002169");
             }
 
             public override void Execute() {
@@ -161,8 +157,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State인페르녹전함파괴_인페르녹등장연출3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_closeEye", duration: 4000,
-                    script: "$02000410_BF__Event01__4$", voice: @"ko/Npc/00002159");
+                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_closeEye", duration: 4000, script: "$02000410_BF__Event01__4$", voice: @"ko/Npc/00002159");
             }
 
             public override void Execute() {
@@ -179,8 +174,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State인페르녹전함파괴_인페르녹등장연출4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 5000,
-                    script: "$02000410_BF__Event01__5$");
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02000410_BF__Event01__5$");
             }
 
             public override void Execute() {
@@ -197,8 +191,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State인페르녹전함파괴_인페르녹등장연출5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 5000,
-                    script: "$02000410_BF__Event01__6$");
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02000410_BF__Event01__6$");
             }
 
             public override void Execute() {
@@ -215,8 +208,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State인페르녹전함파괴_인페르녹등장연출6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 5000,
-                    script: "$02000410_BF__Event01__7$");
+                context.SideNpcTalk(npcId: 11003533, illust: "Bliche_nomal", duration: 5000, script: "$02000410_BF__Event01__7$");
             }
 
             public override void Execute() {

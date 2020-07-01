@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52010018_qd {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3002, 3003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 201, arg2: false, arg3: "Eff_MassiveEvent_Door_Vanished");
                 context.SetActor(arg1: 202, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
@@ -23,8 +22,7 @@ namespace Maple2.Trigger._52010018_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002853},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002853}, arg3: new byte[] {1})) {
                     context.State = new State미카이동02(context);
                     return;
                 }

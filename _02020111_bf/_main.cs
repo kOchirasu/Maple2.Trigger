@@ -43,8 +43,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900012, key: "SkillBreakMissionReset", value: 1);
-                context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal",
-                    script: "$02020111_BF__MAIN__0$", duration: 5684, voice: @"ko/Npc/00002201");
+                context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__MAIN__0$", duration: 5684, voice: @"ko/Npc/00002201");
                 context.DungeonResetTime(seconds: 420);
                 context.CreateMonster(arg1: new[] {101});
             }
@@ -65,8 +64,7 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new[] {101})
-                    && context.GetDungeonPlayTime() < 420) {
+                if (context.MonsterDead(arg1: new[] {101}) && context.GetDungeonPlayTime() < 420) {
                     context.State = new State보스전_성공(context);
                     return;
                 }
@@ -169,8 +167,7 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 23039005);
                 context.DungeonSetEndTime();
-                context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal",
-                    script: "$02020111_BF__MAIN__1$", duration: 3176, voice: @"ko/Npc/00002202");
+                context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__MAIN__1$", duration: 3176, voice: @"ko/Npc/00002202");
             }
 
             public override void Execute() {

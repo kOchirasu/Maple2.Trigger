@@ -10,8 +10,7 @@ namespace Maple2.Trigger._02000347_bf {
                 context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
                 context.SetInteractObject(arg1: new[] {10000787}, arg2: 0);
                 context.SetMesh(arg1: new[] {6001, 6011}, arg2: true);
-                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010},
-                    arg2: false);
+                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010}, arg2: false);
             }
 
             public override void Execute() {
@@ -109,8 +108,7 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnEnter() {
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
                 context.SetEventUI(arg1: 7, arg2: "$02000347_BF__MAIN1__1$", arg3: 3000);
-                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010},
-                    arg2: true, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010}, arg2: true, arg4: 0, arg5: 10f);
                 context.SetMesh(arg1: new[] {6011}, arg2: false, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000787}, arg2: 1);
                 context.SetTimer(arg1: "5", arg2: 5);

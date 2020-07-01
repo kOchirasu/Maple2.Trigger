@@ -63,8 +63,7 @@ namespace Maple2.Trigger._52000141_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_0sec.xml");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102}, arg2: false);
             }
 
             public override void Execute() {
@@ -650,9 +649,7 @@ namespace Maple2.Trigger._52000141_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.DestroyMonster(arg1: new[] {101});
-                context.DestroyMonster(arg1: new[] {102});
-                context.DestroyMonster(arg1: new[] {103});
+                context.DestroyMonster(arg1: new[] {101, 102, 103});
             }
 
             public override void Execute() {

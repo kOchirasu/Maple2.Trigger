@@ -4,11 +4,7 @@ namespace Maple2.Trigger._02020130_bf {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {
-                        2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
-                        2017, 2018, 2019, 2020, 2021, 2022
-                    }, arg2: false);
+                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022}, arg2: false);
                 context.SetPortal(arg1: 20, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 21, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 22, arg2: false, arg3: false, arg4: false);

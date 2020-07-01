@@ -34,8 +34,7 @@ namespace Maple2.Trigger._02000545_bf {
             internal State알메쉬생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23300010, illust: "ArakiaDark_normal", duration: 4000,
-                    script: "$02000545_BF__EGG2__0$");
+                context.SideNpcTalk(npcId: 23300010, illust: "ArakiaDark_normal", duration: 4000, script: "$02000545_BF__EGG2__0$");
                 context.SetMesh(arg1: new[] {2150, 2151}, arg2: true);
                 context.CreateMonster(arg1: new[] {505, 507}, arg2: true);
             }

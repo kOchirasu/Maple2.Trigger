@@ -46,15 +46,13 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void Execute() {
                 if (context.GetDungeonRoundsRequired() == 9) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004288, illust: "nagi_normal",
-                        script: "$83000002_COLOSSEUM__ROUND9__0$", duration: 5000);
+                    context.SideNpcTalk(type: "talk", npcId: 11004288, illust: "nagi_normal", script: "$83000002_COLOSSEUM__ROUND9__0$", duration: 5000);
                     context.State = new State라운드대기(context);
                     return;
                 }
 
                 if (true) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004288, illust: "nagi_switchon",
-                        script: "$83000002_COLOSSEUM__ROUND9__1$", duration: 3000);
+                    context.SideNpcTalk(type: "talk", npcId: 11004288, illust: "nagi_switchon", script: "$83000002_COLOSSEUM__ROUND9__1$", duration: 3000);
                     context.DebugString(message: "던전 요구 아이템 점수를 달성 못해 실패 처리 됩니다.");
                     context.State = new StateFailRound(context);
                     return;
@@ -186,41 +184,34 @@ namespace Maple2.Trigger._83000003_colosseum {
                 if (context.MonsterDead(arg1: new[] {109})) {
                     context.AddBalloonTalk(spawnPointId: 109, msg: "$83000002_COLOSSEUM__ROUND9__4$", duration: 3000);
                     context.SetNpcDuelHpBar(isOpen: false, spawnPointId: 109);
-                    context.DestroyMonster(arg1: new[] {10000});
-                    context.DestroyMonster(arg1: new[] {10001});
+                    context.DestroyMonster(arg1: new[] {10000, 10001});
                     context.State = new StateClearRoundDelay(context);
                     return;
                 }
 
                 if (context.TimeExpired(arg1: "LimitTimer")) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004288, illust: "nagi_switchon",
-                        script: "$83000002_COLOSSEUM__ROUND9__5$", duration: 3000);
+                    context.SideNpcTalk(type: "talk", npcId: 11004288, illust: "nagi_switchon", script: "$83000002_COLOSSEUM__ROUND9__5$", duration: 3000);
                     context.DestroyMonster(arg1: new[] {109});
                     context.SetNpcDuelHpBar(isOpen: false, spawnPointId: 109);
-                    context.DestroyMonster(arg1: new[] {10000});
-                    context.DestroyMonster(arg1: new[] {10001});
+                    context.DestroyMonster(arg1: new[] {10000, 10001});
                     context.State = new StateFailRoundDelay(context);
                     return;
                 }
 
                 if (context.UserDetected(arg1: new[] {902})) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004288, illust: "nagi_switchon",
-                        script: "$83000002_COLOSSEUM__ROUND9__6$", duration: 3000);
+                    context.SideNpcTalk(type: "talk", npcId: 11004288, illust: "nagi_switchon", script: "$83000002_COLOSSEUM__ROUND9__6$", duration: 3000);
                     context.DestroyMonster(arg1: new[] {109});
                     context.SetNpcDuelHpBar(isOpen: false, spawnPointId: 109);
-                    context.DestroyMonster(arg1: new[] {10000});
-                    context.DestroyMonster(arg1: new[] {10001});
+                    context.DestroyMonster(arg1: new[] {10000, 10001});
                     context.State = new StateFailRoundDelay(context);
                     return;
                 }
 
                 if (!context.UserDetected(arg1: new[] {904})) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004288, illust: "nagi_switchon",
-                        script: "$83000002_COLOSSEUM__ROUND9__8$", duration: 3000);
+                    context.SideNpcTalk(type: "talk", npcId: 11004288, illust: "nagi_switchon", script: "$83000002_COLOSSEUM__ROUND9__8$", duration: 3000);
                     context.DestroyMonster(arg1: new[] {109});
                     context.SetNpcDuelHpBar(isOpen: false, spawnPointId: 109);
-                    context.DestroyMonster(arg1: new[] {10000});
-                    context.DestroyMonster(arg1: new[] {10001});
+                    context.DestroyMonster(arg1: new[] {10000, 10001});
                     context.State = new StateFailRoundDelay(context);
                     return;
                 }
@@ -277,8 +268,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.MoveUserToPos(pos: new Vector3(300f, -225f, 1500f), rot: new Vector3(0f, 0f, 270f));
-                    context.SideNpcTalk(type: "talk", npcId: 11004285, illust: "Queencbean_Smile",
-                        script: "$83000002_COLOSSEUM__ROUND9__11$", duration: 3000);
+                    context.SideNpcTalk(type: "talk", npcId: 11004285, illust: "Queencbean_Smile", script: "$83000002_COLOSSEUM__ROUND9__11$", duration: 3000);
                     context.SetUserValue(triggerId: 900001, key: "StartRound9", value: 2);
                     context.State = new State이동대기(context);
                     return;

@@ -111,9 +111,7 @@ namespace Maple2.Trigger._65000003_bd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new[] {7301}, arg2: false);
-                context.SetSkill(arg1: new[] {7302}, arg2: false);
-                context.SetSkill(arg1: new[] {7303}, arg2: false);
+                context.SetSkill(arg1: new[] {7301, 7302, 7303}, arg2: false);
             }
 
             public override void Execute() {

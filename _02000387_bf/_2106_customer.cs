@@ -222,8 +222,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5102}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000703);
-                context.AddEffectNif(spawnPointId: 2106, nifPath: @"Map/Steampunk/Field/sp_fi_prop_anvil_A01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 2106, nifPath: @"Map/Steampunk/Field/sp_fi_prop_anvil_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -262,8 +261,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5102}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000704);
-                context.AddEffectNif(spawnPointId: 2106, nifPath: @"Map/Steampunk/Field/sp_fi_prop_bellows_A01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 2106, nifPath: @"Map/Steampunk/Field/sp_fi_prop_bellows_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -302,8 +300,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5102}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000705);
-                context.AddEffectNif(spawnPointId: 2106, nifPath: @"Map/Steampunk/Field/sp_fi_prop_brazier_C01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 2106, nifPath: @"Map/Steampunk/Field/sp_fi_prop_brazier_C01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {
@@ -342,8 +339,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5102}, arg2: true);
                 context.SetUserValue(key: "ItemNumber", value: 30000715);
-                context.AddEffectNif(spawnPointId: 2106, nifPath: @"Map/Steampunk/Field/sp_fi_prop_brazier_A01.nif",
-                    isOutline: true, scale: 1.2f, rotateZ: 225);
+                context.AddEffectNif(spawnPointId: 2106, nifPath: @"Map/Steampunk/Field/sp_fi_prop_brazier_A01.nif", isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
             public override void Execute() {

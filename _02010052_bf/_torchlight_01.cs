@@ -4,11 +4,7 @@ namespace Maple2.Trigger._02010052_bf {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {81001}, arg2: false);
-                context.SetEffect(arg1: new[] {81002}, arg2: false);
-                context.SetEffect(arg1: new[] {81003}, arg2: false);
-                context.SetEffect(arg1: new[] {81004}, arg2: false);
-                context.SetEffect(arg1: new[] {81005}, arg2: false);
+                context.SetEffect(arg1: new[] {81001, 81002, 81003, 81004, 81005}, arg2: false);
             }
 
             public override void Execute() {
@@ -25,9 +21,7 @@ namespace Maple2.Trigger._02010052_bf {
             internal Stateburn_state(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012},
-                    arg2: false, arg3: 800, arg4: 100, arg5: 0f);
+                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012}, arg2: false, arg3: 800, arg4: 100, arg5: 0f);
                 context.SetEventUI(arg1: 1, arg2: "$02010052_BF__TORCHLIGHT_01__0$", arg3: 3000);
                 context.SetEffect(arg1: new[] {7001}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1, arg4: false);
@@ -48,12 +42,7 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 200);
-                context.SetEffect(arg1: new[] {7501}, arg2: true);
-                context.SetEffect(arg1: new[] {81001}, arg2: true);
-                context.SetEffect(arg1: new[] {81002}, arg2: true);
-                context.SetEffect(arg1: new[] {81003}, arg2: true);
-                context.SetEffect(arg1: new[] {81004}, arg2: true);
-                context.SetEffect(arg1: new[] {81005}, arg2: true);
+                context.SetEffect(arg1: new[] {7501, 81001, 81002, 81003, 81004, 81005}, arg2: true);
                 context.SetActor(arg1: 8101, arg2: false, arg3: "Dmg_A");
                 context.SetActor(arg1: 8102, arg2: false, arg3: "Dmg_A");
                 context.SetActor(arg1: 8103, arg2: false, arg3: "Dmg_A");

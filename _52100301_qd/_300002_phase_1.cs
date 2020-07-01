@@ -35,8 +35,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "AI_Phase", value: 0);
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair",
-                    script: "$52100301_QD__300002_PHASE_1__0$", duration: 4176);
+                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$52100301_QD__300002_PHASE_1__0$", duration: 4176);
             }
 
             public override void Execute() {

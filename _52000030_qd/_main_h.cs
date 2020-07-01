@@ -4,8 +4,7 @@ namespace Maple2.Trigger._52000030_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602}, arg2: false);
             }
 
             public override void Execute() {
@@ -26,10 +25,7 @@ namespace Maple2.Trigger._52000030_qd {
                 context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
                 context.PlaySceneMovie(fileName: "Nutaman_intro.swf", movieId: 1);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.CreateMonster(
-                    arg1: new[]
-                        {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
             }
@@ -84,21 +80,15 @@ namespace Maple2.Trigger._52000030_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 102,
-                    arg2: new[]
-                        {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014})) {
                     context.State = new State전투판으로이동(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[]
-                    {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014});
-                context.CreateMonster(
-                    arg1: new[] {
-                        1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 2001, 2002
-                    }, arg2: false);
+                context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014});
+                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 2001, 2002}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }

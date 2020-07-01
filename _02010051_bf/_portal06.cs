@@ -5,18 +5,12 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {900}, arg2: false);
-                context.SetMesh(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {1511, 1512, 1513}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {914}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000914}, arg2: 0);
-                context.SetMesh(arg1: new[] {1601, 1602, 1603, 1604, 1605, 1606}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
-                context.SetEffect(arg1: new[] {6001}, arg2: false);
-                context.SetEffect(arg1: new[] {6002}, arg2: false);
-                context.SetEffect(arg1: new[] {6003}, arg2: false);
-                context.SetEffect(arg1: new[] {6005}, arg2: false);
+                context.SetMesh(arg1: new[] {1601, 1602, 1603, 1604, 1605, 1606}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {6000, 6001, 6002, 6003, 6005}, arg2: false);
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
             }
@@ -146,8 +140,7 @@ namespace Maple2.Trigger._02010051_bf {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetEffect(arg1: new[] {6005}, arg2: true);
-                context.SetMesh(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 10f);
+                context.SetMesh(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
                 context.SetMesh(arg1: new[] {1511, 1512, 1513}, arg2: true, arg3: 1, arg4: 0, arg5: 0f);
             }
 
@@ -216,10 +209,8 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11", arg2: 1);
-                context.SetEffect(arg1: new[] {914}, arg2: true);
-                context.SetEffect(arg1: new[] {6000}, arg2: true);
-                context.SetMesh(arg1: new[] {1601, 1602, 1603, 1604, 1605, 1606}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 10f);
+                context.SetEffect(arg1: new[] {914, 6000}, arg2: true);
+                context.SetMesh(arg1: new[] {1601, 1602, 1603, 1604, 1605, 1606}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
             }
 
             public override void Execute() {
@@ -256,10 +247,8 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnEnter() {
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(arg1: new[] {1601, 1602, 1603, 1604, 1605, 1606}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 2f);
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
-                context.SetEffect(arg1: new[] {6005}, arg2: false);
+                context.SetMesh(arg1: new[] {1601, 1602, 1603, 1604, 1605, 1606}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetEffect(arg1: new[] {6000, 6005}, arg2: false);
             }
 
             public override void Execute() { }

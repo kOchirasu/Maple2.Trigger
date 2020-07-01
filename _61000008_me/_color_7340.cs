@@ -6,8 +6,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetUserValue(key: "Color34", value: 10);
                 context.SetMesh(arg1: new[] {834}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {934}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {1034}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {934, 1034}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -25,8 +24,7 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {834}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new[] {934}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {1034}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {934, 1034}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -64,8 +62,7 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1034}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {934}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {834}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {934, 834}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -238,8 +235,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetUserValue(key: "ColorStart", value: 0);
                 context.SetMesh(arg1: new[] {834}, arg2: true, arg3: 400, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {934}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {1034}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {934, 1034}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

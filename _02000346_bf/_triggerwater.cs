@@ -4,10 +4,7 @@ namespace Maple2.Trigger._02000346_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[]
-                        {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014},
-                    arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -24,10 +21,7 @@ namespace Maple2.Trigger._02000346_bf {
             internal State대기시간(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[]
-                        {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014},
-                    arg2: true, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014}, arg2: true, arg3: 0, arg4: 0, arg5: 5f);
                 context.SetTimer(arg1: "15", arg2: 15);
             }
 
@@ -46,10 +40,7 @@ namespace Maple2.Trigger._02000346_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 10);
-                context.SetRandomMesh(
-                    arg1: new[]
-                        {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014},
-                    arg2: false, arg3: 8, arg4: 0, arg5: 0);
+                context.SetRandomMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014}, arg2: false, arg3: 8, arg4: 0, arg5: 0);
             }
 
             public override void Execute() {
@@ -74,10 +65,7 @@ namespace Maple2.Trigger._02000346_bf {
 
             public override void Execute() {
                 if (!context.UserDetected(arg1: new[] {60002})) {
-                    context.SetMesh(
-                        arg1: new[]
-                            {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014},
-                        arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new State대기시간(context);
                     return;
                 }

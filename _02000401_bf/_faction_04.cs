@@ -6,8 +6,7 @@ namespace Maple2.Trigger._02000401_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
                 context.RemoveBuff(arg1: 199, arg2: 99910160);
-                context.SetInteractObject(arg1: new[] {12000029}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {12000040}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000029, 12000040}, arg2: 2);
             }
 
             public override void Execute() {
@@ -140,8 +139,7 @@ namespace Maple2.Trigger._02000401_bf {
             public override void Execute() {
                 if (context.GetUserValue(key: "DungeonClear") == 1) {
                     context.DestroyMonster(arg1: new[] {1300, 1301, 1302, 1303, 1304, 1305}, arg2: false);
-                    context.SetInteractObject(arg1: new[] {12000029}, arg2: 0);
-                    context.SetInteractObject(arg1: new[] {12000040}, arg2: 0);
+                    context.SetInteractObject(arg1: new[] {12000029, 12000040}, arg2: 0);
                     context.RemoveBuff(arg1: 199, arg2: 99910160);
                     context.State = new State종료(context);
                     return;

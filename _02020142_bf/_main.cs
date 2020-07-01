@@ -8,11 +8,7 @@ namespace Maple2.Trigger._02020142_bf {
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(45f, 21f, 28f));
                 context.SetDirectionalLight(arg1: new Vector3(16f, 30f, 29f), arg2: new Vector3(130f, 130f, 130f));
-                context.SetMesh(
-                    arg1: new[] {
-                        901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919,
-                        920, 921, 922, 923, 924
-                    }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {301}, arg2: true);
                 context.SetUserValue(key: "1PhaseSpawnStart", value: 0);
                 context.SetUserValue(key: "2PhaseSpawnStart", value: 0);
@@ -29,12 +25,7 @@ namespace Maple2.Trigger._02020142_bf {
                 context.SetPortal(arg1: 338, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 599, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 598, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(
-                    arg1: new[] {
-                        949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967,
-                        968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986,
-                        987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999
-                    }, arg2: true, arg3: 1, arg4: 1, arg5: 1f);
+                context.SetMesh(arg1: new[] {949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999}, arg2: true, arg3: 1, arg4: 1, arg5: 1f);
                 context.SetUserValue(key: "TriggerMesh11", value: 99);
                 context.SetUserValue(key: "TriggerMesh21", value: 99);
                 context.SetUserValue(key: "TriggerMesh12", value: 99);
@@ -86,8 +77,7 @@ namespace Maple2.Trigger._02020142_bf {
             internal State투르카대사연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 23000120, illust: "Turka_normal", duration: 9000,
-                    script: "$02020140_BF__PopUpCinema__0$");
+                context.SideNpcTalk(npcId: 23000120, illust: "Turka_normal", duration: 9000, script: "$02020140_BF__PopUpCinema__0$");
             }
 
             public override void Execute() {
@@ -265,11 +255,7 @@ namespace Maple2.Trigger._02020142_bf {
             public override void OnEnter() {
                 context.SetUserValue(key: "TriggerMesh11", value: -1);
                 context.SetUserValue(key: "TriggerMesh21", value: 0);
-                context.CreateMonster(
-                    arg1: new[] {
-                        2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116,
-                        2117, 2118
-                    }, arg2: false);
+                context.CreateMonster(arg1: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118}, arg2: false);
             }
 
             public override void Execute() {
@@ -377,11 +363,7 @@ namespace Maple2.Trigger._02020142_bf {
             public override void OnEnter() {
                 context.SetUserValue(key: "TriggerMesh13", value: -1);
                 context.SetUserValue(key: "TriggerMesh23", value: 0);
-                context.CreateMonster(
-                    arg1: new[] {
-                        2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315, 2316,
-                        2317, 2318
-                    }, arg2: false);
+                context.CreateMonster(arg1: new[] {2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315, 2316, 2317, 2318}, arg2: false);
             }
 
             public override void Execute() {
@@ -498,16 +480,7 @@ namespace Maple2.Trigger._02020142_bf {
                 context.SetPortal(arg1: 318, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 428, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 338, arg2: true, arg3: true, arg4: true);
-                context.DestroyMonster(arg1: new[] {
-                    1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 2101, 2102,
-                    2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118
-                });
-                context.DestroyMonster(arg1: new[]
-                    {1201, 1202, 1203, 1204, 2201, 2202, 2203, 2204, 3201, 3202, 3203, 3204});
-                context.DestroyMonster(arg1: new[] {
-                    1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 2301, 2302, 2303,
-                    2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315, 2316, 2317, 2318
-                });
+                context.DestroyMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 1201, 1202, 1203, 1204, 2201, 2202, 2203, 2204, 3201, 3202, 3203, 3204, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315, 2316, 2317, 2318});
             }
 
             public override void Execute() {

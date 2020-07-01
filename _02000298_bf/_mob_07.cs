@@ -4,10 +4,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {606}, arg2: false);
-                context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3211, 3212, 3213, 3214, 3215}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {603, 606}, arg2: false);
+                context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3211, 3212, 3213, 3214, 3215}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -47,8 +45,7 @@ namespace Maple2.Trigger._02000298_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {603}, arg2: true);
-                context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 5f);
+                context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -84,8 +81,7 @@ namespace Maple2.Trigger._02000298_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {606}, arg2: true);
-                context.SetMesh(arg1: new[] {3211, 3212, 3213, 3214, 3215}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 5f);
+                context.SetMesh(arg1: new[] {3211, 3212, 3213, 3214, 3215}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 

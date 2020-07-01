@@ -4,14 +4,7 @@ namespace Maple2.Trigger._02020021_bf {
             internal State입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "9001", arg2: true);
-                context.SetAgent(arg1: "9002", arg2: true);
-                context.SetAgent(arg1: "9003", arg2: true);
-                context.SetAgent(arg1: "9004", arg2: true);
-                context.SetAgent(arg1: "9005", arg2: true);
-                context.SetAgent(arg1: "9006", arg2: true);
-                context.SetAgent(arg1: "9007", arg2: true);
-                context.SetAgent(arg1: "9008", arg2: true);
+                context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008}, arg2: true);
                 context.SetUserValue(triggerId: 99990002, key: "battlesetting", value: 0);
                 context.SetUserValue(triggerId: 99990003, key: "Timer", value: 0);
                 context.SetUserValue(triggerId: 99990004, key: "SpecialTimer", value: 0);
@@ -55,9 +48,7 @@ namespace Maple2.Trigger._02020021_bf {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {501, 502}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$02020021_BF__main__3$",
-                    desc: "$02020021_BF__main__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 4000, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "$02020021_BF__main__3$", desc: "$02020021_BF__main__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
             }
 
             public override void Execute() {
@@ -75,8 +66,7 @@ namespace Maple2.Trigger._02020021_bf {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {503, 504}, arg2: false);
-                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__0$",
-                    duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__0$", duration: 4000, align: "left");
             }
 
             public override void Execute() {
@@ -93,8 +83,7 @@ namespace Maple2.Trigger._02020021_bf {
             internal State카메라_샤텐대사2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__1$",
-                    duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__1$", duration: 4000, align: "left");
             }
 
             public override void Execute() {
@@ -112,8 +101,7 @@ namespace Maple2.Trigger._02020021_bf {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {505, 506}, arg2: false);
-                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__2$",
-                    duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__2$", duration: 4000, align: "left");
             }
 
             public override void Execute() {
@@ -131,8 +119,7 @@ namespace Maple2.Trigger._02020021_bf {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {507, 508}, arg2: false);
-                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__5$",
-                    duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__5$", duration: 4000, align: "left");
                 context.SetSceneSkip();
             }
 
@@ -171,17 +158,9 @@ namespace Maple2.Trigger._02020021_bf {
             internal State전투시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "9001", arg2: false);
-                context.SetAgent(arg1: "9002", arg2: false);
-                context.SetAgent(arg1: "9003", arg2: false);
-                context.SetAgent(arg1: "9004", arg2: false);
-                context.SetAgent(arg1: "9005", arg2: false);
-                context.SetAgent(arg1: "9006", arg2: false);
-                context.SetAgent(arg1: "9007", arg2: false);
-                context.SetAgent(arg1: "9008", arg2: false);
+                context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008}, arg2: false);
                 context.SetAiExtraData(key: "Start", value: 1);
-                context.SideNpcTalk(npcId: 23200085, illust: "Schatten_smile", duration: 5000,
-                    script: "$02020021_BF__main__6$", voice: @"ko/Npc/00002248");
+                context.SideNpcTalk(npcId: 23200085, illust: "Schatten_smile", duration: 5000, script: "$02020021_BF__main__6$", voice: @"ko/Npc/00002248");
                 context.SetUserValue(triggerId: 99990002, key: "battlesetting", value: 1);
             }
 
@@ -202,15 +181,13 @@ namespace Maple2.Trigger._02020021_bf {
 
             public override void Execute() {
                 if (context.GetDungeonFirstUserMissionScore() >= 1500) {
-                    context.SideNpcTalk(npcId: 23200085, illust: "Schatten_smile", duration: 5000,
-                        script: "$02020021_BF__main__7$", voice: @"ko/Npc/00002082");
+                    context.SideNpcTalk(npcId: 23200085, illust: "Schatten_smile", duration: 5000, script: "$02020021_BF__main__7$", voice: @"ko/Npc/00002082");
                     context.State = new State던전종료_A랭크이상(context);
                     return;
                 }
 
                 if (context.GetDungeonFirstUserMissionScore() < 1500) {
-                    context.SideNpcTalk(npcId: 23200085, illust: "Schatten_serious", duration: 5000,
-                        script: "$02020021_BF__main__8$", voice: @"ko/Npc/00002081");
+                    context.SideNpcTalk(npcId: 23200085, illust: "Schatten_serious", duration: 5000, script: "$02020021_BF__main__8$", voice: @"ko/Npc/00002081");
                     context.State = new State던전종료_A랭크미만(context);
                     return;
                 }

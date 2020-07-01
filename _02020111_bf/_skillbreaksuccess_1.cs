@@ -8,10 +8,7 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.GetUserValue(key: "SkillBreakSuccess_1") == 1
-                    && context.GetUserValue(key: "SkillBreakSuccess_2") == 1
-                    && context.GetUserValue(key: "SkillBreakSuccess_3") == 1
-                    && context.GetUserValue(key: "SkillBreakSuccess_4") == 1) {
+                if (context.GetUserValue(key: "SkillBreakSuccess_1") == 1 && context.GetUserValue(key: "SkillBreakSuccess_2") == 1 && context.GetUserValue(key: "SkillBreakSuccess_3") == 1 && context.GetUserValue(key: "SkillBreakSuccess_4") == 1) {
                     context.State = new State버프발동(context);
                     return;
                 }
@@ -39,11 +36,7 @@ namespace Maple2.Trigger._02020111_bf {
             }
 
             public override void Execute() {
-                if (context.GetUserValue(key: "SkillBreakSuccess_1") == 0
-                    && context.GetUserValue(key: "SkillBreakSuccess_2") == 0
-                    && context.GetUserValue(key: "SkillBreakSuccess_3") == 0
-                    && context.GetUserValue(key: "SkillBreakSuccess_4") == 0
-                    && context.GetUserValue(key: "SkillBreakSuccess_Reset") == 0) {
+                if (context.GetUserValue(key: "SkillBreakSuccess_1") == 0 && context.GetUserValue(key: "SkillBreakSuccess_2") == 0 && context.GetUserValue(key: "SkillBreakSuccess_3") == 0 && context.GetUserValue(key: "SkillBreakSuccess_4") == 0 && context.GetUserValue(key: "SkillBreakSuccess_Reset") == 0) {
                     context.State = new State시작(context);
                     return;
                 }

@@ -64,8 +64,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() {
                 context.DungeonClear();
-                context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311}, arg2: false,
-                    arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -84,8 +83,7 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnEnter() {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
-                context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311}, arg2: false,
-                    arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);

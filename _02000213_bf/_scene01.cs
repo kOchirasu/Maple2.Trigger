@@ -5,16 +5,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {201});
-                context.SetEffect(arg1: new[] {401}, arg2: false);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {605}, arg2: false);
-                context.SetEffect(arg1: new[] {606}, arg2: false);
-                context.SetEffect(arg1: new[] {607}, arg2: false);
-                context.SetEffect(arg1: new[] {608}, arg2: false);
-                context.SetEffect(arg1: new[] {609}, arg2: false);
+                context.SetEffect(arg1: new[] {401, 601, 602, 603, 604, 605, 606, 607, 608, 609}, arg2: false);
             }
 
             public override void Execute() {
@@ -280,9 +271,7 @@ namespace Maple2.Trigger._02000213_bf {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelectPath(arg1: new[] {302}, arg2: true);
-                context.DestroyMonster(arg1: new[] {202});
-                context.DestroyMonster(arg1: new[] {203});
-                context.DestroyMonster(arg1: new[] {204});
+                context.DestroyMonster(arg1: new[] {202, 203, 204});
                 context.CreateMonster(arg1: new[] {205});
             }
 

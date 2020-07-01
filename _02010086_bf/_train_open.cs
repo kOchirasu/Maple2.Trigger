@@ -4,10 +4,8 @@ namespace Maple2.Trigger._02010086_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetEffect(arg1: new[] {7002}, arg2: false);
-                context.SetMesh(arg1: new[] {1061, 1062, 1063}, arg2: false);
-                context.SetMesh(arg1: new[] {2011, 2012, 2013}, arg2: false);
+                context.SetEffect(arg1: new[] {7001, 7002}, arg2: false);
+                context.SetMesh(arg1: new[] {1061, 1062, 1063, 2011, 2012, 2013}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000896}, arg2: 0);
             }
 
@@ -45,8 +43,7 @@ namespace Maple2.Trigger._02010086_bf {
             internal State작동_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7001}, arg2: true);
-                context.SetEffect(arg1: new[] {7002}, arg2: true);
+                context.SetEffect(arg1: new[] {7001, 7002}, arg2: true);
                 context.SetMesh(arg1: new[] {1071, 1072, 1073}, arg2: false, arg4: 300, arg5: 10f);
                 context.SetMesh(arg1: new[] {1061, 1062, 1063}, arg2: true, arg4: 300, arg5: 10f);
                 context.SetTimer(arg1: "3", arg2: 3);

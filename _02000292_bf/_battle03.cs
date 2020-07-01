@@ -9,14 +9,7 @@ namespace Maple2.Trigger._02000292_bf {
                 context.SetLadder(arg1: 513, arg2: true, arg3: true);
                 context.SetLadder(arg1: 514, arg2: true, arg3: true);
                 context.SetLadder(arg1: 515, arg2: true, arg3: true);
-                context.DestroyMonster(arg1: new[] {1011});
-                context.DestroyMonster(arg1: new[] {1012});
-                context.DestroyMonster(arg1: new[] {1013});
-                context.DestroyMonster(arg1: new[] {1014});
-                context.DestroyMonster(arg1: new[] {2011});
-                context.DestroyMonster(arg1: new[] {2012});
-                context.DestroyMonster(arg1: new[] {2013});
-                context.DestroyMonster(arg1: new[] {2014});
+                context.DestroyMonster(arg1: new[] {1011, 1012, 1013, 1014, 2011, 2012, 2013, 2014});
                 context.SetEffect(arg1: new[] {5002}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10001062}, arg2: 0);
             }
@@ -35,10 +28,7 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateMobSpawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1011}, arg2: false);
-                context.CreateMonster(arg1: new[] {1012}, arg2: false);
-                context.CreateMonster(arg1: new[] {1013}, arg2: false);
-                context.CreateMonster(arg1: new[] {1014}, arg2: false);
+                context.CreateMonster(arg1: new[] {1011, 1012, 1013, 1014}, arg2: false);
             }
 
             public override void Execute() {

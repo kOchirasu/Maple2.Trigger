@@ -6,14 +6,12 @@ namespace Maple2.Trigger._52000096_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001514},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001514}, arg3: new byte[] {1})) {
                     context.State = new State몹소환01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50100040},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50100040}, arg3: new byte[] {1})) {
                     context.State = new State몹소환01(context);
                     return;
                 }
@@ -29,10 +27,7 @@ namespace Maple2.Trigger._52000096_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
-                context.CreateMonster(arg1: new[] {1001}, arg2: false);
-                context.CreateMonster(arg1: new[] {1002}, arg2: false);
-                context.CreateMonster(arg1: new[] {1003}, arg2: false);
-                context.CreateMonster(arg1: new[] {1004}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: false);
             }
 
             public override void Execute() {
@@ -189,10 +184,7 @@ namespace Maple2.Trigger._52000096_qd {
             internal State몬스터재스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1001}, arg2: true);
-                context.CreateMonster(arg1: new[] {1002}, arg2: true);
-                context.CreateMonster(arg1: new[] {1003}, arg2: true);
-                context.CreateMonster(arg1: new[] {1004}, arg2: true);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: true);
             }
 
             public override void Execute() {

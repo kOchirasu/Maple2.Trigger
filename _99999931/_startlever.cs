@@ -7,11 +7,7 @@ namespace Maple2.Trigger._99999931 {
                 context.SetMesh(arg1: new[] {211, 212}, arg2: true);
                 context.SetMesh(arg1: new[] {551, 552}, arg2: false);
                 context.SetPortal(arg1: 500, arg2: false, arg3: true);
-                context.SetBreakable(
-                    arg1: new[] {
-                        101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119,
-                        120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136
-                    }, arg2: false);
+                context.SetBreakable(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000215}, arg2: 1);
             }
 

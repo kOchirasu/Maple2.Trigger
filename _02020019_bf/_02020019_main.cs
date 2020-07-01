@@ -49,9 +49,7 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {501, 502}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$02020019_BF__02020019_main__3$",
-                    desc: "$02020019_BF__02020019_main__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 4000, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "$02020019_BF__02020019_main__3$", desc: "$02020019_BF__02020019_main__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
             }
 
             public override void Execute() {
@@ -69,8 +67,7 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 503, arg2: true);
-                context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal",
-                    msg: "$02020019_BF__02020019_main__0$", duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal", msg: "$02020019_BF__02020019_main__0$", duration: 4000, align: "left");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 6300f);
             }
 
@@ -88,8 +85,7 @@ namespace Maple2.Trigger._02020019_bf {
             internal State카메라_네이린설명2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal",
-                    msg: "$02020019_BF__02020019_main__1$", duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal", msg: "$02020019_BF__02020019_main__1$", duration: 4000, align: "left");
             }
 
             public override void Execute() {
@@ -106,8 +102,7 @@ namespace Maple2.Trigger._02020019_bf {
             internal State카메라_네이린설명3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal",
-                    msg: "$02020019_BF__02020019_main__5$", duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal", msg: "$02020019_BF__02020019_main__5$", duration: 4000, align: "left");
                 context.SetSceneSkip();
             }
 
@@ -179,15 +174,13 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void Execute() {
                 if (context.GetDungeonFirstUserMissionScore() >= 1500) {
-                    context.SideNpcTalk(npcId: 24100001, illust: "Neirin_surprise", duration: 5000,
-                        script: "$02020019_BF__02020019_main__6$", voice: @"ko/Npc/00002125");
+                    context.SideNpcTalk(npcId: 24100001, illust: "Neirin_surprise", duration: 5000, script: "$02020019_BF__02020019_main__6$", voice: @"ko/Npc/00002125");
                     context.State = new State던전종료_A랭크이상(context);
                     return;
                 }
 
                 if (context.GetDungeonFirstUserMissionScore() < 1500) {
-                    context.SideNpcTalk(npcId: 24100001, illust: "Neirin_smile", duration: 5000,
-                        script: "$02020019_BF__02020019_main__7$", voice: @"ko/Npc/00002124");
+                    context.SideNpcTalk(npcId: 24100001, illust: "Neirin_smile", duration: 5000, script: "$02020019_BF__02020019_main__7$", voice: @"ko/Npc/00002124");
                     context.State = new State던전종료_A랭크미만(context);
                     return;
                 }

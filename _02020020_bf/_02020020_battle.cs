@@ -19,8 +19,7 @@ namespace Maple2.Trigger._02020020_bf {
             internal State전투_1라운드세팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 24100101, illust: "Neirin_normal", duration: 5000,
-                    script: "$02020020_BF__02020020_battle__0$");
+                context.SideNpcTalk(npcId: 24100101, illust: "Neirin_normal", duration: 5000, script: "$02020020_BF__02020020_battle__0$");
             }
 
             public override void Execute() {
@@ -71,8 +70,7 @@ namespace Maple2.Trigger._02020020_bf {
             internal State전투_2라운드세팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcId: 24100101, illust: "Neirin_normal", duration: 5000,
-                    script: "$02020020_BF__02020020_battle__2$");
+                context.SideNpcTalk(npcId: 24100101, illust: "Neirin_normal", duration: 5000, script: "$02020020_BF__02020020_battle__2$");
             }
 
             public override void Execute() {
@@ -124,8 +122,7 @@ namespace Maple2.Trigger._02020020_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990001, key: "battlesetting", value: 2);
-                context.SideNpcTalk(npcId: 24100101, illust: "Neirin_normal", duration: 5000,
-                    script: "$02020020_BF__02020020_battle__3$");
+                context.SideNpcTalk(npcId: 24100101, illust: "Neirin_normal", duration: 5000, script: "$02020020_BF__02020020_battle__3$");
             }
 
             public override void Execute() { }

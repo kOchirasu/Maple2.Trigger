@@ -4,30 +4,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {7001}, arg2: false);
-                context.SetSkill(arg1: new[] {7002}, arg2: false);
-                context.SetSkill(arg1: new[] {7003}, arg2: false);
-                context.SetSkill(arg1: new[] {7004}, arg2: false);
-                context.SetSkill(arg1: new[] {7005}, arg2: false);
-                context.SetSkill(arg1: new[] {7006}, arg2: false);
-                context.SetSkill(arg1: new[] {7007}, arg2: false);
-                context.SetSkill(arg1: new[] {7008}, arg2: false);
-                context.SetSkill(arg1: new[] {7009}, arg2: false);
-                context.SetSkill(arg1: new[] {7010}, arg2: false);
-                context.SetSkill(arg1: new[] {7011}, arg2: false);
-                context.SetSkill(arg1: new[] {7012}, arg2: false);
-                context.SetSkill(arg1: new[] {7013}, arg2: false);
-                context.SetSkill(arg1: new[] {7014}, arg2: false);
-                context.SetSkill(arg1: new[] {7015}, arg2: false);
-                context.SetSkill(arg1: new[] {7016}, arg2: false);
-                context.SetSkill(arg1: new[] {7017}, arg2: false);
-                context.SetSkill(arg1: new[] {7018}, arg2: false);
-                context.SetSkill(arg1: new[] {7019}, arg2: false);
-                context.SetSkill(arg1: new[] {7020}, arg2: false);
-                context.SetSkill(arg1: new[] {7021}, arg2: false);
-                context.SetSkill(arg1: new[] {7022}, arg2: false);
-                context.SetSkill(arg1: new[] {7023}, arg2: false);
-                context.SetSkill(arg1: new[] {7024}, arg2: false);
+                context.SetSkill(arg1: new[] {7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023, 7024}, arg2: false);
             }
 
             public override void Execute() {
@@ -44,30 +21,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal State스킬발동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {7001}, arg2: true);
-                context.SetSkill(arg1: new[] {7002}, arg2: true);
-                context.SetSkill(arg1: new[] {7003}, arg2: true);
-                context.SetSkill(arg1: new[] {7004}, arg2: true);
-                context.SetSkill(arg1: new[] {7005}, arg2: true);
-                context.SetSkill(arg1: new[] {7006}, arg2: true);
-                context.SetSkill(arg1: new[] {7007}, arg2: true);
-                context.SetSkill(arg1: new[] {7008}, arg2: true);
-                context.SetSkill(arg1: new[] {7009}, arg2: true);
-                context.SetSkill(arg1: new[] {7010}, arg2: true);
-                context.SetSkill(arg1: new[] {7011}, arg2: true);
-                context.SetSkill(arg1: new[] {7012}, arg2: true);
-                context.SetSkill(arg1: new[] {7013}, arg2: true);
-                context.SetSkill(arg1: new[] {7014}, arg2: true);
-                context.SetSkill(arg1: new[] {7015}, arg2: true);
-                context.SetSkill(arg1: new[] {7016}, arg2: true);
-                context.SetSkill(arg1: new[] {7017}, arg2: true);
-                context.SetSkill(arg1: new[] {7018}, arg2: true);
-                context.SetSkill(arg1: new[] {7019}, arg2: true);
-                context.SetSkill(arg1: new[] {7020}, arg2: true);
-                context.SetSkill(arg1: new[] {7021}, arg2: true);
-                context.SetSkill(arg1: new[] {7022}, arg2: true);
-                context.SetSkill(arg1: new[] {7023}, arg2: true);
-                context.SetSkill(arg1: new[] {7024}, arg2: true);
+                context.SetSkill(arg1: new[] {7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023, 7024}, arg2: true);
             }
 
             public override void Execute() {

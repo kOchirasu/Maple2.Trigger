@@ -4,10 +4,8 @@ namespace Maple2.Trigger._61000006_me {
             internal State레버(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new[] {10000223}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000214}, arg2: 1);
-                context.SetMesh(arg1: new[] {307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319},
-                    arg2: false);
+                context.SetInteractObject(arg1: new[] {10000223, 10000214}, arg2: 1);
+                context.SetMesh(arg1: new[] {307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319}, arg2: false);
             }
 
             public override void Execute() {

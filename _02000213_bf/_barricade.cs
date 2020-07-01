@@ -4,9 +4,7 @@ namespace Maple2.Trigger._02000213_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515},
-                    arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
             public override void Execute() {
@@ -40,9 +38,7 @@ namespace Maple2.Trigger._02000213_bf {
             internal State차단(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515},
-                    arg2: true, arg3: 0, arg4: 200, arg5: 2f);
+                context.SetMesh(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515}, arg2: true, arg3: 0, arg4: 200, arg5: 2f);
             }
 
             public override void Execute() {
@@ -59,9 +55,7 @@ namespace Maple2.Trigger._02000213_bf {
             internal State차단해제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(
-                    arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515},
-                    arg2: false, arg3: 0, arg4: 200, arg5: 2f);
+                context.SetMesh(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
             }
 
             public override void Execute() { }

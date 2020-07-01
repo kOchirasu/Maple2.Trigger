@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9400}, arg2: new[] {50001411}, arg3: new byte[] {2},
-                    arg4: 110)) {
+                if (context.QuestUserDetected(arg1: new[] {9400}, arg2: new[] {50001411}, arg3: new byte[] {2}, arg4: 110)) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -56,8 +55,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__0$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__0$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -74,8 +72,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__1$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__1$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -92,8 +89,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__2$", arg4: 4,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__2$", arg4: 4, arg5: 0);
             }
 
             public override void Execute() {
@@ -126,8 +122,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__3$", arg4: 4,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__3$", arg4: 4, arg5: 0);
             }
 
             public override void Execute() {
@@ -144,8 +139,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePC말풍선05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__4$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__4$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {
@@ -180,8 +174,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateNPC대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001727, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__5$",
-                    arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001727, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__5$", arg4: 2);
                 context.SetSkip(arg1: "NPC대사01스킵");
             }
 
@@ -217,8 +210,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateNPC대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001725, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__6$",
-                    arg4: 2);
+                context.SetConversation(arg1: 2, arg2: 11001725, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__6$", arg4: 2);
                 context.SetSkip(arg1: "NPC대사02스킵");
             }
 
@@ -276,8 +268,7 @@ namespace Maple2.Trigger._52000037_qd {
                 context.MoveNpc(arg1: 211, arg2: "MS2PatrolData_NPC1102");
                 context.MoveNpc(arg1: 212, arg2: "MS2PatrolData_NPC1102");
                 context.MoveNpc(arg1: 213, arg2: "MS2PatrolData_NPC1102");
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__7$", arg4: 3,
-                    arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__7$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {

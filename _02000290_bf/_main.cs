@@ -10,26 +10,9 @@ namespace Maple2.Trigger._02000290_bf {
                 context.SetActor(arg1: 3010, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 3020, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 3040, arg2: true, arg3: "Closed");
-                context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: true, arg3: 0,
-                    arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3011}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3012, 3013, 3014, 3015, 3016}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3021}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031, 3032, 3033},
-                    arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3041}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {3042, 3043, 3044, 3045, 3046, 3047, 3048, 3049, 3050, 3051, 3052, 3053},
-                    arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3011, 3012, 3013, 3014, 3015, 3016, 3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031, 3032, 3033, 3041, 3042, 3043, 3044, 3045, 3046, 3047, 3048, 3049, 3050, 3051, 3052, 3053}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.DestroyMonster(arg1: new[] {1001});
-                context.DestroyMonster(arg1: new[] {1002});
-                context.DestroyMonster(arg1: new[] {1003});
-                context.DestroyMonster(arg1: new[] {1004});
-                context.DestroyMonster(arg1: new[] {2001});
-                context.DestroyMonster(arg1: new[] {2002});
+                context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 2001, 2002});
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
                 context.EnableSpawnPointPc(spawnPointId: 9991, isEnable: false);
                 context.EnableSpawnPointPc(spawnPointId: 9992, isEnable: false);
@@ -52,8 +35,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -144,8 +126,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 3000, arg2: false, arg3: "Opened");
-                context.SetMesh(arg1: new[] {3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: false, arg3: 0,
-                    arg4: 200, arg5: 2f);
+                context.SetMesh(arg1: new[] {3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
             }
 
             public override void Execute() {
@@ -169,8 +150,7 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnEnter() {
                 context.SetActor(arg1: 3010, arg2: true, arg3: "Opened");
                 context.SetMesh(arg1: new[] {3011}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new[] {1002}, arg2: false);
-                context.CreateMonster(arg1: new[] {1003}, arg2: false);
+                context.CreateMonster(arg1: new[] {1002, 1003}, arg2: false);
             }
 
             public override void Execute() {
@@ -188,8 +168,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 3010, arg2: false, arg3: "Opened");
-                context.SetMesh(arg1: new[] {3012, 3013, 3014, 3015, 3016}, arg2: false, arg3: 0, arg4: 200,
-                    arg5: 2f);
+                context.SetMesh(arg1: new[] {3012, 3013, 3014, 3015, 3016}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
             }
 
             public override void Execute() {
@@ -231,9 +210,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 3020, arg2: false, arg3: "Opened");
-                context.SetMesh(
-                    arg1: new[] {3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031, 3032, 3033},
-                    arg2: false, arg3: 0, arg4: 200, arg5: 2f);
+                context.SetMesh(arg1: new[] {3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031, 3032, 3033}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
             }
 
             public override void Execute() {
@@ -275,9 +252,7 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 20002902);
                 context.SetActor(arg1: 3040, arg2: false, arg3: "Opened");
-                context.SetMesh(
-                    arg1: new[] {3042, 3043, 3044, 3045, 3046, 3047, 3048, 3049, 3050, 3051, 3052, 3053},
-                    arg2: false, arg3: 0, arg4: 200, arg5: 2f);
+                context.SetMesh(arg1: new[] {3042, 3043, 3044, 3045, 3046, 3047, 3048, 3049, 3050, 3051, 3052, 3053}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
             }
 
             public override void Execute() {

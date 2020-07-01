@@ -4,8 +4,7 @@ namespace Maple2.Trigger._82000001_survival {
             internal StateBoatPatrol(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.NpcToPatrolInBox(boxId: 9514, npcId: 11400001, spawnId: "interactObject",
-                    patrolName: "MS2PatrolData_214");
+                context.NpcToPatrolInBox(boxId: 9514, npcId: 11400001, spawnId: "interactObject", patrolName: "MS2PatrolData_214");
             }
 
             public override void Execute() {

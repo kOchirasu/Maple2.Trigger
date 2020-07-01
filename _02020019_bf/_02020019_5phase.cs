@@ -19,34 +19,20 @@ namespace Maple2.Trigger._02020019_bf {
             internal State크림슨발록스폰체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {241}, arg2: 49218001, arg3: 1,
-                    arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {242}, arg2: 49218001, arg3: 1,
-                    arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {243}, arg2: 49218001, arg3: 1,
-                    arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {244}, arg2: 49218001, arg3: 1,
-                    arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {245}, arg2: 49218001, arg3: 1,
-                    arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {246}, arg2: 49218001, arg3: 1,
-                    arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {247}, arg2: 49218001, arg3: 1,
-                    arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {241}, arg2: 49218002, arg3: 1,
-                    arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {242}, arg2: 49218002, arg3: 1,
-                    arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {243}, arg2: 49218002, arg3: 1,
-                    arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {244}, arg2: 49218002, arg3: 1,
-                    arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {245}, arg2: 49218002, arg3: 1,
-                    arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {246}, arg2: 49218002, arg3: 1,
-                    arg4: true);
-                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {247}, arg2: 49218002, arg3: 1,
-                    arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {241}, arg2: 49218001, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {242}, arg2: 49218001, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {243}, arg2: 49218001, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {244}, arg2: 49218001, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {245}, arg2: 49218001, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {246}, arg2: 49218001, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {247}, arg2: 49218001, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {241}, arg2: 49218002, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {242}, arg2: 49218002, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {243}, arg2: 49218002, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {244}, arg2: 49218002, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {245}, arg2: 49218002, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {246}, arg2: 49218002, arg3: 1, arg4: true);
+                context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {247}, arg2: 49218002, arg3: 1, arg4: true);
             }
 
             public override void Execute() {

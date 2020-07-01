@@ -8,26 +8,14 @@ namespace Maple2.Trigger._02000296_bf {
                 context.SetLadder(arg1: 111, arg2: false, arg3: false);
                 context.SetLadder(arg1: 112, arg2: false, arg3: false);
                 context.SetLadder(arg1: 113, arg2: false, arg3: false);
-                context.DestroyMonster(arg1: new[] {5001});
-                context.DestroyMonster(arg1: new[] {5002});
-                context.DestroyMonster(arg1: new[] {5003});
-                context.DestroyMonster(arg1: new[] {5004});
-                context.DestroyMonster(arg1: new[] {5100});
-                context.DestroyMonster(arg1: new[] {5005});
-                context.DestroyMonster(arg1: new[] {5006});
-                context.DestroyMonster(arg1: new[] {5007});
-                context.DestroyMonster(arg1: new[] {5012});
-                context.DestroyMonster(arg1: new[] {5013});
+                context.DestroyMonster(arg1: new[] {5001, 5002, 5003, 5004, 5100, 5005, 5006, 5007, 5012, 5013});
                 context.SetEffect(arg1: new[] {1000}, arg2: true);
                 context.SetEffect(arg1: new[] {4000}, arg2: false);
                 context.SetMesh(arg1: new[] {1001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {1100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {1101}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209},
-                    arg2: true, arg3: 0, arg4: 100, arg5: 5f);
+                context.SetMesh(arg1: new[] {1100, 1101}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209}, arg2: true, arg3: 0, arg4: 100, arg5: 5f);
                 context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: true);
-                context.SetAgent(arg1: "1300", arg2: true);
-                context.SetAgent(arg1: "1301", arg2: true);
+                context.SetAgent(arg1: new[] {1300, 1301}, arg2: true);
             }
 
             public override void Execute() {
@@ -44,12 +32,7 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateLoadingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {5007}, arg2: false);
-                context.CreateMonster(arg1: new[] {5005}, arg2: false);
-                context.CreateMonster(arg1: new[] {5001}, arg2: false);
-                context.CreateMonster(arg1: new[] {5002}, arg2: false);
-                context.CreateMonster(arg1: new[] {5003}, arg2: false);
-                context.CreateMonster(arg1: new[] {5004}, arg2: false);
+                context.CreateMonster(arg1: new[] {5007, 5005, 5001, 5002, 5003, 5004}, arg2: false);
             }
 
             public override void Execute() {
@@ -188,8 +171,7 @@ namespace Maple2.Trigger._02000296_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetAgent(arg1: "1300", arg2: false);
-                context.SetAgent(arg1: "1301", arg2: false);
+                context.SetAgent(arg1: new[] {1300, 1301}, arg2: false);
                 context.ChangeMonster(arg1: 5012, arg2: 5006);
                 context.ChangeMonster(arg1: 5007, arg2: 5013);
                 context.RemoveBalloonTalk(spawnPointId: 5012);
@@ -237,8 +219,7 @@ namespace Maple2.Trigger._02000296_bf {
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 601, arg2: false);
                 context.DestroyMonster(arg1: new[] {5013});
-                context.SetMesh(arg1: new[] {1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209},
-                    arg2: false, arg3: 500, arg4: 100, arg5: 5f);
+                context.SetMesh(arg1: new[] {1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209}, arg2: false, arg3: 500, arg4: 100, arg5: 5f);
                 context.SetMesh(arg1: new[] {1101}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetLadder(arg1: 110, arg2: true, arg3: true, arg4: 0);
                 context.SetLadder(arg1: 111, arg2: true, arg3: true, arg4: 0);
@@ -260,8 +241,7 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateReactSoulBead01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "1300", arg2: true);
-                context.SetAgent(arg1: "1301", arg2: true);
+                context.SetAgent(arg1: new[] {1300, 1301}, arg2: true);
                 context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20002961, textId: 20002961);
                 context.SetConversation(arg1: 1, arg2: 5006, arg3: "$02000296_BF__MAIN__6$", arg4: 4, arg5: 0);
@@ -355,10 +335,8 @@ namespace Maple2.Trigger._02000296_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {5100, 5001, 5002, 5003, 5004});
-                context.SetMesh(arg1: new[] {1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209},
-                    arg2: true, arg3: 0, arg4: 100, arg5: 5f);
-                context.SetAgent(arg1: "1300", arg2: false);
-                context.SetAgent(arg1: "1301", arg2: false);
+                context.SetMesh(arg1: new[] {1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209}, arg2: true, arg3: 0, arg4: 100, arg5: 5f);
+                context.SetAgent(arg1: new[] {1300, 1301}, arg2: false);
             }
 
             public override void Execute() {

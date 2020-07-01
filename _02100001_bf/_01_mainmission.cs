@@ -7,11 +7,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() {
                 context.ResetTimer(arg1: "10000");
-                context.SetInteractObject(arg1: new[] {10001234}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001235}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001236}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001237}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001238}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001234, 10001235, 10001236, 10001237, 10001238}, arg2: 1);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108});
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
@@ -37,9 +33,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State =
-                        new _checkuser10_guildraid.StateCheckUser10_GuildRaid(context,
-                            new StateDungeonStart(context));
+                    context.State = new _checkuser10_guildraid.StateCheckUser10_GuildRaid(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -193,8 +187,7 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateCinematicTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003512, msg: "$02100001_BF__01_MAINMISSION__2$", duration: 5000,
-                    align: "center", illustId: "0");
+                context.AddCinematicTalk(npcId: 11003512, msg: "$02100001_BF__01_MAINMISSION__2$", duration: 5000, align: "center", illustId: "0");
                 context.SetSkip(arg1: "CinematicTalk01Skip");
             }
 
@@ -230,8 +223,7 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateCinematicTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003512, msg: "$02100001_BF__01_MAINMISSION__3$", duration: 5000,
-                    align: "center", illustId: "0");
+                context.AddCinematicTalk(npcId: 11003512, msg: "$02100001_BF__01_MAINMISSION__3$", duration: 5000, align: "center", illustId: "0");
                 context.SetSkip(arg1: "CinematicTalk02Skip");
             }
 
@@ -292,11 +284,7 @@ namespace Maple2.Trigger._02100001_bf {
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10001234}, arg2: 0)
-                    && context.ObjectInteracted(arg1: new[] {10001235}, arg2: 0)
-                    && context.ObjectInteracted(arg1: new[] {10001236}, arg2: 0)
-                    && context.ObjectInteracted(arg1: new[] {10001237}, arg2: 0)
-                    && context.ObjectInteracted(arg1: new[] {10001238}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001234}, arg2: 0) && context.ObjectInteracted(arg1: new[] {10001235}, arg2: 0) && context.ObjectInteracted(arg1: new[] {10001236}, arg2: 0) && context.ObjectInteracted(arg1: new[] {10001237}, arg2: 0) && context.ObjectInteracted(arg1: new[] {10001238}, arg2: 0)) {
                     context.State = new StateMissionComplete(context);
                     return;
                 }
@@ -319,11 +307,7 @@ namespace Maple2.Trigger._02100001_bf {
                 context.ResetTimer(arg1: "10000");
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetEventUI(arg1: 5, arg2: "$02100001_BF__01_MAINMISSION__4$", arg3: 3000);
-                context.SetInteractObject(arg1: new[] {10001234}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001235}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001236}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001237}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001238}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001234, 10001235, 10001236, 10001237, 10001238}, arg2: 2);
             }
 
             public override void Execute() {
@@ -376,8 +360,7 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateBadEndingTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003517, msg: "$02100001_BF__01_MAINMISSION__5$", duration: 5000,
-                    align: "center", illustId: "0");
+                context.AddCinematicTalk(npcId: 11003517, msg: "$02100001_BF__01_MAINMISSION__5$", duration: 5000, align: "center", illustId: "0");
                 context.SetSkip(arg1: "BadEndingTalk01Skip");
             }
 
@@ -507,8 +490,7 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateHappyEndingTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003512, msg: "$02100001_BF__01_MAINMISSION__7$", duration: 5000,
-                    align: "center", illustId: "0");
+                context.AddCinematicTalk(npcId: 11003512, msg: "$02100001_BF__01_MAINMISSION__7$", duration: 5000, align: "center", illustId: "0");
                 context.SetSkip(arg1: "HappyEndingTalk01Skip");
             }
 

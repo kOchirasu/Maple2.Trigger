@@ -4,14 +4,7 @@ namespace Maple2.Trigger._02020027_bf {
             internal State입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
-                context.SetAgent(arg1: "8004", arg2: true);
-                context.SetAgent(arg1: "8005", arg2: true);
-                context.SetAgent(arg1: "8006", arg2: true);
-                context.SetAgent(arg1: "8007", arg2: true);
-                context.SetAgent(arg1: "8008", arg2: true);
+                context.SetAgent(arg1: new[] {8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: true);
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetUserValue(triggerId: 99990003, key: "Timer", value: 0);
@@ -54,9 +47,7 @@ namespace Maple2.Trigger._02020027_bf {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {5001, 5002}, arg2: false);
-                context.ShowCaption(type: "VerticalCaption", title: "$02020027_BF__main__2$",
-                    desc: "$02020027_BF__main__3$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 4000, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "$02020027_BF__main__2$", desc: "$02020027_BF__main__3$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
             }
 
             public override void Execute() {
@@ -110,8 +101,7 @@ namespace Maple2.Trigger._02020027_bf {
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Talk_B", arg3: 18430f);
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$02020027_BF__main__5$", arg4: 3, arg5: 0);
-                context.AddCinematicTalk(npcId: 24120006, illustId: "Mason_normal", msg: "$02020027_BF__main__0$",
-                    duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 24120006, illustId: "Mason_normal", msg: "$02020027_BF__main__0$", duration: 4000, align: "left");
                 context.RemoveBuff(arg1: 901, arg2: 51200001);
             }
 
@@ -130,8 +120,7 @@ namespace Maple2.Trigger._02020027_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 5004, arg2: true);
-                context.AddCinematicTalk(npcId: 24120006, illustId: "Mason_normal", msg: "$02020027_BF__main__1$",
-                    duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 24120006, illustId: "Mason_normal", msg: "$02020027_BF__main__1$", duration: 4000, align: "left");
             }
 
             public override void Execute() {
@@ -148,8 +137,7 @@ namespace Maple2.Trigger._02020027_bf {
             internal State카메라_메이슨설명3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 24120006, illustId: "Mason_normal", msg: "$02020027_BF__main__6$",
-                    duration: 4000, align: "left");
+                context.AddCinematicTalk(npcId: 24120006, illustId: "Mason_normal", msg: "$02020027_BF__main__6$", duration: 4000, align: "left");
                 context.SetSceneSkip();
             }
 
@@ -188,14 +176,7 @@ namespace Maple2.Trigger._02020027_bf {
             internal State전투_진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8001", arg2: false);
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
-                context.SetAgent(arg1: "8004", arg2: false);
-                context.SetAgent(arg1: "8005", arg2: false);
-                context.SetAgent(arg1: "8006", arg2: false);
-                context.SetAgent(arg1: "8007", arg2: false);
-                context.SetAgent(arg1: "8008", arg2: false);
+                context.SetAgent(arg1: new[] {8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: false);
                 context.SetUserValue(triggerId: 99990002, key: "battlesetting", value: 1);
             }
 
@@ -216,15 +197,13 @@ namespace Maple2.Trigger._02020027_bf {
 
             public override void Execute() {
                 if (context.GetDungeonFirstUserMissionScore() >= 1500) {
-                    context.SideNpcTalk(npcId: 24120006, illust: "Mason_normal", duration: 6089,
-                        script: "$02020027_BF__main__7$", voice: @"ko/Npc/00002100");
+                    context.SideNpcTalk(npcId: 24120006, illust: "Mason_normal", duration: 6089, script: "$02020027_BF__main__7$", voice: @"ko/Npc/00002100");
                     context.State = new State던전종료_A랭크이상(context);
                     return;
                 }
 
                 if (context.GetDungeonFirstUserMissionScore() < 1500) {
-                    context.SideNpcTalk(npcId: 24120006, illust: "Mason_closeEye", duration: 5000,
-                        script: "$02020027_BF__main__8$", voice: @"ko/Npc/00002099");
+                    context.SideNpcTalk(npcId: 24120006, illust: "Mason_closeEye", duration: 5000, script: "$02020027_BF__main__8$", voice: @"ko/Npc/00002099");
                     context.State = new State던전종료_A랭크미만(context);
                     return;
                 }

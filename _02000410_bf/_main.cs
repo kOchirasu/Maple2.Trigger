@@ -5,8 +5,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6010, 6011}, arg2: true, arg3: 1, arg4: 1);
-                context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003}, arg2: false);
-                context.SetMesh(arg1: new[] {6004, 6005}, arg2: false);
+                context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
             }
@@ -59,8 +58,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State두번째페이즈_인페르녹전함(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg3: 0,
-                    arg4: 0, arg5: 0.5f);
+                context.SetMesh(arg1: new[] {6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg3: 0, arg4: 0, arg5: 0.5f);
                 context.DungeonMissionComplete(feature: "DungeonRankBalance_01", missionId: 24090007);
                 context.DungeonMissionComplete(feature: "DungeonRankBalance_02", missionId: 24090017);
             }

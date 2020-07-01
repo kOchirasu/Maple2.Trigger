@@ -4,11 +4,9 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {8340}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001196}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001212}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001196, 10001212}, arg2: 2);
             }
 
             public override void Execute() {
@@ -90,11 +88,9 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 7340, key: "Color34", value: 1);
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {8340}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001196}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10001212}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10001196, 10001212}, arg2: 0);
             }
 
             public override void Execute() {
@@ -145,8 +141,7 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckSameUserTag(triggerBoxId: 9340)
-                    && context.GetUserCount(boxId: 9340) == 2) {
+                if (context.CheckSameUserTag(triggerBoxId: 9340) && context.GetUserCount(boxId: 9340) == 2) {
                     context.State = new StateEnable7342(context);
                     return;
                 }
@@ -203,8 +198,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8340}, arg2: true);
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10001196}, arg2: 2);
             }
 
@@ -260,8 +254,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8340}, arg2: false);
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -284,11 +277,9 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 7340, key: "Color34", value: 1);
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {8340}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001196}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10001212}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10001196, 10001212}, arg2: 0);
             }
 
             public override void Execute() {
@@ -339,8 +330,7 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckSameUserTag(triggerBoxId: 9340)
-                    && context.GetUserCount(boxId: 9340) == 3) {
+                if (context.CheckSameUserTag(triggerBoxId: 9340) && context.GetUserCount(boxId: 9340) == 3) {
                     context.State = new StateEnable7343(context);
                     return;
                 }
@@ -397,8 +387,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8340}, arg2: true);
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10001196}, arg2: 2);
             }
 
@@ -454,8 +443,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8340}, arg2: false);
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -478,11 +466,9 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 7340, key: "Color34", value: 1);
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {8340}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001196}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10001212}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10001196, 10001212}, arg2: 0);
             }
 
             public override void Execute() {
@@ -533,8 +519,7 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckSameUserTag(triggerBoxId: 9340)
-                    && context.GetUserCount(boxId: 9340) == 4) {
+                if (context.CheckSameUserTag(triggerBoxId: 9340) && context.GetUserCount(boxId: 9340) == 4) {
                     context.State = new StateEnable7344(context);
                     return;
                 }
@@ -591,8 +576,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8340}, arg2: true);
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10001196}, arg2: 2);
             }
 
@@ -648,8 +632,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8340}, arg2: false);
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -672,11 +655,9 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 7340, key: "Color34", value: 1);
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {8340}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001196}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10001212}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10001196, 10001212}, arg2: 0);
             }
 
             public override void Execute() {
@@ -727,8 +708,7 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckSameUserTag(triggerBoxId: 9340)
-                    && context.GetUserCount(boxId: 9340) == 5) {
+                if (context.CheckSameUserTag(triggerBoxId: 9340) && context.GetUserCount(boxId: 9340) == 5) {
                     context.State = new StateEnable7345(context);
                     return;
                 }
@@ -785,8 +765,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8340}, arg2: true);
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: true, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10001196}, arg2: 2);
             }
 
@@ -842,8 +821,7 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8340}, arg2: false);
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -865,11 +843,9 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0,
-                    arg5: 0f);
+                context.SetMesh(arg1: new[] {8341, 8342, 8343, 8344, 8345, 8346}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {8340}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10001196}, arg2: 0);
-                context.SetInteractObject(arg1: new[] {10001212}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10001196, 10001212}, arg2: 0);
                 context.SetUserValue(key: "Barrier34", value: 0);
             }
 

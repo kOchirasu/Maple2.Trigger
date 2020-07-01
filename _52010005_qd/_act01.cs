@@ -9,8 +9,7 @@ namespace Maple2.Trigger._52010005_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002820},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002820}, arg3: new byte[] {2})) {
                     context.State = new StateQ1_마샤르교체01(context);
                     return;
                 }
@@ -199,8 +198,7 @@ namespace Maple2.Trigger._52010005_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002821},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002821}, arg3: new byte[] {2})) {
                     context.State = new StateQ1_퇴장(context);
                     return;
                 }
@@ -213,8 +211,7 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ1_퇴장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {103});
-                context.DestroyMonster(arg1: new[] {202});
+                context.DestroyMonster(arg1: new[] {103, 202});
                 context.CreateMonster(arg1: new[] {101}, arg2: true);
             }
 

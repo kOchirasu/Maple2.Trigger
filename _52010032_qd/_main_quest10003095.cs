@@ -4,13 +4,11 @@ namespace Maple2.Trigger._52010032_qd {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003095},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003095}, arg3: new byte[] {1})) {
                     context.State = new StateReady(context);
                     return;
                 }
@@ -54,8 +52,7 @@ namespace Maple2.Trigger._52010032_qd {
                 context.SetProductionUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.AddCinematicTalk(npcId: 11003389, msg: "$52010032_QD__MAIN_QUEST10003095__0$", duration: 4000);
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$52010032_QD__MAIN_QUEST10003095__1$", duration: 2000,
-                    delayTick: 2000);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52010032_QD__MAIN_QUEST10003095__1$", duration: 2000, delayTick: 2000);
             }
 
             public override void Execute() {
@@ -140,8 +137,7 @@ namespace Maple2.Trigger._52010032_qd {
                 context.AddCinematicTalk(npcId: 11003406, msg: "$52010032_QD__MAIN_QUEST10003095__5$", duration: 4000);
                 context.AddCinematicTalk(npcId: 11003389, msg: "$52010032_QD__MAIN_QUEST10003095__6$", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003406, msg: "$52010032_QD__MAIN_QUEST10003095__7$", duration: 3000);
-                context.AddBalloonTalk(spawnPointId: 0, msg: "$52010032_QD__MAIN_QUEST10003095__8$", duration: 2000,
-                    delayTick: 6000);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52010032_QD__MAIN_QUEST10003095__8$", duration: 2000, delayTick: 6000);
             }
 
             public override void Execute() {
@@ -178,8 +174,7 @@ namespace Maple2.Trigger._52010032_qd {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(arg1: new[] {4003, 4001}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Bore_B");
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Dead_Idle_A", arg3: 100000000f);
                 context.FaceEmotion(spawnPointId: 101, emotionName: "Trigger_Dead");
                 context.SetPcEmotionSequence(arg1: "Talk_A");
@@ -245,8 +240,7 @@ namespace Maple2.Trigger._52010032_qd {
                 context.SetAchievement(arg1: 2001, arg2: "trigger", arg3: "Namid2");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
             }
 
             public override void Execute() {

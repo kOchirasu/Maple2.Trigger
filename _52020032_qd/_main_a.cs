@@ -6,43 +6,36 @@ namespace Maple2.Trigger._52020032_qd {
             public override void OnEnter() {
                 context.SetActor(arg1: 8001, arg2: false, arg3: "Damg_Idle_B");
                 context.SetInteractObject(arg1: new[] {10001281}, arg2: 0);
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200100},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200100}, arg3: new byte[] {3})) {
                     context.State = new StateDel_Npc(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200095},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200095}, arg3: new byte[] {1})) {
                     context.State = new StateReady(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200095},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200095}, arg3: new byte[] {2})) {
                     context.State = new StateExit(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200095},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200095}, arg3: new byte[] {3})) {
                     context.State = new StateExit(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200100},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200100}, arg3: new byte[] {1})) {
                     context.State = new StateExit(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200100},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200100}, arg3: new byte[] {2})) {
                     context.State = new StateExit(context);
                     return;
                 }
@@ -56,20 +49,11 @@ namespace Maple2.Trigger._52020032_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 8001, arg2: true, arg3: "Damg_Idle_B");
-                context.CreateMonster(arg1: new[] {102}, arg2: true);
-                context.CreateMonster(arg1: new[] {201}, arg2: true);
-                context.CreateMonster(arg1: new[] {202}, arg2: true);
-                context.CreateMonster(arg1: new[] {203}, arg2: true);
-                context.CreateMonster(arg1: new[] {204}, arg2: true);
-                context.CreateMonster(arg1: new[] {205}, arg2: true);
-                context.CreateMonster(arg1: new[] {206}, arg2: true);
-                context.CreateMonster(arg1: new[] {207}, arg2: true);
-                context.CreateMonster(arg1: new[] {301}, arg2: true);
+                context.CreateMonster(arg1: new[] {102, 201, 202, 203, 204, 205, 206, 207, 301}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60200095},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60200095}, arg3: new byte[] {1})) {
                     context.State = new StateBattle_A(context);
                     return;
                 }
@@ -161,8 +145,7 @@ namespace Maple2.Trigger._52020032_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Attack_01_B");
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
                 context.SetSceneSkip();
             }
 
@@ -180,8 +163,7 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateBattle_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
+                context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.5f);
@@ -207,8 +189,7 @@ namespace Maple2.Trigger._52020032_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200095},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200095}, arg3: new byte[] {2})) {
                     context.State = new StateExit(context);
                     return;
                 }

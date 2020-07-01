@@ -24,38 +24,32 @@ namespace Maple2.Trigger._52020002_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001779},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001779}, arg3: new byte[] {3})) {
                     context.State = new State진행이후_기본(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000},
-                    arg2: new[] {50001775, 50001776, 50001777, 50001778, 50001779}, arg3: new byte[] {1, 2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001775, 50001776, 50001777, 50001778, 50001779}, arg3: new byte[] {1, 2})) {
                     context.State = new State제이든보고연출_완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001774},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001774}, arg3: new byte[] {3})) {
                     context.State = new State제이든보고연출_완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001774},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001774}, arg3: new byte[] {2})) {
                     context.State = new State제이든보고연출_완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001774},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001774}, arg3: new byte[] {1})) {
                     context.State = new State제이든보고연출_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001773},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001773}, arg3: new byte[] {3})) {
                     context.State = new State기본(context);
                     return;
                 }
@@ -159,8 +153,7 @@ namespace Maple2.Trigger._52020002_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcId: 11003540, illustId: "Jaiden_normal",
-                    msg: @"안녕하세요? 제가 나타났습니다.\n연출은 제작 중이니 기다려 주세요.", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003540, illustId: "Jaiden_normal", msg: @"안녕하세요? 제가 나타났습니다.\n연출은 제작 중이니 기다려 주세요.", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 120, arg2: "Talk_A", arg3: 3000f);
                 context.SetSkip(arg1: "01_skip");
             }

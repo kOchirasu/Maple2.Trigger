@@ -855,8 +855,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[]
-                    {410, 411, 412, 413, 414, 415, 420, 421, 422, 423, 430, 431, 432, 433, 434, 435});
+                context.DestroyMonster(arg1: new[] {410, 411, 412, 413, 414, 415, 420, 421, 422, 423, 430, 431, 432, 433, 434, 435});
                 context.SetUserValue(key: "SpyKandura", value: 0);
             }
 

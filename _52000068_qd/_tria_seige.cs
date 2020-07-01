@@ -33,35 +33,24 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetActor(arg1: 16010, arg2: false, arg3: "Idle_A");
                 context.SetActor(arg1: 16011, arg2: false, arg3: "Idle_A");
                 context.SetActor(arg1: 16012, arg2: false, arg3: "Stun_A");
-                context.SetInteractObject(arg1: new[] {10001074}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001075}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001076}, arg2: 2);
-                context.SetEffect(arg1: new[] {601}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10001074, 10001075, 10001076}, arg2: 2);
+                context.SetEffect(arg1: new[] {601, 602, 603}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetBreakable(
-                    arg1: new[] {
-                        5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015,
-                        5016
-                    }, arg2: false);
+                context.SetBreakable(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015, 5016}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {20002264},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {20002264}, arg3: new byte[] {3})) {
                     context.State = new State재접속유저케어(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {20002263},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {20002263}, arg3: new byte[] {3})) {
                     context.State = new State조디사망연출(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {20002263},
-                    arg3: new byte[] {3})) {
+                if (!context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {20002263}, arg3: new byte[] {3})) {
                     context.State = new State침공이벤트시작(context);
                     return;
                 }
@@ -74,17 +63,8 @@ namespace Maple2.Trigger._52000068_qd {
             internal State재접속유저케어(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(
-                    arg1: new[] {
-                        10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012,
-                        10013, 10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023
-                    }, arg2: false);
-                context.CreateMonster(
-                    arg1: new[] {10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034},
-                    arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {5000, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {5000, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012}, arg2: false);
                 context.SetSound(arg1: 90000, arg2: true);
             }
 
@@ -112,26 +92,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State조디사망연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAgent(arg1: "8000", arg2: false);
-                context.SetAgent(arg1: "8001", arg2: false);
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
-                context.SetAgent(arg1: "8004", arg2: false);
-                context.SetAgent(arg1: "8005", arg2: false);
-                context.SetAgent(arg1: "8006", arg2: false);
-                context.SetAgent(arg1: "8007", arg2: false);
-                context.SetAgent(arg1: "8008", arg2: false);
-                context.SetAgent(arg1: "8009", arg2: false);
-                context.SetAgent(arg1: "8010", arg2: false);
-                context.SetAgent(arg1: "8011", arg2: false);
-                context.SetAgent(arg1: "8012", arg2: false);
-                context.SetAgent(arg1: "8013", arg2: false);
-                context.SetAgent(arg1: "8014", arg2: false);
-                context.SetAgent(arg1: "8015", arg2: false);
-                context.SetAgent(arg1: "8016", arg2: false);
-                context.SetAgent(arg1: "8017", arg2: false);
-                context.SetAgent(arg1: "8018", arg2: false);
-                context.SetAgent(arg1: "8019", arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019}, arg2: false);
             }
 
             public override void Execute() {
@@ -166,42 +127,10 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetAgent(arg1: "8000", arg2: true);
-                context.SetAgent(arg1: "8001", arg2: true);
-                context.SetAgent(arg1: "8002", arg2: true);
-                context.SetAgent(arg1: "8003", arg2: true);
-                context.SetAgent(arg1: "8004", arg2: true);
-                context.SetAgent(arg1: "8005", arg2: false);
-                context.SetAgent(arg1: "8006", arg2: false);
-                context.SetAgent(arg1: "8007", arg2: false);
-                context.SetAgent(arg1: "8008", arg2: false);
-                context.SetAgent(arg1: "8009", arg2: false);
-                context.SetAgent(arg1: "8010", arg2: false);
-                context.SetAgent(arg1: "8011", arg2: false);
-                context.SetAgent(arg1: "8012", arg2: false);
-                context.SetAgent(arg1: "8013", arg2: false);
-                context.SetAgent(arg1: "8014", arg2: false);
-                context.SetAgent(arg1: "8015", arg2: false);
-                context.SetAgent(arg1: "8016", arg2: false);
-                context.SetAgent(arg1: "8017", arg2: false);
-                context.SetAgent(arg1: "8018", arg2: false);
-                context.SetAgent(arg1: "8019", arg2: false);
-                context.CreateMonster(arg1: new[] {1001, 2001, 2002}, arg2: false);
-                context.CreateMonster(
-                    arg1: new[] {
-                        4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015,
-                        4016, 4017, 4018, 4019, 4020, 4021, 4022, 4023, 4024, 4025, 4026
-                    }, arg2: false);
-                context.CreateMonster(
-                    arg1: new[] {
-                        4100, 4101, 4102, 4103, 4104, 4105, 4106, 4107, 4108, 4109, 4110, 4111, 4112, 4113, 4114, 4115,
-                        4116, 4117, 4118, 4119, 4120, 4121, 4122, 4123, 4124
-                    }, arg2: false);
-                context.SetBreakable(
-                    arg1: new[] {
-                        5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015,
-                        5016
-                    }, arg2: true);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004}, arg2: true);
+                context.SetAgent(arg1: new[] {8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 2001, 2002, 4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016, 4017, 4018, 4019, 4020, 4021, 4022, 4023, 4024, 4025, 4026, 4100, 4101, 4102, 4103, 4104, 4105, 4106, 4107, 4108, 4109, 4110, 4111, 4112, 4113, 4114, 4115, 4116, 4117, 4118, 4119, 4120, 4121, 4122, 4123, 4124}, arg2: false);
+                context.SetBreakable(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015, 5016}, arg2: true);
             }
 
             public override void Execute() {
@@ -272,8 +201,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State데블린동작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 11100101, enable: true,
-                    path: @"BG/Common/Sound/Eff_Object_Devlin_Appear_01.xml ");
+                context.SetOnetimeEffect(id: 11100101, enable: true, path: @"BG/Common/Sound/Eff_Object_Devlin_Appear_01.xml ");
                 context.SetNpcEmotionSequence(arg1: 2001, arg2: "AttackReady_A");
             }
 
@@ -309,8 +237,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 2002, arg3: "$52000068_QD__TRIA_SEIGE__0$", arg4: 3, arg5: 0);
-                context.SetOnetimeEffect(id: 1990, enable: true,
-                    path: @"BG/Common/Sound/Eff_Madria_TriaSeige_01_00001990.xml");
+                context.SetOnetimeEffect(id: 1990, enable: true, path: @"BG/Common/Sound/Eff_Madria_TriaSeige_01_00001990.xml");
                 context.CameraSelect(arg1: 303, arg2: true);
             }
 
@@ -420,11 +347,7 @@ namespace Maple2.Trigger._52000068_qd {
                 context.CameraSelect(arg1: 304, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.SetAgent(arg1: "8000", arg2: false);
-                context.SetAgent(arg1: "8001", arg2: false);
-                context.SetAgent(arg1: "8002", arg2: false);
-                context.SetAgent(arg1: "8003", arg2: false);
-                context.SetAgent(arg1: "8004", arg2: false);
+                context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52000068_QD__TRIA_SEIGE__4$", arg4: 4, arg5: 0);
             }
 
@@ -449,9 +372,7 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetInteractObject(arg1: new[] {10001074}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001075}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001076}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001074, 10001075, 10001076}, arg2: 1);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 305, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000068_QD__TRIA_SEIGE__5$", arg4: 4);
@@ -482,10 +403,8 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001074, 10001075, 10001076}, arg2: 2)) {
-                    context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52000068_QD__TRIA_SEIGE__6$", arg4: 4,
-                        arg5: 0);
-                    context.CreateItem(arg1: new[]
-                        {9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012});
+                    context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52000068_QD__TRIA_SEIGE__6$", arg4: 4, arg5: 0);
+                    context.CreateItem(arg1: new[] {9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012});
                     context.AddBuff(arg1: new[] {199}, arg2: 70000058, arg3: 1, arg4: false, arg5: false);
                     context.State = new State임무02대기(context);
                     return;
@@ -516,21 +435,7 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetAgent(arg1: "8005", arg2: true);
-                context.SetAgent(arg1: "8006", arg2: true);
-                context.SetAgent(arg1: "8007", arg2: true);
-                context.SetAgent(arg1: "8008", arg2: true);
-                context.SetAgent(arg1: "8009", arg2: true);
-                context.SetAgent(arg1: "8010", arg2: true);
-                context.SetAgent(arg1: "8011", arg2: true);
-                context.SetAgent(arg1: "8012", arg2: true);
-                context.SetAgent(arg1: "8013", arg2: true);
-                context.SetAgent(arg1: "8014", arg2: true);
-                context.SetAgent(arg1: "8015", arg2: true);
-                context.SetAgent(arg1: "8016", arg2: true);
-                context.SetAgent(arg1: "8017", arg2: true);
-                context.SetAgent(arg1: "8018", arg2: true);
-                context.SetAgent(arg1: "8019", arg2: true);
+                context.SetAgent(arg1: new[] {8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019}, arg2: true);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 306, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001838, arg3: "$52000068_QD__TRIA_SEIGE__7$", arg4: 4);
@@ -575,21 +480,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetAgent(arg1: "8005", arg2: false);
-                context.SetAgent(arg1: "8006", arg2: false);
-                context.SetAgent(arg1: "8007", arg2: false);
-                context.SetAgent(arg1: "8008", arg2: false);
-                context.SetAgent(arg1: "8009", arg2: false);
-                context.SetAgent(arg1: "8010", arg2: false);
-                context.SetAgent(arg1: "8011", arg2: false);
-                context.SetAgent(arg1: "8012", arg2: false);
-                context.SetAgent(arg1: "8013", arg2: false);
-                context.SetAgent(arg1: "8014", arg2: false);
-                context.SetAgent(arg1: "8015", arg2: false);
-                context.SetAgent(arg1: "8016", arg2: false);
-                context.SetAgent(arg1: "8017", arg2: false);
-                context.SetAgent(arg1: "8018", arg2: false);
-                context.SetAgent(arg1: "8019", arg2: false);
+                context.SetAgent(arg1: new[] {8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019}, arg2: false);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.CameraSelect(arg1: 307, arg2: true);
                 context.CreateMonster(arg1: new[] {2003}, arg2: false);

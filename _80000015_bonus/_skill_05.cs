@@ -4,8 +4,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new[] {705}, arg2: false);
-                context.SetSkill(arg1: new[] {727}, arg2: false);
+                context.SetSkill(arg1: new[] {705, 727}, arg2: false);
                 context.SetVisibleBreakableObject(arg1: new[] {7501, 7502, 7503, 7504}, arg2: false);
                 context.SetBreakable(arg1: new[] {7501, 7502, 7503, 7504}, arg2: false);
             }
@@ -59,8 +58,7 @@ namespace Maple2.Trigger._80000015_bonus {
 
             public override void OnEnter() {
                 context.SetBreakable(arg1: new[] {7501, 7502, 7503, 7504}, arg2: false);
-                context.SetSkill(arg1: new[] {705}, arg2: true);
-                context.SetSkill(arg1: new[] {727}, arg2: true);
+                context.SetSkill(arg1: new[] {705, 727}, arg2: true);
             }
 
             public override void Execute() {

@@ -24,14 +24,12 @@ namespace Maple2.Trigger._52010067_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {700}, arg2: new[] {20002290},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {700}, arg2: new[] {20002290}, arg3: new byte[] {2})) {
                     context.State = new State조준씬01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {700}, arg2: new[] {20002290},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {700}, arg2: new[] {20002290}, arg3: new byte[] {3})) {
                     context.State = new State피격씬01(context);
                     return;
                 }
@@ -61,8 +59,7 @@ namespace Maple2.Trigger._52010067_qd {
             internal State연출02_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 3, enable: false,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {
@@ -130,8 +127,7 @@ namespace Maple2.Trigger._52010067_qd {
             internal State연출05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {
@@ -243,8 +239,7 @@ namespace Maple2.Trigger._52010067_qd {
             internal State피격씬04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 4, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
+                context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
             }
 
             public override void Execute() {

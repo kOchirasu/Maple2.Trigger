@@ -5,18 +5,10 @@ namespace Maple2.Trigger._52000032_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 201, arg2: false, arg3: "Idle_A");
-                context.SetMesh(arg1: new[] {3001, 3002, 3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {605}, arg2: false);
-                context.SetEffect(arg1: new[] {606}, arg2: false);
-                context.SetEffect(arg1: new[] {607}, arg2: false);
-                context.SetEffect(arg1: new[] {608}, arg2: false);
-                context.SetEffect(arg1: new[] {609}, arg2: false);
+                context.SetEffect(arg1: new[] {602, 603, 604, 605, 606, 607, 608, 609}, arg2: false);
             }
 
             public override void Execute() {
@@ -34,9 +26,7 @@ namespace Maple2.Trigger._52000032_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.CreateMonster(
-                    arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 2001},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 2001}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
             }
@@ -155,8 +145,7 @@ namespace Maple2.Trigger._52000032_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 200)) {
-                    context.SetEffect(arg1: new[] {604}, arg2: true);
-                    context.SetEffect(arg1: new[] {602}, arg2: true);
+                    context.SetEffect(arg1: new[] {604, 602}, arg2: true);
                     context.State = new State화면전환대기(context);
                     return;
                 }

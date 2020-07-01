@@ -180,8 +180,7 @@ namespace Maple2.Trigger._52000131_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "마무리", arg2: "exit");
-                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__1$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__1$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -216,8 +215,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000131_QD__52000131_MAIN__2$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000131_QD__52000131_MAIN__2$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -251,8 +249,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__3$", duration: 4000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__3$", duration: 4000, align: "right");
             }
 
             public override void Execute() {
@@ -286,8 +283,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000131_QD__52000131_MAIN__4$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000131_QD__52000131_MAIN__4$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -321,8 +317,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__5$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__5$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -356,8 +351,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000131_QD__52000131_MAIN__6$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000131_QD__52000131_MAIN__6$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -391,8 +385,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__7$", duration: 4000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__7$", duration: 4000, align: "right");
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
             }
 
@@ -410,8 +403,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000131_QD__52000131_MAIN__8$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000131_QD__52000131_MAIN__8$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -428,8 +420,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__9$", duration: 4000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__9$", duration: 4000, align: "right");
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
             }
 
@@ -447,8 +438,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000131_QD__52000131_MAIN__10$", duration: 4000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000131_QD__52000131_MAIN__10$", duration: 4000, align: "right");
             }
 
             public override void Execute() {
@@ -466,10 +456,8 @@ namespace Maple2.Trigger._52000131_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__11$", duration: 3000,
-                    align: "right");
-                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__12$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__11$", duration: 3000, align: "right");
+                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__12$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -487,10 +475,8 @@ namespace Maple2.Trigger._52000131_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
-                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__13$", duration: 3000,
-                    align: "right");
-                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__14$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__13$", duration: 3000, align: "right");
+                context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__14$", duration: 3000, align: "right");
             }
 
             public override void Execute() {
@@ -524,8 +510,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 0, msg: "$52000131_QD__52000131_MAIN__15$", duration: 3000,
-                    align: "right");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000131_QD__52000131_MAIN__15$", duration: 3000, align: "right");
             }
 
             public override void Execute() {

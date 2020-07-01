@@ -8,9 +8,7 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetUserValue(key: "DungeonQuit", value: 0);
                 context.SetActor(arg1: 4002, arg2: true, arg3: "Interaction_tankskyblue_A01_100");
                 context.SetActor(arg1: 4102, arg2: true, arg3: "Interaction_tankskyblue_A01_100");
-                context.SetEffect(arg1: new[] {5302}, arg2: false);
-                context.SetEffect(arg1: new[] {5402}, arg2: false);
-                context.SetEffect(arg1: new[] {5502}, arg2: false);
+                context.SetEffect(arg1: new[] {5302, 5402, 5502}, arg2: false);
             }
 
             public override void Execute() {
@@ -57,9 +55,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge100_Refil(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5302}, arg2: true);
-                context.SetEffect(arg1: new[] {5402}, arg2: true);
-                context.SetEffect(arg1: new[] {5502}, arg2: true);
+                context.SetEffect(arg1: new[] {5302, 5402, 5502}, arg2: true);
                 context.ResetTimer(arg1: "100100");
             }
 
@@ -108,9 +104,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge75_Refil(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5302}, arg2: true);
-                context.SetEffect(arg1: new[] {5402}, arg2: true);
-                context.SetEffect(arg1: new[] {5502}, arg2: true);
+                context.SetEffect(arg1: new[] {5302, 5402, 5502}, arg2: true);
                 context.ResetTimer(arg1: "10075");
             }
 
@@ -159,9 +153,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge50_Refil(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5302}, arg2: true);
-                context.SetEffect(arg1: new[] {5402}, arg2: true);
-                context.SetEffect(arg1: new[] {5502}, arg2: true);
+                context.SetEffect(arg1: new[] {5302, 5402, 5502}, arg2: true);
                 context.ResetTimer(arg1: "10050");
             }
 
@@ -210,9 +202,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge25_Refil(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5302}, arg2: true);
-                context.SetEffect(arg1: new[] {5402}, arg2: true);
-                context.SetEffect(arg1: new[] {5502}, arg2: true);
+                context.SetEffect(arg1: new[] {5302, 5402, 5502}, arg2: true);
                 context.ResetTimer(arg1: "10025");
             }
 
@@ -255,9 +245,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge1_Refil(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5302}, arg2: true);
-                context.SetEffect(arg1: new[] {5402}, arg2: true);
-                context.SetEffect(arg1: new[] {5502}, arg2: true);
+                context.SetEffect(arg1: new[] {5302, 5402, 5502}, arg2: true);
             }
 
             public override void Execute() {

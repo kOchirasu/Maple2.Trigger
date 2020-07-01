@@ -65,9 +65,7 @@ namespace Maple2.Trigger._99999840 {
             internal State메시지1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1,
-                    arg2: @"검은 군단을 해치우고 자원을 획득하세요.\n획득한 자원을 20개 모아서 보스를 불러내세요.\n한번에 최대 9개의 자원을 들 수 있습니다.",
-                    arg3: 4000);
+                context.SetEventUI(arg1: 1, arg2: @"검은 군단을 해치우고 자원을 획득하세요.\n획득한 자원을 20개 모아서 보스를 불러내세요.\n한번에 최대 9개의 자원을 들 수 있습니다.", arg3: 4000);
             }
 
             public override void Execute() {

@@ -9,14 +9,12 @@ namespace Maple2.Trigger._52000093_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {50100490},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {50100490}, arg3: new byte[] {1})) {
                     context.State = new State20002274진행중일때(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {20002274},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {20002274}, arg3: new byte[] {1})) {
                     context.State = new State20002274진행중일때(context);
                     return;
                 }
@@ -29,8 +27,7 @@ namespace Maple2.Trigger._52000093_qd {
             internal State20002274진행중일때(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008},
-                    arg2: false);
+                context.CreateMonster(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, arg2: false);
             }
 
             public override void Execute() {

@@ -5,20 +5,14 @@ namespace Maple2.Trigger._02000163_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101});
-                context.SetEffect(arg1: new[] {201}, arg2: true);
-                context.SetEffect(arg1: new[] {202}, arg2: true);
-                context.SetEffect(arg1: new[] {203}, arg2: true);
-                context.SetEffect(arg1: new[] {204}, arg2: true);
+                context.SetEffect(arg1: new[] {201, 202, 203, 204}, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000079}, arg2: 1);
             }
 
             public override void Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000079}, arg2: 0)) {
                     context.DestroyMonster(arg1: new[] {101});
-                    context.SetEffect(arg1: new[] {201}, arg2: false);
-                    context.SetEffect(arg1: new[] {202}, arg2: false);
-                    context.SetEffect(arg1: new[] {203}, arg2: false);
-                    context.SetEffect(arg1: new[] {204}, arg2: false);
+                    context.SetEffect(arg1: new[] {201, 202, 203, 204}, arg2: false);
                     context.State = new State매킨생성(context);
                     return;
                 }

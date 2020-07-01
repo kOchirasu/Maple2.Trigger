@@ -7,22 +7,13 @@ namespace Maple2.Trigger._02000194_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetInteractObject(arg1: new[] {10001054}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001055}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001056}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {10001057}, arg2: 2);
-                context.SetInteractObject(arg1: new[] {11000004}, arg2: 2);
-                context.SetMesh(arg1: new[] {3005, 3006, 3007}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3201, 3202, 3203}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new[] {3301, 3302, 3303, 3304}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {10001054, 10001055, 10001056, 10001057, 11000004}, arg2: 2);
+                context.SetMesh(arg1: new[] {3005, 3006, 3007, 3001, 3002, 3003, 3004, 3101, 3102, 3103, 3104, 3201, 3202, 3203, 3301, 3302, 3303, 3304}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -51,10 +42,7 @@ namespace Maple2.Trigger._02000194_bf {
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20001941, textId: 20001941, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetInteractObject(arg1: new[] {10001054}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001055}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001056}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10001057}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001054, 10001055, 10001056, 10001057}, arg2: 1);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 2000}, arg2: false);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.AddBuff(arg1: new[] {101}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);

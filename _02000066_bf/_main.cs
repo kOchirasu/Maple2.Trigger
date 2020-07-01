@@ -6,26 +6,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {602}, arg2: false);
-                context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetEffect(arg1: new[] {605}, arg2: false);
-                context.SetEffect(arg1: new[] {606}, arg2: false);
-                context.SetEffect(arg1: new[] {607}, arg2: false);
-                context.SetEffect(arg1: new[] {608}, arg2: false);
-                context.SetEffect(arg1: new[] {609}, arg2: false);
-                context.SetEffect(arg1: new[] {610}, arg2: false);
-                context.SetEffect(arg1: new[] {611}, arg2: false);
-                context.SetEffect(arg1: new[] {612}, arg2: false);
-                context.SetEffect(arg1: new[] {613}, arg2: false);
-                context.SetEffect(arg1: new[] {614}, arg2: false);
-                context.SetEffect(arg1: new[] {615}, arg2: false);
-                context.SetEffect(arg1: new[] {616}, arg2: false);
-                context.SetEffect(arg1: new[] {617}, arg2: false);
-                context.SetEffect(arg1: new[] {618}, arg2: false);
-                context.SetEffect(arg1: new[] {619}, arg2: false);
-                context.SetEffect(arg1: new[] {620}, arg2: false);
-                context.SetEffect(arg1: new[] {6003}, arg2: false);
+                context.SetEffect(arg1: new[] {602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 6003}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.CreateMonster(arg1: new[] {99}, arg2: false);
@@ -34,8 +15,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -112,8 +92,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg2: true);
-                context.AddCinematicTalk(npcId: 11000032, illustId: "Anos_serious", msg: "$02000066_BF__MAIN__4$",
-                    duration: 5000, align: "center");
+                context.AddCinematicTalk(npcId: 11000032, illustId: "Anos_serious", msg: "$02000066_BF__MAIN__4$", duration: 5000, align: "center");
                 context.SetSkip(arg1: "1차어나운스03");
             }
 
@@ -131,8 +110,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State1차어나운스02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11000032, illustId: "Anos_serious", msg: "$02000066_BF__MAIN__5$",
-                    duration: 5000, align: "center");
+                context.AddCinematicTalk(npcId: 11000032, illustId: "Anos_serious", msg: "$02000066_BF__MAIN__5$", duration: 5000, align: "center");
                 context.SetSkip(arg1: "1차어나운스03");
             }
 
@@ -189,47 +167,7 @@ namespace Maple2.Trigger._02000066_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {1001});
-                context.DestroyMonster(arg1: new[] {1002});
-                context.DestroyMonster(arg1: new[] {1003});
-                context.DestroyMonster(arg1: new[] {1004});
-                context.DestroyMonster(arg1: new[] {1005});
-                context.DestroyMonster(arg1: new[] {1006});
-                context.DestroyMonster(arg1: new[] {1007});
-                context.DestroyMonster(arg1: new[] {1008});
-                context.DestroyMonster(arg1: new[] {1101});
-                context.DestroyMonster(arg1: new[] {1102});
-                context.DestroyMonster(arg1: new[] {1103});
-                context.DestroyMonster(arg1: new[] {1104});
-                context.DestroyMonster(arg1: new[] {1105});
-                context.DestroyMonster(arg1: new[] {1106});
-                context.DestroyMonster(arg1: new[] {1107});
-                context.DestroyMonster(arg1: new[] {1108});
-                context.DestroyMonster(arg1: new[] {1201});
-                context.DestroyMonster(arg1: new[] {1202});
-                context.DestroyMonster(arg1: new[] {1203});
-                context.DestroyMonster(arg1: new[] {1204});
-                context.DestroyMonster(arg1: new[] {1205});
-                context.DestroyMonster(arg1: new[] {1206});
-                context.DestroyMonster(arg1: new[] {1207});
-                context.DestroyMonster(arg1: new[] {1208});
-                context.DestroyMonster(arg1: new[] {1299});
-                context.DestroyMonster(arg1: new[] {1301});
-                context.DestroyMonster(arg1: new[] {1302});
-                context.DestroyMonster(arg1: new[] {1303});
-                context.DestroyMonster(arg1: new[] {1304});
-                context.DestroyMonster(arg1: new[] {1305});
-                context.DestroyMonster(arg1: new[] {1306});
-                context.DestroyMonster(arg1: new[] {1307});
-                context.DestroyMonster(arg1: new[] {1308});
-                context.DestroyMonster(arg1: new[] {1401});
-                context.DestroyMonster(arg1: new[] {1402});
-                context.DestroyMonster(arg1: new[] {1403});
-                context.DestroyMonster(arg1: new[] {1404});
-                context.DestroyMonster(arg1: new[] {1601});
-                context.DestroyMonster(arg1: new[] {1602});
-                context.DestroyMonster(arg1: new[] {1603});
-                context.DestroyMonster(arg1: new[] {1604});
+                context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1299, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1401, 1402, 1403, 1404, 1601, 1602, 1603, 1604});
             }
         }
 
@@ -347,47 +285,7 @@ namespace Maple2.Trigger._02000066_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {1001});
-                context.DestroyMonster(arg1: new[] {1002});
-                context.DestroyMonster(arg1: new[] {1003});
-                context.DestroyMonster(arg1: new[] {1004});
-                context.DestroyMonster(arg1: new[] {1005});
-                context.DestroyMonster(arg1: new[] {1006});
-                context.DestroyMonster(arg1: new[] {1007});
-                context.DestroyMonster(arg1: new[] {1008});
-                context.DestroyMonster(arg1: new[] {1101});
-                context.DestroyMonster(arg1: new[] {1102});
-                context.DestroyMonster(arg1: new[] {1103});
-                context.DestroyMonster(arg1: new[] {1104});
-                context.DestroyMonster(arg1: new[] {1105});
-                context.DestroyMonster(arg1: new[] {1106});
-                context.DestroyMonster(arg1: new[] {1107});
-                context.DestroyMonster(arg1: new[] {1108});
-                context.DestroyMonster(arg1: new[] {1201});
-                context.DestroyMonster(arg1: new[] {1202});
-                context.DestroyMonster(arg1: new[] {1203});
-                context.DestroyMonster(arg1: new[] {1204});
-                context.DestroyMonster(arg1: new[] {1205});
-                context.DestroyMonster(arg1: new[] {1206});
-                context.DestroyMonster(arg1: new[] {1207});
-                context.DestroyMonster(arg1: new[] {1208});
-                context.DestroyMonster(arg1: new[] {1299});
-                context.DestroyMonster(arg1: new[] {1301});
-                context.DestroyMonster(arg1: new[] {1302});
-                context.DestroyMonster(arg1: new[] {1303});
-                context.DestroyMonster(arg1: new[] {1304});
-                context.DestroyMonster(arg1: new[] {1305});
-                context.DestroyMonster(arg1: new[] {1306});
-                context.DestroyMonster(arg1: new[] {1307});
-                context.DestroyMonster(arg1: new[] {1308});
-                context.DestroyMonster(arg1: new[] {1401});
-                context.DestroyMonster(arg1: new[] {1402});
-                context.DestroyMonster(arg1: new[] {1403});
-                context.DestroyMonster(arg1: new[] {1404});
-                context.DestroyMonster(arg1: new[] {1601});
-                context.DestroyMonster(arg1: new[] {1602});
-                context.DestroyMonster(arg1: new[] {1603});
-                context.DestroyMonster(arg1: new[] {1604});
+                context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1299, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1401, 1402, 1403, 1404, 1601, 1602, 1603, 1604});
             }
         }
 
@@ -504,47 +402,7 @@ namespace Maple2.Trigger._02000066_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[] {1001});
-                context.DestroyMonster(arg1: new[] {1002});
-                context.DestroyMonster(arg1: new[] {1003});
-                context.DestroyMonster(arg1: new[] {1004});
-                context.DestroyMonster(arg1: new[] {1005});
-                context.DestroyMonster(arg1: new[] {1006});
-                context.DestroyMonster(arg1: new[] {1007});
-                context.DestroyMonster(arg1: new[] {1008});
-                context.DestroyMonster(arg1: new[] {1101});
-                context.DestroyMonster(arg1: new[] {1102});
-                context.DestroyMonster(arg1: new[] {1103});
-                context.DestroyMonster(arg1: new[] {1104});
-                context.DestroyMonster(arg1: new[] {1105});
-                context.DestroyMonster(arg1: new[] {1106});
-                context.DestroyMonster(arg1: new[] {1107});
-                context.DestroyMonster(arg1: new[] {1108});
-                context.DestroyMonster(arg1: new[] {1201});
-                context.DestroyMonster(arg1: new[] {1202});
-                context.DestroyMonster(arg1: new[] {1203});
-                context.DestroyMonster(arg1: new[] {1204});
-                context.DestroyMonster(arg1: new[] {1205});
-                context.DestroyMonster(arg1: new[] {1206});
-                context.DestroyMonster(arg1: new[] {1207});
-                context.DestroyMonster(arg1: new[] {1208});
-                context.DestroyMonster(arg1: new[] {1299});
-                context.DestroyMonster(arg1: new[] {1301});
-                context.DestroyMonster(arg1: new[] {1302});
-                context.DestroyMonster(arg1: new[] {1303});
-                context.DestroyMonster(arg1: new[] {1304});
-                context.DestroyMonster(arg1: new[] {1305});
-                context.DestroyMonster(arg1: new[] {1306});
-                context.DestroyMonster(arg1: new[] {1307});
-                context.DestroyMonster(arg1: new[] {1308});
-                context.DestroyMonster(arg1: new[] {1401});
-                context.DestroyMonster(arg1: new[] {1402});
-                context.DestroyMonster(arg1: new[] {1403});
-                context.DestroyMonster(arg1: new[] {1404});
-                context.DestroyMonster(arg1: new[] {1601});
-                context.DestroyMonster(arg1: new[] {1602});
-                context.DestroyMonster(arg1: new[] {1603});
-                context.DestroyMonster(arg1: new[] {1604});
+                context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1299, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1401, 1402, 1403, 1404, 1601, 1602, 1603, 1604});
             }
         }
 

@@ -22,8 +22,7 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000,
-                    script: "$02020201_BF__MAIN__0$");
+                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020201_BF__MAIN__0$");
             }
 
             public override void Execute() {
@@ -40,8 +39,7 @@ namespace Maple2.Trigger._02020201_bf {
             internal State제단파괴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000,
-                    script: "$02020201_BF__MAIN__1$");
+                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020201_BF__MAIN__1$");
                 context.AddBalloonTalk(spawnPointId: 101, msg: "$02020201_BF__MAIN__2$", duration: 3000, delayTick: 0);
                 context.DestroyMonster(arg1: new[] {201, 202, 203});
             }

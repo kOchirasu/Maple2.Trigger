@@ -25,20 +25,17 @@ namespace Maple2.Trigger._52100002_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100060},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100060}, arg3: new byte[] {1})) {
                     context.State = new State룸체크(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100060},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100060}, arg3: new byte[] {2})) {
                     context.State = new State퀘스트완료가능이거나완료1(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100060},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100060}, arg3: new byte[] {3})) {
                     context.State = new State퀘스트완료가능이거나완료1(context);
                     return;
                 }
@@ -265,10 +262,8 @@ namespace Maple2.Trigger._52100002_qd {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "연출종료");
-                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__MAIN__0$",
-                    align: "left", duration: 4000);
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__1$",
-                    align: "right", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__MAIN__0$", align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__1$", align: "right", duration: 3000);
             }
 
             public override void Execute() {
@@ -354,10 +349,8 @@ namespace Maple2.Trigger._52100002_qd {
             internal State자매대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__MAIN__3$",
-                    align: "left", duration: 4000);
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__4$",
-                    align: "right", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__MAIN__3$", align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__4$", align: "right", duration: 4000);
             }
 
             public override void Execute() {
@@ -374,8 +367,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal State자매대화02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__MAIN__5$",
-                    align: "left", duration: 5000);
+                context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__MAIN__5$", align: "left", duration: 5000);
                 context.SetConversation(arg1: 1, arg2: 1097, arg3: "$02000392_BF__MAIN__6$", arg4: 2, arg5: 2);
             }
 
@@ -393,8 +385,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal State자매대화03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__11$",
-                    align: "left", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__11$", align: "left", duration: 4000);
             }
 
             public override void Execute() {
@@ -428,8 +419,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal State자매대화04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__7$",
-                    align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__7$", align: "left", duration: 3000);
             }
 
             public override void Execute() {
@@ -446,8 +436,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal State자매대화05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__8$",
-                    align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__8$", align: "left", duration: 3000);
             }
 
             public override void Execute() {
@@ -464,8 +453,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal State자매대화06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__9$",
-                    align: "left", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__9$", align: "left", duration: 3000);
             }
 
             public override void Execute() {
@@ -483,8 +471,7 @@ namespace Maple2.Trigger._52100002_qd {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.DestroyMonster(arg1: new[] {1098, 1099});
-                context.DestroyMonster(arg1: new[] {1096, 1097});
+                context.DestroyMonster(arg1: new[] {1098, 1099, 1096, 1097});
                 context.CreateMonster(arg1: new[] {1096, 1097}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);

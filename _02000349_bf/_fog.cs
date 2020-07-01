@@ -22,8 +22,7 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1098});
-                context.SetEffect(arg1: new[] {600}, arg2: false);
-                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {600, 602}, arg2: false);
                 context.SetInteractObject(arg1: new[] {10000813}, arg2: 2);
             }
 

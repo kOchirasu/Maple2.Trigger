@@ -6,15 +6,11 @@ namespace Maple2.Trigger._52020011_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.SetActor(arg1: 8001, arg2: false, arg3: "Attack_Idle_A");
-                context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetEffect(arg1: new[] {5002}, arg2: false);
-                context.SetEffect(arg1: new[] {5003}, arg2: false);
-                context.SetEffect(arg1: new[] {5004}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200130},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200130}, arg3: new byte[] {2})) {
                     context.State = new StateReady(context);
                     return;
                 }
@@ -101,8 +97,7 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateScene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetEffect(arg1: new[] {5002}, arg2: true);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: true);
             }
 
             public override void Execute() {
@@ -119,8 +114,7 @@ namespace Maple2.Trigger._52020011_qd {
             internal StateScene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5003}, arg2: true);
-                context.SetEffect(arg1: new[] {5004}, arg2: true);
+                context.SetEffect(arg1: new[] {5003, 5004}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.AddBalloonTalk(spawnPointId: 0, msg: "!", duration: 2000, delayTick: 0);
             }

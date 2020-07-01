@@ -57,15 +57,7 @@ namespace Maple2.Trigger._02000293_bf {
             internal State트리거03시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new[] {25000});
-                context.DestroyMonster(arg1: new[] {25001});
-                context.DestroyMonster(arg1: new[] {25002});
-                context.DestroyMonster(arg1: new[] {25003});
-                context.DestroyMonster(arg1: new[] {25004});
-                context.DestroyMonster(arg1: new[] {25005});
-                context.DestroyMonster(arg1: new[] {25006});
-                context.DestroyMonster(arg1: new[] {25007});
-                context.DestroyMonster(arg1: new[] {25008});
+                context.DestroyMonster(arg1: new[] {25000, 25001, 25002, 25003, 25004, 25005, 25006, 25007, 25008});
                 context.SetActor(arg1: 1007, arg2: false, arg3: "Closed");
             }
 

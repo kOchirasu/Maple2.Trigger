@@ -29,8 +29,7 @@ namespace Maple2.Trigger._52000002_qd {
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new[] {10000612, 10000613, 10000614, 10000615, 10000616},
-                    arg2: 2)) {
+                if (context.ObjectInteracted(arg1: new[] {10000612, 10000613, 10000614, 10000615, 10000616}, arg2: 2)) {
                     context.State = new State종료(context);
                     return;
                 }

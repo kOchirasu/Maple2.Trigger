@@ -5,8 +5,7 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000897}, arg2: 0);
-                context.SetEffect(arg1: new[] {7003}, arg2: false);
-                context.SetEffect(arg1: new[] {7004}, arg2: false);
+                context.SetEffect(arg1: new[] {7003, 7004}, arg2: false);
                 context.SetMesh(arg1: new[] {1161, 1162, 1163}, arg2: false);
             }
 
@@ -44,8 +43,7 @@ namespace Maple2.Trigger._02010086_bf {
             internal State작동_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7003}, arg2: true);
-                context.SetEffect(arg1: new[] {7004}, arg2: true);
+                context.SetEffect(arg1: new[] {7003, 7004}, arg2: true);
                 context.SetMesh(arg1: new[] {1171, 1172, 1173}, arg2: false, arg4: 300, arg5: 10f);
                 context.SetMesh(arg1: new[] {1161, 1162, 1163}, arg2: true, arg4: 300, arg5: 10f);
                 context.SetTimer(arg1: "3", arg2: 3);

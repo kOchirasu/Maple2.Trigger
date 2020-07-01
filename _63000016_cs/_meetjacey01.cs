@@ -8,8 +8,7 @@ namespace Maple2.Trigger._63000016_cs {
                 context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: true);
                 context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {5000}, arg2: false);
-                context.SetEffect(arg1: new[] {6000}, arg2: false);
+                context.SetEffect(arg1: new[] {5000, 6000}, arg2: false);
             }
 
             public override void Execute() {
@@ -68,8 +67,7 @@ namespace Maple2.Trigger._63000016_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000431},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000431}, arg3: new byte[] {2})) {
                     context.State = new StateMoveToJacey01(context);
                     return;
                 }
@@ -561,8 +559,7 @@ namespace Maple2.Trigger._63000016_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9002}, arg2: new[] {90000431},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9002}, arg2: new[] {90000431}, arg3: new byte[] {2})) {
                     context.State = new StateJaceyQuest01(context);
                     return;
                 }

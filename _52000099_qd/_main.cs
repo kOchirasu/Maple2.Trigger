@@ -6,20 +6,17 @@ namespace Maple2.Trigger._52000099_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100520},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100520}, arg3: new byte[] {3})) {
                     context.State = new Statephase_end_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100520},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100520}, arg3: new byte[] {2})) {
                     context.State = new Statephase_end_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100520},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100520}, arg3: new byte[] {1})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -34,20 +31,17 @@ namespace Maple2.Trigger._52000099_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100540},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100540}, arg3: new byte[] {3})) {
                     context.State = new Statephase_end_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100540},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100540}, arg3: new byte[] {2})) {
                     context.State = new Statephase_end_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100540},
-                    arg3: new byte[] {1})) {
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100540}, arg3: new byte[] {1})) {
                     context.State = new Statephase_end_01(context);
                     return;
                 }
@@ -64,27 +58,11 @@ namespace Maple2.Trigger._52000099_qd {
                 context.SetActor(arg1: 3101, arg2: false, arg3: "Attack_Idle_A");
                 context.SetActor(arg1: 3102, arg2: false, arg3: "Attack_Idle_A");
                 context.SetLocalCamera(cameraId: 8017, enable: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216,
-                        2217, 2218, 2219, 2220
-                    }, arg2: true);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236,
-                        2237, 2238, 2239, 2240
-                    }, arg2: true);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266,
-                        2267, 2268, 2269, 2270
-                    }, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, arg2: true);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004}, arg2: false);
                 context.CreateMonster(arg1: new[] {101}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetEffect(arg1: new[] {7002}, arg2: false);
-                context.SetEffect(arg1: new[] {7003}, arg2: false);
+                context.SetEffect(arg1: new[] {7001, 7002, 7003}, arg2: false);
                 context.SetEffect(arg1: new[] {7004}, arg2: true);
                 context.DestroyMonster(arg1: new[] {-1});
             }
@@ -144,8 +122,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal Statescene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__20$",
-                    duration: 5000, align: "left");
+                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__20$", duration: 5000, align: "left");
                 context.CameraSelectPath(arg1: new[] {8004, 8005}, arg2: false);
             }
 
@@ -165,8 +142,7 @@ namespace Maple2.Trigger._52000099_qd {
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_2003");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2004");
-                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__21$",
-                    duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__21$", duration: 3000, align: "left");
             }
 
             public override void Execute() {
@@ -186,8 +162,7 @@ namespace Maple2.Trigger._52000099_qd {
                 context.CameraSelectPath(arg1: new[] {8006, 8007}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_2006");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2005");
-                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__22$",
-                    duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__22$", duration: 3000, align: "left");
                 context.SetEffect(arg1: new[] {7001}, arg2: true);
             }
 
@@ -206,8 +181,7 @@ namespace Maple2.Trigger._52000099_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7002}, arg2: true);
-                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__23$",
-                    duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__23$", duration: 3000, align: "left");
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "IceSphere_A,Attack_Idle_A");
             }
 
@@ -301,21 +275,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal Statescene_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216,
-                        2217, 2218, 2219, 2220
-                    }, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236,
-                        2237, 2238, 2239, 2240
-                    }, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266,
-                        2267, 2268, 2269, 2270
-                    }, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, arg2: false);
                 context.AddBalloonTalk(spawnPointId: 101, msg: "$52000099_QD__MAIN__24$", duration: 3000);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2007");
             }
@@ -392,21 +352,7 @@ namespace Maple2.Trigger._52000099_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000099, arg2: 2);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216,
-                        2217, 2218, 2219, 2220
-                    }, arg2: true);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236,
-                        2237, 2238, 2239, 2240
-                    }, arg2: true);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266,
-                        2267, 2268, 2269, 2270
-                    }, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, arg2: true);
                 context.CameraSelectPath(arg1: new[] {8011, 8012}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
@@ -466,16 +412,11 @@ namespace Maple2.Trigger._52000099_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8015, 8016}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_2008");
-                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__27$",
-                    duration: 5000, align: "left");
-                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__28$",
-                    duration: 5000, align: "left");
-                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__17$",
-                    duration: 3000, align: "left");
-                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__18$",
-                    duration: 3000, align: "left");
-                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__19$",
-                    duration: 5000, align: "left");
+                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__27$", duration: 5000, align: "left");
+                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__28$", duration: 5000, align: "left");
+                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__17$", duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__18$", duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__19$", duration: 5000, align: "left");
             }
 
             public override void Execute() {
@@ -511,21 +452,7 @@ namespace Maple2.Trigger._52000099_qd {
                 context.DestroyMonster(arg1: new[] {122}, arg2: true);
                 context.DestroyMonster(arg1: new[] {123}, arg2: true);
                 context.CreateMonster(arg1: new[] {124}, arg2: true);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216,
-                        2217, 2218, 2219, 2220
-                    }, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236,
-                        2237, 2238, 2239, 2240
-                    }, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266,
-                        2267, 2268, 2269, 2270
-                    }, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, arg2: false);
                 context.AddBuff(arg1: new[] {701}, arg2: 71000007, arg3: 1, arg4: false, arg5: false);
                 context.AddBuff(arg1: new[] {701}, arg2: 71000008, arg3: 1, arg4: false, arg5: false);
                 context.SetMesh(arg1: new[] {3001, 3003, 3004}, arg2: true);
@@ -782,8 +709,7 @@ namespace Maple2.Trigger._52000099_qd {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new[]
-                    {207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220});
+                context.DestroyMonster(arg1: new[] {207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220});
             }
         }
 
@@ -791,21 +717,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal Statephase_b_scene_end(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216,
-                        2217, 2218, 2219, 2220
-                    }, arg2: true);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236,
-                        2237, 2238, 2239, 2240
-                    }, arg2: true);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266,
-                        2267, 2268, 2269, 2270
-                    }, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, arg2: true);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004}, arg2: false);
                 context.HideGuideSummary(entityId: 25200993);
                 context.SetLocalCamera(cameraId: 8017, enable: false);
@@ -831,9 +743,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal Statephase_b_scene_end_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetPcEmotionSequence(
-                    arg1:
-                    "Emotion_Disappoint_Idle_A,Emotion_Disappoint_Idle_A,Emotion_Disappoint_Idle_A,Emotion_Disappoint_Idle_A");
+                context.SetPcEmotionSequence(arg1: "Emotion_Disappoint_Idle_A,Emotion_Disappoint_Idle_A,Emotion_Disappoint_Idle_A,Emotion_Disappoint_Idle_A");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(arg1: new[] {8018, 8017}, arg2: false);
             }
@@ -871,8 +781,7 @@ namespace Maple2.Trigger._52000099_qd {
             public override void OnEnter() {
                 context.SetActor(arg1: 3101, arg2: true, arg3: "Regen_A");
                 context.SetActor(arg1: 3102, arg2: true, arg3: "Regen_A");
-                context.SetEffect(arg1: new[] {7006}, arg2: true);
-                context.SetEffect(arg1: new[] {7007}, arg2: true);
+                context.SetEffect(arg1: new[] {7006, 7007}, arg2: true);
             }
 
             public override void Execute() {
@@ -891,9 +800,7 @@ namespace Maple2.Trigger._52000099_qd {
             public override void OnEnter() {
                 context.SetActor(arg1: 3101, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 3102, arg2: true, arg3: "Idle_A");
-                context.SetPcEmotionSequence(
-                    arg1:
-                    "Jump_Damg_A,Attack_Idle_A,Attack_Idle_A,Attack_Idle_A,Attack_Idle_A,Attack_Idle_A,Attack_Idle_A");
+                context.SetPcEmotionSequence(arg1: "Jump_Damg_A,Attack_Idle_A,Attack_Idle_A,Attack_Idle_A,Attack_Idle_A,Attack_Idle_A,Attack_Idle_A");
             }
 
             public override void Execute() {
@@ -965,15 +872,10 @@ namespace Maple2.Trigger._52000099_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {124}, arg2: true);
                 context.CameraSelectPath(arg1: new[] {8021}, arg2: false);
-                context.CreateMonster(arg1: new[] {106}, arg2: true);
-                context.CreateMonster(arg1: new[] {103}, arg2: true);
-                context.SetPcEmotionSequence(
-                    arg1:
-                    "Emotion_Disappoint_Idle_A,Emotion_Disappoint_Idle_A,Emotion_Disappoint_Idle_A,Emotion_Disappoint_Idle_A");
-                context.AddCinematicTalk(npcId: 11004034, illustId: "LapentaMage_Idle", msg: "$52000099_QD__MAIN__33$",
-                    duration: 4000, align: "Left");
-                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__34$",
-                    duration: 2000, align: "Right");
+                context.CreateMonster(arg1: new[] {106, 103}, arg2: true);
+                context.SetPcEmotionSequence(arg1: "Emotion_Disappoint_Idle_A,Emotion_Disappoint_Idle_A,Emotion_Disappoint_Idle_A,Emotion_Disappoint_Idle_A");
+                context.AddCinematicTalk(npcId: 11004034, illustId: "LapentaMage_Idle", msg: "$52000099_QD__MAIN__33$", duration: 4000, align: "Left");
+                context.AddCinematicTalk(npcId: 11003087, illustId: "11003087", msg: "$52000099_QD__MAIN__34$", duration: 2000, align: "Right");
             }
 
             public override void Execute() {
@@ -992,10 +894,8 @@ namespace Maple2.Trigger._52000099_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8022}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2009");
-                context.AddCinematicTalk(npcId: 11000076, illustId: "11000076", msg: "$52000099_QD__MAIN__29$",
-                    duration: 5000, align: "left");
-                context.AddCinematicTalk(npcId: 11004034, illustId: "LapentaMage_Idle", msg: "$52000099_QD__MAIN__30$",
-                    duration: 5000, align: "left");
+                context.AddCinematicTalk(npcId: 11000076, illustId: "11000076", msg: "$52000099_QD__MAIN__29$", duration: 5000, align: "left");
+                context.AddCinematicTalk(npcId: 11004034, illustId: "LapentaMage_Idle", msg: "$52000099_QD__MAIN__30$", duration: 5000, align: "left");
                 context.SetActor(arg1: 3101, arg2: false, arg3: "Regen_A");
                 context.SetActor(arg1: 3102, arg2: false, arg3: "Regen_A");
             }
@@ -1014,10 +914,8 @@ namespace Maple2.Trigger._52000099_qd {
             internal Statephase_b_scene_end_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetNpcEmotionSequence(arg1: 103,
-                    arg2: "Attack_Idle_A,Attack_Idle_A,Attack_Idle_A,Attack_Idle_A");
-                context.AddCinematicTalk(npcId: 11000076, illustId: "11000076", msg: "$52000099_QD__MAIN__31$",
-                    duration: 5000, align: "left");
+                context.SetNpcEmotionSequence(arg1: 103, arg2: "Attack_Idle_A,Attack_Idle_A,Attack_Idle_A,Attack_Idle_A");
+                context.AddCinematicTalk(npcId: 11000076, illustId: "11000076", msg: "$52000099_QD__MAIN__31$", duration: 5000, align: "left");
             }
 
             public override void Execute() {
@@ -1035,8 +933,7 @@ namespace Maple2.Trigger._52000099_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8023}, arg2: false);
-                context.CreateMonster(arg1: new[] {110}, arg2: true);
-                context.CreateMonster(arg1: new[] {126}, arg2: true);
+                context.CreateMonster(arg1: new[] {110, 126}, arg2: true);
                 context.SetEffect(arg1: new[] {7100}, arg2: true);
             }
 
@@ -1315,24 +1212,8 @@ namespace Maple2.Trigger._52000099_qd {
             internal Statephase_c_16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216,
-                        2217, 2218, 2219, 2220
-                    }, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236,
-                        2237, 2238, 2239, 2240
-                    }, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266,
-                        2267, 2268, 2269, 2270, 3101, 3102
-                    }, arg2: false);
-                context.CreateMonster(arg1: new[] {201, 202, 205, 204}, arg2: true);
-                context.CreateMonster(arg1: new[] {211, 212, 215, 214}, arg2: true);
-                context.CreateMonster(arg1: new[] {215, 216, 217, 218}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270, 3101, 3102}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 202, 205, 204, 211, 212, 215, 214, 215, 216, 217, 218}, arg2: true);
                 context.AddBuff(arg1: new[] {701}, arg2: 99910180, arg3: 1, arg4: false, arg5: false);
                 context.DestroyMonster(arg1: new[] {103});
                 context.SetProductionUI(arg1: 0);
@@ -1430,20 +1311,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal Statephase_b_skip_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {126}, arg2: true);
-                context.CreateMonster(arg1: new[] {106}, arg2: true);
-                context.CreateMonster(arg1: new[] {110}, arg2: true);
-                context.CreateMonster(arg1: new[] {111}, arg2: true);
-                context.CreateMonster(arg1: new[] {112}, arg2: true);
-                context.CreateMonster(arg1: new[] {113}, arg2: true);
-                context.CreateMonster(arg1: new[] {114}, arg2: true);
-                context.CreateMonster(arg1: new[] {115}, arg2: true);
-                context.CreateMonster(arg1: new[] {116}, arg2: true);
-                context.CreateMonster(arg1: new[] {117}, arg2: true);
-                context.CreateMonster(arg1: new[] {118}, arg2: true);
-                context.CreateMonster(arg1: new[] {119}, arg2: true);
-                context.CreateMonster(arg1: new[] {120}, arg2: true);
-                context.CreateMonster(arg1: new[] {121}, arg2: true);
+                context.CreateMonster(arg1: new[] {126, 106, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121}, arg2: true);
             }
 
             public override void Execute() {
@@ -1506,24 +1374,8 @@ namespace Maple2.Trigger._52000099_qd {
             internal Statephase_b_skip_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216,
-                        2217, 2218, 2219, 2220
-                    }, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236,
-                        2237, 2238, 2239, 2240
-                    }, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266,
-                        2267, 2268, 2269, 2270, 3101, 3102
-                    }, arg2: false);
-                context.CreateMonster(arg1: new[] {201, 202, 205, 204}, arg2: true);
-                context.CreateMonster(arg1: new[] {211, 212, 215, 214}, arg2: true);
-                context.CreateMonster(arg1: new[] {215, 216, 217, 218}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270, 3101, 3102}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 202, 205, 204, 211, 212, 215, 214, 215, 216, 217, 218}, arg2: true);
                 context.AddBuff(arg1: new[] {701}, arg2: 99910180, arg3: 1, arg4: false, arg5: false);
                 context.DestroyMonster(arg1: new[] {103});
                 context.SetProductionUI(arg1: 0);
@@ -1592,21 +1444,7 @@ namespace Maple2.Trigger._52000099_qd {
             public override void OnEnter() {
                 context.SetActor(arg1: 3101, arg2: false);
                 context.SetActor(arg1: 3102, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216,
-                        2217, 2218, 2219, 2220
-                    }, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236,
-                        2237, 2238, 2239, 2240
-                    }, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266,
-                        2267, 2268, 2269, 2270
-                    }, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230, 2231, 2232, 2233, 2234, 2235, 2236, 2237, 2238, 2239, 2240, 2251, 2252, 2253, 2254, 2255, 2256, 2257, 2258, 2259, 2260, 2261, 2262, 2263, 2264, 2265, 2266, 2267, 2268, 2269, 2270}, arg2: false);
                 context.DestroyMonster(arg1: new[] {-1});
             }
 
@@ -1624,10 +1462,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal Statephase_end_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new[] {126}, arg2: true);
-                context.CreateMonster(arg1: new[] {110}, arg2: true);
-                context.CreateMonster(arg1: new[] {106}, arg2: true);
-                context.CreateMonster(arg1: new[] {111}, arg2: true);
+                context.CreateMonster(arg1: new[] {126, 110, 106, 111}, arg2: true);
                 context.SetEffect(arg1: new[] {7101}, arg2: true);
             }
 

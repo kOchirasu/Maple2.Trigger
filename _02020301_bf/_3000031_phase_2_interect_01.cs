@@ -21,10 +21,8 @@ namespace Maple2.Trigger._02020301_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair",
-                    script: "$02020301_BF__3000031_PHASE_2_INTERECT_01__0$", duration: 3176);
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair",
-                    script: "$02020301_BF__3000031_PHASE_2_INTERECT_01__1$", duration: 3176);
+                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__3000031_PHASE_2_INTERECT_01__0$", duration: 3176);
+                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__3000031_PHASE_2_INTERECT_01__1$", duration: 3176);
             }
 
             public override void Execute() {

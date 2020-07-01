@@ -8,8 +8,7 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetUserValue(key: "StopSpawn", value: 0);
                 context.SetUserValue(key: "SpawnHold", value: 0);
                 context.DestroyMonster(arg1: new[] {10100, 10075, 10050, 10025, 10001, 11001, 11002, 11003});
-                context.SetEffect(arg1: new[] {5101}, arg2: false);
-                context.SetEffect(arg1: new[] {5201}, arg2: false);
+                context.SetEffect(arg1: new[] {5101, 5201}, arg2: false);
             }
 
             public override void Execute() {

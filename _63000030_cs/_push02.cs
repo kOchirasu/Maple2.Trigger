@@ -4,21 +4,8 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {6107}, arg2: false);
-                context.SetEffect(arg1: new[] {6006}, arg2: false);
-                context.SetAgent(arg1: "8100", arg2: false);
-                context.SetAgent(arg1: "8101", arg2: false);
-                context.SetAgent(arg1: "8102", arg2: false);
-                context.SetAgent(arg1: "8103", arg2: false);
-                context.SetAgent(arg1: "8104", arg2: false);
-                context.SetAgent(arg1: "8105", arg2: false);
-                context.SetAgent(arg1: "8106", arg2: false);
-                context.SetAgent(arg1: "8107", arg2: false);
-                context.SetAgent(arg1: "8108", arg2: false);
-                context.SetAgent(arg1: "8109", arg2: false);
-                context.SetAgent(arg1: "8110", arg2: false);
-                context.SetAgent(arg1: "8111", arg2: false);
-                context.SetAgent(arg1: "8112", arg2: false);
+                context.SetEffect(arg1: new[] {6107, 6006}, arg2: false);
+                context.SetAgent(arg1: new[] {8100, 8101, 8102, 8103, 8104, 8105, 8106, 8107, 8108, 8109, 8110, 8111, 8112}, arg2: false);
                 context.SetSkill(arg1: new[] {7000}, arg2: false);
                 context.SetMesh(arg1: new[] {3100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "PushStart", value: 0);
@@ -39,19 +26,7 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetAgent(arg1: "8100", arg2: true);
-                context.SetAgent(arg1: "8101", arg2: true);
-                context.SetAgent(arg1: "8102", arg2: true);
-                context.SetAgent(arg1: "8103", arg2: true);
-                context.SetAgent(arg1: "8104", arg2: true);
-                context.SetAgent(arg1: "8105", arg2: true);
-                context.SetAgent(arg1: "8106", arg2: true);
-                context.SetAgent(arg1: "8107", arg2: true);
-                context.SetAgent(arg1: "8108", arg2: true);
-                context.SetAgent(arg1: "8109", arg2: true);
-                context.SetAgent(arg1: "8110", arg2: true);
-                context.SetAgent(arg1: "8111", arg2: true);
-                context.SetAgent(arg1: "8112", arg2: true);
+                context.SetAgent(arg1: new[] {8100, 8101, 8102, 8103, 8104, 8105, 8106, 8107, 8108, 8109, 8110, 8111, 8112}, arg2: true);
             }
 
             public override void Execute() {

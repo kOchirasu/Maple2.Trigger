@@ -11,16 +11,10 @@ namespace Maple2.Trigger._52000066_qd {
                 context.SetLadder(arg1: 1004, arg2: false, arg3: false);
                 context.SetLadder(arg1: 1005, arg2: false, arg3: false);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Closed");
-                context.SetMesh(
-                    arg1: new[] {
-                        2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025,
-                        2026, 2027, 2028, 2029
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 3f);
+                context.SetMesh(arg1: new[] {2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029}, arg2: true, arg3: 0, arg4: 0, arg5: 3f);
                 context.SetEffect(arg1: new[] {5001}, arg2: false);
-                context.SetBreakable(arg1: new[] {4100}, arg2: false);
-                context.SetBreakable(arg1: new[] {4200}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4100}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4200}, arg2: false);
+                context.SetBreakable(arg1: new[] {4100, 4200}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4100, 4200}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: false);
             }
 
@@ -176,11 +170,7 @@ namespace Maple2.Trigger._52000066_qd {
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000066, arg2: 40);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Opened");
-                context.SetMesh(
-                    arg1: new[] {
-                        2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025,
-                        2026, 2027, 2028, 2029
-                    }, arg2: false, arg3: 500, arg4: 50, arg5: 1f);
+                context.SetMesh(arg1: new[] {2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029}, arg2: false, arg3: 500, arg4: 50, arg5: 1f);
             }
 
             public override void Execute() {
@@ -275,10 +265,8 @@ namespace Maple2.Trigger._52000066_qd {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 2, key: "TrapLeverOn", value: 2);
                 context.HideGuideSummary(entityId: 25200662);
-                context.SetBreakable(arg1: new[] {4100}, arg2: true);
-                context.SetBreakable(arg1: new[] {4200}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {4100}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new[] {4200}, arg2: true);
+                context.SetBreakable(arg1: new[] {4100, 4200}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {4100, 4200}, arg2: true);
             }
 
             public override void Execute() {
@@ -355,10 +343,8 @@ namespace Maple2.Trigger._52000066_qd {
             internal State4thTrainMove01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {4100}, arg2: false);
-                context.SetBreakable(arg1: new[] {4200}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4100}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new[] {4200}, arg2: false);
+                context.SetBreakable(arg1: new[] {4100, 4200}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4100, 4200}, arg2: false);
                 context.SetUserValue(triggerId: 3, key: "TrainMove", value: 1);
             }
 
@@ -470,8 +456,7 @@ namespace Maple2.Trigger._52000066_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10001028},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10001028}, arg3: new byte[] {2})) {
                     context.State = new StateQuit(context);
                     return;
                 }

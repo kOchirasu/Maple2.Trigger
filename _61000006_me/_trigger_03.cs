@@ -80,8 +80,7 @@ namespace Maple2.Trigger._61000006_me {
                 context.SetUserValue(triggerId: 999111, key: "gameStart", value: 1);
                 context.SetTimer(arg1: "160", arg2: 160, arg3: false, arg4: true);
                 context.SetMesh(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509}, arg2: false);
-                context.SetInteractObject(arg1: new[] {10000224}, arg2: 1);
-                context.SetInteractObject(arg1: new[] {10000214}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000224, 10000214}, arg2: 1);
                 context.SetAchievement(arg1: 402, arg2: "trigger", arg3: "dailyquest_start");
                 context.GiveGuildExp(boxId: false, type: 2);
                 context.StartMiniGame(boxId: 499, round: 1, gameName: "crazyrunner");

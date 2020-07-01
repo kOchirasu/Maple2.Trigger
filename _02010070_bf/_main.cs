@@ -7,22 +7,10 @@ namespace Maple2.Trigger._02010070_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 800, arg2: true, arg3: "Closed");
-                context.SetMesh(arg1: new[] {699}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(
-                    arg1: new[] {
-                        700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718,
-                        719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737
-                    }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkill(arg1: new[] {7004}, arg2: false);
-                context.SetEffect(arg1: new[] {7000}, arg2: false);
-                context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetEffect(arg1: new[] {7002}, arg2: false);
-                context.SetEffect(arg1: new[] {7003}, arg2: false);
-                context.SetEffect(arg1: new[] {7010}, arg2: false);
-                context.SetEffect(arg1: new[] {7011}, arg2: false);
-                context.SetEffect(arg1: new[] {7012}, arg2: false);
-                context.DestroyMonster(arg1: new[] {22201, 22202, 22203, 22204});
-                context.DestroyMonster(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006});
+                context.SetEffect(arg1: new[] {7000, 7001, 7002, 7003, 7010, 7011, 7012}, arg2: false);
+                context.DestroyMonster(arg1: new[] {22201, 22202, 22203, 22204, 1000, 1001, 1002, 1003, 1004, 1005, 1006});
                 context.SetEffect(arg1: new[] {95222}, arg2: false);
                 context.CreateMonster(arg1: new[] {1007, 1008}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
@@ -46,8 +34,7 @@ namespace Maple2.Trigger._02010070_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -78,14 +65,8 @@ namespace Maple2.Trigger._02010070_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 800, arg2: false, arg3: "Opend");
-                context.SetRandomMesh(
-                    arg1: new[] {
-                        700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718,
-                        719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737
-                    }, arg2: false, arg3: 38, arg4: 50, arg5: 2);
-                context.SetEffect(arg1: new[] {7010}, arg2: true);
-                context.SetEffect(arg1: new[] {7011}, arg2: true);
-                context.SetEffect(arg1: new[] {7012}, arg2: true);
+                context.SetRandomMesh(arg1: new[] {700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737}, arg2: false, arg3: 38, arg4: 50, arg5: 2);
+                context.SetEffect(arg1: new[] {7010, 7011, 7012}, arg2: true);
                 context.CreateMonster(arg1: new[] {22201, 22202, 22203, 22204}, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20100701, textId: 20100701, duration: 5000);
@@ -125,9 +106,7 @@ namespace Maple2.Trigger._02010070_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1007, 1008});
                 context.CreateMonster(arg1: new[] {1000, 1001, 1002}, arg2: true);
-                context.SetEffect(arg1: new[] {7010}, arg2: false);
-                context.SetEffect(arg1: new[] {7011}, arg2: false);
-                context.SetEffect(arg1: new[] {7012}, arg2: false);
+                context.SetEffect(arg1: new[] {7010, 7011, 7012}, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 20100702, textId: 20100702, duration: 7000);
             }
@@ -197,8 +176,7 @@ namespace Maple2.Trigger._02010070_bf {
             internal State시작5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {7002}, arg2: true);
-                context.SetEffect(arg1: new[] {7003}, arg2: true);
+                context.SetEffect(arg1: new[] {7002, 7003}, arg2: true);
             }
 
             public override void Execute() {

@@ -20,10 +20,8 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {111});
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair",
-                    script: "$02020301_BF__300006_PHASE_5__0$", duration: 3176);
-                context.SetEffect(arg1: new[] {200021, 200022, 200023, 200024, 200025, 200026, 200027, 200028},
-                    arg2: false);
+                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300006_PHASE_5__0$", duration: 3176);
+                context.SetEffect(arg1: new[] {200021, 200022, 200023, 200024, 200025, 200026, 200027, 200028}, arg2: false);
                 context.SetUserValue(key: "AI_Phase", value: 0);
             }
 
@@ -60,11 +58,9 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetUserValue(triggerId: 3000052, key: "Phase_4_Interect_02", value: 0);
                 context.SetUserValue(triggerId: 3000053, key: "Phase_4_Interect_03", value: 0);
                 context.SetUserValue(triggerId: 3000054, key: "Phase_4_Interect_04", value: 0);
-                context.SetEffect(arg1: new[] {200001, 200002, 200003, 200004, 200005, 200006, 200007, 200008},
-                    arg2: false);
+                context.SetEffect(arg1: new[] {200001, 200002, 200003, 200004, 200005, 200006, 200007, 200008}, arg2: false);
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair",
-                    script: "$02020301_BF__300006_PHASE_5__1$", duration: 3176);
+                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300006_PHASE_5__1$", duration: 3176);
             }
 
             public override void Execute() {
@@ -86,8 +82,7 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetUserValue(triggerId: 3000052, key: "Phase_4_Interect_02", value: 0);
                 context.SetUserValue(triggerId: 3000053, key: "Phase_4_Interect_03", value: 0);
                 context.SetUserValue(triggerId: 3000054, key: "Phase_4_Interect_04", value: 0);
-                context.SetEffect(arg1: new[] {200001, 200002, 200003, 200004, 200005, 200006, 200007, 200008},
-                    arg2: false);
+                context.SetEffect(arg1: new[] {200001, 200002, 200003, 200004, 200005, 200006, 200007, 200008}, arg2: false);
             }
 
             public override void Execute() {
@@ -104,8 +99,7 @@ namespace Maple2.Trigger._02020301_bf {
             internal State택스트_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair",
-                    script: "$02020301_BF__300006_PHASE_5__2$", duration: 3176);
+                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300006_PHASE_5__2$", duration: 3176);
             }
 
             public override void Execute() {
@@ -122,8 +116,7 @@ namespace Maple2.Trigger._02020301_bf {
             internal State택스트_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_normal",
-                    script: "$02020301_BF__300006_PHASE_5__3$", duration: 3176);
+                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_normal", script: "$02020301_BF__300006_PHASE_5__3$", duration: 3176);
             }
 
             public override void Execute() {
@@ -140,22 +133,8 @@ namespace Maple2.Trigger._02020301_bf {
             internal State엘리베이터_동작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410},
-                    arg2: true);
-                context.SetBreakable(arg1: new[] {5411, 5412, 5413, 5414, 5415, 5416, 5417, 5418, 5419, 5420},
-                    arg2: true);
-                context.SetBreakable(arg1: new[] {5421, 5422, 5423, 5424, 5425, 5426, 5427, 5428, 5429, 5430},
-                    arg2: true);
-                context.SetBreakable(arg1: new[] {5431, 5432, 5433, 5434, 5435, 5436, 5437, 5438, 5439, 5440},
-                    arg2: true);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410}, arg2: true);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {5411, 5412, 5413, 5414, 5415, 5416, 5417, 5418, 5419, 5420}, arg2: true);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {5421, 5422, 5423, 5424, 5425, 5426, 5427, 5428, 5429, 5430}, arg2: true);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {5431, 5432, 5433, 5434, 5435, 5436, 5437, 5438, 5439, 5440}, arg2: true);
+                context.SetBreakable(arg1: new[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414, 5415, 5416, 5417, 5418, 5419, 5420, 5421, 5422, 5423, 5424, 5425, 5426, 5427, 5428, 5429, 5430, 5431, 5432, 5433, 5434, 5435, 5436, 5437, 5438, 5439, 5440}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414, 5415, 5416, 5417, 5418, 5419, 5420, 5421, 5422, 5423, 5424, 5425, 5426, 5427, 5428, 5429, 5430, 5431, 5432, 5433, 5434, 5435, 5436, 5437, 5438, 5439, 5440}, arg2: true);
             }
 
             public override void Execute() {
@@ -172,28 +151,9 @@ namespace Maple2.Trigger._02020301_bf {
             internal State엘리베이터_도착(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {
-                        5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512, 5513, 5514, 5515, 5516,
-                        5517, 5518, 5519, 5520, 5521, 5522, 5523, 5524, 5525, 5526, 5527, 5528, 5529, 5530, 5531, 5532,
-                        5533, 5534, 5535, 5536, 5537, 5538, 5539, 5540
-                    }, arg2: true);
-                context.SetBreakable(arg1: new[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410},
-                    arg2: false);
-                context.SetBreakable(arg1: new[] {5411, 5412, 5413, 5414, 5415, 5416, 5417, 5418, 5419, 5420},
-                    arg2: false);
-                context.SetBreakable(arg1: new[] {5421, 5422, 5423, 5424, 5425, 5426, 5427, 5428, 5429, 5430},
-                    arg2: false);
-                context.SetBreakable(arg1: new[] {5431, 5432, 5433, 5434, 5435, 5436, 5437, 5438, 5439, 5440},
-                    arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410}, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {5411, 5412, 5413, 5414, 5415, 5416, 5417, 5418, 5419, 5420}, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {5421, 5422, 5423, 5424, 5425, 5426, 5427, 5428, 5429, 5430}, arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {5431, 5432, 5433, 5434, 5435, 5436, 5437, 5438, 5439, 5440}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512, 5513, 5514, 5515, 5516, 5517, 5518, 5519, 5520, 5521, 5522, 5523, 5524, 5525, 5526, 5527, 5528, 5529, 5530, 5531, 5532, 5533, 5534, 5535, 5536, 5537, 5538, 5539, 5540}, arg2: true);
+                context.SetBreakable(arg1: new[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414, 5415, 5416, 5417, 5418, 5419, 5420, 5421, 5422, 5423, 5424, 5425, 5426, 5427, 5428, 5429, 5430, 5431, 5432, 5433, 5434, 5435, 5436, 5437, 5438, 5439, 5440}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414, 5415, 5416, 5417, 5418, 5419, 5420, 5421, 5422, 5423, 5424, 5425, 5426, 5427, 5428, 5429, 5430, 5431, 5432, 5433, 5434, 5435, 5436, 5437, 5438, 5439, 5440}, arg2: false);
             }
 
             public override void Execute() {
@@ -232,10 +192,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {5641, 5642, 5643, 5644}, arg2: false);
-                context.SetAgent(
-                    arg1:
-                    "1810000,1810001,1810002,1810003,1810004,1810005,1810006,1810007,1810008,1810009,1810010,1810011",
-                    arg2: false);
+                context.SetAgent(arg1: new[] {1810000, 1810001, 1810002, 1810003, 1810004, 1810005, 1810006, 1810007, 1810008, 1810009, 1810010, 1810011}, arg2: false);
             }
 
             public override void Execute() {

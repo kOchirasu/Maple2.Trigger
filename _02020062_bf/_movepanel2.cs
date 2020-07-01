@@ -4,10 +4,8 @@ namespace Maple2.Trigger._02020062_bf {
             internal State발판초기화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108},
-                    arg2: false);
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, arg2: false);
+                context.SetBreakable(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, arg2: false);
                 context.SetUserValue(triggerId: 99990025, key: "MovePanel02", value: 0);
                 context.SetInteractObject(arg1: new[] {12000116}, arg2: 2);
             }
@@ -43,22 +41,19 @@ namespace Maple2.Trigger._02020062_bf {
             internal State발판이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(
-                    arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, arg2: true);
                 context.SetInteractObject(arg1: new[] {12000116}, arg2: 2);
             }
 
             public override void Execute() {
                 if (context.UserDetected(arg1: new[] {9201})) {
-                    context.SetBreakable(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108},
-                        arg2: true);
+                    context.SetBreakable(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, arg2: true);
                     context.State = new State대기(context);
                     return;
                 }
 
                 if (context.UserDetected(arg1: new[] {9204})) {
-                    context.SetBreakable(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108},
-                        arg2: true);
+                    context.SetBreakable(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, arg2: true);
                     context.State = new State대기(context);
                     return;
                 }
@@ -74,8 +69,7 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void Execute() {
                 if (!context.UserDetected(arg1: new[] {9204})) {
-                    context.SetBreakable(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108},
-                        arg2: false);
+                    context.SetBreakable(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108}, arg2: false);
                     context.State = new State발판이동(context);
                     return;
                 }

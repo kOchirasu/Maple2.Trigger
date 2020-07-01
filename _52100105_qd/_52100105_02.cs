@@ -6,14 +6,12 @@ namespace Maple2.Trigger._52100105_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {50101030},
-                    arg3: new byte[] {3})) {
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {50101030}, arg3: new byte[] {3})) {
                     context.State = new Statewait_03(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {50101020},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {50101020}, arg3: new byte[] {2})) {
                     context.State = new Statewait_03(context);
                     return;
                 }
@@ -26,8 +24,7 @@ namespace Maple2.Trigger._52100105_qd {
             internal Statewait_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetOnetimeEffect(id: 1, enable: true,
-                    path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
+                context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
             public override void Execute() {

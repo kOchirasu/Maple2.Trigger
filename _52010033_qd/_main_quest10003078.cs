@@ -6,8 +6,7 @@ namespace Maple2.Trigger._52010033_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003078},
-                    arg3: new byte[] {2})) {
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003078}, arg3: new byte[] {2})) {
                     context.State = new State유저감지(context);
                     return;
                 }
@@ -69,9 +68,7 @@ namespace Maple2.Trigger._52010033_qd {
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
                 context.CameraSelectPath(arg1: new[] {4002, 4001}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
-                context.ShowCaption(type: "VerticalCaption", title: "$52010033_QD__MAIN_QUEST10003078__3$",
-                    desc: "$52010033_QD__MAIN_QUEST10003078__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f,
-                    duration: 5000, scale: 2f);
+                context.ShowCaption(type: "VerticalCaption", title: "$52010033_QD__MAIN_QUEST10003078__3$", desc: "$52010033_QD__MAIN_QUEST10003078__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2f);
                 context.AddCinematicTalk(npcId: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__5$", duration: 5000);
                 context.AddCinematicTalk(npcId: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__6$", duration: 4500);
                 context.AddCinematicTalk(npcId: 11003420, msg: "$52010033_QD__MAIN_QUEST10003078__7$", duration: 2000);

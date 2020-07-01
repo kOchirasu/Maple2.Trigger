@@ -4,10 +4,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5007}, arg2: false);
-                context.SetEffect(arg1: new[] {5008}, arg2: false);
-                context.SetEffect(arg1: new[] {5009}, arg2: false);
-                context.SetEffect(arg1: new[] {5010}, arg2: false);
+                context.SetEffect(arg1: new[] {5007, 5008, 5009, 5010}, arg2: false);
             }
 
             public override void Execute() {
@@ -40,8 +37,7 @@ namespace Maple2.Trigger._52020010_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5007}, arg2: true);
-                context.CreateMonster(arg1: new[] {301}, arg2: true);
-                context.CreateMonster(arg1: new[] {302}, arg2: true);
+                context.CreateMonster(arg1: new[] {301, 302}, arg2: true);
             }
 
             public override void Execute() {
@@ -77,8 +73,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointId: 301, msg: "울지마렴... 조금 있으면 괜찮아 질거야...", duration: 2800,
-                    delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 301, msg: "울지마렴... 조금 있으면 괜찮아 질거야...", duration: 2800, delayTick: 0);
             }
 
             public override void Execute() {
@@ -132,12 +127,8 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new[] {5007}, arg2: false);
-                context.SetEffect(arg1: new[] {5008}, arg2: false);
-                context.SetEffect(arg1: new[] {5009}, arg2: false);
-                context.SetEffect(arg1: new[] {5010}, arg2: false);
-                context.DestroyMonster(arg1: new[] {301});
-                context.DestroyMonster(arg1: new[] {302});
+                context.SetEffect(arg1: new[] {5007, 5008, 5009, 5010}, arg2: false);
+                context.DestroyMonster(arg1: new[] {301, 302});
             }
 
             public override void Execute() { }

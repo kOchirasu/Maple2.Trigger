@@ -38,8 +38,7 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 9101, additionalEffectId: 99910370, level: true)
-                ) {
+                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 9101, additionalEffectId: 99910370, level: true)) {
                     context.State = new State시작(context);
                     return;
                 }

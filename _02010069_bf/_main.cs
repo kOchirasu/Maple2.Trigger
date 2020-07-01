@@ -6,13 +6,8 @@ namespace Maple2.Trigger._02010069_bf {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19},
-                    arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new[] {33000}, arg2: false);
-                context.SetEffect(arg1: new[] {34001}, arg2: false);
-                context.SetEffect(arg1: new[] {34002}, arg2: false);
-                context.SetEffect(arg1: new[] {34022}, arg2: false);
-                context.SetEffect(arg1: new[] {34023}, arg2: false);
+                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {33000, 34001, 34002, 34022, 34023}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
                 context.SetInteractObject(arg1: new[] {10000817}, arg2: 0);
@@ -36,8 +31,7 @@ namespace Maple2.Trigger._02010069_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State =
-                        new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
+                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
                 }
             }
@@ -71,8 +65,7 @@ namespace Maple2.Trigger._02010069_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.HideGuideSummary(entityId: 20100691);
-                context.SetEffect(arg1: new[] {32000}, arg2: true);
-                context.SetEffect(arg1: new[] {34001}, arg2: true);
+                context.SetEffect(arg1: new[] {32000, 34001}, arg2: true);
             }
 
             public override void Execute() {
@@ -90,8 +83,7 @@ namespace Maple2.Trigger._02010069_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {33000}, arg2: true);
-                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19},
-                    arg2: false, arg3: 200, arg4: 50, arg5: 0f);
+                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19}, arg2: false, arg3: 200, arg4: 50, arg5: 0f);
                 context.MoveUser(arg1: 02010069, arg2: 3);
             }
 
@@ -204,8 +196,7 @@ namespace Maple2.Trigger._02010069_bf {
                 context.SetProductionUI(arg1: 4);
                 context.SetProductionUI(arg1: 5);
                 context.SetProductionUI(arg1: 6);
-                context.SetEffect(arg1: new[] {34022}, arg2: true);
-                context.SetEffect(arg1: new[] {34023}, arg2: true);
+                context.SetEffect(arg1: new[] {34022, 34023}, arg2: true);
             }
 
             public override void Execute() {
@@ -243,8 +234,7 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.SetEffect(arg1: new[] {34022}, arg2: false);
-                context.SetEffect(arg1: new[] {34023}, arg2: false);
+                context.SetEffect(arg1: new[] {34022, 34023}, arg2: false);
             }
 
             public override void Execute() { }
