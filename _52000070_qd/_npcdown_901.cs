@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000070_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9900, arg2: new[] {901})) {
-                    context.State = new StateNpcFight(context);
-                    return;
+                    return new StateNpcFight(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._52000070_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {901})) {
-                    context.State = new StateNpcDown(context);
-                    return;
+                    return new StateNpcDown(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,7 +39,9 @@ namespace Maple2.Trigger._52000070_qd {
                 context.CreateMonster(arg1: new[] {301}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

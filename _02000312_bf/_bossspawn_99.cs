@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State보스등장(context);
-                    return;
+                    return new State보스등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.MoveNpc(arg1: 99, arg2: "MS2PatrolData_99");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State종료체크(context);
-                    return;
+                    return new State종료체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,11 +59,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.DestroyMonster(arg1: new[] {99});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -74,7 +78,9 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

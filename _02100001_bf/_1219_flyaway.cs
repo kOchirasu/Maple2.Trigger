@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetUserValue(key: "FlyAway", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "FlyAway") == 1) {
-                    context.State = new StateFlyAway(context);
-                    return;
+                    return new StateFlyAway(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.ChangeMonster(arg1: 219, arg2: 1219);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +43,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.DestroyMonster(arg1: new[] {1219});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

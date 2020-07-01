@@ -11,11 +11,12 @@ namespace Maple2.Trigger._99999871 {
                 context.SetEffect(arg1: new[] {12100}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimeEventOn") == 1) {
-                    context.State = new StateSettingDelay(context);
-                    return;
+                    return new StateSettingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._99999871 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateSetting(context);
-                    return;
+                    return new StateSetting(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,12 +45,13 @@ namespace Maple2.Trigger._99999871 {
                 context.SetInteractObject(arg1: new[] {12000075}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000075}, arg2: 0)) {
                     context.SetTimer(arg1: "1", arg2: 90, arg3: true, arg4: false, arg5: 0);
-                    context.State = new StateTracingFootHold_Start_Delay(context);
-                    return;
+                    return new StateTracingFootHold_Start_Delay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +62,12 @@ namespace Maple2.Trigger._99999871 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateTracingFootHold_Play01(context);
-                    return;
+                    return new StateTracingFootHold_Play01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,16 +81,16 @@ namespace Maple2.Trigger._99999871 {
                 context.SetInteractObject(arg1: new[] {12000082}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000082}, arg2: 0)) {
-                    context.State = new StateTracingFootHold_Play01_Delay(context);
-                    return;
+                    return new StateTracingFootHold_Play01_Delay(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateTracingFootHold_Fail(context);
-                    return;
+                    return new StateTracingFootHold_Fail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -100,16 +104,16 @@ namespace Maple2.Trigger._99999871 {
                 context.SetInteractObject(arg1: new[] {12000082}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateTracingFootHold_Play02(context);
-                    return;
+                    return new StateTracingFootHold_Play02(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateTracingFootHold_Fail(context);
-                    return;
+                    return new StateTracingFootHold_Fail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -123,16 +127,16 @@ namespace Maple2.Trigger._99999871 {
                 context.SetInteractObject(arg1: new[] {12000083}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000083}, arg2: 0)) {
-                    context.State = new StateTracingFootHold_Play02_Delay(context);
-                    return;
+                    return new StateTracingFootHold_Play02_Delay(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateTracingFootHold_Fail(context);
-                    return;
+                    return new StateTracingFootHold_Fail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -146,11 +150,12 @@ namespace Maple2.Trigger._99999871 {
                 context.SetInteractObject(arg1: new[] {12000083}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateTracingFootHold_Success(context);
-                    return;
+                    return new StateTracingFootHold_Success(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -167,17 +172,17 @@ namespace Maple2.Trigger._99999871 {
                 context.SetTimer(arg1: "2", arg2: 60, arg3: true, arg4: false, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000067}, arg2: 0)) {
-                    context.State = new StateTracingFootHold_SuccessDelay(context);
-                    return;
+                    return new StateTracingFootHold_SuccessDelay(context);
                 }
 
                 if (context.TimeExpired(arg1: "2")) {
                     context.SetInteractObject(arg1: new[] {12000067}, arg2: 2);
-                    context.State = new StateResetTimer(context);
-                    return;
+                    return new StateResetTimer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -190,11 +195,12 @@ namespace Maple2.Trigger._99999871 {
                 context.SetUserValue(triggerId: 12000, key: "TimeEventOn", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateResetTimer(context);
-                    return;
+                    return new StateResetTimer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -208,11 +214,12 @@ namespace Maple2.Trigger._99999871 {
                 context.SetActor(arg1: 12202, arg2: false, arg3: "Interaction_luminous_A01_on");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateResetTimer(context);
-                    return;
+                    return new StateResetTimer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -226,11 +233,12 @@ namespace Maple2.Trigger._99999871 {
                 context.ResetTimer(arg1: "2");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

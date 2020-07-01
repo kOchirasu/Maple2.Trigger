@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {4})) {
-                    context.State = new State기다림(context);
-                    return;
+                    return new State기다림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.ShadowExpedition(type: "OpenBossGauge", maxGaugePoint: 300, title: "출력 에너지");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State체력조건_1(context);
-                    return;
+                    return new State체력조건_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +39,12 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 150) {
-                    context.State = new State알림_1(context);
-                    return;
+                    return new State알림_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -54,11 +57,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetEventUI(arg1: 1, arg2: "에너지가 50%충전 되었습니다.", arg3: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State체력조건_2(context);
-                    return;
+                    return new State체력조건_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -73,11 +77,12 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 300) {
-                    context.State = new State알림_5(context);
-                    return;
+                    return new State알림_5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -92,11 +97,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetEventUI(arg1: 1, arg2: "에너지가 100%충전 되었습니다.", arg3: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State알림_6(context);
-                    return;
+                    return new State알림_6(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -109,11 +115,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetEventUI(arg1: 1, arg2: "곧 최대 출력으로 돌진 합니다.", arg3: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State마지막_연출(context);
-                    return;
+                    return new State마지막_연출(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -128,11 +135,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.CameraSelectPath(arg1: new[] {2000009}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State캐릭터숨기기(context);
-                    return;
+                    return new State캐릭터숨기기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -146,11 +154,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.CreateMonster(arg1: new[] {7002}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State마지막_연출_2(context);
-                    return;
+                    return new State마지막_연출_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -164,11 +173,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateAI연출(context);
-                    return;
+                    return new StateAI연출(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -183,11 +193,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.CameraSelectPath(arg1: new[] {2000013}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateAI연출_2(context);
-                    return;
+                    return new StateAI연출_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -201,11 +212,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetAiExtraData(key: "wing", value: 1, boxId: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State끝(context);
-                    return;
+                    return new State끝(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -218,11 +230,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetAiExtraData(key: "wing", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State끝_2(context);
-                    return;
+                    return new State끝_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -236,11 +249,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetProductionUI(arg1: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State맵이동(context);
-                    return;
+                    return new State맵이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -253,8 +267,10 @@ namespace Maple2.Trigger._52020001_qd {
                 context.MoveUser(arg1: 02020001, arg2: 10);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) { }
+
+                return null;
             }
 
             public override void OnExit() { }

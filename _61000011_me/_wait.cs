@@ -5,11 +5,12 @@ namespace Maple2.Trigger._61000011_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,7 +21,9 @@ namespace Maple2.Trigger._61000011_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

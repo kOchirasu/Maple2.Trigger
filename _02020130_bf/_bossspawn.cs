@@ -11,11 +11,12 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetPortal(arg1: 23, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {600})) {
-                    context.State = new State보스등장(context);
-                    return;
+                    return new State보스등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,21 +29,20 @@ namespace Maple2.Trigger._02020130_bf {
                 context.CreateMonster(arg1: new[] {701, 702, 703}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {701, 702, 703})) {
-                    context.State = new State종료딜레이(context);
-                    return;
+                    return new State종료딜레이(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,13 +56,14 @@ namespace Maple2.Trigger._02020130_bf {
                 context.DungeonMissionComplete(missionId: 23040000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     context.DungeonClear();
                     context.SetAchievement(arg3: "IshuraFinalDungeonClear");
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,12 +76,13 @@ namespace Maple2.Trigger._02020130_bf {
                 context.DestroyMonster(arg1: new[] {-1});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     context.DungeonFail();
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,7 +99,9 @@ namespace Maple2.Trigger._02020130_bf {
                 context.DungeonEnableGiveUp(isEnable: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -7,16 +7,16 @@ namespace Maple2.Trigger._52100106_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000880}, arg3: new byte[] {3})) {
-                    context.State = new State들킴(context);
-                    return;
+                    return new State들킴(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000890}, arg3: new byte[] {2})) {
-                    context.State = new State들킴(context);
-                    return;
+                    return new State들킴(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,7 +39,9 @@ namespace Maple2.Trigger._52100106_qd {
                 context.SetActor(arg1: 212, arg2: true, arg3: "sf_quest_light_A01_On");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

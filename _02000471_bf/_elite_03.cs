@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "10002021clear") != 1 && context.GetUserValue(key: "SpawnCheck") == 1) {
-                    context.State = new Statespawn(context);
-                    return;
+                    return new Statespawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Buff") == 1) {
-                    context.State = new Statebuff(context);
-                    return;
+                    return new Statebuff(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,7 +40,9 @@ namespace Maple2.Trigger._02000471_bf {
                 context.AddBuff(arg1: new[] {303}, arg2: 70002021, arg3: 1, arg4: true, arg5: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

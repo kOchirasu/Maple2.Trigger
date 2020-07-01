@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn") == 1) {
-                    context.State = new Staterespawn_timer1(context);
-                    return;
+                    return new Staterespawn_timer1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetTimer(arg1: "respawntimer1", arg2: 120, arg3: true, arg4: false, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn") == 2) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.TimeExpired(arg1: "respawntimer1")) {
-                    context.State = new Staterespawn1(context);
-                    return;
+                    return new Staterespawn1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,16 +46,16 @@ namespace Maple2.Trigger._02000471_bf {
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn") == 2) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (!context.MonsterDead(arg1: new[] {1999})) {
-                    context.State = new Staterespawn_timer2(context);
-                    return;
+                    return new Staterespawn_timer2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -67,16 +68,16 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetTimer(arg1: "respawntimer2", arg2: 120, arg3: true, arg4: false, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn") == 2) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.TimeExpired(arg1: "respawntimer2")) {
-                    context.State = new Staterespawn2(context);
-                    return;
+                    return new Staterespawn2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,16 +91,16 @@ namespace Maple2.Trigger._02000471_bf {
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn") == 2) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (!context.MonsterDead(arg1: new[] {1999})) {
-                    context.State = new Staterespawn_timer3(context);
-                    return;
+                    return new Staterespawn_timer3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -112,16 +113,16 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetTimer(arg1: "respawntimer3", arg2: 120, arg3: true, arg4: false, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn") == 2) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.TimeExpired(arg1: "respawntimer3")) {
-                    context.State = new Staterespawn3(context);
-                    return;
+                    return new Staterespawn3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -135,16 +136,16 @@ namespace Maple2.Trigger._02000471_bf {
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn") == 2) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (!context.MonsterDead(arg1: new[] {1999})) {
-                    context.State = new Staterespawn_timer4(context);
-                    return;
+                    return new Staterespawn_timer4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -157,16 +158,16 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetTimer(arg1: "respawntimer4", arg2: 120, arg3: true, arg4: false, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn") == 2) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.TimeExpired(arg1: "respawntimer4")) {
-                    context.State = new Staterespawn4(context);
-                    return;
+                    return new Staterespawn4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -180,16 +181,16 @@ namespace Maple2.Trigger._02000471_bf {
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn") == 2) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (!context.MonsterDead(arg1: new[] {1999})) {
-                    context.State = new Staterespawn_timer5(context);
-                    return;
+                    return new Staterespawn_timer5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -202,16 +203,16 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetTimer(arg1: "respawntimer5", arg2: 120, arg3: true, arg4: false, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn") == 2) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.TimeExpired(arg1: "respawntimer5")) {
-                    context.State = new Staterespawn5(context);
-                    return;
+                    return new Staterespawn5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -225,11 +226,8 @@ namespace Maple2.Trigger._02000471_bf {
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Stateend(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Stateend(context);
             }
 
             public override void OnExit() { }
@@ -240,7 +238,9 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

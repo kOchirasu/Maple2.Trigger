@@ -8,11 +8,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.DestroyMonster(arg1: new[] {910, 911});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9200})) {
-                    context.State = new StateLoadingDelay(context);
-                    return;
+                    return new StateLoadingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.CreateMonster(arg1: new[] {910, 911}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateArrowGuideOn(context);
-                    return;
+                    return new StateArrowGuideOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5200, 5201, 5202, 5203}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9201})) {
-                    context.State = new StateArrowGuideOff(context);
-                    return;
+                    return new StateArrowGuideOff(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,7 +64,9 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103, 5200, 5201, 5202, 5203}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

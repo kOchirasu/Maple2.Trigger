@@ -8,16 +8,16 @@ namespace Maple2.Trigger._99999905 {
                 context.SetEventUI(arg1: 1, arg2: "$99999905__WAIT__0$", arg3: 5000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 101) == 10) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.TimeExpired(arg1: "10")) {
-                    context.State = new State시간표확인(context);
-                    return;
+                    return new State시간표확인(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,11 +30,12 @@ namespace Maple2.Trigger._99999905 {
                 context.SetTimer(arg1: "88", arg2: 1200, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "88")) {
-                    context.State = new State시간표확인(context);
-                    return;
+                    return new State시간표확인(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

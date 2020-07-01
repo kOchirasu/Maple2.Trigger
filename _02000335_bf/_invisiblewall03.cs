@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new State벽면처리(context);
-                    return;
+                    return new State벽면처리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,7 +23,9 @@ namespace Maple2.Trigger._02000335_bf {
                 context.SetMesh(arg1: new[] {7040, 7041, 7042, 7043, 7044, 7045, 7046, 7047, 7048, 7049, 7050}, arg2: false, arg4: 0, arg5: 10f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

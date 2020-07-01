@@ -8,11 +8,12 @@ namespace Maple2.Trigger._52010056_qd {
                 context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2009}, arg2: new[] {91000053}, arg3: new byte[] {2})) {
-                    context.State = new StateReady(context);
-                    return;
+                    return new StateReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._52010056_qd {
                 context.CreateMonster(arg1: new[] {601, 602, 603, 604, 605, 606}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State크림슨발록_지시(context);
-                    return;
+                    return new State크림슨발록_지시(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,12 @@ namespace Maple2.Trigger._52010056_qd {
                 context.AddBalloonTalk(spawnPointId: 603, msg: "$52010056_QD__EventSection_E_Monster__0$", duration: 2000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State크림슨스피어_대답(context);
-                    return;
+                    return new State크림슨스피어_대답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +68,12 @@ namespace Maple2.Trigger._52010056_qd {
                 context.SetEffect(arg1: new[] {5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512, 5513, 5514, 5515, 5516, 5517, 5518, 5519, 5520, 5521, 5522, 5523, 5524, 5525, 5526, 5527, 5528, 5529, 5530, 5531, 5532, 5533, 5534, 5535, 5536, 5537, 5538, 5539, 5540, 5541, 5542, 5543, 5544, 5545, 5546, 5547, 5548, 5549}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {601, 602, 603, 604, 605})) {
-                    context.State = new StateMeshOff(context);
-                    return;
+                    return new StateMeshOff(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,7 +87,9 @@ namespace Maple2.Trigger._52010056_qd {
                 context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

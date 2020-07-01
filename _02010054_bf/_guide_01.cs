@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000856}, arg2: 0)) {
-                    context.State = new State가이드01(context);
-                    return;
+                    return new State가이드01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,12 +24,13 @@ namespace Maple2.Trigger._02010054_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.HideGuideSummary(entityId: 20105402);
-                    context.State = new State감지대기(context);
-                    return;
+                    return new State감지대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {108})) {
-                    context.State = new State가이드02(context);
-                    return;
+                    return new State가이드02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +62,12 @@ namespace Maple2.Trigger._02010054_bf {
                 context.CameraSelect(arg1: 302, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State카메라이동02(context);
-                    return;
+                    return new State카메라이동02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -76,12 +80,13 @@ namespace Maple2.Trigger._02010054_bf {
                 context.CameraSelect(arg1: 303, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.CameraSelect(arg1: 303, arg2: false);
-                    context.State = new State가이드02종료(context);
-                    return;
+                    return new State가이드02종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,11 +102,12 @@ namespace Maple2.Trigger._02010054_bf {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State가이드02종료(context);
-                    return;
+                    return new State가이드02종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -117,12 +123,13 @@ namespace Maple2.Trigger._02010054_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000860, 10000861}, arg2: 0)) {
                     context.HideGuideSummary(entityId: 20105403);
-                    context.State = new State가이드03(context);
-                    return;
+                    return new State가이드03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -133,11 +140,12 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000858}, arg2: 0)) {
-                    context.State = new State가이드03종료(context);
-                    return;
+                    return new State가이드03종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -151,12 +159,13 @@ namespace Maple2.Trigger._02010054_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.HideGuideSummary(entityId: 20105405);
-                    context.State = new State반응대기02(context);
-                    return;
+                    return new State반응대기02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -167,11 +176,12 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {109})) {
-                    context.State = new State반응대기02종료(context);
-                    return;
+                    return new State반응대기02종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -185,12 +195,13 @@ namespace Maple2.Trigger._02010054_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     context.HideGuideSummary(entityId: 20105403);
-                    context.State = new State가이드04(context);
-                    return;
+                    return new State가이드04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -201,11 +212,12 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000857}, arg2: 0)) {
-                    context.State = new State가이드04종료(context);
-                    return;
+                    return new State가이드04종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -219,12 +231,13 @@ namespace Maple2.Trigger._02010054_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.HideGuideSummary(entityId: 20105402);
-                    context.State = new State감지대기02(context);
-                    return;
+                    return new State감지대기02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -235,12 +248,13 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {110})) {
                     context.SetEventUI(arg1: 1, arg2: "$02010054_BF__GUIdE_01__0$", arg3: 5000, arg4: "0");
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -251,7 +265,9 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

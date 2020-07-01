@@ -5,11 +5,12 @@ namespace Maple2.Trigger._99999925 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001079}, arg2: 0)) {
-                    context.State = new StateladderWolk(context);
-                    return;
+                    return new StateladderWolk(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._99999925 {
                 context.SetAiExtraData(key: "LadderCnt", value: 1, isModify: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateladderEnd(context);
-                    return;
+                    return new StateladderEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,7 +40,9 @@ namespace Maple2.Trigger._99999925 {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

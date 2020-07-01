@@ -10,11 +10,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetInteractObject(arg1: new[] {10001253}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ActivateHolder") == 1) {
-                    context.State = new StateLoadingDelay(context);
-                    return;
+                    return new StateLoadingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSpawnStart(context);
-                    return;
+                    return new StateSpawnStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,16 +45,16 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetInteractObject(arg1: new[] {10001252}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001253}, arg2: 0)) {
-                    context.State = new StateStopDelay(context);
-                    return;
+                    return new StateStopDelay(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonQuit") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,16 +67,16 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetUserValue(triggerId: 103, key: "SpawnHold", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSpawnStop(context);
-                    return;
+                    return new StateSpawnStop(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonQuit") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -88,16 +90,16 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetInteractObject(arg1: new[] {10001252}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001252}, arg2: 0)) {
-                    context.State = new StateStartDelay(context);
-                    return;
+                    return new StateStartDelay(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonQuit") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -110,16 +112,16 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetUserValue(triggerId: 103, key: "SpawnHold", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSpawnStart(context);
-                    return;
+                    return new StateSpawnStart(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonQuit") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -133,7 +135,9 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetInteractObject(arg1: new[] {10001253}, arg2: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

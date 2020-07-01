@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn") == 1) {
-                    context.State = new State경고텍스트(context);
-                    return;
+                    return new State경고텍스트(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetEventUI(arg1: 1, arg2: @"더이상 상대할 수 없습니다.\n포탑을 이용해 다른 곳으로 이동하세요.", arg3: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new State경고텍스트_2(context);
-                    return;
+                    return new State경고텍스트_2(context);
                 }
 
                 if (context.GetUserValue(key: "respawn_end") == 2) {
-                    context.State = new State끝(context);
-                    return;
+                    return new State끝(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,16 +45,16 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetEventUI(arg1: 1, arg2: @"더이상 상대할 수 없습니다.\n포탑을 이용해 다른 곳으로 이동하세요.", arg3: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new State경고텍스트(context);
-                    return;
+                    return new State경고텍스트(context);
                 }
 
                 if (context.GetUserValue(key: "respawn_end") == 2) {
-                    context.State = new State끝(context);
-                    return;
+                    return new State끝(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,8 +65,10 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) { }
+
+                return null;
             }
 
             public override void OnExit() { }

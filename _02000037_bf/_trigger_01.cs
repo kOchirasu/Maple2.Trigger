@@ -8,16 +8,16 @@ namespace Maple2.Trigger._02000037_bf {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25}, arg2: true, arg3: 0, arg4: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {2000})) {
-                    context.State = new State발판(context);
-                    return;
+                    return new State발판(context);
                 }
 
                 if (context.MonsterInCombat(arg1: new[] {2001})) {
-                    context.State = new State발판(context);
-                    return;
+                    return new State발판(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,11 +30,12 @@ namespace Maple2.Trigger._02000037_bf {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25}, arg2: false, arg3: 0, arg4: 200);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.State = new State포털등장(context);
-                    return;
+                    return new State포털등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +48,12 @@ namespace Maple2.Trigger._02000037_bf {
                 context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2000, 2001})) {
-                    context.State = new State발록죽음(context);
-                    return;
+                    return new State발록죽음(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +67,12 @@ namespace Maple2.Trigger._02000037_bf {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25}, arg2: true, arg3: 0, arg4: 200);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,7 +83,9 @@ namespace Maple2.Trigger._02000037_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

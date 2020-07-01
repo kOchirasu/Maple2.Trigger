@@ -5,11 +5,12 @@ namespace Maple2.Trigger._99999925 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BuffGo") == 1) {
-                    context.State = new StateCheckpoly(context);
-                    return;
+                    return new StateCheckpoly(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._99999925 {
                 context.SetUserValue(key: "BuffGo", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateCheckIdle(context);
-                    return;
+                    return new StateCheckIdle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000429_bf {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
-                    context.State = new State전투시작_인페르녹전함(context);
-                    return;
+                    return new State전투시작_인페르녹전함(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._02000429_bf {
                 context.CreateMonster(arg1: new[] {101}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State첫번째페이즈_인페르녹전함(context);
-                    return;
+                    return new State첫번째페이즈_인페르녹전함(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,21 +43,20 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SecondPhase") == 1) {
-                    context.State = new State두번째페이즈_인페르녹전함(context);
-                    return;
+                    return new State두번째페이즈_인페르녹전함(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -68,21 +69,20 @@ namespace Maple2.Trigger._02000429_bf {
                 context.SetMesh(arg1: new[] {6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg3: 0, arg4: 0, arg5: 0.5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ThirdPhase") == 1) {
-                    context.State = new State세번째페이즈_인페르녹등장(context);
-                    return;
+                    return new State세번째페이즈_인페르녹등장(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,21 +96,20 @@ namespace Maple2.Trigger._02000429_bf {
                 context.SetSound(arg1: 8410, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State인페르녹전투시작(context);
-                    return;
+                    return new State인페르녹전투시작(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -121,21 +120,20 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {102})) {
-                    context.State = new State인페르녹처치성공(context);
-                    return;
+                    return new State인페르녹처치성공(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -148,11 +146,12 @@ namespace Maple2.Trigger._02000429_bf {
                 context.DestroyMonster(arg1: new[] {-1});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State전멸던전실패연출01(context);
-                    return;
+                    return new State전멸던전실패연출01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -165,11 +164,12 @@ namespace Maple2.Trigger._02000429_bf {
                 context.SideNpcTalk(npcId: 11003536, illust: "tristan_normal", duration: 4000, script: "$02000410_BF__ClearCheck__10$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State전멸던전실패연출02(context);
-                    return;
+                    return new State전멸던전실패연출02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -182,11 +182,12 @@ namespace Maple2.Trigger._02000429_bf {
                 context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 6200, script: "$02000410_BF__ClearCheck__1$", voice: @"ko/Npc/00002156");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6200)) {
-                    context.State = new State전멸던전실패(context);
-                    return;
+                    return new State전멸던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -199,13 +200,14 @@ namespace Maple2.Trigger._02000429_bf {
                 context.DestroyMonster(arg1: new[] {-1});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.DungeonFail();
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -218,11 +220,12 @@ namespace Maple2.Trigger._02000429_bf {
                 context.SetAchievement(arg1: 750, arg2: "trigger", arg3: "infernogout");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State성공연출시작(context);
-                    return;
+                    return new State성공연출시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -235,11 +238,12 @@ namespace Maple2.Trigger._02000429_bf {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 3000, script: "$02000410_BF__ClearCheck__2$", voice: @"ko/Npc/00002182");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State성공연출01(context);
-                    return;
+                    return new State성공연출01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -253,11 +257,12 @@ namespace Maple2.Trigger._02000429_bf {
                 context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 8000, script: "$02000410_BF__ClearCheck__3$", voice: @"ko/Npc/00002177");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State성공연출02_pre(context);
-                    return;
+                    return new State성공연출02_pre(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -270,11 +275,12 @@ namespace Maple2.Trigger._02000429_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State성공연출02(context);
-                    return;
+                    return new State성공연출02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -289,16 +295,16 @@ namespace Maple2.Trigger._02000429_bf {
                 context.PlaySceneMovie(fileName: @"common\WorldInvasionScene6.usm", movieId: 1, skipType: "needAll");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    context.State = new State최종성공처리(context);
-                    return;
+                    return new State최종성공처리(context);
                 }
 
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State최종성공처리(context);
-                    return;
+                    return new State최종성공처리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -315,11 +321,12 @@ namespace Maple2.Trigger._02000429_bf {
                 context.DungeonClear();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -334,7 +341,9 @@ namespace Maple2.Trigger._02000429_bf {
                 context.DungeonEnableGiveUp(isEnable: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -5,62 +5,54 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {1})) {
                     context.HideGuideSummary(entityId: 20020020);
-                    context.State = new Stateready_02(context);
-                    return;
+                    return new Stateready_02(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {2})) {
-                    context.State = new Statestart_22(context);
-                    return;
+                    return new Statestart_22(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001445}, arg3: new byte[] {3})) {
-                    context.State = new Stateend_01(context);
-                    return;
+                    return new Stateend_01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001445}, arg3: new byte[] {2})) {
-                    context.State = new Statesb_ready_b_13(context);
-                    return;
+                    return new Statesb_ready_b_13(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001445}, arg3: new byte[] {1})) {
-                    context.State = new Statesb_ready_b_12(context);
-                    return;
+                    return new Statesb_ready_b_12(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001444}, arg3: new byte[] {3})) {
-                    context.State = new Statesb_ready_b_12(context);
-                    return;
+                    return new Statesb_ready_b_12(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001444}, arg3: new byte[] {2})) {
                     context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                     context.HideGuideSummary(entityId: 20020020);
-                    context.State = new Statesb_ready_b_02(context);
-                    return;
+                    return new Statesb_ready_b_02(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001443}, arg3: new byte[] {3})) {
                     context.AddBuff(arg1: new[] {701}, arg2: 70000096, arg3: 1);
                     context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                     context.HideGuideSummary(entityId: 20020020);
-                    context.State = new Statesb_ready_04(context);
-                    return;
+                    return new Statesb_ready_04(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001442}, arg3: new byte[] {3})) {
-                    context.State = new Statesb_ready_01(context);
-                    return;
+                    return new Statesb_ready_01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001442}, arg3: new byte[] {2})) {
-                    context.State = new Statesb_ready_01(context);
-                    return;
+                    return new Statesb_ready_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,14 +65,15 @@ namespace Maple2.Trigger._52000040_qd {
                 context.CreateMonster(arg1: new[] {145}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001443}, arg3: new byte[] {2})) {
                     context.AddBuff(arg1: new[] {701}, arg2: 70000096, arg3: 1);
                     context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                     context.HideGuideSummary(entityId: 20020020);
-                    context.State = new Statesb_ready_02(context);
-                    return;
+                    return new Statesb_ready_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -95,11 +88,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.PlaySceneMovie(fileName: "Cut_BeyondLink_CCTV.swf", movieId: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    context.State = new Statesb_ready_03(context);
-                    return;
+                    return new Statesb_ready_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -112,11 +106,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.CreateMonster(arg1: new[] {144, 145}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001443}, arg3: new byte[] {3})) {
-                    context.State = new Statesb_ready_04(context);
-                    return;
+                    return new Statesb_ready_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -130,13 +125,14 @@ namespace Maple2.Trigger._52000040_qd {
                 context.ShowGuideSummary(entityId: 40010, textId: 40010);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {201})) {
                     context.AddBuff(arg1: new[] {701}, arg2: 70000094, arg3: 1);
                     context.HideGuideSummary(entityId: 40010);
-                    context.State = new Statesb_ready_05(context);
-                    return;
+                    return new Statesb_ready_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -150,11 +146,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetProductionUI(arg1: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new Statesb_ready_06(context);
-                    return;
+                    return new Statesb_ready_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -168,11 +165,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.AddBuff(arg1: new[] {701}, arg2: 70000095, arg3: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new Statesb_ready_07(context);
-                    return;
+                    return new Statesb_ready_07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -185,12 +183,13 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetProductionUI(arg1: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.AddBuff(arg1: new[] {701}, arg2: 70000096, arg3: 1);
-                    context.State = new Statesb_ready_08(context);
-                    return;
+                    return new Statesb_ready_08(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -203,7 +202,9 @@ namespace Maple2.Trigger._52000040_qd {
                 context.MoveUser(arg1: 52000017, arg2: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -215,11 +216,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.MoveUser(arg1: 52000040, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statesb_ready_b_03(context);
-                    return;
+                    return new Statesb_ready_b_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -235,11 +237,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.CameraSelectPath(arg1: new[] {7001, 7002, 7003}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
-                    context.State = new Statesb_ready_b_04(context);
-                    return;
+                    return new Statesb_ready_b_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -255,11 +258,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.MoveNpc(arg1: 223, arg2: "MS2PatrolData_2103");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statesb_ready_b_06(context);
-                    return;
+                    return new Statesb_ready_b_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -274,11 +278,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetNpcEmotionLoop(arg1: 221, arg2: "Talk_A", arg3: 5000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statesb_ready_b_07_skip(context);
-                    return;
+                    return new Statesb_ready_b_07_skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -292,11 +297,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statesb_ready_b_07(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statesb_ready_b_07(context);
             }
 
             public override void OnExit() { }
@@ -311,11 +313,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetNpcEmotionLoop(arg1: 222, arg2: "Talk_A", arg3: 5000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statesb_ready_b_08_skip(context);
-                    return;
+                    return new Statesb_ready_b_08_skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -329,11 +332,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statesb_ready_b_08(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statesb_ready_b_08(context);
             }
 
             public override void OnExit() { }
@@ -348,11 +348,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetNpcEmotionLoop(arg1: 221, arg2: "Talk_A", arg3: 5000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statesb_ready_b_09_skip(context);
-                    return;
+                    return new Statesb_ready_b_09_skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -366,11 +367,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statesb_ready_b_09(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statesb_ready_b_09(context);
             }
 
             public override void OnExit() { }
@@ -385,11 +383,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetNpcEmotionLoop(arg1: 223, arg2: "Talk_A", arg3: 5000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statesb_ready_b_10_skip(context);
-                    return;
+                    return new Statesb_ready_b_10_skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -403,11 +402,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statesb_ready_b_10(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statesb_ready_b_10(context);
             }
 
             public override void OnExit() { }
@@ -423,11 +419,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetProductionUI(arg1: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new Statesb_ready_b_11(context);
-                    return;
+                    return new Statesb_ready_b_11(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -442,7 +439,9 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -457,7 +456,9 @@ namespace Maple2.Trigger._52000040_qd {
                 context.MoveNpc(arg1: 223, arg2: "MS2PatrolData_2103");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -469,7 +470,9 @@ namespace Maple2.Trigger._52000040_qd {
                 context.CreateMonster(arg1: new[] {145}, arg2: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -479,7 +482,9 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -495,11 +500,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.CameraSelectPath(arg1: new[] {7001, 7002, 7003}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Stateready_03(context);
-                    return;
+                    return new Stateready_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -514,11 +520,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Idle_A", arg3: 5000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Stateready_04(context);
-                    return;
+                    return new Stateready_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -532,11 +539,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Stateready_04(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Stateready_04(context);
             }
 
             public override void OnExit() { }
@@ -551,11 +555,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Idle_A", arg3: 5000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Stateready_05(context);
-                    return;
+                    return new Stateready_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -569,11 +574,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Stateready_05(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Stateready_05(context);
             }
 
             public override void OnExit() { }
@@ -588,11 +590,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "ready_06_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Stateready_06(context);
-                    return;
+                    return new Stateready_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -606,11 +609,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Stateready_06(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Stateready_06(context);
             }
 
             public override void OnExit() { }
@@ -625,11 +625,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "ready_07_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Stateready_07(context);
-                    return;
+                    return new Stateready_07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -643,11 +644,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Stateready_07(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Stateready_07(context);
             }
 
             public override void OnExit() { }
@@ -662,11 +660,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "ready_08_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Stateready_08(context);
-                    return;
+                    return new Stateready_08(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -680,11 +679,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Stateready_08(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Stateready_08(context);
             }
 
             public override void OnExit() { }
@@ -699,11 +695,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "ready_09_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Stateready_09(context);
-                    return;
+                    return new Stateready_09(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -717,11 +714,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Stateready_09(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Stateready_09(context);
             }
 
             public override void OnExit() { }
@@ -736,11 +730,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "ready_10_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Stateready_10(context);
-                    return;
+                    return new Stateready_10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -754,11 +749,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Stateready_10(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Stateready_10(context);
             }
 
             public override void OnExit() { }
@@ -773,11 +765,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.PlaySceneMovie(fileName: "Cut_BeyondLink_CCTV.swf", movieId: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    context.State = new Statestart_01(context);
-                    return;
+                    return new Statestart_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -790,11 +783,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetConversation(arg1: 2, arg2: 11001548, arg3: "$52000040_QD__MAIN__7$", arg4: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statestart_01_ready(context);
-                    return;
+                    return new Statestart_01_ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -809,11 +803,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2002");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statestart_02(context);
-                    return;
+                    return new Statestart_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -829,11 +824,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_02_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statestart_03(context);
-                    return;
+                    return new Statestart_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -847,11 +843,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_03(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_03(context);
             }
 
             public override void OnExit() { }
@@ -865,11 +858,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_03_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statestart_04(context);
-                    return;
+                    return new Statestart_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -883,11 +877,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_04(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_04(context);
             }
 
             public override void OnExit() { }
@@ -901,11 +892,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_04_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statestart_05(context);
-                    return;
+                    return new Statestart_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -919,11 +911,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_05(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_05(context);
             }
 
             public override void OnExit() { }
@@ -938,11 +927,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_05_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statestart_06(context);
-                    return;
+                    return new Statestart_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -956,11 +946,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_06(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_06(context);
             }
 
             public override void OnExit() { }
@@ -974,11 +961,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_06_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statestart_07(context);
-                    return;
+                    return new Statestart_07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -992,11 +980,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_07(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_07(context);
             }
 
             public override void OnExit() { }
@@ -1010,11 +995,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_07_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statestart_08(context);
-                    return;
+                    return new Statestart_08(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1028,11 +1014,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_08(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_08(context);
             }
 
             public override void OnExit() { }
@@ -1047,11 +1030,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_08_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statestart_09(context);
-                    return;
+                    return new Statestart_09(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1065,11 +1049,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_09(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_09(context);
             }
 
             public override void OnExit() { }
@@ -1083,11 +1064,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_09_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statestart_10(context);
-                    return;
+                    return new Statestart_10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1101,11 +1083,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_10(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_10(context);
             }
 
             public override void OnExit() { }
@@ -1119,11 +1098,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_10_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statestart_11(context);
-                    return;
+                    return new Statestart_11(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1137,11 +1117,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_11(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_11(context);
             }
 
             public override void OnExit() { }
@@ -1155,11 +1132,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_11_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statestart_12(context);
-                    return;
+                    return new Statestart_12(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1173,11 +1151,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_12(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_12(context);
             }
 
             public override void OnExit() { }
@@ -1191,11 +1166,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_12_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statestart_13(context);
-                    return;
+                    return new Statestart_13(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1209,11 +1185,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_13(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_13(context);
             }
 
             public override void OnExit() { }
@@ -1227,11 +1200,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_13_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statestart_14(context);
-                    return;
+                    return new Statestart_14(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1245,11 +1219,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_14(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_14(context);
             }
 
             public override void OnExit() { }
@@ -1263,11 +1234,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_14_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statestart_15(context);
-                    return;
+                    return new Statestart_15(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1281,11 +1253,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_15(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_15(context);
             }
 
             public override void OnExit() { }
@@ -1299,11 +1268,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_15_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statestart_16(context);
-                    return;
+                    return new Statestart_16(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1317,11 +1287,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_16(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_16(context);
             }
 
             public override void OnExit() { }
@@ -1335,11 +1302,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_16_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statestart_17(context);
-                    return;
+                    return new Statestart_17(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1353,11 +1321,8 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Statestart_17(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Statestart_17(context);
             }
 
             public override void OnExit() { }
@@ -1371,11 +1336,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetSkip(arg1: "start_17_skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statestart_18(context);
-                    return;
+                    return new Statestart_18(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1390,11 +1356,12 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetConversation(arg1: 2, arg2: 11001548, arg3: "$52000040_QD__MAIN__24$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statestart_19(context);
-                    return;
+                    return new Statestart_19(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1407,12 +1374,13 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetConversation(arg1: 2, arg2: 11001548, arg3: "$52000040_QD__MAIN__25$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.DestroyMonster(arg1: new[] {103, 102, 101});
-                    context.State = new Statestart_20(context);
-                    return;
+                    return new Statestart_20(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1426,14 +1394,15 @@ namespace Maple2.Trigger._52000040_qd {
                 context.SetProductionUI(arg1: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetProductionUI(arg1: 0);
                     context.CreateMonster(arg1: new[] {104, 111, 112}, arg2: true);
                     context.SetProductionUI(arg1: 2);
-                    context.State = new Statestart_21(context);
-                    return;
+                    return new Statestart_21(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1446,12 +1415,13 @@ namespace Maple2.Trigger._52000040_qd {
                 context.ShowGuideSummary(entityId: 20020020, textId: 20020020);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {2})) {
                     context.HideGuideSummary(entityId: 20020020);
-                    context.State = new Stateend_01(context);
-                    return;
+                    return new Stateend_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1464,12 +1434,13 @@ namespace Maple2.Trigger._52000040_qd {
                 context.CreateMonster(arg1: new[] {104, 111, 112}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {2})) {
                     context.HideGuideSummary(entityId: 20020020);
-                    context.State = new Stateend_01(context);
-                    return;
+                    return new Stateend_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1480,7 +1451,9 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

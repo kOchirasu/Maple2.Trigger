@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AI_Phase") == 5) {
-                    context.State = new State패이즈_5_시작(context);
-                    return;
+                    return new State패이즈_5_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._52100301_qd {
                 context.SetUserValue(key: "AI_Phase", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,11 +48,12 @@ namespace Maple2.Trigger._52100301_qd {
                 context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$52100301_QD__300006_PHASE_5__1$", duration: 3176);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State아르케온_등장(context);
-                    return;
+                    return new State아르케온_등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +66,12 @@ namespace Maple2.Trigger._52100301_qd {
                 context.SetUserValue(key: "AI_Phase", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State아르케온_탈것_생성(context);
-                    return;
+                    return new State아르케온_탈것_생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,11 +84,13 @@ namespace Maple2.Trigger._52100301_qd {
                 context.SetUserValue(triggerId: 3000061, key: "Phase_5_Interect_01", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    // context.State = new State게임종료(context);
-                    return;
+                    // return new State게임종료(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetInteractObject(arg1: new[] {10000402}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000402}, arg2: 0)) {
-                    context.State = new State열기(context);
-                    return;
+                    return new State열기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -32,11 +33,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.CreateItem(arg1: new[] {1021});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State삭제(context);
-                    return;
+                    return new State삭제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,7 +51,9 @@ namespace Maple2.Trigger._02000252_bf {
                 context.DestroyMonster(arg1: new[] {1011});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

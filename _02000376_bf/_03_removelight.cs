@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "RemoveInnerLight", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ResetInnerLight") == 1) {
-                    context.State = new StatePlay(context);
-                    return;
+                    return new StatePlay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "RemoveInnerLight", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RemoveInnerLight") == 1) {
-                    context.State = new StateRemoveLight01(context);
-                    return;
+                    return new StateRemoveLight01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.AddBuff(arg1: new[] {9001}, arg2: 70000103, arg3: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

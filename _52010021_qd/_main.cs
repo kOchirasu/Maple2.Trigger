@@ -8,11 +8,12 @@ namespace Maple2.Trigger._52010021_qd {
                 context.CreateMonster(arg1: new[] {101, 102, 103});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002540}, arg3: new byte[] {3})) {
-                    context.State = new StateEvent_01_Idle(context);
-                    return;
+                    return new StateEvent_01_Idle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +30,12 @@ namespace Maple2.Trigger._52010021_qd {
                 context.SetEffect(arg1: new[] {7001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new StateEvent_01(context);
-                    return;
+                    return new StateEvent_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -53,11 +55,12 @@ namespace Maple2.Trigger._52010021_qd {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateEvent_05(context);
-                    return;
+                    return new StateEvent_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -73,11 +76,12 @@ namespace Maple2.Trigger._52010021_qd {
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new StateEnding(context);
-                    return;
+                    return new StateEnding(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -94,11 +98,12 @@ namespace Maple2.Trigger._52010021_qd {
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new Stateout(context);
-                    return;
+                    return new Stateout(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -113,11 +118,12 @@ namespace Maple2.Trigger._52010021_qd {
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -132,11 +138,12 @@ namespace Maple2.Trigger._52010021_qd {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new Statereal_end2(context);
-                    return;
+                    return new Statereal_end2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -152,11 +159,12 @@ namespace Maple2.Trigger._52010021_qd {
                 context.SetTimer(arg1: "4", arg2: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new Statereal_end3(context);
-                    return;
+                    return new Statereal_end3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -171,11 +179,12 @@ namespace Maple2.Trigger._52010021_qd {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new Statereal_end4(context);
-                    return;
+                    return new Statereal_end4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -190,11 +199,12 @@ namespace Maple2.Trigger._52010021_qd {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new Statereal_end(context);
-                    return;
+                    return new Statereal_end(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -208,7 +218,9 @@ namespace Maple2.Trigger._52010021_qd {
                 context.MoveUser(arg1: 02010002, arg2: 1, arg3: 701);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

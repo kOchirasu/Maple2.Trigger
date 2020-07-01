@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BombPhase") == 2) {
-                    context.State = new State무적해제안내(context);
-                    return;
+                    return new State무적해제안내(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02020062_BF__BOSS_INVINCIBLE_OFF__0$", arg3: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BossClear") == 1) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,7 +40,9 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

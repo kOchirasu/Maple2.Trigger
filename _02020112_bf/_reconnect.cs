@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Reconnect") == 1) {
-                    context.State = new State버프쏴주기(context);
-                    return;
+                    return new State버프쏴주기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,16 +24,16 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetTimer(arg1: "1", arg2: 5, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Reconnect") == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,7 +46,9 @@ namespace Maple2.Trigger._02020112_bf {
                 context.AddBuff(arg1: new[] {931}, arg2: 70002112, arg3: 1, arg5: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

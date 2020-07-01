@@ -7,11 +7,12 @@ namespace Maple2.Trigger._80000010_bonus {
                 context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
-                    context.State = new State완료(context);
-                    return;
+                    return new State완료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -95,11 +96,12 @@ namespace Maple2.Trigger._80000010_bonus {
                 context.SetTimer(arg1: "1", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State완료2(context);
-                    return;
+                    return new State완료2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -112,7 +114,9 @@ namespace Maple2.Trigger._80000010_bonus {
                 context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

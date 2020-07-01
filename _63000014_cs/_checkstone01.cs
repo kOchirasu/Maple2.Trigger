@@ -11,11 +11,12 @@ namespace Maple2.Trigger._63000014_cs {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new StateLodingDelay01(context);
-                    return;
+                    return new StateLodingDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,36 +27,32 @@ namespace Maple2.Trigger._63000014_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000450}, arg3: new byte[] {1})) {
-                    context.State = new StateQuestOnGoing30(context);
-                    return;
+                    return new StateQuestOnGoing30(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000449}, arg3: new byte[] {3})) {
-                    context.State = new StateQuestOnGoing22(context);
-                    return;
+                    return new StateQuestOnGoing22(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000449}, arg3: new byte[] {2})) {
-                    context.State = new StateQuestOnGoing21(context);
-                    return;
+                    return new StateQuestOnGoing21(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000449}, arg3: new byte[] {1})) {
-                    context.State = new StateQuestOnGoing20(context);
-                    return;
+                    return new StateQuestOnGoing20(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000448}, arg3: new byte[] {3})) {
-                    context.State = new StateQuestOnGoing10(context);
-                    return;
+                    return new StateQuestOnGoing10(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000448}, arg3: new byte[] {2})) {
-                    context.State = new StateFirstQuestEnd01(context);
-                    return;
+                    return new StateFirstQuestEnd01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,11 +63,12 @@ namespace Maple2.Trigger._63000014_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new StateSecondQuestStart01(context);
-                    return;
+                    return new StateSecondQuestStart01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,11 +79,12 @@ namespace Maple2.Trigger._63000014_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new StateMoveToFindStone01(context);
-                    return;
+                    return new StateMoveToFindStone01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,11 +95,12 @@ namespace Maple2.Trigger._63000014_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new StateSecondQuestEnd01(context);
-                    return;
+                    return new StateSecondQuestEnd01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -111,11 +111,12 @@ namespace Maple2.Trigger._63000014_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new StateThirdQuestStart01(context);
-                    return;
+                    return new StateThirdQuestStart01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -126,11 +127,12 @@ namespace Maple2.Trigger._63000014_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new StateMoveToNextMap01(context);
-                    return;
+                    return new StateMoveToNextMap01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -145,11 +147,12 @@ namespace Maple2.Trigger._63000014_cs {
                 context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9003})) {
-                    context.State = new StateFirstQuestEnd02(context);
-                    return;
+                    return new StateFirstQuestEnd02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -163,11 +166,12 @@ namespace Maple2.Trigger._63000014_cs {
                 context.SetEffect(arg1: new[] {5100, 5101, 5102, 5103}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000448}, arg3: new byte[] {3})) {
-                    context.State = new StateSecondQuestStart01(context);
-                    return;
+                    return new StateSecondQuestStart01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -182,11 +186,12 @@ namespace Maple2.Trigger._63000014_cs {
                 context.ShowGuideSummary(entityId: 10030160, textId: 10030160);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000449}, arg3: new byte[] {1})) {
-                    context.State = new StateMoveToFindStone01(context);
-                    return;
+                    return new StateMoveToFindStone01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -204,11 +209,12 @@ namespace Maple2.Trigger._63000014_cs {
                 context.SetEffect(arg1: new[] {5400, 5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5210}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9001})) {
-                    context.State = new StateMoveToFindStone02(context);
-                    return;
+                    return new StateMoveToFindStone02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -223,11 +229,12 @@ namespace Maple2.Trigger._63000014_cs {
                 context.ShowGuideSummary(entityId: 10032020, textId: 10032020);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000449}, arg3: new byte[] {2})) {
-                    context.State = new StateSecondQuestEnd01(context);
-                    return;
+                    return new StateSecondQuestEnd01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -244,11 +251,12 @@ namespace Maple2.Trigger._63000014_cs {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9003})) {
-                    context.State = new StateSecondQuestEnd02(context);
-                    return;
+                    return new StateSecondQuestEnd02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -261,11 +269,12 @@ namespace Maple2.Trigger._63000014_cs {
                 context.SetEffect(arg1: new[] {5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5210}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000449}, arg3: new byte[] {3})) {
-                    context.State = new StateThirdQuestStart01(context);
-                    return;
+                    return new StateThirdQuestStart01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -281,11 +290,12 @@ namespace Maple2.Trigger._63000014_cs {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000450}, arg3: new byte[] {1})) {
-                    context.State = new StateMoveToNextMap01(context);
-                    return;
+                    return new StateMoveToNextMap01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -303,11 +313,12 @@ namespace Maple2.Trigger._63000014_cs {
                 context.SetEffect(arg1: new[] {5300, 5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311, 5312, 5313}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9002})) {
-                    context.State = new StateMoveToNextMap02(context);
-                    return;
+                    return new StateMoveToNextMap02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -323,11 +334,12 @@ namespace Maple2.Trigger._63000014_cs {
                 context.ShowGuideSummary(entityId: 1060, textId: 1060);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9900})) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -342,7 +354,9 @@ namespace Maple2.Trigger._63000014_cs {
                 context.SetEffect(arg1: new[] {5300, 5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311, 5312, 5313}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

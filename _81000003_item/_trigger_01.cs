@@ -8,11 +8,12 @@ namespace Maple2.Trigger._81000003_item {
                 context.SetMesh(arg1: new[] {307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000223}, arg2: 0)) {
-                    context.State = new State다리01(context);
-                    return;
+                    return new State다리01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._81000003_item {
                 context.SetMesh(arg1: new[] {307, 308}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State다리02(context);
-                    return;
+                    return new State다리02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._81000003_item {
                 context.SetMesh(arg1: new[] {309, 310, 311}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State다리03(context);
-                    return;
+                    return new State다리03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +65,12 @@ namespace Maple2.Trigger._81000003_item {
                 context.SetMesh(arg1: new[] {312, 313, 314}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State다리04(context);
-                    return;
+                    return new State다리04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,11 +84,12 @@ namespace Maple2.Trigger._81000003_item {
                 context.SetMesh(arg1: new[] {315, 316, 317}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new State다리05(context);
-                    return;
+                    return new State다리05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,11 +103,12 @@ namespace Maple2.Trigger._81000003_item {
                 context.SetMesh(arg1: new[] {318, 319}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State다리06(context);
-                    return;
+                    return new State다리06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,11 +121,12 @@ namespace Maple2.Trigger._81000003_item {
                 context.SetTimer(arg1: "6", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "6")) {
-                    context.State = new State레버(context);
-                    return;
+                    return new State레버(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

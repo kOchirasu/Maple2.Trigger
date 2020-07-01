@@ -13,11 +13,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetUserValue(key: "MakeFalse", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RouteSelected") == 1) {
-                    context.State = new StateStartDazzlingRandom01(context);
-                    return;
+                    return new StateStartDazzlingRandom01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,21 +31,20 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetRandomMesh(arg1: new[] {231100, 231101, 231102, 231103, 231104, 231105, 231106, 231107, 231108, 231109, 231110, 231111}, arg2: true, arg3: 4, arg4: 100, arg5: 500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateStartDazzlingRandom02(context);
-                    return;
+                    return new StateStartDazzlingRandom02(context);
                 }
 
                 if (context.GetUserValue(key: "MakeTrue") == 1) {
-                    context.State = new StateMakeTrue(context);
-                    return;
+                    return new StateMakeTrue(context);
                 }
 
                 if (context.GetUserValue(key: "MakeFalse") == 1) {
-                    context.State = new StateMakeFalse(context);
-                    return;
+                    return new StateMakeFalse(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -59,21 +59,20 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetRandomMesh(arg1: new[] {231100, 231101, 231102, 231103, 231104, 231105, 231106, 231107, 231108, 231109, 231110, 231111}, arg2: true, arg3: 4, arg4: 100, arg5: 500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateStartDazzlingRandom01(context);
-                    return;
+                    return new StateStartDazzlingRandom01(context);
                 }
 
                 if (context.GetUserValue(key: "MakeTrue") == 1) {
-                    context.State = new StateMakeTrue(context);
-                    return;
+                    return new StateMakeTrue(context);
                 }
 
                 if (context.GetUserValue(key: "MakeFalse") == 1) {
-                    context.State = new StateMakeFalse(context);
-                    return;
+                    return new StateMakeFalse(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -93,11 +92,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetMesh(arg1: new[] {4010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -110,11 +110,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetMesh(arg1: new[] {231100, 231101, 231102, 231103, 231104, 231105, 231106, 231107, 231108, 231109, 231110, 231111}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -125,7 +126,9 @@ namespace Maple2.Trigger._02000378_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000317_bf {
                 context.SetInteractObject(arg1: new[] {10001047}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001047}, arg2: 0)) {
-                    context.State = new Statehide(context);
-                    return;
+                    return new Statehide(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -24,7 +25,9 @@ namespace Maple2.Trigger._02000317_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

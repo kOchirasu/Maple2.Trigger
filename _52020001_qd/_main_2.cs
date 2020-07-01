@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2})) {
-                    context.State = new State잠시기다림_1(context);
-                    return;
+                    return new State잠시기다림_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State타이머시작(context);
-                    return;
+                    return new State타이머시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetTimer(arg1: "101", arg2: 180, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State몬스터출현_3(context);
-                    return;
+                    return new State몬스터출현_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,16 +59,16 @@ namespace Maple2.Trigger._52020001_qd {
                 context.CreateMonster(arg1: new[] {6100002, 6000011, 6000012, 6000013}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State몬스터사망_3(context);
-                    return;
+                    return new State몬스터사망_3(context);
                 }
 
                 if (context.TimeExpired(arg1: "101")) {
-                    context.State = new State실패(context);
-                    return;
+                    return new State실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -76,16 +79,16 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {6000011}) && context.MonsterDead(arg1: new[] {6000012}) && context.MonsterDead(arg1: new[] {6000013})) {
-                    context.State = new State몬스터출현_4(context);
-                    return;
+                    return new State몬스터출현_4(context);
                 }
 
                 if (context.TimeExpired(arg1: "101")) {
-                    context.State = new State실패(context);
-                    return;
+                    return new State실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,16 +101,16 @@ namespace Maple2.Trigger._52020001_qd {
                 context.CreateMonster(arg1: new[] {6000014, 6000015, 6000016}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State몬스터사망_4(context);
-                    return;
+                    return new State몬스터사망_4(context);
                 }
 
                 if (context.TimeExpired(arg1: "101")) {
-                    context.State = new State실패(context);
-                    return;
+                    return new State실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -118,16 +121,16 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {6000014}) && context.MonsterDead(arg1: new[] {6000015}) && context.MonsterDead(arg1: new[] {6000016})) {
-                    context.State = new State생성_2(context);
-                    return;
+                    return new State생성_2(context);
                 }
 
                 if (context.TimeExpired(arg1: "101")) {
-                    context.State = new State실패(context);
-                    return;
+                    return new State실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -141,11 +144,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetInteractObject(arg1: new[] {10002002}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State작동_2(context);
-                    return;
+                    return new State작동_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -156,11 +160,12 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002002}, arg2: 0)) {
-                    context.State = new State연출시작_2(context);
-                    return;
+                    return new State연출시작_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -176,11 +181,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.VisibleMyPc(isVisible: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State연출시작(context);
-                    return;
+                    return new State연출시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -193,11 +199,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.CameraSelectPath(arg1: new[] {2000005}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State폭발_2(context);
-                    return;
+                    return new State폭발_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -210,11 +217,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetEffect(arg1: new[] {10001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 800)) {
-                    context.State = new State맵폭발연출_1(context);
-                    return;
+                    return new State맵폭발연출_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -228,11 +236,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetSkill(arg1: new[] {6004}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 400)) {
-                    context.State = new State카메라연출(context);
-                    return;
+                    return new State카메라연출(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -247,11 +256,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetProductionUI(arg1: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statepc소환_2(context);
-                    return;
+                    return new Statepc소환_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -265,11 +275,12 @@ namespace Maple2.Trigger._52020001_qd {
                 context.MoveUser(arg1: 52020001, arg2: 12);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
-                    context.State = new State카메라리셋(context);
-                    return;
+                    return new State카메라리셋(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -283,8 +294,10 @@ namespace Maple2.Trigger._52020001_qd {
                 context.CameraReset(interpolationTime: 0.8f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) { }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -302,8 +315,10 @@ namespace Maple2.Trigger._52020001_qd {
                 context.SetPortal(arg1: 14, arg2: true, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) { }
+
+                return null;
             }
 
             public override void OnExit() { }

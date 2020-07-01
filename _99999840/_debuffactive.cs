@@ -5,21 +5,20 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 811) == true) {
-                    context.State = new State이동속도감소(context);
-                    return;
+                    return new State이동속도감소(context);
                 }
 
                 if (context.GetDungeonVariable(id: 812) == true) {
-                    context.State = new State공격력감소(context);
-                    return;
+                    return new State공격력감소(context);
                 }
 
                 if (context.GetDungeonVariable(id: 813) == true) {
-                    context.State = new State체력감소(context);
-                    return;
+                    return new State체력감소(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -34,11 +33,8 @@ namespace Maple2.Trigger._99999840 {
                 context.AddBuff(arg1: new[] {9001}, arg2: 70002581, arg3: 1, arg5: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기(context);
             }
 
             public override void OnExit() { }
@@ -53,11 +49,8 @@ namespace Maple2.Trigger._99999840 {
                 context.AddBuff(arg1: new[] {9001}, arg2: 70002591, arg3: 1, arg5: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기(context);
             }
 
             public override void OnExit() { }
@@ -72,11 +65,8 @@ namespace Maple2.Trigger._99999840 {
                 context.AddBuff(arg1: new[] {9001}, arg2: 70002601, arg3: 1, arg5: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기(context);
             }
 
             public override void OnExit() { }

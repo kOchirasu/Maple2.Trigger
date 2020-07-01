@@ -19,11 +19,12 @@ namespace Maple2.Trigger._02000290_bf {
                 context.SetInteractObject(arg1: new[] {10000429}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {104})) {
-                    context.State = new State폭포안내(context);
-                    return;
+                    return new State폭포안내(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,11 +39,12 @@ namespace Maple2.Trigger._02000290_bf {
                 context.ShowGuideSummary(entityId: 20002902, textId: 20002902);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000429}, arg2: 0)) {
-                    context.State = new State폭포갈라짐(context);
-                    return;
+                    return new State폭포갈라짐(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +60,12 @@ namespace Maple2.Trigger._02000290_bf {
                 context.SetEffect(arg1: new[] {5200}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State사다리생김(context);
-                    return;
+                    return new State사다리생김(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -86,7 +89,9 @@ namespace Maple2.Trigger._02000290_bf {
                 context.SetLadder(arg1: 520, arg2: true, arg3: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

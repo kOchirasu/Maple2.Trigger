@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52100301_qd {
                 context.SetEffect(arg1: new[] {200031, 200032}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Phase_5_Interect_01") == 1) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._52100301_qd {
                 context.CreateMonster(arg1: new[] {999}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State탈것_등장(context);
-                    return;
+                    return new State탈것_등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,16 +45,16 @@ namespace Maple2.Trigger._52100301_qd {
                 context.DestroyMonster(arg1: new[] {999});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10003126}, arg2: 0)) {
-                    context.State = new State인터렉트_동작(context);
-                    return;
+                    return new State인터렉트_동작(context);
                 }
 
                 if (context.GetUserValue(key: "Phase_5_Interect_01") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,16 +65,16 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State인터렉트_리셋(context);
-                    return;
+                    return new State인터렉트_리셋(context);
                 }
 
                 if (context.GetUserValue(key: "Phase_5_Interect_01") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,16 +85,16 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 0, additionalEffectId: 62100152, level: true)) {
-                    context.State = new State리셋_대기(context);
-                    return;
+                    return new State리셋_대기(context);
                 }
 
                 if (context.GetUserValue(key: "Phase_5_Interect_01") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -103,16 +105,16 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.GetUserValue(key: "Phase_5_Interect_01") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

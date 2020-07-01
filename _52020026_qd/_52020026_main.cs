@@ -11,11 +11,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetInteractObject(arg1: new[] {10001320, 10001321, 10001322, 10001323, 10001324, 10001325}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State1층(context);
-                    return;
+                    return new State1층(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._52020026_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State1층레버활성(context);
-                    return;
+                    return new State1층레버활성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,11 +64,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetInteractObject(arg1: new[] {10001320}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001320}, arg2: 0)) {
-                    context.State = new State2층(context);
-                    return;
+                    return new State2층(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,11 +83,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetMesh(arg1: new[] {1001, 1002, 1003}, arg2: true, arg3: 0, arg4: 500, arg5: 3f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {102})) {
-                    context.State = new State2층레버활성(context);
-                    return;
+                    return new State2층레버활성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,11 +101,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetInteractObject(arg1: new[] {10001321}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001321}, arg2: 0)) {
-                    context.State = new State3층(context);
-                    return;
+                    return new State3층(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -114,11 +120,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetMesh(arg1: new[] {1004, 1005, 1006}, arg2: true, arg3: 0, arg4: 500, arg5: 3f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {103, 104})) {
-                    context.State = new State3층레버활성(context);
-                    return;
+                    return new State3층레버활성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -131,11 +138,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetInteractObject(arg1: new[] {10001322}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001322}, arg2: 0)) {
-                    context.State = new State4층(context);
-                    return;
+                    return new State4층(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -149,11 +157,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetMesh(arg1: new[] {1007, 1008, 1009}, arg2: true, arg3: 0, arg4: 500, arg5: 3f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {105, 106})) {
-                    context.State = new State4층레버활성(context);
-                    return;
+                    return new State4층레버활성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -166,11 +175,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetInteractObject(arg1: new[] {10001323}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001323}, arg2: 0)) {
-                    context.State = new State5층(context);
-                    return;
+                    return new State5층(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -184,11 +194,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetMesh(arg1: new[] {1010, 1011, 1012}, arg2: true, arg3: 0, arg4: 500, arg5: 3f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {906})) {
-                    context.State = new State5층_벽부수기(context);
-                    return;
+                    return new State5층_벽부수기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -203,11 +214,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetSkill(arg1: new[] {1}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {107, 108})) {
-                    context.State = new State5층레버활성(context);
-                    return;
+                    return new State5층레버활성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -220,11 +232,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetInteractObject(arg1: new[] {10001324}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001324}, arg2: 0)) {
-                    context.State = new State6층(context);
-                    return;
+                    return new State6층(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -238,11 +251,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetMesh(arg1: new[] {1013, 1014, 1015}, arg2: true, arg3: 0, arg4: 500, arg5: 3f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {907})) {
-                    context.State = new State6층_벽부수기(context);
-                    return;
+                    return new State6층_벽부수기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -257,11 +271,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetSkill(arg1: new[] {2}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {109, 110, 111})) {
-                    context.State = new State6층레버활성(context);
-                    return;
+                    return new State6층레버활성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -274,11 +289,12 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetInteractObject(arg1: new[] {10001325}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001325}, arg2: 0)) {
-                    context.State = new State포탈활성화(context);
-                    return;
+                    return new State포탈활성화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -292,11 +308,8 @@ namespace Maple2.Trigger._52020026_qd {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -307,7 +320,9 @@ namespace Maple2.Trigger._52020026_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

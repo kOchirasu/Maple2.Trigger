@@ -5,16 +5,16 @@ namespace Maple2.Trigger._52100013_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
 
                 if (!context.IsDungeonRoom()) {
-                    context.State = new Statequest_idle(context);
-                    return;
+                    return new Statequest_idle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,16 +25,16 @@ namespace Maple2.Trigger._52100013_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Error") == 1) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {702})) {
-                    context.State = new Stateerror(context);
-                    return;
+                    return new Stateerror(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +47,12 @@ namespace Maple2.Trigger._52100013_qd {
                 context.MoveRandomUser(arg1: 52100013, arg2: 2, arg3: 702, arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,26 +63,24 @@ namespace Maple2.Trigger._52100013_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Error") == 1) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {702})) {
-                    context.State = new Statequest_error(context);
-                    return;
+                    return new Statequest_error(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090}, arg3: new byte[] {1})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100080}, arg3: new byte[] {2})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -94,21 +93,20 @@ namespace Maple2.Trigger._52100013_qd {
                 context.MoveRandomUser(arg1: 52100013, arg2: 2, arg3: 702, arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Statequest_idle(context);
-                    return;
+                    return new Statequest_idle(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090}, arg3: new byte[] {1})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100080}, arg3: new byte[] {2})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -121,7 +119,9 @@ namespace Maple2.Trigger._52100013_qd {
                 context.SetMesh(arg1: new[] {1001, 1002}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

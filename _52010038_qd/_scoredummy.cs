@@ -5,46 +5,40 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001258}, arg2: 0)) {
-                    context.State = new State점수(context);
-                    return;
+                    return new State점수(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001259}, arg2: 0)) {
-                    context.State = new State점수(context);
-                    return;
+                    return new State점수(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001260}, arg2: 0)) {
-                    context.State = new State점수(context);
-                    return;
+                    return new State점수(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001261}, arg2: 0)) {
-                    context.State = new State점수(context);
-                    return;
+                    return new State점수(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001262}, arg2: 0)) {
-                    context.State = new State점수(context);
-                    return;
+                    return new State점수(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001263}, arg2: 0)) {
-                    context.State = new State점수(context);
-                    return;
+                    return new State점수(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001264}, arg2: 0)) {
-                    context.State = new State점수(context);
-                    return;
+                    return new State점수(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001265}, arg2: 0)) {
-                    context.State = new State점수(context);
-                    return;
+                    return new State점수(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -57,11 +51,12 @@ namespace Maple2.Trigger._52010038_qd {
                 context.CreateMonster(arg1: new[] {4030}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

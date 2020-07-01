@@ -7,7 +7,9 @@ namespace Maple2.Trigger._02010058_bf {
                 context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

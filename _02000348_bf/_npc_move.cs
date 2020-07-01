@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000348_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 60004) == 1) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02000348_bf {
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000348_BF__NPC_MOVE__0$", arg4: 2, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statestart_02(context);
-                    return;
+                    return new Statestart_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,16 +41,16 @@ namespace Maple2.Trigger._02000348_bf {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_1002");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 60003, arg2: new[] {102})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,7 +63,9 @@ namespace Maple2.Trigger._02000348_bf {
                 context.DestroyMonster(arg1: new[] {102});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

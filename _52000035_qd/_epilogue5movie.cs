@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "50001625") == 1) {
-                    context.State = new Statestart02(context);
-                    return;
+                    return new Statestart02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,16 +21,16 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625}, arg3: new byte[] {3})) {
-                    context.State = new StateLoadingDelayB0(context);
-                    return;
+                    return new StateLoadingDelayB0(context);
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {5000}, arg2: new[] {50001625}, arg3: new byte[] {3})) {
-                    context.State = new StateReturnMapReady0(context);
-                    return;
+                    return new StateReturnMapReady0(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,11 +41,12 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    context.State = new StateReturnMapReady(context);
-                    return;
+                    return new StateReturnMapReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +61,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetProductionUI(arg1: 9, arg2: "$52000035_QD__EPILOGUE5MOVIE__0$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateReturnMap(context);
-                    return;
+                    return new StateReturnMap(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -76,7 +79,9 @@ namespace Maple2.Trigger._52000035_qd {
                 context.MoveUser(arg1: 02000065, arg2: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -93,11 +98,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CreateMonster(arg1: new[] {102, 5400, 5401, 5200, 5300}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    context.State = new StateCameraEffect1(context);
-                    return;
+                    return new StateCameraEffect1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,11 +121,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CameraSelectPath(arg1: new[] {51000, 51001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 14000)) {
-                    context.State = new StateCameraEffect2(context);
-                    return;
+                    return new StateCameraEffect2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -132,11 +139,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateEpilogue5Talk1(context);
-                    return;
+                    return new StateEpilogue5Talk1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -153,11 +161,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk2");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateEpilogue5Talk2(context);
-                    return;
+                    return new StateEpilogue5Talk2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -171,11 +180,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk3(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk3(context);
             }
 
             public override void OnExit() { }
@@ -191,11 +197,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk4");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    context.State = new StateEpilogue5Talk4(context);
-                    return;
+                    return new StateEpilogue5Talk4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -209,11 +216,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk5(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk5(context);
             }
 
             public override void OnExit() { }
@@ -230,11 +234,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk6");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk6(context);
-                    return;
+                    return new StateEpilogue5Talk6(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -249,11 +254,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk7(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk7(context);
             }
 
             public override void OnExit() { }
@@ -269,11 +271,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk8");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateEpilogue5Talk8(context);
-                    return;
+                    return new StateEpilogue5Talk8(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -287,11 +290,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk9(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk9(context);
             }
 
             public override void OnExit() { }
@@ -308,11 +308,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk10");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new StateEpilogue5Talk10(context);
-                    return;
+                    return new StateEpilogue5Talk10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -326,11 +327,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk11(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk11(context);
             }
 
             public override void OnExit() { }
@@ -348,11 +346,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk12");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk12(context);
-                    return;
+                    return new StateEpilogue5Talk12(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -366,11 +365,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk13(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk13(context);
             }
 
             public override void OnExit() { }
@@ -385,11 +381,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk14");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk14(context);
-                    return;
+                    return new StateEpilogue5Talk14(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -403,11 +400,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk16(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk16(context);
             }
 
             public override void OnExit() { }
@@ -423,11 +417,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk17");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk17(context);
-                    return;
+                    return new StateEpilogue5Talk17(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -442,11 +437,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk18(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk18(context);
             }
 
             public override void OnExit() { }
@@ -462,11 +454,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk19");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateEpilogue5Talk19(context);
-                    return;
+                    return new StateEpilogue5Talk19(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -481,11 +474,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk20(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk20(context);
             }
 
             public override void OnExit() { }
@@ -502,11 +492,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk21");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk21(context);
-                    return;
+                    return new StateEpilogue5Talk21(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -521,11 +512,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk22(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk22(context);
             }
 
             public override void OnExit() { }
@@ -542,11 +530,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk23");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateEpilogue5Talk23(context);
-                    return;
+                    return new StateEpilogue5Talk23(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -560,11 +549,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk24(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk24(context);
             }
 
             public override void OnExit() { }
@@ -579,11 +565,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk25");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk25(context);
-                    return;
+                    return new StateEpilogue5Talk25(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -597,11 +584,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk27(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk27(context);
             }
 
             public override void OnExit() { }
@@ -617,11 +601,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk28");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk28(context);
-                    return;
+                    return new StateEpilogue5Talk28(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -636,11 +621,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk29(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk29(context);
             }
 
             public override void OnExit() { }
@@ -656,11 +638,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk30");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateEpilogue5Talk30(context);
-                    return;
+                    return new StateEpilogue5Talk30(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -674,11 +657,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk31(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk31(context);
             }
 
             public override void OnExit() { }
@@ -693,11 +673,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk32");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateEpilogue5Talk32(context);
-                    return;
+                    return new StateEpilogue5Talk32(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -711,11 +692,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk33(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk33(context);
             }
 
             public override void OnExit() { }
@@ -731,11 +709,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk34");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateEpilogue5Talk34(context);
-                    return;
+                    return new StateEpilogue5Talk34(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -749,11 +728,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk35(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk35(context);
             }
 
             public override void OnExit() { }
@@ -768,11 +744,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk36");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    context.State = new StateEpilogue5Talk36(context);
-                    return;
+                    return new StateEpilogue5Talk36(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -786,11 +763,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk37(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk37(context);
             }
 
             public override void OnExit() { }
@@ -806,11 +780,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk38");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk38(context);
-                    return;
+                    return new StateEpilogue5Talk38(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -824,11 +799,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk39(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk39(context);
             }
 
             public override void OnExit() { }
@@ -843,11 +815,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk40");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk40(context);
-                    return;
+                    return new StateEpilogue5Talk40(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -862,11 +835,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk41(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk41(context);
             }
 
             public override void OnExit() { }
@@ -882,11 +852,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk42");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateEpilogue5Talk42(context);
-                    return;
+                    return new StateEpilogue5Talk42(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -900,11 +871,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk43(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk43(context);
             }
 
             public override void OnExit() { }
@@ -921,11 +889,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk44");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk44(context);
-                    return;
+                    return new StateEpilogue5Talk44(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -939,11 +908,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk45(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk45(context);
             }
 
             public override void OnExit() { }
@@ -959,11 +925,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk46");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateEpilogue5Talk46(context);
-                    return;
+                    return new StateEpilogue5Talk46(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -977,11 +944,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk47(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk47(context);
             }
 
             public override void OnExit() { }
@@ -996,11 +960,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk48");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk48(context);
-                    return;
+                    return new StateEpilogue5Talk48(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1014,11 +979,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk49(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk49(context);
             }
 
             public override void OnExit() { }
@@ -1034,11 +996,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk50");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk50(context);
-                    return;
+                    return new StateEpilogue5Talk50(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1052,11 +1015,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk51(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk51(context);
             }
 
             public override void OnExit() { }
@@ -1071,11 +1031,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk52");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk52(context);
-                    return;
+                    return new StateEpilogue5Talk52(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1089,11 +1050,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk53(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk53(context);
             }
 
             public override void OnExit() { }
@@ -1108,11 +1066,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk54");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new StateEpilogue5Talk54(context);
-                    return;
+                    return new StateEpilogue5Talk54(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1126,11 +1085,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk55(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk55(context);
             }
 
             public override void OnExit() { }
@@ -1146,11 +1102,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk56");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateEpilogue5Talk56(context);
-                    return;
+                    return new StateEpilogue5Talk56(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1165,11 +1122,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk57(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk57(context);
             }
 
             public override void OnExit() { }
@@ -1184,11 +1138,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk58");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk58(context);
-                    return;
+                    return new StateEpilogue5Talk58(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1204,11 +1159,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk59(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk59(context);
             }
 
             public override void OnExit() { }
@@ -1223,11 +1175,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk60");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk60(context);
-                    return;
+                    return new StateEpilogue5Talk60(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1241,11 +1194,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk61(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk61(context);
             }
 
             public override void OnExit() { }
@@ -1260,11 +1210,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk62");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk62(context);
-                    return;
+                    return new StateEpilogue5Talk62(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1279,11 +1230,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk63(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk63(context);
             }
 
             public override void OnExit() { }
@@ -1299,11 +1247,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk64");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateEpilogue5Talk64(context);
-                    return;
+                    return new StateEpilogue5Talk64(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1318,11 +1267,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetOnetimeEffect(id: 02100282, enable: false, path: @"BG/Common/Sound/Eff_System_Chapter5_Bella_Foosteps_01.xml");
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk65(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk65(context);
             }
 
             public override void OnExit() { }
@@ -1337,11 +1283,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip(arg1: "Epilogue5Talk66");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk66(context);
-                    return;
+                    return new StateEpilogue5Talk66(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1355,11 +1302,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEpilogue5Talk67(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEpilogue5Talk67(context);
             }
 
             public override void OnExit() { }
@@ -1373,11 +1317,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEpilogue5Talk68(context);
-                    return;
+                    return new StateEpilogue5Talk68(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1390,11 +1335,12 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1409,7 +1355,9 @@ namespace Maple2.Trigger._52000035_qd {
                 context.MoveUser(arg1: 02000065, arg2: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

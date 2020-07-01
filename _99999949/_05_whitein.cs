@@ -10,11 +10,12 @@ namespace Maple2.Trigger._99999949 {
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9041})) {
-                    context.State = new StateGuide(context);
-                    return;
+                    return new StateGuide(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "5번 영역에 들어가면 SetOnetimeEffect 트리거가 발동됩니다.");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9040})) {
-                    context.State = new StateSetOnetimeEffectReady01(context);
-                    return;
+                    return new StateSetOnetimeEffectReady01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._99999949 {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSetOnetimeEffectReady02(context);
-                    return;
+                    return new StateSetOnetimeEffectReady02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +65,12 @@ namespace Maple2.Trigger._99999949 {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSetOnetimeEffect01(context);
-                    return;
+                    return new StateSetOnetimeEffect01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,11 +87,12 @@ namespace Maple2.Trigger._99999949 {
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -104,11 +109,12 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "5초 후에 트리거가 리셋됩니다. 5번 영역 밖으로 나가세요.");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

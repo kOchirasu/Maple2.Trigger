@@ -5,11 +5,12 @@ namespace Maple2.Trigger._65010003_bd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    context.State = new State디버프(context);
-                    return;
+                    return new State디버프(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._65010003_bd {
                 context.AddBuff(arg1: new[] {101}, arg2: 70000040, arg3: 1, arg4: false, arg5: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

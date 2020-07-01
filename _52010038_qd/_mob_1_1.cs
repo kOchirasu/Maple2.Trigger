@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "WaveStart") == 1) {
-                    context.State = new State생성(context);
-                    return;
+                    return new State생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -28,21 +29,20 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SpawnNpcRange(rangeId: new[] {2001, 2002, 2003, 2004}, isAutoTargeting: true, randomPickCount: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new State생성(context);
-                    return;
+                    return new State생성(context);
                 }
 
                 if (context.GetUserValue(key: "WaveSlowDown") == 1) {
-                    context.State = new State생성2(context);
-                    return;
+                    return new State생성2(context);
                 }
 
                 if (context.GetUserValue(key: "WaveEnd") == 1) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,16 +56,16 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SpawnNpcRange(rangeId: new[] {2001, 2002, 2003, 2004}, isAutoTargeting: true, randomPickCount: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 14000)) {
-                    context.State = new State생성2(context);
-                    return;
+                    return new State생성2(context);
                 }
 
                 if (context.GetUserValue(key: "WaveEnd") == 1) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -76,7 +76,9 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

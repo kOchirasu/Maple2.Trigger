@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52100041_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002074}, arg2: 0)) {
-                    context.State = new StateReady(context);
-                    return;
+                    return new StateReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._52100041_qd {
                 context.CreateMonster(arg1: new[] {203}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {203})) {
-                    context.State = new StateEvent_03(context);
-                    return;
+                    return new StateEvent_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._52100041_qd {
                 context.SetNpcEmotionLoop(arg1: 165, arg2: "Down_Idle_A", arg3: 600000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateEvent_03_b(context);
-                    return;
+                    return new StateEvent_03_b(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +68,12 @@ namespace Maple2.Trigger._52100041_qd {
                 context.SetConversation(arg1: 1, arg2: 168, arg3: "$52100041_QD__MAGIC_03__3$", arg4: 3, arg5: 6);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
-                    context.State = new StateEvent_03_c(context);
-                    return;
+                    return new StateEvent_03_c(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,7 +86,9 @@ namespace Maple2.Trigger._52100041_qd {
                 context.DestroyMonster(arg1: new[] {165, 166, 167, 168, 169});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

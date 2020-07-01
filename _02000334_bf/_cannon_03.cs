@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetEffect(arg1: new[] {98012}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "cannon_03") == 1) {
-                    context.State = new State마킹비표시(context);
-                    return;
+                    return new State마킹비표시(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetEffect(arg1: new[] {98012}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 90013, arg2: new[] {190})) {
-                    context.State = new State마킹표시(context);
-                    return;
+                    return new State마킹표시(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +43,12 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetEffect(arg1: new[] {98012}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.NpcDetected(arg1: 90013, arg2: new[] {190})) {
-                    context.State = new State마킹비표시(context);
-                    return;
+                    return new State마킹비표시(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

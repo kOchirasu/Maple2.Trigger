@@ -7,11 +7,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.CreateWidget(arg1: "SurvivalContents");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StormStart") == 1) {
-                    context.State = new StateSetStorm(context);
-                    return;
+                    return new StateSetStorm(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,8 @@ namespace Maple2.Trigger._82000000_survival {
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_0");
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateStep01(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateStep01(context);
             }
 
             public override void OnExit() { }
@@ -43,11 +41,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_1_start");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
-                    context.State = new StateStep02(context);
-                    return;
+                    return new StateStep02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -64,11 +63,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_2_start");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
-                    context.State = new StateStep03(context);
-                    return;
+                    return new StateStep03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -85,11 +85,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_3_start");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
-                    context.State = new StateStep04(context);
-                    return;
+                    return new StateStep04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -106,11 +107,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_4_start");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
-                    context.State = new StateStep05(context);
-                    return;
+                    return new StateStep05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -127,11 +129,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_5_start");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
-                    context.State = new StateStep06(context);
-                    return;
+                    return new StateStep06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -148,11 +151,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_6_start");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
-                    context.State = new StateStep07(context);
-                    return;
+                    return new StateStep07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -169,11 +173,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_7_start");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
-                    context.State = new StateStep08(context);
-                    return;
+                    return new StateStep08(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -190,11 +195,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.WriteLog(arg1: "Survival", arg3: "Storm_Step_8_start");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SurvivalContents", arg2: "TimeOver")) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -208,7 +214,9 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

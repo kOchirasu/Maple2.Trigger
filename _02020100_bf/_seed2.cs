@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02020100_bf {
                 context.SetUserValue(triggerId: 99990001, key: "Seed2interact", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Seed2start") == 1) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,16 +27,16 @@ namespace Maple2.Trigger._02020100_bf {
                 context.SetInteractObject(arg1: new[] {10002110}, arg2: 1, arg3: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Seed2start") == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002110}, arg2: 0)) {
-                    context.State = new State씨앗2_대기(context);
-                    return;
+                    return new State씨앗2_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -51,16 +52,16 @@ namespace Maple2.Trigger._02020100_bf {
                 context.SetUserValue(triggerId: 99990001, key: "Seed2interact", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Seed2start") == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 0, additionalEffectId: 70002109, level: true)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,7 +74,9 @@ namespace Maple2.Trigger._02020100_bf {
                 context.SetInteractObject(arg1: new[] {10002110}, arg2: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

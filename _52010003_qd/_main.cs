@@ -8,16 +8,16 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetActor(arg1: 2001, arg2: false, arg3: "Sit_Down_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002802}, arg3: new byte[] {1})) {
-                    context.State = new StateEvent_01(context);
-                    return;
+                    return new StateEvent_01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002836}, arg3: new byte[] {1})) {
-                    context.State = new StateB_Event_01(context);
-                    return;
+                    return new StateB_Event_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +39,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.MoveNpc(arg1: 105, arg2: "MS2PatrolData_1006");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new StateB_Event_02_IdLE(context);
-                    return;
+                    return new StateB_Event_02_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -56,11 +57,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateB_Event_02(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateB_Event_02(context);
             }
 
             public override void OnExit() { }
@@ -75,11 +73,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new StateB_Event_03_IdLE(context);
-                    return;
+                    return new StateB_Event_03_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -92,11 +91,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateB_Event_03(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateB_Event_03(context);
             }
 
             public override void OnExit() { }
@@ -111,11 +107,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new StateB_Event_04_IdLE(context);
-                    return;
+                    return new StateB_Event_04_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -128,11 +125,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateB_Event_04(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateB_Event_04(context);
             }
 
             public override void OnExit() { }
@@ -147,11 +141,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new StateB_Event_05_IdLE(context);
-                    return;
+                    return new StateB_Event_05_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -164,11 +159,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateB_Event_05(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateB_Event_05(context);
             }
 
             public override void OnExit() { }
@@ -183,11 +175,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new StateB_Event_06_IdLE(context);
-                    return;
+                    return new StateB_Event_06_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -200,11 +193,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateB_Event_06(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateB_Event_06(context);
             }
 
             public override void OnExit() { }
@@ -219,11 +209,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new StateB_Event_07_IdLE(context);
-                    return;
+                    return new StateB_Event_07_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -236,11 +227,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateB_Event_07(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateB_Event_07(context);
             }
 
             public override void OnExit() { }
@@ -255,11 +243,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new StateB_Event_08_IdLE(context);
-                    return;
+                    return new StateB_Event_08_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -277,7 +266,9 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -296,11 +287,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetSkip(arg1: "Event_02_IdLE");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new StateEvent_02_IdLE(context);
-                    return;
+                    return new StateEvent_02_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -313,11 +305,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEvent_02(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEvent_02(context);
             }
 
             public override void OnExit() { }
@@ -332,11 +321,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new StateEvent_03_IdLE(context);
-                    return;
+                    return new StateEvent_03_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -349,11 +339,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEvent_03(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEvent_03(context);
             }
 
             public override void OnExit() { }
@@ -368,11 +355,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetTimer(arg1: "4", arg2: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new StateEvent_04_IdLE(context);
-                    return;
+                    return new StateEvent_04_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -385,11 +373,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEvent_04(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEvent_04(context);
             }
 
             public override void OnExit() { }
@@ -404,11 +389,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetSkip(arg1: "Event_05_IdLE");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new StateEvent_05_IdLE(context);
-                    return;
+                    return new StateEvent_05_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -421,11 +407,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEvent_05(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEvent_05(context);
             }
 
             public override void OnExit() { }
@@ -440,11 +423,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetSkip(arg1: "Event_06_IdLE");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new StateEvent_06_IdLE(context);
-                    return;
+                    return new StateEvent_06_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -457,11 +441,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEvent_06(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEvent_06(context);
             }
 
             public override void OnExit() { }
@@ -476,11 +457,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetSkip(arg1: "Event_07_IdLE");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new StateEvent_07_IdLE(context);
-                    return;
+                    return new StateEvent_07_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -493,11 +475,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEvent_07(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEvent_07(context);
             }
 
             public override void OnExit() { }
@@ -512,11 +491,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetSkip(arg1: "Event_08_IdLE");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateEvent_08_IdLE(context);
-                    return;
+                    return new StateEvent_08_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -529,11 +509,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEvent_08(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEvent_08(context);
             }
 
             public override void OnExit() { }
@@ -548,11 +525,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetSkip(arg1: "Event_09_IdLE");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new StateEvent_09_IdLE(context);
-                    return;
+                    return new StateEvent_09_IdLE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -565,11 +543,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEvent_09(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEvent_09(context);
             }
 
             public override void OnExit() { }
@@ -584,11 +559,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetSkip(arg1: "Event_10");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateEvent_10(context);
-                    return;
+                    return new StateEvent_10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -605,11 +581,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetSkip(arg1: "Event_11");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new StatePlayMovie_01(context);
-                    return;
+                    return new StatePlayMovie_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -626,11 +603,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.PlaySceneMovie(fileName: "DestinyofMika.swf", movieId: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    context.State = new StatePlayMovie_02(context);
-                    return;
+                    return new StatePlayMovie_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -645,11 +623,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetSkip(arg1: "Event_12");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "45")) {
-                    context.State = new StateEvent_12(context);
-                    return;
+                    return new StateEvent_12(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -666,11 +645,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetSkip(arg1: "Event_13");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateEvent_13(context);
-                    return;
+                    return new StateEvent_13(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -685,11 +665,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetSkip(arg1: "Event_14");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new StateEvent_14(context);
-                    return;
+                    return new StateEvent_14(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -708,11 +689,12 @@ namespace Maple2.Trigger._52010003_qd {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_1003");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 702, arg2: new[] {102})) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -725,7 +707,9 @@ namespace Maple2.Trigger._52010003_qd {
                 context.DestroyMonster(arg1: new[] {102});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

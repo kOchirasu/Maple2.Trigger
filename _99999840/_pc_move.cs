@@ -5,7 +5,9 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -15,16 +17,16 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 9001, additionalEffectId: 70002541, level: true)) {
-                    context.State = new State유저이동확률(context);
-                    return;
+                    return new State유저이동확률(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,26 +37,24 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new State유저이동1(context);
-                    return;
+                    return new State유저이동1(context);
                 }
 
                 if (context.RandomCondition(arg1: 34f)) {
-                    context.State = new State유저이동2(context);
-                    return;
+                    return new State유저이동2(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new State유저이동3(context);
-                    return;
+                    return new State유저이동3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -67,16 +67,12 @@ namespace Maple2.Trigger._99999840 {
                 context.MoveUser(arg1: 99999841, arg2: 2, arg3: 9202);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
-                if (true) {
-                    context.State = new State대기(context);
-                    return;
-                }
+                return new State대기(context);
             }
 
             public override void OnExit() { }
@@ -89,16 +85,12 @@ namespace Maple2.Trigger._99999840 {
                 context.MoveUser(arg1: 99999841, arg2: 3, arg3: 9202);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
-                if (true) {
-                    context.State = new State대기(context);
-                    return;
-                }
+                return new State대기(context);
             }
 
             public override void OnExit() { }
@@ -111,16 +103,12 @@ namespace Maple2.Trigger._99999840 {
                 context.MoveUser(arg1: 99999841, arg2: 4, arg3: 9202);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
-                if (true) {
-                    context.State = new State대기(context);
-                    return;
-                }
+                return new State대기(context);
             }
 
             public override void OnExit() { }
@@ -131,7 +119,9 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -8,11 +8,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetEffect(arg1: new[] {12000, 22000}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9001})) {
-                    context.State = new State딜레이01(context);
-                    return;
+                    return new State딜레이01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetTimer(arg1: "1", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State무너짐01(context);
-                    return;
+                    return new State무너짐01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetEventUI(arg1: 1, arg2: "$52000014_QD__COLLAPSE_2000__0$", arg3: 4000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State무너짐02(context);
-                    return;
+                    return new State무너짐02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +65,13 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetRandomMesh(arg1: new[] {2000, 2001, 2002, 2003, 2004}, arg2: false, arg3: 5, arg4: 0, arg5: 200);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    // context.State = new State무너짐03(context);
-                    return;
+                    // return new State무너짐03(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,7 +84,9 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetEffect(arg1: new[] {12000, 22000}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

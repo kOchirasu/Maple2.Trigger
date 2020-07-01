@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02100009_bf {
                 context.SetSkill(arg1: new[] {1000049}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {100000002})) {
-                    context.State = new State버프(context);
-                    return;
+                    return new State버프(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,8 +42,10 @@ namespace Maple2.Trigger._02100009_bf {
                 context.SetSkill(arg1: new[] {1000049}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) { }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020006_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "NPCTalk") == 1) {
-                    context.State = new StateNPCTalkOnWait(context);
-                    return;
+                    return new StateNPCTalkOnWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02020006_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new StateNPCTalkOn(context);
-                    return;
+                    return new StateNPCTalkOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +39,12 @@ namespace Maple2.Trigger._02020006_bf {
                 context.AddBalloonTalk(spawnPointId: 15401, msg: "$02020006_BF__1000051_NPCTALK__0$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateTalkDelay(context);
-                    return;
+                    return new StateTalkDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -52,16 +55,17 @@ namespace Maple2.Trigger._02020006_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 17000)) {
-                    context.State = new StateNPCTalkOn(context);
-                    return;
+                    return new StateNPCTalkOn(context);
                 }
 
                 if (context.GetUserValue(key: "NPCTalk") == 0) {
-                    // context.State = new StateNPCTalkOff(context);
-                    return;
+                    // return new StateNPCTalkOff(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -74,11 +78,12 @@ namespace Maple2.Trigger._02020006_bf {
                 context.RemoveBalloonTalk(spawnPointId: 15401);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

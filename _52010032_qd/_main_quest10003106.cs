@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003106}, arg3: new byte[] {1})) {
-                    context.State = new StateReady(context);
-                    return;
+                    return new StateReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,7 +23,9 @@ namespace Maple2.Trigger._52010032_qd {
                 context.SetAchievement(arg1: 2001, arg2: "trigger", arg3: "NewChief");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

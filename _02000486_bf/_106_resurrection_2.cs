@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {901})) {
-                    context.State = new State타임(context);
-                    return;
+                    return new State타임(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 240000)) {
-                    context.State = new State버프(context);
-                    return;
+                    return new State버프(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +39,12 @@ namespace Maple2.Trigger._02000486_bf {
                 context.SetAiExtraData(key: "RageBuff_3", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State버프_종료(context);
-                    return;
+                    return new State버프_종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -54,8 +57,10 @@ namespace Maple2.Trigger._02000486_bf {
                 context.SetAiExtraData(key: "RageBuff_3", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) { }
+
+                return null;
             }
 
             public override void OnExit() { }

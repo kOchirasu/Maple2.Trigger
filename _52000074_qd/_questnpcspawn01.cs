@@ -7,106 +7,88 @@ namespace Maple2.Trigger._52000074_qd {
                 context.CreateMonster(arg1: new[] {101, 201}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002679}, arg3: new byte[] {3})) {
-                    context.State = new StateNpcRemove01(context);
-                    return;
+                    return new StateNpcRemove01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002679}, arg3: new byte[] {2})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002679}, arg3: new byte[] {1})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002678}, arg3: new byte[] {3})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002678}, arg3: new byte[] {2})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002678}, arg3: new byte[] {1})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002677}, arg3: new byte[] {3})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002677}, arg3: new byte[] {2})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002677}, arg3: new byte[] {1})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002676}, arg3: new byte[] {3})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002676}, arg3: new byte[] {2})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002676}, arg3: new byte[] {1})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002675}, arg3: new byte[] {3})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002675}, arg3: new byte[] {2})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002675}, arg3: new byte[] {1})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002674}, arg3: new byte[] {3})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002674}, arg3: new byte[] {2})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002674}, arg3: new byte[] {1})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002673}, arg3: new byte[] {3})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002673}, arg3: new byte[] {2})) {
-                    context.State = new StateNpcTalk01(context);
-                    return;
+                    return new StateNpcTalk01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -119,7 +101,9 @@ namespace Maple2.Trigger._52000074_qd {
                 context.DestroyMonster(arg1: new[] {101, 201});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -132,7 +116,9 @@ namespace Maple2.Trigger._52000074_qd {
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -145,11 +131,12 @@ namespace Maple2.Trigger._52000074_qd {
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCameraSet01(context);
-                    return;
+                    return new StateCameraSet01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -165,11 +152,12 @@ namespace Maple2.Trigger._52000074_qd {
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateEveTalk01(context);
-                    return;
+                    return new StateEveTalk01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -183,11 +171,12 @@ namespace Maple2.Trigger._52000074_qd {
                 context.SetConversation(arg1: 2, arg2: 11001962, arg3: "$52000074_QD__QUESTNPCSPAWN01__0$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEveTalk01Skip(context);
-                    return;
+                    return new StateEveTalk01Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -201,11 +190,8 @@ namespace Maple2.Trigger._52000074_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateLennonTalk01(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateLennonTalk01(context);
             }
 
             public override void OnExit() { }
@@ -219,11 +205,12 @@ namespace Maple2.Trigger._52000074_qd {
                 context.SetConversation(arg1: 2, arg2: 11001961, arg3: "$52000074_QD__QUESTNPCSPAWN01__1$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateLennonTalk01Skip(context);
-                    return;
+                    return new StateLennonTalk01Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -237,11 +224,8 @@ namespace Maple2.Trigger._52000074_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateEveTalk02(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateEveTalk02(context);
             }
 
             public override void OnExit() { }
@@ -255,11 +239,12 @@ namespace Maple2.Trigger._52000074_qd {
                 context.SetConversation(arg1: 2, arg2: 11001962, arg3: "$52000074_QD__QUESTNPCSPAWN01__2$", arg4: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEveTalk02Skip(context);
-                    return;
+                    return new StateEveTalk02Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -273,11 +258,12 @@ namespace Maple2.Trigger._52000074_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateTalkEnd01(context);
-                    return;
+                    return new StateTalkEnd01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -293,7 +279,9 @@ namespace Maple2.Trigger._52000074_qd {
                 context.SetProductionUI(arg1: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

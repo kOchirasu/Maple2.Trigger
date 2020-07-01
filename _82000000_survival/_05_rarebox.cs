@@ -10,11 +10,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.SetUserValue(key: "RareBoxStartTowerNumber", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RareBoxOnCount") == 1) {
-                    context.State = new StateDelay(context);
-                    return;
+                    return new StateDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,16 +26,16 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 178000)) {
-                    context.State = new StateBoxOnRandom(context);
-                    return;
+                    return new StateBoxOnRandom(context);
                 }
 
                 if (context.GetUserValue(key: "RareBoxOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,26 +46,24 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateStartToTower01to10(context);
-                    return;
+                    return new StateStartToTower01to10(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateStartToTower11to20(context);
-                    return;
+                    return new StateStartToTower11to20(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateStartToTower21to30(context);
-                    return;
+                    return new StateStartToTower21to30(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateStartToTower31to40(context);
-                    return;
+                    return new StateStartToTower31to40(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,11 +76,8 @@ namespace Maple2.Trigger._82000000_survival {
                 context.SetUserValue(key: "RareBoxStartTowerNumber", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateTower01to10(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateTower01to10(context);
             }
 
             public override void OnExit() { }
@@ -94,11 +90,8 @@ namespace Maple2.Trigger._82000000_survival {
                 context.SetUserValue(key: "RareBoxStartTowerNumber", value: 11);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateTower11to20(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateTower11to20(context);
             }
 
             public override void OnExit() { }
@@ -111,11 +104,8 @@ namespace Maple2.Trigger._82000000_survival {
                 context.SetUserValue(key: "RareBoxStartTowerNumber", value: 21);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateTower21to30(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateTower21to30(context);
             }
 
             public override void OnExit() { }
@@ -128,11 +118,8 @@ namespace Maple2.Trigger._82000000_survival {
                 context.SetUserValue(key: "RareBoxStartTowerNumber", value: 31);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateTower31to40(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateTower31to40(context);
             }
 
             public override void OnExit() { }
@@ -145,16 +132,16 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000165, 10000166, 10000167, 10000168, 10000169, 10000170, 10000171, 10000172, 10000173, 10000174}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RareBoxStartTowerNumber") == 11) {
-                    context.State = new StateBoxOn(context);
-                    return;
+                    return new StateBoxOn(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateTower11to20(context);
-                    return;
+                    return new StateTower11to20(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -167,16 +154,16 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000175, 10000176, 10000177, 10000178, 10000179, 10000180, 10000181, 10000182, 10000183, 10000184}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RareBoxStartTowerNumber") == 21) {
-                    context.State = new StateBoxOn(context);
-                    return;
+                    return new StateBoxOn(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateTower21to30(context);
-                    return;
+                    return new StateTower21to30(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -189,16 +176,16 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000185, 10000186, 10000187, 10000188, 10000189, 10000190, 10000191, 10000192, 10000193, 10000194}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RareBoxStartTowerNumber") == 31) {
-                    context.State = new StateBoxOn(context);
-                    return;
+                    return new StateBoxOn(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateTower31to40(context);
-                    return;
+                    return new StateTower31to40(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -211,16 +198,16 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000195, 10000196, 10000197, 10000198, 10000199, 10000200, 10000201, 10000202, 10000203, 10000204}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RareBoxStartTowerNumber") == 1) {
-                    context.State = new StateBoxOn(context);
-                    return;
+                    return new StateBoxOn(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateTower01to10(context);
-                    return;
+                    return new StateTower01to10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -233,11 +220,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 5000, script: "$82000000_survival__05_RAREBOX__0$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RareBoxOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -250,7 +238,9 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000165, 10000166, 10000167, 10000168, 10000169, 10000170, 10000171, 10000172, 10000173, 10000174, 10000175, 10000176, 10000177, 10000178, 10000179, 10000180, 10000181, 10000182, 10000183, 10000184, 10000185, 10000186, 10000187, 10000188, 10000189, 10000190, 10000191, 10000192, 10000193, 10000194, 10000195, 10000196, 10000197, 10000198, 10000199, 10000200, 10000201, 10000202, 10000203, 10000204}, isStart: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52010058_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9010) == 2) {
-                    context.State = new State성공연출시작(context);
-                    return;
+                    return new State성공연출시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,16 +25,16 @@ namespace Maple2.Trigger._52010058_qd {
                 context.PlaySceneMovie(fileName: @"common\WorldInvasionScene6.usm", movieId: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    context.State = new Statequit02(context);
-                    return;
+                    return new Statequit02(context);
                 }
 
                 if (context.WaitTick(waitTick: 9000)) {
-                    context.State = new Statequit02(context);
-                    return;
+                    return new Statequit02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,7 +47,9 @@ namespace Maple2.Trigger._52010058_qd {
                 context.MoveUser(arg1: 02000422, arg2: 3);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

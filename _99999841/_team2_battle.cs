@@ -13,11 +13,12 @@ namespace Maple2.Trigger._99999841 {
                 context.SetUserValue(triggerId: 99990001, key: "Team2Win", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Team2Battle") == 1) {
-                    context.State = new State지역선택1(context);
-                    return;
+                    return new State지역선택1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,26 +31,24 @@ namespace Maple2.Trigger._99999841 {
                 context.ScoreBoardCreate(maxScore: 240);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateA지역1(context);
-                    return;
+                    return new StateA지역1(context);
                 }
 
                 if (context.RandomCondition(arg1: 34f)) {
-                    context.State = new StateB지역1(context);
-                    return;
+                    return new StateB지역1(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateC지역1(context);
-                    return;
+                    return new StateC지역1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,21 +61,20 @@ namespace Maple2.Trigger._99999841 {
                 context.StartCombineSpawn(groupId: new[] {513}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
 
                 if (context.GetScoreBoardScore() >= 100) {
-                    context.State = new State지역선택2_1(context);
-                    return;
+                    return new State지역선택2_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -89,21 +87,20 @@ namespace Maple2.Trigger._99999841 {
                 context.StartCombineSpawn(groupId: new[] {514}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
 
                 if (context.GetScoreBoardScore() >= 100) {
-                    context.State = new State지역선택2_2(context);
-                    return;
+                    return new State지역선택2_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -116,21 +113,20 @@ namespace Maple2.Trigger._99999841 {
                 context.StartCombineSpawn(groupId: new[] {515}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
 
                 if (context.GetScoreBoardScore() >= 100) {
-                    context.State = new State지역선택2_3(context);
-                    return;
+                    return new State지역선택2_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -143,26 +139,24 @@ namespace Maple2.Trigger._99999841 {
                 context.SetEventUI(arg1: 1, arg2: "추가 병력 등장", arg3: 4000, arg4: "9201");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateB지역2(context);
-                    return;
+                    return new StateB지역2(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateC지역2(context);
-                    return;
+                    return new StateC지역2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -175,26 +169,24 @@ namespace Maple2.Trigger._99999841 {
                 context.SetEventUI(arg1: 1, arg2: "추가 병력 등장", arg3: 4000, arg4: "9201");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateA지역2(context);
-                    return;
+                    return new StateA지역2(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateC지역2(context);
-                    return;
+                    return new StateC지역2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -207,26 +199,24 @@ namespace Maple2.Trigger._99999841 {
                 context.SetEventUI(arg1: 1, arg2: "추가 병력 등장", arg3: 4000, arg4: "9201");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateA지역2(context);
-                    return;
+                    return new StateA지역2(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateB지역2(context);
-                    return;
+                    return new StateB지역2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -239,22 +229,21 @@ namespace Maple2.Trigger._99999841 {
                 context.StartCombineSpawn(groupId: new[] {513}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
 
                 if (context.GetScoreBoardScore() >= 240) {
                     context.ScoreBoardRemove();
-                    context.State = new State지역선택3_1(context);
-                    return;
+                    return new State지역선택3_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -267,22 +256,21 @@ namespace Maple2.Trigger._99999841 {
                 context.StartCombineSpawn(groupId: new[] {514}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
 
                 if (context.GetScoreBoardScore() >= 240) {
                     context.ScoreBoardRemove();
-                    context.State = new State지역선택3_2(context);
-                    return;
+                    return new State지역선택3_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -295,22 +283,21 @@ namespace Maple2.Trigger._99999841 {
                 context.StartCombineSpawn(groupId: new[] {515}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
 
                 if (context.GetScoreBoardScore() >= 240) {
                     context.ScoreBoardRemove();
-                    context.State = new State지역선택3_3(context);
-                    return;
+                    return new State지역선택3_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -323,26 +310,24 @@ namespace Maple2.Trigger._99999841 {
                 context.SetDungeonVariable(varId: 2000, value: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateB지역3(context);
-                    return;
+                    return new StateB지역3(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateC지역3(context);
-                    return;
+                    return new StateC지역3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -355,26 +340,24 @@ namespace Maple2.Trigger._99999841 {
                 context.SetDungeonVariable(varId: 2000, value: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateA지역3(context);
-                    return;
+                    return new StateA지역3(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateC지역3(context);
-                    return;
+                    return new StateC지역3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -387,26 +370,24 @@ namespace Maple2.Trigger._99999841 {
                 context.SetDungeonVariable(varId: 2000, value: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateA지역3(context);
-                    return;
+                    return new StateA지역3(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateB지역3(context);
-                    return;
+                    return new StateB지역3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -419,16 +400,16 @@ namespace Maple2.Trigger._99999841 {
                 context.StartCombineSpawn(groupId: new[] {513}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -441,16 +422,16 @@ namespace Maple2.Trigger._99999841 {
                 context.StartCombineSpawn(groupId: new[] {514}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -463,16 +444,16 @@ namespace Maple2.Trigger._99999841 {
                 context.StartCombineSpawn(groupId: new[] {515}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002182}, arg2: 0)) {
-                    context.State = new State시작_보스전(context);
-                    return;
+                    return new State시작_보스전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -493,16 +474,16 @@ namespace Maple2.Trigger._99999841 {
                 context.SetDungeonVariable(varId: 200, value: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {911})) {
-                    context.State = new State성공(context);
-                    return;
+                    return new State성공(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -515,7 +496,9 @@ namespace Maple2.Trigger._99999841 {
                 context.SetDungeonVariable(varId: 3, value: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -534,7 +517,9 @@ namespace Maple2.Trigger._99999841 {
                 context.DestroyMonster(arg1: new[] {911});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

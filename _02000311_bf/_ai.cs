@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000311_bf {
                 context.SetUserValue(triggerId: 9999993, key: "Buff_01", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Phase_02") == 1) {
-                    context.State = new StatePhase_02(context);
-                    return;
+                    return new StatePhase_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._02000311_bf {
                 context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_2002");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StatePhase_02_b(context);
-                    return;
+                    return new StatePhase_02_b(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._02000311_bf {
                 context.SetSkill(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePhase_02_c(context);
-                    return;
+                    return new StatePhase_02_c(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,7 +67,9 @@ namespace Maple2.Trigger._02000311_bf {
                 context.SetUserValue(triggerId: 9999995, key: "Buff_02", value: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000181_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
-                    context.State = new Statewait_01_02(context);
-                    return;
+                    return new Statewait_01_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._52000181_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statewait_01_03(context);
-                    return;
+                    return new Statewait_01_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,12 @@ namespace Maple2.Trigger._52000181_qd {
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State연구실도착_01(context);
-                    return;
+                    return new State연구실도착_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,11 +63,12 @@ namespace Maple2.Trigger._52000181_qd {
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State연구실도착_02(context);
-                    return;
+                    return new State연구실도착_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -78,11 +82,12 @@ namespace Maple2.Trigger._52000181_qd {
                 context.MoveUserPath(arg1: "MS2PatrolData_3002");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State정리_01(context);
-                    return;
+                    return new State정리_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -95,11 +100,12 @@ namespace Maple2.Trigger._52000181_qd {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State정리_02(context);
-                    return;
+                    return new State정리_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -113,11 +119,12 @@ namespace Maple2.Trigger._52000181_qd {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State정리_03(context);
-                    return;
+                    return new State정리_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -132,11 +139,12 @@ namespace Maple2.Trigger._52000181_qd {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State정리_03(context);
-                    return;
+                    return new State정리_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -154,11 +162,12 @@ namespace Maple2.Trigger._52000181_qd {
                 context.MoveUser(arg1: 52000181, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002765}, arg3: new byte[] {3})) {
-                    context.State = new State프론티아재단으로_01(context);
-                    return;
+                    return new State프론티아재단으로_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -172,11 +181,12 @@ namespace Maple2.Trigger._52000181_qd {
                 context.SetProductionUI(arg1: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State프론티아재단으로_02(context);
-                    return;
+                    return new State프론티아재단으로_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -189,7 +199,9 @@ namespace Maple2.Trigger._52000181_qd {
                 context.MoveUser(arg1: 52000186, arg2: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

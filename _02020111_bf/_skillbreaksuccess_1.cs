@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SkillBreakSuccess_1") == 1 && context.GetUserValue(key: "SkillBreakSuccess_2") == 1 && context.GetUserValue(key: "SkillBreakSuccess_3") == 1 && context.GetUserValue(key: "SkillBreakSuccess_4") == 1) {
-                    context.State = new State버프발동(context);
-                    return;
+                    return new State버프발동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,11 +36,12 @@ namespace Maple2.Trigger._02020111_bf {
                 context.SetUserValue(triggerId: 900204, key: "Message", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SkillBreakSuccess_1") == 0 && context.GetUserValue(key: "SkillBreakSuccess_2") == 0 && context.GetUserValue(key: "SkillBreakSuccess_3") == 0 && context.GetUserValue(key: "SkillBreakSuccess_4") == 0 && context.GetUserValue(key: "SkillBreakSuccess_Reset") == 0) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

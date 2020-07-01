@@ -9,11 +9,12 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetUserValue(key: "EarthquakeStart", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "EarthquakeStart") == 1) {
-                    context.State = new StateDelay01(context);
-                    return;
+                    return new StateDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetMesh(arg1: new[] {3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607, 3608, 3609, 3610, 3611, 3612, 3613, 3614, 3615}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateCollapse00(context);
-                    return;
+                    return new StateCollapse00(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +49,12 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetMesh(arg1: new[] {3603}, arg2: false, arg3: 300, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCollapse01(context);
-                    return;
+                    return new StateCollapse01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,11 +69,12 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetMesh(arg1: new[] {3605}, arg2: false, arg3: 150, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateCollapse02(context);
-                    return;
+                    return new StateCollapse02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -85,11 +89,12 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetMesh(arg1: new[] {3607}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCollapse03(context);
-                    return;
+                    return new StateCollapse03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -105,11 +110,12 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetMesh(arg1: new[] {3600, 3601, 3602, 3603}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateCollapse04(context);
-                    return;
+                    return new StateCollapse04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -126,11 +132,12 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetMesh(arg1: new[] {3603}, arg2: false, arg3: 300, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateCollapse05(context);
-                    return;
+                    return new StateCollapse05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -145,11 +152,12 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetEffect(arg1: new[] {5815}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateCollapse06(context);
-                    return;
+                    return new StateCollapse06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -163,11 +171,12 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetMesh(arg1: new[] {3612}, arg2: false, arg3: 500, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCollapse07(context);
-                    return;
+                    return new StateCollapse07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -183,11 +192,12 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetMesh(arg1: new[] {3615}, arg2: false, arg3: 700, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCollapse08(context);
-                    return;
+                    return new StateCollapse08(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -198,16 +208,16 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9900})) {
-                    context.State = new StateDelay01(context);
-                    return;
+                    return new StateDelay01(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {9900})) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -220,7 +230,9 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetEffect(arg1: new[] {5802, 5810, 5811, 5812, 5813, 5814, 5815, 5816, 5817}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

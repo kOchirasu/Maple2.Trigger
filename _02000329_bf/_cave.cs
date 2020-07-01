@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {711})) {
-                    context.State = new State동굴전환시작(context);
-                    return;
+                    return new State동굴전환시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,7 +23,9 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetEffect(arg1: new[] {6701}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetAgent(arg1: new[] {9181, 9182, 9183}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {118})) {
-                    context.State = new State문열림(context);
-                    return;
+                    return new State문열림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,7 +31,9 @@ namespace Maple2.Trigger._02000298_bf {
                 context.CreateMonster(arg1: new[] {1019}, arg2: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

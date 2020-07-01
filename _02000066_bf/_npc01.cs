@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetInteractObject(arg1: new[] {10000341}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    context.State = new StateNPC생성(context);
-                    return;
+                    return new StateNPC생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetInteractObject(arg1: new[] {10000341}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateNPC생성조건(context);
-                    return;
+                    return new StateNPC생성조건(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,14 +45,15 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
                     context.SetEffect(arg1: new[] {605}, arg2: true);
                     context.ShowGuideSummary(entityId: 20000663, textId: 20000663);
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                    context.State = new StateNPC소멸(context);
-                    return;
+                    return new StateNPC소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,12 +67,13 @@ namespace Maple2.Trigger._02000066_bf {
                 context.DestroyMonster(arg1: new[] {2001});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.HideGuideSummary(entityId: 20000663);
-                    context.State = new State오브젝트반응(context);
-                    return;
+                    return new State오브젝트반응(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,11 +87,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetInteractObject(arg1: new[] {10000341}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000341}, arg2: 0)) {
-                    context.State = new State부활(context);
-                    return;
+                    return new State부활(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -101,11 +106,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {2001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateNPC대사(context);
-                    return;
+                    return new StateNPC대사(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -119,11 +125,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetConversation(arg1: 1, arg2: 2001, arg3: "$02000066_BF__NPC01__1$", arg4: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    context.State = new StateNPC생성조건(context);
-                    return;
+                    return new StateNPC생성조건(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

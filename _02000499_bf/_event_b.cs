@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000499_bf {
                 context.SetEffect(arg1: new[] {5005, 5006, 5007, 5008}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStart(context);
-                    return;
+                    return new StateStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._02000499_bf {
                 context.MoveNpc(arg1: 108, arg2: "MS2PatrolData_3015");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {105, 106, 107, 108})) {
-                    context.State = new StateCompleteEffect(context);
-                    return;
+                    return new StateCompleteEffect(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._02000499_bf {
                 context.SetEffect(arg1: new[] {5005, 5006, 5007, 5008}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02020051_bf {
                 context.StartCombineSpawn(groupId: new[] {1002}, isStart: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon_monster") == 1) {
-                    context.State = new State몬스터등장(context);
-                    return;
+                    return new State몬스터등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._02020051_bf {
                 context.StartCombineSpawn(groupId: new[] {1002}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State리셋(context);
-                    return;
+                    return new State리셋(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +43,12 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon_monster") == 2) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

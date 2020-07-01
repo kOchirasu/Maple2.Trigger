@@ -12,11 +12,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SightRange(enable: true, range: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new StateWait_Talk01(context);
-                    return;
+                    return new StateWait_Talk01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -33,16 +34,16 @@ namespace Maple2.Trigger._82000006_survival {
                 context.WriteLog(arg1: "Survival", arg3: "Waiting_Start");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWait_Talk02(context);
-                    return;
+                    return new StateWait_Talk02(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateCheckTheNumberOfPlayers_1st(context);
-                    return;
+                    return new StateCheckTheNumberOfPlayers_1st(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,16 +56,16 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__1$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWait_Talk03(context);
-                    return;
+                    return new StateWait_Talk03(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateCheckTheNumberOfPlayers_1st(context);
-                    return;
+                    return new StateCheckTheNumberOfPlayers_1st(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,16 +78,16 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__2$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWait_Talk04(context);
-                    return;
+                    return new StateWait_Talk04(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateCheckTheNumberOfPlayers_1st(context);
-                    return;
+                    return new StateCheckTheNumberOfPlayers_1st(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -99,16 +100,16 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__3$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWait_Talk05(context);
-                    return;
+                    return new StateWait_Talk05(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateCheckTheNumberOfPlayers_1st(context);
-                    return;
+                    return new StateCheckTheNumberOfPlayers_1st(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -121,16 +122,16 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__4$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWait_Talk06(context);
-                    return;
+                    return new StateWait_Talk06(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateCheckTheNumberOfPlayers_1st(context);
-                    return;
+                    return new StateCheckTheNumberOfPlayers_1st(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -143,16 +144,16 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__5$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWait_Talk01(context);
-                    return;
+                    return new StateWait_Talk01(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateCheckTheNumberOfPlayers_1st(context);
-                    return;
+                    return new StateCheckTheNumberOfPlayers_1st(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -165,16 +166,16 @@ namespace Maple2.Trigger._82000006_survival {
                 context.ResetTimer(arg1: "1");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9000) >= 25) {
-                    context.State = new StateMatchingSuccessDelay(context);
-                    return;
+                    return new StateMatchingSuccessDelay(context);
                 }
 
                 if (context.GetUserCount(boxId: 9000) < 25) {
-                    context.State = new StateMatchingFailDelay(context);
-                    return;
+                    return new StateMatchingFailDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -188,11 +189,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.PlaySystemSoundInBox(arg2: "GuildBattle_Enter");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateMatchingSuccess(context);
-                    return;
+                    return new StateMatchingSuccess(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -205,11 +207,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__17$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateReadyToMoveStartPosition(context);
-                    return;
+                    return new StateReadyToMoveStartPosition(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -222,11 +225,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 3000, script: "$82000012_survival__01_SURVIVAL__11$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateStartPositionRandomPick(context);
-                    return;
+                    return new StateStartPositionRandomPick(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -237,46 +241,40 @@ namespace Maple2.Trigger._82000006_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap01_North(context);
-                    return;
+                    return new StatePCRemap01_North(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap02_South(context);
-                    return;
+                    return new StatePCRemap02_South(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap03_East(context);
-                    return;
+                    return new StatePCRemap03_East(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap04_West(context);
-                    return;
+                    return new StatePCRemap04_West(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap05_NorthWest(context);
-                    return;
+                    return new StatePCRemap05_NorthWest(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap06_NorthEast(context);
-                    return;
+                    return new StatePCRemap06_NorthEast(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap07_SouthWest(context);
-                    return;
+                    return new StatePCRemap07_SouthWest(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap08_SouthEast(context);
-                    return;
+                    return new StatePCRemap08_SouthEast(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -291,11 +289,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.MoveUser(arg1: 82000012, arg2: 101, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStartGameExplain(context);
-                    return;
+                    return new StateStartGameExplain(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -312,11 +311,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.MoveUser(arg1: 82000012, arg2: 102, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStartGameExplain(context);
-                    return;
+                    return new StateStartGameExplain(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -333,11 +333,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.MoveUser(arg1: 82000012, arg2: 103, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStartGameExplain(context);
-                    return;
+                    return new StateStartGameExplain(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -354,11 +355,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.MoveUser(arg1: 82000012, arg2: 104, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStartGameExplain(context);
-                    return;
+                    return new StateStartGameExplain(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -375,11 +377,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.MoveUser(arg1: 82000012, arg2: 105, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStartGameExplain(context);
-                    return;
+                    return new StateStartGameExplain(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -396,11 +399,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.MoveUser(arg1: 82000012, arg2: 106, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStartGameExplain(context);
-                    return;
+                    return new StateStartGameExplain(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -417,11 +421,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.MoveUser(arg1: 82000012, arg2: 107, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStartGameExplain(context);
-                    return;
+                    return new StateStartGameExplain(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -438,11 +443,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.MoveUser(arg1: 82000012, arg2: 108, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStartGameExplain(context);
-                    return;
+                    return new StateStartGameExplain(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -457,11 +463,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 6000, script: "$82000012_survival__01_SURVIVAL__6$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateGameExplain01(context);
-                    return;
+                    return new StateGameExplain01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -474,11 +481,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 6000, script: "$82000012_survival__01_SURVIVAL__7$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateGameExplain02(context);
-                    return;
+                    return new StateGameExplain02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -491,11 +499,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 3500, script: "$82000012_survival__01_SURVIVAL__8$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new StateGameExplain03(context);
-                    return;
+                    return new StateGameExplain03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -508,11 +517,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 3500, script: "$82000012_survival__01_SURVIVAL__9$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new StateGameExplain04(context);
-                    return;
+                    return new StateGameExplain04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -525,11 +535,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 5000, script: "$82000012_survival__01_SURVIVAL__10$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateGameExplain05(context);
-                    return;
+                    return new StateGameExplain05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -542,11 +553,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 5000, script: "$82000012_survival__01_SURVIVAL__12$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StatePVPReady(context);
-                    return;
+                    return new StatePVPReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -559,11 +571,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__13$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateCheckTheNumberOfPlayers_2nd(context);
-                    return;
+                    return new StateCheckTheNumberOfPlayers_2nd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -574,16 +587,16 @@ namespace Maple2.Trigger._82000006_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9000) >= 20) {
-                    context.State = new StateRideRiseUp(context);
-                    return;
+                    return new StateRideRiseUp(context);
                 }
 
                 if (context.GetUserCount(boxId: 9000) < 20) {
-                    context.State = new StateMatchingFailDelay(context);
-                    return;
+                    return new StateMatchingFailDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -596,11 +609,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SetUserValue(triggerId: 2, key: "StartPatrol", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCountdown(context);
-                    return;
+                    return new StateCountdown(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -614,11 +628,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.ShowCountUI(text: "$82000012_survival__01_SURVIVAL__14$", stage: 0, count: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateAreaOpen(context);
-                    return;
+                    return new StateAreaOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -650,11 +665,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.WriteLog(arg1: "Survival", arg3: "Start");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.State = new StateGameStart(context);
-                    return;
+                    return new StateGameStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -668,16 +684,16 @@ namespace Maple2.Trigger._82000006_survival {
                 context.WriteLog(arg1: "Survival", arg3: "StormStart");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
 
                 if (!context.IsPlayingMapleSurvival()) {
-                    context.State = new StateGameEnd(context);
-                    return;
+                    return new StateGameEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -690,11 +706,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.PlaySystemSoundInBox(arg2: "guildBattle_MatchingFail");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateMatchingFail(context);
-                    return;
+                    return new StateMatchingFail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -707,11 +724,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__15$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateGameCancel(context);
-                    return;
+                    return new StateGameCancel(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -724,11 +742,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 4000, script: "$82000012_survival__01_SURVIVAL__16$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateReadyToKickOut(context);
-                    return;
+                    return new StateReadyToKickOut(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -741,11 +760,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SetEventUI(arg1: 1, arg2: "$82000012_survival__01_SURVIVAL__18$", arg3: 4000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -758,11 +778,12 @@ namespace Maple2.Trigger._82000006_survival {
                 context.SightRange(enable: false, range: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -780,7 +801,9 @@ namespace Maple2.Trigger._82000006_survival {
                 context.StartCombineSpawn(groupId: new[] {37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159}, isStart: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new State기본셋팅(context);
-                    return;
+                    return new State기본셋팅(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02000552_bf {
                 context.SetUserValue(key: "MonsterMany", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +39,12 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") >= 1) {
-                    context.State = new State블랙빈에게버프부여(context);
-                    return;
+                    return new State블랙빈에게버프부여(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,11 +58,12 @@ namespace Maple2.Trigger._02000552_bf {
                 context.AddBuff(arg1: new[] {102}, arg2: 50003307, arg3: 2, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State블랙빈에게버프삭제체크(context);
-                    return;
+                    return new State블랙빈에게버프삭제체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -70,11 +74,12 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") == 0) {
-                    context.State = new State블랙빈에게버프삭제대기(context);
-                    return;
+                    return new State블랙빈에게버프삭제대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -85,11 +90,12 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 900)) {
-                    context.State = new State블랙빈에게버프삭제실시(context);
-                    return;
+                    return new State블랙빈에게버프삭제실시(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -103,11 +109,12 @@ namespace Maple2.Trigger._02000552_bf {
                 context.AddBuff(arg1: new[] {102}, arg2: 50003309, arg3: 1, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

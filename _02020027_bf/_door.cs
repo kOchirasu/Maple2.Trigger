@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02020027_bf {
                 context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 201) < 0.50f) {
-                    context.State = new State문열림(context);
-                    return;
+                    return new State문열림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02020027_bf {
                 context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1002})) {
-                    context.State = new State문닫힘(context);
-                    return;
+                    return new State문닫힘(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,8 @@ namespace Maple2.Trigger._02020027_bf {
                 context.SetMesh(arg1: new[] {9007}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -57,7 +56,9 @@ namespace Maple2.Trigger._02020027_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

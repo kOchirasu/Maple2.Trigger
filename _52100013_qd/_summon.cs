@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52100013_qd {
                 context.SetUserValue(triggerId: 203903, key: "Summon", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon") == 1) {
-                    context.State = new StateSummon(context);
-                    return;
+                    return new StateSummon(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._52100013_qd {
                 context.SetUserValue(triggerId: 203903, key: "Summon", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon") == 1) {
-                    context.State = new StateSummon_02(context);
-                    return;
+                    return new StateSummon_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._52100013_qd {
                 context.SetUserValue(triggerId: 203903, key: "Summon", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon") == 1) {
-                    context.State = new StateSummon_03(context);
-                    return;
+                    return new StateSummon_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +65,12 @@ namespace Maple2.Trigger._52100013_qd {
                 context.SetUserValue(triggerId: 203903, key: "Summon", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon") == 1) {
-                    context.State = new StateSummon(context);
-                    return;
+                    return new StateSummon(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

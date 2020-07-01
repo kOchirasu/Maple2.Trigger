@@ -9,46 +9,40 @@ namespace Maple2.Trigger._82000003_survival {
                 context.SetUserValue(key: "StartPatrol", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SetRide") == 1) {
-                    context.State = new StateRide01_Ready(context);
-                    return;
+                    return new StateRide01_Ready(context);
                 }
 
                 if (context.GetUserValue(key: "SetRide") == 2) {
-                    context.State = new StateRide02_Ready(context);
-                    return;
+                    return new StateRide02_Ready(context);
                 }
 
                 if (context.GetUserValue(key: "SetRide") == 3) {
-                    context.State = new StateRide03_Ready(context);
-                    return;
+                    return new StateRide03_Ready(context);
                 }
 
                 if (context.GetUserValue(key: "SetRide") == 4) {
-                    context.State = new StateRide04_Ready(context);
-                    return;
+                    return new StateRide04_Ready(context);
                 }
 
                 if (context.GetUserValue(key: "SetRide") == 5) {
-                    context.State = new StateRide05_Ready(context);
-                    return;
+                    return new StateRide05_Ready(context);
                 }
 
                 if (context.GetUserValue(key: "SetRide") == 6) {
-                    context.State = new StateRide06_Ready(context);
-                    return;
+                    return new StateRide06_Ready(context);
                 }
 
                 if (context.GetUserValue(key: "SetRide") == 7) {
-                    context.State = new StateRide07_Ready(context);
-                    return;
+                    return new StateRide07_Ready(context);
                 }
 
                 if (context.GetUserValue(key: "SetRide") == 8) {
-                    context.State = new StateRide08_Ready(context);
-                    return;
+                    return new StateRide08_Ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +57,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "bus_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
-                    context.State = new StateRide01_StartPatrolDelay(context);
-                    return;
+                    return new StateRide01_StartPatrolDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,11 +76,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_111");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateRide01_StartPatrol(context);
-                    return;
+                    return new StateRide01_StartPatrol(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -99,11 +95,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_110");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 32000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -121,11 +118,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "bus_02");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
-                    context.State = new StateRide02_StartPatrolDelay(context);
-                    return;
+                    return new StateRide02_StartPatrolDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -139,11 +137,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 120, arg2: "MS2PatrolData_121");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateRide02_StartPatrol(context);
-                    return;
+                    return new StateRide02_StartPatrol(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -157,11 +156,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 120, arg2: "MS2PatrolData_120");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 32000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -179,11 +179,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "bus_03");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
-                    context.State = new StateRide03_StartPatrolDelay(context);
-                    return;
+                    return new StateRide03_StartPatrolDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -197,11 +198,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 130, arg2: "MS2PatrolData_131");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateRide03_StartPatrol(context);
-                    return;
+                    return new StateRide03_StartPatrol(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -215,11 +217,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 130, arg2: "MS2PatrolData_130");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 32000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -237,11 +240,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "bus_04");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
-                    context.State = new StateRide04_StartPatrolDelay(context);
-                    return;
+                    return new StateRide04_StartPatrolDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -255,11 +259,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 140, arg2: "MS2PatrolData_141");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateRide04_StartPatrol(context);
-                    return;
+                    return new StateRide04_StartPatrol(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -273,11 +278,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 140, arg2: "MS2PatrolData_140");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 32000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -295,11 +301,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "bus_05");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
-                    context.State = new StateRide05_StartPatrolDelay(context);
-                    return;
+                    return new StateRide05_StartPatrolDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -313,11 +320,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 150, arg2: "MS2PatrolData_151");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateRide05_StartPatrol(context);
-                    return;
+                    return new StateRide05_StartPatrol(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -331,11 +339,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 150, arg2: "MS2PatrolData_150");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 32000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -353,11 +362,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "bus_06");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
-                    context.State = new StateRide06_StartPatrolDelay(context);
-                    return;
+                    return new StateRide06_StartPatrolDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -371,11 +381,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 160, arg2: "MS2PatrolData_161");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateRide06_StartPatrol(context);
-                    return;
+                    return new StateRide06_StartPatrol(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -389,11 +400,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 160, arg2: "MS2PatrolData_160");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 32000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -411,11 +423,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "bus_07");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
-                    context.State = new StateRide07_StartPatrolDelay(context);
-                    return;
+                    return new StateRide07_StartPatrolDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -429,11 +442,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 170, arg2: "MS2PatrolData_171");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateRide07_StartPatrol(context);
-                    return;
+                    return new StateRide07_StartPatrol(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -447,11 +461,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 170, arg2: "MS2PatrolData_170");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 32000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -469,11 +484,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "bus_08");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartPatrol") == 1) {
-                    context.State = new StateRide08_StartPatrolDelay(context);
-                    return;
+                    return new StateRide08_StartPatrolDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -487,11 +503,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 180, arg2: "MS2PatrolData_181");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateRide08_StartPatrol(context);
-                    return;
+                    return new StateRide08_StartPatrol(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -505,11 +522,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.MoveNpc(arg1: 180, arg2: "MS2PatrolData_180");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 32000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -525,7 +543,9 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "bus_end");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

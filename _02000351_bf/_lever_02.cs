@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000351_bf {
                 context.SetMesh(arg1: new[] {6081, 6082, 6083, 6084, 6085, 6086, 6087, 6088, 6089, 6090, 6091, 6092}, arg2: false, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000819}, arg2: 1)) {
-                    context.State = new State작동(context);
-                    return;
+                    return new State작동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02000351_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000819}, arg2: 0)) {
-                    context.State = new State열림상태(context);
-                    return;
+                    return new State열림상태(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._02000351_bf {
                 context.SetMesh(arg1: new[] {6081, 6082, 6083, 6084, 6085, 6086, 6087, 6088, 6089, 6090, 6091, 6092}, arg2: true, arg4: 200, arg5: 15f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State열림(context);
-                    return;
+                    return new State열림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,7 +62,9 @@ namespace Maple2.Trigger._02000351_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

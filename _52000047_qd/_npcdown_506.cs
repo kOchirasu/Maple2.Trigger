@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000047_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9900, arg2: new[] {906})) {
-                    context.State = new StateNpcFight(context);
-                    return;
+                    return new StateNpcFight(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._52000047_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {906})) {
-                    context.State = new StateNpcDown(context);
-                    return;
+                    return new StateNpcDown(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +39,12 @@ namespace Maple2.Trigger._52000047_qd {
                 context.CreateMonster(arg1: new[] {516}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "NpcRemove") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,7 +58,9 @@ namespace Maple2.Trigger._52000047_qd {
                 context.SetUserValue(key: "NpcRemove", value: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

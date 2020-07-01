@@ -8,11 +8,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001484}, arg3: new byte[] {2})) {
-                    context.State = new StateLodingDelay00(context);
-                    return;
+                    return new StateLodingDelay00(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateLodingDelay01(context);
-                    return;
+                    return new StateLodingDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.MoveUser(arg1: 63000042, arg2: 10);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateLodingDelay02(context);
-                    return;
+                    return new StateLodingDelay02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +68,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetPcEmotionLoop(arg1: "Down_Idle_D", arg2: 6000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StatePCDownIdle01(context);
-                    return;
+                    return new StatePCDownIdle01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -84,11 +88,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetSkip(arg1: "PCDownIdle02");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StatePCDownIdle02(context);
-                    return;
+                    return new StatePCDownIdle02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -104,11 +109,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDoctorTalk01(context);
-                    return;
+                    return new StateDoctorTalk01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -122,11 +128,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetSkip(arg1: "DoctorTalk01Skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateDoctorTalk01Skip(context);
-                    return;
+                    return new StateDoctorTalk01Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -140,11 +147,8 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateLookAround01(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateLookAround01(context);
             }
 
             public override void OnExit() { }
@@ -160,11 +164,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetPcEmotionLoop(arg1: "Sit_Ground_Idle_A", arg2: 18000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateLookAround02(context);
-                    return;
+                    return new StateLookAround02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -178,11 +183,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetProductionUI(arg1: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateDoctorTalk02(context);
-                    return;
+                    return new StateDoctorTalk02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -196,11 +202,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetConversation(arg1: 2, arg2: 11000038, arg3: "$63000042_CS__WAKEUP01__1$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateDoctorTalk03(context);
-                    return;
+                    return new StateDoctorTalk03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -214,11 +221,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetConversation(arg1: 2, arg2: 11000038, arg3: "$63000042_CS__WAKEUP01__2$", arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateDoctorTalk04(context);
-                    return;
+                    return new StateDoctorTalk04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -232,11 +240,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetConversation(arg1: 2, arg2: 11000038, arg3: "$63000042_CS__WAKEUP01__3$", arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateSceneEnd01(context);
-                    return;
+                    return new StateSceneEnd01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -252,11 +261,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetProductionUI(arg1: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSceneEnd02(context);
-                    return;
+                    return new StateSceneEnd02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -270,11 +280,12 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetPcEmotionSequence(arg1: "Idle_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -289,7 +300,9 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

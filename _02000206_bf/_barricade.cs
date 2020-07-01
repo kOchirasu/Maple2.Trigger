@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000206_bf {
                 context.SetMesh(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516}, arg2: false, arg3: 0, arg4: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 402, arg2: new[] {101})) {
-                    context.State = new State카운트(context);
-                    return;
+                    return new State카운트(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02000206_bf {
                 context.SetTimer(arg1: "5", arg2: 50);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State차단(context);
-                    return;
+                    return new State차단(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,16 +43,16 @@ namespace Maple2.Trigger._02000206_bf {
                 context.SetMesh(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516}, arg2: true, arg3: 0, arg4: 200);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State차단해제(context);
-                    return;
+                    return new State차단해제(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {402})) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +65,12 @@ namespace Maple2.Trigger._02000206_bf {
                 context.SetMesh(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516}, arg2: false, arg3: 0, arg4: 200);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {402})) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

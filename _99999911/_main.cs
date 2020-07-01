@@ -5,11 +5,12 @@ namespace Maple2.Trigger._99999911 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    context.State = new State시작조건체크(context);
-                    return;
+                    return new State시작조건체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,16 +21,16 @@ namespace Maple2.Trigger._99999911 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State어나운스0(context);
-                    return;
+                    return new State어나운스0(context);
                 }
 
                 if (context.GetUserCount(boxId: 701) == 20) {
-                    context.State = new State어나운스0(context);
-                    return;
+                    return new State어나운스0(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +43,12 @@ namespace Maple2.Trigger._99999911 {
                 context.SetEventUI(arg1: 1, arg2: "$99999911__MAIN__0$", arg3: 4000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State어나운스1(context);
-                    return;
+                    return new State어나운스1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,13 +61,14 @@ namespace Maple2.Trigger._99999911 {
                 context.ShowCountUI(text: "$61000004_ME__TRIGGER_01__1$", stage: 0, count: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5500)) {
                     context.SetMesh(arg1: new[] {301, 302, 303}, arg2: false, arg3: 12, arg4: 0);
                     context.SetAchievement(arg1: 101, arg2: "trigger", arg3: "dailyquest_start");
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,11 +101,12 @@ namespace Maple2.Trigger._99999911 {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateRound1_Start(context);
-                    return;
+                    return new StateRound1_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -116,11 +120,13 @@ namespace Maple2.Trigger._99999911 {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    // context.State = new Staterandom_start(context);
-                    return;
+                    // return new Staterandom_start(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

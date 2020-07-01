@@ -9,11 +9,12 @@ namespace Maple2.Trigger._52010023_qd {
                 context.CreateMonster(arg1: new[] {101});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002500}, arg3: new byte[] {2})) {
-                    context.State = new StateEvent_01(context);
-                    return;
+                    return new StateEvent_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._52010023_qd {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2001");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 702, arg2: new[] {101})) {
-                    context.State = new StateNpc_out(context);
-                    return;
+                    return new StateNpc_out(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,7 +47,9 @@ namespace Maple2.Trigger._52010023_qd {
                 context.DestroyMonster(arg1: new[] {101});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

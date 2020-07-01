@@ -5,11 +5,8 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateReady(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateReady(context);
             }
 
             public override void OnExit() { }
@@ -20,41 +17,36 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000054}, arg3: new byte[] {3})) {
-                    context.State = new StateBuff_B(context);
-                    return;
+                    return new StateBuff_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000054}, arg3: new byte[] {2})) {
-                    context.State = new StateBuff_B(context);
-                    return;
+                    return new StateBuff_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000054}, arg3: new byte[] {1})) {
-                    context.State = new StateBuff_B(context);
-                    return;
+                    return new StateBuff_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000053}, arg3: new byte[] {3})) {
-                    context.State = new StateBuff_A(context);
-                    return;
+                    return new StateBuff_A(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000053}, arg3: new byte[] {2})) {
-                    context.State = new StateBuff_A(context);
-                    return;
+                    return new StateBuff_A(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000053}, arg3: new byte[] {1})) {
-                    context.State = new StateBuff_A(context);
-                    return;
+                    return new StateBuff_A(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {91000052}, arg3: new byte[] {3})) {
-                    context.State = new StateBuff_A(context);
-                    return;
+                    return new StateBuff_A(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -68,11 +60,12 @@ namespace Maple2.Trigger._52010056_qd {
                 context.AddBuff(arg1: new[] {2001}, arg2: 99910300, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateReady(context);
-                    return;
+                    return new StateReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -86,11 +79,12 @@ namespace Maple2.Trigger._52010056_qd {
                 context.AddBuff(arg1: new[] {2001}, arg2: 99910330, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateReady(context);
-                    return;
+                    return new StateReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

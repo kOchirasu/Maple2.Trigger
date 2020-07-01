@@ -7,11 +7,12 @@ namespace Maple2.Trigger._51000006_dg {
                 context.CameraSelect(arg1: 8011, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Fail") == 1) {
-                    context.State = new StateFail_condition(context);
-                    return;
+                    return new StateFail_condition(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._51000006_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9001})) {
-                    context.State = new StateFail(context);
-                    return;
+                    return new StateFail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._51000006_dg {
                 context.ArcadeThreeTwoOne(type: "EndGame");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,7 +63,9 @@ namespace Maple2.Trigger._51000006_dg {
                 context.MoveUser(arg1: 0, arg2: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

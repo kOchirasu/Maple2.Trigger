@@ -7,16 +7,16 @@ namespace Maple2.Trigger._99999907 {
                 context.SetInteractObject(arg1: new[] {12000019, 12000020}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000019}, arg2: 0)) {
-                    context.State = new State리셋(context);
-                    return;
+                    return new State리셋(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000020}, arg2: 0)) {
-                    context.State = new State리셋(context);
-                    return;
+                    return new State리셋(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +27,12 @@ namespace Maple2.Trigger._99999907 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

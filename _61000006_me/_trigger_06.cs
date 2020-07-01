@@ -5,11 +5,8 @@ namespace Maple2.Trigger._61000006_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State시간표확인(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State시간표확인(context);
             }
 
             public override void OnExit() { }
@@ -24,11 +21,8 @@ namespace Maple2.Trigger._61000006_me {
                 context.SetSkill(arg1: new[] {811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State어나운스0(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State어나운스0(context);
             }
 
             public override void OnExit() { }
@@ -43,11 +37,12 @@ namespace Maple2.Trigger._61000006_me {
                 context.SetTimer(arg1: "89", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "89")) {
-                    context.State = new State레버(context);
-                    return;
+                    return new State레버(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +57,8 @@ namespace Maple2.Trigger._61000006_me {
                 context.SetMesh(arg1: new[] {527, 528, 529}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State패턴결정(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State패턴결정(context);
             }
 
             public override void OnExit() { }
@@ -81,11 +73,12 @@ namespace Maple2.Trigger._61000006_me {
                 context.SetTimer(arg1: "12", arg2: 240);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "12")) {
-                    context.State = new State시간표확인(context);
-                    return;
+                    return new State시간표확인(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,7 +91,9 @@ namespace Maple2.Trigger._61000006_me {
                 context.SetMesh(arg1: new[] {527}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -110,7 +105,9 @@ namespace Maple2.Trigger._61000006_me {
                 context.SetMesh(arg1: new[] {528}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -122,7 +119,9 @@ namespace Maple2.Trigger._61000006_me {
                 context.SetMesh(arg1: new[] {529}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -149,7 +148,9 @@ namespace Maple2.Trigger._61000006_me {
                 context.SetSkill(arg1: new[] {926, 927, 928}, arg2: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -178,7 +179,9 @@ namespace Maple2.Trigger._61000006_me {
                 context.SetSkill(arg1: new[] {926, 927, 928}, arg2: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

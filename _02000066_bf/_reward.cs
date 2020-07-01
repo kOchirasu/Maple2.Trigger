@@ -7,11 +7,13 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetInteractObject(arg1: new[] {11000011, 11000012}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    // context.State = new State생성조건(context);
-                    return;
+                    // return new State생성조건(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

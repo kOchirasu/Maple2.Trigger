@@ -12,11 +12,12 @@ namespace Maple2.Trigger._02000303_bf {
                 context.CreateMonster(arg1: new[] {2001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    context.State = new State연출시작딜레이(context);
-                    return;
+                    return new State연출시작딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02000303_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State연출시작(context);
-                    return;
+                    return new State연출시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +50,12 @@ namespace Maple2.Trigger._02000303_bf {
                 context.SetSkip(arg1: "연출종료");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State연출종료(context);
-                    return;
+                    return new State연출종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -69,11 +72,12 @@ namespace Maple2.Trigger._02000303_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000575, 10000576, 10000577, 10000578}, arg2: 0)) {
-                    context.State = new State또다른연출시작(context);
-                    return;
+                    return new State또다른연출시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -89,11 +93,12 @@ namespace Maple2.Trigger._02000303_bf {
                 context.SetSkip(arg1: "또다른연출종료");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State연출이펙트(context);
-                    return;
+                    return new State연출이펙트(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -108,11 +113,12 @@ namespace Maple2.Trigger._02000303_bf {
                 context.SetSkip(arg1: "또다른연출종료");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.State = new State카메라이동2(context);
-                    return;
+                    return new State카메라이동2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -126,11 +132,12 @@ namespace Maple2.Trigger._02000303_bf {
                 context.SetSkip(arg1: "또다른연출종료");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.State = new StateNPC대사(context);
-                    return;
+                    return new StateNPC대사(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -145,11 +152,12 @@ namespace Maple2.Trigger._02000303_bf {
                 context.SetSkip(arg1: "또다른연출종료");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State또다른연출종료(context);
-                    return;
+                    return new State또다른연출종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -166,11 +174,8 @@ namespace Maple2.Trigger._02000303_bf {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State이동대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State이동대기(context);
             }
 
             public override void OnExit() { }
@@ -185,12 +190,13 @@ namespace Maple2.Trigger._02000303_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000585}, arg2: 0)) {
                     context.HideGuideSummary(entityId: 20002999);
-                    context.State = new State이동(context);
-                    return;
+                    return new State이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -205,12 +211,13 @@ namespace Maple2.Trigger._02000303_bf {
                 context.ShowCountUI(text: "$02000303_BF__MAIN__3$", stage: 1, count: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
                     context.MoveUser(arg1: 02000299, arg2: 2, arg3: 101);
-                    context.State = new State이동대기(context);
-                    return;
+                    return new State이동대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -221,7 +228,9 @@ namespace Maple2.Trigger._02000303_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

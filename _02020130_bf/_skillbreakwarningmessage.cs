@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 601) == 1) {
-                    context.State = new State신호받기대기중(context);
-                    return;
+                    return new State신호받기대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,26 +23,24 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "WarningMessage", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "WarningMessage") == 1) {
-                    context.State = new State스킬브레이크메시지출력(context);
-                    return;
+                    return new State스킬브레이크메시지출력(context);
                 }
 
                 if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {
-                    context.State = new State이슈라죽음알림(context);
-                    return;
+                    return new State이슈라죽음알림(context);
                 }
 
                 if (context.GetUserValue(key: "DeathRenduebianRbladerDark") == 1) {
-                    context.State = new State렌듀비앙죽음알림(context);
-                    return;
+                    return new State렌듀비앙죽음알림(context);
                 }
 
                 if (context.GetUserValue(key: "DeathYuperiaRbladerDark") == 1) {
-                    context.State = new State유페리아죽음알림(context);
-                    return;
+                    return new State유페리아죽음알림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -54,11 +53,12 @@ namespace Maple2.Trigger._02020130_bf {
                 context.ShowGuideSummary(entityId: 20051001, textId: 20051001);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State천천히다시처음으로돌아가기직전(context);
-                    return;
+                    return new State천천히다시처음으로돌아가기직전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -74,21 +74,20 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "DeathIshuraRbladerDark", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
-                    context.State = new State신호받기대기중(context);
-                    return;
+                    return new State신호받기대기중(context);
                 }
 
                 if (context.GetUserValue(key: "DeathRenduebianRbladerDark") == 1) {
-                    context.State = new State렌듀비앙죽음알림(context);
-                    return;
+                    return new State렌듀비앙죽음알림(context);
                 }
 
                 if (context.GetUserValue(key: "DeathYuperiaRbladerDark") == 1) {
-                    context.State = new State유페리아죽음알림(context);
-                    return;
+                    return new State유페리아죽음알림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -104,21 +103,20 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "DeathRenduebianRbladerDark", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
-                    context.State = new State신호받기대기중(context);
-                    return;
+                    return new State신호받기대기중(context);
                 }
 
                 if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {
-                    context.State = new State이슈라죽음알림(context);
-                    return;
+                    return new State이슈라죽음알림(context);
                 }
 
                 if (context.GetUserValue(key: "DeathYuperiaRbladerDark") == 1) {
-                    context.State = new State유페리아죽음알림(context);
-                    return;
+                    return new State유페리아죽음알림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -134,21 +132,20 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "DeathYuperiaRbladerDark", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
-                    context.State = new State신호받기대기중(context);
-                    return;
+                    return new State신호받기대기중(context);
                 }
 
                 if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {
-                    context.State = new State이슈라죽음알림(context);
-                    return;
+                    return new State이슈라죽음알림(context);
                 }
 
                 if (context.GetUserValue(key: "DeathRenduebianRbladerDark") == 1) {
-                    context.State = new State렌듀비앙죽음알림(context);
-                    return;
+                    return new State렌듀비앙죽음알림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -161,11 +158,12 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    context.State = new State신호받기대기중(context);
-                    return;
+                    return new State신호받기대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -176,7 +174,9 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

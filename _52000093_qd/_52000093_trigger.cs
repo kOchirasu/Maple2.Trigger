@@ -8,16 +8,16 @@ namespace Maple2.Trigger._52000093_qd {
                 context.DestroyMonster(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {50100490}, arg3: new byte[] {1})) {
-                    context.State = new State20002274진행중일때(context);
-                    return;
+                    return new State20002274진행중일때(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {20002274}, arg3: new byte[] {1})) {
-                    context.State = new State20002274진행중일때(context);
-                    return;
+                    return new State20002274진행중일때(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,11 +30,12 @@ namespace Maple2.Trigger._52000093_qd {
                 context.CreateMonster(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008})) {
-                    context.State = new State20002274진행중일때(context);
-                    return;
+                    return new State20002274진행중일때(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

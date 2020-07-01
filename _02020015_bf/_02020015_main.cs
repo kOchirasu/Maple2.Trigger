@@ -19,11 +19,12 @@ namespace Maple2.Trigger._02020015_bf {
                 context.SetLadder(arg1: 2009, arg2: false, arg3: false, arg4: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    context.State = new State엘리베이터(context);
-                    return;
+                    return new State엘리베이터(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -34,11 +35,12 @@ namespace Maple2.Trigger._02020015_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {902})) {
-                    context.State = new State복도(context);
-                    return;
+                    return new State복도(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,11 +51,12 @@ namespace Maple2.Trigger._02020015_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {902})) {
-                    context.State = new State내부진입(context);
-                    return;
+                    return new State내부진입(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +67,12 @@ namespace Maple2.Trigger._02020015_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {903}, arg2: 0)) {
-                    context.State = new State발판생성(context);
-                    return;
+                    return new State발판생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,11 +87,8 @@ namespace Maple2.Trigger._02020015_bf {
                 context.SetUserValue(triggerId: 99990002, key: "Timer", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State보스전(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State보스전(context);
             }
 
             public override void OnExit() { }
@@ -102,11 +103,12 @@ namespace Maple2.Trigger._02020015_bf {
                 context.SetCube(ids: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448}, isVisible: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {111})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -117,7 +119,9 @@ namespace Maple2.Trigger._02020015_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

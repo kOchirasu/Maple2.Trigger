@@ -5,11 +5,12 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {708})) {
-                    context.State = new State708잡담_01(context);
-                    return;
+                    return new State708잡담_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._63000076_cs {
                 context.AddBalloonTalk(spawnPointId: 108, msg: "$63000076_CS__63000076_CHAT_708__0$", duration: 2500, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.State = new State708잡담_02(context);
-                    return;
+                    return new State708잡담_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._63000076_cs {
                 context.AddBalloonTalk(spawnPointId: 115, msg: "$63000076_CS__63000076_CHAT_708__1$", duration: 2500, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.State = new State708잡담_03(context);
-                    return;
+                    return new State708잡담_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,11 +59,12 @@ namespace Maple2.Trigger._63000076_cs {
                 context.AddBalloonTalk(spawnPointId: 108, msg: "$63000076_CS__63000076_CHAT_708__2$", duration: 2500, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -71,7 +75,9 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

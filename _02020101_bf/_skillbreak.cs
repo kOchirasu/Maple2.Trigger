@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetUserValue(triggerId: 900001, key: "SkillBreakFail", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002181, level: 1)) {
-                    context.State = new State스킬브레이크_실패(context);
-                    return;
+                    return new State스킬브레이크_실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,8 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetUserValue(triggerId: 900001, key: "SkillBreakFail", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기(context);
             }
 
             public override void OnExit() { }
@@ -40,7 +38,9 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

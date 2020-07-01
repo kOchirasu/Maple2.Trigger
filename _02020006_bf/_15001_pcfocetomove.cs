@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02020006_bf {
                 context.SetPortal(arg1: 15700, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "PortalOn") == 1) {
-                    context.State = new StatePortalOn(context);
-                    return;
+                    return new StatePortalOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._02020006_bf {
                 context.SetPortal(arg1: 15700, arg2: false, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "PortalOn") == 2) {
-                    context.State = new StatePortalOff(context);
-                    return;
+                    return new StatePortalOff(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,12 @@ namespace Maple2.Trigger._02020006_bf {
                 context.SetPortal(arg1: 15700, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "PortalOn") == 0) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

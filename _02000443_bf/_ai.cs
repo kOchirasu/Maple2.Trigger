@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000443_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02000443_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Ending") == 1) {
-                    context.State = new State몬스터소멸(context);
-                    return;
+                    return new State몬스터소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +39,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.DestroyMonster(arg1: new[] {210, 101, 102});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateEnding(context);
-                    return;
+                    return new StateEnding(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,11 +63,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetProductionUI(arg1: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateEnding_02(context);
-                    return;
+                    return new StateEnding_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -84,11 +88,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetConversation(arg1: 1, arg2: 104, arg3: "$02000443_BF__AI__1$", arg4: 2, arg5: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEnding_03(context);
-                    return;
+                    return new StateEnding_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -104,11 +109,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetConversation(arg1: 1, arg2: 202, arg3: "$02000443_BF__AI__5$", arg4: 2, arg5: 6);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new StateEnding_04(context);
-                    return;
+                    return new StateEnding_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -121,11 +127,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateEnding_04_b(context);
-                    return;
+                    return new StateEnding_04_b(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -138,11 +145,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateEnding_05(context);
-                    return;
+                    return new StateEnding_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -159,11 +167,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateIsDungeonRoom(context);
-                    return;
+                    return new StateIsDungeonRoom(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -174,11 +183,12 @@ namespace Maple2.Trigger._02000443_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    context.State = new StatedungeonEnd(context);
-                    return;
+                    return new StatedungeonEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -196,11 +206,13 @@ namespace Maple2.Trigger._02000443_bf {
                 context.DungeonClear();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518}, arg3: new byte[] {1})) {
-                    // context.State = new StateQuestEnd_warp(context);
-                    return;
+                    // return new StateQuestEnd_warp(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

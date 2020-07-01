@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.DestroyMonster(arg1: new[] {3004});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    context.State = new State생성(context);
-                    return;
+                    return new State생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {3004}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3004})) {
-                    context.State = new State게이트열림(context);
-                    return;
+                    return new State게이트열림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,12 +49,13 @@ namespace Maple2.Trigger._02000066_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.HideGuideSummary(entityId: 20000664);
-                    context.State = new State게이트닫힘(context);
-                    return;
+                    return new State게이트닫힘(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +66,12 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000336}, arg2: 0)) {
-                    context.State = new State생성(context);
-                    return;
+                    return new State생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

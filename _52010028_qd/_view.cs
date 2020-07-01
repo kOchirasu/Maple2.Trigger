@@ -8,21 +8,20 @@ namespace Maple2.Trigger._52010028_qd {
                 context.SetOnetimeEffect(id: 401, enable: false, path: @"BG/sound/Eff_ShakeLand_01.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2003})) {
-                    context.State = new State흔들흔들(context);
-                    return;
+                    return new State흔들흔들(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {2006})) {
-                    context.State = new State흔들흔들(context);
-                    return;
+                    return new State흔들흔들(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {2007})) {
-                    context.State = new State흔들흔들(context);
-                    return;
+                    return new State흔들흔들(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -36,11 +35,12 @@ namespace Maple2.Trigger._52010028_qd {
                 context.SetOnetimeEffect(id: 401, enable: true, path: @"BG/sound/Eff_ShakeLand_01.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State진동설정(context);
-                    return;
+                    return new State진동설정(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

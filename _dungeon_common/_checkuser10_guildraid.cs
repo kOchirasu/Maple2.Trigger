@@ -11,16 +11,16 @@ namespace Maple2.Trigger._dungeon_common {
                 context.SetTimer(arg1: "1", arg2: 30, arg3: true, arg4: false, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9900) >= 10) {
-                    context.State = new StateMaxCount10_Start(context, startDungeon);
-                    return;
+                    return new StateMaxCount10_Start(context, startDungeon);
                 }
 
                 if (context.GetUserCount(boxId: 9900) < 10) {
-                    context.State = new StateMaxCount10_Wait(context, startDungeon);
-                    return;
+                    return new StateMaxCount10_Wait(context, startDungeon);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,21 +37,20 @@ namespace Maple2.Trigger._dungeon_common {
                 context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9900) >= 10) {
-                    context.State = new StateMaxCount10_Start(context, startDungeon);
-                    return;
+                    return new StateMaxCount10_Start(context, startDungeon);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMaxCount10_Start(context, startDungeon);
-                    return;
+                    return new StateMaxCount10_Start(context, startDungeon);
                 }
 
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateMaxCount10_Wait(context, startDungeon);
-                    return;
+                    return new StateMaxCount10_Wait(context, startDungeon);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -68,11 +67,8 @@ namespace Maple2.Trigger._dungeon_common {
                 context.ResetTimer(arg1: "1");
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = startDungeon;
-                    return;
-                }
+            public override TriggerState Execute() {
+                return startDungeon;
             }
 
             public override void OnExit() { }

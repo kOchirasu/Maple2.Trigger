@@ -12,11 +12,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CageDoorOpen") == 1) {
-                    context.State = new StateCageDoorOpenDelay(context);
-                    return;
+                    return new StateCageDoorOpenDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCageDoorOpen(context);
-                    return;
+                    return new StateCageDoorOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,11 +48,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetMesh(arg1: new[] {3100}, arg2: false, arg3: 300, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MissionStart") == 1) {
-                    context.State = new StateCountDown(context);
-                    return;
+                    return new StateCountDown(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +67,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02100001_BF__99_BARRICADE__0$", arg3: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.State = new StateShutDown(context);
-                    return;
+                    return new StateShutDown(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -84,11 +88,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetMesh(arg1: new[] {3100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MissionComplete") == 1) {
-                    context.State = new StateRelease(context);
-                    return;
+                    return new StateRelease(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -103,11 +108,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetMesh(arg1: new[] {3100}, arg2: false, arg3: 300, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -118,7 +124,9 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

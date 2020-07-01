@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AI_Phase") == 1) {
-                    context.State = new State텍스트_대기(context);
-                    return;
+                    return new State텍스트_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State패이즈_1_시작(context);
-                    return;
+                    return new State패이즈_1_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,8 +40,10 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair", script: "$02020301_BF__300002_PHASE_1__0$", duration: 4176);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) { }
+
+                return null;
             }
 
             public override void OnExit() { }

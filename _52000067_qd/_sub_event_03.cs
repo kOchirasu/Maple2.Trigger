@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52000067_qd {
                 context.CreateMonster(arg1: new[] {591, 592}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetConversation(arg1: 1, arg2: 592, arg3: "$52000067_QD__SUB_EVENT_03__1$", arg4: 3, arg5: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {537, 538, 539})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +49,12 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetConversation(arg1: 1, arg2: 591, arg3: "$52000067_QD__SUB_EVENT_03__2$", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    context.State = new Stateending(context);
-                    return;
+                    return new Stateending(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,7 +68,9 @@ namespace Maple2.Trigger._52000067_qd {
                 context.MoveNpc(arg1: 592, arg2: "MS2PatrolData_5010");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

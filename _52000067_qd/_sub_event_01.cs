@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52000067_qd {
                 context.CreateMonster(arg1: new[] {751}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 703) == 1) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -33,11 +34,12 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetConversation(arg1: 1, arg2: 754, arg3: "$52000067_QD__SUB_EVENT_01__9$", arg4: 3, arg5: 20);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -54,7 +56,9 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetConversation(arg1: 1, arg2: 761, arg3: "$52000067_QD__SUB_EVENT_01__13$", arg4: 3, arg5: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

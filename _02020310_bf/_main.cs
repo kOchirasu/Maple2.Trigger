@@ -38,11 +38,12 @@ namespace Maple2.Trigger._02020310_bf {
                 context.SetVisibleBreakableObject(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {900})) {
-                    context.State = new State카메라시작(context);
-                    return;
+                    return new State카메라시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +59,12 @@ namespace Maple2.Trigger._02020310_bf {
                 context.CameraSelectPath(arg1: new[] {100001, 100002, 100003, 100004, 100005}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State마를레네대사(context);
-                    return;
+                    return new State마를레네대사(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,11 +77,12 @@ namespace Maple2.Trigger._02020310_bf {
                 context.AddCinematicTalk(npcId: 11004582, msg: "$02020310_BF__MAIN__0$", align: "left", illustId: "Eone_serious", duration: 6000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9500)) {
-                    context.State = new State카메라종료(context);
-                    return;
+                    return new State카메라종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -95,13 +98,14 @@ namespace Maple2.Trigger._02020310_bf {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (true) {
                     context.SideNpcTalk(type: "talk", npcId: 11004582, illust: "Eone_normal", script: "$02020310_BF__MAIN__1$", duration: 6000);
                     context.SetSceneSkip();
-                    context.State = new State시작딜레이(context);
-                    return;
+                    return new State시작딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -112,12 +116,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     context.CreateMonster(arg1: new[] {1101, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020}, arg2: false);
-                    context.State = new StateLineStart(context);
-                    return;
+                    return new StateLineStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -128,16 +133,17 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1101, 1001, 1002, 1005, 1006, 1009, 1010, 1011, 1012, 1015, 1016, 1017, 1018, 1019, 1020})) {
                     context.SideNpcTalk(type: "talk", npcId: 11004582, illust: "Eone_normal", script: "$02020310_BF__MAIN__2$", duration: 8000);
                     context.EnableSpawnPointPc(spawnPointId: 101, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 102, isEnable: true);
                     context.SetInteractObject(arg1: new[] {12000301, 12000302, 12000303}, arg2: 1);
                     context.CreateMonster(arg1: new[] {1104, 1105, 1106, 1150, 1151, 1152, 1153, 1154, 1155, 1156, 1157, 1158, 1159, 1160, 1161, 1162, 1163, 1164, 1165, 1166, 1167, 1168, 1169, 1170, 1171, 1172}, arg2: false);
-                    context.State = new StateCableOn_01(context);
-                    return;
+                    return new StateCableOn_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -148,27 +154,26 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000301}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000302, 12000303}, arg2: 0);
                     context.SetMesh(arg1: new[] {1100001, 1100002, 1100003, 1100004, 1100005, 1100006, 1100007, 1100008, 1100009, 1100010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new StateCableDelay_01_1(context);
-                    return;
+                    return new StateCableDelay_01_1(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000302}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000301, 12000303}, arg2: 0);
                     context.SetMesh(arg1: new[] {1100031, 1100032, 1100033, 1100034, 1100035, 1100036, 1100037, 1100038, 1100039, 1100040}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new StateCableDelay_01_2(context);
-                    return;
+                    return new StateCableDelay_01_2(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000303}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000301, 12000302}, arg2: 0);
                     context.SetMesh(arg1: new[] {1100021, 1100022, 1100023, 1100024, 1100025, 1100026, 1100027, 1100028, 1100029, 1100030}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new StateCableDelay_01_3(context);
-                    return;
+                    return new StateCableDelay_01_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -179,12 +184,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__3$", arg3: 3000);
-                    context.State = new StateCableDelay_02_1(context);
-                    return;
+                    return new StateCableDelay_02_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -195,12 +201,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__4$", arg3: 3000);
-                    context.State = new StateCableDelay_02_2(context);
-                    return;
+                    return new StateCableDelay_02_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -211,12 +218,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__5$", arg3: 3000);
-                    context.State = new StateCableDelay_02_3(context);
-                    return;
+                    return new StateCableDelay_02_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -227,12 +235,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__6$", arg3: 1000);
-                    context.State = new StateCableDelay_03_1(context);
-                    return;
+                    return new StateCableDelay_03_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -243,12 +252,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__7$", arg3: 1000);
-                    context.State = new StateCableDelay_03_2(context);
-                    return;
+                    return new StateCableDelay_03_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -259,12 +269,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__8$", arg3: 1000);
-                    context.State = new StateCableDelay_03_3(context);
-                    return;
+                    return new StateCableDelay_03_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -275,12 +286,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__9$", arg3: 1000);
-                    context.State = new StateCableDelay_04_1(context);
-                    return;
+                    return new StateCableDelay_04_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -291,12 +303,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__10$", arg3: 1000);
-                    context.State = new StateCableDelay_04_2(context);
-                    return;
+                    return new StateCableDelay_04_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -307,12 +320,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__11$", arg3: 1000);
-                    context.State = new StateCableDelay_04_3(context);
-                    return;
+                    return new StateCableDelay_04_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -323,12 +337,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__12$", arg3: 1000);
-                    context.State = new StateCableDelay_05_1(context);
-                    return;
+                    return new StateCableDelay_05_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -339,12 +354,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__13$", arg3: 1000);
-                    context.State = new StateCableDelay_05_2(context);
-                    return;
+                    return new StateCableDelay_05_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -355,12 +371,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__14$", arg3: 1000);
-                    context.State = new StateCableDelay_05_3(context);
-                    return;
+                    return new StateCableDelay_05_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -371,13 +388,14 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetBreakable(arg1: new[] {1001}, arg2: true);
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__15$", arg3: 5000);
-                    context.State = new StateCableOff_01(context);
-                    return;
+                    return new StateCableOff_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -388,13 +406,14 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetBreakable(arg1: new[] {1002}, arg2: true);
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__16$", arg3: 5000);
-                    context.State = new StateCableOff_02(context);
-                    return;
+                    return new StateCableOff_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -405,13 +424,14 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetBreakable(arg1: new[] {1003}, arg2: true);
                     context.SetEventUI(arg1: 1, arg2: "$02020310_BF__MAIN__17$", arg3: 5000);
-                    context.State = new StateCableOff_03(context);
-                    return;
+                    return new StateCableOff_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -422,12 +442,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900002, key: "Block", value: 1);
-                    context.State = new StateEnd_01(context);
-                    return;
+                    return new StateEnd_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -438,12 +459,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900002, key: "Block", value: 2);
-                    context.State = new StateEnd_01(context);
-                    return;
+                    return new StateEnd_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -454,12 +476,13 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900002, key: "Block", value: 3);
-                    context.State = new StateEnd_01(context);
-                    return;
+                    return new StateEnd_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -470,8 +493,10 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) { }
+
+                return null;
             }
 
             public override void OnExit() { }

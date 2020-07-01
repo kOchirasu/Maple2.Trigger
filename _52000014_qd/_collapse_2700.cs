@@ -8,11 +8,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetEffect(arg1: new[] {12700, 22700}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {92700})) {
-                    context.State = new State무너짐01(context);
-                    return;
+                    return new State무너짐01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetRandomMesh(arg1: new[] {2700, 2701, 2702, 2703, 2704, 2705, 2706}, arg2: false, arg3: 7, arg4: 300, arg5: 300);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,7 +46,9 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetEffect(arg1: new[] {12700, 22700}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

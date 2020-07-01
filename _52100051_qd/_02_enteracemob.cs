@@ -8,11 +8,12 @@ namespace Maple2.Trigger._52100051_qd {
                 context.SetUserValue(key: "MobSpawn", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MobSpawn") == 1) {
-                    context.State = new StateMobSpawn01(context);
-                    return;
+                    return new StateMobSpawn01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._52100051_qd {
                 context.CreateMonster(arg1: new[] {900}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateMobSpawn02(context);
-                    return;
+                    return new StateMobSpawn02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,12 @@ namespace Maple2.Trigger._52100051_qd {
                 context.CreateMonster(arg1: new[] {901}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {900, 901})) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -57,11 +60,12 @@ namespace Maple2.Trigger._52100051_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateMobSpawn01(context);
-                    return;
+                    return new StateMobSpawn01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

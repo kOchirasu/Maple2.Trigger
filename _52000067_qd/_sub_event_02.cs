@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetEffect(arg1: new[] {7200}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 704) == 1) {
-                    context.State = new Stateidle_02(context);
-                    return;
+                    return new Stateidle_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000067_QD__SUB_EVENT_02__1$", arg4: 3, arg5: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,7 +43,9 @@ namespace Maple2.Trigger._52000067_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

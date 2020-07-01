@@ -5,17 +5,17 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {114})) {
                     context.CreateMonster(arg1: new[] {1007, 1008}, arg2: false);
-                    context.State = new State종료체크(context);
-                    return;
+                    return new State종료체크(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    context.State = new State종료체크(context);
-                    return;
+                    return new State종료체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,17 +26,17 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1007, 1008})) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {2001})) {
                     context.DestroyMonster(arg1: new[] {1007, 1008});
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,12 +49,13 @@ namespace Maple2.Trigger._02000304_bf {
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
                     context.MoveUser(arg1: 02000304, arg2: 10, arg3: 114);
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

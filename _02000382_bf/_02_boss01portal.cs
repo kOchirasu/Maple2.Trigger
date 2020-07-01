@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000382_bf {
                 context.SetPortal(arg1: 30, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9900, arg2: new[] {901})) {
-                    context.State = new StateActionPortal01(context);
-                    return;
+                    return new StateActionPortal01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,7 +25,9 @@ namespace Maple2.Trigger._02000382_bf {
                 context.SetPortal(arg1: 30, arg2: false, arg3: true, arg4: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

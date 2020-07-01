@@ -5,11 +5,12 @@ namespace Maple2.Trigger._99999949 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9031})) {
-                    context.State = new StateGuide(context);
-                    return;
+                    return new StateGuide(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "4번 영역에 들어가면 CameraReset 트리거가 발동됩니다.");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9030})) {
-                    context.State = new StateCameraReady(context);
-                    return;
+                    return new StateCameraReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "SetOnetimeEffect 1초 후에 시작됩니다.");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCameraWalk01(context);
-                    return;
+                    return new StateCameraWalk01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +62,12 @@ namespace Maple2.Trigger._99999949 {
                 context.CameraSelect(arg1: 603, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCameraWalk03(context);
-                    return;
+                    return new StateCameraWalk03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,11 +81,12 @@ namespace Maple2.Trigger._99999949 {
                 context.CameraSelect(arg1: 604, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateCameraReset(context);
-                    return;
+                    return new StateCameraReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,11 +102,12 @@ namespace Maple2.Trigger._99999949 {
                 context.CameraSelect(arg1: 604, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -114,11 +120,12 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "5초 후에 트리거가 리셋됩니다. 4번 영역 밖으로 나가세요.");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

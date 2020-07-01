@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02020311_bf {
                 context.SetInteractObject(arg1: new[] {12000407}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {801})) {
-                    context.State = new State오브젝트체크(context);
-                    return;
+                    return new State오브젝트체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,16 +24,16 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {801})) {
-                    context.State = new State오브젝트체크(context);
-                    return;
+                    return new State오브젝트체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +44,12 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000407}, arg2: 0)) {
-                    context.State = new State오브젝트재생성(context);
-                    return;
+                    return new State오브젝트재생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,12 +60,13 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetInteractObject(arg1: new[] {12000407}, arg2: 1);
-                    context.State = new State오브젝트체크(context);
-                    return;
+                    return new State오브젝트체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

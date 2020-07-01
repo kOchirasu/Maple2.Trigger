@@ -7,8 +7,10 @@ namespace Maple2.Trigger._02100000_bf {
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) { }
+
+                return null;
             }
 
             public override void OnExit() { }

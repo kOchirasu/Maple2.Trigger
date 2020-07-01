@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000355_bf {
                 context.SetActor(arg1: 209, arg2: true, arg3: "Damg_B");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1901})) {
-                    context.State = new State몬스터소환대기(context);
-                    return;
+                    return new State몬스터소환대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._02000355_bf {
                 context.SetEffect(arg1: new[] {609}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new State몬스터소환(context);
-                    return;
+                    return new State몬스터소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,12 @@ namespace Maple2.Trigger._02000355_bf {
                 context.CreateMonster(arg1: new[] {2009}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State더미해제(context);
-                    return;
+                    return new State더미해제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +62,12 @@ namespace Maple2.Trigger._02000355_bf {
                 context.SetActor(arg1: 209, arg2: false, arg3: "Damg_B");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2009})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -74,7 +78,9 @@ namespace Maple2.Trigger._02000355_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

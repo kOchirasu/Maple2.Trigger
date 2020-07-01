@@ -10,11 +10,12 @@ namespace Maple2.Trigger._52100300_qd {
                 context.StartCombineSpawn(groupId: new[] {524}, isStart: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RandomBomb") == 1) {
-                    context.State = new State포탑생성_1(context);
-                    return;
+                    return new State포탑생성_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._52100300_qd {
                 context.StartCombineSpawn(groupId: new[] {524}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {152})) {
-                    context.State = new State포탑생성_2(context);
-                    return;
+                    return new State포탑생성_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._52100300_qd {
                 context.StartCombineSpawn(groupId: new[] {522}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new State포탑생성_3(context);
-                    return;
+                    return new State포탑생성_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +65,12 @@ namespace Maple2.Trigger._52100300_qd {
                 context.StartCombineSpawn(groupId: new[] {523}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {151, 152, 153, 154, 155, 156, 157, 158, 159})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,7 +86,9 @@ namespace Maple2.Trigger._52100300_qd {
                 context.StartCombineSpawn(groupId: new[] {524}, isStart: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

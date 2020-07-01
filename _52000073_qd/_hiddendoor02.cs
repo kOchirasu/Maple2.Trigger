@@ -12,11 +12,12 @@ namespace Maple2.Trigger._52000073_qd {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001082}, arg2: 0)) {
-                    context.State = new StateBookCaseMove01(context);
-                    return;
+                    return new StateBookCaseMove01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,11 +32,12 @@ namespace Maple2.Trigger._52000073_qd {
                 context.SetMesh(arg1: new[] {2000}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDoorOpen01(context);
-                    return;
+                    return new StateDoorOpen01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,11 +51,12 @@ namespace Maple2.Trigger._52000073_qd {
                 context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDoorOpen02(context);
-                    return;
+                    return new StateDoorOpen02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,11 +69,12 @@ namespace Maple2.Trigger._52000073_qd {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 57000)) {
-                    context.State = new StateDoorClose01(context);
-                    return;
+                    return new StateDoorClose01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -84,11 +88,12 @@ namespace Maple2.Trigger._52000073_qd {
                 context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDoorClose02(context);
-                    return;
+                    return new StateDoorClose02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -105,11 +110,12 @@ namespace Maple2.Trigger._52000073_qd {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -120,11 +126,12 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001082}, arg2: 0)) {
-                    context.State = new StateBookCaseMove01(context);
-                    return;
+                    return new StateBookCaseMove01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000194_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003427}, arg3: new byte[] {2})) {
-                    context.State = new StateWait_02(context);
-                    return;
+                    return new StateWait_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._52000194_qd {
                 context.MoveUser(arg1: 52000194, arg2: 5001);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State영상재생(context);
-                    return;
+                    return new State영상재생(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,16 +44,16 @@ namespace Maple2.Trigger._52000194_qd {
                 context.PlaySceneMovie(fileName: @"common\unconsciousEmpress.usm", movieId: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    context.State = new State시공의균열(context);
-                    return;
+                    return new State시공의균열(context);
                 }
 
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.State = new State시공의균열(context);
-                    return;
+                    return new State시공의균열(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +67,12 @@ namespace Maple2.Trigger._52000194_qd {
                 context.SetProductionUI(arg1: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State시공의균열_02(context);
-                    return;
+                    return new State시공의균열_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,11 +86,12 @@ namespace Maple2.Trigger._52000194_qd {
                 context.ShowCaption(type: "VerticalCaption", title: "$52000194_QD__52000194__0$", desc: "$52000194_QD__52000194__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State시공의균열_03(context);
-                    return;
+                    return new State시공의균열_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -100,11 +104,12 @@ namespace Maple2.Trigger._52000194_qd {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State시공의균열_04(context);
-                    return;
+                    return new State시공의균열_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -120,7 +125,9 @@ namespace Maple2.Trigger._52000194_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

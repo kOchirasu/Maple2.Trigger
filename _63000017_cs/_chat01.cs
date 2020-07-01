@@ -7,11 +7,12 @@ namespace Maple2.Trigger._63000017_cs {
                 context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9900})) {
-                    context.State = new StateDelay01(context);
-                    return;
+                    return new StateDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._63000017_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new StateChat01(context);
-                    return;
+                    return new StateChat01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._63000017_cs {
                 context.SetConversation(arg1: 1, arg2: 103, arg3: "$63000017_CS__CHAT01__4$", arg4: 4, arg5: 20);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
-                    context.State = new StateDelay02(context);
-                    return;
+                    return new StateDelay02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +61,12 @@ namespace Maple2.Trigger._63000017_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateChat02(context);
-                    return;
+                    return new StateChat02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -76,11 +80,12 @@ namespace Maple2.Trigger._63000017_cs {
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$63000017_CS__CHAT01__6$", arg4: 4, arg5: 6);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateDelay03(context);
-                    return;
+                    return new StateDelay03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -91,16 +96,16 @@ namespace Maple2.Trigger._63000017_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9900})) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateDelay01(context);
-                    return;
+                    return new StateDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -111,11 +116,12 @@ namespace Maple2.Trigger._63000017_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9900})) {
-                    context.State = new StateDelay01(context);
-                    return;
+                    return new StateDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

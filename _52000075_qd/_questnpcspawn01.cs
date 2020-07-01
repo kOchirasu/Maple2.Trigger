@@ -9,36 +9,32 @@ namespace Maple2.Trigger._52000075_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002668}, arg3: new byte[] {3})) {
-                    context.State = new StateRemoveNpc01(context);
-                    return;
+                    return new StateRemoveNpc01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002668}, arg3: new byte[] {2})) {
-                    context.State = new StateGuardDown01(context);
-                    return;
+                    return new StateGuardDown01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002668}, arg3: new byte[] {1})) {
-                    context.State = new StateGuardDown01(context);
-                    return;
+                    return new StateGuardDown01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667}, arg3: new byte[] {3})) {
-                    context.State = new StateGuardDown01(context);
-                    return;
+                    return new StateGuardDown01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667}, arg3: new byte[] {2})) {
-                    context.State = new StateGuardDown01(context);
-                    return;
+                    return new StateGuardDown01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002667}, arg3: new byte[] {1})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -51,7 +47,9 @@ namespace Maple2.Trigger._52000075_qd {
                 context.DestroyMonster(arg1: new[] {101, 201});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -65,11 +63,12 @@ namespace Maple2.Trigger._52000075_qd {
                 context.CreateMonster(arg1: new[] {202, 900, 901, 902}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {900, 901, 902})) {
-                    context.State = new StateMobChange01(context);
-                    return;
+                    return new StateMobChange01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -84,11 +83,12 @@ namespace Maple2.Trigger._52000075_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMobChange02(context);
-                    return;
+                    return new StateMobChange02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -102,11 +102,12 @@ namespace Maple2.Trigger._52000075_qd {
                 context.CreateMonster(arg1: new[] {301}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMobChange03(context);
-                    return;
+                    return new StateMobChange03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -117,11 +118,12 @@ namespace Maple2.Trigger._52000075_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMobChange04(context);
-                    return;
+                    return new StateMobChange04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -135,11 +137,12 @@ namespace Maple2.Trigger._52000075_qd {
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMobTalk01(context);
-                    return;
+                    return new StateMobTalk01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -155,11 +158,12 @@ namespace Maple2.Trigger._52000075_qd {
                 context.SetSkip(arg1: "MobTalk02");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateMobTalk02(context);
-                    return;
+                    return new StateMobTalk02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -175,11 +179,12 @@ namespace Maple2.Trigger._52000075_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMobTalk03(context);
-                    return;
+                    return new StateMobTalk03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -193,11 +198,12 @@ namespace Maple2.Trigger._52000075_qd {
                 context.DestroyMonster(arg1: new[] {301});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateQuestComplete01(context);
-                    return;
+                    return new StateQuestComplete01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -210,7 +216,9 @@ namespace Maple2.Trigger._52000075_qd {
                 context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "abductedRamon");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -223,7 +231,9 @@ namespace Maple2.Trigger._52000075_qd {
                 context.CreateMonster(arg1: new[] {202}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

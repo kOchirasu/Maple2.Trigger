@@ -29,11 +29,12 @@ namespace Maple2.Trigger._99999870 {
                 context.SetEffect(arg1: new[] {11201, 11202, 11203, 11204, 11205, 11206, 11207, 11208, 11300, 11301, 11302}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimeEventOn") == 1) {
-                    context.State = new StateSetting(context);
-                    return;
+                    return new StateSetting(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,17 +48,17 @@ namespace Maple2.Trigger._99999870 {
                 context.SetInteractObject(arg1: new[] {12000074}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000074}, arg2: 0)) {
                     context.SetTimer(arg1: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
-                    context.State = new StateStartMelodyQuiz_Delay01(context);
-                    return;
+                    return new StateStartMelodyQuiz_Delay01(context);
                 }
 
                 if (context.GetUserValue(key: "TimeEventOn") == 0) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -78,11 +79,12 @@ namespace Maple2.Trigger._99999870 {
                 context.SetActor(arg1: 11008, arg2: true, arg3: "ks_quest_musical_B01_pink");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateStartMelodyQuiz_Delay02(context);
-                    return;
+                    return new StateStartMelodyQuiz_Delay02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -102,11 +104,12 @@ namespace Maple2.Trigger._99999870 {
                 context.SetActor(arg1: 11008, arg2: true, arg3: "ks_quest_musical_B01_off");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateStartMelodyQuiz_Random(context);
-                    return;
+                    return new StateStartMelodyQuiz_Random(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -117,11 +120,12 @@ namespace Maple2.Trigger._99999870 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateMelodyQuizPattern20(context);
-                    return;
+                    return new StateMelodyQuizPattern20(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -135,21 +139,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 101, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -165,21 +168,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 102, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -195,21 +197,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 103, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -225,21 +226,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 104, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -255,21 +255,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 105, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -285,21 +284,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 106, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -315,21 +313,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 107, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -345,21 +342,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 108, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -375,21 +371,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 109, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -405,21 +400,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 110, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -435,21 +429,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 111, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -465,21 +458,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 112, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -495,21 +487,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 113, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -525,21 +516,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 114, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -555,21 +545,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 115, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -585,21 +574,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 116, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -615,21 +603,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 117, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -645,21 +632,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 118, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -675,21 +661,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 119, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -705,21 +690,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(triggerId: 120, key: "PatternPick", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AnswerIsRight") == 1) {
-                    context.State = new StateEndMelodyQuiz_Success(context);
-                    return;
+                    return new StateEndMelodyQuiz_Success(context);
                 }
 
                 if (context.GetUserValue(key: "AnswerIsWrong") == 1) {
-                    context.State = new StateEndMelodyQuiz_Fail(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -737,16 +721,16 @@ namespace Maple2.Trigger._99999870 {
                 context.SetTimer(arg1: "2", arg2: 60, arg3: true, arg4: false, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000066}, arg2: 0)) {
-                    context.State = new StateMelodyQuiz_Success_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Success_Quit(context);
                 }
 
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new StateMelodyQuiz_Success_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Success_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -759,21 +743,20 @@ namespace Maple2.Trigger._99999870 {
                 context.SetEffect(arg1: new[] {11302}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimeEventOn") == 0) {
-                    context.State = new StateEndMelodyQuiz_Fail_2(context);
-                    return;
+                    return new StateEndMelodyQuiz_Fail_2(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateMelodyQuiz_Fail_Quit(context);
-                    return;
+                    return new StateMelodyQuiz_Fail_Quit(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateMelodyQuiz_Retry(context);
-                    return;
+                    return new StateMelodyQuiz_Retry(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -784,16 +767,16 @@ namespace Maple2.Trigger._99999870 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateMelodyQuiz_Retry(context);
-                    return;
+                    return new StateMelodyQuiz_Retry(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -806,106 +789,88 @@ namespace Maple2.Trigger._99999870 {
                 context.SetUserValue(key: "AnswerIsWrong", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "PatternPick") == 101) {
-                    context.State = new StateMelodyQuizPattern01(context);
-                    return;
+                    return new StateMelodyQuizPattern01(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 102) {
-                    context.State = new StateMelodyQuizPattern02(context);
-                    return;
+                    return new StateMelodyQuizPattern02(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 103) {
-                    context.State = new StateMelodyQuizPattern03(context);
-                    return;
+                    return new StateMelodyQuizPattern03(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 104) {
-                    context.State = new StateMelodyQuizPattern04(context);
-                    return;
+                    return new StateMelodyQuizPattern04(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 105) {
-                    context.State = new StateMelodyQuizPattern05(context);
-                    return;
+                    return new StateMelodyQuizPattern05(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 106) {
-                    context.State = new StateMelodyQuizPattern06(context);
-                    return;
+                    return new StateMelodyQuizPattern06(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 107) {
-                    context.State = new StateMelodyQuizPattern07(context);
-                    return;
+                    return new StateMelodyQuizPattern07(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 108) {
-                    context.State = new StateMelodyQuizPattern08(context);
-                    return;
+                    return new StateMelodyQuizPattern08(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 109) {
-                    context.State = new StateMelodyQuizPattern09(context);
-                    return;
+                    return new StateMelodyQuizPattern09(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 110) {
-                    context.State = new StateMelodyQuizPattern10(context);
-                    return;
+                    return new StateMelodyQuizPattern10(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 111) {
-                    context.State = new StateMelodyQuizPattern11(context);
-                    return;
+                    return new StateMelodyQuizPattern11(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 112) {
-                    context.State = new StateMelodyQuizPattern12(context);
-                    return;
+                    return new StateMelodyQuizPattern12(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 113) {
-                    context.State = new StateMelodyQuizPattern13(context);
-                    return;
+                    return new StateMelodyQuizPattern13(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 114) {
-                    context.State = new StateMelodyQuizPattern14(context);
-                    return;
+                    return new StateMelodyQuizPattern14(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 115) {
-                    context.State = new StateMelodyQuizPattern15(context);
-                    return;
+                    return new StateMelodyQuizPattern15(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 116) {
-                    context.State = new StateMelodyQuizPattern16(context);
-                    return;
+                    return new StateMelodyQuizPattern16(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 117) {
-                    context.State = new StateMelodyQuizPattern17(context);
-                    return;
+                    return new StateMelodyQuizPattern17(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 118) {
-                    context.State = new StateMelodyQuizPattern18(context);
-                    return;
+                    return new StateMelodyQuizPattern18(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 119) {
-                    context.State = new StateMelodyQuizPattern19(context);
-                    return;
+                    return new StateMelodyQuizPattern19(context);
                 }
 
                 if (context.GetUserValue(key: "PatternPick") == 120) {
-                    context.State = new StateMelodyQuizPattern20(context);
-                    return;
+                    return new StateMelodyQuizPattern20(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -919,11 +884,12 @@ namespace Maple2.Trigger._99999870 {
                 context.ResetTimer(arg1: "2");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -938,11 +904,12 @@ namespace Maple2.Trigger._99999870 {
                 context.ResetTimer(arg1: "2");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

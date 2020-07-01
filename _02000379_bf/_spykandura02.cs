@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000379_bf {
                 context.SetUserValue(key: "SpyKandura", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SpyKandura") == 1) {
-                    context.State = new StateDelay01(context);
-                    return;
+                    return new StateDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._02000379_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new StateKanduraAppRightRandom(context);
-                    return;
+                    return new StateKanduraAppRightRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,36 +43,32 @@ namespace Maple2.Trigger._02000379_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppRight01(context);
-                    return;
+                    return new StateKanduraAppRight01(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppRight02(context);
-                    return;
+                    return new StateKanduraAppRight02(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppRight03(context);
-                    return;
+                    return new StateKanduraAppRight03(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppRight04(context);
-                    return;
+                    return new StateKanduraAppRight04(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppRight05(context);
-                    return;
+                    return new StateKanduraAppRight05(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppRight06(context);
-                    return;
+                    return new StateKanduraAppRight06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,36 +79,32 @@ namespace Maple2.Trigger._02000379_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppLeft01(context);
-                    return;
+                    return new StateKanduraAppLeft01(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppLeft02(context);
-                    return;
+                    return new StateKanduraAppLeft02(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppLeft03(context);
-                    return;
+                    return new StateKanduraAppLeft03(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppLeft04(context);
-                    return;
+                    return new StateKanduraAppLeft04(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppLeft05(context);
-                    return;
+                    return new StateKanduraAppLeft05(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppLeft06(context);
-                    return;
+                    return new StateKanduraAppLeft06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -122,26 +115,24 @@ namespace Maple2.Trigger._02000379_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppCenter01(context);
-                    return;
+                    return new StateKanduraAppCenter01(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppCenter02(context);
-                    return;
+                    return new StateKanduraAppCenter02(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppCenter03(context);
-                    return;
+                    return new StateKanduraAppCenter03(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateKanduraAppCenter04(context);
-                    return;
+                    return new StateKanduraAppCenter04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -154,16 +145,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {430}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppRight01(context);
-                    return;
+                    return new StateKanduraDisAppRight01(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -176,16 +167,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {430});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppCenterRandom(context);
-                    return;
+                    return new StateKanduraAppCenterRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -198,16 +189,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {431}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppRight02(context);
-                    return;
+                    return new StateKanduraDisAppRight02(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -220,16 +211,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {431});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppCenterRandom(context);
-                    return;
+                    return new StateKanduraAppCenterRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -242,16 +233,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {432}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppRight03(context);
-                    return;
+                    return new StateKanduraDisAppRight03(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -264,16 +255,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {432});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppCenterRandom(context);
-                    return;
+                    return new StateKanduraAppCenterRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -286,16 +277,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {433}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppRight04(context);
-                    return;
+                    return new StateKanduraDisAppRight04(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -308,16 +299,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {433});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppCenterRandom(context);
-                    return;
+                    return new StateKanduraAppCenterRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -330,16 +321,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {434}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppRight05(context);
-                    return;
+                    return new StateKanduraDisAppRight05(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -352,16 +343,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {434});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppCenterRandom(context);
-                    return;
+                    return new StateKanduraAppCenterRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -374,16 +365,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {435}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppRight06(context);
-                    return;
+                    return new StateKanduraDisAppRight06(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -396,16 +387,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {435});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppCenterRandom(context);
-                    return;
+                    return new StateKanduraAppCenterRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -418,16 +409,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {420}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppCenter01(context);
-                    return;
+                    return new StateKanduraDisAppCenter01(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -440,16 +431,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {420});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppLeftRandom(context);
-                    return;
+                    return new StateKanduraAppLeftRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -462,16 +453,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {421}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppCenter02(context);
-                    return;
+                    return new StateKanduraDisAppCenter02(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -484,16 +475,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {421});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppLeftRandom(context);
-                    return;
+                    return new StateKanduraAppLeftRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -506,16 +497,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {422}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppCenter03(context);
-                    return;
+                    return new StateKanduraDisAppCenter03(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -528,16 +519,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {422});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppLeftRandom(context);
-                    return;
+                    return new StateKanduraAppLeftRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -550,16 +541,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {423}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppCenter04(context);
-                    return;
+                    return new StateKanduraDisAppCenter04(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -572,16 +563,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {423});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppLeftRandom(context);
-                    return;
+                    return new StateKanduraAppLeftRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -594,16 +585,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {410}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppLeft01(context);
-                    return;
+                    return new StateKanduraDisAppLeft01(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -616,16 +607,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {410});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppRightRandom(context);
-                    return;
+                    return new StateKanduraAppRightRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -638,16 +629,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {411}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppLeft02(context);
-                    return;
+                    return new StateKanduraDisAppLeft02(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -660,16 +651,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {411});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppRightRandom(context);
-                    return;
+                    return new StateKanduraAppRightRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -682,16 +673,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {412}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppLeft03(context);
-                    return;
+                    return new StateKanduraDisAppLeft03(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -704,16 +695,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {412});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppRightRandom(context);
-                    return;
+                    return new StateKanduraAppRightRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -726,16 +717,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {413}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppLeft04(context);
-                    return;
+                    return new StateKanduraDisAppLeft04(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -748,16 +739,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {413});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppRightRandom(context);
-                    return;
+                    return new StateKanduraAppRightRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -770,16 +761,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {414}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppLeft05(context);
-                    return;
+                    return new StateKanduraDisAppLeft05(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -792,16 +783,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {414});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppRightRandom(context);
-                    return;
+                    return new StateKanduraAppRightRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -814,16 +805,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CreateMonster(arg1: new[] {415}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateKanduraDisAppLeft06(context);
-                    return;
+                    return new StateKanduraDisAppLeft06(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -836,16 +827,16 @@ namespace Maple2.Trigger._02000379_bf {
                 context.DestroyMonster(arg1: new[] {415});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateKanduraAppRightRandom(context);
-                    return;
+                    return new StateKanduraAppRightRandom(context);
                 }
 
                 if (context.GetUserValue(key: "SpyKandura") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -859,7 +850,9 @@ namespace Maple2.Trigger._02000379_bf {
                 context.SetUserValue(key: "SpyKandura", value: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

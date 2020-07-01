@@ -22,11 +22,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetActor(arg1: 210, arg2: false, arg3: "Dead_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    context.State = new StateDungeonStart(context);
-                    return;
+                    return new StateDungeonStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +44,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52100031_QD__MADRICANSIEGE__0$", arg4: 4, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State연출종료(context);
-                    return;
+                    return new State연출종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +66,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.CameraSelect(arg1: 300, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State던전시작(context);
-                    return;
+                    return new State던전시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,14 +86,15 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52100031_QD__MADRICANSIEGE__1$", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2000, 2001})) {
                     context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                     context.SetAgent(arg1: new[] {8101, 8102, 8103, 8104, 8105, 8106}, arg2: false);
                     context.MoveNpc(arg1: 1102, arg2: "MS2PatrolData_1001A");
-                    context.State = new State1차지원(context);
-                    return;
+                    return new State1차지원(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -106,14 +110,15 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetUserValue(triggerId: 99999099, key: "faction01", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2901})) {
                     context.DestroyMonster(arg1: new[] {2002});
                     context.SetAgent(arg1: new[] {8201, 8202, 8203, 8204, 8205, 8206}, arg2: false);
                     context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                    context.State = new State다리건넘(context);
-                    return;
+                    return new State다리건넘(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -130,11 +135,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetUserValue(triggerId: 99999105, key: "cannon05", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 300) {
-                    context.State = new State2차지원(context);
-                    return;
+                    return new State2차지원(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -147,11 +153,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetUserValue(triggerId: 99999098, key: "faction02", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 600) {
-                    context.State = new State3차지원(context);
-                    return;
+                    return new State3차지원(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -165,12 +172,13 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetUserValue(triggerId: 99999097, key: "faction03", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 1000) {
                     context.ShadowExpedition(type: "CloseBossGauge");
-                    context.State = new State보스등장(context);
-                    return;
+                    return new State보스등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -184,11 +192,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetUserValue(triggerId: 99999096, key: "faction04", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "bossSpawn") == 1) {
-                    context.State = new State던전종료대기(context);
-                    return;
+                    return new State던전종료대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -199,11 +208,12 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2099})) {
-                    context.State = new State던전종료딜레이(context);
-                    return;
+                    return new State던전종료딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -214,11 +224,12 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State암전(context);
-                    return;
+                    return new State암전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -251,11 +262,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State던전종료연출시작(context);
-                    return;
+                    return new State던전종료연출시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -272,11 +284,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetSkip(arg1: "던전종료연출종료");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State던전종료연출01(context);
-                    return;
+                    return new State던전종료연출01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -293,11 +306,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.AddCinematicTalk(npcId: 11001566, illustId: "11001566", msg: "$52100031_QD__MADRICANSIEGE__3$", duration: 3000, align: "left");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.State = new State던전종료연출02(context);
-                    return;
+                    return new State던전종료연출02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -312,11 +326,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.AddCinematicTalk(npcId: 11001568, illustId: "11001568", msg: "$52100031_QD__MADRICANSIEGE__4$", duration: 3000, align: "left");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State룬블레이더이동(context);
-                    return;
+                    return new State룬블레이더이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -331,11 +346,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.MoveNpc(arg1: 1922, arg2: "MS2PatrolData_1922");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State던전종료연출종료(context);
-                    return;
+                    return new State던전종료연출종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -352,11 +368,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State퀘스트던전종료(context);
-                    return;
+                    return new State퀘스트던전종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -369,11 +386,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -384,7 +402,9 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

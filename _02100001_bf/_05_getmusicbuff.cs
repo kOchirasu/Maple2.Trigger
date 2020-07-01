@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetUserValue(key: "GiveBuffSlowly", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9900})) {
-                    context.State = new StateGiveBuff01(context);
-                    return;
+                    return new StateGiveBuff01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,16 +25,16 @@ namespace Maple2.Trigger._02100001_bf {
                 context.AddBuff(arg1: new[] {9900}, arg2: 71000030, arg3: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateGiveBuff01(context);
-                    return;
+                    return new StateGiveBuff01(context);
                 }
 
                 if (context.GetUserValue(key: "GiveBuffSlowly") == 1) {
-                    context.State = new StateGiveBuff02(context);
-                    return;
+                    return new StateGiveBuff02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,16 +47,16 @@ namespace Maple2.Trigger._02100001_bf {
                 context.AddBuff(arg1: new[] {9901}, arg2: 71000030, arg3: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9901})) {
-                    context.State = new StateGiveBuff02(context);
-                    return;
+                    return new StateGiveBuff02(context);
                 }
 
                 if (context.GetUserValue(key: "GiveBuffSlowly") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -68,7 +69,9 @@ namespace Maple2.Trigger._02100001_bf {
                 context.AddBuff(arg1: new[] {9900}, arg2: 71000034, arg3: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetUserValue(key: "TotemApp", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TotemApp") == 1) {
-                    context.State = new StateTotemApp01(context);
-                    return;
+                    return new StateTotemApp01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.CreateMonster(arg1: new[] {926}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateJuntaReady01(context);
-                    return;
+                    return new StateJuntaReady01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetConversation(arg1: 1, arg2: 2313, arg3: "$02000378_BF__713_DARKNESSTOTEM_12ROUND__0$", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateJuntaGoUp01(context);
-                    return;
+                    return new StateJuntaGoUp01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +65,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.MoveNpc(arg1: 2313, arg2: "MS2PatrolData_2313");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateDestoryTotem01(context);
-                    return;
+                    return new StateDestoryTotem01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,11 +83,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.CreateMonster(arg1: new[] {2113}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateJuntaReturn01(context);
-                    return;
+                    return new StateJuntaReturn01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,11 +101,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.DestroyMonster(arg1: new[] {926, 2313, 2113});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateJuntaReturn02(context);
-                    return;
+                    return new StateJuntaReturn02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -113,11 +119,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.CreateMonster(arg1: new[] {2213}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -130,7 +137,9 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetMesh(arg1: new[] {3900, 3901, 3902, 3903, 3904, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

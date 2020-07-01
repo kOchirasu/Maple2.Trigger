@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9901})) {
-                    context.State = new State알림(context);
-                    return;
+                    return new State알림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 900) <= 0.30f || context.GetNpcHpRate(spawnPointId: 901) <= 0.30f) {
-                    context.State = new State텍스트(context);
-                    return;
+                    return new State텍스트(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,8 +39,10 @@ namespace Maple2.Trigger._02000486_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000486_BF__107_TEXT__0$", arg3: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (true) { }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -8,36 +8,32 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {541, 5410}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Box41Check") == 0) {
-                    context.State = new StateSensor0(context);
-                    return;
+                    return new StateSensor0(context);
                 }
 
                 if (context.GetUserValue(key: "Box41Check") == 1) {
-                    context.State = new StateSensor1(context);
-                    return;
+                    return new StateSensor1(context);
                 }
 
                 if (context.GetUserValue(key: "Box41Check") == 2) {
-                    context.State = new StateSensor2(context);
-                    return;
+                    return new StateSensor2(context);
                 }
 
                 if (context.GetUserValue(key: "Box41Check") == 3) {
-                    context.State = new StateSensor3(context);
-                    return;
+                    return new StateSensor3(context);
                 }
 
                 if (context.GetUserValue(key: "Box41Check") == 4) {
-                    context.State = new StateSensor4(context);
-                    return;
+                    return new StateSensor4(context);
                 }
 
                 if (context.GetUserValue(key: "Box41Check") == 5) {
-                    context.State = new StateSensor5(context);
-                    return;
+                    return new StateSensor5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +44,8 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateFail(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateFail(context);
             }
 
             public override void OnExit() { }
@@ -63,16 +56,16 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9410) == 1) {
-                    context.State = new StatePass(context);
-                    return;
+                    return new StatePass(context);
                 }
 
                 if (context.GetUserCount(boxId: 9410) != 1) {
-                    context.State = new StateFail(context);
-                    return;
+                    return new StateFail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,16 +76,16 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9410) == 2) {
-                    context.State = new StatePass(context);
-                    return;
+                    return new StatePass(context);
                 }
 
                 if (context.GetUserCount(boxId: 9410) != 2) {
-                    context.State = new StateFail(context);
-                    return;
+                    return new StateFail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -103,16 +96,16 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9410) == 3) {
-                    context.State = new StatePass(context);
-                    return;
+                    return new StatePass(context);
                 }
 
                 if (context.GetUserCount(boxId: 9410) != 3) {
-                    context.State = new StateFail(context);
-                    return;
+                    return new StateFail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -123,16 +116,16 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9410) == 4) {
-                    context.State = new StatePass(context);
-                    return;
+                    return new StatePass(context);
                 }
 
                 if (context.GetUserCount(boxId: 9410) != 4) {
-                    context.State = new StateFail(context);
-                    return;
+                    return new StateFail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -143,16 +136,16 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9410) == 5) {
-                    context.State = new StatePass(context);
-                    return;
+                    return new StatePass(context);
                 }
 
                 if (context.GetUserCount(boxId: 9410) != 5) {
-                    context.State = new StateFail(context);
-                    return;
+                    return new StateFail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -167,11 +160,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {541}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -187,11 +181,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 7410, key: "Color41", value: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -204,11 +199,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "Box41Check", value: 10);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -7,11 +7,12 @@ namespace Maple2.Trigger._99999909 {
                 context.SetMesh(arg1: new[] {3031, 3032, 3033, 3034, 3035, 3036, 3037}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    context.State = new State블록생성(context);
-                    return;
+                    return new State블록생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,7 +25,9 @@ namespace Maple2.Trigger._99999909 {
                 context.SetRandomMesh(arg1: new[] {3031, 3032, 3033, 3034, 3035, 3036, 3037}, arg2: true, arg3: 4, arg4: 0, arg5: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

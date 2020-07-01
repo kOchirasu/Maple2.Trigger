@@ -10,11 +10,12 @@ namespace Maple2.Trigger._52000066_qd {
                 context.SetUserValue(key: "TrapLeverOn", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TrapLeverOn") == 1) {
-                    context.State = new StateTrapLeverOn01(context);
-                    return;
+                    return new StateTrapLeverOn01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,16 +29,16 @@ namespace Maple2.Trigger._52000066_qd {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001071}, arg2: 0)) {
-                    context.State = new StateTrapFalse01(context);
-                    return;
+                    return new StateTrapFalse01(context);
                 }
 
                 if (context.GetUserValue(key: "TrapLeverOn") == 2) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -53,11 +54,12 @@ namespace Maple2.Trigger._52000066_qd {
                 context.SetMesh(arg1: new[] {2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029}, arg2: true, arg3: 500, arg4: 50, arg5: 1f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9300})) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -71,7 +73,9 @@ namespace Maple2.Trigger._52000066_qd {
                 context.SetInteractObject(arg1: new[] {10001071}, arg2: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

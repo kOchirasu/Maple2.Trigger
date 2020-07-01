@@ -24,11 +24,12 @@ namespace Maple2.Trigger._99999873 {
                 context.SetEffect(arg1: new[] {14200, 14201, 14202}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimeEventOn") == 1) {
-                    context.State = new StateSettingDelay(context);
-                    return;
+                    return new StateSettingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,16 +40,16 @@ namespace Maple2.Trigger._99999873 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateSetting(context);
-                    return;
+                    return new StateSetting(context);
                 }
 
                 if (context.GetUserValue(key: "TimeEventOn") == 0) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,17 +62,17 @@ namespace Maple2.Trigger._99999873 {
                 context.SetInteractObject(arg1: new[] {12000077}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000077}, arg2: 0)) {
                     context.SetTimer(arg1: "1", arg2: 90, arg3: true, arg4: false, arg5: 0);
-                    context.State = new StateTouchingInNumericalOrder_Start_Delay(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_Start_Delay(context);
                 }
 
                 if (context.GetUserValue(key: "TimeEventOn") == 0) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,11 +83,12 @@ namespace Maple2.Trigger._99999873 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateTouchingInNumericalOrder_Play01(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_Play01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,36 +117,32 @@ namespace Maple2.Trigger._99999873 {
                 context.SetActor(arg1: 14055, arg2: true, arg3: "Interaction_luminous_A02_off");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateResetTimer(context);
-                    return;
+                    return new StateResetTimer(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000088}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_Play02(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_Play02(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000089}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_FailDelay(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000090}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_FailDelay(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000091}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_FailDelay(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_FailDelay(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -159,31 +157,28 @@ namespace Maple2.Trigger._99999873 {
                 context.SetActor(arg1: 14011, arg2: true, arg3: "Interaction_luminous_A02_on");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateResetTimer(context);
-                    return;
+                    return new StateResetTimer(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000089}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_Play03(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_Play03(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000090}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_FailDelay(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000091}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_FailDelay(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_FailDelay(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -199,26 +194,24 @@ namespace Maple2.Trigger._99999873 {
                 context.SetActor(arg1: 14022, arg2: true, arg3: "Interaction_luminous_A02_on");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateResetTimer(context);
-                    return;
+                    return new StateResetTimer(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000090}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_Play04(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_Play04(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000091}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_FailDelay(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_FailDelay(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -235,21 +228,20 @@ namespace Maple2.Trigger._99999873 {
                 context.SetActor(arg1: 14033, arg2: true, arg3: "Interaction_luminous_A02_on");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateResetTimer(context);
-                    return;
+                    return new StateResetTimer(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000091}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_Play05(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_Play05(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_FailDelay(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_FailDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -267,16 +259,16 @@ namespace Maple2.Trigger._99999873 {
                 context.SetActor(arg1: 14044, arg2: true, arg3: "Interaction_luminous_A02_on");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateResetTimer(context);
-                    return;
+                    return new StateResetTimer(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_End(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -295,11 +287,12 @@ namespace Maple2.Trigger._99999873 {
                 context.SetActor(arg1: 14055, arg2: true, arg3: "Interaction_luminous_A02_on");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateTouchingInNumericalOrder_Success(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_Success(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -315,16 +308,16 @@ namespace Maple2.Trigger._99999873 {
                 context.SetInteractObject(arg1: new[] {12000069}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000069}, arg2: 0)) {
-                    context.State = new StateTouchingInNumericalOrder_SuccessDelay(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_SuccessDelay(context);
                 }
 
                 if (context.TimeExpired(arg1: "10")) {
-                    context.State = new StateResetTimer(context);
-                    return;
+                    return new StateResetTimer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -335,11 +328,12 @@ namespace Maple2.Trigger._99999873 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateTouchingInNumericalOrder_Quit(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -354,11 +348,12 @@ namespace Maple2.Trigger._99999873 {
                 context.ResetTimer(arg1: "10");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -371,21 +366,20 @@ namespace Maple2.Trigger._99999873 {
                 context.SetEffect(arg1: new[] {14202}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateTouchingInNumericalOrder_Fail(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_Fail(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateResetTimer(context);
-                    return;
+                    return new StateResetTimer(context);
                 }
 
                 if (context.GetUserValue(key: "TimeEventOn") == 0) {
-                    context.State = new StateResetTimer(context);
-                    return;
+                    return new StateResetTimer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -413,21 +407,20 @@ namespace Maple2.Trigger._99999873 {
                 context.SetActor(arg1: 14055, arg2: false, arg3: "Interaction_luminous_A02_off");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateTouchingInNumericalOrder_Play01(context);
-                    return;
+                    return new StateTouchingInNumericalOrder_Play01(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateResetTimer(context);
-                    return;
+                    return new StateResetTimer(context);
                 }
 
                 if (context.GetUserValue(key: "TimeEventOn") == 0) {
-                    context.State = new StateResetTimer(context);
-                    return;
+                    return new StateResetTimer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -440,11 +433,12 @@ namespace Maple2.Trigger._99999873 {
                 context.ResetTimer(arg1: "1");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

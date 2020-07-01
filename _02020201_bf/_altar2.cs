@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    context.State = new State전투시작체크(context);
-                    return;
+                    return new State전투시작체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {101})) {
-                    context.State = new State생성대기(context);
-                    return;
+                    return new State생성대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,11 +37,12 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "gogo") == 1) {
-                    context.State = new State생성대기2(context);
-                    return;
+                    return new State생성대기2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -50,11 +53,12 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State전투체크(context);
-                    return;
+                    return new State전투체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +69,12 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {101})) {
-                    context.State = new State제단생성(context);
-                    return;
+                    return new State제단생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,11 +87,12 @@ namespace Maple2.Trigger._02020201_bf {
                 context.CreateMonster(arg1: new[] {202}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State제단파괴체크(context);
-                    return;
+                    return new State제단파괴체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,11 +103,12 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {202})) {
-                    context.State = new State제단재생성시간(context);
-                    return;
+                    return new State제단재생성시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -114,12 +121,13 @@ namespace Maple2.Trigger._02020201_bf {
                 context.SetAiExtraData(key: "Sidephase", value: 1, isModify: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 40000)) {
                     context.SetAiExtraData(key: "Sidephase", value: -1, isModify: true);
-                    context.State = new State전투체크(context);
-                    return;
+                    return new State전투체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -130,7 +138,9 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

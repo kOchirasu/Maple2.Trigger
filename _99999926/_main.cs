@@ -5,7 +5,9 @@ namespace Maple2.Trigger._99999926 {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -17,11 +19,12 @@ namespace Maple2.Trigger._99999926 {
                 context.CreateMonster(arg1: new[] {421, 422, 423, 424, 425}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {421, 422, 423, 424, 425})) {
-                    context.State = new StateBattle02(context);
-                    return;
+                    return new StateBattle02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -34,11 +37,12 @@ namespace Maple2.Trigger._99999926 {
                 context.CreateMonster(arg1: new[] {411, 412, 413, 414, 415}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {411, 412, 413, 414, 415})) {
-                    context.State = new StateBattle03Random(context);
-                    return;
+                    return new StateBattle03Random(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,16 +53,16 @@ namespace Maple2.Trigger._99999926 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateBattle03A(context);
-                    return;
+                    return new StateBattle03A(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateBattle03B(context);
-                    return;
+                    return new StateBattle03B(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -71,11 +75,12 @@ namespace Maple2.Trigger._99999926 {
                 context.CreateMonster(arg1: new[] {421, 422, 423, 424, 425, 441}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {421, 422, 423, 424, 425})) {
-                    context.State = new StateMevidicCinematic(context);
-                    return;
+                    return new StateMevidicCinematic(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -88,11 +93,12 @@ namespace Maple2.Trigger._99999926 {
                 context.CreateMonster(arg1: new[] {411, 412, 413, 414, 415, 441}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {411, 412, 413, 414, 415})) {
-                    context.State = new StateMevidicCinematic(context);
-                    return;
+                    return new StateMevidicCinematic(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -106,11 +112,13 @@ namespace Maple2.Trigger._99999926 {
                 context.MoveNpc(arg1: 451, arg2: "MS2PatrolData_701");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 402) == 1) {
-                    // context.State = new StateLoadingStart(context);
-                    return;
+                    // return new StateLoadingStart(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

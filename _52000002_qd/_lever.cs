@@ -7,16 +7,16 @@ namespace Maple2.Trigger._52000002_qd {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000607, 10000608, 10000609, 10000610, 10000611}, arg2: 0)) {
-                    context.State = new State박스체크(context);
-                    return;
+                    return new State박스체크(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,16 +27,16 @@ namespace Maple2.Trigger._52000002_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    context.State = new State안내시작(context);
-                    return;
+                    return new State안내시작(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -51,11 +51,12 @@ namespace Maple2.Trigger._52000002_qd {
                 context.SetTimer(arg1: "10", arg2: 10);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000606}, arg2: 0)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -69,11 +70,12 @@ namespace Maple2.Trigger._52000002_qd {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {101})) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

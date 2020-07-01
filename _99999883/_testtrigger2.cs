@@ -7,11 +7,12 @@ namespace Maple2.Trigger._99999883 {
                 context.DebugString(message: "현재 State1");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "test") == 1) {
-                    context.State = new StateState2(context);
-                    return;
+                    return new StateState2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._99999883 {
                 context.DebugString(message: "현재 State2");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateState1(context);
-                    return;
+                    return new StateState1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

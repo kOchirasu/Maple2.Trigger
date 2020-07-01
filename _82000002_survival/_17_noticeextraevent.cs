@@ -7,11 +7,12 @@ namespace Maple2.Trigger._82000002_survival {
                 context.SetUserValue(key: "NoticeExtraEvent", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "NoticeExtraEvent") == 1) {
-                    context.State = new StateNoticeExtraEvent01(context);
-                    return;
+                    return new StateNoticeExtraEvent01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._82000002_survival {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateNoticeExtraEvent02(context);
-                    return;
+                    return new StateNoticeExtraEvent02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._82000002_survival {
                 context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal", duration: 5000, script: "$82000002_survival__17_NoticeExtraEvent__0$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateNoticeExtraEvent03(context);
-                    return;
+                    return new StateNoticeExtraEvent03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,7 +64,9 @@ namespace Maple2.Trigger._82000002_survival {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

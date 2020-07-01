@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "ItemNumber", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CustomerEnter") == 1) {
-                    context.State = new StateCustomerEnterDelay(context);
-                    return;
+                    return new StateCustomerEnterDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCustomerEnter(context);
-                    return;
+                    return new StateCustomerEnter(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,16 +43,16 @@ namespace Maple2.Trigger._02000387_bf {
                 context.CreateMonster(arg1: new int[] {4012}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.NpcDetected(arg1: 9140, arg2: new int[] {0})) {
-                    context.State = new StatePatrol03(context);
-                    return;
+                    return new StatePatrol03(context);
                 }
 
                 if (!context.NpcDetected(arg1: 9141, arg2: new int[] {0})) {
-                    context.State = new StatePatrol01(context);
-                    return;
+                    return new StatePatrol01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +65,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.MoveNpc(arg1: 4012, arg2: "MS2PatrolData_401");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.NpcDetected(arg1: 9142, arg2: new int[] {0})) {
-                    context.State = new StatePatrol02Delay(context);
-                    return;
+                    return new StatePatrol02Delay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -78,11 +81,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePatrol02(context);
-                    return;
+                    return new StatePatrol02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -95,11 +99,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.MoveNpc(arg1: 4012, arg2: "MS2PatrolData_402");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.NpcDetected(arg1: 9143, arg2: new int[] {0})) {
-                    context.State = new StatePatrol03Delay(context);
-                    return;
+                    return new StatePatrol03Delay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -110,11 +115,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePatrol03(context);
-                    return;
+                    return new StatePatrol03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -127,11 +133,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.MoveNpc(arg1: 4012, arg2: "MS2PatrolData_403");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.NpcDetected(arg1: 9143, arg2: new int[] {0})) {
-                    context.State = new StatePatrolEndDelay(context);
-                    return;
+                    return new StatePatrolEndDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -142,11 +149,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePatrolEnd(context);
-                    return;
+                    return new StatePatrolEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -157,11 +165,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9143, arg2: new int[] {4012})) {
-                    context.State = new StateWaitGreeting(context);
-                    return;
+                    return new StateWaitGreeting(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -174,11 +183,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetInteractObject(arg1: new int[] {10001095}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new int[] {10001095}, arg2: 0)) {
-                    context.State = new StateOrderRandomPick(context);
-                    return;
+                    return new StateOrderRandomPick(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -191,506 +201,408 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000617(context);
-                    return;
+                    return new StatePickItem_30000617(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000618(context);
-                    return;
+                    return new StatePickItem_30000618(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000619(context);
-                    return;
+                    return new StatePickItem_30000619(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000620(context);
-                    return;
+                    return new StatePickItem_30000620(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000621(context);
-                    return;
+                    return new StatePickItem_30000621(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000622(context);
-                    return;
+                    return new StatePickItem_30000622(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000623(context);
-                    return;
+                    return new StatePickItem_30000623(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000624(context);
-                    return;
+                    return new StatePickItem_30000624(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000625(context);
-                    return;
+                    return new StatePickItem_30000625(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000626(context);
-                    return;
+                    return new StatePickItem_30000626(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000627(context);
-                    return;
+                    return new StatePickItem_30000627(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000628(context);
-                    return;
+                    return new StatePickItem_30000628(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000629(context);
-                    return;
+                    return new StatePickItem_30000629(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000630(context);
-                    return;
+                    return new StatePickItem_30000630(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000631(context);
-                    return;
+                    return new StatePickItem_30000631(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000632(context);
-                    return;
+                    return new StatePickItem_30000632(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000633(context);
-                    return;
+                    return new StatePickItem_30000633(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000634(context);
-                    return;
+                    return new StatePickItem_30000634(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000635(context);
-                    return;
+                    return new StatePickItem_30000635(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000636(context);
-                    return;
+                    return new StatePickItem_30000636(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000637(context);
-                    return;
+                    return new StatePickItem_30000637(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000638(context);
-                    return;
+                    return new StatePickItem_30000638(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000639(context);
-                    return;
+                    return new StatePickItem_30000639(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000640(context);
-                    return;
+                    return new StatePickItem_30000640(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000641(context);
-                    return;
+                    return new StatePickItem_30000641(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000642(context);
-                    return;
+                    return new StatePickItem_30000642(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000643(context);
-                    return;
+                    return new StatePickItem_30000643(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000644(context);
-                    return;
+                    return new StatePickItem_30000644(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000645(context);
-                    return;
+                    return new StatePickItem_30000645(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000646(context);
-                    return;
+                    return new StatePickItem_30000646(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000647(context);
-                    return;
+                    return new StatePickItem_30000647(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000648(context);
-                    return;
+                    return new StatePickItem_30000648(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000649(context);
-                    return;
+                    return new StatePickItem_30000649(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000650(context);
-                    return;
+                    return new StatePickItem_30000650(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000651(context);
-                    return;
+                    return new StatePickItem_30000651(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000652(context);
-                    return;
+                    return new StatePickItem_30000652(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000653(context);
-                    return;
+                    return new StatePickItem_30000653(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000654(context);
-                    return;
+                    return new StatePickItem_30000654(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000655(context);
-                    return;
+                    return new StatePickItem_30000655(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000656(context);
-                    return;
+                    return new StatePickItem_30000656(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000657(context);
-                    return;
+                    return new StatePickItem_30000657(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000658(context);
-                    return;
+                    return new StatePickItem_30000658(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000659(context);
-                    return;
+                    return new StatePickItem_30000659(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000660(context);
-                    return;
+                    return new StatePickItem_30000660(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000661(context);
-                    return;
+                    return new StatePickItem_30000661(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000662(context);
-                    return;
+                    return new StatePickItem_30000662(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000663(context);
-                    return;
+                    return new StatePickItem_30000663(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000664(context);
-                    return;
+                    return new StatePickItem_30000664(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000665(context);
-                    return;
+                    return new StatePickItem_30000665(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000666(context);
-                    return;
+                    return new StatePickItem_30000666(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000667(context);
-                    return;
+                    return new StatePickItem_30000667(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000668(context);
-                    return;
+                    return new StatePickItem_30000668(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000669(context);
-                    return;
+                    return new StatePickItem_30000669(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000670(context);
-                    return;
+                    return new StatePickItem_30000670(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000671(context);
-                    return;
+                    return new StatePickItem_30000671(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000672(context);
-                    return;
+                    return new StatePickItem_30000672(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000673(context);
-                    return;
+                    return new StatePickItem_30000673(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000674(context);
-                    return;
+                    return new StatePickItem_30000674(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000675(context);
-                    return;
+                    return new StatePickItem_30000675(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000676(context);
-                    return;
+                    return new StatePickItem_30000676(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000677(context);
-                    return;
+                    return new StatePickItem_30000677(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000678(context);
-                    return;
+                    return new StatePickItem_30000678(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000679(context);
-                    return;
+                    return new StatePickItem_30000679(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000680(context);
-                    return;
+                    return new StatePickItem_30000680(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000681(context);
-                    return;
+                    return new StatePickItem_30000681(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000682(context);
-                    return;
+                    return new StatePickItem_30000682(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000683(context);
-                    return;
+                    return new StatePickItem_30000683(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000684(context);
-                    return;
+                    return new StatePickItem_30000684(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000685(context);
-                    return;
+                    return new StatePickItem_30000685(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000686(context);
-                    return;
+                    return new StatePickItem_30000686(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000687(context);
-                    return;
+                    return new StatePickItem_30000687(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000688(context);
-                    return;
+                    return new StatePickItem_30000688(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000689(context);
-                    return;
+                    return new StatePickItem_30000689(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000690(context);
-                    return;
+                    return new StatePickItem_30000690(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000691(context);
-                    return;
+                    return new StatePickItem_30000691(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000692(context);
-                    return;
+                    return new StatePickItem_30000692(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000693(context);
-                    return;
+                    return new StatePickItem_30000693(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000694(context);
-                    return;
+                    return new StatePickItem_30000694(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000695(context);
-                    return;
+                    return new StatePickItem_30000695(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000696(context);
-                    return;
+                    return new StatePickItem_30000696(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000697(context);
-                    return;
+                    return new StatePickItem_30000697(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000698(context);
-                    return;
+                    return new StatePickItem_30000698(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000699(context);
-                    return;
+                    return new StatePickItem_30000699(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000700(context);
-                    return;
+                    return new StatePickItem_30000700(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000701(context);
-                    return;
+                    return new StatePickItem_30000701(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000702(context);
-                    return;
+                    return new StatePickItem_30000702(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000703(context);
-                    return;
+                    return new StatePickItem_30000703(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000704(context);
-                    return;
+                    return new StatePickItem_30000704(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000705(context);
-                    return;
+                    return new StatePickItem_30000705(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000706(context);
-                    return;
+                    return new StatePickItem_30000706(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000707(context);
-                    return;
+                    return new StatePickItem_30000707(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000708(context);
-                    return;
+                    return new StatePickItem_30000708(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000709(context);
-                    return;
+                    return new StatePickItem_30000709(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000710(context);
-                    return;
+                    return new StatePickItem_30000710(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000711(context);
-                    return;
+                    return new StatePickItem_30000711(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000712(context);
-                    return;
+                    return new StatePickItem_30000712(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000713(context);
-                    return;
+                    return new StatePickItem_30000713(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000714(context);
-                    return;
+                    return new StatePickItem_30000714(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000715(context);
-                    return;
+                    return new StatePickItem_30000715(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StatePickItem_30000716(context);
-                    return;
+                    return new StatePickItem_30000716(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -706,11 +618,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000617(context);
-                    return;
+                    return new StateDetectItem_30000617(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -721,16 +634,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000617)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000617)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -746,11 +659,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000618(context);
-                    return;
+                    return new StateDetectItem_30000618(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -761,16 +675,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000618)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000618)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -786,11 +700,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000619(context);
-                    return;
+                    return new StateDetectItem_30000619(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -801,16 +716,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000619)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000619)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -826,11 +741,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000620(context);
-                    return;
+                    return new StateDetectItem_30000620(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -841,16 +757,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000620)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000620)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -866,11 +782,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000621(context);
-                    return;
+                    return new StateDetectItem_30000621(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -881,16 +798,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000621)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000621)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -906,11 +823,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000622(context);
-                    return;
+                    return new StateDetectItem_30000622(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -921,16 +839,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000622)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000622)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -946,11 +864,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000623(context);
-                    return;
+                    return new StateDetectItem_30000623(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -961,16 +880,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000623)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000623)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -986,11 +905,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000624(context);
-                    return;
+                    return new StateDetectItem_30000624(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1001,16 +921,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000624)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000624)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1026,11 +946,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000625(context);
-                    return;
+                    return new StateDetectItem_30000625(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1041,16 +962,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000625)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000625)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1066,11 +987,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000626(context);
-                    return;
+                    return new StateDetectItem_30000626(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1081,16 +1003,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000626)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000626)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1106,11 +1028,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000627(context);
-                    return;
+                    return new StateDetectItem_30000627(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1121,16 +1044,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000627)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000627)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1146,11 +1069,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000628(context);
-                    return;
+                    return new StateDetectItem_30000628(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1161,16 +1085,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000628)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000628)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1186,11 +1110,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000629(context);
-                    return;
+                    return new StateDetectItem_30000629(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1201,16 +1126,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000629)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000629)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1226,11 +1151,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000630(context);
-                    return;
+                    return new StateDetectItem_30000630(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1241,16 +1167,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000630)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000630)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1267,11 +1193,12 @@ namespace Maple2.Trigger._02000387_bf {
                     rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000631(context);
-                    return;
+                    return new StateDetectItem_30000631(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1282,16 +1209,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000631)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000631)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1307,11 +1234,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000632(context);
-                    return;
+                    return new StateDetectItem_30000632(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1322,16 +1250,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000632)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000632)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1347,11 +1275,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000633(context);
-                    return;
+                    return new StateDetectItem_30000633(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1362,16 +1291,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000633)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000633)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1387,11 +1316,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000634(context);
-                    return;
+                    return new StateDetectItem_30000634(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1402,16 +1332,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000634)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000634)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1427,11 +1357,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000635(context);
-                    return;
+                    return new StateDetectItem_30000635(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1442,16 +1373,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000635)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000635)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1467,11 +1398,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000636(context);
-                    return;
+                    return new StateDetectItem_30000636(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1482,16 +1414,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000636)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000636)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1507,11 +1439,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000637(context);
-                    return;
+                    return new StateDetectItem_30000637(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1522,16 +1455,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000637)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000637)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1547,11 +1480,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000638(context);
-                    return;
+                    return new StateDetectItem_30000638(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1562,16 +1496,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000638)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000638)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1587,11 +1521,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000639(context);
-                    return;
+                    return new StateDetectItem_30000639(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1602,16 +1537,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000639)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000639)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1627,11 +1562,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000640(context);
-                    return;
+                    return new StateDetectItem_30000640(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1642,16 +1578,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000640)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000640)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1667,11 +1603,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000641(context);
-                    return;
+                    return new StateDetectItem_30000641(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1682,16 +1619,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000641)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000641)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1707,11 +1644,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000642(context);
-                    return;
+                    return new StateDetectItem_30000642(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1722,16 +1660,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000642)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000642)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1747,11 +1685,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000643(context);
-                    return;
+                    return new StateDetectItem_30000643(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1762,16 +1701,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000643)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000643)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1787,11 +1726,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000644(context);
-                    return;
+                    return new StateDetectItem_30000644(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1802,16 +1742,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000644)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000644)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1827,11 +1767,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000645(context);
-                    return;
+                    return new StateDetectItem_30000645(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1842,16 +1783,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000645)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000645)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1867,11 +1808,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000646(context);
-                    return;
+                    return new StateDetectItem_30000646(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1882,16 +1824,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000646)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000646)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1907,11 +1849,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000647(context);
-                    return;
+                    return new StateDetectItem_30000647(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1922,16 +1865,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000647)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000647)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1947,11 +1890,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000648(context);
-                    return;
+                    return new StateDetectItem_30000648(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1962,16 +1906,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000648)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000648)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1987,11 +1931,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000649(context);
-                    return;
+                    return new StateDetectItem_30000649(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2002,16 +1947,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000649)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000649)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2027,11 +1972,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000650(context);
-                    return;
+                    return new StateDetectItem_30000650(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2042,16 +1988,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000650)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000650)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2067,11 +2013,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000651(context);
-                    return;
+                    return new StateDetectItem_30000651(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2082,16 +2029,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000651)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000651)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2107,11 +2054,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000652(context);
-                    return;
+                    return new StateDetectItem_30000652(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2122,16 +2070,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000652)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000652)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2147,11 +2095,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000653(context);
-                    return;
+                    return new StateDetectItem_30000653(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2162,16 +2111,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000653)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000653)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2187,11 +2136,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000654(context);
-                    return;
+                    return new StateDetectItem_30000654(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2202,16 +2152,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000654)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000654)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2227,11 +2177,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000655(context);
-                    return;
+                    return new StateDetectItem_30000655(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2242,16 +2193,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000655)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000655)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2267,11 +2218,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000656(context);
-                    return;
+                    return new StateDetectItem_30000656(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2282,16 +2234,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000656)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000656)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2307,11 +2259,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000657(context);
-                    return;
+                    return new StateDetectItem_30000657(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2322,16 +2275,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000657)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000657)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2347,11 +2300,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000658(context);
-                    return;
+                    return new StateDetectItem_30000658(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2362,16 +2316,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000658)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000658)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2387,11 +2341,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000659(context);
-                    return;
+                    return new StateDetectItem_30000659(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2402,16 +2357,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000659)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000659)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2427,11 +2382,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000660(context);
-                    return;
+                    return new StateDetectItem_30000660(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2442,16 +2398,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000660)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000660)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2467,11 +2423,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000661(context);
-                    return;
+                    return new StateDetectItem_30000661(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2482,16 +2439,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000661)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000661)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2507,11 +2464,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000662(context);
-                    return;
+                    return new StateDetectItem_30000662(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2522,16 +2480,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000662)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000662)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2547,11 +2505,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000663(context);
-                    return;
+                    return new StateDetectItem_30000663(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2562,16 +2521,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000663)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000663)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2587,11 +2546,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000664(context);
-                    return;
+                    return new StateDetectItem_30000664(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2602,16 +2562,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000664)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000664)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2628,11 +2588,12 @@ namespace Maple2.Trigger._02000387_bf {
                     rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000665(context);
-                    return;
+                    return new StateDetectItem_30000665(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2643,16 +2604,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000665)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000665)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2668,11 +2629,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000666(context);
-                    return;
+                    return new StateDetectItem_30000666(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2683,16 +2645,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000666)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000666)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2708,11 +2670,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000667(context);
-                    return;
+                    return new StateDetectItem_30000667(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2723,16 +2686,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000667)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000667)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2748,11 +2711,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000668(context);
-                    return;
+                    return new StateDetectItem_30000668(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2763,16 +2727,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000668)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000668)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2788,11 +2752,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000669(context);
-                    return;
+                    return new StateDetectItem_30000669(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2803,16 +2768,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000669)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000669)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2828,11 +2793,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000670(context);
-                    return;
+                    return new StateDetectItem_30000670(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2843,16 +2809,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000670)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000670)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2869,11 +2835,12 @@ namespace Maple2.Trigger._02000387_bf {
                     rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000671(context);
-                    return;
+                    return new StateDetectItem_30000671(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2884,16 +2851,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000671)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000671)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2909,11 +2876,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000672(context);
-                    return;
+                    return new StateDetectItem_30000672(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2924,16 +2892,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000672)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000672)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2949,11 +2917,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000673(context);
-                    return;
+                    return new StateDetectItem_30000673(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2964,16 +2933,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000673)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000673)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2989,11 +2958,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000674(context);
-                    return;
+                    return new StateDetectItem_30000674(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3004,16 +2974,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000674)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000674)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3030,11 +3000,12 @@ namespace Maple2.Trigger._02000387_bf {
                     rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000675(context);
-                    return;
+                    return new StateDetectItem_30000675(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3045,16 +3016,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000675)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000675)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3071,11 +3042,12 @@ namespace Maple2.Trigger._02000387_bf {
                     rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000676(context);
-                    return;
+                    return new StateDetectItem_30000676(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3086,16 +3058,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000676)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000676)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3111,11 +3083,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000677(context);
-                    return;
+                    return new StateDetectItem_30000677(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3126,16 +3099,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000677)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000677)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3151,11 +3124,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000678(context);
-                    return;
+                    return new StateDetectItem_30000678(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3166,16 +3140,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000678)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000678)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3191,11 +3165,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000679(context);
-                    return;
+                    return new StateDetectItem_30000679(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3206,16 +3181,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000679)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000679)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3231,11 +3206,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000680(context);
-                    return;
+                    return new StateDetectItem_30000680(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3246,16 +3222,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000680)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000680)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3271,11 +3247,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000681(context);
-                    return;
+                    return new StateDetectItem_30000681(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3286,16 +3263,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000681)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000681)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3311,11 +3288,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000682(context);
-                    return;
+                    return new StateDetectItem_30000682(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3326,16 +3304,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000682)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000682)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3351,11 +3329,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000683(context);
-                    return;
+                    return new StateDetectItem_30000683(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3366,16 +3345,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000683)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000683)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3391,11 +3370,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000684(context);
-                    return;
+                    return new StateDetectItem_30000684(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3406,16 +3386,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000684)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000684)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3431,11 +3411,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000685(context);
-                    return;
+                    return new StateDetectItem_30000685(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3446,16 +3427,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000685)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000685)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3471,11 +3452,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000686(context);
-                    return;
+                    return new StateDetectItem_30000686(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3486,16 +3468,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000686)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000686)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3511,11 +3493,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000687(context);
-                    return;
+                    return new StateDetectItem_30000687(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3526,16 +3509,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000687)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000687)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3551,11 +3534,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000688(context);
-                    return;
+                    return new StateDetectItem_30000688(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3566,16 +3550,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000688)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000688)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3591,11 +3575,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000689(context);
-                    return;
+                    return new StateDetectItem_30000689(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3606,16 +3591,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000689)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000689)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3631,11 +3616,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000690(context);
-                    return;
+                    return new StateDetectItem_30000690(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3646,16 +3632,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000690)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000690)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3671,11 +3657,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000691(context);
-                    return;
+                    return new StateDetectItem_30000691(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3686,16 +3673,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000691)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000691)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3711,11 +3698,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000692(context);
-                    return;
+                    return new StateDetectItem_30000692(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3726,16 +3714,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000692)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000692)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3751,11 +3739,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000693(context);
-                    return;
+                    return new StateDetectItem_30000693(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3766,16 +3755,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000693)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000693)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3791,11 +3780,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000694(context);
-                    return;
+                    return new StateDetectItem_30000694(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3806,16 +3796,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000694)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000694)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3831,11 +3821,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 315);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000695(context);
-                    return;
+                    return new StateDetectItem_30000695(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3846,16 +3837,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000695)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000695)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3871,11 +3862,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 315);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000696(context);
-                    return;
+                    return new StateDetectItem_30000696(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3886,16 +3878,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000696)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000696)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3911,11 +3903,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 315);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000697(context);
-                    return;
+                    return new StateDetectItem_30000697(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3926,16 +3919,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000697)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000697)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3951,11 +3944,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 315);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000698(context);
-                    return;
+                    return new StateDetectItem_30000698(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3966,16 +3960,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000698)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000698)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3991,11 +3985,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000699(context);
-                    return;
+                    return new StateDetectItem_30000699(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4006,16 +4001,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000699)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000699)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4031,11 +4026,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000700(context);
-                    return;
+                    return new StateDetectItem_30000700(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4046,16 +4042,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000700)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000700)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4071,11 +4067,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000701(context);
-                    return;
+                    return new StateDetectItem_30000701(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4086,16 +4083,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000701)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000701)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4111,11 +4108,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000702(context);
-                    return;
+                    return new StateDetectItem_30000702(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4126,16 +4124,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000702)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000702)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4151,11 +4149,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000703(context);
-                    return;
+                    return new StateDetectItem_30000703(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4166,16 +4165,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000703)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000703)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4191,11 +4190,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000704(context);
-                    return;
+                    return new StateDetectItem_30000704(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4206,16 +4206,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000704)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000704)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4231,11 +4231,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000705(context);
-                    return;
+                    return new StateDetectItem_30000705(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4246,16 +4247,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000705)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000705)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4271,11 +4272,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000706(context);
-                    return;
+                    return new StateDetectItem_30000706(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4286,16 +4288,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000706)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000706)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4311,11 +4313,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000707(context);
-                    return;
+                    return new StateDetectItem_30000707(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4326,16 +4329,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000707)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000707)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4351,11 +4354,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000708(context);
-                    return;
+                    return new StateDetectItem_30000708(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4366,16 +4370,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000708)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000708)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4391,11 +4395,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000709(context);
-                    return;
+                    return new StateDetectItem_30000709(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4406,16 +4411,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000709)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000709)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4431,11 +4436,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000710(context);
-                    return;
+                    return new StateDetectItem_30000710(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4446,16 +4452,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000710)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000710)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4471,11 +4477,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000711(context);
-                    return;
+                    return new StateDetectItem_30000711(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4486,16 +4493,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000711)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000711)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4511,11 +4518,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000712(context);
-                    return;
+                    return new StateDetectItem_30000712(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4526,16 +4534,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000712)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000712)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4551,11 +4559,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000713(context);
-                    return;
+                    return new StateDetectItem_30000713(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4566,16 +4575,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000713)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000713)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4591,11 +4600,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000714(context);
-                    return;
+                    return new StateDetectItem_30000714(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4606,16 +4616,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000714)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000714)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4631,11 +4641,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000715(context);
-                    return;
+                    return new StateDetectItem_30000715(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4646,16 +4657,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000715)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000715)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4671,11 +4682,12 @@ namespace Maple2.Trigger._02000387_bf {
                     isOutline: true, scale: 1.2f, rotateZ: 225);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 0)) {
-                    context.State = new StateDetectItem_30000716(context);
-                    return;
+                    return new StateDetectItem_30000716(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4686,16 +4698,16 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000716)) {
-                    context.State = new StateRightItem(context);
-                    return;
+                    return new StateRightItem(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new int[] {9204}, itemId: 30000716)) {
-                    context.State = new StateWrongItem(context);
-                    return;
+                    return new StateWrongItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4712,11 +4724,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.AddBuff(arg1: new int[] {9900}, arg2: 70000112, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateCustomerLeave(context);
-                    return;
+                    return new StateCustomerLeave(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4729,11 +4742,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.MoveNpc(arg1: 4012, arg2: "MS2PatrolData_444");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9304, arg2: new int[] {4012})) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4746,11 +4760,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.DestroyMonster(arg1: new int[] {4012});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4766,11 +4781,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetConversation(arg1: 1, arg2: 4012, arg3: "$02000387_BF__4012_CUSTOMER__1$", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new StateWrongItemReturn(context);
-                    return;
+                    return new StateWrongItemReturn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4781,506 +4797,408 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ItemNumber") == 30000617) {
-                    context.State = new StatePickItem_30000617(context);
-                    return;
+                    return new StatePickItem_30000617(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000618) {
-                    context.State = new StatePickItem_30000618(context);
-                    return;
+                    return new StatePickItem_30000618(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000619) {
-                    context.State = new StatePickItem_30000619(context);
-                    return;
+                    return new StatePickItem_30000619(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000620) {
-                    context.State = new StatePickItem_30000620(context);
-                    return;
+                    return new StatePickItem_30000620(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000621) {
-                    context.State = new StatePickItem_30000621(context);
-                    return;
+                    return new StatePickItem_30000621(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000622) {
-                    context.State = new StatePickItem_30000622(context);
-                    return;
+                    return new StatePickItem_30000622(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000623) {
-                    context.State = new StatePickItem_30000623(context);
-                    return;
+                    return new StatePickItem_30000623(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000624) {
-                    context.State = new StatePickItem_30000624(context);
-                    return;
+                    return new StatePickItem_30000624(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000625) {
-                    context.State = new StatePickItem_30000625(context);
-                    return;
+                    return new StatePickItem_30000625(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000626) {
-                    context.State = new StatePickItem_30000626(context);
-                    return;
+                    return new StatePickItem_30000626(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000627) {
-                    context.State = new StatePickItem_30000627(context);
-                    return;
+                    return new StatePickItem_30000627(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000628) {
-                    context.State = new StatePickItem_30000628(context);
-                    return;
+                    return new StatePickItem_30000628(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000629) {
-                    context.State = new StatePickItem_30000629(context);
-                    return;
+                    return new StatePickItem_30000629(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000630) {
-                    context.State = new StatePickItem_30000630(context);
-                    return;
+                    return new StatePickItem_30000630(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000631) {
-                    context.State = new StatePickItem_30000631(context);
-                    return;
+                    return new StatePickItem_30000631(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000632) {
-                    context.State = new StatePickItem_30000632(context);
-                    return;
+                    return new StatePickItem_30000632(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000633) {
-                    context.State = new StatePickItem_30000633(context);
-                    return;
+                    return new StatePickItem_30000633(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000634) {
-                    context.State = new StatePickItem_30000634(context);
-                    return;
+                    return new StatePickItem_30000634(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000635) {
-                    context.State = new StatePickItem_30000635(context);
-                    return;
+                    return new StatePickItem_30000635(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000636) {
-                    context.State = new StatePickItem_30000636(context);
-                    return;
+                    return new StatePickItem_30000636(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000637) {
-                    context.State = new StatePickItem_30000637(context);
-                    return;
+                    return new StatePickItem_30000637(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000638) {
-                    context.State = new StatePickItem_30000638(context);
-                    return;
+                    return new StatePickItem_30000638(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000639) {
-                    context.State = new StatePickItem_30000639(context);
-                    return;
+                    return new StatePickItem_30000639(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000640) {
-                    context.State = new StatePickItem_30000640(context);
-                    return;
+                    return new StatePickItem_30000640(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000641) {
-                    context.State = new StatePickItem_30000641(context);
-                    return;
+                    return new StatePickItem_30000641(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000642) {
-                    context.State = new StatePickItem_30000642(context);
-                    return;
+                    return new StatePickItem_30000642(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000643) {
-                    context.State = new StatePickItem_30000643(context);
-                    return;
+                    return new StatePickItem_30000643(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000644) {
-                    context.State = new StatePickItem_30000644(context);
-                    return;
+                    return new StatePickItem_30000644(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000645) {
-                    context.State = new StatePickItem_30000645(context);
-                    return;
+                    return new StatePickItem_30000645(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000646) {
-                    context.State = new StatePickItem_30000646(context);
-                    return;
+                    return new StatePickItem_30000646(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000647) {
-                    context.State = new StatePickItem_30000647(context);
-                    return;
+                    return new StatePickItem_30000647(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000648) {
-                    context.State = new StatePickItem_30000648(context);
-                    return;
+                    return new StatePickItem_30000648(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000649) {
-                    context.State = new StatePickItem_30000649(context);
-                    return;
+                    return new StatePickItem_30000649(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000650) {
-                    context.State = new StatePickItem_30000650(context);
-                    return;
+                    return new StatePickItem_30000650(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000651) {
-                    context.State = new StatePickItem_30000651(context);
-                    return;
+                    return new StatePickItem_30000651(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000652) {
-                    context.State = new StatePickItem_30000652(context);
-                    return;
+                    return new StatePickItem_30000652(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000653) {
-                    context.State = new StatePickItem_30000653(context);
-                    return;
+                    return new StatePickItem_30000653(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000654) {
-                    context.State = new StatePickItem_30000654(context);
-                    return;
+                    return new StatePickItem_30000654(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000655) {
-                    context.State = new StatePickItem_30000655(context);
-                    return;
+                    return new StatePickItem_30000655(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000656) {
-                    context.State = new StatePickItem_30000656(context);
-                    return;
+                    return new StatePickItem_30000656(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000657) {
-                    context.State = new StatePickItem_30000657(context);
-                    return;
+                    return new StatePickItem_30000657(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000658) {
-                    context.State = new StatePickItem_30000658(context);
-                    return;
+                    return new StatePickItem_30000658(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000659) {
-                    context.State = new StatePickItem_30000659(context);
-                    return;
+                    return new StatePickItem_30000659(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000660) {
-                    context.State = new StatePickItem_30000660(context);
-                    return;
+                    return new StatePickItem_30000660(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000661) {
-                    context.State = new StatePickItem_30000661(context);
-                    return;
+                    return new StatePickItem_30000661(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000662) {
-                    context.State = new StatePickItem_30000662(context);
-                    return;
+                    return new StatePickItem_30000662(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000663) {
-                    context.State = new StatePickItem_30000663(context);
-                    return;
+                    return new StatePickItem_30000663(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000664) {
-                    context.State = new StatePickItem_30000664(context);
-                    return;
+                    return new StatePickItem_30000664(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000665) {
-                    context.State = new StatePickItem_30000665(context);
-                    return;
+                    return new StatePickItem_30000665(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000666) {
-                    context.State = new StatePickItem_30000666(context);
-                    return;
+                    return new StatePickItem_30000666(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000667) {
-                    context.State = new StatePickItem_30000667(context);
-                    return;
+                    return new StatePickItem_30000667(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000668) {
-                    context.State = new StatePickItem_30000668(context);
-                    return;
+                    return new StatePickItem_30000668(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000669) {
-                    context.State = new StatePickItem_30000669(context);
-                    return;
+                    return new StatePickItem_30000669(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000670) {
-                    context.State = new StatePickItem_30000670(context);
-                    return;
+                    return new StatePickItem_30000670(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000671) {
-                    context.State = new StatePickItem_30000671(context);
-                    return;
+                    return new StatePickItem_30000671(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000672) {
-                    context.State = new StatePickItem_30000672(context);
-                    return;
+                    return new StatePickItem_30000672(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000673) {
-                    context.State = new StatePickItem_30000673(context);
-                    return;
+                    return new StatePickItem_30000673(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000674) {
-                    context.State = new StatePickItem_30000674(context);
-                    return;
+                    return new StatePickItem_30000674(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000675) {
-                    context.State = new StatePickItem_30000675(context);
-                    return;
+                    return new StatePickItem_30000675(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000676) {
-                    context.State = new StatePickItem_30000676(context);
-                    return;
+                    return new StatePickItem_30000676(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000677) {
-                    context.State = new StatePickItem_30000677(context);
-                    return;
+                    return new StatePickItem_30000677(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000678) {
-                    context.State = new StatePickItem_30000678(context);
-                    return;
+                    return new StatePickItem_30000678(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000679) {
-                    context.State = new StatePickItem_30000679(context);
-                    return;
+                    return new StatePickItem_30000679(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000680) {
-                    context.State = new StatePickItem_30000680(context);
-                    return;
+                    return new StatePickItem_30000680(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000681) {
-                    context.State = new StatePickItem_30000681(context);
-                    return;
+                    return new StatePickItem_30000681(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000682) {
-                    context.State = new StatePickItem_30000682(context);
-                    return;
+                    return new StatePickItem_30000682(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000683) {
-                    context.State = new StatePickItem_30000683(context);
-                    return;
+                    return new StatePickItem_30000683(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000684) {
-                    context.State = new StatePickItem_30000684(context);
-                    return;
+                    return new StatePickItem_30000684(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000685) {
-                    context.State = new StatePickItem_30000685(context);
-                    return;
+                    return new StatePickItem_30000685(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000686) {
-                    context.State = new StatePickItem_30000686(context);
-                    return;
+                    return new StatePickItem_30000686(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000687) {
-                    context.State = new StatePickItem_30000687(context);
-                    return;
+                    return new StatePickItem_30000687(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000688) {
-                    context.State = new StatePickItem_30000688(context);
-                    return;
+                    return new StatePickItem_30000688(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000689) {
-                    context.State = new StatePickItem_30000689(context);
-                    return;
+                    return new StatePickItem_30000689(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000690) {
-                    context.State = new StatePickItem_30000690(context);
-                    return;
+                    return new StatePickItem_30000690(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000691) {
-                    context.State = new StatePickItem_30000691(context);
-                    return;
+                    return new StatePickItem_30000691(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000692) {
-                    context.State = new StatePickItem_30000692(context);
-                    return;
+                    return new StatePickItem_30000692(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000693) {
-                    context.State = new StatePickItem_30000693(context);
-                    return;
+                    return new StatePickItem_30000693(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000694) {
-                    context.State = new StatePickItem_30000694(context);
-                    return;
+                    return new StatePickItem_30000694(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000695) {
-                    context.State = new StatePickItem_30000695(context);
-                    return;
+                    return new StatePickItem_30000695(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000696) {
-                    context.State = new StatePickItem_30000696(context);
-                    return;
+                    return new StatePickItem_30000696(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000697) {
-                    context.State = new StatePickItem_30000697(context);
-                    return;
+                    return new StatePickItem_30000697(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000698) {
-                    context.State = new StatePickItem_30000698(context);
-                    return;
+                    return new StatePickItem_30000698(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000699) {
-                    context.State = new StatePickItem_30000699(context);
-                    return;
+                    return new StatePickItem_30000699(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000700) {
-                    context.State = new StatePickItem_30000700(context);
-                    return;
+                    return new StatePickItem_30000700(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000701) {
-                    context.State = new StatePickItem_30000701(context);
-                    return;
+                    return new StatePickItem_30000701(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000702) {
-                    context.State = new StatePickItem_30000702(context);
-                    return;
+                    return new StatePickItem_30000702(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000703) {
-                    context.State = new StatePickItem_30000703(context);
-                    return;
+                    return new StatePickItem_30000703(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000704) {
-                    context.State = new StatePickItem_30000704(context);
-                    return;
+                    return new StatePickItem_30000704(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000705) {
-                    context.State = new StatePickItem_30000705(context);
-                    return;
+                    return new StatePickItem_30000705(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000706) {
-                    context.State = new StatePickItem_30000706(context);
-                    return;
+                    return new StatePickItem_30000706(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000707) {
-                    context.State = new StatePickItem_30000707(context);
-                    return;
+                    return new StatePickItem_30000707(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000708) {
-                    context.State = new StatePickItem_30000708(context);
-                    return;
+                    return new StatePickItem_30000708(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000709) {
-                    context.State = new StatePickItem_30000709(context);
-                    return;
+                    return new StatePickItem_30000709(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000710) {
-                    context.State = new StatePickItem_30000710(context);
-                    return;
+                    return new StatePickItem_30000710(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000711) {
-                    context.State = new StatePickItem_30000711(context);
-                    return;
+                    return new StatePickItem_30000711(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000712) {
-                    context.State = new StatePickItem_30000712(context);
-                    return;
+                    return new StatePickItem_30000712(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000713) {
-                    context.State = new StatePickItem_30000713(context);
-                    return;
+                    return new StatePickItem_30000713(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000714) {
-                    context.State = new StatePickItem_30000714(context);
-                    return;
+                    return new StatePickItem_30000714(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000715) {
-                    context.State = new StatePickItem_30000715(context);
-                    return;
+                    return new StatePickItem_30000715(context);
                 }
 
                 if (context.GetUserValue(key: "ItemNumber") == 30000716) {
-                    context.State = new StatePickItem_30000716(context);
-                    return;
+                    return new StatePickItem_30000716(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

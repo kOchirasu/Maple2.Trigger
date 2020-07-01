@@ -5,61 +5,52 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "DanceGuide") == 1) {
-                    context.State = new StateDanceGuideP1_Random(context);
-                    return;
+                    return new StateDanceGuideP1_Random(context);
                 }
 
                 if (context.GetUserValue(key: "DanceGuide") == 2) {
-                    context.State = new StateDanceGuideP2_Random(context);
-                    return;
+                    return new StateDanceGuideP2_Random(context);
                 }
 
                 if (context.GetUserValue(key: "DanceGuide") == 3) {
-                    context.State = new StateDanceGuideP3_01(context);
-                    return;
+                    return new StateDanceGuideP3_01(context);
                 }
 
                 if (context.GetUserValue(key: "DanceGuide") == 41) {
-                    context.State = new StateDanceGuideP41_01(context);
-                    return;
+                    return new StateDanceGuideP41_01(context);
                 }
 
                 if (context.GetUserValue(key: "DanceGuide") == 42) {
-                    context.State = new StateDanceGuideP42_01(context);
-                    return;
+                    return new StateDanceGuideP42_01(context);
                 }
 
                 if (context.GetUserValue(key: "DanceGuide") == 51) {
-                    context.State = new StateDanceGuideP51_01(context);
-                    return;
+                    return new StateDanceGuideP51_01(context);
                 }
 
                 if (context.GetUserValue(key: "DanceGuide") == 52) {
-                    context.State = new StateDanceGuideP52_01(context);
-                    return;
+                    return new StateDanceGuideP52_01(context);
                 }
 
                 if (context.GetUserValue(key: "DanceGuide") == 61) {
-                    context.State = new StateDanceGuideP61_01(context);
-                    return;
+                    return new StateDanceGuideP61_01(context);
                 }
 
                 if (context.GetUserValue(key: "DanceGuide") == 62) {
-                    context.State = new StateDanceGuideP62_01(context);
-                    return;
+                    return new StateDanceGuideP62_01(context);
                 }
 
                 if (context.GetUserValue(key: "DanceGuide") == 71) {
-                    context.State = new StateDanceGuideP71_01(context);
-                    return;
+                    return new StateDanceGuideP71_01(context);
                 }
 
                 if (context.GetUserValue(key: "DanceGuide") == 72) {
-                    context.State = new StateDanceGuideP72_01(context);
-                    return;
+                    return new StateDanceGuideP72_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -70,16 +61,16 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateDanceGuideP11_01(context);
-                    return;
+                    return new StateDanceGuideP11_01(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateDanceGuideP12_01(context);
-                    return;
+                    return new StateDanceGuideP12_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,16 +81,16 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateDanceGuideP21_01(context);
-                    return;
+                    return new StateDanceGuideP21_01(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateDanceGuideP22_01(context);
-                    return;
+                    return new StateDanceGuideP22_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -112,11 +103,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateDanceGuideP11_02(context);
-                    return;
+                    return new StateDanceGuideP11_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -129,11 +121,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -146,11 +139,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateDanceGuideP12_02(context);
-                    return;
+                    return new StateDanceGuideP12_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -163,11 +157,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -180,11 +175,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateDanceGuideP21_02(context);
-                    return;
+                    return new StateDanceGuideP21_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -197,11 +193,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -214,11 +211,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateDanceGuideP22_02(context);
-                    return;
+                    return new StateDanceGuideP22_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -231,11 +229,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -248,11 +247,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateDanceGuideP3_02(context);
-                    return;
+                    return new StateDanceGuideP3_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -265,11 +265,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateDanceGuideP3_03(context);
-                    return;
+                    return new StateDanceGuideP3_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -282,11 +283,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -299,11 +301,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 6000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -316,11 +319,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateDanceGuideP42_02(context);
-                    return;
+                    return new StateDanceGuideP42_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -333,11 +337,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -350,11 +355,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateDanceGuideP51_02(context);
-                    return;
+                    return new StateDanceGuideP51_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -367,11 +373,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -384,11 +391,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 6000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -401,11 +409,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateDanceGuideP61_02(context);
-                    return;
+                    return new StateDanceGuideP61_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -418,11 +427,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -435,11 +445,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 6000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -452,11 +463,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 6000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -469,11 +481,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateDanceGuideP72_02(context);
-                    return;
+                    return new StateDanceGuideP72_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -486,11 +499,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -503,11 +517,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "DanceGuide", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

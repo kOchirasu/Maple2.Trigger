@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000384_bf {
                 context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {701})) {
-                    context.State = new StateroomCheck(context);
-                    return;
+                    return new StateroomCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._02000384_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    context.State = new Statelevelcheck(context);
-                    return;
+                    return new Statelevelcheck(context);
                 }
 
                 if (!context.IsDungeonRoom()) {
-                    context.State = new Statequest_raid(context);
-                    return;
+                    return new Statequest_raid(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,16 +43,16 @@ namespace Maple2.Trigger._02000384_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonLevel() == 2) {
-                    context.State = new Stateraid(context);
-                    return;
+                    return new Stateraid(context);
                 }
 
                 if (context.GetDungeonLevel() == 3) {
-                    context.State = new Statechaos_raid(context);
-                    return;
+                    return new Statechaos_raid(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +65,12 @@ namespace Maple2.Trigger._02000384_bf {
                 context.CreateMonster(arg1: new[] {401}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ExitPortal") == 1) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,11 +83,12 @@ namespace Maple2.Trigger._02000384_bf {
                 context.CreateMonster(arg1: new[] {402}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ExitPortal") == 1) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -208,16 +211,16 @@ namespace Maple2.Trigger._02000384_bf {
                 context.CreateMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 511, 403}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ExitPortal") == 1) {
-                    context.State = new Statequest_end(context);
-                    return;
+                    return new Statequest_end(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {720})) {
-                    context.State = new StatenpcSpawn(context);
-                    return;
+                    return new StatenpcSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -230,11 +233,12 @@ namespace Maple2.Trigger._02000384_bf {
                 context.CreateMonster(arg1: new[] {510}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ExitPortal") == 1) {
-                    context.State = new Statequest_end(context);
-                    return;
+                    return new Statequest_end(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -250,7 +254,9 @@ namespace Maple2.Trigger._02000384_bf {
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -266,7 +272,9 @@ namespace Maple2.Trigger._02000384_bf {
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._63000002_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {5001})) {
-                    context.State = new State채집가능(context);
-                    return;
+                    return new State채집가능(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,12 +23,13 @@ namespace Maple2.Trigger._63000002_cs {
                 context.SetInteractObject(arg1: new[] {612}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {612}, arg2: 2)) {
                     context.CreateItem(arg1: new[] {1012});
-                    context.State = new State채집완료(context);
-                    return;
+                    return new State채집완료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,11 +42,12 @@ namespace Maple2.Trigger._63000002_cs {
                 context.SetTimer(arg1: "12", arg2: 30, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "12")) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

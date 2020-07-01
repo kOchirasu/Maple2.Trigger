@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02020025_bf {
                 context.SetUserValue(triggerId: 99999001, key: "End", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "battlesetting") == 1) {
-                    context.State = new State전투_시작(context);
-                    return;
+                    return new State전투_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,39 +27,35 @@ namespace Maple2.Trigger._02020025_bf {
                 context.SetNpcDuelHpBar(isOpen: true, spawnPointId: 201, durationTick: 300000, npcHpStep: 100);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonPlayTime() <= 180 && context.MonsterDead(arg1: new[] {201})) {
                     context.DungeonMissionComplete(missionId: 24092005);
-                    context.State = new State전투_종료(context);
-                    return;
+                    return new State전투_종료(context);
                 }
 
                 if (context.GetDungeonPlayTime() <= 70 && context.MonsterDead(arg1: new[] {201})) {
                     context.DungeonMissionComplete(missionId: 24092006);
-                    context.State = new State전투_종료(context);
-                    return;
+                    return new State전투_종료(context);
                 }
 
                 if (context.GetDungeonPlayTime() <= 270 && context.MonsterDead(arg1: new[] {201})) {
                     context.DungeonMissionComplete(missionId: 24092010);
-                    context.State = new State전투_종료(context);
-                    return;
+                    return new State전투_종료(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {201})) {
-                    context.State = new State전투_종료(context);
-                    return;
+                    return new State전투_종료(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {902})) {
-                    context.State = new State전투_종료(context);
-                    return;
+                    return new State전투_종료(context);
                 }
 
                 if (context.GetDungeonPlayTime() == 300) {
-                    context.State = new State전투_종료(context);
-                    return;
+                    return new State전투_종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -74,11 +71,12 @@ namespace Maple2.Trigger._02020025_bf {
                 context.SetNpcDuelHpBar(isOpen: false, spawnPointId: 201);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State종료신호(context);
-                    return;
+                    return new State종료신호(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -91,7 +89,9 @@ namespace Maple2.Trigger._02020025_bf {
                 context.SetUserValue(triggerId: 99999001, key: "End", value: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

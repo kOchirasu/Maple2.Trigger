@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000352_bf {
                 context.SetMesh(arg1: new[] {6101}, arg2: false, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000822}, arg2: 1)) {
-                    context.State = new State작동(context);
-                    return;
+                    return new State작동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._02000352_bf {
                 context.ShowGuideSummary(entityId: 111, textId: 20000080);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000822}, arg2: 0)) {
-                    context.State = new State열림상태(context);
-                    return;
+                    return new State열림상태(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -48,11 +50,12 @@ namespace Maple2.Trigger._02000352_bf {
                 context.SetMesh(arg1: new[] {6101}, arg2: true, arg4: 200, arg5: 15f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State열림(context);
-                    return;
+                    return new State열림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,11 +69,12 @@ namespace Maple2.Trigger._02000352_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State열림_끝(context);
-                    return;
+                    return new State열림_끝(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -84,7 +88,9 @@ namespace Maple2.Trigger._02000352_bf {
                 context.CameraSelect(arg1: 8001, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

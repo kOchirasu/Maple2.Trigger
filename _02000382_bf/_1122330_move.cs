@@ -15,16 +15,16 @@ namespace Maple2.Trigger._02000382_bf {
                 context.SetUserValue(key: "AgentOff", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ElevatorOn") == 1) {
-                    context.State = new StateBoardApp01(context);
-                    return;
+                    return new StateBoardApp01(context);
                 }
 
                 if (context.GetUserValue(key: "AgentOff") == 1) {
-                    context.State = new StateAgentOff01(context);
-                    return;
+                    return new StateAgentOff01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,11 +38,12 @@ namespace Maple2.Trigger._02000382_bf {
                 context.SetInteractObject(arg1: new[] {10001107}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001107}, arg2: 0)) {
-                    context.State = new StateBoardGoUp01(context);
-                    return;
+                    return new StateBoardGoUp01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +63,12 @@ namespace Maple2.Trigger._02000382_bf {
                 context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221}, arg2: false, arg3: 200, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateBoardGoUp02(context);
-                    return;
+                    return new StateBoardGoUp02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,11 +82,12 @@ namespace Maple2.Trigger._02000382_bf {
                 context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121}, arg2: true, arg3: 100, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateBoardGoUp03(context);
-                    return;
+                    return new StateBoardGoUp03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -99,11 +102,12 @@ namespace Maple2.Trigger._02000382_bf {
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEmergencyPortalOn(context);
-                    return;
+                    return new StateEmergencyPortalOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -116,7 +120,9 @@ namespace Maple2.Trigger._02000382_bf {
                 context.SetPortal(arg1: 20, arg2: true, arg3: true, arg4: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -128,7 +134,9 @@ namespace Maple2.Trigger._02000382_bf {
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

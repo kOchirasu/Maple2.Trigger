@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000245_bf {
                 context.SetEffect(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {207})) {
-                    context.State = new State1단계(context);
-                    return;
+                    return new State1단계(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,7 +29,9 @@ namespace Maple2.Trigger._02000245_bf {
                 context.SetEffect(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

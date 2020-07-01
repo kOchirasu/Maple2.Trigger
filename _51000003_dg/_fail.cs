@@ -5,11 +5,12 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Fail") == 1) {
-                    context.State = new StateFail_condition(context);
-                    return;
+                    return new StateFail_condition(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,21 +21,20 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 799) == 1) {
-                    context.State = new StateFail(context);
-                    return;
+                    return new StateFail(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateFail(context);
-                    return;
+                    return new StateFail(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {701})) {
-                    context.State = new StateFail(context);
-                    return;
+                    return new StateFail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,11 +60,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991123, key: "Reset", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,7 +78,9 @@ namespace Maple2.Trigger._51000003_dg {
                 context.MoveUser(arg1: 0, arg2: 0, arg3: 705);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

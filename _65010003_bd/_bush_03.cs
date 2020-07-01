@@ -7,11 +7,12 @@ namespace Maple2.Trigger._65010003_bd {
                 context.RemoveBuff(arg1: 1001003, arg2: 70000075);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 1001003) == 1) {
-                    context.State = new State버프발동(context);
-                    return;
+                    return new State버프발동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,21 +25,20 @@ namespace Maple2.Trigger._65010003_bd {
                 context.AddBuff(arg1: new[] {1001003}, arg2: 70000075, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State버프발동(context);
-                    return;
+                    return new State버프발동(context);
                 }
 
                 if (context.GetUserCount(boxId: 1001003) > 1) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {1001003})) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,7 +49,9 @@ namespace Maple2.Trigger._65010003_bd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

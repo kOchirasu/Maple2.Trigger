@@ -8,16 +8,16 @@ namespace Maple2.Trigger._02000382_bf {
                 context.SetUserValue(key: "BossKill", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9100})) {
-                    context.State = new StateBreakWall(context);
-                    return;
+                    return new StateBreakWall(context);
                 }
 
                 if (context.GetUserValue(key: "BossKill") == 1) {
-                    context.State = new StateBreakWall(context);
-                    return;
+                    return new StateBreakWall(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,7 +30,9 @@ namespace Maple2.Trigger._02000382_bf {
                 context.SetSkill(arg1: new[] {7000}, arg2: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

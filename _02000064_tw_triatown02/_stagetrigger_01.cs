@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
                 context.KickMusicAudience(targetBoxId: 101, targetPortalId: 802);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateKickMusicAudience(context);
-                    return;
+                    return new StateKickMusicAudience(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

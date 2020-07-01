@@ -5,11 +5,12 @@ namespace Maple2.Trigger._61000021_me_003 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,16 +28,16 @@ namespace Maple2.Trigger._61000021_me_003 {
                 context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512, 3513, 3514, 3515, 3516, 3517, 3518, 3519, 3520, 3521}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 100) == 50) {
-                    context.State = new State준비(context);
-                    return;
+                    return new State준비(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State준비(context);
-                    return;
+                    return new State준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -51,16 +52,16 @@ namespace Maple2.Trigger._61000021_me_003 {
                 context.MoveUser(arg1: 61000021, arg2: 99, arg3: 104);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {105})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,16 +74,16 @@ namespace Maple2.Trigger._61000021_me_003 {
                 context.SetMiniGameAreaForHack(boxId: 105);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "OxQuizUGC", arg2: "IsQuizSubmit")) {
-                    context.State = new State문제표시(context);
-                    return;
+                    return new State문제표시(context);
                 }
 
                 if (context.WidgetCondition(arg1: "OxQuizUGC", arg2: "IsFinished")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -100,11 +101,12 @@ namespace Maple2.Trigger._61000021_me_003 {
                 context.SetTimer(arg1: "15", arg2: 15);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    context.State = new State벽생성(context);
-                    return;
+                    return new State벽생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -119,11 +121,12 @@ namespace Maple2.Trigger._61000021_me_003 {
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State정답체크(context);
-                    return;
+                    return new State정답체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -136,16 +139,16 @@ namespace Maple2.Trigger._61000021_me_003 {
                 context.WidgetAction(arg1: "OxQuizUGC", arg2: "PreJudge", arg3: "1");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "OxQuizUGC", arg2: "Correct")) {
-                    context.State = new State문제정답O(context);
-                    return;
+                    return new State문제정답O(context);
                 }
 
                 if (context.WidgetCondition(arg1: "OxQuizUGC", arg2: "Incorrect")) {
-                    context.State = new State문제정답X(context);
-                    return;
+                    return new State문제정답X(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -164,11 +167,12 @@ namespace Maple2.Trigger._61000021_me_003 {
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State문제정리(context);
-                    return;
+                    return new State문제정리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -187,11 +191,12 @@ namespace Maple2.Trigger._61000021_me_003 {
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State문제정리(context);
-                    return;
+                    return new State문제정리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -207,11 +212,12 @@ namespace Maple2.Trigger._61000021_me_003 {
                 context.WidgetAction(arg1: "OxQuizUGC", arg2: "CleanUpQuiz");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "20")) {
-                    context.State = new State준비(context);
-                    return;
+                    return new State준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -227,7 +233,9 @@ namespace Maple2.Trigger._61000021_me_003 {
                 context.SetEventUI(arg1: 5, arg2: "$61000003_ME_003__MAIN__14$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -242,12 +250,13 @@ namespace Maple2.Trigger._61000021_me_003 {
                 context.SetTimer(arg1: "6", arg2: 6);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "6")) {
                     context.MoveUser(arg1: 0, arg2: 0);
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

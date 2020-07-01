@@ -12,11 +12,12 @@ namespace Maple2.Trigger._02000426_bf {
                 context.SetUserValue(key: "ZakumBodyAppearance", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    context.State = new State던전코드별보스등장(context);
-                    return;
+                    return new State던전코드별보스등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,21 +28,20 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonId() == 23040003) {
-                    context.State = new State어려운난이도보스등장(context);
-                    return;
+                    return new State어려운난이도보스등장(context);
                 }
 
                 if (context.GetDungeonId() == 23041003) {
-                    context.State = new State쉬운난이도보스등장(context);
-                    return;
+                    return new State쉬운난이도보스등장(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State어려운난이도보스등장(context);
-                    return;
+                    return new State어려운난이도보스등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -54,11 +54,12 @@ namespace Maple2.Trigger._02000426_bf {
                 context.CreateMonster(arg1: new[] {2001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -71,11 +72,12 @@ namespace Maple2.Trigger._02000426_bf {
                 context.CreateMonster(arg1: new[] {2002}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -86,26 +88,24 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ZakumBodyAppearance") == 1) {
-                    context.State = new State자쿰몸체등장(context);
-                    return;
+                    return new State자쿰몸체등장(context);
                 }
 
                 if (context.GetUserValue(key: "ZakumDungeonEnd") == 1) {
-                    context.State = new State종료딜레이(context);
-                    return;
+                    return new State종료딜레이(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -118,21 +118,20 @@ namespace Maple2.Trigger._02000426_bf {
                 context.SetUserValue(key: "ZakumBodyAppearance", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonId() == 23040003) {
-                    context.State = new State어려운난이도_자쿰몸등장(context);
-                    return;
+                    return new State어려운난이도_자쿰몸등장(context);
                 }
 
                 if (context.GetDungeonId() == 23041003) {
-                    context.State = new State쉬운난이도_자쿰몸등장(context);
-                    return;
+                    return new State쉬운난이도_자쿰몸등장(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State어려운난이도_자쿰몸등장(context);
-                    return;
+                    return new State어려운난이도_자쿰몸등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -145,11 +144,12 @@ namespace Maple2.Trigger._02000426_bf {
                 context.CreateMonster(arg1: new[] {2011}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -162,11 +162,12 @@ namespace Maple2.Trigger._02000426_bf {
                 context.CreateMonster(arg1: new[] {2012}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -189,13 +190,14 @@ namespace Maple2.Trigger._02000426_bf {
                 context.RemoveBuff(arg1: 199, arg2: 50001450);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.DungeonClear();
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -215,13 +217,14 @@ namespace Maple2.Trigger._02000426_bf {
                 context.RemoveBuff(arg1: 199, arg2: 50001450);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.DungeonFail();
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -234,7 +237,9 @@ namespace Maple2.Trigger._02000426_bf {
                 context.DungeonEnableGiveUp(isEnable: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

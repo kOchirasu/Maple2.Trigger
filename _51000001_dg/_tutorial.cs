@@ -5,11 +5,12 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    context.State = new State몬스터소환(context);
-                    return;
+                    return new State몬스터소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._51000001_dg {
                 context.CreateMonster(arg1: new[] {1000}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1000})) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {100})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,16 +43,16 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {100})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,7 +63,9 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

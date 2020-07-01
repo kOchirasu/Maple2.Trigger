@@ -10,11 +10,12 @@ namespace Maple2.Trigger._02000292_bf {
                 context.SetMesh(arg1: new[] {102, 103, 104, 105, 106, 107, 108}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new StateLoadingDelay(context);
-                    return;
+                    return new StateLoadingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._02000292_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
-                    return;
+                    return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._02000292_bf {
                 context.SetSkip(arg1: "CameraWalk03");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCameraWalk01(context);
-                    return;
+                    return new StateCameraWalk01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +68,12 @@ namespace Maple2.Trigger._02000292_bf {
                 context.SetSkip(arg1: "CameraWalk03");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCameraWalk02(context);
-                    return;
+                    return new StateCameraWalk02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,11 +87,12 @@ namespace Maple2.Trigger._02000292_bf {
                 context.SetSkip(arg1: "CameraWalk03");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateCameraWalk03(context);
-                    return;
+                    return new StateCameraWalk03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -104,11 +109,12 @@ namespace Maple2.Trigger._02000292_bf {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDungeonOpen(context);
-                    return;
+                    return new StateDungeonOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -124,11 +130,12 @@ namespace Maple2.Trigger._02000292_bf {
                 context.SetMesh(arg1: new[] {102, 103, 104}, arg2: false, arg3: 100, arg4: 100, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDungeonPlay01(context);
-                    return;
+                    return new StateDungeonPlay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -144,11 +151,12 @@ namespace Maple2.Trigger._02000292_bf {
                 context.SetMesh(arg1: new[] {105, 106, 107, 108}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9002})) {
-                    context.State = new StateDungeonPlay02(context);
-                    return;
+                    return new StateDungeonPlay02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -162,11 +170,12 @@ namespace Maple2.Trigger._02000292_bf {
                 context.ShowGuideSummary(entityId: 20002924, textId: 20002924);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -179,7 +188,9 @@ namespace Maple2.Trigger._02000292_bf {
                 context.HideGuideSummary(entityId: 20002924);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

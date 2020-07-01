@@ -5,16 +5,16 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {2101})) {
-                    context.State = new State가이드출력(context);
-                    return;
+                    return new State가이드출력(context);
                 }
 
                 if (context.MonsterInCombat(arg1: new[] {2102})) {
-                    context.State = new State가이드출력(context);
-                    return;
+                    return new State가이드출력(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +27,12 @@ namespace Maple2.Trigger._63000038_cs {
                 context.ShowGuideSummary(entityId: 26300383, textId: 26300383);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    context.State = new State가이드삭제대기(context);
-                    return;
+                    return new State가이드삭제대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +43,12 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State가이드삭제(context);
-                    return;
+                    return new State가이드삭제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -57,12 +59,13 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2103})) {
                     context.HideGuideSummary(entityId: 26300383);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,7 +76,9 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

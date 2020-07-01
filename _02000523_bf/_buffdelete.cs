@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000523_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new State기본셋팅(context);
-                    return;
+                    return new State기본셋팅(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._02000523_bf {
                 context.SetUserValue(key: "BuffDeleteOk", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State트리거작동01(context);
-                    return;
+                    return new State트리거작동01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,11 +40,12 @@ namespace Maple2.Trigger._02000523_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BuffDeleteOk") == 1) {
-                    context.State = new State트리거작동02대기중(context);
-                    return;
+                    return new State트리거작동02대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -53,11 +56,12 @@ namespace Maple2.Trigger._02000523_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
-                    context.State = new State트리거작동02(context);
-                    return;
+                    return new State트리거작동02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -68,11 +72,12 @@ namespace Maple2.Trigger._02000523_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") == 0) {
-                    context.State = new State버프제거(context);
-                    return;
+                    return new State버프제거(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -86,11 +91,12 @@ namespace Maple2.Trigger._02000523_bf {
                 context.SetUserValue(key: "BuffDeleteOk", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3700)) {
-                    context.State = new State트리거작동01(context);
-                    return;
+                    return new State트리거작동01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

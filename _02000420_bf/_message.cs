@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000420_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Message") == 1) {
-                    context.State = new State메시지출력01(context);
-                    return;
+                    return new State메시지출력01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02000420_bf {
                 context.ShowGuideSummary(entityId: 20042001, textId: 20042001);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State메시지출력02대기(context);
-                    return;
+                    return new State메시지출력02대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._02000420_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Message") == 2) {
-                    context.State = new State메시지출력02(context);
-                    return;
+                    return new State메시지출력02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,11 +59,12 @@ namespace Maple2.Trigger._02000420_bf {
                 context.ShowGuideSummary(entityId: 20042002, textId: 20042002);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State메시지출력03대기(context);
-                    return;
+                    return new State메시지출력03대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -73,11 +77,12 @@ namespace Maple2.Trigger._02000420_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Message") == 3) {
-                    context.State = new State메시지출력03(context);
-                    return;
+                    return new State메시지출력03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,11 +95,12 @@ namespace Maple2.Trigger._02000420_bf {
                 context.ShowGuideSummary(entityId: 20042003, textId: 20042003);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -107,7 +113,9 @@ namespace Maple2.Trigger._02000420_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

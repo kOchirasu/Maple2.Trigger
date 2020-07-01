@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
-                    context.State = new State전투시작(context);
-                    return;
+                    return new State전투시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ItemNotice01") == 1) {
-                    context.State = new State필수아이템01(context);
-                    return;
+                    return new State필수아이템01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +39,12 @@ namespace Maple2.Trigger._02000410_bf {
                 context.ShowGuideSummary(entityId: 20041008, textId: 20041008);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State다음대기(context);
-                    return;
+                    return new State다음대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -54,11 +57,12 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ItemNotice02") == 1) {
-                    context.State = new State필수아이템02(context);
-                    return;
+                    return new State필수아이템02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -71,11 +75,12 @@ namespace Maple2.Trigger._02000410_bf {
                 context.ShowGuideSummary(entityId: 20041009, textId: 20041009);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -88,7 +93,9 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52020030_qd {
                 context.SetEffect(arg1: new[] {5001, 5002, 5003}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {30000332}, arg3: new byte[] {1})) {
-                    context.State = new State천공의탑전경보여주기(context);
-                    return;
+                    return new State천공의탑전경보여주기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._52020030_qd {
                 context.SetProductionUI(arg1: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State천공의탑전경보여주기02(context);
-                    return;
+                    return new State천공의탑전경보여주기02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._52020030_qd {
                 context.ShowCaption(type: "VerticalCaption", title: "천공의 탑", desc: "크리티아스 마법 연구소", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State천공의탑전경보여주기03(context);
-                    return;
+                    return new State천공의탑전경보여주기03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +66,12 @@ namespace Maple2.Trigger._52020030_qd {
                 context.MoveUser(arg1: 52020030, arg2: 6006);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State천공의탑전경보여주기04(context);
-                    return;
+                    return new State천공의탑전경보여주기04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,7 +87,9 @@ namespace Maple2.Trigger._52020030_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

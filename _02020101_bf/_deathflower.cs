@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "flower") == 1) {
-                    context.State = new State랜덤대상선정(context);
-                    return;
+                    return new State랜덤대상선정(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,18 +23,18 @@ namespace Maple2.Trigger._02020101_bf {
                 context.RandomAdditionalEffect(target: "pc", triggerBoxId: 1003, spawnPointId: false, targetCount: true, tick: 3, waitTick: 2, targetEffect: @"Additional/Etc/Eff_Target_Select_Keep.xml", additionalEffectId: 62100021);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
                     context.SetUserValue(triggerId: 900007, key: "flower", value: 0);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetUserValue(triggerId: 900007, key: "flower", value: 0);
-                    context.State = new State변수초기화(context);
-                    return;
+                    return new State변수초기화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +45,12 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "flower") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +65,8 @@ namespace Maple2.Trigger._02020101_bf {
                 context.RemoveBuff(arg1: 1004, arg2: 62100023, arg3: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기(context);
             }
 
             public override void OnExit() { }

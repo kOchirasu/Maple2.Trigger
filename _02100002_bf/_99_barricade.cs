@@ -13,11 +13,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetPortal(arg1: 21, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "PortalOn") == 1) {
-                    context.State = new StatePortalOnDelay(context);
-                    return;
+                    return new StatePortalOnDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePortalOn(context);
-                    return;
+                    return new StatePortalOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +50,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetPortal(arg1: 21, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MissionStart") == 1) {
-                    context.State = new StateCountDown(context);
-                    return;
+                    return new StateCountDown(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +68,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02100002_BF__99_BARRICADE__0$", arg3: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.State = new StateShutDown(context);
-                    return;
+                    return new StateShutDown(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -85,11 +89,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetPortal(arg1: 21, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "DungeonClear") == 1) {
-                    context.State = new StateRelease(context);
-                    return;
+                    return new StateRelease(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -102,11 +107,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -117,7 +123,9 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

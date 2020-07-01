@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1001})) {
-                    context.State = new State소환준비(context);
-                    return;
+                    return new State소환준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon") == 1) {
-                    context.State = new State몬스터등장(context);
-                    return;
+                    return new State몬스터등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,11 +42,12 @@ namespace Maple2.Trigger._02020111_bf {
                 context.CreateMonster(arg1: new[] {115, 116, 117, 118});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State몬스터등장_2(context);
-                    return;
+                    return new State몬스터등장_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +61,12 @@ namespace Maple2.Trigger._02020111_bf {
                 context.SetDirectionalLight(arg1: new Vector3(0f, 0f, 0f), arg2: new Vector3(206f, 174f, 84f));
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon") == 0) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

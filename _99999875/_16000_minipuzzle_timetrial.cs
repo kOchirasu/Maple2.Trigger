@@ -10,11 +10,12 @@ namespace Maple2.Trigger._99999875 {
                 context.SetEffect(arg1: new[] {16200, 16201}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimeEventOn") == 1) {
-                    context.State = new StateSettingDelay(context);
-                    return;
+                    return new StateSettingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._99999875 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateSetting(context);
-                    return;
+                    return new StateSetting(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,18 +44,18 @@ namespace Maple2.Trigger._99999875 {
                 context.SetInteractObject(arg1: new[] {12000079}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimeEventOn") == 0) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000079}, arg2: 0)) {
                     context.SetTimer(arg1: "10", arg2: 90, arg3: true, arg4: false, arg5: 0);
                     context.SetTimer(arg1: "1", arg2: 15, arg3: true, arg4: false, arg5: 0);
-                    context.State = new StateTimeTrial_StartDelay(context);
-                    return;
+                    return new StateTimeTrial_StartDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -67,11 +69,12 @@ namespace Maple2.Trigger._99999875 {
                 context.SetMesh(arg1: new[] {16001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateTimeTrial_Start(context);
-                    return;
+                    return new StateTimeTrial_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,18 +85,18 @@ namespace Maple2.Trigger._99999875 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 16100, additionalEffectId: 71001271, level: true)) {
                     context.AddBuff(arg1: new[] {160001}, arg2: 71001062, arg3: 1, arg4: false, arg5: false);
                     context.SetTimer(arg1: "100", arg2: 60, arg3: true, arg4: false, arg5: 0);
-                    context.State = new StateTimeTrial_Success(context);
-                    return;
+                    return new StateTimeTrial_Success(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateTimeTrial_Fail(context);
-                    return;
+                    return new StateTimeTrial_Fail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -106,18 +109,18 @@ namespace Maple2.Trigger._99999875 {
                 context.SetInteractObject(arg1: new[] {12000098}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000098}, arg2: 0)) {
-                    context.State = new StateTimeTrial_TimerReset01(context);
-                    return;
+                    return new StateTimeTrial_TimerReset01(context);
                 }
 
                 if (context.TimeExpired(arg1: "10")) {
                     context.SetInteractObject(arg1: new[] {12000098}, arg2: 0);
                     context.ResetTimer(arg1: "10");
-                    context.State = new StateSetting(context);
-                    return;
+                    return new StateSetting(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -132,11 +135,12 @@ namespace Maple2.Trigger._99999875 {
                 context.SetInteractObject(arg1: new[] {12000098}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateTimeTrial_Start(context);
-                    return;
+                    return new StateTimeTrial_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -151,19 +155,19 @@ namespace Maple2.Trigger._99999875 {
                 context.SetInteractObject(arg1: new[] {12000071}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000071}, arg2: 0)) {
                     context.SetUserValue(triggerId: 16000, key: "TimeEventOn", value: 0);
-                    context.State = new StateTimeTrial_SuccessDelay(context);
-                    return;
+                    return new StateTimeTrial_SuccessDelay(context);
                 }
 
                 if (context.TimeExpired(arg1: "100")) {
                     context.SetInteractObject(arg1: new[] {12000071}, arg2: 0);
                     context.ResetTimer(arg1: "100");
-                    context.State = new StateTimeTrial_SuccessDelay(context);
-                    return;
+                    return new StateTimeTrial_SuccessDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -174,11 +178,12 @@ namespace Maple2.Trigger._99999875 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateTimeTrial_Quit(context);
-                    return;
+                    return new StateTimeTrial_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -189,11 +194,12 @@ namespace Maple2.Trigger._99999875 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -206,23 +212,22 @@ namespace Maple2.Trigger._99999875 {
                 context.ResetTimer(arg1: "1");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimeEventOn") == 0) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
 
                 if (context.TimeExpired(arg1: "10")) {
                     context.SetInteractObject(arg1: new[] {12000098}, arg2: 0);
                     context.ResetTimer(arg1: "10");
-                    context.State = new StateSetting(context);
-                    return;
+                    return new StateSetting(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateTimeTrial_Reset(context);
-                    return;
+                    return new StateTimeTrial_Reset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

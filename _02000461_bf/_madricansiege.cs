@@ -40,11 +40,12 @@ namespace Maple2.Trigger._02000461_bf {
                 context.SetInteractObject(arg1: new[] {12000053, 12000057}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
-                    return;
+                    return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -57,11 +58,12 @@ namespace Maple2.Trigger._02000461_bf {
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State던전시작(context);
-                    return;
+                    return new State던전시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,13 +77,14 @@ namespace Maple2.Trigger._02000461_bf {
                 context.SetAgent(arg1: new[] {8001, 8002, 8003, 8004, 8005, 8006}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2000, 2001})) {
                     context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                     context.SetAgent(arg1: new[] {8101, 8102, 8103, 8104, 8105, 8106}, arg2: false);
-                    context.State = new State1차지원(context);
-                    return;
+                    return new State1차지원(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,14 +99,15 @@ namespace Maple2.Trigger._02000461_bf {
                 context.SetUserValue(triggerId: 99999101, key: "cannon01", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2901})) {
                     context.DestroyMonster(arg1: new[] {2002});
                     context.SetAgent(arg1: new[] {8201, 8202, 8203, 8204, 8205, 8206}, arg2: false);
                     context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                    context.State = new State다리건넘(context);
-                    return;
+                    return new State다리건넘(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -120,11 +124,12 @@ namespace Maple2.Trigger._02000461_bf {
                 context.SetUserValue(triggerId: 99999105, key: "cannon05", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 450) {
-                    context.State = new State2차지원(context);
-                    return;
+                    return new State2차지원(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -137,11 +142,12 @@ namespace Maple2.Trigger._02000461_bf {
                 context.SpawnNpcRange(rangeId: new[] {2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030}, isAutoTargeting: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 700) {
-                    context.State = new State3차지원(context);
-                    return;
+                    return new State3차지원(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -154,12 +160,13 @@ namespace Maple2.Trigger._02000461_bf {
                 context.CreateMonster(arg1: new[] {2031, 2032, 2033, 2034, 2035, 2036}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 1400) {
                     context.ShadowExpedition(type: "CloseBossGauge");
-                    context.State = new State보스등장_딜레이(context);
-                    return;
+                    return new State보스등장_딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -172,11 +179,12 @@ namespace Maple2.Trigger._02000461_bf {
                 context.DestroyMonster(arg1: new[] {2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2901, 2902, 2903, 2904, 2905}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State보스등장(context);
-                    return;
+                    return new State보스등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -189,11 +197,12 @@ namespace Maple2.Trigger._02000461_bf {
                 context.CreateMonster(arg1: new[] {2099}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 2099) <= 0.50f) {
-                    context.State = new State보스_버프패턴(context);
-                    return;
+                    return new State보스_버프패턴(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -210,11 +219,12 @@ namespace Maple2.Trigger._02000461_bf {
                 context.SetUserValue(triggerId: 99999105, key: "Bosscannon05", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2099})) {
-                    context.State = new State던전종료(context);
-                    return;
+                    return new State던전종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -248,11 +258,8 @@ namespace Maple2.Trigger._02000461_bf {
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -263,7 +270,9 @@ namespace Maple2.Trigger._02000461_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -8,11 +8,12 @@ namespace Maple2.Trigger._03009023_in {
                 context.CreateMonster(arg1: new[] {107}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000239}, arg2: 0)) {
-                    context.State = new StateNPC이동(context);
-                    return;
+                    return new StateNPC이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +30,12 @@ namespace Maple2.Trigger._03009023_in {
                 context.SetConversation(arg1: 1, arg2: 207, arg3: "$03009023_IN__07__0$", arg4: 4, arg5: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateNPC소멸(context);
-                    return;
+                    return new StateNPC소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +49,12 @@ namespace Maple2.Trigger._03009023_in {
                 context.SetTimer(arg1: "1", arg2: 10);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

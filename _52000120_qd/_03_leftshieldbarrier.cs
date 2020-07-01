@@ -9,11 +9,12 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetSkill(arg1: new[] {7001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new StateActivateShiled01(context);
-                    return;
+                    return new StateActivateShiled01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._52000120_qd {
                 context.CreateMonster(arg1: new[] {990, 991, 992, 993, 994, 995}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9201})) {
-                    context.State = new StatePush01(context);
-                    return;
+                    return new StatePush01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,11 +51,12 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetSkill(arg1: new[] {7001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1333)) {
-                    context.State = new StateReset01(context);
-                    return;
+                    return new StateReset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +67,12 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9201})) {
-                    context.State = new StatePush01(context);
-                    return;
+                    return new StatePush01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

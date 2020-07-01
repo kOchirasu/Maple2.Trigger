@@ -5,11 +5,12 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new StateWaitSomeoneFall(context);
-                    return;
+                    return new StateWaitSomeoneFall(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9100})) {
-                    context.State = new StateKillSomeoneFall(context);
-                    return;
+                    return new StateKillSomeoneFall(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +39,12 @@ namespace Maple2.Trigger._99999913 {
                 context.AddBuff(arg1: new[] {9100}, arg2: 70001061, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9100})) {
-                    context.State = new StateWaitSomeoneFall(context);
-                    return;
+                    return new StateWaitSomeoneFall(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

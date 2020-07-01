@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {60100010}, arg3: new byte[] {1})) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.MoveUser(arg1: 52000033, arg2: 10);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statepcmove(context);
-                    return;
+                    return new Statepcmove(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.MoveUserPath(arg1: "MS2PatrolData_1004");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateErebTalk_01(context);
-                    return;
+                    return new StateErebTalk_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +67,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.SetSceneSkip(arg1: "end", arg2: "nextState");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateErebTalk_02(context);
-                    return;
+                    return new StateErebTalk_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,11 +87,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.AddCinematicTalk(npcId: 11001663, msg: "$52000033_QD__AUDIENCEWITHEREB_02__1$", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateErebintroduce(context);
-                    return;
+                    return new StateErebintroduce(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -100,11 +105,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000033_QD__AUDIENCEWITHEREB_02__18$", desc: "$52000033_QD__AUDIENCEWITHEREB_02__19$", align: "centerLeft", offsetRateX: -0.15f, duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateErebTalk_03(context);
-                    return;
+                    return new StateErebTalk_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -119,11 +125,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.AddCinematicTalk(npcId: 11001663, msg: "$52000033_QD__AUDIENCEWITHEREB_02__3$", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateKaltalk_01(context);
-                    return;
+                    return new StateKaltalk_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -136,11 +143,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.AddCinematicTalk(npcId: 11001665, msg: "$52000033_QD__AUDIENCEWITHEREB_02__4$", duration: 3000, illustId: "Karl_normal", align: "Left");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateKaltalk_02(context);
-                    return;
+                    return new StateKaltalk_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -156,11 +164,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.AddCinematicTalk(npcId: 11001665, msg: "$52000033_QD__AUDIENCEWITHEREB_02__6$", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new Statekaltroduce(context);
-                    return;
+                    return new Statekaltroduce(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -173,11 +182,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000033_QD__AUDIENCEWITHEREB_02__20$", desc: "$52000033_QD__AUDIENCEWITHEREB_02__21$", align: "centerLeft", offsetRateX: -0.15f, duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statetalk_01(context);
-                    return;
+                    return new Statetalk_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -192,11 +202,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.AddCinematicTalk(npcId: 11001665, illustId: "Karl_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_02__8$", duration: 3000, delayTick: 0, align: "right");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statetalk_02(context);
-                    return;
+                    return new Statetalk_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -211,11 +222,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.AddCinematicTalk(npcId: 11001665, illustId: "Karl_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_02__11$", duration: 1000, delayTick: 0, align: "right");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6649)) {
-                    context.State = new Statetalk_03(context);
-                    return;
+                    return new Statetalk_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -229,11 +241,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.AddCinematicTalk(npcId: 11001666, illustId: "Fray_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_02__13$", duration: 3000, align: "Right");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new Statetalk_04(context);
-                    return;
+                    return new Statetalk_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -247,11 +260,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.AddCinematicTalk(npcId: 11001666, illustId: "Fray_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_02__15$", duration: 3000, align: "Right");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new Statetalk_05(context);
-                    return;
+                    return new Statetalk_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -266,11 +280,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -286,11 +301,12 @@ namespace Maple2.Trigger._52000033_qd {
                 context.CameraReset(interpolationTime: 1f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {60100010}, arg3: new byte[] {1})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

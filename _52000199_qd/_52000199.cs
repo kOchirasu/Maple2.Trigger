@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000199_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
-                    context.State = new State이동(context);
-                    return;
+                    return new State이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._52000199_qd {
                 context.MoveUser(arg1: 52000199, arg2: 5001);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003416}, arg3: new byte[] {2})) {
-                    context.State = new StateCameraEffect01(context);
-                    return;
+                    return new StateCameraEffect01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003417}, arg3: new byte[] {1})) {
-                    context.State = new StateWait_02(context);
-                    return;
+                    return new StateWait_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +45,12 @@ namespace Maple2.Trigger._52000199_qd {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCameraEffect02(context);
-                    return;
+                    return new StateCameraEffect02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +64,12 @@ namespace Maple2.Trigger._52000199_qd {
                 context.SetProductionUI(arg1: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCameraEffect03(context);
-                    return;
+                    return new StateCameraEffect03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,11 +82,12 @@ namespace Maple2.Trigger._52000199_qd {
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCameraEffect03_3(context);
-                    return;
+                    return new StateCameraEffect03_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,11 +101,12 @@ namespace Maple2.Trigger._52000199_qd {
                 context.ShowCaption(type: "VerticalCaption", title: "$52000199_QD__52000199__0$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateCameraEffect04(context);
-                    return;
+                    return new StateCameraEffect04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -114,11 +119,12 @@ namespace Maple2.Trigger._52000199_qd {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCameraEffect05(context);
-                    return;
+                    return new StateCameraEffect05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -134,11 +140,12 @@ namespace Maple2.Trigger._52000199_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003417}, arg3: new byte[] {1})) {
-                    context.State = new StateWait_02(context);
-                    return;
+                    return new StateWait_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -152,11 +159,12 @@ namespace Maple2.Trigger._52000199_qd {
                 context.SetProductionUI(arg1: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State영상재생(context);
-                    return;
+                    return new State영상재생(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -170,16 +178,16 @@ namespace Maple2.Trigger._52000199_qd {
                 context.PlaySceneMovie(fileName: @"common\KiliansTruth.usm", movieId: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    context.State = new State바깥으로(context);
-                    return;
+                    return new State바깥으로(context);
                 }
 
                 if (context.WaitTick(waitTick: 203000)) {
-                    context.State = new State바깥으로(context);
-                    return;
+                    return new State바깥으로(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -193,11 +201,12 @@ namespace Maple2.Trigger._52000199_qd {
                 context.SetAchievement(arg1: 2001, arg3: "KiliansTruth");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State바깥으로_02(context);
-                    return;
+                    return new State바깥으로_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -210,7 +219,9 @@ namespace Maple2.Trigger._52000199_qd {
                 context.MoveUser(arg1: 02000146, arg2: 12);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

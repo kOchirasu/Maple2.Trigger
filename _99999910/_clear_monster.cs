@@ -5,7 +5,9 @@ namespace Maple2.Trigger._99999910 {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

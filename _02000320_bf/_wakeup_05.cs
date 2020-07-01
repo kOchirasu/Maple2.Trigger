@@ -12,11 +12,8 @@ namespace Maple2.Trigger._02000320_bf {
                 context.SetActor(arg1: 5006, arg2: true, arg3: "Stun_A");
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State도둑듬(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State도둑듬(context);
             }
 
             public override void OnExit() { }
@@ -29,11 +26,12 @@ namespace Maple2.Trigger._02000320_bf {
                 context.SetInteractObject(arg1: new[] {10000318}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000318}, arg2: 0)) {
-                    context.State = new State깨어남1(context);
-                    return;
+                    return new State깨어남1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +60,12 @@ namespace Maple2.Trigger._02000320_bf {
                 context.SetConversation(arg1: 1, arg2: 50001, arg3: "$02000320_BF__WAKEUP_05__4$", arg4: 2, arg5: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    context.State = new State깨어남2(context);
-                    return;
+                    return new State깨어남2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,11 +81,12 @@ namespace Maple2.Trigger._02000320_bf {
                 context.SetConversation(arg1: 1, arg2: 50003, arg3: "$02000320_BF__WAKEUP_05__7$", arg4: 2, arg5: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11")) {
-                    context.State = new State깨어남3(context);
-                    return;
+                    return new State깨어남3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -101,11 +101,12 @@ namespace Maple2.Trigger._02000320_bf {
                 context.SetActor(arg1: 5002, arg2: true, arg3: "Stun_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "12")) {
-                    context.State = new State깨어남4(context);
-                    return;
+                    return new State깨어남4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -116,16 +117,16 @@ namespace Maple2.Trigger._02000320_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {50004, 50005, 50006})) {
-                    context.State = new State다시잠듬(context);
-                    return;
+                    return new State다시잠듬(context);
                 }
 
                 if (!context.MonsterInCombat(arg1: new[] {50004, 50005, 50006})) {
-                    context.State = new State다시자러감(context);
-                    return;
+                    return new State다시자러감(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -147,11 +148,12 @@ namespace Maple2.Trigger._02000320_bf {
                 context.SetConversation(arg1: 1, arg2: 50006, arg3: "$02000320_BF__WAKEUP_05__10$", arg4: 2, arg5: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "14")) {
-                    context.State = new State다시잠듬(context);
-                    return;
+                    return new State다시잠듬(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -168,11 +170,12 @@ namespace Maple2.Trigger._02000320_bf {
                 context.SetActor(arg1: 5006, arg2: true, arg3: "Stun_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    context.State = new State도둑듬(context);
-                    return;
+                    return new State도둑듬(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

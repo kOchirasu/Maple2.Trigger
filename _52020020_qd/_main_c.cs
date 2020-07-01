@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52020020_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200145}, arg3: new byte[] {1})) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._52020020_qd {
                 context.AddBalloonTalk(spawnPointId: 201, msg: "전 밖에서 기다리고 있겠습니다.", duration: 2500, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Statemove(context);
-                    return;
+                    return new Statemove(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._52020020_qd {
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_3001");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
-                    context.State = new Stateout(context);
-                    return;
+                    return new Stateout(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,7 +59,9 @@ namespace Maple2.Trigger._52020020_qd {
                 context.DestroyMonster(arg1: new[] {201});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

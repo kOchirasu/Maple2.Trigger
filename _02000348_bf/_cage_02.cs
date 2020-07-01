@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000348_bf {
                 context.SetActor(arg1: 2202, arg2: false, arg3: "Sit_Ground_Idle_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "cage_02") == 1) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._02000348_bf {
                 context.SetActor(arg1: 2202, arg2: true, arg3: "Sit_Ground_Idle_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {212})) {
-                    context.State = new Statenpc(context);
-                    return;
+                    return new Statenpc(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +50,12 @@ namespace Maple2.Trigger._02000348_bf {
                 context.CreateMonster(arg1: new[] {222}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateNPC소멸(context);
-                    return;
+                    return new StateNPC소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,7 +68,9 @@ namespace Maple2.Trigger._02000348_bf {
                 context.DestroyMonster(arg1: new[] {222});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

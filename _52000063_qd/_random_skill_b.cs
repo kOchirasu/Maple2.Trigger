@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52000063_qd {
                 context.SetEffect(arg1: new[] {604, 605, 606}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "gameStart") == 1) {
-                    context.State = new State감지대기(context);
-                    return;
+                    return new State감지대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._52000063_qd {
                 context.SetEffect(arg1: new[] {604, 605, 606}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {112})) {
-                    context.State = new State스킬랜덤(context);
-                    return;
+                    return new State스킬랜덤(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,18 +43,18 @@ namespace Maple2.Trigger._52000063_qd {
                 context.SetEffect(arg1: new[] {604, 605, 606}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 80f)) {
                     context.AddBuff(arg1: new[] {199}, arg2: 70000008, arg3: 1, arg4: false, arg5: false);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
                     context.AddBuff(arg1: new[] {199}, arg2: 70000009, arg3: 1, arg4: false, arg5: false);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,7 +65,9 @@ namespace Maple2.Trigger._52000063_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

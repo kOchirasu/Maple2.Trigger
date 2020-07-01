@@ -17,11 +17,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetNpcEmotionLoop(arg1: 508, arg2: "Down_Idle_A", arg3: 600000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {702})) {
-                    context.State = new State1_scene_ready(context);
-                    return;
+                    return new State1_scene_ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,11 +39,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetSceneSkip(arg1: "skip_01", arg2: "nextState");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State1_scene_set(context);
-                    return;
+                    return new State1_scene_set(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -67,11 +69,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveUserPath(arg1: "MS2PatrolData_1103");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State1_scene_01_b(context);
-                    return;
+                    return new State1_scene_01_b(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,11 +85,12 @@ namespace Maple2.Trigger._63000041_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State1_scene_01(context);
-                    return;
+                    return new State1_scene_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -99,11 +103,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 102, msg: "$63000041_CS__MAIN__0$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2300)) {
-                    context.State = new State1_scene_01_c(context);
-                    return;
+                    return new State1_scene_01_c(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -116,11 +121,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetEffect(arg1: new[] {7302}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State1_scene_02(context);
-                    return;
+                    return new State1_scene_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -133,11 +139,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$63000041_CS__MAIN__1$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State1_scene_03(context);
-                    return;
+                    return new State1_scene_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -150,11 +157,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 102, msg: "$63000041_CS__MAIN__2$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State1_scene_04(context);
-                    return;
+                    return new State1_scene_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -169,11 +177,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 203, msg: "$63000041_CS__MAIN__5$", duration: 3000, delayTick: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State2_scene_01(context);
-                    return;
+                    return new State2_scene_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -190,11 +199,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveNpc(arg1: 403, arg2: "MS2PatrolData_4003");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State2_scene_02(context);
-                    return;
+                    return new State2_scene_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -211,11 +221,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 102, msg: "$63000041_CS__MAIN__10$", duration: 3000, delayTick: 7000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State2_scene_03(context);
-                    return;
+                    return new State2_scene_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -230,11 +241,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 402, msg: "$63000041_CS__MAIN__11$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2300)) {
-                    context.State = new State2_scene_04(context);
-                    return;
+                    return new State2_scene_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -251,11 +263,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2013");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2300)) {
-                    context.State = new State2_scene_05(context);
-                    return;
+                    return new State2_scene_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -272,11 +285,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 401, msg: "$63000041_CS__MAIN__12$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State2_scene_talk_01(context);
-                    return;
+                    return new State2_scene_talk_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -290,11 +304,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 102, msg: "$63000041_CS__MAIN__13$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State2_scene_talk_02(context);
-                    return;
+                    return new State2_scene_talk_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -308,11 +323,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 401, msg: "$63000041_CS__MAIN__14$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State2_scene_talk_03(context);
-                    return;
+                    return new State2_scene_talk_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -326,11 +342,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 102, msg: "$63000041_CS__MAIN__15$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State2_scene_talk_04(context);
-                    return;
+                    return new State2_scene_talk_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -343,11 +360,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 401, msg: "$63000041_CS__MAIN__16$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State2_scene_talk_05(context);
-                    return;
+                    return new State2_scene_talk_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -361,11 +379,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$63000041_CS__MAIN__17$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State2_scene_talk_06(context);
-                    return;
+                    return new State2_scene_talk_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -381,11 +400,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 401, msg: "$63000041_CS__MAIN__20$", duration: 3000, delayTick: 6000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7500)) {
-                    context.State = new State2_scene_06(context);
-                    return;
+                    return new State2_scene_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -398,11 +418,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_4011");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State2_scene_07(context);
-                    return;
+                    return new State2_scene_07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -416,11 +437,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveUserPath(arg1: "MS2PatrolData_1113");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State2_scene_08(context);
-                    return;
+                    return new State2_scene_08(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -435,11 +457,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveUserPath(arg1: "MS2PatrolData_1123");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State2_scene_09(context);
-                    return;
+                    return new State2_scene_09(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -455,11 +478,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State2_scene_10(context);
-                    return;
+                    return new State2_scene_10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -474,11 +498,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveUserPath(arg1: "MS2PatrolData_1132");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State3_scene_01_ready(context);
-                    return;
+                    return new State3_scene_01_ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -493,11 +518,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveUser(arg1: 63000041, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6500)) {
-                    context.State = new State3_scene_01(context);
-                    return;
+                    return new State3_scene_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -514,11 +540,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$63000041_CS__MAIN__56$", desc: "$63000041_CS__MAIN__57$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State3_scene_02(context);
-                    return;
+                    return new State3_scene_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -534,11 +561,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Attack_Idle_A", arg3: 10000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State3_scene_03(context);
-                    return;
+                    return new State3_scene_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -554,12 +582,13 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetOnetimeEffect(id: 1968, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_03_00001968.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetNpcEmotionSequence(arg1: 666, arg2: "Attack_01_A");
-                    context.State = new State3_scene_04(context);
-                    return;
+                    return new State3_scene_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -576,11 +605,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.CreateMonster(arg1: new[] {701, 702, 703, 704}, arg2: true, arg3: 500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State3_scene_05(context);
-                    return;
+                    return new State3_scene_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -600,11 +630,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 666, msg: "$63000041_CS__MAIN__27$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {701, 702, 703, 704})) {
-                    context.State = new Statefadeout(context);
-                    return;
+                    return new Statefadeout(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -623,11 +654,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetSceneSkip(arg1: "skip_a_01", arg2: "nextState");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statefadein(context);
-                    return;
+                    return new Statefadein(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -641,11 +673,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetEffect(arg1: new[] {7005}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State3_scene_06_a(context);
-                    return;
+                    return new State3_scene_06_a(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -661,11 +694,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 666, msg: "$63000041_CS__MAIN__29$", duration: 8000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State3_scene_06_b(context);
-                    return;
+                    return new State3_scene_06_b(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -682,11 +716,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetOnetimeEffect(id: 1970, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_05_00001970.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State3_scene_06_c(context);
-                    return;
+                    return new State3_scene_06_c(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -704,11 +739,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetEffect(arg1: new[] {7004}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State3_scene_06_d(context);
-                    return;
+                    return new State3_scene_06_d(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -721,11 +757,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetEffect(arg1: new[] {7004}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State3_scene_06(context);
-                    return;
+                    return new State3_scene_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -741,11 +778,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetOnetimeEffect(id: 1971, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_06_00001971.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State3_scene_07(context);
-                    return;
+                    return new State3_scene_07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -756,11 +794,12 @@ namespace Maple2.Trigger._63000041_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State3_scene_08(context);
-                    return;
+                    return new State3_scene_08(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -776,11 +815,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetOnetimeEffect(id: 1972, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_07_00001972.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State3_scene_09(context);
-                    return;
+                    return new State3_scene_09(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -793,11 +833,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveNpc(arg1: 666, arg2: "MS2PatrolData_6662");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State3_scene_10(context);
-                    return;
+                    return new State3_scene_10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -812,11 +853,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.CreateMonster(arg1: new[] {888}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State3_scene_11(context);
-                    return;
+                    return new State3_scene_11(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -830,11 +872,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddCinematicTalk(npcId: 11001852, msg: "$63000041_CS__MAIN__36$", duration: 5000, align: "center");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State3_scene_12(context);
-                    return;
+                    return new State3_scene_12(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -849,11 +892,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveNpc(arg1: 666, arg2: "MS2PatrolData_6663");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State3_scene_13(context);
-                    return;
+                    return new State3_scene_13(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -866,11 +910,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddCinematicTalk(npcId: 11001852, msg: "$63000041_CS__MAIN__38$", duration: 5000, align: "center");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State3_scene_14(context);
-                    return;
+                    return new State3_scene_14(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -884,11 +929,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetOnetimeEffect(id: 1974, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_09_00001974.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State3_scene_15(context);
-                    return;
+                    return new State3_scene_15(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -902,11 +948,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddCinematicTalk(npcId: 11001852, msg: "$63000041_CS__MAIN__40$", duration: 8000, align: "center");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State3_scene_16(context);
-                    return;
+                    return new State3_scene_16(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -920,11 +967,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetOnetimeEffect(id: 1975, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_10_00001975.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State3_scene_17(context);
-                    return;
+                    return new State3_scene_17(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -938,11 +986,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddCinematicTalk(npcId: 11001852, msg: "$63000041_CS__MAIN__42$", duration: 5000, align: "center");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State3_scene_18(context);
-                    return;
+                    return new State3_scene_18(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -957,11 +1006,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetOnetimeEffect(id: 1976, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_11_00001976.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State3_scene_19(context);
-                    return;
+                    return new State3_scene_19(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -975,11 +1025,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveNpc(arg1: 666, arg2: "MS2PatrolData_6662");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State3_scene_20(context);
-                    return;
+                    return new State3_scene_20(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -996,11 +1047,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetEffect(arg1: new[] {7006}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State3_scene_21(context);
-                    return;
+                    return new State3_scene_21(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1013,11 +1065,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveNpc(arg1: 666, arg2: "MS2PatrolData_8801");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State3_scene_22(context);
-                    return;
+                    return new State3_scene_22(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1031,11 +1084,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.DestroyMonster(arg1: new[] {888, 666});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State4_scene_1(context);
-                    return;
+                    return new State4_scene_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1050,11 +1104,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.CreateMonster(arg1: new[] {705}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State4_scene_2(context);
-                    return;
+                    return new State4_scene_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1069,11 +1124,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetNpcEmotionSequence(arg1: 705, arg2: "AttackReady_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new Stategrowling(context);
-                    return;
+                    return new Stategrowling(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1086,11 +1142,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetOnetimeEffect(id: 1978, enable: true, path: @"BG/Common/Sound/Eff_Mob_Whale_Dead_01.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State4_scene_3(context);
-                    return;
+                    return new State4_scene_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1103,11 +1160,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.CameraSelectPath(arg1: new[] {8009}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State4_scene_4(context);
-                    return;
+                    return new State4_scene_4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1121,11 +1179,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetOnetimeEffect(id: 1979, enable: true, path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State4_scene_5(context);
-                    return;
+                    return new State4_scene_5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1139,11 +1198,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.DestroyMonster(arg1: new[] {705});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State4_scene_6(context);
-                    return;
+                    return new State4_scene_6(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1157,11 +1217,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetEffect(arg1: new[] {7312, 7311}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State4_scene_7(context);
-                    return;
+                    return new State4_scene_7(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1175,11 +1236,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetOnetimeEffect(id: 1980, enable: true, path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State4_scene_8(context);
-                    return;
+                    return new State4_scene_8(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1194,11 +1256,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetOnetimeEffect(id: 1981, enable: true, path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State4_scene_9(context);
-                    return;
+                    return new State4_scene_9(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -1216,11 +1279,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State4_scene_10(context);
-                    return;
+                    return new State4_scene_10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1234,11 +1298,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveUser(arg1: 63000041, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State4_scene_11(context);
-                    return;
+                    return new State4_scene_11(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1252,11 +1317,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetEffect(arg1: new[] {7310, 7311, 7312}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State4_scene_12(context);
-                    return;
+                    return new State4_scene_12(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1269,11 +1335,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetEventUI(arg1: 1, arg2: "$63000041_CS__MAIN__48$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State4_scene_13(context);
-                    return;
+                    return new State4_scene_13(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1287,11 +1354,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 18000)) {
-                    context.State = new Statewhiteout(context);
-                    return;
+                    return new Statewhiteout(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1305,11 +1373,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetOnetimeEffect(id: 1982, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State4_scene_14(context);
-                    return;
+                    return new State4_scene_14(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1326,11 +1395,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetSceneSkip(arg1: "end_warp", arg2: "exit");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State4_scene_15(context);
-                    return;
+                    return new State4_scene_15(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1343,11 +1413,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetProductionUI(arg1: 9, arg2: "$63000041_CS__MAIN__49$", arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State4_scene_16(context);
-                    return;
+                    return new State4_scene_16(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1360,11 +1431,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetProductionUI(arg1: 9, arg2: "$63000041_CS__MAIN__50$", arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State4_scene_17(context);
-                    return;
+                    return new State4_scene_17(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1377,11 +1449,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetProductionUI(arg1: 9, arg2: "$63000041_CS__MAIN__51$", arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State4_scene_18(context);
-                    return;
+                    return new State4_scene_18(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1394,11 +1467,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetProductionUI(arg1: 9, arg2: "$63000041_CS__MAIN__52$", arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State4_scene_19(context);
-                    return;
+                    return new State4_scene_19(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1411,11 +1485,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetProductionUI(arg1: 9, arg2: "$63000041_CS__MAIN__53$", arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State4_scene_20(context);
-                    return;
+                    return new State4_scene_20(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1428,11 +1503,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetProductionUI(arg1: 9, arg2: "$63000041_CS__MAIN__54$", arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1446,11 +1522,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new Stateend_warp(context);
-                    return;
+                    return new Stateend_warp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1464,7 +1541,9 @@ namespace Maple2.Trigger._63000041_cs {
                 context.MoveUser(arg1: 52010026, arg2: 6001);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1479,11 +1558,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.CameraSelectPath(arg1: new[] {8007}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Stateskip_02(context);
-                    return;
+                    return new Stateskip_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1498,11 +1578,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetEffect(arg1: new[] {7309}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    context.State = new Stateskip_03(context);
-                    return;
+                    return new Stateskip_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1519,11 +1600,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.CreateMonster(arg1: new[] {701, 702, 703, 704}, arg2: true, arg3: 500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new Stateskip_04(context);
-                    return;
+                    return new Stateskip_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1543,11 +1625,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.AddBalloonTalk(spawnPointId: 666, msg: "$63000041_CS__MAIN__27$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {701, 702, 703, 704})) {
-                    context.State = new Statefadeout(context);
-                    return;
+                    return new Statefadeout(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1563,11 +1646,12 @@ namespace Maple2.Trigger._63000041_cs {
                 context.DestroyMonster(arg1: new[] {888, 666});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State4_scene_10(context);
-                    return;
+                    return new State4_scene_10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

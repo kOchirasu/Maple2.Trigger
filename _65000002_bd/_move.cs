@@ -5,11 +5,12 @@ namespace Maple2.Trigger._65000002_bd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 102) == 10) {
-                    context.State = new State이동(context);
-                    return;
+                    return new State이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

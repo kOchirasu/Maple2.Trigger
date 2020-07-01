@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52020011_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200015}, arg3: new byte[] {2})) {
-                    context.State = new StateReady(context);
-                    return;
+                    return new StateReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.SetProductionUI(arg1: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateSetting(context);
-                    return;
+                    return new StateSetting(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,11 +48,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.SetSceneSkip(arg1: "Exit", arg2: "Exit");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Statescene_01(context);
-                    return;
+                    return new Statescene_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,11 +69,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.ShowCaption(type: "VerticalCaption", title: "$map:52020011$", desc: "$NpcName:11003599$의 임시 거처", align: "centerLeft", offsetRateX: 0.05f, offsetRateY: 0.15f, duration: 3000, scale: 1.5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.State = new Statescene_02(context);
-                    return;
+                    return new Statescene_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,11 +87,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.CameraSelectPath(arg1: new[] {4003, 4004, 4005, 4006}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    context.State = new Statescene_03(context);
-                    return;
+                    return new Statescene_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -102,11 +107,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.CameraSelectPath(arg1: new[] {4007, 4008}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.State = new Statescene_04(context);
-                    return;
+                    return new Statescene_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -121,11 +127,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateExit(context);
-                    return;
+                    return new StateExit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -140,7 +147,9 @@ namespace Maple2.Trigger._52020011_qd {
                 context.CameraReset(interpolationTime: 0f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

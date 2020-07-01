@@ -9,11 +9,12 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetUserValue(key: "InactivateLotus", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "InnerLight") == 1) {
-                    context.State = new StateDelay01(context);
-                    return;
+                    return new StateDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,16 +27,16 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetInteractObject(arg1: new[] {10001022}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001022}, arg2: 0)) {
-                    context.State = new StateGiveLight01(context);
-                    return;
+                    return new StateGiveLight01(context);
                 }
 
                 if (context.GetUserValue(key: "InactivateLotus") == 1) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,16 +49,16 @@ namespace Maple2.Trigger._52000051_qd {
                 context.AddBuff(arg1: new[] {9100}, arg2: 70000102, arg3: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateDelay01(context);
-                    return;
+                    return new StateDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "InactivateLotus") == 1) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

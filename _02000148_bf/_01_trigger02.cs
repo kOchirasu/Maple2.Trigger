@@ -10,11 +10,12 @@ namespace Maple2.Trigger._02000148_bf {
                 context.SetMesh(arg1: new[] {313, 314, 315, 316}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000170}, arg2: 0)) {
-                    context.State = new State개봉박두(context);
-                    return;
+                    return new State개봉박두(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,11 +31,12 @@ namespace Maple2.Trigger._02000148_bf {
                 context.SetEffect(arg1: new[] {205, 206, 207, 208}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {95, 96, 97, 98})) {
-                    context.State = new State유저감지(context);
-                    return;
+                    return new State유저감지(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +49,12 @@ namespace Maple2.Trigger._02000148_bf {
                 context.SetTimer(arg1: "1", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {402})) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -8,26 +8,25 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetEffect(arg1: new[] {7010}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round_01") == 1) {
-                    // context.State = new StateRound_01(context);
-                    return;
+                    // return new StateRound_01(context);
+                    return null;
                 }
 
                 if (context.GetUserValue(key: "Round_02") == 1) {
-                    context.State = new StateRound_02_Ready(context);
-                    return;
+                    return new StateRound_02_Ready(context);
                 }
 
                 if (context.GetUserValue(key: "Round_03") == 1) {
-                    context.State = new StateRound_03_Ready(context);
-                    return;
+                    return new StateRound_03_Ready(context);
                 }
 
                 if (context.GetUserValue(key: "Round_04") == 1) {
-                    context.State = new StateRound_04_Ready(context);
-                    return;
+                    return new StateRound_04_Ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,11 +37,12 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
-                    context.State = new StateRound_02_Start(context);
-                    return;
+                    return new StateRound_02_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -53,11 +53,12 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
-                    context.State = new StateRound_03_Start(context);
-                    return;
+                    return new StateRound_03_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -68,11 +69,12 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
-                    context.State = new StateRound_04_Start(context);
-                    return;
+                    return new StateRound_04_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,11 +85,12 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
-                    context.State = new StateRound_05_Start(context);
-                    return;
+                    return new StateRound_05_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,11 +101,12 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 25000)) {
-                    context.State = new StateRound_06_Start(context);
-                    return;
+                    return new StateRound_06_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,16 +119,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetEffect(arg1: new[] {7001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round_02") == 0) {
-                    context.State = new StateRound_check(context);
-                    return;
+                    return new StateRound_check(context);
                 }
 
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.State = new StateRound_check(context);
-                    return;
+                    return new StateRound_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -137,16 +141,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetEffect(arg1: new[] {7002}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round_03") == 0) {
-                    context.State = new StateRound_check(context);
-                    return;
+                    return new StateRound_check(context);
                 }
 
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.State = new StateRound_check(context);
-                    return;
+                    return new StateRound_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -159,16 +163,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetEffect(arg1: new[] {7002}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round_04") == 0) {
-                    context.State = new StateRound_check(context);
-                    return;
+                    return new StateRound_check(context);
                 }
 
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.State = new StateRound_check(context);
-                    return;
+                    return new StateRound_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -181,16 +185,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetEffect(arg1: new[] {7003}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round_05") == 0) {
-                    context.State = new StateRound_check(context);
-                    return;
+                    return new StateRound_check(context);
                 }
 
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.State = new StateRound_check(context);
-                    return;
+                    return new StateRound_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -203,16 +207,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetEffect(arg1: new[] {7005}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round_06") == 0) {
-                    context.State = new StateRound_check(context);
-                    return;
+                    return new StateRound_check(context);
                 }
 
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.State = new StateRound_check(context);
-                    return;
+                    return new StateRound_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

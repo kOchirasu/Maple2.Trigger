@@ -5,16 +5,16 @@ namespace Maple2.Trigger._02020144_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "summon") == 1) {
-                    context.State = new State몬스터소환(context);
-                    return;
+                    return new State몬스터소환(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,16 +28,16 @@ namespace Maple2.Trigger._02020144_bf {
                 context.SetUserValue(triggerId: 900003, key: "summon", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -51,11 +51,8 @@ namespace Maple2.Trigger._02020144_bf {
                 context.SetUserValue(triggerId: 900003, key: "summon", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기(context);
             }
 
             public override void OnExit() { }

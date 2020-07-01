@@ -15,11 +15,12 @@ namespace Maple2.Trigger._02020300_bf {
                 context.EnableSpawnPointPc(spawnPointId: 102, isEnable: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,13 +31,14 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {902})) {
                     context.SetEventUI(arg1: 1, arg2: "$02020300_BF__MAIN__0$", arg3: 5000);
                     context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
-                    context.State = new State추가대사_01(context);
-                    return;
+                    return new State추가대사_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,13 +49,14 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SetUserValue(triggerId: 99990004, key: "Laser", value: 1);
                     context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$02020300_BF__MAIN__1$", duration: 5000);
-                    context.State = new State추가대사_02(context);
-                    return;
+                    return new State추가대사_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,12 +67,13 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103})) {
                     context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__2$", duration: 5000);
-                    context.State = new State추가대사_03(context);
-                    return;
+                    return new State추가대사_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,12 +84,13 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_normal", script: "$02020300_BF__MAIN__3$", duration: 5000);
-                    context.State = new State엘리베이터_체크(context);
-                    return;
+                    return new State엘리베이터_체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,12 +101,13 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__4$", duration: 5000);
-                    context.State = new State엘리베이터_스위치(context);
-                    return;
+                    return new State엘리베이터_스위치(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -114,11 +120,12 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SetInteractObject(arg1: new[] {10002185}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002185}, arg2: 0)) {
-                    context.State = new State엘리베이터_활성화(context);
-                    return;
+                    return new State엘리베이터_활성화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -131,11 +138,12 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SetBreakable(arg1: new[] {5001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {903})) {
-                    context.State = new State아르케온_탑승_가이드(context);
-                    return;
+                    return new State아르케온_탑승_가이드(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -148,15 +156,16 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02020300_BF__MAIN__5$", arg3: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {711})) {
                     context.SetUserValue(triggerId: 99990005, key: "elevator", value: 1);
                     context.EnableSpawnPointPc(spawnPointId: 100, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 101, isEnable: true);
                     context.EnableSpawnPointPc(spawnPointId: 102, isEnable: false);
-                    context.State = new State레이저_패턴_시작(context);
-                    return;
+                    return new State레이저_패턴_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -167,11 +176,12 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {904})) {
-                    context.State = new State갈림길_전투(context);
-                    return;
+                    return new State갈림길_전투(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -186,11 +196,12 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SetMesh(arg1: new[] {1001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {905})) {
-                    context.State = new State짜투리_전투(context);
-                    return;
+                    return new State짜투리_전투(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -204,11 +215,12 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 30000, 30010, 30020, 30030}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {911})) {
-                    context.State = new State웨이브_시작(context);
-                    return;
+                    return new State웨이브_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -221,12 +233,13 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_unfair", script: "$02020300_BF__MAIN__6$", duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 30000, 30010, 30020, 30030}, arg2: false);
-                    context.State = new State추가대사_04(context);
-                    return;
+                    return new State추가대사_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -240,12 +253,13 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SetUserValue(triggerId: 99990002, key: "Spawn", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SpawnRoomEnd") == 1) {
                     context.SetActor(arg1: 9001, arg2: true, arg3: "sf_fi_funct_darkdoor_A01_start");
-                    context.State = new State길열림(context);
-                    return;
+                    return new State길열림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -259,11 +273,12 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 30000, 30010, 30020, 30030}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {921})) {
-                    context.State = new State지뢰방_시작(context);
-                    return;
+                    return new State지뢰방_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -285,11 +300,12 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$02020300_BF__MAIN__8$", duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State추가대사_05(context);
-                    return;
+                    return new State추가대사_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -302,11 +318,12 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__9$", duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State추가대사_06(context);
-                    return;
+                    return new State추가대사_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -319,12 +336,13 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_normal", script: "$02020300_BF__MAIN__10$", duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RandomBombEnd") == 1) {
                     context.SetUserValue(triggerId: 99990004, key: "Laser", value: 0);
-                    context.State = new State보스전(context);
-                    return;
+                    return new State보스전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -340,11 +358,8 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -357,7 +372,9 @@ namespace Maple2.Trigger._02020300_bf {
                 context.SetUserValue(triggerId: 99990005, key: "elevator", value: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

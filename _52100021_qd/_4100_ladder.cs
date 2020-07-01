@@ -11,11 +11,12 @@ namespace Maple2.Trigger._52100021_qd {
                 context.SetInteractObject(arg1: new[] {10001128}, arg2: 0, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9200, arg2: new[] {101})) {
-                    context.State = new StatePCComeDown(context);
-                    return;
+                    return new StatePCComeDown(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._52100021_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9400})) {
-                    context.State = new StateLadderOn(context);
-                    return;
+                    return new StateLadderOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,7 +48,9 @@ namespace Maple2.Trigger._52100021_qd {
                 context.SetLadder(arg1: 4103, arg2: true, arg3: true, arg4: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

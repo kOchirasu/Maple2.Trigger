@@ -7,7 +7,9 @@ namespace Maple2.Trigger._52010019_qd {
                 context.CreateMonster(arg1: new[] {101, 102, 103});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -24,11 +26,12 @@ namespace Maple2.Trigger._52010019_qd {
                 context.SetSkip(arg1: "Event_02");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateEvent_02(context);
-                    return;
+                    return new StateEvent_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -45,11 +48,12 @@ namespace Maple2.Trigger._52010019_qd {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateEvent_03(context);
-                    return;
+                    return new StateEvent_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -66,11 +70,12 @@ namespace Maple2.Trigger._52010019_qd {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateEvent_04(context);
-                    return;
+                    return new StateEvent_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -87,11 +92,12 @@ namespace Maple2.Trigger._52010019_qd {
                 context.SetSkip(arg1: "Event_05");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateEvent_05(context);
-                    return;
+                    return new StateEvent_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -108,7 +114,9 @@ namespace Maple2.Trigger._52010019_qd {
                 context.CameraSelect(arg1: 8001, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

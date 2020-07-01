@@ -13,11 +13,12 @@ namespace Maple2.Trigger._02000488_bf {
                 context.SetEffect(arg1: new[] {5010, 5600}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new StateBossSpawn(context);
-                    return;
+                    return new StateBossSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,11 +31,12 @@ namespace Maple2.Trigger._02000488_bf {
                 context.CreateMonster(arg1: new[] {999}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {999})) {
-                    context.State = new StateBossDead(context);
-                    return;
+                    return new StateBossDead(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -50,11 +52,12 @@ namespace Maple2.Trigger._02000488_bf {
                 context.SetMeshAnimation(arg1: new[] {5610, 5611, 5612}, arg2: false, arg3: 0, arg4: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateBridgeApp(context);
-                    return;
+                    return new StateBridgeApp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -69,11 +72,12 @@ namespace Maple2.Trigger._02000488_bf {
                 context.SetEffect(arg1: new[] {5010}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateDungeonClear(context);
-                    return;
+                    return new StateDungeonClear(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -87,7 +91,9 @@ namespace Maple2.Trigger._02000488_bf {
                 context.SetPortal(arg1: 40, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

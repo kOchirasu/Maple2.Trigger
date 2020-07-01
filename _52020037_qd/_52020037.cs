@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52020037_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100820}, arg3: new byte[] {2})) {
-                    context.State = new StateWait_02(context);
-                    return;
+                    return new StateWait_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._52020037_qd {
                 context.SetProductionUI(arg1: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State영상재생(context);
-                    return;
+                    return new State영상재생(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,16 +43,16 @@ namespace Maple2.Trigger._52020037_qd {
                 context.PlaySceneMovie(fileName: @"common\Kritias_01.usm", movieId: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    context.State = new State밝아짐(context);
-                    return;
+                    return new State밝아짐(context);
                 }
 
                 if (context.WaitTick(waitTick: 80000)) {
-                    context.State = new State밝아짐(context);
-                    return;
+                    return new State밝아짐(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,7 +68,9 @@ namespace Maple2.Trigger._52020037_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -14,16 +14,16 @@ namespace Maple2.Trigger._82000003_survival {
                 context.SetUserValue(key: "ExtraEventTestOn", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ExtraEventTestOn") == 1) {
-                    context.State = new StateExtraEventOn(context);
-                    return;
+                    return new StateExtraEventOn(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventCheck") == 1) {
-                    context.State = new StateExtraEventOccurrenceProbability(context);
-                    return;
+                    return new StateExtraEventOccurrenceProbability(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -34,21 +34,20 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 60f)) {
-                    context.State = new StateExtraEventOff(context);
-                    return;
+                    return new StateExtraEventOff(context);
                 }
 
                 if (context.RandomCondition(arg1: 40f)) {
-                    context.State = new StateExtraEventOn(context);
-                    return;
+                    return new StateExtraEventOn(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +58,12 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -76,11 +76,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "MokumEventOn");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateRelicLeft05(context);
-                    return;
+                    return new StateRelicLeft05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,36 +98,32 @@ namespace Maple2.Trigger._82000003_survival {
                 context.SetUserValue(triggerId: 15, key: "RelicMobSpawn", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft04_NoRed(context);
-                    return;
+                    return new StateRelicLeft04_NoRed(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft04_NoSkyblue(context);
-                    return;
+                    return new StateRelicLeft04_NoSkyblue(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft04_NoGreen(context);
-                    return;
+                    return new StateRelicLeft04_NoGreen(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft04_NoYellow(context);
-                    return;
+                    return new StateRelicLeft04_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft04_NoGrey(context);
-                    return;
+                    return new StateRelicLeft04_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -144,31 +141,28 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "MokumKill_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft03_NoRed_NoSkyblue(context);
-                    return;
+                    return new StateRelicLeft03_NoRed_NoSkyblue(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft03_NoRed_NoGreen(context);
-                    return;
+                    return new StateRelicLeft03_NoRed_NoGreen(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft03_NoRed_NoYellow(context);
-                    return;
+                    return new StateRelicLeft03_NoRed_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft03_NoRed_NoGrey(context);
-                    return;
+                    return new StateRelicLeft03_NoRed_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -184,31 +178,28 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft03_NoRed_NoSkyblue(context);
-                    return;
+                    return new StateRelicLeft03_NoRed_NoSkyblue(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft03_NoSkyblue_NoGreen(context);
-                    return;
+                    return new StateRelicLeft03_NoSkyblue_NoGreen(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft03_NoSkyblue_NoYellow(context);
-                    return;
+                    return new StateRelicLeft03_NoSkyblue_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft03_NoSkyblue_NoGrey(context);
-                    return;
+                    return new StateRelicLeft03_NoSkyblue_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -224,31 +215,28 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft03_NoRed_NoGreen(context);
-                    return;
+                    return new StateRelicLeft03_NoRed_NoGreen(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft03_NoSkyblue_NoGreen(context);
-                    return;
+                    return new StateRelicLeft03_NoSkyblue_NoGreen(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft03_NoGreen_NoYellow(context);
-                    return;
+                    return new StateRelicLeft03_NoGreen_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft03_NoGreen_NoGrey(context);
-                    return;
+                    return new StateRelicLeft03_NoGreen_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -264,31 +252,28 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft03_NoRed_NoYellow(context);
-                    return;
+                    return new StateRelicLeft03_NoRed_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft03_NoSkyblue_NoYellow(context);
-                    return;
+                    return new StateRelicLeft03_NoSkyblue_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft03_NoGreen_NoYellow(context);
-                    return;
+                    return new StateRelicLeft03_NoGreen_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft03_NoYellow_NoGrey(context);
-                    return;
+                    return new StateRelicLeft03_NoYellow_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -304,31 +289,28 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft03_NoRed_NoGrey(context);
-                    return;
+                    return new StateRelicLeft03_NoRed_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft03_NoSkyblue_NoGrey(context);
-                    return;
+                    return new StateRelicLeft03_NoSkyblue_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft03_NoGreen_NoGrey(context);
-                    return;
+                    return new StateRelicLeft03_NoGreen_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft03_NoYellow_NoGrey(context);
-                    return;
+                    return new StateRelicLeft03_NoYellow_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -346,26 +328,24 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "MokumKill_02");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoGreen(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoSkyblue_NoGreen(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoYellow(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoSkyblue_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoSkyblue_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -381,26 +361,24 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoGreen(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoSkyblue_NoGreen(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoGreen_NoYellow(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoGreen_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoGreen_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoGreen_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -416,26 +394,24 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoYellow(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoSkyblue_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoGreen_NoYellow(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoGreen_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoYellow_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoYellow_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -451,26 +427,24 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoSkyblue_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoGreen_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoGreen_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoYellow_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoYellow_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -486,26 +460,24 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoGreen(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoSkyblue_NoGreen(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft02_NoSkyblue_NoGreen_NoYellow(context);
-                    return;
+                    return new StateRelicLeft02_NoSkyblue_NoGreen_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft02_NoSkyblue_NoGreen_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoSkyblue_NoGreen_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -521,26 +493,24 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoYellow(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoSkyblue_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft02_NoSkyblue_NoGreen_NoYellow(context);
-                    return;
+                    return new StateRelicLeft02_NoSkyblue_NoGreen_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft02_NoSkyblue_NoYellow_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoSkyblue_NoYellow_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -556,26 +526,24 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoSkyblue_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft02_NoSkyblue_NoGreen_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoSkyblue_NoGreen_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft02_NoSkyblue_NoYellow_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoSkyblue_NoYellow_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -591,26 +559,24 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoGreen_NoYellow(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoGreen_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft02_NoSkyblue_NoGreen_NoYellow(context);
-                    return;
+                    return new StateRelicLeft02_NoSkyblue_NoGreen_NoYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft02_NoGreen_NoYellow_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoGreen_NoYellow_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -626,26 +592,24 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoGreen_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoGreen_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft02_NoSkyblue_NoGreen_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoSkyblue_NoGreen_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft02_NoGreen_NoYellow_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoGreen_NoYellow_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -661,26 +625,24 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft02_NoRed_NoYellow_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoRed_NoYellow_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft02_NoSkyblue_NoYellow_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoSkyblue_NoYellow_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft02_NoGreen_NoYellow_NoGrey(context);
-                    return;
+                    return new StateRelicLeft02_NoGreen_NoYellow_NoGrey(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -698,21 +660,20 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "MokumKill_03");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyGrey(context);
-                    return;
+                    return new StateRelicLeft01_OnlyGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyYellow(context);
-                    return;
+                    return new StateRelicLeft01_OnlyYellow(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -728,21 +689,20 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyGrey(context);
-                    return;
+                    return new StateRelicLeft01_OnlyGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyGreen(context);
-                    return;
+                    return new StateRelicLeft01_OnlyGreen(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -758,21 +718,20 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyYellow(context);
-                    return;
+                    return new StateRelicLeft01_OnlyYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyGreen(context);
-                    return;
+                    return new StateRelicLeft01_OnlyGreen(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -788,21 +747,20 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyGrey(context);
-                    return;
+                    return new StateRelicLeft01_OnlyGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlySkyblue(context);
-                    return;
+                    return new StateRelicLeft01_OnlySkyblue(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -818,21 +776,20 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyYellow(context);
-                    return;
+                    return new StateRelicLeft01_OnlyYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlySkyblue(context);
-                    return;
+                    return new StateRelicLeft01_OnlySkyblue(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -848,21 +805,20 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyGreen(context);
-                    return;
+                    return new StateRelicLeft01_OnlyGreen(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlySkyblue(context);
-                    return;
+                    return new StateRelicLeft01_OnlySkyblue(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -878,21 +834,20 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyGrey(context);
-                    return;
+                    return new StateRelicLeft01_OnlyGrey(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyRed(context);
-                    return;
+                    return new StateRelicLeft01_OnlyRed(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -908,21 +863,20 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyYellow(context);
-                    return;
+                    return new StateRelicLeft01_OnlyYellow(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyRed(context);
-                    return;
+                    return new StateRelicLeft01_OnlyRed(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -938,21 +892,20 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyGreen(context);
-                    return;
+                    return new StateRelicLeft01_OnlyGreen(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyRed(context);
-                    return;
+                    return new StateRelicLeft01_OnlyRed(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -968,21 +921,20 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlySkyblue(context);
-                    return;
+                    return new StateRelicLeft01_OnlySkyblue(context);
                 }
 
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateRelicLeft01_OnlyRed(context);
-                    return;
+                    return new StateRelicLeft01_OnlyRed(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -1000,16 +952,16 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "MokumKill_04");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
-                    context.State = new StateExtraEventRandomDelay01(context);
-                    return;
+                    return new StateExtraEventRandomDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -1025,16 +977,16 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
-                    context.State = new StateExtraEventRandomDelay01(context);
-                    return;
+                    return new StateExtraEventRandomDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -1050,16 +1002,16 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
-                    context.State = new StateExtraEventRandomDelay01(context);
-                    return;
+                    return new StateExtraEventRandomDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -1075,16 +1027,16 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
-                    context.State = new StateExtraEventRandomDelay01(context);
-                    return;
+                    return new StateExtraEventRandomDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -1100,16 +1052,16 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
-                    context.State = new StateExtraEventRandomDelay01(context);
-                    return;
+                    return new StateExtraEventRandomDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -1125,16 +1077,16 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateExtraEventRandomDelay02(context);
-                    return;
+                    return new StateExtraEventRandomDelay02(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1148,16 +1100,16 @@ namespace Maple2.Trigger._82000003_survival {
                 context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal", duration: 8000, script: "$82000002_survival__16_ExtraEvent__5$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateExtraEventRandomDelay03(context);
-                    return;
+                    return new StateExtraEventRandomDelay03(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1172,16 +1124,16 @@ namespace Maple2.Trigger._82000003_survival {
                 context.WriteLog(arg1: "Survival", arg3: "MokumEventStart");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateExtraEventRandom(context);
-                    return;
+                    return new StateExtraEventRandom(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1192,36 +1144,32 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.State = new StateExtraEvent01_Fast(context);
-                    return;
+                    return new StateExtraEvent01_Fast(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.State = new StateExtraEvent02_MapHack(context);
-                    return;
+                    return new StateExtraEvent02_MapHack(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.State = new StateExtraEvent03_RobotSpawn(context);
-                    return;
+                    return new StateExtraEvent03_RobotSpawn(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.State = new StateExtraEvent04_SkillCoolDownTimeReduce(context);
-                    return;
+                    return new StateExtraEvent04_SkillCoolDownTimeReduce(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.State = new StateExtraEvent05_NoMoreFarming(context);
-                    return;
+                    return new StateExtraEvent05_NoMoreFarming(context);
                 }
 
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1238,11 +1186,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.SetGravity(gravity: 30f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1259,11 +1208,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.AddBuff(arg1: new[] {9000}, arg2: 71000052, arg3: 2, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1279,11 +1229,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.SetUserValue(triggerId: 10, key: "BattleRidingOnCount", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -1301,11 +1252,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.AddBuff(arg1: new[] {9000}, arg2: 71000076, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1327,11 +1279,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.SetUserValue(triggerId: 9, key: "NormaBoxOff", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ExtraEventOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1348,7 +1301,9 @@ namespace Maple2.Trigger._82000003_survival {
                 context.SetUserValue(triggerId: 15, key: "RelicMobRemove", value: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

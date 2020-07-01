@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new State보스등장때까지잠시대기(context);
-                    return;
+                    return new State보스등장때까지잠시대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new State트리거영역체크시작(context);
-                    return;
+                    return new State트리거영역체크시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,21 +37,20 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MobSpawnStop") == 4) {
-                    context.State = new State졸몬스터제거작업(context);
-                    return;
+                    return new State졸몬스터제거작업(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State졸몬스터제거작업(context);
-                    return;
+                    return new State졸몬스터제거작업(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {10500})) {
-                    context.State = new State졸몬스터등장대기중(context);
-                    return;
+                    return new State졸몬스터등장대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,11 +61,12 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State트리거영역안플레이어최종체크(context);
-                    return;
+                    return new State트리거영역안플레이어최종체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,26 +77,24 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MobSpawnStop") == 4) {
-                    context.State = new State졸몬스터제거작업(context);
-                    return;
+                    return new State졸몬스터제거작업(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State졸몬스터제거작업(context);
-                    return;
+                    return new State졸몬스터제거작업(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {10500})) {
-                    context.State = new State졸몬스터등장하기(context);
-                    return;
+                    return new State졸몬스터등장하기(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State트리거영역체크시작(context);
-                    return;
+                    return new State트리거영역체크시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -107,11 +107,12 @@ namespace Maple2.Trigger._02020141_bf {
                 context.CreateMonster(arg1: new[] {10501, 10502, 10503, 10504}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State트리거영역에계속있는지체크(context);
-                    return;
+                    return new State트리거영역에계속있는지체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -122,26 +123,24 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MobSpawnStop") == 4) {
-                    context.State = new State졸몬스터제거작업(context);
-                    return;
+                    return new State졸몬스터제거작업(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State졸몬스터제거작업(context);
-                    return;
+                    return new State졸몬스터제거작업(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {10500})) {
-                    context.State = new State졸몬스터리젠단계시작(context);
-                    return;
+                    return new State졸몬스터리젠단계시작(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {10500})) {
-                    context.State = new State졸몬스터제거작동대기(context);
-                    return;
+                    return new State졸몬스터제거작동대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -152,16 +151,16 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10500})) {
-                    context.State = new State졸몬스터리젠대기중(context);
-                    return;
+                    return new State졸몬스터리젠대기중(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {10500})) {
-                    context.State = new State졸몬스터제거작동대기(context);
-                    return;
+                    return new State졸몬스터제거작동대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -172,26 +171,24 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MobSpawnStop") == 4) {
-                    context.State = new State졸몬스터제거작업(context);
-                    return;
+                    return new State졸몬스터제거작업(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State졸몬스터제거작업(context);
-                    return;
+                    return new State졸몬스터제거작업(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {10500})) {
-                    context.State = new State졸몬스터제거작동대기(context);
-                    return;
+                    return new State졸몬스터제거작동대기(context);
                 }
 
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new State졸몬스터리젠YesNo(context);
-                    return;
+                    return new State졸몬스터리젠YesNo(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -202,26 +199,24 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MobSpawnStop") == 4) {
-                    context.State = new State졸몬스터제거작업(context);
-                    return;
+                    return new State졸몬스터제거작업(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State졸몬스터제거작업(context);
-                    return;
+                    return new State졸몬스터제거작업(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {10500})) {
-                    context.State = new State졸몬스터등장하기(context);
-                    return;
+                    return new State졸몬스터등장하기(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {10500})) {
-                    context.State = new State졸몬스터제거작동대기(context);
-                    return;
+                    return new State졸몬스터제거작동대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -232,16 +227,16 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10500})) {
-                    context.State = new State트리거영역에계속있는지체크(context);
-                    return;
+                    return new State트리거영역에계속있는지체크(context);
                 }
 
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new State졸몬스터제거작업(context);
-                    return;
+                    return new State졸몬스터제거작업(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -254,21 +249,20 @@ namespace Maple2.Trigger._02020141_bf {
                 context.DestroyMonster(arg1: new[] {10501, 10502, 10503, 10504});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MobSpawnStop") == 4) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State트리거영역체크시작(context);
-                    return;
+                    return new State트리거영역체크시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -279,7 +273,9 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

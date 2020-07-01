@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
-                    context.State = new State드랍어뷰징디버프_작동시작(context);
-                    return;
+                    return new State드랍어뷰징디버프_작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 780) == 1) {
-                    context.State = new State전투판에떨어지면디버프걸기(context);
-                    return;
+                    return new State전투판에떨어지면디버프걸기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +39,12 @@ namespace Maple2.Trigger._02000429_bf {
                 context.AddBuff(arg1: new[] {780}, arg2: 50000512, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new State드랍어뷰징디버프_작동시작(context);
-                    return;
+                    return new State드랍어뷰징디버프_작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

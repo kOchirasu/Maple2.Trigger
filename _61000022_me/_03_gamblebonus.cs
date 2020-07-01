@@ -7,46 +7,40 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetEffect(arg1: new[] {8001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "GamblePass") == 22) {
-                    context.State = new StateGambleBonusDelay01(context);
-                    return;
+                    return new StateGambleBonusDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "GamblePass") == 23) {
-                    context.State = new StateGambleBonusDelay01(context);
-                    return;
+                    return new StateGambleBonusDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "GamblePass") == 32) {
-                    context.State = new StateGambleBonusDelay01(context);
-                    return;
+                    return new StateGambleBonusDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "GamblePass") == 33) {
-                    context.State = new StateGambleBonusDelay01(context);
-                    return;
+                    return new StateGambleBonusDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "JackpotPass") == 22) {
-                    context.State = new StateJackpotBonusDelay01(context);
-                    return;
+                    return new StateJackpotBonusDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "JackpotPass") == 23) {
-                    context.State = new StateJackpotBonusDelay01(context);
-                    return;
+                    return new StateJackpotBonusDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "JackpotPass") == 32) {
-                    context.State = new StateJackpotBonusDelay01(context);
-                    return;
+                    return new StateJackpotBonusDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "JackpotPass") == 33) {
-                    context.State = new StateJackpotBonusDelay01(context);
-                    return;
+                    return new StateJackpotBonusDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +53,12 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 1, key: "GambleSuccess", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateGambleBonusDelay02(context);
-                    return;
+                    return new StateGambleBonusDelay02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -76,11 +71,12 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetEffect(arg1: new[] {8001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateGambleBonus(context);
-                    return;
+                    return new StateGambleBonus(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -93,11 +89,8 @@ namespace Maple2.Trigger._61000022_me {
                 context.MiniGameGiveExp(boxId: 9001, expRate: 0.1f, isOutSide: "false");
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateQuit(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateQuit(context);
             }
 
             public override void OnExit() { }
@@ -110,11 +103,12 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(triggerId: 1, key: "GambleSuccess", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateJackpotBonusDelay02(context);
-                    return;
+                    return new StateJackpotBonusDelay02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -127,11 +121,12 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetEffect(arg1: new[] {8001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateJackpotBonus(context);
-                    return;
+                    return new StateJackpotBonus(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -144,11 +139,8 @@ namespace Maple2.Trigger._61000022_me {
                 context.MiniGameGiveExp(boxId: 9001, expRate: 0.1f, isOutSide: "false");
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateQuit(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateQuit(context);
             }
 
             public override void OnExit() { }
@@ -162,7 +154,9 @@ namespace Maple2.Trigger._61000022_me {
                 context.SetUserValue(key: "GamblePass", value: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

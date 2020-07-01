@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {106})) {
-                    context.State = new State버프(context);
-                    return;
+                    return new State버프(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02100000_bf {
                 context.AddBuff(arg1: new[] {101}, arg2: 70000130, arg3: 1, arg4: false, arg5: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State버프_2(context);
-                    return;
+                    return new State버프_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._02100000_bf {
                 context.AddBuff(arg1: new[] {101}, arg2: 70000130, arg3: 1, arg4: false, arg5: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State버프_3(context);
-                    return;
+                    return new State버프_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,11 +59,12 @@ namespace Maple2.Trigger._02100000_bf {
                 context.AddBuff(arg1: new[] {101}, arg2: 70000130, arg3: 1, arg4: false, arg5: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State버프_4(context);
-                    return;
+                    return new State버프_4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,11 +77,12 @@ namespace Maple2.Trigger._02100000_bf {
                 context.AddBuff(arg1: new[] {101}, arg2: 70000130, arg3: 1, arg4: false, arg5: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State버프_5(context);
-                    return;
+                    return new State버프_5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,11 +95,12 @@ namespace Maple2.Trigger._02100000_bf {
                 context.AddBuff(arg1: new[] {101}, arg2: 70000131, arg3: 1, arg4: false, arg5: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new State버프(context);
-                    return;
+                    return new State버프(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -7,16 +7,16 @@ namespace Maple2.Trigger._50000008_dl {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckDungeonLobbyUserCount()) {
-                    context.State = new StateDungeonStart(context);
-                    return;
+                    return new StateDungeonStart(context);
                 }
 
                 if (!context.CheckDungeonLobbyUserCount()) {
-                    context.State = new StateWaitDungeon01(context);
-                    return;
+                    return new StateWaitDungeon01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,11 +30,12 @@ namespace Maple2.Trigger._50000008_dl {
                 context.ShowGuideSummary(entityId: 25100203, textId: 25100203, duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateDungeonStart02(context);
-                    return;
+                    return new StateDungeonStart02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +48,12 @@ namespace Maple2.Trigger._50000008_dl {
                 context.ShowGuideSummary(entityId: 25100203, textId: 25100203, duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateDungeonStart02(context);
-                    return;
+                    return new StateDungeonStart02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +66,12 @@ namespace Maple2.Trigger._50000008_dl {
                 context.ShowGuideSummary(entityId: 25100201, textId: 25100201, duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWaitDungeon02(context);
-                    return;
+                    return new StateWaitDungeon02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,16 +82,16 @@ namespace Maple2.Trigger._50000008_dl {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckDungeonLobbyUserCount()) {
-                    context.State = new StateDungeonStart(context);
-                    return;
+                    return new StateDungeonStart(context);
                 }
 
                 if (!context.CheckDungeonLobbyUserCount()) {
-                    context.State = new StateWaitDungeon03(context);
-                    return;
+                    return new StateWaitDungeon03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -101,11 +104,12 @@ namespace Maple2.Trigger._50000008_dl {
                 context.ShowGuideSummary(entityId: 25100202, textId: 25100202, duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWaitDungeon04(context);
-                    return;
+                    return new StateWaitDungeon04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -116,16 +120,16 @@ namespace Maple2.Trigger._50000008_dl {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckDungeonLobbyUserCount()) {
-                    context.State = new StateDungeonStart(context);
-                    return;
+                    return new StateDungeonStart(context);
                 }
 
                 if (!context.CheckDungeonLobbyUserCount()) {
-                    context.State = new StateWaitDungeon05(context);
-                    return;
+                    return new StateWaitDungeon05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -138,11 +142,12 @@ namespace Maple2.Trigger._50000008_dl {
                 context.ShowGuideSummary(entityId: 25100201, textId: 25100201, duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWaitDungeon06(context);
-                    return;
+                    return new StateWaitDungeon06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -153,16 +158,16 @@ namespace Maple2.Trigger._50000008_dl {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckDungeonLobbyUserCount()) {
-                    context.State = new StateDungeonStart(context);
-                    return;
+                    return new StateDungeonStart(context);
                 }
 
                 if (!context.CheckDungeonLobbyUserCount()) {
-                    context.State = new StateWaitDungeon07(context);
-                    return;
+                    return new StateWaitDungeon07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -175,11 +180,12 @@ namespace Maple2.Trigger._50000008_dl {
                 context.ShowGuideSummary(entityId: 25100202, textId: 25100202, duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWaitDungeon08(context);
-                    return;
+                    return new StateWaitDungeon08(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -190,16 +196,16 @@ namespace Maple2.Trigger._50000008_dl {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckDungeonLobbyUserCount()) {
-                    context.State = new StateDungeonStart(context);
-                    return;
+                    return new StateDungeonStart(context);
                 }
 
                 if (!context.CheckDungeonLobbyUserCount()) {
-                    context.State = new StateWaitDungeon09(context);
-                    return;
+                    return new StateWaitDungeon09(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -212,11 +218,12 @@ namespace Maple2.Trigger._50000008_dl {
                 context.ShowGuideSummary(entityId: 25100201, textId: 25100201, duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWaitDungeon10(context);
-                    return;
+                    return new StateWaitDungeon10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -227,16 +234,16 @@ namespace Maple2.Trigger._50000008_dl {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckDungeonLobbyUserCount()) {
-                    context.State = new StateDungeonStart(context);
-                    return;
+                    return new StateDungeonStart(context);
                 }
 
                 if (!context.CheckDungeonLobbyUserCount()) {
-                    context.State = new StateWaitDungeon11(context);
-                    return;
+                    return new StateWaitDungeon11(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -249,11 +256,12 @@ namespace Maple2.Trigger._50000008_dl {
                 context.ShowGuideSummary(entityId: 25100202, textId: 25100202, duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateDungeonStart(context);
-                    return;
+                    return new StateDungeonStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

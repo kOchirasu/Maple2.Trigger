@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000401_bf {
                 context.SetInteractObject(arg1: new[] {12000029, 12000040}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "faction04") == 1) {
-                    context.State = new State인원수체크(context);
-                    return;
+                    return new State인원수체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -34,11 +35,12 @@ namespace Maple2.Trigger._02000401_bf {
                 context.SetConversation(arg1: 1, arg2: 1301, arg3: "$02000401_BF__FACTION_04__0$", arg4: 5, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new State반응대기(context);
-                    return;
+                    return new State반응대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +61,12 @@ namespace Maple2.Trigger._02000401_bf {
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "NPClanding") == 1) {
-                    context.State = new State룸체크(context);
-                    return;
+                    return new State룸체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -74,16 +77,16 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    context.State = new State던전(context);
-                    return;
+                    return new State던전(context);
                 }
 
                 if (!context.IsDungeonRoom()) {
-                    context.State = new State퀘스트(context);
-                    return;
+                    return new State퀘스트(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,11 +100,12 @@ namespace Maple2.Trigger._02000401_bf {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.State = new State보스소환(context);
-                    return;
+                    return new State보스소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,11 +119,12 @@ namespace Maple2.Trigger._02000401_bf {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State보스소환(context);
-                    return;
+                    return new State보스소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -136,14 +141,15 @@ namespace Maple2.Trigger._02000401_bf {
                 context.DestroyMonster(arg1: new[] {1300}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "DungeonClear") == 1) {
                     context.DestroyMonster(arg1: new[] {1300, 1301, 1302, 1303, 1304, 1305}, arg2: false);
                     context.SetInteractObject(arg1: new[] {12000029, 12000040}, arg2: 0);
                     context.RemoveBuff(arg1: 199, arg2: 99910160);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -154,7 +160,9 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

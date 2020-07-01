@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 799) == 1) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,7 +24,9 @@ namespace Maple2.Trigger._02010086_bf {
                 context.SetEffect(arg1: new[] {6010, 6011, 6012}, arg2: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -8,11 +8,12 @@ namespace Maple2.Trigger._52010012_qd {
                 context.SetMesh(arg1: new[] {1003, 1004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002797}, arg3: new byte[] {1})) {
-                    context.State = new StateEvent_01(context);
-                    return;
+                    return new StateEvent_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._52010012_qd {
                 context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103, 104, 105})) {
-                    context.State = new StateEvent_02(context);
-                    return;
+                    return new StateEvent_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._52010012_qd {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateEvent_03(context);
-                    return;
+                    return new StateEvent_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -67,11 +70,12 @@ namespace Maple2.Trigger._52010012_qd {
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new StateEvent_04(context);
-                    return;
+                    return new StateEvent_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -89,11 +93,12 @@ namespace Maple2.Trigger._52010012_qd {
                 context.MoveNpc(arg1: 106, arg2: "MS2PatrolData_1002");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 702, arg2: new[] {106})) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -107,7 +112,9 @@ namespace Maple2.Trigger._52010012_qd {
                 context.DestroyMonster(arg1: new[] {106});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

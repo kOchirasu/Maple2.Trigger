@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02020100_bf {
                 context.SetUserValue(triggerId: 99990001, key: "Seed3interact", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Seed3start") == 1) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,16 +28,16 @@ namespace Maple2.Trigger._02020100_bf {
                 context.SetInteractObject(arg1: new[] {10002111}, arg2: 1, arg3: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Seed3start") == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002111}, arg2: 0)) {
-                    context.State = new State씨앗3_심기(context);
-                    return;
+                    return new State씨앗3_심기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -51,21 +52,20 @@ namespace Maple2.Trigger._02020100_bf {
                 context.SetInteractObject(arg1: new[] {10002122}, arg2: 1, arg3: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Seed3start") == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002122}, arg2: 0)) {
-                    context.State = new State씨앗3_중보(context);
-                    return;
+                    return new State씨앗3_중보(context);
                 }
 
                 if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 0, additionalEffectId: 70002109, level: true)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,11 +80,12 @@ namespace Maple2.Trigger._02020100_bf {
                 context.CreateMonster(arg1: new[] {229}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {229})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,7 +99,9 @@ namespace Maple2.Trigger._02020100_bf {
                 context.SetInteractObject(arg1: new[] {10002111}, arg2: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

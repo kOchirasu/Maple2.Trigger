@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetUserValue(triggerId: 900002, key: "TimerReset", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 1) {
-                    context.State = new State타이머1_시작(context);
-                    return;
+                    return new State타이머1_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,21 +25,20 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetTimer(arg1: "1", arg2: 20, arg3: true, arg4: true, arg5: -40);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 9) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetUserValue(key: "TimerStart") == 0) {
-                    context.State = new State리셋_1(context);
-                    return;
+                    return new State리셋_1(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State리셋_1(context);
-                    return;
+                    return new State리셋_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -52,16 +52,16 @@ namespace Maple2.Trigger._02020101_bf {
                 context.ResetTimer(arg1: "1");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 9) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetUserValue(key: "TimerStart") == 2) {
-                    context.State = new State타이머2_시작(context);
-                    return;
+                    return new State타이머2_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -74,21 +74,20 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetTimer(arg1: "2", arg2: 20, arg3: true, arg4: true, arg5: -40);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 9) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetUserValue(key: "TimerStart") == 0) {
-                    context.State = new State리셋_2(context);
-                    return;
+                    return new State리셋_2(context);
                 }
 
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State리셋_2(context);
-                    return;
+                    return new State리셋_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -102,16 +101,16 @@ namespace Maple2.Trigger._02020101_bf {
                 context.ResetTimer(arg1: "2");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 9) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetUserValue(key: "TimerStart") == 3) {
-                    context.State = new State타이머3_시작(context);
-                    return;
+                    return new State타이머3_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -124,21 +123,20 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetTimer(arg1: "3", arg2: 20, arg3: true, arg4: true, arg5: -40);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 9) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetUserValue(key: "TimerStart") == 0) {
-                    context.State = new State리셋_3(context);
-                    return;
+                    return new State리셋_3(context);
                 }
 
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State리셋_3(context);
-                    return;
+                    return new State리셋_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -152,11 +150,12 @@ namespace Maple2.Trigger._02020101_bf {
                 context.ResetTimer(arg1: "3");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 9) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -171,7 +170,9 @@ namespace Maple2.Trigger._02020101_bf {
                 context.ResetTimer(arg1: "3");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

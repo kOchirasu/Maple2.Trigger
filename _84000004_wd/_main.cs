@@ -8,11 +8,8 @@ namespace Maple2.Trigger._84000004_wd {
                 context.SetPortal(arg1: 10001, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State카메라세팅(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State카메라세팅(context);
             }
 
             public override void OnExit() { }
@@ -26,11 +23,8 @@ namespace Maple2.Trigger._84000004_wd {
                 context.SetPortal(arg1: 10001, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State강제퇴장대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State강제퇴장대기(context);
             }
 
             public override void OnExit() { }
@@ -41,16 +35,16 @@ namespace Maple2.Trigger._84000004_wd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "exitstudio") == 1) {
-                    context.State = new State강제퇴장준비(context);
-                    return;
+                    return new State강제퇴장준비(context);
                 }
 
                 if (context.TimeExpired(arg1: "4000")) {
-                    context.State = new State강퇴안내(context);
-                    return;
+                    return new State강퇴안내(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +57,12 @@ namespace Maple2.Trigger._84000004_wd {
                 context.ShowGuideSummary(entityId: 28400138);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State강제퇴장준비(context);
-                    return;
+                    return new State강제퇴장준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,11 +75,12 @@ namespace Maple2.Trigger._84000004_wd {
                 context.HideGuideSummary(entityId: 28400138);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State강제퇴장(context);
-                    return;
+                    return new State강제퇴장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,7 +93,9 @@ namespace Maple2.Trigger._84000004_wd {
                 context.RoomExpire();
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

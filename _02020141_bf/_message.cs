@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new State메시지작동준비(context);
-                    return;
+                    return new State메시지작동준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._02020141_bf {
                 context.SetUserValue(key: "TriggerEnd", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new State메시지작동대기버프체크(context);
-                    return;
+                    return new State메시지작동대기버프체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,26 +40,24 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TriggerEnd") == 99) {
-                    context.State = new State트리거종료(context);
-                    return;
+                    return new State트리거종료(context);
                 }
 
                 if (context.GetUserValue(key: "MessageAlarm") == 13) {
-                    context.State = new State경고메시지출력(context);
-                    return;
+                    return new State경고메시지출력(context);
                 }
 
                 if (context.CheckNpcAdditionalEffect(spawnPointId: 99, additionalEffectId: 50000348, level: 1)) {
-                    context.State = new State카운트다운체크(context);
-                    return;
+                    return new State카운트다운체크(context);
                 }
 
                 if (!context.CheckNpcAdditionalEffect(spawnPointId: 99, additionalEffectId: 50000348, level: 1)) {
-                    context.State = new State카운트다운초기화(context);
-                    return;
+                    return new State카운트다운초기화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -70,11 +70,12 @@ namespace Maple2.Trigger._02020141_bf {
                 context.AddUserValue(key: "MessageAlarm", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State메시지작동대기버프체크(context);
-                    return;
+                    return new State메시지작동대기버프체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -88,11 +89,12 @@ namespace Maple2.Trigger._02020141_bf {
                 context.HideGuideSummary(entityId: 29200006);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State메시지작동대기버프체크(context);
-                    return;
+                    return new State메시지작동대기버프체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -106,11 +108,12 @@ namespace Maple2.Trigger._02020141_bf {
                 context.AddUserValue(key: "MessageAlarm", value: -11);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State메시지작동대기버프체크(context);
-                    return;
+                    return new State메시지작동대기버프체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -123,7 +126,9 @@ namespace Maple2.Trigger._02020141_bf {
                 context.HideGuideSummary(entityId: 29200006);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

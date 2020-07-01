@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020023_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SpecialTimer") == 1) {
-                    context.State = new State타이머시작(context);
-                    return;
+                    return new State타이머시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,8 @@ namespace Maple2.Trigger._02020023_bf {
                 context.SetTimer(arg1: "SpecialTimer", arg2: 180, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State타이머체크(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State타이머체크(context);
             }
 
             public override void OnExit() { }
@@ -37,11 +35,12 @@ namespace Maple2.Trigger._02020023_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "SpecialTimer")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,7 +54,9 @@ namespace Maple2.Trigger._02020023_bf {
                 context.ResetTimer(arg1: "SpecialTimer");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

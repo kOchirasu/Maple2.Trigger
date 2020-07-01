@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetEffect(arg1: new[] {200011, 200012, 200013, 200014, 200015, 200016, 200017, 200018}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AI_Phase") == 3) {
-                    context.State = new State패이즈_3_시작(context);
-                    return;
+                    return new State패이즈_3_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,11 +39,12 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetBreakable(arg1: new[] {5171, 5172, 5173, 5174, 5175, 5176, 5177, 5178, 5179, 5180, 5181, 5182, 5183, 5184, 5151, 5152, 5153, 5154, 5155, 5156, 5157, 5158, 5159, 5160, 5161, 5162, 5163, 5164}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State엘리베이터_도착(context);
-                    return;
+                    return new State엘리베이터_도착(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +60,12 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetVisibleBreakableObject(arg1: new[] {5171, 5172, 5173, 5174, 5175, 5176, 5177, 5178, 5179, 5180, 5181, 5182, 5183, 5184, 5151, 5152, 5153, 5154, 5155, 5156, 5157, 5158, 5159, 5160, 5161, 5162, 5163, 5164}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State포탑_생성(context);
-                    return;
+                    return new State포탑_생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,11 +80,12 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetUserValue(triggerId: 3000042, key: "Phase_3_Interect_02", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State가이드(context);
-                    return;
+                    return new State가이드(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -94,11 +98,13 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02020301_BF__300004_PHASE_3__2$", arg3: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    // context.State = new State엘리베이터_대기(context);
-                    return;
+                    // return new State엘리베이터_대기(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

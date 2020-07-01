@@ -7,11 +7,12 @@ namespace Maple2.Trigger._63000030_cs {
                 context.SetUserValue(key: "SafetyStart", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SafetyStart") == 1) {
-                    context.State = new StateEnter01(context);
-                    return;
+                    return new StateEnter01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9200})) {
-                    context.State = new StatePCTeleport01(context);
-                    return;
+                    return new StatePCTeleport01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._63000030_cs {
                 context.MoveUser(arg1: 63000030, arg2: 20, arg3: 9900);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateReset01(context);
-                    return;
+                    return new StateReset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -54,11 +57,12 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9200})) {
-                    context.State = new StateEnter01(context);
-                    return;
+                    return new StateEnter01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

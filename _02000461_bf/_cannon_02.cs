@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000461_bf {
                 context.SetMesh(arg1: new[] {3903}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "cannon02") == 1) {
-                    context.State = new State생성(context);
-                    return;
+                    return new State생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,13 +26,14 @@ namespace Maple2.Trigger._02000461_bf {
                 context.CreateMonster(arg1: new[] {2902}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2902})) {
                     context.SetEffect(arg1: new[] {692}, arg2: true);
                     context.SetMesh(arg1: new[] {3902}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                    context.State = new State보스전_대기(context);
-                    return;
+                    return new State보스전_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,12 @@ namespace Maple2.Trigger._02000461_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Bosscannon02") == 1) {
-                    context.State = new State보스전용_생성(context);
-                    return;
+                    return new State보스전용_생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,20 +67,20 @@ namespace Maple2.Trigger._02000461_bf {
                 context.AddBuff(arg1: new[] {2902}, arg2: 40444001, arg3: 1, arg4: true, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2902})) {
                     context.SetEffect(arg1: new[] {692}, arg2: true);
                     context.SetEffect(arg1: new[] {792}, arg2: false);
                     context.SetMesh(arg1: new[] {3902}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                     context.AddBuff(arg1: new[] {2099}, arg2: 70002072, arg3: 1, arg4: true, arg5: false);
-                    context.State = new State보스전용_재생성대기(context);
-                    return;
+                    return new State보스전용_재생성대기(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonClear") == 1) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -88,16 +91,16 @@ namespace Maple2.Trigger._02000461_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 90000)) {
-                    context.State = new State보스전용_생성(context);
-                    return;
+                    return new State보스전용_생성(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonClear") == 1) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -112,7 +115,9 @@ namespace Maple2.Trigger._02000461_bf {
                 context.DestroyMonster(arg1: new[] {2902});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

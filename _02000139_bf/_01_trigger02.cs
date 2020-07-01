@@ -20,11 +20,12 @@ namespace Maple2.Trigger._02000139_bf {
                 context.SetLadder(arg1: 612, arg2: false, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000160}, arg2: 0)) {
-                    context.State = new State사다리등장(context);
-                    return;
+                    return new State사다리등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,11 +62,12 @@ namespace Maple2.Trigger._02000139_bf {
                 context.SetTimer(arg1: "4", arg2: 18);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -9,11 +9,12 @@ namespace Maple2.Trigger._99999883 {
                 context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9900})) {
-                    context.State = new StateEnter01(context);
-                    return;
+                    return new StateEnter01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._99999883 {
                 context.SetInteractObject(arg1: new[] {10001010}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001010}, arg2: 0)) {
-                    context.State = new StateTakeOffFlyingCloud01(context);
-                    return;
+                    return new StateTakeOffFlyingCloud01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +50,12 @@ namespace Maple2.Trigger._99999883 {
                 context.SetBreakable(arg1: new[] {4000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateTakeOffFlyingCloud02(context);
-                    return;
+                    return new StateTakeOffFlyingCloud02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +68,12 @@ namespace Maple2.Trigger._99999883 {
                 context.MoveUser(arg1: 99999883, arg2: 100, arg3: 9900);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateTakeOffFlyingCloud03(context);
-                    return;
+                    return new StateTakeOffFlyingCloud03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,11 +87,12 @@ namespace Maple2.Trigger._99999883 {
                 context.SetProductionUI(arg1: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    context.State = new StateTakeOffFlyingCloud04(context);
-                    return;
+                    return new StateTakeOffFlyingCloud04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -102,11 +107,12 @@ namespace Maple2.Trigger._99999883 {
                 context.MoveUser(arg1: 99999883, arg2: 101, arg3: 9900);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -120,7 +126,9 @@ namespace Maple2.Trigger._99999883 {
                 context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

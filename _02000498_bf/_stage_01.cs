@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000498_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    context.State = new State페이드아웃(context);
-                    return;
+                    return new State페이드아웃(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02000498_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_3sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State페이드아웃_2(context);
-                    return;
+                    return new State페이드아웃_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._02000498_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_3sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State시작대기_1(context);
-                    return;
+                    return new State시작대기_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,11 +63,12 @@ namespace Maple2.Trigger._02000498_bf {
                 context.MoveUserToPos(pos: new Vector3(433f, -6777f, 8701f));
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State페이드인(context);
-                    return;
+                    return new State페이드인(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,11 +84,12 @@ namespace Maple2.Trigger._02000498_bf {
                 context.SetDirectionalLight(arg1: new Vector3(255f, 255f, 255f), arg2: new Vector3(255f, 255f, 255f));
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State시작대기(context);
-                    return;
+                    return new State시작대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,11 +102,13 @@ namespace Maple2.Trigger._02000498_bf {
                 context.AddBuff(arg1: new[] {100010}, arg2: 70000103, arg3: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    // context.State = new State안내02(context);
-                    return;
+                    // return new State안내02(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -112,7 +119,9 @@ namespace Maple2.Trigger._02000498_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -10,11 +10,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.DestroyMonster(arg1: new[] {901, 902, 903});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9300})) {
-                    context.State = new StateLoadingDelay(context);
-                    return;
+                    return new StateLoadingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.CreateMonster(arg1: new[] {901, 902, 903}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMobTrapOn01(context);
-                    return;
+                    return new StateMobTrapOn01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,11 +48,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetConversation(arg1: 1, arg2: 903, arg3: "$52100053_QD__04_HALLWAYBATTLE__0$", arg4: 2, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMobTrapOn02(context);
-                    return;
+                    return new StateMobTrapOn02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +68,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.ShowGuideSummary(entityId: 20039704, textId: 20039704, duration: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMobTrapOn03(context);
-                    return;
+                    return new StateMobTrapOn03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,11 +86,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetUserValue(triggerId: 6, key: "BlockEnable", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateGuideUseKey(context);
-                    return;
+                    return new StateGuideUseKey(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -101,11 +106,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetInteractObject(arg1: new[] {10002098}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002098}, arg2: 0)) {
-                    context.State = new StatePortalOn(context);
-                    return;
+                    return new StatePortalOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -119,7 +125,9 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetPortal(arg1: 20, arg2: true, arg3: true, arg4: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

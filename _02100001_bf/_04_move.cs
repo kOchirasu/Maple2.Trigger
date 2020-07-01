@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetVisibleBreakableObject(arg1: new[] {4502}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001244}, arg2: 0)) {
-                    context.State = new StateMoveStart(context);
-                    return;
+                    return new StateMoveStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetBreakable(arg1: new[] {4502}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    context.State = new StateMoveStop(context);
-                    return;
+                    return new StateMoveStop(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetVisibleBreakableObject(arg1: new[] {4502}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +65,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetVisibleBreakableObject(arg1: new[] {4502}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001244}, arg2: 0)) {
-                    context.State = new StateMoveStart(context);
-                    return;
+                    return new StateMoveStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -7,12 +7,13 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Archeon2") == 1) {
                     context.SetUserValue(triggerId: 900008, key: "Archeon2", value: 0);
-                    context.State = new StateArcheon_Ready(context);
-                    return;
+                    return new StateArcheon_Ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,12 +24,13 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 10001, additionalEffectId: 73000006, level: true)) {
                     context.MoveUserToPos(pos: new Vector3(8700f, -4800f, 2750f), rot: new Vector3(0f, 0f, 0f));
-                    context.State = new StateArcheon_On(context);
-                    return;
+                    return new StateArcheon_On(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -7,11 +7,12 @@ namespace Maple2.Trigger._99999911 {
                 context.MoveUser(arg1: 99999911, arg2: 1, arg3: 702);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 702) == 1) {
-                    context.State = new Statefail_random(context);
-                    return;
+                    return new Statefail_random(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,31 +23,28 @@ namespace Maple2.Trigger._99999911 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new Statefail_01(context);
-                    return;
+                    return new Statefail_01(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new Statefail_02(context);
-                    return;
+                    return new Statefail_02(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new Statefail_03(context);
-                    return;
+                    return new Statefail_03(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new Statefail_04(context);
-                    return;
+                    return new Statefail_04(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new Statefail_04(context);
-                    return;
+                    return new Statefail_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +57,8 @@ namespace Maple2.Trigger._99999911 {
                 context.MoveUser(arg1: 99999911, arg2: 1, arg3: 702);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Stateidle(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Stateidle(context);
             }
 
             public override void OnExit() { }
@@ -76,11 +71,8 @@ namespace Maple2.Trigger._99999911 {
                 context.MoveUser(arg1: 99999911, arg2: 2, arg3: 702);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Stateidle(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Stateidle(context);
             }
 
             public override void OnExit() { }
@@ -93,11 +85,8 @@ namespace Maple2.Trigger._99999911 {
                 context.MoveUser(arg1: 99999911, arg2: 3, arg3: 702);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Stateidle(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Stateidle(context);
             }
 
             public override void OnExit() { }
@@ -110,11 +99,8 @@ namespace Maple2.Trigger._99999911 {
                 context.MoveUser(arg1: 99999911, arg2: 4, arg3: 702);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Stateidle(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Stateidle(context);
             }
 
             public override void OnExit() { }
@@ -127,11 +113,8 @@ namespace Maple2.Trigger._99999911 {
                 context.MoveUser(arg1: 99999911, arg2: 5, arg3: 702);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new Stateidle(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new Stateidle(context);
             }
 
             public override void OnExit() { }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 210) == true) {
-                    context.State = new State메시지1(context);
-                    return;
+                    return new State메시지1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._99999840 {
                 context.SetEventUI(arg1: 1, arg2: "B팀의 보스 체력이 70% 이하입니다.", arg3: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 220) == true) {
-                    context.State = new State메시지2(context);
-                    return;
+                    return new State메시지2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._99999840 {
                 context.SetEventUI(arg1: 1, arg2: "B팀의 보스 체력이 50% 이하입니다.", arg3: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 230) == true) {
-                    context.State = new State메시지3(context);
-                    return;
+                    return new State메시지3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,11 +59,12 @@ namespace Maple2.Trigger._99999840 {
                 context.SetEventUI(arg1: 1, arg2: "B팀의 보스 체력이 30% 이하입니다.", arg3: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 240) == true) {
-                    context.State = new State메시지4(context);
-                    return;
+                    return new State메시지4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,11 +77,8 @@ namespace Maple2.Trigger._99999840 {
                 context.SetEventUI(arg1: 1, arg2: "B팀의 보스 체력이 10% 이하입니다.", arg3: 5000);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -88,7 +89,9 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

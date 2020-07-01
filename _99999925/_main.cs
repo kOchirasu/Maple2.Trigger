@@ -16,11 +16,12 @@ namespace Maple2.Trigger._99999925 {
                 context.MoveNpc(arg1: 203, arg2: "MS2PatrolData5");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 402) == 1) {
-                    context.State = new StateLoadingStart(context);
-                    return;
+                    return new StateLoadingStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,11 +32,12 @@ namespace Maple2.Trigger._99999925 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDialogue01(context);
-                    return;
+                    return new StateDialogue01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -52,11 +54,12 @@ namespace Maple2.Trigger._99999925 {
                 context.SetSkip(arg1: "Dialogue01Skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateDialogue01Skip(context);
-                    return;
+                    return new StateDialogue01Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -70,11 +73,12 @@ namespace Maple2.Trigger._99999925 {
                 context.CameraSelect(arg1: 500, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSwitchRandom(context);
-                    return;
+                    return new StateSwitchRandom(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -88,21 +92,20 @@ namespace Maple2.Trigger._99999925 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new Stateswitch01(context);
-                    return;
+                    return new Stateswitch01(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new Stateswitch02(context);
-                    return;
+                    return new Stateswitch02(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new Stateswitch03(context);
-                    return;
+                    return new Stateswitch03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -113,11 +116,12 @@ namespace Maple2.Trigger._99999925 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {403})) {
-                    context.State = new StateBrokenCheck(context);
-                    return;
+                    return new StateBrokenCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -128,11 +132,12 @@ namespace Maple2.Trigger._99999925 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {404})) {
-                    context.State = new StateBrokenCheck(context);
-                    return;
+                    return new StateBrokenCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -143,11 +148,12 @@ namespace Maple2.Trigger._99999925 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {405})) {
-                    context.State = new StateBrokenCheck(context);
-                    return;
+                    return new StateBrokenCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -162,11 +168,12 @@ namespace Maple2.Trigger._99999925 {
                 context.SetActor(arg1: 602, arg2: true, arg3: "Opened");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {401})) {
-                    context.State = new StateBrokenWood(context);
-                    return;
+                    return new StateBrokenWood(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -179,11 +186,13 @@ namespace Maple2.Trigger._99999925 {
                 context.SetSkill(arg1: new[] {411, 412}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    // context.State = new StateEndPlay(context);
-                    return;
+                    // return new StateEndPlay(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

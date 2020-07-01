@@ -5,16 +5,16 @@ namespace Maple2.Trigger._52100110_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1000})) {
-                    context.State = new State52100110_1화이트박스생성(context);
-                    return;
+                    return new State52100110_1화이트박스생성(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {2000})) {
-                    context.State = new State52100110_1화이트박스생성(context);
-                    return;
+                    return new State52100110_1화이트박스생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +28,12 @@ namespace Maple2.Trigger._52100110_qd {
                 context.SetMesh(arg1: new[] {10000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State52100110_1퀘스트체크(context);
-                    return;
+                    return new State52100110_1퀘스트체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +44,12 @@ namespace Maple2.Trigger._52100110_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2000}, arg2: new[] {50101040}, arg3: new byte[] {1})) {
-                    context.State = new State52100110_1화이트박스제거(context);
-                    return;
+                    return new State52100110_1화이트박스제거(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,11 +62,13 @@ namespace Maple2.Trigger._52100110_qd {
                 context.SetMesh(arg1: new[] {10000}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    // context.State = new State(context);
-                    return;
+                    // return new State(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

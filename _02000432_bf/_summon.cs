@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000432_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    context.State = new State소환(context);
-                    return;
+                    return new State소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02000432_bf {
                 context.SetSkip(arg1: "죽음대기");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State죽음대기(context);
-                    return;
+                    return new State죽음대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,16 +41,16 @@ namespace Maple2.Trigger._02000432_bf {
                 context.SetSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    context.State = new State셀린사망(context);
-                    return;
+                    return new State셀린사망(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {2002})) {
-                    context.State = new State피리스사망(context);
-                    return;
+                    return new State피리스사망(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,17 +64,17 @@ namespace Maple2.Trigger._02000432_bf {
                 context.AddBuff(arg1: new[] {2002}, arg2: 40500011, arg3: 1, arg4: true, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2002})) {
                     context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "SirenDualKill");
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -88,17 +90,17 @@ namespace Maple2.Trigger._02000432_bf {
                 context.AddBuff(arg1: new[] {2001}, arg2: 40500011, arg3: 1, arg4: true, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
                     context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "SirenDualKill");
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -109,7 +111,9 @@ namespace Maple2.Trigger._02000432_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

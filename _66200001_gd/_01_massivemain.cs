@@ -32,11 +32,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new StateEntryDelay(context);
-                    return;
+                    return new StateEntryDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -53,11 +54,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetTimer(arg1: "1", arg2: 90);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateIsGameStartOrNot(context);
-                    return;
+                    return new StateIsGameStartOrNot(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -68,21 +70,20 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9000, userTagId: 1) >= 10) {
-                    context.State = new StateIsGameStart_True01(context);
-                    return;
+                    return new StateIsGameStart_True01(context);
                 }
 
                 if (context.GetUserCount(boxId: 9000, userTagId: 2) >= 10) {
-                    context.State = new StateIsGameStart_Ture02(context);
-                    return;
+                    return new StateIsGameStart_Ture02(context);
                 }
 
                 if (context.GetUserCount(boxId: 9000, userTagId: 1) < 10) {
-                    context.State = new StateIsGameStart_False(context);
-                    return;
+                    return new StateIsGameStart_False(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -93,16 +94,16 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9000, userTagId: 2) >= 10) {
-                    context.State = new StateMoveToTeamCamp(context);
-                    return;
+                    return new StateMoveToTeamCamp(context);
                 }
 
                 if (context.GetUserCount(boxId: 9000, userTagId: 2) < 10) {
-                    context.State = new StateDefaultbyWin_BlueTeam(context);
-                    return;
+                    return new StateDefaultbyWin_BlueTeam(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -113,16 +114,16 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9000, userTagId: 1) >= 10) {
-                    context.State = new StateMoveToTeamCamp(context);
-                    return;
+                    return new StateMoveToTeamCamp(context);
                 }
 
                 if (context.GetUserCount(boxId: 9000, userTagId: 1) < 10) {
-                    context.State = new StateDefaultbyWin_RedTeam(context);
-                    return;
+                    return new StateDefaultbyWin_RedTeam(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -133,11 +134,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9000, userTagId: 2) < 10) {
-                    context.State = new StateGameCancel(context);
-                    return;
+                    return new StateGameCancel(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -154,11 +156,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateGameGuide01(context);
-                    return;
+                    return new StateGameGuide01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -177,11 +180,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "guildminigame_start");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateGameGuide02(context);
-                    return;
+                    return new StateGameGuide02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -195,11 +199,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateGameGuide03(context);
-                    return;
+                    return new StateGameGuide03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -213,11 +218,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateGameGuide04(context);
-                    return;
+                    return new StateGameGuide04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -231,11 +237,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateR01Ready(context);
-                    return;
+                    return new StateR01Ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -249,11 +256,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEventUI(arg1: 0, arg2: "1,5");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateR01PlayerRandomPick01(context);
-                    return;
+                    return new StateR01PlayerRandomPick01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -267,11 +275,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StatePlayerRandomPick02(context);
-                    return;
+                    return new StatePlayerRandomPick02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -287,11 +296,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEffect(arg1: new[] {8002, 8003, 8004, 8005}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StatePlayerRandomPickStartCount(context);
-                    return;
+                    return new StatePlayerRandomPickStartCount(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -304,11 +314,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.ShowCountUI(text: "$66200001_GD__01_MASSIVEMAIN__6$", stage: 0, count: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePlayerRandomPickMove(context);
-                    return;
+                    return new StatePlayerRandomPickMove(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -324,16 +335,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "GuildBattle_MemberPick");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateCheckTheNumberOfPlayer(context);
-                    return;
+                    return new StateCheckTheNumberOfPlayer(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new StateLeaveAll(context);
-                    return;
+                    return new StateLeaveAll(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -347,31 +358,28 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "BattleField_Event");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round") == 1) {
-                    context.State = new StateR01Start(context);
-                    return;
+                    return new StateR01Start(context);
                 }
 
                 if (context.GetUserValue(key: "Round") == 2) {
-                    context.State = new StateR02Start(context);
-                    return;
+                    return new StateR02Start(context);
                 }
 
                 if (context.GetUserValue(key: "Round") == 3) {
-                    context.State = new StateR03Start(context);
-                    return;
+                    return new StateR03Start(context);
                 }
 
                 if (context.GetUserValue(key: "Round") == 4) {
-                    context.State = new StateR04Start(context);
-                    return;
+                    return new StateR04Start(context);
                 }
 
                 if (context.GetUserValue(key: "Round") == 5) {
-                    context.State = new StateR05Start(context);
-                    return;
+                    return new StateR05Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -389,11 +397,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateR01DanceTime(context);
-                    return;
+                    return new StateR01DanceTime(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -408,41 +417,36 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "DanceTime", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 30f)) {
-                    context.State = new StateDancePattern01(context);
-                    return;
+                    return new StateDancePattern01(context);
                 }
 
                 if (context.RandomCondition(arg1: 30f)) {
-                    context.State = new StateDancePattern02(context);
-                    return;
+                    return new StateDancePattern02(context);
                 }
 
                 if (context.RandomCondition(arg1: 30f)) {
-                    context.State = new StateDancePattern03(context);
-                    return;
+                    return new StateDancePattern03(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    context.State = new StateDancePattern0401(context);
-                    return;
+                    return new StateDancePattern0401(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    context.State = new StateDancePattern0501(context);
-                    return;
+                    return new StateDancePattern0501(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateDancePattern0601(context);
-                    return;
+                    return new StateDancePattern0601(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateDancePattern0701(context);
-                    return;
+                    return new StateDancePattern0701(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -459,11 +463,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 13000)) {
-                    context.State = new StateCheckDanceRound(context);
-                    return;
+                    return new StateCheckDanceRound(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -478,11 +483,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 16000)) {
-                    context.State = new StateCheckDanceRound(context);
-                    return;
+                    return new StateCheckDanceRound(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -497,11 +503,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 19000)) {
-                    context.State = new StateCheckDanceRound(context);
-                    return;
+                    return new StateCheckDanceRound(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -516,11 +523,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 41);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
-                    context.State = new StateDancePattern0402(context);
-                    return;
+                    return new StateDancePattern0402(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -538,11 +546,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001180}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDancePattern0403(context);
-                    return;
+                    return new StateDancePattern0403(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -558,11 +567,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001181}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateDancePattern0404(context);
-                    return;
+                    return new StateDancePattern0404(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -579,11 +589,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 42);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    context.State = new StateCheckDanceRound(context);
-                    return;
+                    return new StateCheckDanceRound(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -598,11 +609,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 51);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 13000)) {
-                    context.State = new StateDancePattern0502(context);
-                    return;
+                    return new StateDancePattern0502(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -620,11 +632,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001181}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDancePattern0503(context);
-                    return;
+                    return new StateDancePattern0503(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -640,11 +653,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001180}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateDancePattern0504(context);
-                    return;
+                    return new StateDancePattern0504(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -661,11 +675,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 52);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateCheckDanceRound(context);
-                    return;
+                    return new StateCheckDanceRound(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -680,11 +695,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 61);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 16000)) {
-                    context.State = new StateDancePattern0602(context);
-                    return;
+                    return new StateDancePattern0602(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -702,11 +718,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001182}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDancePattern0603(context);
-                    return;
+                    return new StateDancePattern0603(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -722,11 +739,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001180}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateDancePattern0604(context);
-                    return;
+                    return new StateDancePattern0604(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -743,11 +761,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 62);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateCheckDanceRound(context);
-                    return;
+                    return new StateCheckDanceRound(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -762,11 +781,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 71);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
-                    context.State = new StateDancePattern0702(context);
-                    return;
+                    return new StateDancePattern0702(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -784,11 +804,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001180}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDancePattern0703(context);
-                    return;
+                    return new StateDancePattern0703(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -804,11 +825,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001182}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateDancePattern0704(context);
-                    return;
+                    return new StateDancePattern0704(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -825,11 +847,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 72);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new StateCheckDanceRound(context);
-                    return;
+                    return new StateCheckDanceRound(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -840,31 +863,28 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "DanceTime") == 1) {
-                    context.State = new StateR01_GameStartDelay(context);
-                    return;
+                    return new StateR01_GameStartDelay(context);
                 }
 
                 if (context.GetUserValue(key: "DanceTime") == 2) {
-                    context.State = new StateR02_GameStartDelay(context);
-                    return;
+                    return new StateR02_GameStartDelay(context);
                 }
 
                 if (context.GetUserValue(key: "DanceTime") == 3) {
-                    context.State = new StateR03_GameStartDelay(context);
-                    return;
+                    return new StateR03_GameStartDelay(context);
                 }
 
                 if (context.GetUserValue(key: "DanceTime") == 4) {
-                    context.State = new StateR04_GameStartDelay(context);
-                    return;
+                    return new StateR04_GameStartDelay(context);
                 }
 
                 if (context.GetUserValue(key: "DanceTime") == 5) {
-                    context.State = new StateR05_GameStartDelay(context);
-                    return;
+                    return new StateR05_GameStartDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -881,11 +901,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateR01_GameStart(context);
-                    return;
+                    return new StateR01_GameStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -901,11 +922,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEventUI(arg1: 1, arg2: "$66200001_GD__01_MASSIVEMAIN__16$", arg3: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateR01_GameTimerStart(context);
-                    return;
+                    return new StateR01_GameTimerStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -920,11 +942,8 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7, key: "GameGuide", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateR01G00Check(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateR01G00Check(context);
             }
 
             public override void OnExit() { }
@@ -935,36 +954,32 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9001) > 50) {
-                    context.State = new StateG05P00_Random(context);
-                    return;
+                    return new StateG05P00_Random(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 40) {
-                    context.State = new StateG05orG04(context);
-                    return;
+                    return new StateG05orG04(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 30) {
-                    context.State = new StateG03orG04orG05(context);
-                    return;
+                    return new StateG03orG04orG05(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 20) {
-                    context.State = new StateG02orG03orG04(context);
-                    return;
+                    return new StateG02orG03orG04(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 10) {
-                    context.State = new StateG02orG03(context);
-                    return;
+                    return new StateG02orG03(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) <= 10) {
-                    context.State = new StateG01orG02(context);
-                    return;
+                    return new StateG01orG02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -975,16 +990,16 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 80f)) {
-                    context.State = new StateG05P00_Random(context);
-                    return;
+                    return new StateG05P00_Random(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.State = new StateG04P00_Random(context);
-                    return;
+                    return new StateG04P00_Random(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -995,21 +1010,20 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateG03P00_Random(context);
-                    return;
+                    return new StateG03P00_Random(context);
                 }
 
                 if (context.RandomCondition(arg1: 60f)) {
-                    context.State = new StateG04P00_Random(context);
-                    return;
+                    return new StateG04P00_Random(context);
                 }
 
                 if (context.RandomCondition(arg1: 30f)) {
-                    context.State = new StateG05P00_Random(context);
-                    return;
+                    return new StateG05P00_Random(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1020,21 +1034,20 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateG02P00_Random(context);
-                    return;
+                    return new StateG02P00_Random(context);
                 }
 
                 if (context.RandomCondition(arg1: 60f)) {
-                    context.State = new StateG03P00_Random(context);
-                    return;
+                    return new StateG03P00_Random(context);
                 }
 
                 if (context.RandomCondition(arg1: 30f)) {
-                    context.State = new StateG04P00_Random(context);
-                    return;
+                    return new StateG04P00_Random(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1045,16 +1058,16 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 60f)) {
-                    context.State = new StateG02P00_Random(context);
-                    return;
+                    return new StateG02P00_Random(context);
                 }
 
                 if (context.RandomCondition(arg1: 40f)) {
-                    context.State = new StateG03P00_Random(context);
-                    return;
+                    return new StateG03P00_Random(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1065,16 +1078,16 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 70f)) {
-                    context.State = new StateG01P00_Random(context);
-                    return;
+                    return new StateG01P00_Random(context);
                 }
 
                 if (context.RandomCondition(arg1: 30f)) {
-                    context.State = new StateG02P00_Random(context);
-                    return;
+                    return new StateG02P00_Random(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1085,256 +1098,208 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P01_RoundCheckIn(context);
-                    return;
+                    return new StateG05P01_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P02_RoundCheckIn(context);
-                    return;
+                    return new StateG05P02_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P03_RoundCheckIn(context);
-                    return;
+                    return new StateG05P03_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P04_RoundCheckIn(context);
-                    return;
+                    return new StateG05P04_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P05_RoundCheckIn(context);
-                    return;
+                    return new StateG05P05_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P06_RoundCheckIn(context);
-                    return;
+                    return new StateG05P06_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P07_RoundCheckIn(context);
-                    return;
+                    return new StateG05P07_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P08_RoundCheckIn(context);
-                    return;
+                    return new StateG05P08_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P09_RoundCheckIn(context);
-                    return;
+                    return new StateG05P09_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P10_RoundCheckIn(context);
-                    return;
+                    return new StateG05P10_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P11_RoundCheckIn(context);
-                    return;
+                    return new StateG05P11_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P12_RoundCheckIn(context);
-                    return;
+                    return new StateG05P12_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P13_RoundCheckIn(context);
-                    return;
+                    return new StateG05P13_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P14_RoundCheckIn(context);
-                    return;
+                    return new StateG05P14_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P15_RoundCheckIn(context);
-                    return;
+                    return new StateG05P15_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P16_RoundCheckIn(context);
-                    return;
+                    return new StateG05P16_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P17_RoundCheckIn(context);
-                    return;
+                    return new StateG05P17_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P18_RoundCheckIn(context);
-                    return;
+                    return new StateG05P18_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P19_RoundCheckIn(context);
-                    return;
+                    return new StateG05P19_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P20_RoundCheckIn(context);
-                    return;
+                    return new StateG05P20_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P21_RoundCheckIn(context);
-                    return;
+                    return new StateG05P21_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P22_RoundCheckIn(context);
-                    return;
+                    return new StateG05P22_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P23_RoundCheckIn(context);
-                    return;
+                    return new StateG05P23_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P24_RoundCheckIn(context);
-                    return;
+                    return new StateG05P24_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P25_RoundCheckIn(context);
-                    return;
+                    return new StateG05P25_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P26_RoundCheckIn(context);
-                    return;
+                    return new StateG05P26_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P27_RoundCheckIn(context);
-                    return;
+                    return new StateG05P27_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P28_RoundCheckIn(context);
-                    return;
+                    return new StateG05P28_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P29_RoundCheckIn(context);
-                    return;
+                    return new StateG05P29_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P30_RoundCheckIn(context);
-                    return;
+                    return new StateG05P30_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P31_RoundCheckIn(context);
-                    return;
+                    return new StateG05P31_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P32_RoundCheckIn(context);
-                    return;
+                    return new StateG05P32_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P33_RoundCheckIn(context);
-                    return;
+                    return new StateG05P33_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P34_RoundCheckIn(context);
-                    return;
+                    return new StateG05P34_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P35_RoundCheckIn(context);
-                    return;
+                    return new StateG05P35_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P36_RoundCheckIn(context);
-                    return;
+                    return new StateG05P36_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P37_RoundCheckIn(context);
-                    return;
+                    return new StateG05P37_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P38_RoundCheckIn(context);
-                    return;
+                    return new StateG05P38_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P39_RoundCheckIn(context);
-                    return;
+                    return new StateG05P39_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P40_RoundCheckIn(context);
-                    return;
+                    return new StateG05P40_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P41_RoundCheckIn(context);
-                    return;
+                    return new StateG05P41_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P42_RoundCheckIn(context);
-                    return;
+                    return new StateG05P42_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P43_RoundCheckIn(context);
-                    return;
+                    return new StateG05P43_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P44_RoundCheckIn(context);
-                    return;
+                    return new StateG05P44_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P45_RoundCheckIn(context);
-                    return;
+                    return new StateG05P45_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P46_RoundCheckIn(context);
-                    return;
+                    return new StateG05P46_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P47_RoundCheckIn(context);
-                    return;
+                    return new StateG05P47_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P48_RoundCheckIn(context);
-                    return;
+                    return new StateG05P48_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P49_RoundCheckIn(context);
-                    return;
+                    return new StateG05P49_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateG05P50_RoundCheckIn(context);
-                    return;
+                    return new StateG05P50_RoundCheckIn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1345,206 +1310,168 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P01_RoundCheckIn(context);
-                    return;
+                    return new StateG04P01_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P02_RoundCheckIn(context);
-                    return;
+                    return new StateG04P02_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P03_RoundCheckIn(context);
-                    return;
+                    return new StateG04P03_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P04_RoundCheckIn(context);
-                    return;
+                    return new StateG04P04_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P05_RoundCheckIn(context);
-                    return;
+                    return new StateG04P05_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P06_RoundCheckIn(context);
-                    return;
+                    return new StateG04P06_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P07_RoundCheckIn(context);
-                    return;
+                    return new StateG04P07_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P08_RoundCheckIn(context);
-                    return;
+                    return new StateG04P08_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P09_RoundCheckIn(context);
-                    return;
+                    return new StateG04P09_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P10_RoundCheckIn(context);
-                    return;
+                    return new StateG04P10_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P11_RoundCheckIn(context);
-                    return;
+                    return new StateG04P11_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P12_RoundCheckIn(context);
-                    return;
+                    return new StateG04P12_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P13_RoundCheckIn(context);
-                    return;
+                    return new StateG04P13_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P14_RoundCheckIn(context);
-                    return;
+                    return new StateG04P14_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P15_RoundCheckIn(context);
-                    return;
+                    return new StateG04P15_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P16_RoundCheckIn(context);
-                    return;
+                    return new StateG04P16_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P17_RoundCheckIn(context);
-                    return;
+                    return new StateG04P17_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P18_RoundCheckIn(context);
-                    return;
+                    return new StateG04P18_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P19_RoundCheckIn(context);
-                    return;
+                    return new StateG04P19_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P20_RoundCheckIn(context);
-                    return;
+                    return new StateG04P20_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P21_RoundCheckIn(context);
-                    return;
+                    return new StateG04P21_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P22_RoundCheckIn(context);
-                    return;
+                    return new StateG04P22_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P23_RoundCheckIn(context);
-                    return;
+                    return new StateG04P23_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P24_RoundCheckIn(context);
-                    return;
+                    return new StateG04P24_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P25_RoundCheckIn(context);
-                    return;
+                    return new StateG04P25_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P26_RoundCheckIn(context);
-                    return;
+                    return new StateG04P26_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P27_RoundCheckIn(context);
-                    return;
+                    return new StateG04P27_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P28_RoundCheckIn(context);
-                    return;
+                    return new StateG04P28_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P29_RoundCheckIn(context);
-                    return;
+                    return new StateG04P29_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P30_RoundCheckIn(context);
-                    return;
+                    return new StateG04P30_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P31_RoundCheckIn(context);
-                    return;
+                    return new StateG04P31_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P32_RoundCheckIn(context);
-                    return;
+                    return new StateG04P32_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P33_RoundCheckIn(context);
-                    return;
+                    return new StateG04P33_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P34_RoundCheckIn(context);
-                    return;
+                    return new StateG04P34_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P35_RoundCheckIn(context);
-                    return;
+                    return new StateG04P35_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P36_RoundCheckIn(context);
-                    return;
+                    return new StateG04P36_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P37_RoundCheckIn(context);
-                    return;
+                    return new StateG04P37_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P38_RoundCheckIn(context);
-                    return;
+                    return new StateG04P38_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P39_RoundCheckIn(context);
-                    return;
+                    return new StateG04P39_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG04P40_RoundCheckIn(context);
-                    return;
+                    return new StateG04P40_RoundCheckIn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1555,156 +1482,128 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P01_RoundCheckIn(context);
-                    return;
+                    return new StateG03P01_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P02_RoundCheckIn(context);
-                    return;
+                    return new StateG03P02_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P03_RoundCheckIn(context);
-                    return;
+                    return new StateG03P03_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P04_RoundCheckIn(context);
-                    return;
+                    return new StateG03P04_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P05_RoundCheckIn(context);
-                    return;
+                    return new StateG03P05_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P06_RoundCheckIn(context);
-                    return;
+                    return new StateG03P06_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P07_RoundCheckIn(context);
-                    return;
+                    return new StateG03P07_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P08_RoundCheckIn(context);
-                    return;
+                    return new StateG03P08_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P09_RoundCheckIn(context);
-                    return;
+                    return new StateG03P09_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P10_RoundCheckIn(context);
-                    return;
+                    return new StateG03P10_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P11_RoundCheckIn(context);
-                    return;
+                    return new StateG03P11_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P12_RoundCheckIn(context);
-                    return;
+                    return new StateG03P12_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P13_RoundCheckIn(context);
-                    return;
+                    return new StateG03P13_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P14_RoundCheckIn(context);
-                    return;
+                    return new StateG03P14_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P15_RoundCheckIn(context);
-                    return;
+                    return new StateG03P15_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P16_RoundCheckIn(context);
-                    return;
+                    return new StateG03P16_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P17_RoundCheckIn(context);
-                    return;
+                    return new StateG03P17_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P18_RoundCheckIn(context);
-                    return;
+                    return new StateG03P18_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P19_RoundCheckIn(context);
-                    return;
+                    return new StateG03P19_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P20_RoundCheckIn(context);
-                    return;
+                    return new StateG03P20_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P21_RoundCheckIn(context);
-                    return;
+                    return new StateG03P21_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P22_RoundCheckIn(context);
-                    return;
+                    return new StateG03P22_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P23_RoundCheckIn(context);
-                    return;
+                    return new StateG03P23_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P24_RoundCheckIn(context);
-                    return;
+                    return new StateG03P24_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P25_RoundCheckIn(context);
-                    return;
+                    return new StateG03P25_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P26_RoundCheckIn(context);
-                    return;
+                    return new StateG03P26_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P27_RoundCheckIn(context);
-                    return;
+                    return new StateG03P27_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P28_RoundCheckIn(context);
-                    return;
+                    return new StateG03P28_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P29_RoundCheckIn(context);
-                    return;
+                    return new StateG03P29_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG03P30_RoundCheckIn(context);
-                    return;
+                    return new StateG03P30_RoundCheckIn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1715,156 +1614,128 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P01_RoundCheckIn(context);
-                    return;
+                    return new StateG02P01_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P02_RoundCheckIn(context);
-                    return;
+                    return new StateG02P02_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P03_RoundCheckIn(context);
-                    return;
+                    return new StateG02P03_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P04_RoundCheckIn(context);
-                    return;
+                    return new StateG02P04_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P05_RoundCheckIn(context);
-                    return;
+                    return new StateG02P05_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P06_RoundCheckIn(context);
-                    return;
+                    return new StateG02P06_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P07_RoundCheckIn(context);
-                    return;
+                    return new StateG02P07_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P08_RoundCheckIn(context);
-                    return;
+                    return new StateG02P08_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P09_RoundCheckIn(context);
-                    return;
+                    return new StateG02P09_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P10_RoundCheckIn(context);
-                    return;
+                    return new StateG02P10_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P11_RoundCheckIn(context);
-                    return;
+                    return new StateG02P11_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P12_RoundCheckIn(context);
-                    return;
+                    return new StateG02P12_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P13_RoundCheckIn(context);
-                    return;
+                    return new StateG02P13_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P14_RoundCheckIn(context);
-                    return;
+                    return new StateG02P14_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P15_RoundCheckIn(context);
-                    return;
+                    return new StateG02P15_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P16_RoundCheckIn(context);
-                    return;
+                    return new StateG02P16_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P17_RoundCheckIn(context);
-                    return;
+                    return new StateG02P17_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P18_RoundCheckIn(context);
-                    return;
+                    return new StateG02P18_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P19_RoundCheckIn(context);
-                    return;
+                    return new StateG02P19_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P20_RoundCheckIn(context);
-                    return;
+                    return new StateG02P20_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P21_RoundCheckIn(context);
-                    return;
+                    return new StateG02P21_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P22_RoundCheckIn(context);
-                    return;
+                    return new StateG02P22_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P23_RoundCheckIn(context);
-                    return;
+                    return new StateG02P23_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P24_RoundCheckIn(context);
-                    return;
+                    return new StateG02P24_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P25_RoundCheckIn(context);
-                    return;
+                    return new StateG02P25_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P26_RoundCheckIn(context);
-                    return;
+                    return new StateG02P26_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P27_RoundCheckIn(context);
-                    return;
+                    return new StateG02P27_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P28_RoundCheckIn(context);
-                    return;
+                    return new StateG02P28_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P29_RoundCheckIn(context);
-                    return;
+                    return new StateG02P29_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG02P30_RoundCheckIn(context);
-                    return;
+                    return new StateG02P30_RoundCheckIn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1875,156 +1746,128 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P01_RoundCheckIn(context);
-                    return;
+                    return new StateG01P01_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P02_RoundCheckIn(context);
-                    return;
+                    return new StateG01P02_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P03_RoundCheckIn(context);
-                    return;
+                    return new StateG01P03_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P04_RoundCheckIn(context);
-                    return;
+                    return new StateG01P04_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P05_RoundCheckIn(context);
-                    return;
+                    return new StateG01P05_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P06_RoundCheckIn(context);
-                    return;
+                    return new StateG01P06_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P07_RoundCheckIn(context);
-                    return;
+                    return new StateG01P07_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P08_RoundCheckIn(context);
-                    return;
+                    return new StateG01P08_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P09_RoundCheckIn(context);
-                    return;
+                    return new StateG01P09_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P10_RoundCheckIn(context);
-                    return;
+                    return new StateG01P10_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P11_RoundCheckIn(context);
-                    return;
+                    return new StateG01P11_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P12_RoundCheckIn(context);
-                    return;
+                    return new StateG01P12_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P13_RoundCheckIn(context);
-                    return;
+                    return new StateG01P13_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P14_RoundCheckIn(context);
-                    return;
+                    return new StateG01P14_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P15_RoundCheckIn(context);
-                    return;
+                    return new StateG01P15_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P16_RoundCheckIn(context);
-                    return;
+                    return new StateG01P16_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P17_RoundCheckIn(context);
-                    return;
+                    return new StateG01P17_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P18_RoundCheckIn(context);
-                    return;
+                    return new StateG01P18_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P19_RoundCheckIn(context);
-                    return;
+                    return new StateG01P19_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P20_RoundCheckIn(context);
-                    return;
+                    return new StateG01P20_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P21_RoundCheckIn(context);
-                    return;
+                    return new StateG01P21_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P22_RoundCheckIn(context);
-                    return;
+                    return new StateG01P22_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P23_RoundCheckIn(context);
-                    return;
+                    return new StateG01P23_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P24_RoundCheckIn(context);
-                    return;
+                    return new StateG01P24_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P25_RoundCheckIn(context);
-                    return;
+                    return new StateG01P25_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P26_RoundCheckIn(context);
-                    return;
+                    return new StateG01P26_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P27_RoundCheckIn(context);
-                    return;
+                    return new StateG01P27_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P28_RoundCheckIn(context);
-                    return;
+                    return new StateG01P28_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P29_RoundCheckIn(context);
-                    return;
+                    return new StateG01P29_RoundCheckIn(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateG01P30_RoundCheckIn(context);
-                    return;
+                    return new StateG01P30_RoundCheckIn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2055,11 +1898,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: true, arg3: 400, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateR01End(context);
-                    return;
+                    return new StateR01End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2094,11 +1938,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: false, arg3: 400, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State01RoundResultNotice(context);
-                    return;
+                    return new State01RoundResultNotice(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2109,21 +1954,20 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GuildVsGameScoredTeam(teamId: 1)) {
-                    context.State = new State01RoundResult_BlueTeamWin(context);
-                    return;
+                    return new State01RoundResult_BlueTeamWin(context);
                 }
 
                 if (context.GuildVsGameScoredTeam(teamId: 2)) {
-                    context.State = new State01RoundResult_RedTeamWin(context);
-                    return;
+                    return new State01RoundResult_RedTeamWin(context);
                 }
 
                 if (context.GuildVsGameScoredTeam(teamId: 0)) {
-                    context.State = new State01RoundResult_Draw(context);
-                    return;
+                    return new State01RoundResult_Draw(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2141,11 +1985,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_YouLose_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateR01RoundScoreRecord(context);
-                    return;
+                    return new StateR01RoundScoreRecord(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2163,11 +2008,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 1, soundKey: "System_YouLose_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateR01RoundScoreRecord(context);
-                    return;
+                    return new StateR01RoundScoreRecord(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2185,11 +2031,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_Draw_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateR01RoundScoreRecord(context);
-                    return;
+                    return new StateR01RoundScoreRecord(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2200,21 +2047,20 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "WinnerTeam") == 0) {
-                    context.State = new StateEveryPlayerVacuumGuide(context);
-                    return;
+                    return new StateEveryPlayerVacuumGuide(context);
                 }
 
                 if (context.GetUserValue(key: "WinnerTeam") == 1) {
-                    context.State = new StateBlueTeamWinAlreadyNotice(context);
-                    return;
+                    return new StateBlueTeamWinAlreadyNotice(context);
                 }
 
                 if (context.GetUserValue(key: "WinnerTeam") == 2) {
-                    context.State = new StateRedTeamWinAlreadyNotice(context);
-                    return;
+                    return new StateRedTeamWinAlreadyNotice(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2227,11 +2073,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEventUI(arg1: 1, arg2: "$66200001_GD__01_MASSIVEMAIN__23$", arg3: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEveryPlayerVacuumExecute(context);
-                    return;
+                    return new StateEveryPlayerVacuumExecute(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2245,26 +2092,24 @@ namespace Maple2.Trigger._66200001_gd {
                 context.MoveToPortal(boxId: 9001, userTagId: 2, portalId: 22);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round") == 1) {
-                    context.State = new StateR02Ready(context);
-                    return;
+                    return new StateR02Ready(context);
                 }
 
                 if (context.GetUserValue(key: "Round") == 2) {
-                    context.State = new StateR03Ready(context);
-                    return;
+                    return new StateR03Ready(context);
                 }
 
                 if (context.GetUserValue(key: "Round") == 3) {
-                    context.State = new StateR04Ready(context);
-                    return;
+                    return new StateR04Ready(context);
                 }
 
                 if (context.GetUserValue(key: "Round") == 4) {
-                    context.State = new StateR05Ready(context);
-                    return;
+                    return new StateR05Ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -2280,11 +2125,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEventUI(arg1: 0, arg2: "2,5");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateR02PlayerRandomPick01(context);
-                    return;
+                    return new StateR02PlayerRandomPick01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2298,11 +2144,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StatePlayerRandomPick02(context);
-                    return;
+                    return new StatePlayerRandomPick02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2320,11 +2167,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateR02DanceTime(context);
-                    return;
+                    return new StateR02DanceTime(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2339,41 +2187,36 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "DanceTime", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 30f)) {
-                    context.State = new StateDancePattern01(context);
-                    return;
+                    return new StateDancePattern01(context);
                 }
 
                 if (context.RandomCondition(arg1: 30f)) {
-                    context.State = new StateDancePattern02(context);
-                    return;
+                    return new StateDancePattern02(context);
                 }
 
                 if (context.RandomCondition(arg1: 30f)) {
-                    context.State = new StateDancePattern03(context);
-                    return;
+                    return new StateDancePattern03(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    context.State = new StateDancePattern0401(context);
-                    return;
+                    return new StateDancePattern0401(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    context.State = new StateDancePattern0501(context);
-                    return;
+                    return new StateDancePattern0501(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateDancePattern0601(context);
-                    return;
+                    return new StateDancePattern0601(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateDancePattern0701(context);
-                    return;
+                    return new StateDancePattern0701(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2388,11 +2231,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateR02_GameStart(context);
-                    return;
+                    return new StateR02_GameStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2409,11 +2253,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Round_02");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateR02_GameTimerStart(context);
-                    return;
+                    return new StateR02_GameTimerStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2428,11 +2273,8 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7, key: "GameGuide", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateR02G00Check(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateR02G00Check(context);
             }
 
             public override void OnExit() { }
@@ -2443,36 +2285,32 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9001) > 50) {
-                    context.State = new StateG05P00_Random(context);
-                    return;
+                    return new StateG05P00_Random(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 40) {
-                    context.State = new StateG05orG04(context);
-                    return;
+                    return new StateG05orG04(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 30) {
-                    context.State = new StateG03orG04orG05(context);
-                    return;
+                    return new StateG03orG04orG05(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 20) {
-                    context.State = new StateG02orG03orG04(context);
-                    return;
+                    return new StateG02orG03orG04(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 10) {
-                    context.State = new StateG02orG03(context);
-                    return;
+                    return new StateG02orG03(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) <= 10) {
-                    context.State = new StateG01orG02(context);
-                    return;
+                    return new StateG01orG02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2503,11 +2341,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: true, arg3: 400, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateR02End(context);
-                    return;
+                    return new StateR02End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2542,11 +2381,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: false, arg3: 400, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State02RoundResultNotice(context);
-                    return;
+                    return new State02RoundResultNotice(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2557,21 +2397,20 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GuildVsGameScoredTeam(teamId: 1)) {
-                    context.State = new State02RoundResult_BlueTeamWin(context);
-                    return;
+                    return new State02RoundResult_BlueTeamWin(context);
                 }
 
                 if (context.GuildVsGameScoredTeam(teamId: 2)) {
-                    context.State = new State02RoundResult_RedTeamWin(context);
-                    return;
+                    return new State02RoundResult_RedTeamWin(context);
                 }
 
                 if (context.GuildVsGameScoredTeam(teamId: 0)) {
-                    context.State = new State02RoundResult_Draw(context);
-                    return;
+                    return new State02RoundResult_Draw(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2589,11 +2428,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_YouLose_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateR02RoundScoreRecord(context);
-                    return;
+                    return new StateR02RoundScoreRecord(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2611,11 +2451,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 1, soundKey: "System_YouLose_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateR02RoundScoreRecord(context);
-                    return;
+                    return new StateR02RoundScoreRecord(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2633,11 +2474,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_Draw_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateR02RoundScoreRecord(context);
-                    return;
+                    return new StateR02RoundScoreRecord(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2648,21 +2490,20 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "WinnerTeam") == 0) {
-                    context.State = new StateEveryPlayerVacuumGuide(context);
-                    return;
+                    return new StateEveryPlayerVacuumGuide(context);
                 }
 
                 if (context.GetUserValue(key: "WinnerTeam") == 1) {
-                    context.State = new StateBlueTeamWinAlreadyNotice(context);
-                    return;
+                    return new StateBlueTeamWinAlreadyNotice(context);
                 }
 
                 if (context.GetUserValue(key: "WinnerTeam") == 2) {
-                    context.State = new StateRedTeamWinAlreadyNotice(context);
-                    return;
+                    return new StateRedTeamWinAlreadyNotice(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2676,11 +2517,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEventUI(arg1: 0, arg2: "3,5");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateR02PlayerRandomPick01(context);
-                    return;
+                    return new StateR02PlayerRandomPick01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2698,11 +2540,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateR03DanceTime(context);
-                    return;
+                    return new StateR03DanceTime(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2717,41 +2560,36 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "DanceTime", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 30f)) {
-                    context.State = new StateDancePattern01(context);
-                    return;
+                    return new StateDancePattern01(context);
                 }
 
                 if (context.RandomCondition(arg1: 30f)) {
-                    context.State = new StateDancePattern02(context);
-                    return;
+                    return new StateDancePattern02(context);
                 }
 
                 if (context.RandomCondition(arg1: 30f)) {
-                    context.State = new StateDancePattern03(context);
-                    return;
+                    return new StateDancePattern03(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    context.State = new StateDancePattern0401(context);
-                    return;
+                    return new StateDancePattern0401(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    context.State = new StateDancePattern0501(context);
-                    return;
+                    return new StateDancePattern0501(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateDancePattern0601(context);
-                    return;
+                    return new StateDancePattern0601(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateDancePattern0701(context);
-                    return;
+                    return new StateDancePattern0701(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2766,11 +2604,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateR03_GameStart(context);
-                    return;
+                    return new StateR03_GameStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2787,11 +2626,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Round_03");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateR03_GameTimerStart(context);
-                    return;
+                    return new StateR03_GameTimerStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2806,11 +2646,8 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7, key: "GameGuide", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateR03G00Check(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateR03G00Check(context);
             }
 
             public override void OnExit() { }
@@ -2821,36 +2658,32 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9001) > 50) {
-                    context.State = new StateG05P00_Random(context);
-                    return;
+                    return new StateG05P00_Random(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 40) {
-                    context.State = new StateG05orG04(context);
-                    return;
+                    return new StateG05orG04(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 30) {
-                    context.State = new StateG03orG04orG05(context);
-                    return;
+                    return new StateG03orG04orG05(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 20) {
-                    context.State = new StateG02orG03orG04(context);
-                    return;
+                    return new StateG02orG03orG04(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 10) {
-                    context.State = new StateG02orG03(context);
-                    return;
+                    return new StateG02orG03(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) <= 10) {
-                    context.State = new StateG01orG02(context);
-                    return;
+                    return new StateG01orG02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2881,11 +2714,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: true, arg3: 400, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateR03End(context);
-                    return;
+                    return new StateR03End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2920,11 +2754,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: false, arg3: 400, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State03RoundResultNotice(context);
-                    return;
+                    return new State03RoundResultNotice(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2935,21 +2770,20 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GuildVsGameScoredTeam(teamId: 1)) {
-                    context.State = new State03RoundResult_BlueTeamWin(context);
-                    return;
+                    return new State03RoundResult_BlueTeamWin(context);
                 }
 
                 if (context.GuildVsGameScoredTeam(teamId: 2)) {
-                    context.State = new State03RoundResult_RedTeamWin(context);
-                    return;
+                    return new State03RoundResult_RedTeamWin(context);
                 }
 
                 if (context.GuildVsGameScoredTeam(teamId: 0)) {
-                    context.State = new State03RoundResult_Draw(context);
-                    return;
+                    return new State03RoundResult_Draw(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2967,11 +2801,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_YouLose_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateR03RoundScoreRecord(context);
-                    return;
+                    return new StateR03RoundScoreRecord(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2989,11 +2824,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 1, soundKey: "System_YouLose_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateR03RoundScoreRecord(context);
-                    return;
+                    return new StateR03RoundScoreRecord(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3011,11 +2847,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_Draw_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateR03RoundScoreRecord(context);
-                    return;
+                    return new StateR03RoundScoreRecord(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3026,21 +2863,20 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "WinnerTeam") == 0) {
-                    context.State = new StateEveryPlayerVacuumGuide(context);
-                    return;
+                    return new StateEveryPlayerVacuumGuide(context);
                 }
 
                 if (context.GetUserValue(key: "WinnerTeam") == 1) {
-                    context.State = new StateBlueTeamWinAlreadyNotice(context);
-                    return;
+                    return new StateBlueTeamWinAlreadyNotice(context);
                 }
 
                 if (context.GetUserValue(key: "WinnerTeam") == 2) {
-                    context.State = new StateRedTeamWinAlreadyNotice(context);
-                    return;
+                    return new StateRedTeamWinAlreadyNotice(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3054,11 +2890,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEventUI(arg1: 0, arg2: "4,5");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateR02PlayerRandomPick01(context);
-                    return;
+                    return new StateR02PlayerRandomPick01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3076,11 +2913,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateR04DanceTime(context);
-                    return;
+                    return new StateR04DanceTime(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3095,41 +2933,36 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "DanceTime", value: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateDancePattern01(context);
-                    return;
+                    return new StateDancePattern01(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    context.State = new StateDancePattern02(context);
-                    return;
+                    return new StateDancePattern02(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateDancePattern03(context);
-                    return;
+                    return new StateDancePattern03(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateDancePattern0401(context);
-                    return;
+                    return new StateDancePattern0401(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateDancePattern0501(context);
-                    return;
+                    return new StateDancePattern0501(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.State = new StateDancePattern0601(context);
-                    return;
+                    return new StateDancePattern0601(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.State = new StateDancePattern0701(context);
-                    return;
+                    return new StateDancePattern0701(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3144,11 +2977,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateR04_GameStart(context);
-                    return;
+                    return new StateR04_GameStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3165,11 +2999,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Round_04");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateR04_GameTimerStart(context);
-                    return;
+                    return new StateR04_GameTimerStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3184,11 +3019,8 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7, key: "GameGuide", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateR04G00Check(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateR04G00Check(context);
             }
 
             public override void OnExit() { }
@@ -3199,36 +3031,32 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9001) > 50) {
-                    context.State = new StateG05P00_Random(context);
-                    return;
+                    return new StateG05P00_Random(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 40) {
-                    context.State = new StateG05orG04(context);
-                    return;
+                    return new StateG05orG04(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 30) {
-                    context.State = new StateG03orG04orG05(context);
-                    return;
+                    return new StateG03orG04orG05(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 20) {
-                    context.State = new StateG02orG03orG04(context);
-                    return;
+                    return new StateG02orG03orG04(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 10) {
-                    context.State = new StateG02orG03(context);
-                    return;
+                    return new StateG02orG03(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) <= 10) {
-                    context.State = new StateG01orG02(context);
-                    return;
+                    return new StateG01orG02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3259,11 +3087,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: true, arg3: 400, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateR04End(context);
-                    return;
+                    return new StateR04End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3298,11 +3127,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: false, arg3: 400, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State04RoundResultNotice(context);
-                    return;
+                    return new State04RoundResultNotice(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3313,21 +3143,20 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GuildVsGameScoredTeam(teamId: 1)) {
-                    context.State = new State04RoundResult_BlueTeamWin(context);
-                    return;
+                    return new State04RoundResult_BlueTeamWin(context);
                 }
 
                 if (context.GuildVsGameScoredTeam(teamId: 2)) {
-                    context.State = new State04RoundResult_RedTeamWin(context);
-                    return;
+                    return new State04RoundResult_RedTeamWin(context);
                 }
 
                 if (context.GuildVsGameScoredTeam(teamId: 0)) {
-                    context.State = new State04RoundResult_Draw(context);
-                    return;
+                    return new State04RoundResult_Draw(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3345,11 +3174,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_YouLose_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateR04RoundScoreRecord(context);
-                    return;
+                    return new StateR04RoundScoreRecord(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3367,11 +3197,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 1, soundKey: "System_YouLose_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateR04RoundScoreRecord(context);
-                    return;
+                    return new StateR04RoundScoreRecord(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3389,11 +3220,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_Draw_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateR04RoundScoreRecord(context);
-                    return;
+                    return new StateR04RoundScoreRecord(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3404,21 +3236,20 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "WinnerTeam") == 0) {
-                    context.State = new StateEveryPlayerVacuumGuide(context);
-                    return;
+                    return new StateEveryPlayerVacuumGuide(context);
                 }
 
                 if (context.GetUserValue(key: "WinnerTeam") == 1) {
-                    context.State = new StateBlueTeamWinAlreadyNotice(context);
-                    return;
+                    return new StateBlueTeamWinAlreadyNotice(context);
                 }
 
                 if (context.GetUserValue(key: "WinnerTeam") == 2) {
-                    context.State = new StateRedTeamWinAlreadyNotice(context);
-                    return;
+                    return new StateRedTeamWinAlreadyNotice(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3432,11 +3263,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEventUI(arg1: 0, arg2: "5,5");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateR05PlayerRandomPick01(context);
-                    return;
+                    return new StateR05PlayerRandomPick01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3450,11 +3282,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StatePlayerRandomPick02(context);
-                    return;
+                    return new StatePlayerRandomPick02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3472,11 +3305,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateR05DanceTime(context);
-                    return;
+                    return new StateR05DanceTime(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3491,41 +3325,36 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "DanceTime", value: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 2f)) {
-                    context.State = new StateDancePattern01(context);
-                    return;
+                    return new StateDancePattern01(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    context.State = new StateDancePattern02(context);
-                    return;
+                    return new StateDancePattern02(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    context.State = new StateDancePattern03(context);
-                    return;
+                    return new StateDancePattern03(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.State = new StateDancePattern0401(context);
-                    return;
+                    return new StateDancePattern0401(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.State = new StateDancePattern0501(context);
-                    return;
+                    return new StateDancePattern0501(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateDancePattern0601(context);
-                    return;
+                    return new StateDancePattern0601(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateDancePattern0701(context);
-                    return;
+                    return new StateDancePattern0701(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3540,11 +3369,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new StateR05_GameStart(context);
-                    return;
+                    return new StateR05_GameStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3561,11 +3391,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Round_05");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateR05_GameTimerStart(context);
-                    return;
+                    return new StateR05_GameTimerStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3580,11 +3411,8 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7, key: "GameGuide", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateR05G05Check(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateR05G05Check(context);
             }
 
             public override void OnExit() { }
@@ -3595,36 +3423,32 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9001) > 50) {
-                    context.State = new StateG05P00_Random(context);
-                    return;
+                    return new StateG05P00_Random(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 40) {
-                    context.State = new StateG05orG04(context);
-                    return;
+                    return new StateG05orG04(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 30) {
-                    context.State = new StateG03orG04orG05(context);
-                    return;
+                    return new StateG03orG04orG05(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 20) {
-                    context.State = new StateG02orG03orG04(context);
-                    return;
+                    return new StateG02orG03orG04(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) > 10) {
-                    context.State = new StateG02orG03(context);
-                    return;
+                    return new StateG02orG03(context);
                 }
 
                 if (context.GetUserCount(boxId: 9001) <= 10) {
-                    context.State = new StateG01orG02(context);
-                    return;
+                    return new StateG01orG02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3655,11 +3479,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: true, arg3: 400, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateR05End(context);
-                    return;
+                    return new StateR05End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3694,11 +3519,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: false, arg3: 400, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State05RoundResultNotice(context);
-                    return;
+                    return new State05RoundResultNotice(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3709,21 +3535,20 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GuildVsGameScoredTeam(teamId: 1)) {
-                    context.State = new State05RoundResult_BlueTeamWin(context);
-                    return;
+                    return new State05RoundResult_BlueTeamWin(context);
                 }
 
                 if (context.GuildVsGameScoredTeam(teamId: 2)) {
-                    context.State = new State05RoundResult_RedTeamWin(context);
-                    return;
+                    return new State05RoundResult_RedTeamWin(context);
                 }
 
                 if (context.GuildVsGameScoredTeam(teamId: 0)) {
-                    context.State = new State05RoundResult_Draw(context);
-                    return;
+                    return new State05RoundResult_Draw(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3741,11 +3566,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_YouLose_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateGameWrapUp_EveryPlayerVacuumExecute(context);
-                    return;
+                    return new StateGameWrapUp_EveryPlayerVacuumExecute(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3763,11 +3589,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 1, soundKey: "System_YouLose_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateGameWrapUp_EveryPlayerVacuumExecute(context);
-                    return;
+                    return new StateGameWrapUp_EveryPlayerVacuumExecute(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3785,11 +3612,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_Draw_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateGameWrapUp_EveryPlayerVacuumExecute(context);
-                    return;
+                    return new StateGameWrapUp_EveryPlayerVacuumExecute(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3803,11 +3631,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.MoveToPortal(boxId: 9001, userTagId: 2, portalId: 22);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateR05RoundScoreRecord(context);
-                    return;
+                    return new StateR05RoundScoreRecord(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -3820,21 +3649,20 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GuildVsGameWinnerTeam(teamId: 1)) {
-                    context.State = new StateBlueTeamWin_GiveReward(context);
-                    return;
+                    return new StateBlueTeamWin_GiveReward(context);
                 }
 
                 if (context.GuildVsGameWinnerTeam(teamId: 2)) {
-                    context.State = new StateRedTeamWin_GiveReward(context);
-                    return;
+                    return new StateRedTeamWin_GiveReward(context);
                 }
 
                 if (context.GuildVsGameWinnerTeam(teamId: 0)) {
-                    context.State = new StateDrawGame_GiveReward(context);
-                    return;
+                    return new StateDrawGame_GiveReward(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3852,11 +3680,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_YouLose_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new StateBlueTeamWinWinAlready_VacuumExecute(context);
-                    return;
+                    return new StateBlueTeamWinWinAlready_VacuumExecute(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3870,11 +3699,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.MoveToPortal(boxId: 9001, userTagId: 2, portalId: 22);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateBlueTeamWin_GiveReward(context);
-                    return;
+                    return new StateBlueTeamWin_GiveReward(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3892,11 +3722,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 1, soundKey: "System_YouLose_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new StateRedTeamWinAlready_VacuumExecute(context);
-                    return;
+                    return new StateRedTeamWinAlready_VacuumExecute(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3910,11 +3741,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.MoveToPortal(boxId: 9001, userTagId: 2, portalId: 22);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateRedTeamWin_GiveReward(context);
-                    return;
+                    return new StateRedTeamWin_GiveReward(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3934,11 +3766,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.GuildVsGameGiveContribution(teamId: 2, isWin: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateResultPopUp_BlueTeamWin(context);
-                    return;
+                    return new StateResultPopUp_BlueTeamWin(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3958,11 +3791,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.GuildVsGameGiveContribution(teamId: 1, isWin: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateResultPopUp_RedTeamWin(context);
-                    return;
+                    return new StateResultPopUp_RedTeamWin(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3982,11 +3816,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.GuildVsGameGiveContribution(teamId: 2, isWin: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateResultPopUp_Draw(context);
-                    return;
+                    return new StateResultPopUp_Draw(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4005,11 +3840,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetPortal(arg1: 8, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateLeaveAll(context);
-                    return;
+                    return new StateLeaveAll(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4028,11 +3864,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetPortal(arg1: 8, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateLeaveAll(context);
-                    return;
+                    return new StateLeaveAll(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4051,11 +3888,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetPortal(arg1: 8, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateLeaveAll(context);
-                    return;
+                    return new StateLeaveAll(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4074,11 +3912,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "massive_fail");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDefaultbyWin_BlueTeam_GiveReward(context);
-                    return;
+                    return new StateDefaultbyWin_BlueTeam_GiveReward(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4097,11 +3936,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.GuildVsGameLogWonByDefault(teamId: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateLeaveAll(context);
-                    return;
+                    return new StateLeaveAll(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4120,11 +3960,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundByUserTag(userTagId: 1, soundKey: "massive_fail");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDefaultbyWin_RedTeam_GiveReward(context);
-                    return;
+                    return new StateDefaultbyWin_RedTeam_GiveReward(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4143,11 +3984,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.GuildVsGameLogWonByDefault(teamId: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateLeaveAll(context);
-                    return;
+                    return new StateLeaveAll(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4167,11 +4009,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "massive_fail");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateLeaveAll(context);
-                    return;
+                    return new StateLeaveAll(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4190,11 +4033,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetSound(arg1: 10000, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4207,7 +4051,9 @@ namespace Maple2.Trigger._66200001_gd {
                 context.MoveUser(arg1: 0, arg2: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -4219,11 +4065,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P01Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P01_CleanUp(context);
-                    return;
+                    return new StateG01P01_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -4243,11 +4090,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P01_Check(context);
-                    return;
+                    return new StateG01P01_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4262,11 +4110,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P01_End(context);
-                    return;
+                    return new StateG01P01_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4277,11 +4126,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P01End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4294,11 +4144,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P02Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P02_CleanUp(context);
-                    return;
+                    return new StateG01P02_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -4318,11 +4169,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P02_Check(context);
-                    return;
+                    return new StateG01P02_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4337,11 +4189,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P02_End(context);
-                    return;
+                    return new StateG01P02_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4352,11 +4205,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P02End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4369,11 +4223,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P03Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P03_CleanUp(context);
-                    return;
+                    return new StateG01P03_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -4393,11 +4248,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P03_Check(context);
-                    return;
+                    return new StateG01P03_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4412,11 +4268,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P03_End(context);
-                    return;
+                    return new StateG01P03_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4427,11 +4284,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P03End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4444,11 +4302,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P04Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P04_CleanUp(context);
-                    return;
+                    return new StateG01P04_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -4468,11 +4327,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P04_Check(context);
-                    return;
+                    return new StateG01P04_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4487,11 +4347,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P04_End(context);
-                    return;
+                    return new StateG01P04_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4502,11 +4363,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P04End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4519,11 +4381,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P05Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P05_CleanUp(context);
-                    return;
+                    return new StateG01P05_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -4543,11 +4406,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P05_Check(context);
-                    return;
+                    return new StateG01P05_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4562,11 +4426,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P05_End(context);
-                    return;
+                    return new StateG01P05_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4577,11 +4442,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P05End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4594,11 +4460,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P06Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P06_CleanUp(context);
-                    return;
+                    return new StateG01P06_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -4618,11 +4485,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P06_Check(context);
-                    return;
+                    return new StateG01P06_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4637,11 +4505,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P06_End(context);
-                    return;
+                    return new StateG01P06_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4652,11 +4521,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P06End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4669,11 +4539,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P07Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P07_CleanUp(context);
-                    return;
+                    return new StateG01P07_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -4693,11 +4564,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P07_Check(context);
-                    return;
+                    return new StateG01P07_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4712,11 +4584,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P07_End(context);
-                    return;
+                    return new StateG01P07_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4727,11 +4600,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P07End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4744,11 +4618,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P08Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P08_CleanUp(context);
-                    return;
+                    return new StateG01P08_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -4768,11 +4643,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P08_Check(context);
-                    return;
+                    return new StateG01P08_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4787,11 +4663,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P08_End(context);
-                    return;
+                    return new StateG01P08_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4802,11 +4679,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P08End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4819,11 +4697,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P09Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P09_CleanUp(context);
-                    return;
+                    return new StateG01P09_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -4843,11 +4722,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P09_Check(context);
-                    return;
+                    return new StateG01P09_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4862,11 +4742,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P09_End(context);
-                    return;
+                    return new StateG01P09_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4877,11 +4758,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P09End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4894,11 +4776,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P10Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P10_CleanUp(context);
-                    return;
+                    return new StateG01P10_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -4918,11 +4801,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P10_Check(context);
-                    return;
+                    return new StateG01P10_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4937,11 +4821,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P10_End(context);
-                    return;
+                    return new StateG01P10_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4952,11 +4837,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P10End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4969,11 +4855,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P11Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P11_CleanUp(context);
-                    return;
+                    return new StateG01P11_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -4993,11 +4880,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P11_Check(context);
-                    return;
+                    return new StateG01P11_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5012,11 +4900,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P11_End(context);
-                    return;
+                    return new StateG01P11_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5027,11 +4916,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P11End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5044,11 +4934,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P12Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P12_CleanUp(context);
-                    return;
+                    return new StateG01P12_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -5068,11 +4959,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P12_Check(context);
-                    return;
+                    return new StateG01P12_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5087,11 +4979,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P12_End(context);
-                    return;
+                    return new StateG01P12_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5102,11 +4995,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P12End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5119,11 +5013,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P13Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P13_CleanUp(context);
-                    return;
+                    return new StateG01P13_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -5143,11 +5038,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P13_Check(context);
-                    return;
+                    return new StateG01P13_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5162,11 +5058,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P13_End(context);
-                    return;
+                    return new StateG01P13_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5177,11 +5074,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P13End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5194,11 +5092,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P14Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P14_CleanUp(context);
-                    return;
+                    return new StateG01P14_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -5218,11 +5117,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P14_Check(context);
-                    return;
+                    return new StateG01P14_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5237,11 +5137,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P14_End(context);
-                    return;
+                    return new StateG01P14_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5252,11 +5153,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P14End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5269,11 +5171,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P15Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P15_CleanUp(context);
-                    return;
+                    return new StateG01P15_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -5293,11 +5196,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P15_Check(context);
-                    return;
+                    return new StateG01P15_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5312,11 +5216,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P15_End(context);
-                    return;
+                    return new StateG01P15_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5327,11 +5232,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P15End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5344,11 +5250,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P16Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P16_CleanUp(context);
-                    return;
+                    return new StateG01P16_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -5368,11 +5275,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P16_Check(context);
-                    return;
+                    return new StateG01P16_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5387,11 +5295,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P16_End(context);
-                    return;
+                    return new StateG01P16_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5402,11 +5311,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P16End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5419,11 +5329,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P17Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P17_CleanUp(context);
-                    return;
+                    return new StateG01P17_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -5443,11 +5354,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P17_Check(context);
-                    return;
+                    return new StateG01P17_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5462,11 +5374,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P17_End(context);
-                    return;
+                    return new StateG01P17_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5477,11 +5390,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P17End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5494,11 +5408,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P18Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P18_CleanUp(context);
-                    return;
+                    return new StateG01P18_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -5518,11 +5433,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P18_Check(context);
-                    return;
+                    return new StateG01P18_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5537,11 +5453,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P18_End(context);
-                    return;
+                    return new StateG01P18_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5552,11 +5469,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P18End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5569,11 +5487,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P19Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P19_CleanUp(context);
-                    return;
+                    return new StateG01P19_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -5593,11 +5512,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P19_Check(context);
-                    return;
+                    return new StateG01P19_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5612,11 +5532,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P19_End(context);
-                    return;
+                    return new StateG01P19_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5627,11 +5548,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P19End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5644,11 +5566,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P20Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P20_CleanUp(context);
-                    return;
+                    return new StateG01P20_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -5668,11 +5591,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P20_Check(context);
-                    return;
+                    return new StateG01P20_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5687,11 +5611,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P20_End(context);
-                    return;
+                    return new StateG01P20_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5702,11 +5627,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P20End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5719,11 +5645,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P21Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P21_CleanUp(context);
-                    return;
+                    return new StateG01P21_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -5743,11 +5670,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P21_Check(context);
-                    return;
+                    return new StateG01P21_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5762,11 +5690,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P21_End(context);
-                    return;
+                    return new StateG01P21_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5777,11 +5706,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P21End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5794,11 +5724,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P22Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P22_CleanUp(context);
-                    return;
+                    return new StateG01P22_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -5818,11 +5749,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P22_Check(context);
-                    return;
+                    return new StateG01P22_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5837,11 +5769,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P22_End(context);
-                    return;
+                    return new StateG01P22_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5852,11 +5785,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P22End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5869,11 +5803,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P23Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P23_CleanUp(context);
-                    return;
+                    return new StateG01P23_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -5893,11 +5828,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P23_Check(context);
-                    return;
+                    return new StateG01P23_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5912,11 +5848,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P23_End(context);
-                    return;
+                    return new StateG01P23_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5927,11 +5864,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P23End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5944,11 +5882,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P24Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P24_CleanUp(context);
-                    return;
+                    return new StateG01P24_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -5968,11 +5907,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P24_Check(context);
-                    return;
+                    return new StateG01P24_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5987,11 +5927,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P24_End(context);
-                    return;
+                    return new StateG01P24_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6002,11 +5943,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P24End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6019,11 +5961,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P25Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P25_CleanUp(context);
-                    return;
+                    return new StateG01P25_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -6043,11 +5986,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P25_Check(context);
-                    return;
+                    return new StateG01P25_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6062,11 +6006,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P25_End(context);
-                    return;
+                    return new StateG01P25_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6077,11 +6022,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P25End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6094,11 +6040,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P26Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P26_CleanUp(context);
-                    return;
+                    return new StateG01P26_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -6118,11 +6065,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P26_Check(context);
-                    return;
+                    return new StateG01P26_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6137,11 +6085,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P26_End(context);
-                    return;
+                    return new StateG01P26_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6152,11 +6101,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P26End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6169,11 +6119,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P27Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P27_CleanUp(context);
-                    return;
+                    return new StateG01P27_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -6193,11 +6144,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P27_Check(context);
-                    return;
+                    return new StateG01P27_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6212,11 +6164,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P27_End(context);
-                    return;
+                    return new StateG01P27_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6227,11 +6180,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P27End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6244,11 +6198,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P28Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P28_CleanUp(context);
-                    return;
+                    return new StateG01P28_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -6268,11 +6223,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P28_Check(context);
-                    return;
+                    return new StateG01P28_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6287,11 +6243,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P28_End(context);
-                    return;
+                    return new StateG01P28_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6302,11 +6259,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P28End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6319,11 +6277,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P29Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P29_CleanUp(context);
-                    return;
+                    return new StateG01P29_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -6343,11 +6302,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P29_Check(context);
-                    return;
+                    return new StateG01P29_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6362,11 +6322,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P29_End(context);
-                    return;
+                    return new StateG01P29_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6377,11 +6338,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P29End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6394,11 +6356,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 100, key: "G01P30Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG01P30_CleanUp(context);
-                    return;
+                    return new StateG01P30_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -6418,11 +6381,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG01P30_Check(context);
-                    return;
+                    return new StateG01P30_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6437,11 +6401,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG01P30_End(context);
-                    return;
+                    return new StateG01P30_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6452,11 +6417,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G01P30End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6469,11 +6435,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P01Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P01_CleanUp(context);
-                    return;
+                    return new StateG02P01_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -6493,11 +6460,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P01_Check(context);
-                    return;
+                    return new StateG02P01_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6512,11 +6480,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P01_End(context);
-                    return;
+                    return new StateG02P01_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6527,11 +6496,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P01End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6544,11 +6514,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P02Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P02_CleanUp(context);
-                    return;
+                    return new StateG02P02_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -6568,11 +6539,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P02_Check(context);
-                    return;
+                    return new StateG02P02_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6587,11 +6559,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P02_End(context);
-                    return;
+                    return new StateG02P02_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6602,11 +6575,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P02End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6619,11 +6593,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P03Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P03_CleanUp(context);
-                    return;
+                    return new StateG02P03_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -6643,11 +6618,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P03_Check(context);
-                    return;
+                    return new StateG02P03_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6662,11 +6638,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P03_End(context);
-                    return;
+                    return new StateG02P03_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6677,11 +6654,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P03End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6694,11 +6672,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P04Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P04_CleanUp(context);
-                    return;
+                    return new StateG02P04_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -6718,11 +6697,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P04_Check(context);
-                    return;
+                    return new StateG02P04_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6737,11 +6717,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P04_End(context);
-                    return;
+                    return new StateG02P04_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6752,11 +6733,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P04End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6769,11 +6751,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P05Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P05_CleanUp(context);
-                    return;
+                    return new StateG02P05_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -6793,11 +6776,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P05_Check(context);
-                    return;
+                    return new StateG02P05_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6812,11 +6796,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P05_End(context);
-                    return;
+                    return new StateG02P05_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6827,11 +6812,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P05End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6844,11 +6830,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P06Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P06_CleanUp(context);
-                    return;
+                    return new StateG02P06_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -6868,11 +6855,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P06_Check(context);
-                    return;
+                    return new StateG02P06_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6887,11 +6875,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P06_End(context);
-                    return;
+                    return new StateG02P06_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6902,11 +6891,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P06End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6919,11 +6909,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P07Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P07_CleanUp(context);
-                    return;
+                    return new StateG02P07_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -6943,11 +6934,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P07_Check(context);
-                    return;
+                    return new StateG02P07_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6962,11 +6954,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P07_End(context);
-                    return;
+                    return new StateG02P07_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6977,11 +6970,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P07End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6994,11 +6988,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P08Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P08_CleanUp(context);
-                    return;
+                    return new StateG02P08_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7018,11 +7013,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P08_Check(context);
-                    return;
+                    return new StateG02P08_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7037,11 +7033,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P08_End(context);
-                    return;
+                    return new StateG02P08_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7052,11 +7049,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P08End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7069,11 +7067,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P09Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P09_CleanUp(context);
-                    return;
+                    return new StateG02P09_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7093,11 +7092,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P09_Check(context);
-                    return;
+                    return new StateG02P09_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7112,11 +7112,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P09_End(context);
-                    return;
+                    return new StateG02P09_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7127,11 +7128,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P09End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7144,11 +7146,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P10Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P10_CleanUp(context);
-                    return;
+                    return new StateG02P10_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7168,11 +7171,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P10_Check(context);
-                    return;
+                    return new StateG02P10_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7187,11 +7191,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P10_End(context);
-                    return;
+                    return new StateG02P10_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7202,11 +7207,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P10End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7219,11 +7225,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P11Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P11_CleanUp(context);
-                    return;
+                    return new StateG02P11_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7243,11 +7250,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P11_Check(context);
-                    return;
+                    return new StateG02P11_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7262,11 +7270,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P11_End(context);
-                    return;
+                    return new StateG02P11_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7277,11 +7286,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P11End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7294,11 +7304,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P12Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P12_CleanUp(context);
-                    return;
+                    return new StateG02P12_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7318,11 +7329,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P12_Check(context);
-                    return;
+                    return new StateG02P12_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7337,11 +7349,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P12_End(context);
-                    return;
+                    return new StateG02P12_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7352,11 +7365,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P12End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7369,11 +7383,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P13Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P13_CleanUp(context);
-                    return;
+                    return new StateG02P13_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7393,11 +7408,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P13_Check(context);
-                    return;
+                    return new StateG02P13_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7412,11 +7428,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P13_End(context);
-                    return;
+                    return new StateG02P13_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7427,11 +7444,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P13End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7444,11 +7462,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P14Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P14_CleanUp(context);
-                    return;
+                    return new StateG02P14_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7468,11 +7487,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P14_Check(context);
-                    return;
+                    return new StateG02P14_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7487,11 +7507,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P14_End(context);
-                    return;
+                    return new StateG02P14_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7502,11 +7523,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P14End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7519,11 +7541,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P15Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P15_CleanUp(context);
-                    return;
+                    return new StateG02P15_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7543,11 +7566,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P15_Check(context);
-                    return;
+                    return new StateG02P15_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7562,11 +7586,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P15_End(context);
-                    return;
+                    return new StateG02P15_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7577,11 +7602,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P15End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7594,11 +7620,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P16Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P16_CleanUp(context);
-                    return;
+                    return new StateG02P16_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7618,11 +7645,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P16_Check(context);
-                    return;
+                    return new StateG02P16_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7637,11 +7665,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P16_End(context);
-                    return;
+                    return new StateG02P16_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7652,11 +7681,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P16End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7669,11 +7699,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P17Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P17_CleanUp(context);
-                    return;
+                    return new StateG02P17_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7693,11 +7724,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P17_Check(context);
-                    return;
+                    return new StateG02P17_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7712,11 +7744,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P17_End(context);
-                    return;
+                    return new StateG02P17_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7727,11 +7760,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P17End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7744,11 +7778,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P18Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P18_CleanUp(context);
-                    return;
+                    return new StateG02P18_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7768,11 +7803,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P18_Check(context);
-                    return;
+                    return new StateG02P18_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7787,11 +7823,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P18_End(context);
-                    return;
+                    return new StateG02P18_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7802,11 +7839,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P18End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7819,11 +7857,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P19Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P19_CleanUp(context);
-                    return;
+                    return new StateG02P19_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7843,11 +7882,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P19_Check(context);
-                    return;
+                    return new StateG02P19_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7862,11 +7902,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P19_End(context);
-                    return;
+                    return new StateG02P19_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7877,11 +7918,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P19End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7894,11 +7936,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P20Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P20_CleanUp(context);
-                    return;
+                    return new StateG02P20_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7918,11 +7961,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P20_Check(context);
-                    return;
+                    return new StateG02P20_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7937,11 +7981,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P20_End(context);
-                    return;
+                    return new StateG02P20_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7952,11 +7997,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P20End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7969,11 +8015,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P21Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P21_CleanUp(context);
-                    return;
+                    return new StateG02P21_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -7993,11 +8040,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P21_Check(context);
-                    return;
+                    return new StateG02P21_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8012,11 +8060,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P21_End(context);
-                    return;
+                    return new StateG02P21_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8027,11 +8076,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P21End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8044,11 +8094,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P22Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P22_CleanUp(context);
-                    return;
+                    return new StateG02P22_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -8068,11 +8119,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P22_Check(context);
-                    return;
+                    return new StateG02P22_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8087,11 +8139,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P22_End(context);
-                    return;
+                    return new StateG02P22_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8102,11 +8155,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P22End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8119,11 +8173,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P23Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P23_CleanUp(context);
-                    return;
+                    return new StateG02P23_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -8143,11 +8198,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P23_Check(context);
-                    return;
+                    return new StateG02P23_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8162,11 +8218,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P23_End(context);
-                    return;
+                    return new StateG02P23_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8177,11 +8234,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P23End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8194,11 +8252,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P24Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P24_CleanUp(context);
-                    return;
+                    return new StateG02P24_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -8218,11 +8277,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P24_Check(context);
-                    return;
+                    return new StateG02P24_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8237,11 +8297,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P24_End(context);
-                    return;
+                    return new StateG02P24_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8252,11 +8313,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P24End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8269,11 +8331,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P25Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P25_CleanUp(context);
-                    return;
+                    return new StateG02P25_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -8293,11 +8356,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P25_Check(context);
-                    return;
+                    return new StateG02P25_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8312,11 +8376,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P25_End(context);
-                    return;
+                    return new StateG02P25_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8327,11 +8392,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P25End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8344,11 +8410,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P26Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P26_CleanUp(context);
-                    return;
+                    return new StateG02P26_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -8368,11 +8435,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P26_Check(context);
-                    return;
+                    return new StateG02P26_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8387,11 +8455,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P26_End(context);
-                    return;
+                    return new StateG02P26_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8402,11 +8471,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P26End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8419,11 +8489,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P27Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P27_CleanUp(context);
-                    return;
+                    return new StateG02P27_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -8443,11 +8514,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P27_Check(context);
-                    return;
+                    return new StateG02P27_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8462,11 +8534,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P27_End(context);
-                    return;
+                    return new StateG02P27_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8477,11 +8550,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P27End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8494,11 +8568,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P28Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P28_CleanUp(context);
-                    return;
+                    return new StateG02P28_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -8518,11 +8593,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P28_Check(context);
-                    return;
+                    return new StateG02P28_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8537,11 +8613,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P28_End(context);
-                    return;
+                    return new StateG02P28_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8552,11 +8629,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P28End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8569,11 +8647,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P29Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P29_CleanUp(context);
-                    return;
+                    return new StateG02P29_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -8593,11 +8672,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P29_Check(context);
-                    return;
+                    return new StateG02P29_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8612,11 +8692,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P29_End(context);
-                    return;
+                    return new StateG02P29_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8627,11 +8708,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P29End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8644,11 +8726,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 200, key: "G02P30Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG02P30_CleanUp(context);
-                    return;
+                    return new StateG02P30_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -8668,11 +8751,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG02P30_Check(context);
-                    return;
+                    return new StateG02P30_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8687,11 +8771,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG02P30_End(context);
-                    return;
+                    return new StateG02P30_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8702,11 +8787,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G02P30End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8719,11 +8805,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P01Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P01_CleanUp(context);
-                    return;
+                    return new StateG03P01_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -8743,11 +8830,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P01_Check(context);
-                    return;
+                    return new StateG03P01_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8762,11 +8850,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P01_End(context);
-                    return;
+                    return new StateG03P01_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8777,11 +8866,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P01End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8794,11 +8884,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P02Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P02_CleanUp(context);
-                    return;
+                    return new StateG03P02_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -8818,11 +8909,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P02_Check(context);
-                    return;
+                    return new StateG03P02_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8837,11 +8929,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P02_End(context);
-                    return;
+                    return new StateG03P02_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8852,11 +8945,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P02End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8869,11 +8963,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P03Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P03_CleanUp(context);
-                    return;
+                    return new StateG03P03_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -8893,11 +8988,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P03_Check(context);
-                    return;
+                    return new StateG03P03_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8912,11 +9008,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P03_End(context);
-                    return;
+                    return new StateG03P03_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8927,11 +9024,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P03End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8944,11 +9042,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P04Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P04_CleanUp(context);
-                    return;
+                    return new StateG03P04_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -8968,11 +9067,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P04_Check(context);
-                    return;
+                    return new StateG03P04_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8987,11 +9087,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P04_End(context);
-                    return;
+                    return new StateG03P04_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9002,11 +9103,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P04End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9019,11 +9121,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P05Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P05_CleanUp(context);
-                    return;
+                    return new StateG03P05_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -9043,11 +9146,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P05_Check(context);
-                    return;
+                    return new StateG03P05_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9062,11 +9166,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P05_End(context);
-                    return;
+                    return new StateG03P05_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9077,11 +9182,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P05End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9094,11 +9200,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P06Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P06_CleanUp(context);
-                    return;
+                    return new StateG03P06_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -9118,11 +9225,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P06_Check(context);
-                    return;
+                    return new StateG03P06_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9137,11 +9245,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P06_End(context);
-                    return;
+                    return new StateG03P06_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9152,11 +9261,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P06End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9169,11 +9279,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P07Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P07_CleanUp(context);
-                    return;
+                    return new StateG03P07_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -9193,11 +9304,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P07_Check(context);
-                    return;
+                    return new StateG03P07_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9212,11 +9324,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P07_End(context);
-                    return;
+                    return new StateG03P07_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9227,11 +9340,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P07End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9244,11 +9358,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P08Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P08_CleanUp(context);
-                    return;
+                    return new StateG03P08_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -9268,11 +9383,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P08_Check(context);
-                    return;
+                    return new StateG03P08_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9287,11 +9403,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P08_End(context);
-                    return;
+                    return new StateG03P08_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9302,11 +9419,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P08End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9319,11 +9437,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P09Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P09_CleanUp(context);
-                    return;
+                    return new StateG03P09_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -9343,11 +9462,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P09_Check(context);
-                    return;
+                    return new StateG03P09_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9362,11 +9482,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P09_End(context);
-                    return;
+                    return new StateG03P09_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9377,11 +9498,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P09End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9394,11 +9516,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P10Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P10_CleanUp(context);
-                    return;
+                    return new StateG03P10_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -9418,11 +9541,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P10_Check(context);
-                    return;
+                    return new StateG03P10_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9437,11 +9561,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P10_End(context);
-                    return;
+                    return new StateG03P10_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9452,11 +9577,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P10End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9469,11 +9595,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P11Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P11_CleanUp(context);
-                    return;
+                    return new StateG03P11_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -9493,11 +9620,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P11_Check(context);
-                    return;
+                    return new StateG03P11_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9512,11 +9640,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P11_End(context);
-                    return;
+                    return new StateG03P11_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9527,11 +9656,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P11End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9544,11 +9674,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P12Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P12_CleanUp(context);
-                    return;
+                    return new StateG03P12_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -9568,11 +9699,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P12_Check(context);
-                    return;
+                    return new StateG03P12_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9587,11 +9719,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P12_End(context);
-                    return;
+                    return new StateG03P12_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9602,11 +9735,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P12End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9619,11 +9753,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P13Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P13_CleanUp(context);
-                    return;
+                    return new StateG03P13_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -9643,11 +9778,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P13_Check(context);
-                    return;
+                    return new StateG03P13_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9662,11 +9798,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P13_End(context);
-                    return;
+                    return new StateG03P13_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9677,11 +9814,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P13End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9694,11 +9832,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P14Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P14_CleanUp(context);
-                    return;
+                    return new StateG03P14_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -9718,11 +9857,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P14_Check(context);
-                    return;
+                    return new StateG03P14_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9737,11 +9877,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P14_End(context);
-                    return;
+                    return new StateG03P14_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9752,11 +9893,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P14End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9769,11 +9911,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P15Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P15_CleanUp(context);
-                    return;
+                    return new StateG03P15_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -9793,11 +9936,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P15_Check(context);
-                    return;
+                    return new StateG03P15_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9812,11 +9956,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P15_End(context);
-                    return;
+                    return new StateG03P15_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9827,11 +9972,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P15End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9844,11 +9990,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P16Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P16_CleanUp(context);
-                    return;
+                    return new StateG03P16_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -9868,11 +10015,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P16_Check(context);
-                    return;
+                    return new StateG03P16_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9887,11 +10035,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P16_End(context);
-                    return;
+                    return new StateG03P16_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9902,11 +10051,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P16End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9919,11 +10069,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P17Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P17_CleanUp(context);
-                    return;
+                    return new StateG03P17_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -9943,11 +10094,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P17_Check(context);
-                    return;
+                    return new StateG03P17_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9962,11 +10114,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P17_End(context);
-                    return;
+                    return new StateG03P17_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9977,11 +10130,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P17End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9994,11 +10148,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P18Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P18_CleanUp(context);
-                    return;
+                    return new StateG03P18_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10018,11 +10173,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P18_Check(context);
-                    return;
+                    return new StateG03P18_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10037,11 +10193,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P18_End(context);
-                    return;
+                    return new StateG03P18_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10052,11 +10209,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P18End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10069,11 +10227,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P19Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P19_CleanUp(context);
-                    return;
+                    return new StateG03P19_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10093,11 +10252,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P19_Check(context);
-                    return;
+                    return new StateG03P19_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10112,11 +10272,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P19_End(context);
-                    return;
+                    return new StateG03P19_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10127,11 +10288,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P19End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10144,11 +10306,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P20Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P20_CleanUp(context);
-                    return;
+                    return new StateG03P20_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10168,11 +10331,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P20_Check(context);
-                    return;
+                    return new StateG03P20_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10187,11 +10351,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P20_End(context);
-                    return;
+                    return new StateG03P20_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10202,11 +10367,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P20End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10219,11 +10385,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P21Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P21_CleanUp(context);
-                    return;
+                    return new StateG03P21_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10243,11 +10410,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P21_Check(context);
-                    return;
+                    return new StateG03P21_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10262,11 +10430,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P21_End(context);
-                    return;
+                    return new StateG03P21_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10277,11 +10446,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P21End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10294,11 +10464,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P22Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P22_CleanUp(context);
-                    return;
+                    return new StateG03P22_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10318,11 +10489,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P22_Check(context);
-                    return;
+                    return new StateG03P22_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10337,11 +10509,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P22_End(context);
-                    return;
+                    return new StateG03P22_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10352,11 +10525,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P22End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10369,11 +10543,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P23Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P23_CleanUp(context);
-                    return;
+                    return new StateG03P23_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10393,11 +10568,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P23_Check(context);
-                    return;
+                    return new StateG03P23_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10412,11 +10588,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P23_End(context);
-                    return;
+                    return new StateG03P23_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10427,11 +10604,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P23End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10444,11 +10622,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P24Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P24_CleanUp(context);
-                    return;
+                    return new StateG03P24_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10468,11 +10647,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P24_Check(context);
-                    return;
+                    return new StateG03P24_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10487,11 +10667,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P24_End(context);
-                    return;
+                    return new StateG03P24_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10502,11 +10683,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P24End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10519,11 +10701,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P25Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P25_CleanUp(context);
-                    return;
+                    return new StateG03P25_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10543,11 +10726,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P25_Check(context);
-                    return;
+                    return new StateG03P25_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10562,11 +10746,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P25_End(context);
-                    return;
+                    return new StateG03P25_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10577,11 +10762,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P25End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10594,11 +10780,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P26Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P26_CleanUp(context);
-                    return;
+                    return new StateG03P26_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10618,11 +10805,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P26_Check(context);
-                    return;
+                    return new StateG03P26_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10637,11 +10825,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P26_End(context);
-                    return;
+                    return new StateG03P26_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10652,11 +10841,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P26End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10669,11 +10859,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P27Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P27_CleanUp(context);
-                    return;
+                    return new StateG03P27_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10693,11 +10884,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P27_Check(context);
-                    return;
+                    return new StateG03P27_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10712,11 +10904,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P27_End(context);
-                    return;
+                    return new StateG03P27_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10727,11 +10920,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P27End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10744,11 +10938,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P28Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P28_CleanUp(context);
-                    return;
+                    return new StateG03P28_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10768,11 +10963,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P28_Check(context);
-                    return;
+                    return new StateG03P28_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10787,11 +10983,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P28_End(context);
-                    return;
+                    return new StateG03P28_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10802,11 +10999,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P28End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10819,11 +11017,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P29Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P29_CleanUp(context);
-                    return;
+                    return new StateG03P29_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10843,11 +11042,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P29_Check(context);
-                    return;
+                    return new StateG03P29_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10862,11 +11062,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P29_End(context);
-                    return;
+                    return new StateG03P29_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10877,11 +11078,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P29End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10894,11 +11096,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 300, key: "G03P30Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG03P30_CleanUp(context);
-                    return;
+                    return new StateG03P30_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10918,11 +11121,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG03P30_Check(context);
-                    return;
+                    return new StateG03P30_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10937,11 +11141,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG03P30_End(context);
-                    return;
+                    return new StateG03P30_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10952,11 +11157,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G03P30End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -10969,11 +11175,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P01Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P01_CleanUp(context);
-                    return;
+                    return new StateG04P01_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -10993,11 +11200,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P01_Check(context);
-                    return;
+                    return new StateG04P01_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11012,11 +11220,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P01_End(context);
-                    return;
+                    return new StateG04P01_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11027,11 +11236,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P01End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11044,11 +11254,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P02Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P02_CleanUp(context);
-                    return;
+                    return new StateG04P02_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -11068,11 +11279,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P02_Check(context);
-                    return;
+                    return new StateG04P02_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11087,11 +11299,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P02_End(context);
-                    return;
+                    return new StateG04P02_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11102,11 +11315,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P02End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11119,11 +11333,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P03Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P03_CleanUp(context);
-                    return;
+                    return new StateG04P03_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -11143,11 +11358,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P03_Check(context);
-                    return;
+                    return new StateG04P03_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11162,11 +11378,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P03_End(context);
-                    return;
+                    return new StateG04P03_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11177,11 +11394,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P03End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11194,11 +11412,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P04Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P04_CleanUp(context);
-                    return;
+                    return new StateG04P04_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -11218,11 +11437,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P04_Check(context);
-                    return;
+                    return new StateG04P04_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11237,11 +11457,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P04_End(context);
-                    return;
+                    return new StateG04P04_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11252,11 +11473,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P04End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11269,11 +11491,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P05Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P05_CleanUp(context);
-                    return;
+                    return new StateG04P05_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -11293,11 +11516,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P05_Check(context);
-                    return;
+                    return new StateG04P05_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11312,11 +11536,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P05_End(context);
-                    return;
+                    return new StateG04P05_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11327,11 +11552,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P05End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11344,11 +11570,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P06Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P06_CleanUp(context);
-                    return;
+                    return new StateG04P06_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -11368,11 +11595,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P06_Check(context);
-                    return;
+                    return new StateG04P06_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11387,11 +11615,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P06_End(context);
-                    return;
+                    return new StateG04P06_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11402,11 +11631,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P06End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11419,11 +11649,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P07Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P07_CleanUp(context);
-                    return;
+                    return new StateG04P07_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -11443,11 +11674,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P07_Check(context);
-                    return;
+                    return new StateG04P07_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11462,11 +11694,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P07_End(context);
-                    return;
+                    return new StateG04P07_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11477,11 +11710,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P07End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11494,11 +11728,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P08Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P08_CleanUp(context);
-                    return;
+                    return new StateG04P08_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -11518,11 +11753,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P08_Check(context);
-                    return;
+                    return new StateG04P08_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11537,11 +11773,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P08_End(context);
-                    return;
+                    return new StateG04P08_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11552,11 +11789,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P08End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11569,11 +11807,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P09Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P09_CleanUp(context);
-                    return;
+                    return new StateG04P09_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -11593,11 +11832,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P09_Check(context);
-                    return;
+                    return new StateG04P09_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11612,11 +11852,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P09_End(context);
-                    return;
+                    return new StateG04P09_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11627,11 +11868,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P09End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11644,11 +11886,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P10Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P10_CleanUp(context);
-                    return;
+                    return new StateG04P10_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -11668,11 +11911,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P10_Check(context);
-                    return;
+                    return new StateG04P10_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11687,11 +11931,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P10_End(context);
-                    return;
+                    return new StateG04P10_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11702,11 +11947,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P10End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11719,11 +11965,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P11Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P11_CleanUp(context);
-                    return;
+                    return new StateG04P11_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -11743,11 +11990,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P11_Check(context);
-                    return;
+                    return new StateG04P11_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11762,11 +12010,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P11_End(context);
-                    return;
+                    return new StateG04P11_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11777,11 +12026,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P11End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11794,11 +12044,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P12Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P12_CleanUp(context);
-                    return;
+                    return new StateG04P12_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -11818,11 +12069,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P12_Check(context);
-                    return;
+                    return new StateG04P12_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11837,11 +12089,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P12_End(context);
-                    return;
+                    return new StateG04P12_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11852,11 +12105,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P12End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11869,11 +12123,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P13Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P13_CleanUp(context);
-                    return;
+                    return new StateG04P13_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -11893,11 +12148,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P13_Check(context);
-                    return;
+                    return new StateG04P13_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11912,11 +12168,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P13_End(context);
-                    return;
+                    return new StateG04P13_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11927,11 +12184,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P13End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11944,11 +12202,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P14Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P14_CleanUp(context);
-                    return;
+                    return new StateG04P14_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -11968,11 +12227,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P14_Check(context);
-                    return;
+                    return new StateG04P14_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -11987,11 +12247,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P14_End(context);
-                    return;
+                    return new StateG04P14_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12002,11 +12263,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P14End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12019,11 +12281,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P15Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P15_CleanUp(context);
-                    return;
+                    return new StateG04P15_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -12043,11 +12306,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P15_Check(context);
-                    return;
+                    return new StateG04P15_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12062,11 +12326,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P15_End(context);
-                    return;
+                    return new StateG04P15_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12077,11 +12342,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P15End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12094,11 +12360,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P16Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P16_CleanUp(context);
-                    return;
+                    return new StateG04P16_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -12118,11 +12385,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P16_Check(context);
-                    return;
+                    return new StateG04P16_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12137,11 +12405,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P16_End(context);
-                    return;
+                    return new StateG04P16_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12152,11 +12421,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P16End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12169,11 +12439,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P17Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P17_CleanUp(context);
-                    return;
+                    return new StateG04P17_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -12193,11 +12464,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P17_Check(context);
-                    return;
+                    return new StateG04P17_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12212,11 +12484,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P17_End(context);
-                    return;
+                    return new StateG04P17_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12227,11 +12500,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P17End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12244,11 +12518,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P18Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P18_CleanUp(context);
-                    return;
+                    return new StateG04P18_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -12268,11 +12543,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P18_Check(context);
-                    return;
+                    return new StateG04P18_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12287,11 +12563,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P18_End(context);
-                    return;
+                    return new StateG04P18_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12302,11 +12579,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P18End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12319,11 +12597,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P19Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P19_CleanUp(context);
-                    return;
+                    return new StateG04P19_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -12343,11 +12622,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P19_Check(context);
-                    return;
+                    return new StateG04P19_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12362,11 +12642,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P19_End(context);
-                    return;
+                    return new StateG04P19_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12377,11 +12658,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P19End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12394,11 +12676,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P20Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P20_CleanUp(context);
-                    return;
+                    return new StateG04P20_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -12418,11 +12701,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P20_Check(context);
-                    return;
+                    return new StateG04P20_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12437,11 +12721,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P20_End(context);
-                    return;
+                    return new StateG04P20_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12452,11 +12737,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P20End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12469,11 +12755,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P21Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P21_CleanUp(context);
-                    return;
+                    return new StateG04P21_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -12493,11 +12780,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P21_Check(context);
-                    return;
+                    return new StateG04P21_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12512,11 +12800,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P21_End(context);
-                    return;
+                    return new StateG04P21_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12527,11 +12816,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P21End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12544,11 +12834,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P22Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P22_CleanUp(context);
-                    return;
+                    return new StateG04P22_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -12568,11 +12859,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P22_Check(context);
-                    return;
+                    return new StateG04P22_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12587,11 +12879,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P22_End(context);
-                    return;
+                    return new StateG04P22_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12602,11 +12895,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P22End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12619,11 +12913,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P23Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P23_CleanUp(context);
-                    return;
+                    return new StateG04P23_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -12643,11 +12938,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P23_Check(context);
-                    return;
+                    return new StateG04P23_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12662,11 +12958,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P23_End(context);
-                    return;
+                    return new StateG04P23_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12677,11 +12974,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P23End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12694,11 +12992,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P24Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P24_CleanUp(context);
-                    return;
+                    return new StateG04P24_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -12718,11 +13017,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P24_Check(context);
-                    return;
+                    return new StateG04P24_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12737,11 +13037,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P24_End(context);
-                    return;
+                    return new StateG04P24_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12752,11 +13053,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P24End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12769,11 +13071,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P25Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P25_CleanUp(context);
-                    return;
+                    return new StateG04P25_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -12793,11 +13096,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P25_Check(context);
-                    return;
+                    return new StateG04P25_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12812,11 +13116,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P25_End(context);
-                    return;
+                    return new StateG04P25_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12827,11 +13132,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P25End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12844,11 +13150,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P26Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P26_CleanUp(context);
-                    return;
+                    return new StateG04P26_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -12868,11 +13175,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P26_Check(context);
-                    return;
+                    return new StateG04P26_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12887,11 +13195,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P26_End(context);
-                    return;
+                    return new StateG04P26_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12902,11 +13211,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P26End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12919,11 +13229,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P27Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P27_CleanUp(context);
-                    return;
+                    return new StateG04P27_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -12943,11 +13254,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P27_Check(context);
-                    return;
+                    return new StateG04P27_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12962,11 +13274,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P27_End(context);
-                    return;
+                    return new StateG04P27_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12977,11 +13290,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P27End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -12994,11 +13308,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P28Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P28_CleanUp(context);
-                    return;
+                    return new StateG04P28_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13018,11 +13333,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P28_Check(context);
-                    return;
+                    return new StateG04P28_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13037,11 +13353,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P28_End(context);
-                    return;
+                    return new StateG04P28_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13052,11 +13369,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P28End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13069,11 +13387,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P29Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P29_CleanUp(context);
-                    return;
+                    return new StateG04P29_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13093,11 +13412,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P29_Check(context);
-                    return;
+                    return new StateG04P29_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13112,11 +13432,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P29_End(context);
-                    return;
+                    return new StateG04P29_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13127,11 +13448,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P29End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13144,11 +13466,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P30Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P30_CleanUp(context);
-                    return;
+                    return new StateG04P30_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13168,11 +13491,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P30_Check(context);
-                    return;
+                    return new StateG04P30_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13187,11 +13511,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P30_End(context);
-                    return;
+                    return new StateG04P30_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13202,11 +13527,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P30End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13219,11 +13545,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P31Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P31_CleanUp(context);
-                    return;
+                    return new StateG04P31_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13243,11 +13570,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P31_Check(context);
-                    return;
+                    return new StateG04P31_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13262,11 +13590,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P31_End(context);
-                    return;
+                    return new StateG04P31_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13277,11 +13606,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P31End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13294,11 +13624,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P32Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P32_CleanUp(context);
-                    return;
+                    return new StateG04P32_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13318,11 +13649,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P32_Check(context);
-                    return;
+                    return new StateG04P32_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13337,11 +13669,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P32_End(context);
-                    return;
+                    return new StateG04P32_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13352,11 +13685,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P32End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13369,11 +13703,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P33Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P33_CleanUp(context);
-                    return;
+                    return new StateG04P33_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13393,11 +13728,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P33_Check(context);
-                    return;
+                    return new StateG04P33_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13412,11 +13748,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P33_End(context);
-                    return;
+                    return new StateG04P33_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13427,11 +13764,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P33End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13444,11 +13782,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P34Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P34_CleanUp(context);
-                    return;
+                    return new StateG04P34_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13468,11 +13807,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P34_Check(context);
-                    return;
+                    return new StateG04P34_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13487,11 +13827,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P34_End(context);
-                    return;
+                    return new StateG04P34_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13502,11 +13843,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P34End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13519,11 +13861,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P35Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P35_CleanUp(context);
-                    return;
+                    return new StateG04P35_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13543,11 +13886,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P35_Check(context);
-                    return;
+                    return new StateG04P35_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13562,11 +13906,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P35_End(context);
-                    return;
+                    return new StateG04P35_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13577,11 +13922,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P35End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13594,11 +13940,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P36Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P36_CleanUp(context);
-                    return;
+                    return new StateG04P36_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13618,11 +13965,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P36_Check(context);
-                    return;
+                    return new StateG04P36_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13637,11 +13985,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P36_End(context);
-                    return;
+                    return new StateG04P36_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13652,11 +14001,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P36End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13669,11 +14019,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P37Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P37_CleanUp(context);
-                    return;
+                    return new StateG04P37_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13693,11 +14044,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P37_Check(context);
-                    return;
+                    return new StateG04P37_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13712,11 +14064,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P37_End(context);
-                    return;
+                    return new StateG04P37_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13727,11 +14080,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P37End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13744,11 +14098,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P38Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P38_CleanUp(context);
-                    return;
+                    return new StateG04P38_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13768,11 +14123,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P38_Check(context);
-                    return;
+                    return new StateG04P38_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13787,11 +14143,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P38_End(context);
-                    return;
+                    return new StateG04P38_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13802,11 +14159,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P38End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13819,11 +14177,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P39Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P39_CleanUp(context);
-                    return;
+                    return new StateG04P39_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13843,11 +14202,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P39_Check(context);
-                    return;
+                    return new StateG04P39_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13862,11 +14222,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P39_End(context);
-                    return;
+                    return new StateG04P39_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13877,11 +14238,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P39End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13894,11 +14256,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 400, key: "G04P40Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG04P40_CleanUp(context);
-                    return;
+                    return new StateG04P40_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13918,11 +14281,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG04P40_Check(context);
-                    return;
+                    return new StateG04P40_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13937,11 +14301,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG04P40_End(context);
-                    return;
+                    return new StateG04P40_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13952,11 +14317,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G04P40End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -13969,11 +14335,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P01Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P01_CleanUp(context);
-                    return;
+                    return new StateG05P01_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -13993,11 +14360,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P01_Check(context);
-                    return;
+                    return new StateG05P01_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14012,11 +14380,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P01_End(context);
-                    return;
+                    return new StateG05P01_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14027,11 +14396,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P01End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14044,11 +14414,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P02Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P02_CleanUp(context);
-                    return;
+                    return new StateG05P02_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -14068,11 +14439,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P02_Check(context);
-                    return;
+                    return new StateG05P02_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14087,11 +14459,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P02_End(context);
-                    return;
+                    return new StateG05P02_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14102,11 +14475,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P02End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14119,11 +14493,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P03Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P03_CleanUp(context);
-                    return;
+                    return new StateG05P03_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -14143,11 +14518,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P03_Check(context);
-                    return;
+                    return new StateG05P03_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14162,11 +14538,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P03_End(context);
-                    return;
+                    return new StateG05P03_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14177,11 +14554,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P03End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14194,11 +14572,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P04Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P04_CleanUp(context);
-                    return;
+                    return new StateG05P04_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -14218,11 +14597,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P04_Check(context);
-                    return;
+                    return new StateG05P04_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14237,11 +14617,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P04_End(context);
-                    return;
+                    return new StateG05P04_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14252,11 +14633,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P04End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14269,11 +14651,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P05Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P05_CleanUp(context);
-                    return;
+                    return new StateG05P05_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -14293,11 +14676,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P05_Check(context);
-                    return;
+                    return new StateG05P05_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14312,11 +14696,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P05_End(context);
-                    return;
+                    return new StateG05P05_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14327,11 +14712,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P05End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14344,11 +14730,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P06Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P06_CleanUp(context);
-                    return;
+                    return new StateG05P06_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -14368,11 +14755,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P06_Check(context);
-                    return;
+                    return new StateG05P06_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14387,11 +14775,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P06_End(context);
-                    return;
+                    return new StateG05P06_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14402,11 +14791,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P06End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14419,11 +14809,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P07Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P07_CleanUp(context);
-                    return;
+                    return new StateG05P07_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -14443,11 +14834,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P07_Check(context);
-                    return;
+                    return new StateG05P07_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14462,11 +14854,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P07_End(context);
-                    return;
+                    return new StateG05P07_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14477,11 +14870,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P07End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14494,11 +14888,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P08Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P08_CleanUp(context);
-                    return;
+                    return new StateG05P08_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -14518,11 +14913,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P08_Check(context);
-                    return;
+                    return new StateG05P08_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14537,11 +14933,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P08_End(context);
-                    return;
+                    return new StateG05P08_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14552,11 +14949,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P08End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14569,11 +14967,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P09Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P09_CleanUp(context);
-                    return;
+                    return new StateG05P09_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -14593,11 +14992,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P09_Check(context);
-                    return;
+                    return new StateG05P09_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14612,11 +15012,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P09_End(context);
-                    return;
+                    return new StateG05P09_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14627,11 +15028,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P09End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14644,11 +15046,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P10Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P10_CleanUp(context);
-                    return;
+                    return new StateG05P10_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -14668,11 +15071,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P10_Check(context);
-                    return;
+                    return new StateG05P10_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14687,11 +15091,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P10_End(context);
-                    return;
+                    return new StateG05P10_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14702,11 +15107,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P10End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14719,11 +15125,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P11Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P11_CleanUp(context);
-                    return;
+                    return new StateG05P11_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -14743,11 +15150,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P11_Check(context);
-                    return;
+                    return new StateG05P11_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14762,11 +15170,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P11_End(context);
-                    return;
+                    return new StateG05P11_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14777,11 +15186,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P11End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14794,11 +15204,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P12Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P12_CleanUp(context);
-                    return;
+                    return new StateG05P12_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -14818,11 +15229,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P12_Check(context);
-                    return;
+                    return new StateG05P12_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14837,11 +15249,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P12_End(context);
-                    return;
+                    return new StateG05P12_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14852,11 +15265,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P12End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14869,11 +15283,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P13Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P13_CleanUp(context);
-                    return;
+                    return new StateG05P13_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -14893,11 +15308,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P13_Check(context);
-                    return;
+                    return new StateG05P13_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14912,11 +15328,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P13_End(context);
-                    return;
+                    return new StateG05P13_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14927,11 +15344,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P13End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14944,11 +15362,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P14Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P14_CleanUp(context);
-                    return;
+                    return new StateG05P14_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -14968,11 +15387,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P14_Check(context);
-                    return;
+                    return new StateG05P14_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -14987,11 +15407,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P14_End(context);
-                    return;
+                    return new StateG05P14_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15002,11 +15423,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P14End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15019,11 +15441,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P15Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P15_CleanUp(context);
-                    return;
+                    return new StateG05P15_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -15043,11 +15466,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P15_Check(context);
-                    return;
+                    return new StateG05P15_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15062,11 +15486,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P15_End(context);
-                    return;
+                    return new StateG05P15_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15077,11 +15502,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P15End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15094,11 +15520,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P16Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P16_CleanUp(context);
-                    return;
+                    return new StateG05P16_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -15118,11 +15545,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P16_Check(context);
-                    return;
+                    return new StateG05P16_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15137,11 +15565,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P16_End(context);
-                    return;
+                    return new StateG05P16_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15152,11 +15581,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P16End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15169,11 +15599,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P17Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P17_CleanUp(context);
-                    return;
+                    return new StateG05P17_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -15193,11 +15624,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P17_Check(context);
-                    return;
+                    return new StateG05P17_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15212,11 +15644,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P17_End(context);
-                    return;
+                    return new StateG05P17_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15227,11 +15660,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P17End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15244,11 +15678,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P18Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P18_CleanUp(context);
-                    return;
+                    return new StateG05P18_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -15268,11 +15703,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P18_Check(context);
-                    return;
+                    return new StateG05P18_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15287,11 +15723,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P18_End(context);
-                    return;
+                    return new StateG05P18_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15302,11 +15739,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P18End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15319,11 +15757,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P19Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P19_CleanUp(context);
-                    return;
+                    return new StateG05P19_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -15343,11 +15782,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P19_Check(context);
-                    return;
+                    return new StateG05P19_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15362,11 +15802,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P19_End(context);
-                    return;
+                    return new StateG05P19_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15377,11 +15818,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P19End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15394,11 +15836,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P20Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P20_CleanUp(context);
-                    return;
+                    return new StateG05P20_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -15418,11 +15861,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P20_Check(context);
-                    return;
+                    return new StateG05P20_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15437,11 +15881,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P20_End(context);
-                    return;
+                    return new StateG05P20_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15452,11 +15897,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P20End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15469,11 +15915,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P21Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P21_CleanUp(context);
-                    return;
+                    return new StateG05P21_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -15493,11 +15940,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P21_Check(context);
-                    return;
+                    return new StateG05P21_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15512,11 +15960,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P21_End(context);
-                    return;
+                    return new StateG05P21_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15527,11 +15976,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P21End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15544,11 +15994,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P22Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P22_CleanUp(context);
-                    return;
+                    return new StateG05P22_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -15568,11 +16019,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P22_Check(context);
-                    return;
+                    return new StateG05P22_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15587,11 +16039,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P22_End(context);
-                    return;
+                    return new StateG05P22_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15602,11 +16055,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P22End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15619,11 +16073,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P23Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P23_CleanUp(context);
-                    return;
+                    return new StateG05P23_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -15643,11 +16098,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P23_Check(context);
-                    return;
+                    return new StateG05P23_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15662,11 +16118,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P23_End(context);
-                    return;
+                    return new StateG05P23_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15677,11 +16134,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P23End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15694,11 +16152,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P24Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P24_CleanUp(context);
-                    return;
+                    return new StateG05P24_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -15718,11 +16177,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P24_Check(context);
-                    return;
+                    return new StateG05P24_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15737,11 +16197,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P24_End(context);
-                    return;
+                    return new StateG05P24_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15752,11 +16213,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P24End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15769,11 +16231,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P25Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P25_CleanUp(context);
-                    return;
+                    return new StateG05P25_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -15793,11 +16256,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P25_Check(context);
-                    return;
+                    return new StateG05P25_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15812,11 +16276,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P25_End(context);
-                    return;
+                    return new StateG05P25_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15827,11 +16292,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P25End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15844,11 +16310,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P26Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P26_CleanUp(context);
-                    return;
+                    return new StateG05P26_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -15868,11 +16335,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P26_Check(context);
-                    return;
+                    return new StateG05P26_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15887,11 +16355,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P26_End(context);
-                    return;
+                    return new StateG05P26_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15902,11 +16371,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P26End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15919,11 +16389,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P27Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P27_CleanUp(context);
-                    return;
+                    return new StateG05P27_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -15943,11 +16414,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P27_Check(context);
-                    return;
+                    return new StateG05P27_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15962,11 +16434,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P27_End(context);
-                    return;
+                    return new StateG05P27_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15977,11 +16450,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P27End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -15994,11 +16468,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P28Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P28_CleanUp(context);
-                    return;
+                    return new StateG05P28_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16018,11 +16493,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P28_Check(context);
-                    return;
+                    return new StateG05P28_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16037,11 +16513,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P28_End(context);
-                    return;
+                    return new StateG05P28_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16052,11 +16529,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P28End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16069,11 +16547,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P29Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P29_CleanUp(context);
-                    return;
+                    return new StateG05P29_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16093,11 +16572,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P29_Check(context);
-                    return;
+                    return new StateG05P29_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16112,11 +16592,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P29_End(context);
-                    return;
+                    return new StateG05P29_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16127,11 +16608,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P29End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16144,11 +16626,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P30Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P30_CleanUp(context);
-                    return;
+                    return new StateG05P30_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16168,11 +16651,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P30_Check(context);
-                    return;
+                    return new StateG05P30_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16187,11 +16671,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P30_End(context);
-                    return;
+                    return new StateG05P30_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16202,11 +16687,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P30End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16219,11 +16705,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P31Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P31_CleanUp(context);
-                    return;
+                    return new StateG05P31_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16243,11 +16730,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P31_Check(context);
-                    return;
+                    return new StateG05P31_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16262,11 +16750,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P31_End(context);
-                    return;
+                    return new StateG05P31_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16277,11 +16766,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P31End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16294,11 +16784,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P32Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P32_CleanUp(context);
-                    return;
+                    return new StateG05P32_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16318,11 +16809,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P32_Check(context);
-                    return;
+                    return new StateG05P32_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16337,11 +16829,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P32_End(context);
-                    return;
+                    return new StateG05P32_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16352,11 +16845,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P32End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16369,11 +16863,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P33Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P33_CleanUp(context);
-                    return;
+                    return new StateG05P33_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16393,11 +16888,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P33_Check(context);
-                    return;
+                    return new StateG05P33_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16412,11 +16908,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P33_End(context);
-                    return;
+                    return new StateG05P33_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16427,11 +16924,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P33End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16444,11 +16942,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P34Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P34_CleanUp(context);
-                    return;
+                    return new StateG05P34_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16468,11 +16967,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P34_Check(context);
-                    return;
+                    return new StateG05P34_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16487,11 +16987,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P34_End(context);
-                    return;
+                    return new StateG05P34_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16502,11 +17003,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P34End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16519,11 +17021,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P35Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P35_CleanUp(context);
-                    return;
+                    return new StateG05P35_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16543,11 +17046,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P35_Check(context);
-                    return;
+                    return new StateG05P35_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16562,11 +17066,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P35_End(context);
-                    return;
+                    return new StateG05P35_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16577,11 +17082,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P35End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16594,11 +17100,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P36Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P36_CleanUp(context);
-                    return;
+                    return new StateG05P36_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16618,11 +17125,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P36_Check(context);
-                    return;
+                    return new StateG05P36_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16637,11 +17145,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P36_End(context);
-                    return;
+                    return new StateG05P36_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16652,11 +17161,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P36End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16669,11 +17179,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P37Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P37_CleanUp(context);
-                    return;
+                    return new StateG05P37_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16693,11 +17204,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P37_Check(context);
-                    return;
+                    return new StateG05P37_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16712,11 +17224,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P37_End(context);
-                    return;
+                    return new StateG05P37_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16727,11 +17240,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P37End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16744,11 +17258,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P38Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P38_CleanUp(context);
-                    return;
+                    return new StateG05P38_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16768,11 +17283,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P38_Check(context);
-                    return;
+                    return new StateG05P38_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16787,11 +17303,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P38_End(context);
-                    return;
+                    return new StateG05P38_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16802,11 +17319,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P38End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16819,11 +17337,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P39Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P39_CleanUp(context);
-                    return;
+                    return new StateG05P39_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16843,11 +17362,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P39_Check(context);
-                    return;
+                    return new StateG05P39_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16862,11 +17382,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P39_End(context);
-                    return;
+                    return new StateG05P39_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16877,11 +17398,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P39End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16894,11 +17416,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P40Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P40_CleanUp(context);
-                    return;
+                    return new StateG05P40_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16918,11 +17441,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P40_Check(context);
-                    return;
+                    return new StateG05P40_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16937,11 +17461,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P40_End(context);
-                    return;
+                    return new StateG05P40_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16952,11 +17477,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P40End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -16969,11 +17495,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P41Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P41_CleanUp(context);
-                    return;
+                    return new StateG05P41_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -16993,11 +17520,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P41_Check(context);
-                    return;
+                    return new StateG05P41_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17012,11 +17540,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P41_End(context);
-                    return;
+                    return new StateG05P41_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17027,11 +17556,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P41End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17044,11 +17574,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P42Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P42_CleanUp(context);
-                    return;
+                    return new StateG05P42_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -17068,11 +17599,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P42_Check(context);
-                    return;
+                    return new StateG05P42_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17087,11 +17619,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P42_End(context);
-                    return;
+                    return new StateG05P42_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17102,11 +17635,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P42End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17119,11 +17653,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P43Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P43_CleanUp(context);
-                    return;
+                    return new StateG05P43_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -17143,11 +17678,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P43_Check(context);
-                    return;
+                    return new StateG05P43_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17162,11 +17698,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P43_End(context);
-                    return;
+                    return new StateG05P43_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17177,11 +17714,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P43End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17194,11 +17732,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P44Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P44_CleanUp(context);
-                    return;
+                    return new StateG05P44_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -17218,11 +17757,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P44_Check(context);
-                    return;
+                    return new StateG05P44_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17237,11 +17777,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P44_End(context);
-                    return;
+                    return new StateG05P44_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17252,11 +17793,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P44End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17269,11 +17811,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P45Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P45_CleanUp(context);
-                    return;
+                    return new StateG05P45_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -17293,11 +17836,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P45_Check(context);
-                    return;
+                    return new StateG05P45_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17312,11 +17856,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P45_End(context);
-                    return;
+                    return new StateG05P45_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17327,11 +17872,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P45End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17344,11 +17890,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P46Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P46_CleanUp(context);
-                    return;
+                    return new StateG05P46_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -17368,11 +17915,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P46_Check(context);
-                    return;
+                    return new StateG05P46_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17387,11 +17935,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P46_End(context);
-                    return;
+                    return new StateG05P46_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17402,11 +17951,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P46End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17419,11 +17969,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P47Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P47_CleanUp(context);
-                    return;
+                    return new StateG05P47_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -17443,11 +17994,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P47_Check(context);
-                    return;
+                    return new StateG05P47_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17462,11 +18014,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P47_End(context);
-                    return;
+                    return new StateG05P47_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17477,11 +18030,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P47End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17494,11 +18048,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P48Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P48_CleanUp(context);
-                    return;
+                    return new StateG05P48_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -17518,11 +18073,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P48_Check(context);
-                    return;
+                    return new StateG05P48_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17537,11 +18093,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P48_End(context);
-                    return;
+                    return new StateG05P48_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17552,11 +18109,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P48End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17569,11 +18127,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P49Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P49_CleanUp(context);
-                    return;
+                    return new StateG05P49_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -17593,11 +18152,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P49_Check(context);
-                    return;
+                    return new StateG05P49_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17612,11 +18172,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P49_End(context);
-                    return;
+                    return new StateG05P49_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17627,11 +18188,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P49End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17644,11 +18206,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 500, key: "G05P50Set", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11111")) {
-                    context.State = new StateG05P50_CleanUp(context);
-                    return;
+                    return new StateG05P50_CleanUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -17668,11 +18231,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633}, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateG05P50_Check(context);
-                    return;
+                    return new StateG05P50_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17687,11 +18251,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: "DDStop_Stage_Fail_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateG05P50_End(context);
-                    return;
+                    return new StateG05P50_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17702,11 +18267,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G05P50End") == 1) {
-                    context.State = new StateRoundCheckOutDelay(context);
-                    return;
+                    return new StateRoundCheckOutDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17717,11 +18283,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateRoundCheckOut(context);
-                    return;
+                    return new StateRoundCheckOut(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17739,11 +18306,12 @@ namespace Maple2.Trigger._66200001_gd {
                     arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCheckNextRound(context);
-                    return;
+                    return new StateCheckNextRound(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -17754,31 +18322,28 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round") == 1) {
-                    context.State = new StateR01EndDelay(context);
-                    return;
+                    return new StateR01EndDelay(context);
                 }
 
                 if (context.GetUserValue(key: "Round") == 2) {
-                    context.State = new StateR02EndDelay(context);
-                    return;
+                    return new StateR02EndDelay(context);
                 }
 
                 if (context.GetUserValue(key: "Round") == 3) {
-                    context.State = new StateR03EndDelay(context);
-                    return;
+                    return new StateR03EndDelay(context);
                 }
 
                 if (context.GetUserValue(key: "Round") == 4) {
-                    context.State = new StateR04EndDelay(context);
-                    return;
+                    return new StateR04EndDelay(context);
                 }
 
                 if (context.GetUserValue(key: "Round") == 5) {
-                    context.State = new StateR05EndDelay(context);
-                    return;
+                    return new StateR05EndDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

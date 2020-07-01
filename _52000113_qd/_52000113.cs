@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000113_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10011})) {
-                    context.State = new State대기01(context);
-                    return;
+                    return new State대기01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -34,11 +35,12 @@ namespace Maple2.Trigger._52000113_qd {
                 context.MoveNpc(arg1: 221, arg2: "MS2PatrolData_221");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statecamera01(context);
-                    return;
+                    return new Statecamera01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -52,11 +54,12 @@ namespace Maple2.Trigger._52000113_qd {
                 context.CameraSelectPath(arg1: new[] {1000, 1001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statecamera02(context);
-                    return;
+                    return new Statecamera02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -69,11 +72,12 @@ namespace Maple2.Trigger._52000113_qd {
                 context.CameraSelectPath(arg1: new[] {1002, 1003}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statecamera03(context);
-                    return;
+                    return new Statecamera03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -87,11 +91,12 @@ namespace Maple2.Trigger._52000113_qd {
                 context.MoveNpc(arg1: 208, arg2: "MS2PatrolData_Rogues_come");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statecamera04(context);
-                    return;
+                    return new Statecamera04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -106,11 +111,12 @@ namespace Maple2.Trigger._52000113_qd {
                 context.AddCinematicTalk(npcId: 11003338, illustId: "0", msg: "$52000113_QD__52000113__0$", duration: 4000, align: "right");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statecamera05(context);
-                    return;
+                    return new Statecamera05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -124,11 +130,12 @@ namespace Maple2.Trigger._52000113_qd {
                 context.AddCinematicTalk(npcId: 11003185, illustId: "0", msg: "$52000113_QD__52000113__1$", duration: 4000, align: "right");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statecamera06(context);
-                    return;
+                    return new Statecamera06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -143,11 +150,12 @@ namespace Maple2.Trigger._52000113_qd {
                 context.MoveNpc(arg1: 208, arg2: "MS2PatrolData_Rogues_out");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statecamera07(context);
-                    return;
+                    return new Statecamera07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -161,11 +169,12 @@ namespace Maple2.Trigger._52000113_qd {
                 context.AddCinematicTalk(npcId: 11003185, illustId: "0", msg: "$52000113_QD__52000113__3$", duration: 5000, align: "right");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statecamera08(context);
-                    return;
+                    return new Statecamera08(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -178,11 +187,12 @@ namespace Maple2.Trigger._52000113_qd {
                 context.AddCinematicTalk(npcId: 11003185, illustId: "0", msg: "$52000113_QD__52000113__4$", duration: 5000, align: "right");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateQuit01(context);
-                    return;
+                    return new StateQuit01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -195,11 +205,12 @@ namespace Maple2.Trigger._52000113_qd {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateQuit01_1(context);
-                    return;
+                    return new StateQuit01_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -212,11 +223,12 @@ namespace Maple2.Trigger._52000113_qd {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateQuit02(context);
-                    return;
+                    return new StateQuit02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -230,7 +242,9 @@ namespace Maple2.Trigger._52000113_qd {
                 context.MoveUser(arg1: 02000062, arg2: 13);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

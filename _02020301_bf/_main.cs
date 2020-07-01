@@ -21,11 +21,12 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetPortal(arg1: 16, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1001})) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +46,12 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetPortal(arg1: 16, arg2: false, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State조건추가(context);
-                    return;
+                    return new State조건추가(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,11 +62,12 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State보스전_성공(context);
-                    return;
+                    return new State보스전_성공(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,11 +83,12 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SideNpcTalk(type: "talk", npcId: 23503003, illust: "ArcheonBlack_Die", script: "$02020301_BF__MAIN__1$", duration: 3176);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State추가대화(context);
-                    return;
+                    return new State추가대화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,11 +101,12 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_normal", script: "$02020301_BF__MAIN__2$", duration: 3176);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -117,7 +122,9 @@ namespace Maple2.Trigger._02020301_bf {
                 context.SetPortal(arg1: 7, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

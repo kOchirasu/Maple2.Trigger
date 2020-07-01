@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {1001}, arg2: new[] {10002041}, arg3: new byte[] {1})) {
-                    context.State = new State지원군생성(context);
-                    return;
+                    return new State지원군생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
                 context.SetConversation(arg1: 1, arg2: 104, arg3: "$02000076_TW_HenesysVillage__01_NPCBACKUP04__0$", arg4: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 3004, arg2: new[] {104})) {
-                    context.State = new State지원군이동(context);
-                    return;
+                    return new State지원군이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +43,12 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_104");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 2001, arg2: new[] {104})) {
-                    context.State = new State지원군소멸(context);
-                    return;
+                    return new State지원군소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +62,12 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
                 context.SetTimer(arg1: "4", arg2: 120);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

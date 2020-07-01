@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    context.State = new State연출세팅(context);
-                    return;
+                    return new State연출세팅(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._52000006_qd {
                 context.SetProductionUI(arg1: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StatePC대사1(context);
-                    return;
+                    return new StatePC대사1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,12 @@ namespace Maple2.Trigger._52000006_qd {
                 context.SetProductionUI(arg1: 3, arg2: "$52000006_QD__TUTORIAL_06_1__0$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State양등장(context);
-                    return;
+                    return new State양등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +65,12 @@ namespace Maple2.Trigger._52000006_qd {
                 context.SetProductionUI(arg1: 3, arg2: "$52000006_QD__TUTORIAL_06_1__1$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State양이동(context);
-                    return;
+                    return new State양이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,11 +85,12 @@ namespace Maple2.Trigger._52000006_qd {
                 context.SetProductionUI(arg1: 3, arg2: "$52000006_QD__TUTORIAL_06_1__2$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State연출끝(context);
-                    return;
+                    return new State연출끝(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -101,7 +106,9 @@ namespace Maple2.Trigger._52000006_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

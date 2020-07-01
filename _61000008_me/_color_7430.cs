@@ -9,11 +9,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {943, 1043}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ColorStart") == 1) {
-                    context.State = new StateYellowBefore(context);
-                    return;
+                    return new StateYellowBefore(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,31 +28,29 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {943, 1043}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Color43") == 2) {
-                    context.State = new StateGreenAfter(context);
-                    return;
+                    return new StateGreenAfter(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 3) {
-                    // context.State = new StateYellowtoRed(context);
-                    return;
+                    // return new StateYellowtoRed(context);
+                    return null;
                 }
 
                 if (context.GetUserValue(key: "Color43") == 4) {
-                    context.State = new StateClear(context);
-                    return;
+                    return new StateClear(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 0) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 5) {
-                    context.State = new StateRegen(context);
-                    return;
+                    return new StateRegen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,31 +64,28 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {943, 843}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Color43") == 1) {
-                    context.State = new StateYellowAfter(context);
-                    return;
+                    return new StateYellowAfter(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 2) {
-                    context.State = new StateGreenAfter(context);
-                    return;
+                    return new StateGreenAfter(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 4) {
-                    context.State = new StateClear(context);
-                    return;
+                    return new StateClear(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 0) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 5) {
-                    context.State = new StateRegen(context);
-                    return;
+                    return new StateRegen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -102,31 +98,28 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {943}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Color43") == 1) {
-                    context.State = new StateYellowAfter(context);
-                    return;
+                    return new StateYellowAfter(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 3) {
-                    context.State = new StateRedAfter(context);
-                    return;
+                    return new StateRedAfter(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 4) {
-                    context.State = new StateClear(context);
-                    return;
+                    return new StateClear(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 0) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 5) {
-                    context.State = new StateRegen(context);
-                    return;
+                    return new StateRegen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -141,31 +134,28 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {1043}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Color43") == 2) {
-                    context.State = new StateGreenAfter(context);
-                    return;
+                    return new StateGreenAfter(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 3) {
-                    context.State = new StateRedAfter(context);
-                    return;
+                    return new StateRedAfter(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 4) {
-                    context.State = new StateClear(context);
-                    return;
+                    return new StateClear(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 0) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 5) {
-                    context.State = new StateRegen(context);
-                    return;
+                    return new StateRegen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -180,31 +170,28 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {843}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Color43") == 1) {
-                    context.State = new StateYellowAfter(context);
-                    return;
+                    return new StateYellowAfter(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 2) {
-                    context.State = new StateGreenAfter(context);
-                    return;
+                    return new StateGreenAfter(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 4) {
-                    context.State = new StateClear(context);
-                    return;
+                    return new StateClear(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 0) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.GetUserValue(key: "Color43") == 5) {
-                    context.State = new StateRegen(context);
-                    return;
+                    return new StateRegen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -219,11 +206,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {1043}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Color43") == 5) {
-                    context.State = new StateRegen(context);
-                    return;
+                    return new StateRegen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -238,11 +226,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {943, 1043}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -255,11 +244,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "ColorStart", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Color43") == 5) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

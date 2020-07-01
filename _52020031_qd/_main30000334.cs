@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52020031_qd {
                 context.SetEffect(arg1: new[] {5001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000334}, arg3: new byte[] {1})) {
-                    context.State = new State세번째전투끝나고(context);
-                    return;
+                    return new State세번째전투끝나고(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._52020031_qd {
                 context.SetOnetimeEffect(id: 6, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State세번째전투끝나고1(context);
-                    return;
+                    return new State세번째전투끝나고1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._52020031_qd {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State세번째전투끝나고2(context);
-                    return;
+                    return new State세번째전투끝나고2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,11 +64,12 @@ namespace Maple2.Trigger._52020031_qd {
                 context.MoveUser(arg1: 52020031, arg2: 6001);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State세번째전투끝나고2_2(context);
-                    return;
+                    return new State세번째전투끝나고2_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,11 +86,12 @@ namespace Maple2.Trigger._52020031_qd {
                 context.AddCinematicTalk(npcId: 0, msg: @"역시 너희 흑성회는 믿을 만한 사람들이 아니었군.\n천공의 심장은 내가 가져가겠어.", duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State세번째전투끝나고3(context);
-                    return;
+                    return new State세번째전투끝나고3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -101,11 +106,12 @@ namespace Maple2.Trigger._52020031_qd {
                 context.AddCinematicTalk(npcId: 11003756, msg: "크윽...", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State세번째전투끝나고3_01(context);
-                    return;
+                    return new State세번째전투끝나고3_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -118,11 +124,12 @@ namespace Maple2.Trigger._52020031_qd {
                 context.MoveUserPath(arg1: "MS2PatrolData_3002");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State세번째전투끝나고4(context);
-                    return;
+                    return new State세번째전투끝나고4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -137,11 +144,12 @@ namespace Maple2.Trigger._52020031_qd {
                 context.AddCinematicTalk(npcId: 0, msg: "흑성회와의 동맹은 여기까지야.", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State천공의탑으로이동(context);
-                    return;
+                    return new State천공의탑으로이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -155,7 +163,9 @@ namespace Maple2.Trigger._52020031_qd {
                 context.MoveUser(arg1: 52020030, arg2: 6001);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

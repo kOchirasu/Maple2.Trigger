@@ -8,7 +8,9 @@ namespace Maple2.Trigger._02000347_bf {
                 context.SetSkill(arg1: new[] {701}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

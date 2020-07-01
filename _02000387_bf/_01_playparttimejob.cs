@@ -15,11 +15,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetEffect(arg1: new[] {5000, 5101, 5102, 5103, 5104, 5105, 5106}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new StateLoadingDelay(context);
-                    return;
+                    return new StateLoadingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -32,11 +33,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.CreateMonster(arg1: new[] {100}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
-                    return;
+                    return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -51,11 +53,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetProductionUI(arg1: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateGuideTalk01(context);
-                    return;
+                    return new StateGuideTalk01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -69,11 +72,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetSkip(arg1: "GuideTalk01Skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateGuideTalk01Skip(context);
-                    return;
+                    return new StateGuideTalk01Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -87,11 +91,8 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateGuideTalk02(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateGuideTalk02(context);
             }
 
             public override void OnExit() { }
@@ -105,11 +106,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetSkip(arg1: "GuideTalk02Skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateGuideTalk02Skip(context);
-                    return;
+                    return new StateGuideTalk02Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -123,11 +125,8 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateGuideTalk03(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateGuideTalk03(context);
             }
 
             public override void OnExit() { }
@@ -141,11 +140,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetSkip(arg1: "GuideTalk03Skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateGuideTalk03Skip(context);
-                    return;
+                    return new StateGuideTalk03Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -159,11 +159,8 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateGuideTalk04(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateGuideTalk04(context);
             }
 
             public override void OnExit() { }
@@ -177,11 +174,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetSkip(arg1: "GuideTalk04Skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateGuideTalk04Skip(context);
-                    return;
+                    return new StateGuideTalk04Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -197,11 +195,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePCPlacement01(context);
-                    return;
+                    return new StatePCPlacement01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -214,11 +213,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 10, key: "RandomPortalOn", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9005) == 1) {
-                    context.State = new StatePCPlacement02(context);
-                    return;
+                    return new StatePCPlacement02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -229,11 +229,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9006) == 3) {
-                    context.State = new StatePCPlacement03(context);
-                    return;
+                    return new StatePCPlacement03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -244,11 +245,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMartOpen(context);
-                    return;
+                    return new StateMartOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -265,11 +267,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__4$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateR01Start(context);
-                    return;
+                    return new StateR01Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -285,11 +288,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetEffect(arg1: new[] {5105, 5106}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateR01Customer01Row03Random(context);
-                    return;
+                    return new StateR01Customer01Row03Random(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -302,21 +306,20 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 10103);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup3003(context);
-                    return;
+                    return new StateNpcGroup3003(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup3007(context);
-                    return;
+                    return new StateNpcGroup3007(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup3011(context);
-                    return;
+                    return new StateNpcGroup3011(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -329,21 +332,20 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 10202);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup2002(context);
-                    return;
+                    return new StateNpcGroup2002(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup2006(context);
-                    return;
+                    return new StateNpcGroup2006(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup2010(context);
-                    return;
+                    return new StateNpcGroup2010(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -356,41 +358,37 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 10304);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 15f)) {
-                    // context.State = new StateNpcGroup4205(context);
-                    return;
+                    // return new StateNpcGroup4205(context);
+                    return null;
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup4208(context);
-                    return;
+                    return new StateNpcGroup4208(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup4212(context);
-                    return;
+                    return new StateNpcGroup4212(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup4216(context);
-                    return;
+                    return new StateNpcGroup4216(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup4220(context);
-                    return;
+                    return new StateNpcGroup4220(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup4224(context);
-                    return;
+                    return new StateNpcGroup4224(context);
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup4228(context);
-                    return;
+                    return new StateNpcGroup4228(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -403,36 +401,32 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 10401);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup1101(context);
-                    return;
+                    return new StateNpcGroup1101(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup1105(context);
-                    return;
+                    return new StateNpcGroup1105(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup1109(context);
-                    return;
+                    return new StateNpcGroup1109(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup1113(context);
-                    return;
+                    return new StateNpcGroup1113(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup1117(context);
-                    return;
+                    return new StateNpcGroup1117(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup1121(context);
-                    return;
+                    return new StateNpcGroup1121(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -443,11 +437,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.NpcDetected(arg1: 9007, arg2: new[] {0})) {
-                    context.State = new StateR02StartDelay01(context);
-                    return;
+                    return new StateR02StartDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -458,11 +453,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateR02Start(context);
-                    return;
+                    return new StateR02Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -477,11 +473,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetEventUI(arg1: 0, arg2: "2,3");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateR02Customer01Row02Random(context);
-                    return;
+                    return new StateR02Customer01Row02Random(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -494,36 +491,32 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 20102);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup2102(context);
-                    return;
+                    return new StateNpcGroup2102(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup2106(context);
-                    return;
+                    return new StateNpcGroup2106(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup2110(context);
-                    return;
+                    return new StateNpcGroup2110(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup2114(context);
-                    return;
+                    return new StateNpcGroup2114(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup2118(context);
-                    return;
+                    return new StateNpcGroup2118(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup2122(context);
-                    return;
+                    return new StateNpcGroup2122(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -536,41 +529,36 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 20203);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup3203(context);
-                    return;
+                    return new StateNpcGroup3203(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup3207(context);
-                    return;
+                    return new StateNpcGroup3207(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup3211(context);
-                    return;
+                    return new StateNpcGroup3211(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup3215(context);
-                    return;
+                    return new StateNpcGroup3215(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup3219(context);
-                    return;
+                    return new StateNpcGroup3219(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup3223(context);
-                    return;
+                    return new StateNpcGroup3223(context);
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup3227(context);
-                    return;
+                    return new StateNpcGroup3227(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -583,21 +571,20 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 20301);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup1001(context);
-                    return;
+                    return new StateNpcGroup1001(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup1005(context);
-                    return;
+                    return new StateNpcGroup1005(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup1009(context);
-                    return;
+                    return new StateNpcGroup1009(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -610,36 +597,32 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 20404);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup4104(context);
-                    return;
+                    return new StateNpcGroup4104(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup4108(context);
-                    return;
+                    return new StateNpcGroup4108(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup4112(context);
-                    return;
+                    return new StateNpcGroup4112(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup4116(context);
-                    return;
+                    return new StateNpcGroup4116(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup4120(context);
-                    return;
+                    return new StateNpcGroup4120(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup4124(context);
-                    return;
+                    return new StateNpcGroup4124(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -652,41 +635,36 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 20502);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup2202(context);
-                    return;
+                    return new StateNpcGroup2202(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup2206(context);
-                    return;
+                    return new StateNpcGroup2206(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup2210(context);
-                    return;
+                    return new StateNpcGroup2210(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup2214(context);
-                    return;
+                    return new StateNpcGroup2214(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup2218(context);
-                    return;
+                    return new StateNpcGroup2218(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup2222(context);
-                    return;
+                    return new StateNpcGroup2222(context);
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup2226(context);
-                    return;
+                    return new StateNpcGroup2226(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -699,36 +677,32 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 20603);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup3103(context);
-                    return;
+                    return new StateNpcGroup3103(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup3107(context);
-                    return;
+                    return new StateNpcGroup3107(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup3111(context);
-                    return;
+                    return new StateNpcGroup3111(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup3115(context);
-                    return;
+                    return new StateNpcGroup3115(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup3119(context);
-                    return;
+                    return new StateNpcGroup3119(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup3123(context);
-                    return;
+                    return new StateNpcGroup3123(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -741,41 +715,36 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 20701);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup1201(context);
-                    return;
+                    return new StateNpcGroup1201(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup1205(context);
-                    return;
+                    return new StateNpcGroup1205(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup1209(context);
-                    return;
+                    return new StateNpcGroup1209(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup1213(context);
-                    return;
+                    return new StateNpcGroup1213(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup1217(context);
-                    return;
+                    return new StateNpcGroup1217(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup1221(context);
-                    return;
+                    return new StateNpcGroup1221(context);
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup1225(context);
-                    return;
+                    return new StateNpcGroup1225(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -788,21 +757,20 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 20804);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup4004(context);
-                    return;
+                    return new StateNpcGroup4004(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup4008(context);
-                    return;
+                    return new StateNpcGroup4008(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup4012(context);
-                    return;
+                    return new StateNpcGroup4012(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -813,11 +781,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.NpcDetected(arg1: 9007, arg2: new[] {0})) {
-                    context.State = new StateR03StartDelay01(context);
-                    return;
+                    return new StateR03StartDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -828,11 +797,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateR03Start(context);
-                    return;
+                    return new StateR03Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -847,11 +817,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetEventUI(arg1: 0, arg2: "3,3");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateR03Customer01Row04Random(context);
-                    return;
+                    return new StateR03Customer01Row04Random(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -864,36 +835,32 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 30104);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup4104(context);
-                    return;
+                    return new StateNpcGroup4104(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup4108(context);
-                    return;
+                    return new StateNpcGroup4108(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup4112(context);
-                    return;
+                    return new StateNpcGroup4112(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup4116(context);
-                    return;
+                    return new StateNpcGroup4116(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup4120(context);
-                    return;
+                    return new StateNpcGroup4120(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup4124(context);
-                    return;
+                    return new StateNpcGroup4124(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -906,41 +873,36 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 30202);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup2202(context);
-                    return;
+                    return new StateNpcGroup2202(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup2206(context);
-                    return;
+                    return new StateNpcGroup2206(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup2210(context);
-                    return;
+                    return new StateNpcGroup2210(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup2214(context);
-                    return;
+                    return new StateNpcGroup2214(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup2218(context);
-                    return;
+                    return new StateNpcGroup2218(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup2222(context);
-                    return;
+                    return new StateNpcGroup2222(context);
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup2226(context);
-                    return;
+                    return new StateNpcGroup2226(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -953,21 +915,20 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 30303);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup3003(context);
-                    return;
+                    return new StateNpcGroup3003(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup3007(context);
-                    return;
+                    return new StateNpcGroup3007(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup3011(context);
-                    return;
+                    return new StateNpcGroup3011(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -980,21 +941,20 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 30401);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup1001(context);
-                    return;
+                    return new StateNpcGroup1001(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup1005(context);
-                    return;
+                    return new StateNpcGroup1005(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup1009(context);
-                    return;
+                    return new StateNpcGroup1009(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1007,21 +967,20 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 30502);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup2002(context);
-                    return;
+                    return new StateNpcGroup2002(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup2006(context);
-                    return;
+                    return new StateNpcGroup2006(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup2010(context);
-                    return;
+                    return new StateNpcGroup2010(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1034,41 +993,36 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 30604);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup4204(context);
-                    return;
+                    return new StateNpcGroup4204(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup4208(context);
-                    return;
+                    return new StateNpcGroup4208(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup4212(context);
-                    return;
+                    return new StateNpcGroup4212(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup4216(context);
-                    return;
+                    return new StateNpcGroup4216(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup4220(context);
-                    return;
+                    return new StateNpcGroup4220(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup4224(context);
-                    return;
+                    return new StateNpcGroup4224(context);
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup4228(context);
-                    return;
+                    return new StateNpcGroup4228(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1081,36 +1035,32 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 30703);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup3103(context);
-                    return;
+                    return new StateNpcGroup3103(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup3107(context);
-                    return;
+                    return new StateNpcGroup3107(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup3111(context);
-                    return;
+                    return new StateNpcGroup3111(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup3115(context);
-                    return;
+                    return new StateNpcGroup3115(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup3119(context);
-                    return;
+                    return new StateNpcGroup3119(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup3123(context);
-                    return;
+                    return new StateNpcGroup3123(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1123,36 +1073,32 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 30801);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup1101(context);
-                    return;
+                    return new StateNpcGroup1101(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup1105(context);
-                    return;
+                    return new StateNpcGroup1105(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup1109(context);
-                    return;
+                    return new StateNpcGroup1109(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup1113(context);
-                    return;
+                    return new StateNpcGroup1113(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup1117(context);
-                    return;
+                    return new StateNpcGroup1117(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup1121(context);
-                    return;
+                    return new StateNpcGroup1121(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1165,41 +1111,36 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 30901);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup1201(context);
-                    return;
+                    return new StateNpcGroup1201(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup1205(context);
-                    return;
+                    return new StateNpcGroup1205(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup1209(context);
-                    return;
+                    return new StateNpcGroup1209(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup1213(context);
-                    return;
+                    return new StateNpcGroup1213(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup1217(context);
-                    return;
+                    return new StateNpcGroup1217(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup1221(context);
-                    return;
+                    return new StateNpcGroup1221(context);
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup1225(context);
-                    return;
+                    return new StateNpcGroup1225(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1212,21 +1153,20 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 31004);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup4004(context);
-                    return;
+                    return new StateNpcGroup4004(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup4008(context);
-                    return;
+                    return new StateNpcGroup4008(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateNpcGroup4012(context);
-                    return;
+                    return new StateNpcGroup4012(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1239,36 +1179,32 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 31102);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup2102(context);
-                    return;
+                    return new StateNpcGroup2102(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup2106(context);
-                    return;
+                    return new StateNpcGroup2106(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup2110(context);
-                    return;
+                    return new StateNpcGroup2110(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new StateNpcGroup2114(context);
-                    return;
+                    return new StateNpcGroup2114(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup2118(context);
-                    return;
+                    return new StateNpcGroup2118(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new StateNpcGroup2122(context);
-                    return;
+                    return new StateNpcGroup2122(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1281,41 +1217,36 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(key: "RoundCustomerRow", value: 31203);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup3203(context);
-                    return;
+                    return new StateNpcGroup3203(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup3207(context);
-                    return;
+                    return new StateNpcGroup3207(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup3211(context);
-                    return;
+                    return new StateNpcGroup3211(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup3215(context);
-                    return;
+                    return new StateNpcGroup3215(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup3219(context);
-                    return;
+                    return new StateNpcGroup3219(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    context.State = new StateNpcGroup3223(context);
-                    return;
+                    return new StateNpcGroup3223(context);
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.State = new StateNpcGroup3227(context);
-                    return;
+                    return new StateNpcGroup3227(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1326,11 +1257,12 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.NpcDetected(arg1: 9007, arg2: new[] {0})) {
-                    context.State = new StateGameEndNotice01(context);
-                    return;
+                    return new StateGameEndNotice01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1347,11 +1279,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetSkip(arg1: "GameEndNotice01Skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateGameEndNotice01Skip(context);
-                    return;
+                    return new StateGameEndNotice01Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1368,11 +1301,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 10, key: "DungeonClear", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateGameWrapUp(context);
-                    return;
+                    return new StateGameWrapUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1385,11 +1319,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.DungeonClear();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1403,11 +1338,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.UnSetMiniGameAreaForHack();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePCLeave01(context);
-                    return;
+                    return new StatePCLeave01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1420,11 +1356,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__10$", arg3: 5000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StatePCLeave02(context);
-                    return;
+                    return new StatePCLeave02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1437,7 +1374,9 @@ namespace Maple2.Trigger._02000387_bf {
                 context.MoveUser(arg1: 0, arg2: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1449,11 +1388,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1001, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1466,11 +1406,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1005, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1483,11 +1424,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1009, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1500,11 +1442,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2002, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1517,11 +1460,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2006, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1534,11 +1478,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2010, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1551,11 +1496,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3003, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1568,11 +1514,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3007, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1585,11 +1532,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3011, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1602,11 +1550,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4004, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1619,11 +1568,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4008, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1636,11 +1586,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4012, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1653,11 +1604,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1101, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1670,11 +1622,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1105, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1687,11 +1640,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1109, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1704,11 +1658,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1113, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1721,11 +1676,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1117, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1738,11 +1694,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1121, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1755,11 +1712,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2102, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1772,11 +1730,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2106, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1789,11 +1748,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2110, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1806,11 +1766,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2114, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1823,11 +1784,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2118, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1840,11 +1802,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2122, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1857,11 +1820,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3103, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1874,11 +1838,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3107, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1891,11 +1856,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3111, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1908,11 +1874,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3115, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1925,11 +1892,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3119, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1942,11 +1910,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3123, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1959,11 +1928,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4104, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1976,11 +1946,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4108, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1993,11 +1964,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4112, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2010,11 +1982,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4116, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2027,11 +2000,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4120, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2044,11 +2018,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4124, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2061,11 +2036,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1201, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2078,11 +2054,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1205, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2095,11 +2072,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1209, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2112,11 +2090,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1213, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2129,11 +2108,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1217, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2146,11 +2126,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1221, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2163,11 +2144,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 1225, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2180,11 +2162,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2202, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2197,11 +2180,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2206, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2214,11 +2198,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2210, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2231,11 +2216,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2214, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2248,11 +2234,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2218, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2265,11 +2252,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2222, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2282,11 +2270,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 2226, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2299,11 +2288,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3203, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2316,11 +2306,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3207, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2333,11 +2324,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3211, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2350,11 +2342,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3215, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2367,11 +2360,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3219, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2384,11 +2378,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3223, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2401,11 +2396,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 3227, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2418,11 +2414,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4204, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2435,11 +2432,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4208, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2452,11 +2450,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4212, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2469,11 +2468,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4216, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2486,11 +2486,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4220, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2503,11 +2504,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4224, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2520,11 +2522,12 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetUserValue(triggerId: 4228, key: "CustomerEnter", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNextTurnCheck(context);
-                    return;
+                    return new StateNextTurnCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2535,126 +2538,104 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RoundCustomerRow") == 10103) {
-                    context.State = new StateR01Customer02Row02Random(context);
-                    return;
+                    return new StateR01Customer02Row02Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 10202) {
-                    context.State = new StateR01Customer03Row04Random(context);
-                    return;
+                    return new StateR01Customer03Row04Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 10304) {
-                    context.State = new StateR01Customer04Row01Random(context);
-                    return;
+                    return new StateR01Customer04Row01Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 10401) {
-                    context.State = new StateR01End(context);
-                    return;
+                    return new StateR01End(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 20102) {
-                    context.State = new StateR02Customer02Row03Random(context);
-                    return;
+                    return new StateR02Customer02Row03Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 20203) {
-                    context.State = new StateR02Customer03Row01Random(context);
-                    return;
+                    return new StateR02Customer03Row01Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 20301) {
-                    context.State = new StateR02Customer04Row04Random(context);
-                    return;
+                    return new StateR02Customer04Row04Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 20404) {
-                    context.State = new StateR02Customer05Row02Random(context);
-                    return;
+                    return new StateR02Customer05Row02Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 20502) {
-                    context.State = new StateR02Customer06Row03Random(context);
-                    return;
+                    return new StateR02Customer06Row03Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 20603) {
-                    context.State = new StateR02Customer07Row01Random(context);
-                    return;
+                    return new StateR02Customer07Row01Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 20701) {
-                    context.State = new StateR02Customer08Row04Random(context);
-                    return;
+                    return new StateR02Customer08Row04Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 20804) {
-                    context.State = new StateR02End(context);
-                    return;
+                    return new StateR02End(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 30104) {
-                    context.State = new StateR03Customer02Row02Random(context);
-                    return;
+                    return new StateR03Customer02Row02Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 30202) {
-                    context.State = new StateR03Customer03Row03Random(context);
-                    return;
+                    return new StateR03Customer03Row03Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 30303) {
-                    context.State = new StateR03Customer04Row01Random(context);
-                    return;
+                    return new StateR03Customer04Row01Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 30401) {
-                    context.State = new StateR03Customer05Row02Random(context);
-                    return;
+                    return new StateR03Customer05Row02Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 30502) {
-                    context.State = new StateR03Customer06Row04Random(context);
-                    return;
+                    return new StateR03Customer06Row04Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 30604) {
-                    context.State = new StateR03Customer07Row03Random(context);
-                    return;
+                    return new StateR03Customer07Row03Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 30703) {
-                    context.State = new StateR03Customer08Row01Random(context);
-                    return;
+                    return new StateR03Customer08Row01Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 30801) {
-                    context.State = new StateR03Customer09Row01Random(context);
-                    return;
+                    return new StateR03Customer09Row01Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 30901) {
-                    context.State = new StateR03Customer10Row04Random(context);
-                    return;
+                    return new StateR03Customer10Row04Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 31004) {
-                    context.State = new StateR03Customer11Row02Random(context);
-                    return;
+                    return new StateR03Customer11Row02Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 31102) {
-                    context.State = new StateR03Customer12Row03Random(context);
-                    return;
+                    return new StateR03Customer12Row03Random(context);
                 }
 
                 if (context.GetUserValue(key: "RoundCustomerRow") == 31203) {
-                    context.State = new StateR03End(context);
-                    return;
+                    return new StateR03End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "3Round_Effect") == 1) {
-                    context.State = new StateSpawn_Start_Ready(context);
-                    return;
+                    return new StateSpawn_Start_Ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetEffect(arg1: new[] {7999}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateSkill_01(context);
-                    return;
+                    return new StateSkill_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetSkill(arg1: new[] {5021}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSkill_02(context);
-                    return;
+                    return new StateSkill_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,11 +59,12 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetSkill(arg1: new[] {5022}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSkill_03(context);
-                    return;
+                    return new StateSkill_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,11 +77,12 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetSkill(arg1: new[] {5023}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSkill_04(context);
-                    return;
+                    return new StateSkill_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,7 +95,9 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetSkill(arg1: new[] {5024}, arg2: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

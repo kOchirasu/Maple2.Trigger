@@ -11,11 +11,12 @@ namespace Maple2.Trigger._02000283_bf {
                 context.SetInteractObject(arg1: new[] {10000429}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 102, arg2: new[] {2001})) {
-                    context.State = new State반응대기(context);
-                    return;
+                    return new State반응대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._02000283_bf {
                 context.SetInteractObject(arg1: new[] {10000429}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000429}, arg2: 0)) {
-                    context.State = new State사다리생성(context);
-                    return;
+                    return new State사다리생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,11 +51,12 @@ namespace Maple2.Trigger._02000283_bf {
                 context.SetTimer(arg1: "10", arg2: 10, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,7 +67,9 @@ namespace Maple2.Trigger._02000283_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

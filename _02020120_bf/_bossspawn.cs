@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetUserValue(key: "DungeonReset", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    context.State = new State보스등장(context);
-                    return;
+                    return new State보스등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,26 +31,24 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(arg1: 9902, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "DungeonReset") == 1) {
-                    context.State = new State던전초기화진행(context);
-                    return;
+                    return new State던전초기화진행(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State종료딜레이(context);
-                    return;
+                    return new State종료딜레이(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +64,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.DestroyMonster(arg1: new[] {-1});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    context.State = new State던전초기화시간등각종설정(context);
-                    return;
+                    return new State던전초기화시간등각종설정(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,11 +83,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetUserValue(key: "DungeonReset", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    context.State = new State보스등장(context);
-                    return;
+                    return new State보스등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -100,16 +101,17 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__2$", duration: 6576, voice: @"ko/Npc/00002194");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
                     context.SetSkill(arg1: new[] {2222, 1212}, arg2: false);
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.DungeonClear();
                     context.DungeonSetEndTime();
                     context.SetAchievement(arg3: "IshuraDungeonClear");
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -122,14 +124,15 @@ namespace Maple2.Trigger._02020120_bf {
                 context.DestroyMonster(arg1: new[] {-1});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     context.SetSkill(arg1: new[] {2222, 1212}, arg2: false);
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.DungeonFail();
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -183,7 +186,9 @@ namespace Maple2.Trigger._02020120_bf {
                 context.DungeonEnableGiveUp(isEnable: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

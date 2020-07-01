@@ -8,11 +8,8 @@ namespace Maple2.Trigger._52000185_qd {
                 context.AddBuff(arg1: new[] {2001}, arg2: 99910280, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateReady(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateReady(context);
             }
 
             public override void OnExit() { }
@@ -26,11 +23,8 @@ namespace Maple2.Trigger._52000185_qd {
                 context.AddBuff(arg1: new[] {2001}, arg2: 99910280, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateIdle(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateIdle(context);
             }
 
             public override void OnExit() { }

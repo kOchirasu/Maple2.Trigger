@@ -10,11 +10,12 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetUserValue(key: "BattleEnd", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "NpcDown") == 1) {
-                    context.State = new StateDelay(context);
-                    return;
+                    return new StateDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetUserValue(key: "NpcDown", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new StateNpcDown(context);
-                    return;
+                    return new StateNpcDown(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,16 +47,16 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetInteractObject(arg1: new[] {10001168}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleEnd") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001168}, arg2: 0)) {
-                    context.State = new StateNpcWakeUp(context);
-                    return;
+                    return new StateNpcWakeUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -68,16 +70,16 @@ namespace Maple2.Trigger._52000120_qd {
                 context.CreateMonster(arg1: new[] {232}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleEnd") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
 
                 if (context.NpcDetected(arg1: 9900, arg2: new[] {222})) {
-                    context.State = new StateDelay02(context);
-                    return;
+                    return new StateDelay02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,11 +92,12 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetInteractObject(arg1: new[] {10001168}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 32000)) {
-                    context.State = new StateNpcDown02(context);
-                    return;
+                    return new StateNpcDown02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -108,16 +111,16 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetInteractObject(arg1: new[] {10001168}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleEnd") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001168}, arg2: 0)) {
-                    context.State = new StateNpcWakeUp(context);
-                    return;
+                    return new StateNpcWakeUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -131,7 +134,9 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetInteractObject(arg1: new[] {10001168}, arg2: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

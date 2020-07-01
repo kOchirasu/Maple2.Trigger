@@ -11,11 +11,12 @@ namespace Maple2.Trigger._99999931 {
                 context.SetInteractObject(arg1: new[] {10000215}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000215}, arg2: 0)) {
-                    context.State = new State이동(context);
-                    return;
+                    return new State이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -36,11 +37,8 @@ namespace Maple2.Trigger._99999931 {
                 context.SetPortal(arg1: 118, arg2: false, arg3: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State게임준비(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State게임준비(context);
             }
 
             public override void OnExit() { }
@@ -54,11 +52,12 @@ namespace Maple2.Trigger._99999931 {
                 context.SetEventUI(arg1: 1, arg2: "$99999931__STARTLEVER__0$", arg3: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11")) {
-                    context.State = new State시작레버(context);
-                    return;
+                    return new State시작레버(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

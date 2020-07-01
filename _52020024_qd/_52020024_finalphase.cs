@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52020024_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "FinalPhase") == 1) {
-                    context.State = new State스폰(context);
-                    return;
+                    return new State스폰(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,21 +23,20 @@ namespace Maple2.Trigger._52020024_qd {
                 context.CreateMonster(arg1: new[] {131, 132, 133, 134, 135, 136}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new State스폰(context);
-                    return;
+                    return new State스폰(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {131, 132, 133, 134, 135, 136})) {
-                    context.State = new State스폰(context);
-                    return;
+                    return new State스폰(context);
                 }
 
                 if (context.GetUserValue(key: "FinalPhase") == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,7 +47,9 @@ namespace Maple2.Trigger._52020024_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

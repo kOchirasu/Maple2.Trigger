@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "YuperiaFirstSetEnd", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 601) == 1) {
-                    context.State = new State1셋트전투판스킬트리거셋팅(context);
-                    return;
+                    return new State1셋트전투판스킬트리거셋팅(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetSkill(arg1: new[] {1301, 1302, 1303}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 310)) {
-                    context.State = new State1셋트전투판마무리신호대기(context);
-                    return;
+                    return new State1셋트전투판마무리신호대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,21 +43,20 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "IshuraFirstSetEnd") == 1) {
-                    context.State = new State이슈라_디버프스킬끄기(context);
-                    return;
+                    return new State이슈라_디버프스킬끄기(context);
                 }
 
                 if (context.GetUserValue(key: "RenduebianFirstSetEnd") == 1) {
-                    context.State = new State렌듀비앙_디버프스킬끄기(context);
-                    return;
+                    return new State렌듀비앙_디버프스킬끄기(context);
                 }
 
                 if (context.GetUserValue(key: "YuperiaFirstSetEnd") == 1) {
-                    context.State = new State유페리아_디버프스킬끄기(context);
-                    return;
+                    return new State유페리아_디버프스킬끄기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -69,11 +70,12 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetSkill(arg1: new[] {1301}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 370)) {
-                    context.State = new State1셋트전투판마무리신호대기(context);
-                    return;
+                    return new State1셋트전투판마무리신호대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -87,11 +89,12 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetSkill(arg1: new[] {1302}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 370)) {
-                    context.State = new State1셋트전투판마무리신호대기(context);
-                    return;
+                    return new State1셋트전투판마무리신호대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -105,11 +108,12 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetSkill(arg1: new[] {1303}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 370)) {
-                    context.State = new State1셋트전투판마무리신호대기(context);
-                    return;
+                    return new State1셋트전투판마무리신호대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -120,7 +124,9 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

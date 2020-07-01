@@ -5,12 +5,13 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Dummy") == 1) {
                     context.CreateMonster(arg1: new[] {401}, arg2: false);
-                    context.State = new State더미소환(context);
-                    return;
+                    return new State더미소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,16 +24,16 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetUserValue(triggerId: 900008, key: "Dummy", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.GetUserValue(key: "Dummy") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

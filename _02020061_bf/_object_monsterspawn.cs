@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02020061_bf {
                 context.StartCombineSpawn(groupId: new[] {482}, isStart: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "EliteSpawn") == 1) {
-                    context.State = new State스폰(context);
-                    return;
+                    return new State스폰(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,16 +25,16 @@ namespace Maple2.Trigger._02020061_bf {
                 context.StartCombineSpawn(groupId: new[] {482}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "EliteSpawn") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.GetUserValue(key: "EliteSpawn") == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,7 +47,9 @@ namespace Maple2.Trigger._02020061_bf {
                 context.StartCombineSpawn(groupId: new[] {482}, isStart: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -9,11 +9,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200130}, arg3: new byte[] {2})) {
-                    context.State = new StateReady(context);
-                    return;
+                    return new StateReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.SetProductionUI(arg1: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSet(context);
-                    return;
+                    return new StateSet(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +49,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.SetActor(arg1: 8001, arg2: true, arg3: "Attack_Idle_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateGo(context);
-                    return;
+                    return new StateGo(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,11 +69,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.AddCinematicTalk(npcId: 11003599, msg: "나 $npcName:11003599$의 이름으로 명한다.", duration: 2800);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateScene_01(context);
-                    return;
+                    return new StateScene_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,11 +87,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.AddCinematicTalk(npcId: 11003599, msg: "이 땅의 모든 저주받은 존재여! 깊고 어두운 곳으로 떨어져라!", duration: 2800);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateScene_02(context);
-                    return;
+                    return new StateScene_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -100,11 +105,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.SetEffect(arg1: new[] {5001, 5002}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateScene_03(context);
-                    return;
+                    return new StateScene_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -119,11 +125,12 @@ namespace Maple2.Trigger._52020011_qd {
                 context.AddBalloonTalk(spawnPointId: 0, msg: "!", duration: 2000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 700)) {
-                    context.State = new StateScene_Exit(context);
-                    return;
+                    return new StateScene_Exit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -136,7 +143,9 @@ namespace Maple2.Trigger._52020011_qd {
                 context.MoveUser(arg1: 52020020, arg2: 6001);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

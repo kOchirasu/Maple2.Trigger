@@ -7,11 +7,12 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
-                    context.State = new State연출준비(context);
-                    return;
+                    return new State연출준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.CreateMonster(arg1: new[] {203}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State연출_01(context);
-                    return;
+                    return new State연출_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State연출_01_01(context);
-                    return;
+                    return new State연출_01_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +65,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State연출_02(context);
-                    return;
+                    return new State연출_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,11 +83,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.CameraSelectPath(arg1: new[] {4003, 4004}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State연출_03(context);
-                    return;
+                    return new State연출_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,11 +101,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State연출_05(context);
-                    return;
+                    return new State연출_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -114,11 +120,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.CameraSelectPath(arg1: new[] {4005, 4006}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State연출_07(context);
-                    return;
+                    return new State연출_07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -133,13 +140,14 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SetProductionUI(arg1: 0);
                     context.CameraReset(interpolationTime: 0f);
-                    context.State = new State연출끝_01(context);
-                    return;
+                    return new State연출끝_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -154,13 +162,14 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.CameraSelectPath(arg1: new[] {4009}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetProductionUI(arg1: 0);
                     context.CameraReset(interpolationTime: 0f);
-                    context.State = new State대화딜레이(context);
-                    return;
+                    return new State대화딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -171,11 +180,8 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State연출끝_01(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State연출끝_01(context);
             }
 
             public override void OnExit() { }
@@ -188,22 +194,21 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.TalkNpc(spawnPointId: 203);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {902})) {
                     context.MoveUserToPos(pos: new Vector3(300f, -225f, 1500f), rot: new Vector3(0f, 0f, 270f));
-                    context.State = new State대화딜레이(context);
-                    return;
+                    return new State대화딜레이(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonPlayType") == 1) {
-                    context.State = new StateNewGame(context);
-                    return;
+                    return new StateNewGame(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonPlayType") == 2) {
-                    context.State = new StateContinueGame(context);
-                    return;
+                    return new StateContinueGame(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -217,7 +222,9 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.SetUserValue(triggerId: 900001, key: "MainStart", value: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -231,7 +238,9 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.SetUserValue(triggerId: 900001, key: "MainStart", value: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

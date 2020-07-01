@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000067_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 702) == 1) {
-                    context.State = new Stateportal(context);
-                    return;
+                    return new Stateportal(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._52000067_qd {
                 context.CreateMonster(arg1: new[] {807}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {807})) {
-                    context.State = new Stateportal_off(context);
-                    return;
+                    return new Stateportal_off(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,7 +42,9 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetEffect(arg1: new[] {7116}, arg2: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

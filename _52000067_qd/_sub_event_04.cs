@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52000067_qd {
                 context.CreateMonster(arg1: new[] {759}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 706) == 1) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,7 +26,9 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetConversation(arg1: 1, arg2: 759, arg3: "$52000067_QD__SUB_EVENT_04__0$", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

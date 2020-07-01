@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.SetEffect(arg1: new[] {5201, 5202}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2003})) {
-                    context.State = new StateReady(context);
-                    return;
+                    return new StateReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.SetEffect(arg1: new[] {5201}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWalk(context);
-                    return;
+                    return new StateWalk(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_3001");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateEvent_Ready_01(context);
-                    return;
+                    return new StateEvent_Ready_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,26 +63,24 @@ namespace Maple2.Trigger._52020009_qd {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "이름... 내 이름이 기억나지 않아...", duration: 2800, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001267}, arg2: 0)) {
-                    context.State = new StateEvent_A(context);
-                    return;
+                    return new StateEvent_A(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001268}, arg2: 0)) {
-                    context.State = new StateEvent_B(context);
-                    return;
+                    return new StateEvent_B(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001269}, arg2: 0)) {
-                    context.State = new StateEvent_C(context);
-                    return;
+                    return new StateEvent_C(context);
                 }
 
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateEvent_Ready_02(context);
-                    return;
+                    return new StateEvent_Ready_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,26 +93,24 @@ namespace Maple2.Trigger._52020009_qd {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "누가 내 이름 좀 찾아줘!", duration: 2800, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001267}, arg2: 0)) {
-                    context.State = new StateEvent_A(context);
-                    return;
+                    return new StateEvent_A(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001268}, arg2: 0)) {
-                    context.State = new StateEvent_B(context);
-                    return;
+                    return new StateEvent_B(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001269}, arg2: 0)) {
-                    context.State = new StateEvent_C(context);
-                    return;
+                    return new StateEvent_C(context);
                 }
 
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateEvent_Ready_01(context);
-                    return;
+                    return new StateEvent_Ready_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -124,11 +123,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "아니야! 그건 내 이름이 적힌 책이 아니라고!", duration: 2800, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEvent_A_End(context);
-                    return;
+                    return new StateEvent_A_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -141,11 +141,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "그건 왕의 비밀병기와 관련된 책이란 말이야!", duration: 2800, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEvent_Ready_01(context);
-                    return;
+                    return new StateEvent_Ready_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -158,11 +159,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "$map:02020010$의 거대 병기?", duration: 2800, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEvent_B_End(context);
-                    return;
+                    return new StateEvent_B_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -175,11 +177,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "그런 책에 내 이름이 적혀 있을 리가 없잖아!", duration: 2800, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEvent_Ready_01(context);
-                    return;
+                    return new StateEvent_Ready_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -192,11 +195,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "그 책은! 내 일기장!", duration: 2800, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateEvent_C_End(context);
-                    return;
+                    return new StateEvent_C_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -209,11 +213,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "그래... 기억났다. 내 이름...", duration: 2800, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateNew_Event(context);
-                    return;
+                    return new StateNew_Event(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -227,11 +232,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.ChangeMonster(arg1: 101, arg2: 102);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateEvent_D(context);
-                    return;
+                    return new StateEvent_D(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -244,11 +250,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.AddBalloonTalk(spawnPointId: 102, msg: "내 이름은 $npcName:11003602$.", duration: 2800, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEvent_D_End(context);
-                    return;
+                    return new StateEvent_D_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -262,7 +269,9 @@ namespace Maple2.Trigger._52020009_qd {
                 context.AddBalloonTalk(spawnPointId: 102, msg: "크리티아스의 관찰자.", duration: 2800, delayTick: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

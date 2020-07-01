@@ -14,11 +14,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetUserValue(key: "BoardApp", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BoardApp") == 1) {
-                    context.State = new StateBoardApp01(context);
-                    return;
+                    return new StateBoardApp01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,11 +32,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateBoardApp02(context);
-                    return;
+                    return new StateBoardApp02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -51,11 +53,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetInteractObject(arg1: new[] {10001034}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001034}, arg2: 0)) {
-                    context.State = new StateBoardGoUp01(context);
-                    return;
+                    return new StateBoardGoUp01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,11 +76,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateBoardGoUp02(context);
-                    return;
+                    return new StateBoardGoUp02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,11 +94,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateBoardDisApp01(context);
-                    return;
+                    return new StateBoardDisApp01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -107,11 +112,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203}, arg2: true, arg3: 100, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 200)) {
-                    context.State = new StateBoardDisApp02(context);
-                    return;
+                    return new StateBoardDisApp02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -125,11 +131,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateBoardReset01(context);
-                    return;
+                    return new StateBoardReset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -142,11 +149,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateBoardReset02(context);
-                    return;
+                    return new StateBoardReset02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -159,11 +167,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetInteractObject(arg1: new[] {10001034}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001034}, arg2: 0)) {
-                    context.State = new StateBoardReset03(context);
-                    return;
+                    return new StateBoardReset03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -176,11 +185,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203}, arg2: false, arg3: 100, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateBoardGoUp01(context);
-                    return;
+                    return new StateBoardGoUp01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02020051_bf {
                 context.ResetTimer(arg1: "990");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Timmer") == 1) {
-                    context.State = new State타이머(context);
-                    return;
+                    return new State타이머(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,16 +25,16 @@ namespace Maple2.Trigger._02020051_bf {
                 context.SetTimer(arg1: "990", arg2: 600, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 600000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetUserValue(key: "Timmer") == 3) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +48,12 @@ namespace Maple2.Trigger._02020051_bf {
                 context.SetUserValue(triggerId: 104, key: "End", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Timmer") == 2) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

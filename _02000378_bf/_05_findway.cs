@@ -12,11 +12,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetUserValue(key: "FindWay", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "FindWay") == 1) {
-                    context.State = new StateReadyToWalkIn_FromPortal(context);
-                    return;
+                    return new StateReadyToWalkIn_FromPortal(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,11 +32,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetUserValue(triggerId: 2305, key: "RouteSelected", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateReadyToWalkIn_FromPortal02(context);
-                    return;
+                    return new StateReadyToWalkIn_FromPortal02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -50,11 +52,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetConversation(arg1: 1, arg2: 105, arg3: "$02000378_BF__05_FINDWAY__1$", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateRound05_Start(context);
-                    return;
+                    return new StateRound05_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -71,11 +74,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetUserValue(triggerId: 905, key: "MobWaveStart", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "05RoundSuccess") == 1) {
-                    context.State = new StateRound05_Sucess(context);
-                    return;
+                    return new StateRound05_Sucess(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,11 +100,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetConversation(arg1: 1, arg2: 105, arg3: "$02000378_BF__05_FINDWAY__3$", arg4: 2, arg5: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateRound05_RouteSelect(context);
-                    return;
+                    return new StateRound05_RouteSelect(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -114,16 +119,16 @@ namespace Maple2.Trigger._02000378_bf {
                 context.CreateMonster(arg1: new[] {205}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateRound05_PickRoute_Left(context);
-                    return;
+                    return new StateRound05_PickRoute_Left(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateRound05_PickRoute_Right(context);
-                    return;
+                    return new StateRound05_PickRoute_Right(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -137,11 +142,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetUserValue(triggerId: 2305, key: "MakeFalse", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateGoToPortal11(context);
-                    return;
+                    return new StateGoToPortal11(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -156,11 +162,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetUserValue(triggerId: 12, key: "FindWay", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -174,11 +181,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.SetUserValue(triggerId: 2305, key: "MakeTrue", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateGoToPortal12(context);
-                    return;
+                    return new StateGoToPortal12(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -193,11 +201,12 @@ namespace Maple2.Trigger._02000378_bf {
                 context.MoveNpc(arg1: 205, arg2: "MS2PatrolData_22");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -210,7 +219,9 @@ namespace Maple2.Trigger._02000378_bf {
                 context.DestroyMonster(arg1: new[] {105, 205});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

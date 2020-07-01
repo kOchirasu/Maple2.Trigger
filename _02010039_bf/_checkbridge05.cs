@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02010039_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {5001}, arg2: new[] {40002110}, arg3: new byte[] {1})) {
-                    context.State = new State업적발생(context);
-                    return;
+                    return new State업적발생(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,8 @@ namespace Maple2.Trigger._02010039_bf {
                 context.SetAchievement(arg1: 5001, arg2: "trigger", arg3: "checkBridge");
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State초기화준비(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State초기화준비(context);
             }
 
             public override void OnExit() { }
@@ -39,11 +37,12 @@ namespace Maple2.Trigger._02010039_bf {
                 context.SetTimer(arg1: "1", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020200_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {905})) {
-                    context.State = new State대사1(context);
-                    return;
+                    return new State대사1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,26 +24,24 @@ namespace Maple2.Trigger._02020200_bf {
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02020200_BF__11_BALLOONTALK__1$", duration: 5000, delayTick: 1000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {921}) && !context.MonsterDead(arg1: new[] {205})) {
-                    context.State = new State대사2(context);
-                    return;
+                    return new State대사2(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {922}) && !context.MonsterDead(arg1: new[] {205})) {
-                    context.State = new State대사2(context);
-                    return;
+                    return new State대사2(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {923}) && !context.MonsterDead(arg1: new[] {205})) {
-                    context.State = new State대사2(context);
-                    return;
+                    return new State대사2(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {205})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,11 +54,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02020200_BF__11_BALLOONTALK__2$", duration: 5000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckNpcAdditionalEffect(spawnPointId: 205, additionalEffectId: 42030261, level: 1)) {
-                    context.State = new State대사3(context);
-                    return;
+                    return new State대사3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,11 +73,8 @@ namespace Maple2.Trigger._02020200_bf {
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02020200_BF__11_BALLOONTALK__4$", duration: 5000, delayTick: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -88,7 +85,9 @@ namespace Maple2.Trigger._02020200_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

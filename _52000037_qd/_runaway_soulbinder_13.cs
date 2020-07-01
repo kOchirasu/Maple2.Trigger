@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9400}, arg2: new[] {50001411}, arg3: new byte[] {2}, arg4: 110)) {
-                    context.State = new State연출시작(context);
-                    return;
+                    return new State연출시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._52000037_qd {
                 context.MoveUser(arg1: 52000037, arg2: 11);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new StatePC말풍선딜레이(context);
-                    return;
+                    return new StatePC말풍선딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,12 +42,13 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.MoveUserPath(arg1: "MS2PatrolData_PC1102A");
-                    context.State = new StatePC말풍선01(context);
-                    return;
+                    return new StatePC말풍선01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +61,12 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__0$", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePC말풍선02(context);
-                    return;
+                    return new StatePC말풍선02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,11 +79,12 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__1$", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePC말풍선03(context);
-                    return;
+                    return new StatePC말풍선03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,11 +97,12 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__2$", arg4: 4, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State말풍선딜레이(context);
-                    return;
+                    return new State말풍선딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -107,12 +113,13 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     context.MoveUserPath(arg1: "MS2PatrolData_PC1102B");
-                    context.State = new StatePC말풍선04(context);
-                    return;
+                    return new StatePC말풍선04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -125,11 +132,12 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__3$", arg4: 4, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StatePC말풍선05(context);
-                    return;
+                    return new StatePC말풍선05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -142,11 +150,12 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__4$", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateNPC등장(context);
-                    return;
+                    return new StateNPC등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -160,11 +169,12 @@ namespace Maple2.Trigger._52000037_qd {
                 context.CameraSelect(arg1: 604, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateNPC대사01(context);
-                    return;
+                    return new StateNPC대사01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -178,11 +188,12 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetSkip(arg1: "NPC대사01스킵");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateNPC대사02(context);
-                    return;
+                    return new StateNPC대사02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -196,11 +207,8 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNPC대사02(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNPC대사02(context);
             }
 
             public override void OnExit() { }
@@ -214,11 +222,12 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetSkip(arg1: "NPC대사02스킵");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StatePC도주(context);
-                    return;
+                    return new StatePC도주(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -232,11 +241,8 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StatePC도주(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StatePC도주(context);
             }
 
             public override void OnExit() { }
@@ -251,11 +257,12 @@ namespace Maple2.Trigger._52000037_qd {
                 context.MoveUserPath(arg1: "MS2PatrolData_PC1102C");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StatePC말풍선06(context);
-                    return;
+                    return new StatePC말풍선06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -271,11 +278,12 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__7$", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new State연출종료(context);
-                    return;
+                    return new State연출종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -290,11 +298,12 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -305,7 +314,9 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

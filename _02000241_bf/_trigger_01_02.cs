@@ -15,11 +15,12 @@ namespace Maple2.Trigger._02000241_bf {
                 context.DestroyMonster(arg1: new[] {601, 602, 603, 604, 605, 606});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {401})) {
-                    context.State = new State버튼눌림(context);
-                    return;
+                    return new State버튼눌림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,7 +38,9 @@ namespace Maple2.Trigger._02000241_bf {
                 context.MoveNpc(arg1: 602, arg2: "MS2PatrolData_602");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

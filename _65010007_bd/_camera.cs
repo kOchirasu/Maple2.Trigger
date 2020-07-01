@@ -5,16 +5,16 @@ namespace Maple2.Trigger._65010007_bd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 101) == 2) {
-                    context.State = new StatePvP종료(context);
-                    return;
+                    return new StatePvP종료(context);
                 }
 
                 if (context.PvpZoneEnded(arg1: 101)) {
-                    context.State = new State완료(context);
-                    return;
+                    return new State완료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +28,12 @@ namespace Maple2.Trigger._65010007_bd {
                 context.AddBuff(arg1: new[] {101}, arg2: 70000089, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.PvpZoneEnded(arg1: 101)) {
-                    context.State = new State완료(context);
-                    return;
+                    return new State완료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,12 +44,13 @@ namespace Maple2.Trigger._65010007_bd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     context.MoveUser(arg1: 0, arg2: 0);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,7 +61,9 @@ namespace Maple2.Trigger._65010007_bd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

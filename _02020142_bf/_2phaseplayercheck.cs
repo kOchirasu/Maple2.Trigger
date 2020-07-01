@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new State안잡힌플레이어체크(context);
-                    return;
+                    return new State안잡힌플레이어체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "2PhasePlayerCheckStart") == 1) {
-                    context.State = new State1페이즈지점체크하기(context);
-                    return;
+                    return new State1페이즈지점체크하기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,16 +37,16 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {98})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 900)) {
-                    context.State = new State추가로최초시작지점체크하기(context);
-                    return;
+                    return new State추가로최초시작지점체크하기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,16 +57,16 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {99})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 900)) {
-                    context.State = new State안잡힌플레이어없음확인(context);
-                    return;
+                    return new State안잡힌플레이어없음확인(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,11 +79,12 @@ namespace Maple2.Trigger._02020142_bf {
                 context.SetAiExtraData(key: "TwoPhaseMainBattle", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State2페이즈복격진행_안내메시지출력(context);
-                    return;
+                    return new State2페이즈복격진행_안내메시지출력(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -95,11 +98,12 @@ namespace Maple2.Trigger._02020142_bf {
                 context.ShowGuideSummary(entityId: 29200003, textId: 29200003);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6500)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -112,7 +116,9 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

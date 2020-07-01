@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52000004_qd {
                 context.SetMesh(arg1: new[] {3102}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {112})) {
-                    context.State = new State발판01(context);
-                    return;
+                    return new State발판01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,12 +25,13 @@ namespace Maple2.Trigger._52000004_qd {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
                     context.SetMesh(arg1: new[] {3102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,12 @@ namespace Maple2.Trigger._52000004_qd {
                 context.SetTimer(arg1: "10", arg2: 10);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Timer") == 1) {
-                    context.State = new State타이머시작(context);
-                    return;
+                    return new State타이머시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,8 @@ namespace Maple2.Trigger._02020019_bf {
                 context.SetTimer(arg1: "BattleTimer", arg2: 300, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State타이머체크(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State타이머체크(context);
             }
 
             public override void OnExit() { }
@@ -37,16 +35,16 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "BattleTimer")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetUserValue(key: "TimerReset") == 1) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,7 +58,9 @@ namespace Maple2.Trigger._02020019_bf {
                 context.SetUserValue(triggerId: 99990002, key: "Timer", value: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

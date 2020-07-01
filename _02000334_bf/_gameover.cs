@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000334_bf {
                 context.CreateMonster(arg1: new[] {200, 999}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {200})) {
-                    context.State = new State게임오버(context);
-                    return;
+                    return new State게임오버(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,7 +25,9 @@ namespace Maple2.Trigger._02000334_bf {
                 context.DestroyMonster(arg1: new[] {999});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

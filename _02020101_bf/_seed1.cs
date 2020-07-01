@@ -12,11 +12,12 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetSkill(arg1: new[] {901, 902}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Seed") == 1) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State활성화(context);
-                    return;
+                    return new State활성화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,46 +47,42 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002126, 10002127}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 20000)) {
                     context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002126, 10002127}, arg2: 0);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002124}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {10002125, 10002126, 10002127}, arg2: 0);
                     context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new State씨앗심기1(context);
-                    return;
+                    return new State씨앗심기1(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002125}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {10002124, 10002126, 10002127}, arg2: 0);
                     context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new State씨앗심기2(context);
-                    return;
+                    return new State씨앗심기2(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002126}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002127}, arg2: 0);
                     context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new State씨앗심기3(context);
-                    return;
+                    return new State씨앗심기3(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002127}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002126}, arg2: 0);
                     context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new State씨앗심기4(context);
-                    return;
+                    return new State씨앗심기4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,21 +95,20 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
-                    context.State = new State나무생성1(context);
-                    return;
+                    return new State나무생성1(context);
                 }
 
                 if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 1004, additionalEffectId: 70002109, level: true)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -124,21 +121,20 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
-                    context.State = new State나무생성1(context);
-                    return;
+                    return new State나무생성1(context);
                 }
 
                 if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 1004, additionalEffectId: 70002109, level: true)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -151,21 +147,20 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
-                    context.State = new State나무생성1(context);
-                    return;
+                    return new State나무생성1(context);
                 }
 
                 if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 1004, additionalEffectId: 70002109, level: true)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -178,21 +173,20 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002128}, arg2: 0) || context.ObjectInteracted(arg1: new[] {10002129}, arg2: 0)) {
-                    context.State = new State나무생성1(context);
-                    return;
+                    return new State나무생성1(context);
                 }
 
                 if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 1004, additionalEffectId: 70002109, level: true)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -208,10 +202,9 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetActor(arg1: 1402, arg2: true, arg3: "Interaction_lapentatree_A01_On");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 20000)) {
@@ -220,9 +213,10 @@ namespace Maple2.Trigger._02020101_bf {
                     context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 0);
                     context.SetSkill(arg1: new[] {901, 902}, arg2: false);
                     context.SetUserValue(triggerId: 900009, key: "Seed", value: 0);
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -241,11 +235,8 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002126, 10002127, 10002128, 10002129}, arg2: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State시작(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State시작(context);
             }
 
             public override void OnExit() { }

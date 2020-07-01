@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CannonSpawn") == 1) {
-                    context.State = new StateCannonSpawn(context);
-                    return;
+                    return new StateCannonSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetTimer(arg1: "3", arg2: 3, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateCannonSpawn_start(context);
-                    return;
+                    return new StateCannonSpawn_start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +49,12 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetEffect(arg1: new[] {90021}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {190})) {
-                    context.State = new StateClear(context);
-                    return;
+                    return new StateClear(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -64,7 +67,9 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

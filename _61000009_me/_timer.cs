@@ -7,16 +7,16 @@ namespace Maple2.Trigger._61000009_me {
                 context.ShowGuideSummary(entityId: 100, textId: 40012);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
 
                 if (context.GetUserValue(key: "timer") == 1) {
-                    context.State = new StateReady_Idle(context);
-                    return;
+                    return new StateReady_Idle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,11 +30,12 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetTimer(arg1: "1200", arg2: 1200, arg3: false, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1200")) {
-                    context.State = new StateendGame(context);
-                    return;
+                    return new StateendGame(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,12 +48,13 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetEventUI(arg1: 5, arg2: "$61000004_ME__TRIGGER_01__2$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.MoveUser(arg1: 0, arg2: 0);
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,7 +65,9 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

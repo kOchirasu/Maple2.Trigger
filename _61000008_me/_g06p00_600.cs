@@ -7,306 +7,248 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {110, 111, 112, 113, 114, 115, 120, 121, 122, 123, 124, 125, 130, 131, 132, 133, 134, 135, 140, 141, 142, 143, 144, 145, 210, 211, 212, 213, 214, 215, 220, 221, 222, 223, 224, 225, 230, 231, 232, 233, 234, 235, 240, 241, 242, 243, 244, 245, 310, 311, 312, 313, 314, 315, 320, 321, 322, 323, 324, 325, 330, 331, 332, 333, 334, 335, 340, 341, 342, 343, 344, 345, 410, 411, 412, 413, 414, 415, 420, 421, 422, 423, 424, 425, 430, 431, 432, 433, 434, 435, 440, 441, 442, 443, 444, 445, 2207, 2208, 2209, 22000, 22005, 22010, 22020, 22030, 2307, 2308, 2309, 23000, 23005, 23010, 23020, 23030, 3207, 3208, 3209, 32000, 32005, 32010, 32020, 32030, 3307, 3308, 3309, 33000, 33005, 33010, 33020, 33030}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P101Set") == 1) {
-                    context.State = new StateNumberOnP101(context);
-                    return;
+                    return new StateNumberOnP101(context);
                 }
 
                 if (context.GetUserValue(key: "G06P102Set") == 1) {
-                    context.State = new StateNumberOnP102(context);
-                    return;
+                    return new StateNumberOnP102(context);
                 }
 
                 if (context.GetUserValue(key: "G06P103Set") == 1) {
-                    context.State = new StateNumberOnP103(context);
-                    return;
+                    return new StateNumberOnP103(context);
                 }
 
                 if (context.GetUserValue(key: "G06P104Set") == 1) {
-                    context.State = new StateNumberOnP104(context);
-                    return;
+                    return new StateNumberOnP104(context);
                 }
 
                 if (context.GetUserValue(key: "G06P105Set") == 1) {
-                    context.State = new StateNumberOnP105(context);
-                    return;
+                    return new StateNumberOnP105(context);
                 }
 
                 if (context.GetUserValue(key: "G06P106Set") == 1) {
-                    context.State = new StateNumberOnP106(context);
-                    return;
+                    return new StateNumberOnP106(context);
                 }
 
                 if (context.GetUserValue(key: "G06P107Set") == 1) {
-                    context.State = new StateNumberOnP107(context);
-                    return;
+                    return new StateNumberOnP107(context);
                 }
 
                 if (context.GetUserValue(key: "G06P108Set") == 1) {
-                    context.State = new StateNumberOnP108(context);
-                    return;
+                    return new StateNumberOnP108(context);
                 }
 
                 if (context.GetUserValue(key: "G06P109Set") == 1) {
-                    context.State = new StateNumberOnP109(context);
-                    return;
+                    return new StateNumberOnP109(context);
                 }
 
                 if (context.GetUserValue(key: "G06P110Set") == 1) {
-                    context.State = new StateNumberOnP110(context);
-                    return;
+                    return new StateNumberOnP110(context);
                 }
 
                 if (context.GetUserValue(key: "G06P201Set") == 1) {
-                    context.State = new StateNumberOnP201(context);
-                    return;
+                    return new StateNumberOnP201(context);
                 }
 
                 if (context.GetUserValue(key: "G06P202Set") == 1) {
-                    context.State = new StateNumberOnP202(context);
-                    return;
+                    return new StateNumberOnP202(context);
                 }
 
                 if (context.GetUserValue(key: "G06P203Set") == 1) {
-                    context.State = new StateNumberOnP203(context);
-                    return;
+                    return new StateNumberOnP203(context);
                 }
 
                 if (context.GetUserValue(key: "G06P204Set") == 1) {
-                    context.State = new StateNumberOnP204(context);
-                    return;
+                    return new StateNumberOnP204(context);
                 }
 
                 if (context.GetUserValue(key: "G06P205Set") == 1) {
-                    context.State = new StateNumberOnP205(context);
-                    return;
+                    return new StateNumberOnP205(context);
                 }
 
                 if (context.GetUserValue(key: "G06P206Set") == 1) {
-                    context.State = new StateNumberOnP206(context);
-                    return;
+                    return new StateNumberOnP206(context);
                 }
 
                 if (context.GetUserValue(key: "G06P207Set") == 1) {
-                    context.State = new StateNumberOnP207(context);
-                    return;
+                    return new StateNumberOnP207(context);
                 }
 
                 if (context.GetUserValue(key: "G06P208Set") == 1) {
-                    context.State = new StateNumberOnP208(context);
-                    return;
+                    return new StateNumberOnP208(context);
                 }
 
                 if (context.GetUserValue(key: "G06P209Set") == 1) {
-                    context.State = new StateNumberOnP209(context);
-                    return;
+                    return new StateNumberOnP209(context);
                 }
 
                 if (context.GetUserValue(key: "G06P210Set") == 1) {
-                    context.State = new StateNumberOnP210(context);
-                    return;
+                    return new StateNumberOnP210(context);
                 }
 
                 if (context.GetUserValue(key: "G06P211Set") == 1) {
-                    context.State = new StateNumberOnP211(context);
-                    return;
+                    return new StateNumberOnP211(context);
                 }
 
                 if (context.GetUserValue(key: "G06P212Set") == 1) {
-                    context.State = new StateNumberOnP212(context);
-                    return;
+                    return new StateNumberOnP212(context);
                 }
 
                 if (context.GetUserValue(key: "G06P213Set") == 1) {
-                    context.State = new StateNumberOnP213(context);
-                    return;
+                    return new StateNumberOnP213(context);
                 }
 
                 if (context.GetUserValue(key: "G06P214Set") == 1) {
-                    context.State = new StateNumberOnP214(context);
-                    return;
+                    return new StateNumberOnP214(context);
                 }
 
                 if (context.GetUserValue(key: "G06P215Set") == 1) {
-                    context.State = new StateNumberOnP215(context);
-                    return;
+                    return new StateNumberOnP215(context);
                 }
 
                 if (context.GetUserValue(key: "G06P216Set") == 1) {
-                    context.State = new StateNumberOnP216(context);
-                    return;
+                    return new StateNumberOnP216(context);
                 }
 
                 if (context.GetUserValue(key: "G06P217Set") == 1) {
-                    context.State = new StateNumberOnP217(context);
-                    return;
+                    return new StateNumberOnP217(context);
                 }
 
                 if (context.GetUserValue(key: "G06P218Set") == 1) {
-                    context.State = new StateNumberOnP218(context);
-                    return;
+                    return new StateNumberOnP218(context);
                 }
 
                 if (context.GetUserValue(key: "G06P219Set") == 1) {
-                    context.State = new StateNumberOnP219(context);
-                    return;
+                    return new StateNumberOnP219(context);
                 }
 
                 if (context.GetUserValue(key: "G06P220Set") == 1) {
-                    context.State = new StateNumberOnP220(context);
-                    return;
+                    return new StateNumberOnP220(context);
                 }
 
                 if (context.GetUserValue(key: "G06P301Set") == 1) {
-                    context.State = new StateNumberOnP301(context);
-                    return;
+                    return new StateNumberOnP301(context);
                 }
 
                 if (context.GetUserValue(key: "G06P302Set") == 1) {
-                    context.State = new StateNumberOnP302(context);
-                    return;
+                    return new StateNumberOnP302(context);
                 }
 
                 if (context.GetUserValue(key: "G06P303Set") == 1) {
-                    context.State = new StateNumberOnP303(context);
-                    return;
+                    return new StateNumberOnP303(context);
                 }
 
                 if (context.GetUserValue(key: "G06P304Set") == 1) {
-                    context.State = new StateNumberOnP304(context);
-                    return;
+                    return new StateNumberOnP304(context);
                 }
 
                 if (context.GetUserValue(key: "G06P305Set") == 1) {
-                    context.State = new StateNumberOnP305(context);
-                    return;
+                    return new StateNumberOnP305(context);
                 }
 
                 if (context.GetUserValue(key: "G06P306Set") == 1) {
-                    context.State = new StateNumberOnP306(context);
-                    return;
+                    return new StateNumberOnP306(context);
                 }
 
                 if (context.GetUserValue(key: "G06P307Set") == 1) {
-                    context.State = new StateNumberOnP307(context);
-                    return;
+                    return new StateNumberOnP307(context);
                 }
 
                 if (context.GetUserValue(key: "G06P308Set") == 1) {
-                    context.State = new StateNumberOnP308(context);
-                    return;
+                    return new StateNumberOnP308(context);
                 }
 
                 if (context.GetUserValue(key: "G06P309Set") == 1) {
-                    context.State = new StateNumberOnP309(context);
-                    return;
+                    return new StateNumberOnP309(context);
                 }
 
                 if (context.GetUserValue(key: "G06P310Set") == 1) {
-                    context.State = new StateNumberOnP310(context);
-                    return;
+                    return new StateNumberOnP310(context);
                 }
 
                 if (context.GetUserValue(key: "G06P311Set") == 1) {
-                    context.State = new StateNumberOnP311(context);
-                    return;
+                    return new StateNumberOnP311(context);
                 }
 
                 if (context.GetUserValue(key: "G06P312Set") == 1) {
-                    context.State = new StateNumberOnP312(context);
-                    return;
+                    return new StateNumberOnP312(context);
                 }
 
                 if (context.GetUserValue(key: "G06P313Set") == 1) {
-                    context.State = new StateNumberOnP313(context);
-                    return;
+                    return new StateNumberOnP313(context);
                 }
 
                 if (context.GetUserValue(key: "G06P314Set") == 1) {
-                    context.State = new StateNumberOnP314(context);
-                    return;
+                    return new StateNumberOnP314(context);
                 }
 
                 if (context.GetUserValue(key: "G06P315Set") == 1) {
-                    context.State = new StateNumberOnP315(context);
-                    return;
+                    return new StateNumberOnP315(context);
                 }
 
                 if (context.GetUserValue(key: "G06P316Set") == 1) {
-                    context.State = new StateNumberOnP316(context);
-                    return;
+                    return new StateNumberOnP316(context);
                 }
 
                 if (context.GetUserValue(key: "G06P317Set") == 1) {
-                    context.State = new StateNumberOnP317(context);
-                    return;
+                    return new StateNumberOnP317(context);
                 }
 
                 if (context.GetUserValue(key: "G06P318Set") == 1) {
-                    context.State = new StateNumberOnP318(context);
-                    return;
+                    return new StateNumberOnP318(context);
                 }
 
                 if (context.GetUserValue(key: "G06P319Set") == 1) {
-                    context.State = new StateNumberOnP319(context);
-                    return;
+                    return new StateNumberOnP319(context);
                 }
 
                 if (context.GetUserValue(key: "G06P320Set") == 1) {
-                    context.State = new StateNumberOnP320(context);
-                    return;
+                    return new StateNumberOnP320(context);
                 }
 
                 if (context.GetUserValue(key: "G06P401Set") == 1) {
-                    context.State = new StateNumberOnP401(context);
-                    return;
+                    return new StateNumberOnP401(context);
                 }
 
                 if (context.GetUserValue(key: "G06P402Set") == 1) {
-                    context.State = new StateNumberOnP402(context);
-                    return;
+                    return new StateNumberOnP402(context);
                 }
 
                 if (context.GetUserValue(key: "G06P403Set") == 1) {
-                    context.State = new StateNumberOnP403(context);
-                    return;
+                    return new StateNumberOnP403(context);
                 }
 
                 if (context.GetUserValue(key: "G06P404Set") == 1) {
-                    context.State = new StateNumberOnP404(context);
-                    return;
+                    return new StateNumberOnP404(context);
                 }
 
                 if (context.GetUserValue(key: "G06P405Set") == 1) {
-                    context.State = new StateNumberOnP405(context);
-                    return;
+                    return new StateNumberOnP405(context);
                 }
 
                 if (context.GetUserValue(key: "G06P406Set") == 1) {
-                    context.State = new StateNumberOnP406(context);
-                    return;
+                    return new StateNumberOnP406(context);
                 }
 
                 if (context.GetUserValue(key: "G06P407Set") == 1) {
-                    context.State = new StateNumberOnP407(context);
-                    return;
+                    return new StateNumberOnP407(context);
                 }
 
                 if (context.GetUserValue(key: "G06P408Set") == 1) {
-                    context.State = new StateNumberOnP408(context);
-                    return;
+                    return new StateNumberOnP408(context);
                 }
 
                 if (context.GetUserValue(key: "G06P409Set") == 1) {
-                    context.State = new StateNumberOnP409(context);
-                    return;
+                    return new StateNumberOnP409(context);
                 }
 
                 if (context.GetUserValue(key: "G06P410Set") == 1) {
-                    context.State = new StateNumberOnP410(context);
-                    return;
+                    return new StateNumberOnP410(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -367,11 +309,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P101TimeLimit") == 1) {
-                    context.State = new StateCheckP101(context);
-                    return;
+                    return new StateCheckP101(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -399,11 +342,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP101(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP101(context);
             }
 
             public override void OnExit() { }
@@ -431,11 +371,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {441}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP101(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP101(context);
             }
 
             public override void OnExit() { }
@@ -450,11 +387,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P101TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -515,11 +453,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P102TimeLimit") == 1) {
-                    context.State = new StateCheckP102(context);
-                    return;
+                    return new StateCheckP102(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -547,11 +486,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP102(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP102(context);
             }
 
             public override void OnExit() { }
@@ -579,11 +515,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP102(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP102(context);
             }
 
             public override void OnExit() { }
@@ -598,11 +531,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P102TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -663,11 +597,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P103TimeLimit") == 1) {
-                    context.State = new StateCheckP103(context);
-                    return;
+                    return new StateCheckP103(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -695,11 +630,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP103(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP103(context);
             }
 
             public override void OnExit() { }
@@ -727,11 +659,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {441}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP103(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP103(context);
             }
 
             public override void OnExit() { }
@@ -746,11 +675,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P103TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -811,11 +741,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P104TimeLimit") == 1) {
-                    context.State = new StateCheckP104(context);
-                    return;
+                    return new StateCheckP104(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -843,11 +774,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP104(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP104(context);
             }
 
             public override void OnExit() { }
@@ -875,11 +803,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP104(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP104(context);
             }
 
             public override void OnExit() { }
@@ -894,11 +819,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P104TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -959,11 +885,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P105TimeLimit") == 1) {
-                    context.State = new StateCheckP105(context);
-                    return;
+                    return new StateCheckP105(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -991,11 +918,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP105(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP105(context);
             }
 
             public override void OnExit() { }
@@ -1023,11 +947,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP105(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP105(context);
             }
 
             public override void OnExit() { }
@@ -1042,11 +963,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P105TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1107,11 +1029,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P106TimeLimit") == 1) {
-                    context.State = new StateCheckP106(context);
-                    return;
+                    return new StateCheckP106(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1139,11 +1062,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP106(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP106(context);
             }
 
             public override void OnExit() { }
@@ -1171,11 +1091,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP106(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP106(context);
             }
 
             public override void OnExit() { }
@@ -1190,11 +1107,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P106TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1255,11 +1173,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P107TimeLimit") == 1) {
-                    context.State = new StateCheckP107(context);
-                    return;
+                    return new StateCheckP107(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1287,11 +1206,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP107(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP107(context);
             }
 
             public override void OnExit() { }
@@ -1319,11 +1235,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP107(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP107(context);
             }
 
             public override void OnExit() { }
@@ -1338,11 +1251,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P107TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1403,11 +1317,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P108TimeLimit") == 1) {
-                    context.State = new StateCheckP108(context);
-                    return;
+                    return new StateCheckP108(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1435,11 +1350,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP108(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP108(context);
             }
 
             public override void OnExit() { }
@@ -1467,11 +1379,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP108(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP108(context);
             }
 
             public override void OnExit() { }
@@ -1486,11 +1395,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P108TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1551,11 +1461,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P109TimeLimit") == 1) {
-                    context.State = new StateCheckP109(context);
-                    return;
+                    return new StateCheckP109(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1583,11 +1494,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP109(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP109(context);
             }
 
             public override void OnExit() { }
@@ -1615,11 +1523,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {441}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP109(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP109(context);
             }
 
             public override void OnExit() { }
@@ -1634,11 +1539,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P109TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1700,11 +1606,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P110TimeLimit") == 1) {
-                    context.State = new StateCheckP110(context);
-                    return;
+                    return new StateCheckP110(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1732,11 +1639,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP110(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP110(context);
             }
 
             public override void OnExit() { }
@@ -1765,11 +1669,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP110(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP110(context);
             }
 
             public override void OnExit() { }
@@ -1784,11 +1685,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P110TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1850,11 +1752,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P201TimeLimit") == 1) {
-                    context.State = new StateCheckP201(context);
-                    return;
+                    return new StateCheckP201(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1882,11 +1785,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP201(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP201(context);
             }
 
             public override void OnExit() { }
@@ -1915,11 +1815,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP201(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP201(context);
             }
 
             public override void OnExit() { }
@@ -1934,11 +1831,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P201TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1999,11 +1897,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P202TimeLimit") == 1) {
-                    context.State = new StateCheckP202(context);
-                    return;
+                    return new StateCheckP202(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2031,11 +1930,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP202(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP202(context);
             }
 
             public override void OnExit() { }
@@ -2063,11 +1959,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP202(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP202(context);
             }
 
             public override void OnExit() { }
@@ -2082,11 +1975,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P202TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2147,11 +2041,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P203TimeLimit") == 1) {
-                    context.State = new StateCheckP203(context);
-                    return;
+                    return new StateCheckP203(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2179,11 +2074,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 4);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP203(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP203(context);
             }
 
             public override void OnExit() { }
@@ -2211,11 +2103,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {444}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP203(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP203(context);
             }
 
             public override void OnExit() { }
@@ -2230,11 +2119,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P203TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2296,11 +2186,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P204TimeLimit") == 1) {
-                    context.State = new StateCheckP204(context);
-                    return;
+                    return new StateCheckP204(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2328,11 +2219,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP204(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP204(context);
             }
 
             public override void OnExit() { }
@@ -2361,11 +2249,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP204(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP204(context);
             }
 
             public override void OnExit() { }
@@ -2380,11 +2265,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P204TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2446,11 +2332,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P205TimeLimit") == 1) {
-                    context.State = new StateCheckP205(context);
-                    return;
+                    return new StateCheckP205(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2478,11 +2365,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 4);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP205(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP205(context);
             }
 
             public override void OnExit() { }
@@ -2511,11 +2395,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {444}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP205(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP205(context);
             }
 
             public override void OnExit() { }
@@ -2530,11 +2411,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P205TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2595,11 +2477,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P206TimeLimit") == 1) {
-                    context.State = new StateCheckP206(context);
-                    return;
+                    return new StateCheckP206(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2627,11 +2510,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP206(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP206(context);
             }
 
             public override void OnExit() { }
@@ -2659,11 +2539,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP206(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP206(context);
             }
 
             public override void OnExit() { }
@@ -2678,11 +2555,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P206TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2743,11 +2621,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P207TimeLimit") == 1) {
-                    context.State = new StateCheckP207(context);
-                    return;
+                    return new StateCheckP207(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2775,11 +2654,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP207(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP207(context);
             }
 
             public override void OnExit() { }
@@ -2807,11 +2683,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP207(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP207(context);
             }
 
             public override void OnExit() { }
@@ -2826,11 +2699,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P207TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2891,11 +2765,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P208TimeLimit") == 1) {
-                    context.State = new StateCheckP208(context);
-                    return;
+                    return new StateCheckP208(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -2923,11 +2798,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP208(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP208(context);
             }
 
             public override void OnExit() { }
@@ -2955,11 +2827,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP208(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP208(context);
             }
 
             public override void OnExit() { }
@@ -2974,11 +2843,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P208TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3040,11 +2910,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P209TimeLimit") == 1) {
-                    context.State = new StateCheckP209(context);
-                    return;
+                    return new StateCheckP209(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3072,11 +2943,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP209(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP209(context);
             }
 
             public override void OnExit() { }
@@ -3105,11 +2973,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP209(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP209(context);
             }
 
             public override void OnExit() { }
@@ -3124,11 +2989,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P209TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3191,11 +3057,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P210TimeLimit") == 1) {
-                    context.State = new StateCheckP210(context);
-                    return;
+                    return new StateCheckP210(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3223,11 +3090,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP210(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP210(context);
             }
 
             public override void OnExit() { }
@@ -3257,11 +3121,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP210(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP210(context);
             }
 
             public override void OnExit() { }
@@ -3276,11 +3137,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P210TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3341,11 +3203,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P211TimeLimit") == 1) {
-                    context.State = new StateCheckP211(context);
-                    return;
+                    return new StateCheckP211(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3373,11 +3236,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP211(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP211(context);
             }
 
             public override void OnExit() { }
@@ -3405,11 +3265,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP211(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP211(context);
             }
 
             public override void OnExit() { }
@@ -3424,11 +3281,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P211TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3489,11 +3347,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P212TimeLimit") == 1) {
-                    context.State = new StateCheckP212(context);
-                    return;
+                    return new StateCheckP212(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3521,11 +3380,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP212(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP212(context);
             }
 
             public override void OnExit() { }
@@ -3553,11 +3409,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP212(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP212(context);
             }
 
             public override void OnExit() { }
@@ -3572,11 +3425,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P212TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3637,11 +3491,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P213TimeLimit") == 1) {
-                    context.State = new StateCheckP213(context);
-                    return;
+                    return new StateCheckP213(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3669,11 +3524,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP213(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP213(context);
             }
 
             public override void OnExit() { }
@@ -3701,11 +3553,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP213(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP213(context);
             }
 
             public override void OnExit() { }
@@ -3720,11 +3569,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P213TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3785,11 +3635,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P214TimeLimit") == 1) {
-                    context.State = new StateCheckP214(context);
-                    return;
+                    return new StateCheckP214(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3817,11 +3668,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP214(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP214(context);
             }
 
             public override void OnExit() { }
@@ -3849,11 +3697,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {441}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP214(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP214(context);
             }
 
             public override void OnExit() { }
@@ -3868,11 +3713,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P214TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3933,11 +3779,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P215TimeLimit") == 1) {
-                    context.State = new StateCheckP215(context);
-                    return;
+                    return new StateCheckP215(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -3965,11 +3812,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP215(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP215(context);
             }
 
             public override void OnExit() { }
@@ -3997,11 +3841,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP215(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP215(context);
             }
 
             public override void OnExit() { }
@@ -4016,11 +3857,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P215TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4081,11 +3923,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P216TimeLimit") == 1) {
-                    context.State = new StateCheckP216(context);
-                    return;
+                    return new StateCheckP216(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4113,11 +3956,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP216(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP216(context);
             }
 
             public override void OnExit() { }
@@ -4145,11 +3985,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP216(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP216(context);
             }
 
             public override void OnExit() { }
@@ -4164,11 +4001,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P216TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4230,11 +4068,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P217TimeLimit") == 1) {
-                    context.State = new StateCheckP217(context);
-                    return;
+                    return new StateCheckP217(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4262,11 +4101,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP217(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP217(context);
             }
 
             public override void OnExit() { }
@@ -4295,11 +4131,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP217(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP217(context);
             }
 
             public override void OnExit() { }
@@ -4314,11 +4147,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P217TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4380,11 +4214,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P218TimeLimit") == 1) {
-                    context.State = new StateCheckP218(context);
-                    return;
+                    return new StateCheckP218(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4412,11 +4247,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP218(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP218(context);
             }
 
             public override void OnExit() { }
@@ -4445,11 +4277,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP218(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP218(context);
             }
 
             public override void OnExit() { }
@@ -4464,11 +4293,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P218TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4530,11 +4360,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P219TimeLimit") == 1) {
-                    context.State = new StateCheckP219(context);
-                    return;
+                    return new StateCheckP219(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4562,11 +4393,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP219(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP219(context);
             }
 
             public override void OnExit() { }
@@ -4595,11 +4423,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP219(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP219(context);
             }
 
             public override void OnExit() { }
@@ -4614,11 +4439,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P219TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4680,11 +4506,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P220TimeLimit") == 1) {
-                    context.State = new StateCheckP220(context);
-                    return;
+                    return new StateCheckP220(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4712,11 +4539,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP220(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP220(context);
             }
 
             public override void OnExit() { }
@@ -4745,11 +4569,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {441}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP220(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP220(context);
             }
 
             public override void OnExit() { }
@@ -4764,11 +4585,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P220TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4831,11 +4653,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P301TimeLimit") == 1) {
-                    context.State = new StateCheckP301(context);
-                    return;
+                    return new StateCheckP301(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4863,11 +4686,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP301(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP301(context);
             }
 
             public override void OnExit() { }
@@ -4897,11 +4717,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP301(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP301(context);
             }
 
             public override void OnExit() { }
@@ -4916,11 +4733,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P301TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -4982,11 +4800,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P302TimeLimit") == 1) {
-                    context.State = new StateCheckP302(context);
-                    return;
+                    return new StateCheckP302(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5014,11 +4833,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP302(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP302(context);
             }
 
             public override void OnExit() { }
@@ -5047,11 +4863,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP302(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP302(context);
             }
 
             public override void OnExit() { }
@@ -5066,11 +4879,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P302TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5132,11 +4946,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P303TimeLimit") == 1) {
-                    context.State = new StateCheckP303(context);
-                    return;
+                    return new StateCheckP303(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5164,11 +4979,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP303(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP303(context);
             }
 
             public override void OnExit() { }
@@ -5197,11 +5009,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP303(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP303(context);
             }
 
             public override void OnExit() { }
@@ -5216,11 +5025,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P303TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5282,11 +5092,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P304TimeLimit") == 1) {
-                    context.State = new StateCheckP304(context);
-                    return;
+                    return new StateCheckP304(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5314,11 +5125,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP304(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP304(context);
             }
 
             public override void OnExit() { }
@@ -5347,11 +5155,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP304(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP304(context);
             }
 
             public override void OnExit() { }
@@ -5366,11 +5171,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P304TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5431,11 +5237,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P305TimeLimit") == 1) {
-                    context.State = new StateCheckP305(context);
-                    return;
+                    return new StateCheckP305(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5463,11 +5270,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 4);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP305(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP305(context);
             }
 
             public override void OnExit() { }
@@ -5495,11 +5299,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {444}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP305(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP305(context);
             }
 
             public override void OnExit() { }
@@ -5514,11 +5315,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P305TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5581,11 +5383,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P306TimeLimit") == 1) {
-                    context.State = new StateCheckP306(context);
-                    return;
+                    return new StateCheckP306(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5613,11 +5416,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP306(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP306(context);
             }
 
             public override void OnExit() { }
@@ -5647,11 +5447,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP306(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP306(context);
             }
 
             public override void OnExit() { }
@@ -5666,11 +5463,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P306TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5732,11 +5530,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P307TimeLimit") == 1) {
-                    context.State = new StateCheckP307(context);
-                    return;
+                    return new StateCheckP307(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5764,11 +5563,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP307(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP307(context);
             }
 
             public override void OnExit() { }
@@ -5797,11 +5593,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP307(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP307(context);
             }
 
             public override void OnExit() { }
@@ -5816,11 +5609,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P307TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5881,11 +5675,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P308TimeLimit") == 1) {
-                    context.State = new StateCheckP308(context);
-                    return;
+                    return new StateCheckP308(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -5913,11 +5708,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP308(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP308(context);
             }
 
             public override void OnExit() { }
@@ -5945,11 +5737,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP308(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP308(context);
             }
 
             public override void OnExit() { }
@@ -5964,11 +5753,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P308TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6029,11 +5819,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P309TimeLimit") == 1) {
-                    context.State = new StateCheckP309(context);
-                    return;
+                    return new StateCheckP309(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6061,11 +5852,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 4);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP309(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP309(context);
             }
 
             public override void OnExit() { }
@@ -6093,11 +5881,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {444}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP309(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP309(context);
             }
 
             public override void OnExit() { }
@@ -6112,11 +5897,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P309TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6177,11 +5963,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P310TimeLimit") == 1) {
-                    context.State = new StateCheckP310(context);
-                    return;
+                    return new StateCheckP310(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6209,11 +5996,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP310(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP310(context);
             }
 
             public override void OnExit() { }
@@ -6241,11 +6025,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP310(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP310(context);
             }
 
             public override void OnExit() { }
@@ -6260,11 +6041,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P310TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6327,11 +6109,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P311TimeLimit") == 1) {
-                    context.State = new StateCheckP311(context);
-                    return;
+                    return new StateCheckP311(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6359,11 +6142,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 5);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP311(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP311(context);
             }
 
             public override void OnExit() { }
@@ -6393,11 +6173,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {445}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP311(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP311(context);
             }
 
             public override void OnExit() { }
@@ -6412,11 +6189,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P311TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6479,11 +6257,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P312TimeLimit") == 1) {
-                    context.State = new StateCheckP312(context);
-                    return;
+                    return new StateCheckP312(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6511,11 +6290,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP312(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP312(context);
             }
 
             public override void OnExit() { }
@@ -6545,11 +6321,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP312(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP312(context);
             }
 
             public override void OnExit() { }
@@ -6564,11 +6337,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P312TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6629,11 +6403,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P313TimeLimit") == 1) {
-                    context.State = new StateCheckP313(context);
-                    return;
+                    return new StateCheckP313(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6661,11 +6436,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP313(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP313(context);
             }
 
             public override void OnExit() { }
@@ -6693,11 +6465,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP313(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP313(context);
             }
 
             public override void OnExit() { }
@@ -6712,11 +6481,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P313TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6777,11 +6547,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P314TimeLimit") == 1) {
-                    context.State = new StateCheckP314(context);
-                    return;
+                    return new StateCheckP314(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6809,11 +6580,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP314(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP314(context);
             }
 
             public override void OnExit() { }
@@ -6841,11 +6609,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP314(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP314(context);
             }
 
             public override void OnExit() { }
@@ -6860,11 +6625,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P314TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6925,11 +6691,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P315TimeLimit") == 1) {
-                    context.State = new StateCheckP315(context);
-                    return;
+                    return new StateCheckP315(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -6957,11 +6724,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP315(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP315(context);
             }
 
             public override void OnExit() { }
@@ -6989,11 +6753,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP315(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP315(context);
             }
 
             public override void OnExit() { }
@@ -7008,11 +6769,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P315TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7073,11 +6835,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P316TimeLimit") == 1) {
-                    context.State = new StateCheckP316(context);
-                    return;
+                    return new StateCheckP316(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7105,11 +6868,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP316(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP316(context);
             }
 
             public override void OnExit() { }
@@ -7137,11 +6897,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP316(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP316(context);
             }
 
             public override void OnExit() { }
@@ -7156,11 +6913,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P316TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7221,11 +6979,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P317TimeLimit") == 1) {
-                    context.State = new StateCheckP317(context);
-                    return;
+                    return new StateCheckP317(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7253,11 +7012,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP317(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP317(context);
             }
 
             public override void OnExit() { }
@@ -7285,11 +7041,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {441}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP317(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP317(context);
             }
 
             public override void OnExit() { }
@@ -7304,11 +7057,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P317TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7369,11 +7123,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P318TimeLimit") == 1) {
-                    context.State = new StateCheckP318(context);
-                    return;
+                    return new StateCheckP318(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7401,11 +7156,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 5);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP318(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP318(context);
             }
 
             public override void OnExit() { }
@@ -7433,11 +7185,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {445}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP318(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP318(context);
             }
 
             public override void OnExit() { }
@@ -7452,11 +7201,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P318TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7517,11 +7267,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P319TimeLimit") == 1) {
-                    context.State = new StateCheckP319(context);
-                    return;
+                    return new StateCheckP319(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7549,11 +7300,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP319(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP319(context);
             }
 
             public override void OnExit() { }
@@ -7581,11 +7329,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {440}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP319(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP319(context);
             }
 
             public override void OnExit() { }
@@ -7600,11 +7345,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P319TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7665,11 +7411,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P320TimeLimit") == 1) {
-                    context.State = new StateCheckP320(context);
-                    return;
+                    return new StateCheckP320(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7697,11 +7444,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP320(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP320(context);
             }
 
             public override void OnExit() { }
@@ -7729,11 +7473,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP320(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP320(context);
             }
 
             public override void OnExit() { }
@@ -7748,11 +7489,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P320TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7813,11 +7555,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P401TimeLimit") == 1) {
-                    context.State = new StateCheckP401(context);
-                    return;
+                    return new StateCheckP401(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7845,11 +7588,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 5);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP401(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP401(context);
             }
 
             public override void OnExit() { }
@@ -7877,11 +7617,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {445}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP401(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP401(context);
             }
 
             public override void OnExit() { }
@@ -7896,11 +7633,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P401TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7962,11 +7700,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P402TimeLimit") == 1) {
-                    context.State = new StateCheckP402(context);
-                    return;
+                    return new StateCheckP402(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -7994,11 +7733,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 5);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP402(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP402(context);
             }
 
             public override void OnExit() { }
@@ -8027,11 +7763,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {445}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP402(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP402(context);
             }
 
             public override void OnExit() { }
@@ -8046,11 +7779,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P402TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8112,11 +7846,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P403TimeLimit") == 1) {
-                    context.State = new StateCheckP403(context);
-                    return;
+                    return new StateCheckP403(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8144,11 +7879,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 5);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP403(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP403(context);
             }
 
             public override void OnExit() { }
@@ -8177,11 +7909,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {445}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP403(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP403(context);
             }
 
             public override void OnExit() { }
@@ -8196,11 +7925,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P403TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8264,11 +7994,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P404TimeLimit") == 1) {
-                    context.State = new StateCheckP404(context);
-                    return;
+                    return new StateCheckP404(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8296,11 +8027,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP404(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP404(context);
             }
 
             public override void OnExit() { }
@@ -8331,11 +8059,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP404(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP404(context);
             }
 
             public override void OnExit() { }
@@ -8350,11 +8075,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P404TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8415,11 +8141,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P405TimeLimit") == 1) {
-                    context.State = new StateCheckP405(context);
-                    return;
+                    return new StateCheckP405(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8447,11 +8174,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 5);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP405(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP405(context);
             }
 
             public override void OnExit() { }
@@ -8479,11 +8203,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {445}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP405(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP405(context);
             }
 
             public override void OnExit() { }
@@ -8498,11 +8219,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P405TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8563,11 +8285,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P406TimeLimit") == 1) {
-                    context.State = new StateCheckP406(context);
-                    return;
+                    return new StateCheckP406(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8595,11 +8318,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 5);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP406(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP406(context);
             }
 
             public override void OnExit() { }
@@ -8627,11 +8347,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {445}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP406(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP406(context);
             }
 
             public override void OnExit() { }
@@ -8646,11 +8363,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P406TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8711,11 +8429,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P407TimeLimit") == 1) {
-                    context.State = new StateCheckP407(context);
-                    return;
+                    return new StateCheckP407(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8743,11 +8462,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 4);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP407(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP407(context);
             }
 
             public override void OnExit() { }
@@ -8775,11 +8491,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {444}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP407(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP407(context);
             }
 
             public override void OnExit() { }
@@ -8794,11 +8507,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P407TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8861,11 +8575,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P408TimeLimit") == 1) {
-                    context.State = new StateCheckP408(context);
-                    return;
+                    return new StateCheckP408(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -8893,11 +8608,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 4);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP408(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP408(context);
             }
 
             public override void OnExit() { }
@@ -8927,11 +8639,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {444}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP408(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP408(context);
             }
 
             public override void OnExit() { }
@@ -8946,11 +8655,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P408TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9011,11 +8721,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P409TimeLimit") == 1) {
-                    context.State = new StateCheckP409(context);
-                    return;
+                    return new StateCheckP409(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9043,11 +8754,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP409(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP409(context);
             }
 
             public override void OnExit() { }
@@ -9075,11 +8783,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {443}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP409(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP409(context);
             }
 
             public override void OnExit() { }
@@ -9094,11 +8799,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P409TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9161,11 +8867,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "G06P410TimeLimit") == 1) {
-                    context.State = new StateCheckP410(context);
-                    return;
+                    return new StateCheckP410(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -9193,11 +8900,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNumberOffP410(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNumberOffP410(context);
             }
 
             public override void OnExit() { }
@@ -9227,11 +8931,8 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetMesh(arg1: new[] {442}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateResetP410(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateResetP410(context);
             }
 
             public override void OnExit() { }
@@ -9246,11 +8947,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "G06P410TimeLimit", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

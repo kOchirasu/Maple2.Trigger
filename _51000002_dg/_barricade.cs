@@ -7,11 +7,12 @@ namespace Maple2.Trigger._51000002_dg {
                 context.SetMesh(arg1: new[] {301}, arg2: false, arg3: 0, arg4: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 102, arg2: new[] {99})) {
-                    context.State = new State카운트(context);
-                    return;
+                    return new State카운트(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._51000002_dg {
                 context.SetTimer(arg1: "90", arg2: 90);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "90")) {
-                    context.State = new State차단(context);
-                    return;
+                    return new State차단(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,16 +43,16 @@ namespace Maple2.Trigger._51000002_dg {
                 context.SetMesh(arg1: new[] {301}, arg2: true, arg3: 0, arg4: 200);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State차단해제(context);
-                    return;
+                    return new State차단해제(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {102})) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +65,12 @@ namespace Maple2.Trigger._51000002_dg {
                 context.SetMesh(arg1: new[] {301}, arg2: false, arg3: 0, arg4: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {102})) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 700) == 1) {
-                    context.State = new StateReady_Idle(context);
-                    return;
+                    return new StateReady_Idle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetTimer(arg1: "1", arg2: 1, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateReady_Idle_02(context);
-                    return;
+                    return new StateReady_Idle_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetTimer(arg1: "60", arg2: 60, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "60")) {
-                    context.State = new Statedaily_quest(context);
-                    return;
+                    return new Statedaily_quest(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,7 +59,9 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetAchievement(arg1: 799, arg2: "trigger", arg3: "dailyquest_start");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

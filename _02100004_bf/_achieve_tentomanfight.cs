@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02100004_bf {
                 context.SetUserValue(key: "LastRoundEnd", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "LastRoundStart") == 1) {
-                    context.State = new StateMobCheck01(context);
-                    return;
+                    return new StateMobCheck01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 102, arg2: new[] {2000})) {
-                    context.State = new StateMobCheck02(context);
-                    return;
+                    return new StateMobCheck02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,16 +40,16 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.NpcDetected(arg1: 102, arg2: new[] {2001}) && !context.NpcDetected(arg1: 102, arg2: new[] {2002}) && !context.NpcDetected(arg1: 102, arg2: new[] {2003}) && !context.NpcDetected(arg1: 102, arg2: new[] {2004}) && !context.NpcDetected(arg1: 102, arg2: new[] {2005}) && !context.NpcDetected(arg1: 102, arg2: new[] {2006}) && !context.NpcDetected(arg1: 102, arg2: new[] {2008}) && !context.NpcDetected(arg1: 102, arg2: new[] {2009}) && !context.NpcDetected(arg1: 102, arg2: new[] {2010}) && !context.NpcDetected(arg1: 102, arg2: new[] {2011}) && !context.NpcDetected(arg1: 102, arg2: new[] {2012}) && !context.NpcDetected(arg1: 102, arg2: new[] {2013})) {
-                    context.State = new StateCheckSuccess(context);
-                    return;
+                    return new StateCheckSuccess(context);
                 }
 
                 if (context.GetUserValue(key: "LastRoundEnd") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,16 +60,16 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2000})) {
-                    context.State = new StateMemberCheck(context);
-                    return;
+                    return new StateMemberCheck(context);
                 }
 
                 if (context.GetUserValue(key: "LastRoundEnd") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -78,16 +80,16 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 102) == 10) {
-                    context.State = new StateAchieve(context);
-                    return;
+                    return new StateAchieve(context);
                 }
 
                 if (context.GetUserValue(key: "LastRoundEnd") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -100,11 +102,12 @@ namespace Maple2.Trigger._02100004_bf {
                 context.SetAchievement(arg1: 102, arg2: "trigger", arg3: "TenToOneFight");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,7 +118,9 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

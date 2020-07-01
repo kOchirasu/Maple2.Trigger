@@ -9,16 +9,16 @@ namespace Maple2.Trigger._99999883 {
                 context.ShowGuideSummary(entityId: 20000661, textId: 20000661, duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {100}, itemId: 0)) {
-                    context.State = new State07_보상테스트(context);
-                    return;
+                    return new State07_보상테스트(context);
                 }
 
                 if (context.GetUserValue(key: "TimeEvent") == 1) {
-                    context.State = new State01경험치구슬(context);
-                    return;
+                    return new State01경험치구슬(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,12 +35,13 @@ namespace Maple2.Trigger._99999883 {
                 context.GiveExp(arg1: 100, arg2: 36);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 // 타임이벤트로 유지시간을 받아 끝나면 다시 돌아갑니다.
                 if (context.WaitTick(context.GetUserValue(key: "TimeEventLifeTime"))) {
-                    context.State = new State컷씬종료(context);
-                    return;
+                    return new State컷씬종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -54,11 +55,12 @@ namespace Maple2.Trigger._99999883 {
                 context.DebugString(message: "업적이벤트테스트");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State컷씬종료(context);
-                    return;
+                    return new State컷씬종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -72,11 +74,12 @@ namespace Maple2.Trigger._99999883 {
                 context.DebugString(message: "컷씬테스트");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State컷씬종료(context);
-                    return;
+                    return new State컷씬종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,11 +93,12 @@ namespace Maple2.Trigger._99999883 {
                 context.DebugString(message: "그림자원정대게이지테스트");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State컷씬종료(context);
-                    return;
+                    return new State컷씬종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -109,11 +113,12 @@ namespace Maple2.Trigger._99999883 {
                 context.DebugString(message: "05PC NPC이동테스트");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State컷씬종료(context);
-                    return;
+                    return new State컷씬종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -126,11 +131,12 @@ namespace Maple2.Trigger._99999883 {
                 context.DebugString(message: "06_요일테스트");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DayOfWeek(dayOfWeeks: new byte[] {5}, desc: "1(일)-7(토)")) {
-                    context.State = new State03컷씬(context);
-                    return;
+                    return new State03컷씬(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -144,11 +150,12 @@ namespace Maple2.Trigger._99999883 {
                 context.GiveRewardContent(rewardId: 31000003);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -161,11 +168,12 @@ namespace Maple2.Trigger._99999883 {
                 context.CloseCinematic();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

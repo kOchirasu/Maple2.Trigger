@@ -12,11 +12,12 @@ namespace Maple2.Trigger._99999925 {
                 context.SetLadder(arg1: 316, arg2: false, arg3: false, arg4: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ladderComp") == 1) {
-                    context.State = new StateladderComplete(context);
-                    return;
+                    return new StateladderComplete(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -34,11 +35,12 @@ namespace Maple2.Trigger._99999925 {
                 context.SetLadder(arg1: 316, arg2: true, arg3: true, arg4: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,7 +51,9 @@ namespace Maple2.Trigger._99999925 {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

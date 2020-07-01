@@ -17,11 +17,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetUserValue(key: "MobWaveStop", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new StateLoadingDelay(context);
-                    return;
+                    return new StateLoadingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -32,11 +33,12 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
-                    return;
+                    return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -53,11 +55,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetSkip(arg1: "CameraWalk01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCameraWalk01(context);
-                    return;
+                    return new StateCameraWalk01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -71,11 +74,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateBattle01(context);
-                    return;
+                    return new StateBattle01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -98,11 +102,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.ShowGuideSummary(entityId: 20031201, textId: 20031201);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103})) {
-                    context.State = new StateBattle02(context);
-                    return;
+                    return new StateBattle02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -118,11 +123,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.CreateMonster(arg1: new[] {111, 112, 113, 114}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {111, 112, 113, 114})) {
-                    context.State = new StateBattle03(context);
-                    return;
+                    return new StateBattle03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -139,11 +145,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.CreateMonster(arg1: new[] {130}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {130})) {
-                    context.State = new StateVineRemove01(context);
-                    return;
+                    return new StateVineRemove01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -166,11 +173,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetMeshAnimation(arg1: new[] {1140}, arg2: false, arg3: 0, arg4: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    context.State = new StateMobWaveStart(context);
-                    return;
+                    return new StateMobWaveStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -185,16 +193,16 @@ namespace Maple2.Trigger._02000312_bf {
                 context.CreateMonster(arg1: new[] {121, 122, 123, 124, 125, 126, 127, 128}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {121, 122, 123, 124, 125, 126, 127, 128})) {
-                    context.State = new StateMobWaveDelayRandom(context);
-                    return;
+                    return new StateMobWaveDelayRandom(context);
                 }
 
                 if (context.GetUserValue(key: "MobWaveStop") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -207,26 +215,24 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 60f)) {
-                    context.State = new StateMobWaveDelay01(context);
-                    return;
+                    return new StateMobWaveDelay01(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.State = new StateMobWaveDelay02(context);
-                    return;
+                    return new StateMobWaveDelay02(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.State = new StateMobWaveDelay03(context);
-                    return;
+                    return new StateMobWaveDelay03(context);
                 }
 
                 if (context.GetUserValue(key: "MobWaveStop") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -237,16 +243,16 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    context.State = new StateMobWaveStart(context);
-                    return;
+                    return new StateMobWaveStart(context);
                 }
 
                 if (context.GetUserValue(key: "MobWaveStop") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -257,16 +263,16 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 17000)) {
-                    context.State = new StateMobWaveStart(context);
-                    return;
+                    return new StateMobWaveStart(context);
                 }
 
                 if (context.GetUserValue(key: "MobWaveStop") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -277,16 +283,16 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateMobWaveStart(context);
-                    return;
+                    return new StateMobWaveStart(context);
                 }
 
                 if (context.GetUserValue(key: "MobWaveStop") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -299,7 +305,9 @@ namespace Maple2.Trigger._02000312_bf {
                 context.HideGuideSummary(entityId: 20031203);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

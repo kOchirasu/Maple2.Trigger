@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000336_bf {
                 context.CreateMonster(arg1: new[] {122, 123, 301, 302, 110, 111, 112, 113, 114, 116, 117, 120, 121, 124, 125, 126, 127, 128, 129, 131, 132, 133, 134, 135, 137, 139, 141, 142, 144}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 703) == 1) {
-                    context.State = new State관문_01_개방_준비(context);
-                    return;
+                    return new State관문_01_개방_준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02000336_bf {
                 context.CreateMonster(arg1: new[] {309, 311, 313, 172, 173}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {127})) {
-                    context.State = new State관문_01_개방(context);
-                    return;
+                    return new State관문_01_개방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -49,11 +51,12 @@ namespace Maple2.Trigger._02000336_bf {
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {125})) {
-                    context.State = new State관문_02_개방(context);
-                    return;
+                    return new State관문_02_개방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +67,12 @@ namespace Maple2.Trigger._02000336_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {127})) {
-                    context.State = new State관문_01_개방(context);
-                    return;
+                    return new State관문_01_개방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -83,7 +87,9 @@ namespace Maple2.Trigger._02000336_bf {
                 context.SetMesh(arg1: new[] {16017, 16018}, arg2: false, arg4: 0, arg5: 10f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

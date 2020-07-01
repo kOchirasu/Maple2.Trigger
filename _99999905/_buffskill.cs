@@ -7,11 +7,12 @@ namespace Maple2.Trigger._99999905 {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    context.State = new State스킬랜덤(context);
-                    return;
+                    return new State스킬랜덤(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,26 +26,24 @@ namespace Maple2.Trigger._99999905 {
                 context.SetEventUI(arg1: 1, arg2: "$99999905__BUFFSKILL__0$", arg3: 2000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {103})) {
-                    context.State = new State초기화(context);
-                    return;
+                    return new State초기화(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateA스킬작동(context);
-                    return;
+                    return new StateA스킬작동(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    context.State = new StateB스킬작동(context);
-                    return;
+                    return new StateB스킬작동(context);
                 }
 
                 if (context.RandomCondition(arg1: 34f)) {
-                    context.State = new StateC스킬작동(context);
-                    return;
+                    return new StateC스킬작동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,12 +57,13 @@ namespace Maple2.Trigger._99999905 {
                 context.SetTimer(arg1: "120", arg2: 120);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "120")) {
                     context.SetSkill(arg1: new[] {7001}, arg2: false);
-                    context.State = new State스킬랜덤(context);
-                    return;
+                    return new State스킬랜덤(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,12 +77,13 @@ namespace Maple2.Trigger._99999905 {
                 context.SetTimer(arg1: "120", arg2: 120);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "120")) {
                     context.SetSkill(arg1: new[] {7002}, arg2: false);
-                    context.State = new State스킬랜덤(context);
-                    return;
+                    return new State스킬랜덤(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,12 +97,13 @@ namespace Maple2.Trigger._99999905 {
                 context.SetTimer(arg1: "120", arg2: 120);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "120")) {
                     context.SetSkill(arg1: new[] {7003}, arg2: false);
-                    context.State = new State스킬랜덤(context);
-                    return;
+                    return new State스킬랜덤(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,11 +117,12 @@ namespace Maple2.Trigger._99999905 {
                 context.SetSkill(arg1: new[] {7001, 7002, 7003}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

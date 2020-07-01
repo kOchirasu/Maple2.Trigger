@@ -13,11 +13,12 @@ namespace Maple2.Trigger._02010051_bf {
                 context.SetInteractObject(arg1: new[] {10000837}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9012})) {
-                    context.State = new State입장딜레이01(context);
-                    return;
+                    return new State입장딜레이01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,11 +32,12 @@ namespace Maple2.Trigger._02010051_bf {
                 context.SetMesh(arg1: new[] {2000, 2001, 2002, 2003, 2100, 2101, 2102, 2103, 2104, 2105}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State가이드준비01(context);
-                    return;
+                    return new State가이드준비01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +50,12 @@ namespace Maple2.Trigger._02010051_bf {
                 context.ShowGuideSummary(entityId: 20105101, textId: 20105101, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000837}, arg2: 0)) {
-                    context.State = new State포털개방01(context);
-                    return;
+                    return new State포털개방01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -71,11 +74,12 @@ namespace Maple2.Trigger._02010051_bf {
                 context.SetMesh(arg1: new[] {2200}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    context.State = new State대화연출준비01(context);
-                    return;
+                    return new State대화연출준비01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -89,11 +93,8 @@ namespace Maple2.Trigger._02010051_bf {
                 context.SetProductionUI(arg1: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State연출대화01(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State연출대화01(context);
             }
 
             public override void OnExit() { }
@@ -108,11 +109,12 @@ namespace Maple2.Trigger._02010051_bf {
                 context.SetSkip(arg1: "대화연출종료01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "20")) {
-                    context.State = new State대화연출종료01(context);
-                    return;
+                    return new State대화연출종료01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -127,11 +129,8 @@ namespace Maple2.Trigger._02010051_bf {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -144,7 +143,9 @@ namespace Maple2.Trigger._02010051_bf {
                 context.SetEffect(arg1: new[] {6003}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

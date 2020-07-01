@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {931})) {
-                    context.State = new State작동(context);
-                    return;
+                    return new State작동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetActor(arg1: 9905, arg2: true, arg3: "Interaction_Lapentafoothold_A01_Off");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ButtonSuccess") == 1) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {921})) {
-                    context.State = new State감지(context);
-                    return;
+                    return new State감지(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,16 +45,16 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetActor(arg1: 9905, arg2: true, arg3: "Interaction_Lapentafoothold_A01_On");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ButtonSuccess") == 1) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {921})) {
-                    context.State = new State작동(context);
-                    return;
+                    return new State작동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,7 +67,9 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetActor(arg1: 9905, arg2: false, arg3: "Interaction_Lapentafoothold_A01_On");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

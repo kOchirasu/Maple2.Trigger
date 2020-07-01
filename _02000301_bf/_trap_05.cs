@@ -12,41 +12,36 @@ namespace Maple2.Trigger._02000301_bf {
                 context.SetMesh(arg1: new[] {4501, 4502, 4503, 4504, 4505, 4506, 4507, 4508, 4509, 4510, 4511, 4512, 4513, 4514, 4515, 4516, 4517, 4518, 4519}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {105})) {
-                    context.State = new State경보(context);
-                    return;
+                    return new State경보(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {10501})) {
-                    context.State = new State경보(context);
-                    return;
+                    return new State경보(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {10502})) {
-                    context.State = new State경보(context);
-                    return;
+                    return new State경보(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {10503})) {
-                    context.State = new State경보(context);
-                    return;
+                    return new State경보(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {10504})) {
-                    context.State = new State경보(context);
-                    return;
+                    return new State경보(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {10505})) {
-                    context.State = new State경보(context);
-                    return;
+                    return new State경보(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000513}, arg2: 0)) {
-                    context.State = new State해제(context);
-                    return;
+                    return new State해제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -67,15 +62,16 @@ namespace Maple2.Trigger._02000301_bf {
                 context.SetMesh(arg1: new[] {4501, 4502, 4503, 4504, 4505, 4506, 4507, 4508, 4509, 4510, 4511, 4512, 4513, 4514, 4515, 4516, 4517, 4518, 4519}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2006})) {
                     context.HideGuideSummary(entityId: 20003001);
                     context.SetEffect(arg1: new[] {610}, arg2: false);
                     context.SetActor(arg1: 210, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 211, arg2: true, arg3: "sf_quest_light_A01_Off");
-                    context.State = new State해제(context);
-                    return;
+                    return new State해제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,7 +86,9 @@ namespace Maple2.Trigger._02000301_bf {
                 context.SetMesh(arg1: new[] {4501, 4502, 4503, 4504, 4505, 4506, 4507, 4508, 4509, 4510, 4511, 4512, 4513, 4514, 4515, 4516, 4517, 4518, 4519}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000351_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {705}, arg2: 1)) {
-                    context.State = new Statestart_sound(context);
-                    return;
+                    return new Statestart_sound(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02000351_bf {
                 context.SetTimer(arg1: "1", arg2: 1, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {

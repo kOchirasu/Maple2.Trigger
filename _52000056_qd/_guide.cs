@@ -7,16 +7,16 @@ namespace Maple2.Trigger._52000056_qd {
                 context.ShowGuideSummary(entityId: 10010001, textId: 10010001);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103, 104, 105, 106})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State가이드(context);
-                    return;
+                    return new State가이드(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -29,7 +29,9 @@ namespace Maple2.Trigger._52000056_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

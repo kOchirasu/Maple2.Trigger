@@ -5,10 +5,12 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {811, 812, 813, 814})) {
                     context.SetUserValue(triggerId: 99990006, key: "Battle_3_SpawnStart", value: 0);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

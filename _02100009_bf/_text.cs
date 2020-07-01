@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    context.State = new State알림(context);
-                    return;
+                    return new State알림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,16 +21,16 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 100000001) <= 0.5f || context.GetNpcHpRate(spawnPointId: 100000002) <= 0.5f) {
-                    context.State = new State알림_2(context);
-                    return;
+                    return new State알림_2(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {100000001}) && context.MonsterDead(arg1: new[] {100000002})) {
-                    context.State = new State완료알림(context);
-                    return;
+                    return new State완료알림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -42,11 +43,12 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State알림_3(context);
-                    return;
+                    return new State알림_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -59,16 +61,16 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new State알림(context);
-                    return;
+                    return new State알림(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {100000001}) && context.MonsterDead(arg1: new[] {100000002})) {
-                    context.State = new State완료알림(context);
-                    return;
+                    return new State완료알림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,8 +81,10 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5500)) { }
+
+                return null;
             }
 
             public override void OnExit() { }

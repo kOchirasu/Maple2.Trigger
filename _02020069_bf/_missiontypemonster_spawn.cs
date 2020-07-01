@@ -5,12 +5,13 @@ namespace Maple2.Trigger._02020069_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.StartCombineSpawn(groupId: new[] {527}, isStart: true);
-                    context.State = new State루프2(context);
-                    return;
+                    return new State루프2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -21,11 +22,12 @@ namespace Maple2.Trigger._02020069_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 150000)) {
-                    context.State = new State루프3(context);
-                    return;
+                    return new State루프3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -36,11 +38,12 @@ namespace Maple2.Trigger._02020069_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 150000)) {
-                    context.State = new State루프2(context);
-                    return;
+                    return new State루프2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

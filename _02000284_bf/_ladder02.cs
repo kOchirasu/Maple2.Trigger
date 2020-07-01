@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000284_bf {
                 context.SetMesh(arg1: new[] {321, 322, 323, 324}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000436}, arg2: 0)) {
-                    context.State = new State사다리생성(context);
-                    return;
+                    return new State사다리생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02000284_bf {
                 context.SetTimer(arg1: "1500", arg2: 1500, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1500")) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

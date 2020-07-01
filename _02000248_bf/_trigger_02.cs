@@ -7,7 +7,9 @@ namespace Maple2.Trigger._02000248_bf {
                 context.SetCube(ids: new[] {2101, 2102, 2103, 2104, 2105}, isVisible: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -19,11 +21,12 @@ namespace Maple2.Trigger._02000248_bf {
                 context.SetCube(ids: new[] {2101, 2102, 2103, 2104, 2105}, randomCount: 1, isVisible: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateWaitTick(context);
-                    return;
+                    return new StateWaitTick(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -34,11 +37,12 @@ namespace Maple2.Trigger._02000248_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new Stateobjectset(context);
-                    return;
+                    return new Stateobjectset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

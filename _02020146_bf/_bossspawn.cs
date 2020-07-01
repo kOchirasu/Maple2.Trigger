@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020146_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new State기본셋팅(context);
-                    return;
+                    return new State기본셋팅(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02020146_bf {
                 context.SetPortal(arg1: 601, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    context.State = new State보스등장이벤트대기(context);
-                    return;
+                    return new State보스등장이벤트대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +43,12 @@ namespace Maple2.Trigger._02020146_bf {
                 context.CreateMonster(arg1: new[] {99}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State연출대기(context);
-                    return;
+                    return new State연출대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +61,12 @@ namespace Maple2.Trigger._02020146_bf {
                 context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__0$", duration: 4000, voice: @"ko/Npc/00002192");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State전투진행(context);
-                    return;
+                    return new State전투진행(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,11 +79,12 @@ namespace Maple2.Trigger._02020146_bf {
                 context.SetPortal(arg1: 601, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State종료딜레이(context);
-                    return;
+                    return new State종료딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,11 +97,12 @@ namespace Maple2.Trigger._02020146_bf {
                 context.SetAchievement(arg3: "IshuraDungeonClear_Quest");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.State = new State마무리연출(context);
-                    return;
+                    return new State마무리연출(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -109,13 +115,14 @@ namespace Maple2.Trigger._02020146_bf {
                 context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__2$", duration: 6576, voice: @"ko/Npc/00002194");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -126,7 +133,9 @@ namespace Maple2.Trigger._02020146_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

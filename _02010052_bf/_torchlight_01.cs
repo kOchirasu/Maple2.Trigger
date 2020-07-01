@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetEffect(arg1: new[] {81001, 81002, 81003, 81004, 81005}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new Stateburn_state(context);
-                    return;
+                    return new Stateburn_state(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetTimer(arg1: "1", arg2: 1, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new Statespawn_state(context);
-                    return;
+                    return new Statespawn_state(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -51,7 +53,9 @@ namespace Maple2.Trigger._02010052_bf {
                 context.CreateMonster(arg1: new[] {311, 312, 313, 314, 315}, arg2: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

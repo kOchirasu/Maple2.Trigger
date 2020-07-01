@@ -11,11 +11,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetEffect(arg1: new[] {5305, 5405, 5505}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ActivateTank") == 1) {
-                    context.State = new StateGauge100(context);
-                    return;
+                    return new StateGauge100(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,21 +32,20 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetActor(arg1: 4105, arg2: true, arg3: "Interaction_tankpink_A01_100");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100100")) {
-                    context.State = new StateGauge75(context);
-                    return;
+                    return new StateGauge75(context);
                 }
 
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2005}, itemId: 30000887)) {
-                    context.State = new StateGauge100_Refil(context);
-                    return;
+                    return new StateGauge100_Refil(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonQuit") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +59,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.ResetTimer(arg1: "100100");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateGauge100(context);
-                    return;
+                    return new StateGauge100(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,21 +81,20 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetActor(arg1: 4105, arg2: true, arg3: "Interaction_tankpink_A01_75");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10075")) {
-                    context.State = new StateGauge50(context);
-                    return;
+                    return new StateGauge50(context);
                 }
 
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2005}, itemId: 30000887)) {
-                    context.State = new StateGauge75_Refil(context);
-                    return;
+                    return new StateGauge75_Refil(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonQuit") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -108,11 +108,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.ResetTimer(arg1: "10075");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateGauge100(context);
-                    return;
+                    return new StateGauge100(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -129,21 +130,20 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetActor(arg1: 4105, arg2: true, arg3: "Interaction_tankpink_A01_50");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10050")) {
-                    context.State = new StateGauge25(context);
-                    return;
+                    return new StateGauge25(context);
                 }
 
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2005}, itemId: 30000887)) {
-                    context.State = new StateGauge50_Refil(context);
-                    return;
+                    return new StateGauge50_Refil(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonQuit") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -157,11 +157,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.ResetTimer(arg1: "10050");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateGauge75(context);
-                    return;
+                    return new StateGauge75(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -178,21 +179,20 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetActor(arg1: 4105, arg2: true, arg3: "Interaction_tankpink_A01_25");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10025")) {
-                    context.State = new StateGauge1(context);
-                    return;
+                    return new StateGauge1(context);
                 }
 
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2005}, itemId: 30000887)) {
-                    context.State = new StateGauge25_Refil(context);
-                    return;
+                    return new StateGauge25_Refil(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonQuit") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -206,11 +206,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.ResetTimer(arg1: "10025");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateGauge50(context);
-                    return;
+                    return new StateGauge50(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -226,16 +227,16 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetActor(arg1: 4105, arg2: true, arg3: "Interaction_tankpink_A01_1");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2005}, itemId: 30000887)) {
-                    context.State = new StateGauge1_Refil(context);
-                    return;
+                    return new StateGauge1_Refil(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonQuit") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -248,11 +249,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetEffect(arg1: new[] {5305, 5405, 5505}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateGauge25(context);
-                    return;
+                    return new StateGauge25(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -265,7 +267,9 @@ namespace Maple2.Trigger._02100002_bf {
                 context.SetUserValue(triggerId: 105, key: "StopSpawn", value: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

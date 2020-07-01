@@ -25,11 +25,12 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetActor(arg1: 214, arg2: true, arg3: "sf_quest_light_A01_Off");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AllertStart") == 1) {
-                    context.State = new State이펙트시퀀스01(context);
-                    return;
+                    return new State이펙트시퀀스01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +44,12 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetEffect(arg1: new[] {6101, 6104}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State이펙트시퀀스02(context);
-                    return;
+                    return new State이펙트시퀀스02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,11 +63,12 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetEffect(arg1: new[] {6107, 6108}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State이펙트시퀀스03(context);
-                    return;
+                    return new State이펙트시퀀스03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,11 +84,12 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetEffect(arg1: new[] {6102, 6106}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State경보(context);
-                    return;
+                    return new State경보(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,11 +119,12 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetActor(arg1: 214, arg2: true, arg3: "sf_quest_light_A01_On");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4202)) {
-                    context.State = new State이펙트시퀀스04(context);
-                    return;
+                    return new State이펙트시퀀스04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -133,12 +138,13 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetEffect(arg1: new[] {6103, 6105}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AllertEnd") == 1) {
                     context.SetUserValue(triggerId: 999004, key: "AllertStart", value: 0);
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

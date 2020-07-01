@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetUserValue(key: "DefencePhase", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "DefencePhase") == 1) {
-                    context.State = new StateDefencePhase01(context);
-                    return;
+                    return new StateDefencePhase01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9000) == 1) {
-                    context.State = new StateMoveToTheWall(context);
-                    return;
+                    return new StateMoveToTheWall(context);
                 }
 
                 if (context.GetUserValue(key: "DefencePhase") == 2) {
-                    context.State = new StateDefencePhase02(context);
-                    return;
+                    return new StateDefencePhase02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,16 +45,16 @@ namespace Maple2.Trigger._52000120_qd {
                 context.MoveUser(arg1: 52000120, arg2: 10);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDefencePhase01(context);
-                    return;
+                    return new StateDefencePhase01(context);
                 }
 
                 if (context.GetUserValue(key: "DefencePhase") == 2) {
-                    context.State = new StateDefencePhase02(context);
-                    return;
+                    return new StateDefencePhase02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,16 +65,16 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9000) == 1) {
-                    context.State = new StateOutsideOfTheWall(context);
-                    return;
+                    return new StateOutsideOfTheWall(context);
                 }
 
                 if (context.GetUserValue(key: "DefencePhase") == 3) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -86,16 +87,16 @@ namespace Maple2.Trigger._52000120_qd {
                 context.MoveUser(arg1: 52000120, arg2: 40);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDefencePhase02(context);
-                    return;
+                    return new StateDefencePhase02(context);
                 }
 
                 if (context.GetUserValue(key: "DefencePhase") == 3) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -106,7 +107,9 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

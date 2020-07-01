@@ -14,11 +14,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetUserValue(key: "8thTreeRemove", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    context.State = new StateCheckStart(context);
-                    return;
+                    return new StateCheckStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +30,12 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCheck01(context);
-                    return;
+                    return new StateCheck01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,16 +46,16 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "1stTreeRemove") == 1) {
-                    context.State = new StateCheck02(context);
-                    return;
+                    return new StateCheck02(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCheckStart(context);
-                    return;
+                    return new StateCheckStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,16 +66,16 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "2ndTreeRemove") == 1) {
-                    context.State = new StateCheck03(context);
-                    return;
+                    return new StateCheck03(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCheckStart(context);
-                    return;
+                    return new StateCheckStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -84,16 +86,16 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "3rdTreeRemove") == 1) {
-                    context.State = new StateCheck04(context);
-                    return;
+                    return new StateCheck04(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCheckStart(context);
-                    return;
+                    return new StateCheckStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -104,16 +106,16 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "4thTreeRemove") == 1) {
-                    context.State = new StateCheck05(context);
-                    return;
+                    return new StateCheck05(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCheckStart(context);
-                    return;
+                    return new StateCheckStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -124,16 +126,16 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "5thTreeRemove") == 1) {
-                    context.State = new StateCheck06(context);
-                    return;
+                    return new StateCheck06(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCheckStart(context);
-                    return;
+                    return new StateCheckStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -144,16 +146,16 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "6thTreeRemove") == 1) {
-                    context.State = new StateCheck07(context);
-                    return;
+                    return new StateCheck07(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCheckStart(context);
-                    return;
+                    return new StateCheckStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -164,16 +166,16 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "7thTreeRemove") == 1) {
-                    context.State = new StateCheck08(context);
-                    return;
+                    return new StateCheck08(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCheckStart(context);
-                    return;
+                    return new StateCheckStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -184,16 +186,16 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "8thTreeRemove") == 1) {
-                    context.State = new StateBoardApp(context);
-                    return;
+                    return new StateBoardApp(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCheckStart(context);
-                    return;
+                    return new StateCheckStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -207,11 +209,12 @@ namespace Maple2.Trigger._02000312_bf {
                 context.SetUserValue(triggerId: 11, key: "MobWaveStop", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -222,7 +225,9 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

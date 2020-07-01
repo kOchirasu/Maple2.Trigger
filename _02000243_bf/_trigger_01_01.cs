@@ -10,11 +10,12 @@ namespace Maple2.Trigger._02000243_bf {
                 context.SetEffect(arg1: new[] {2004}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 201) == 1) {
-                    context.State = new State몹생성(context);
-                    return;
+                    return new State몹생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._02000243_bf {
                 context.CreateMonster(arg1: new[] {601}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {601})) {
-                    context.State = new State통과딜레이(context);
-                    return;
+                    return new State통과딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,11 +51,12 @@ namespace Maple2.Trigger._02000243_bf {
                 context.SetMesh(arg1: new[] {705, 706, 711, 712}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State통과(context);
-                    return;
+                    return new State통과(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -67,7 +70,9 @@ namespace Maple2.Trigger._02000243_bf {
                 context.SetTimer(arg1: "1", arg2: 180);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

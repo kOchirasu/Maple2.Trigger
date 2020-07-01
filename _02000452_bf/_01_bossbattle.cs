@@ -13,21 +13,20 @@ namespace Maple2.Trigger._02000452_bf {
                 context.EnableSpawnPointPc(spawnPointId: 10003, isEnable: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9001})) {
-                    context.State = new StateBoss01SpawnDelay(context);
-                    return;
+                    return new StateBoss01SpawnDelay(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {9002})) {
-                    context.State = new StateBoss02SpawnDelay(context);
-                    return;
+                    return new StateBoss02SpawnDelay(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {9003})) {
-                    context.State = new StateBoss03SpawnDelay(context);
-                    return;
+                    return new StateBoss03SpawnDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +40,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.EnableSpawnPointPc(spawnPointId: 10001, isEnable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateBoss01Spawn(context);
-                    return;
+                    return new StateBoss01Spawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +62,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.CameraSelect(arg1: 501, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateBoss01Talk01(context);
-                    return;
+                    return new StateBoss01Talk01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,11 +81,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.SetSkip(arg1: "Boss01Talk01Skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateBoss01Talk01Skip(context);
-                    return;
+                    return new StateBoss01Talk01Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -99,11 +101,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.SetSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateBoss01Talk02(context);
-                    return;
+                    return new StateBoss01Talk02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -117,11 +120,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.SetSkip(arg1: "Boss01Talk02Skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateBoss01Talk02Skip(context);
-                    return;
+                    return new StateBoss01Talk02Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -138,11 +142,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {901})) {
-                    context.State = new StateLeavePortalOn(context);
-                    return;
+                    return new StateLeavePortalOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -156,11 +161,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.EnableSpawnPointPc(spawnPointId: 10002, isEnable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateBoss02Spawn(context);
-                    return;
+                    return new StateBoss02Spawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -173,11 +179,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.CreateMonster(arg1: new[] {902}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateBoss02CameraSet(context);
-                    return;
+                    return new StateBoss02CameraSet(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -192,11 +199,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.CameraSelect(arg1: 511, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateBoss02Talk01(context);
-                    return;
+                    return new StateBoss02Talk01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -210,11 +218,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.SetSkip(arg1: "Boss02Talk01Skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateBoss02Talk01Skip(context);
-                    return;
+                    return new StateBoss02Talk01Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -229,11 +238,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.SetSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateBoss02Talk02(context);
-                    return;
+                    return new StateBoss02Talk02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -247,11 +257,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.SetSkip(arg1: "Boss02Talk02Skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateBoss02Talk02Skip(context);
-                    return;
+                    return new StateBoss02Talk02Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -268,11 +279,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {902})) {
-                    context.State = new StateLeavePortalOn(context);
-                    return;
+                    return new StateLeavePortalOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -286,11 +298,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.EnableSpawnPointPc(spawnPointId: 10003, isEnable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateBoss03Spawn(context);
-                    return;
+                    return new StateBoss03Spawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -307,11 +320,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.CameraSelect(arg1: 521, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateBoss03Talk01(context);
-                    return;
+                    return new StateBoss03Talk01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -325,11 +339,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.SetSkip(arg1: "Boss03Talk01Skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateBoss03Talk01Skip(context);
-                    return;
+                    return new StateBoss03Talk01Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -344,11 +359,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.SetSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateBoss03Talk02(context);
-                    return;
+                    return new StateBoss03Talk02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -362,11 +378,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.SetSkip(arg1: "Boss03Talk02Skip");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateBoss03Talk02Skip(context);
-                    return;
+                    return new StateBoss03Talk02Skip(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -383,11 +400,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {903})) {
-                    context.State = new StateLeavePortalOn(context);
-                    return;
+                    return new StateLeavePortalOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -401,11 +419,12 @@ namespace Maple2.Trigger._02000452_bf {
                 context.DestroyMonster(arg1: new[] {901, 902, 903});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -421,7 +440,9 @@ namespace Maple2.Trigger._02000452_bf {
                 context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

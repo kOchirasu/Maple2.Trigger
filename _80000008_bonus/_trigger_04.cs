@@ -7,11 +7,12 @@ namespace Maple2.Trigger._80000008_bonus {
                 context.SetInteractObject(arg1: new[] {10000211}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000211}, arg2: 0)) {
-                    context.State = new State소환(context);
-                    return;
+                    return new State소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._80000008_bonus {
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_301");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 401, arg2: new[] {104})) {
-                    context.State = new State몬스터소멸(context);
-                    return;
+                    return new State몬스터소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._80000008_bonus {
                 context.SetTimer(arg1: "4", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new State아이템(context);
-                    return;
+                    return new State아이템(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,11 +63,8 @@ namespace Maple2.Trigger._80000008_bonus {
                 context.CreateItem(arg1: new[] {502});
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기(context);
             }
 
             public override void OnExit() { }

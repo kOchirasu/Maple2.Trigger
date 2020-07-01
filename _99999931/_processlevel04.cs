@@ -7,11 +7,12 @@ namespace Maple2.Trigger._99999931 {
                 context.SetInteractObject(arg1: new[] {10000220}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000220}, arg2: 0)) {
-                    context.State = new State카운트다운1(context);
-                    return;
+                    return new State카운트다운1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._99999931 {
                 context.SetEventUI(arg1: 1, arg2: "3", arg3: 1000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "31")) {
-                    context.State = new State카운트다운2(context);
-                    return;
+                    return new State카운트다운2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._99999931 {
                 context.SetEventUI(arg1: 1, arg2: "2", arg3: 1000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "32")) {
-                    context.State = new State카운트다운3(context);
-                    return;
+                    return new State카운트다운3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,11 +64,12 @@ namespace Maple2.Trigger._99999931 {
                 context.SetEventUI(arg1: 1, arg2: "1", arg3: 1000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "33")) {
-                    context.State = new State게임시작(context);
-                    return;
+                    return new State게임시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,11 +83,12 @@ namespace Maple2.Trigger._99999931 {
                 context.SetBreakable(arg1: new[] {101, 102, 104, 105, 107, 108, 111, 112, 114, 115, 117, 118, 120, 121, 122, 123, 125, 126, 128, 129, 130, 131, 132, 135, 136}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "34")) {
-                    context.State = new State게임진행1(context);
-                    return;
+                    return new State게임진행1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,11 +103,12 @@ namespace Maple2.Trigger._99999931 {
                 context.SetSkill(arg1: new[] {801, 802, 804, 805, 807, 808, 811, 812, 814, 815, 817, 818, 820, 821, 822, 823, 825, 826, 828, 829, 830, 831, 832, 835, 836}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "35")) {
-                    context.State = new State게임진행2(context);
-                    return;
+                    return new State게임진행2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -116,11 +122,12 @@ namespace Maple2.Trigger._99999931 {
                 context.SetSkill(arg1: new[] {801, 802, 804, 805, 807, 808, 811, 812, 814, 815, 817, 818, 820, 821, 822, 823, 825, 826, 828, 829, 830, 831, 832, 835, 836}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "36")) {
-                    context.State = new State레버당기기(context);
-                    return;
+                    return new State레버당기기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

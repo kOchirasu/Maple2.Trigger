@@ -7,22 +7,22 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MainStart") == 1) {
                     context.SetUserValue(triggerId: 900001, key: "MainStart", value: 0);
                     context.DestroyMonster(arg1: new[] {203});
                     context.CreateMonster(arg1: new[] {202}, arg2: false);
-                    context.State = new StateWaitRound1(context);
-                    return;
+                    return new StateWaitRound1(context);
                 }
 
                 if (context.GetUserValue(key: "MainStart") == 2) {
                     context.SetUserValue(triggerId: 900001, key: "MainStart", value: 0);
                     context.DestroyMonster(arg1: new[] {203});
                     context.CreateMonster(arg1: new[] {202}, arg2: false);
-                    context.State = new StateContinuePlayDelay(context);
-                    return;
+                    return new StateContinuePlayDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -33,18 +33,18 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetUserValue(triggerId: 910001, key: "StartRound1", value: 1);
-                    context.State = new StateResultRound1(context);
-                    return;
+                    return new StateResultRound1(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {902})) {
                     context.MoveUserToPos(pos: new Vector3(300f, -225f, 1500f), rot: new Vector3(0f, 0f, 270f));
-                    context.State = new StateWaitRound1(context);
-                    return;
+                    return new StateWaitRound1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -57,12 +57,13 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.LockMyPc(isLock: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.MoveUserToPos(pos: new Vector3(300f, -225f, 1500f), rot: new Vector3(0f, 0f, 270f));
-                    context.State = new StateContinuePlayDelay2(context);
-                    return;
+                    return new StateContinuePlayDelay2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,12 +74,13 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.MoveUserPath(arg1: "MS2PatrolData_01");
-                    context.State = new StateContinuePlay(context);
-                    return;
+                    return new StateContinuePlay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -91,65 +93,57 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.SetUserValueFromDungeonRewardCount(key: "ClearRound", dungeonRewardId: 24096001);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ClearRound") == 1) {
                     context.SetUserValue(triggerId: 910002, key: "StartRound2", value: 1);
-                    context.State = new StateResultRound2(context);
-                    return;
+                    return new StateResultRound2(context);
                 }
 
                 if (context.GetUserValue(key: "ClearRound") == 2) {
                     context.SetUserValue(triggerId: 910003, key: "StartRound3", value: 1);
-                    context.State = new StateResultRound3(context);
-                    return;
+                    return new StateResultRound3(context);
                 }
 
                 if (context.GetUserValue(key: "ClearRound") == 3) {
                     context.SetUserValue(triggerId: 910004, key: "StartRound4", value: 1);
-                    context.State = new StateResultRound4(context);
-                    return;
+                    return new StateResultRound4(context);
                 }
 
                 if (context.GetUserValue(key: "ClearRound") == 4) {
                     context.SetUserValue(triggerId: 910005, key: "StartRound5", value: 1);
-                    context.State = new StateResultRound5(context);
-                    return;
+                    return new StateResultRound5(context);
                 }
 
                 if (context.GetUserValue(key: "ClearRound") == 5) {
                     context.SetUserValue(triggerId: 910006, key: "StartRound6", value: 1);
-                    context.State = new StateResultRound6(context);
-                    return;
+                    return new StateResultRound6(context);
                 }
 
                 if (context.GetUserValue(key: "ClearRound") == 6) {
                     context.SetUserValue(triggerId: 910007, key: "StartRound7", value: 1);
-                    context.State = new StateResultRound7(context);
-                    return;
+                    return new StateResultRound7(context);
                 }
 
                 if (context.GetUserValue(key: "ClearRound") == 7) {
                     context.SetUserValue(triggerId: 910008, key: "StartRound8", value: 1);
-                    context.State = new StateResultRound8(context);
-                    return;
+                    return new StateResultRound8(context);
                 }
 
                 if (context.GetUserValue(key: "ClearRound") == 8) {
                     context.SetUserValue(triggerId: 910009, key: "StartRound9", value: 1);
-                    context.State = new StateResultRound9(context);
-                    return;
+                    return new StateResultRound9(context);
                 }
 
                 if (context.GetUserValue(key: "ClearRound") == 9) {
                     context.SetUserValue(triggerId: 910010, key: "StartRound10", value: 1);
-                    context.State = new StateResultRound10(context);
-                    return;
+                    return new StateResultRound10(context);
                 }
 
                 if (context.GetUserValue(key: "ClearRound") == 10) {
-                    context.State = new StateWaitRound1(context);
-                    return;
+                    return new StateWaitRound1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -160,22 +154,22 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartRound1") == 2) {
                     context.DungeonClearRound(round: 1);
                     context.SetUserValue(triggerId: 910001, key: "StartRound1", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound1", value: 0);
-                    context.State = new StateWaitRound2(context);
-                    return;
+                    return new StateWaitRound2(context);
                 }
 
                 if (context.GetUserValue(key: "StartRound1") == 3) {
                     context.DungeonClearRound(round: 0);
                     context.SetUserValue(triggerId: 910001, key: "StartRound1", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound1", value: 0);
-                    context.State = new StateRoundFail(context);
-                    return;
+                    return new StateRoundFail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -186,12 +180,13 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910002, key: "StartRound2", value: 1);
-                    context.State = new StateResultRound2(context);
-                    return;
+                    return new StateResultRound2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -202,21 +197,21 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartRound2") == 2) {
                     context.DungeonClearRound(round: 2);
                     context.SetUserValue(triggerId: 910002, key: "StartRound2", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound2", value: 0);
-                    context.State = new StateWaitRound3(context);
-                    return;
+                    return new StateWaitRound3(context);
                 }
 
                 if (context.GetUserValue(key: "StartRound2") == 3) {
                     context.SetUserValue(triggerId: 910002, key: "StartRound2", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound2", value: 0);
-                    context.State = new State1RoundClear(context);
-                    return;
+                    return new State1RoundClear(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -227,12 +222,13 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910003, key: "StartRound3", value: 1);
-                    context.State = new StateResultRound3(context);
-                    return;
+                    return new StateResultRound3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -243,21 +239,21 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartRound3") == 2) {
                     context.DungeonClearRound(round: 3);
                     context.SetUserValue(triggerId: 910003, key: "StartRound3", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound3", value: 0);
-                    context.State = new StateWaitRound4(context);
-                    return;
+                    return new StateWaitRound4(context);
                 }
 
                 if (context.GetUserValue(key: "StartRound3") == 3) {
                     context.SetUserValue(triggerId: 910003, key: "StartRound3", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound3", value: 0);
-                    context.State = new State2RoundClear(context);
-                    return;
+                    return new State2RoundClear(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -268,12 +264,13 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910004, key: "StartRound4", value: 1);
-                    context.State = new StateResultRound4(context);
-                    return;
+                    return new StateResultRound4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -284,21 +281,21 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartRound4") == 2) {
                     context.DungeonClearRound(round: 4);
                     context.SetUserValue(triggerId: 910004, key: "StartRound4", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound4", value: 0);
-                    context.State = new StateWaitRound5(context);
-                    return;
+                    return new StateWaitRound5(context);
                 }
 
                 if (context.GetUserValue(key: "StartRound4") == 3) {
                     context.SetUserValue(triggerId: 910004, key: "StartRound4", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound4", value: 0);
-                    context.State = new State3RoundClear(context);
-                    return;
+                    return new State3RoundClear(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -309,12 +306,13 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910005, key: "StartRound5", value: 1);
-                    context.State = new StateResultRound5(context);
-                    return;
+                    return new StateResultRound5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -325,21 +323,21 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartRound5") == 2) {
                     context.DungeonClearRound(round: 5);
                     context.SetUserValue(triggerId: 910005, key: "StartRound5", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound5", value: 0);
-                    context.State = new StateWaitRound6(context);
-                    return;
+                    return new StateWaitRound6(context);
                 }
 
                 if (context.GetUserValue(key: "StartRound5") == 3) {
                     context.SetUserValue(triggerId: 910005, key: "StartRound5", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound5", value: 0);
-                    context.State = new State4RoundClear(context);
-                    return;
+                    return new State4RoundClear(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -350,12 +348,13 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910006, key: "StartRound6", value: 1);
-                    context.State = new StateResultRound6(context);
-                    return;
+                    return new StateResultRound6(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -366,21 +365,21 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartRound6") == 2) {
                     context.DungeonClearRound(round: 6);
                     context.SetUserValue(triggerId: 910006, key: "StartRound6", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound6", value: 0);
-                    context.State = new StateWaitRound7(context);
-                    return;
+                    return new StateWaitRound7(context);
                 }
 
                 if (context.GetUserValue(key: "StartRound6") == 3) {
                     context.SetUserValue(triggerId: 910006, key: "StartRound6", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound6", value: 0);
-                    context.State = new State5RoundClear(context);
-                    return;
+                    return new State5RoundClear(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -391,12 +390,13 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910007, key: "StartRound7", value: 1);
-                    context.State = new StateResultRound7(context);
-                    return;
+                    return new StateResultRound7(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -407,21 +407,21 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartRound7") == 2) {
                     context.DungeonClearRound(round: 7);
                     context.SetUserValue(triggerId: 910007, key: "StartRound7", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound7", value: 0);
-                    context.State = new StateWaitRound8(context);
-                    return;
+                    return new StateWaitRound8(context);
                 }
 
                 if (context.GetUserValue(key: "StartRound7") == 3) {
                     context.SetUserValue(triggerId: 910007, key: "StartRound7", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound7", value: 0);
-                    context.State = new State6RoundClear(context);
-                    return;
+                    return new State6RoundClear(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -432,12 +432,13 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910008, key: "StartRound8", value: 1);
-                    context.State = new StateResultRound8(context);
-                    return;
+                    return new StateResultRound8(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -448,21 +449,21 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartRound8") == 2) {
                     context.DungeonClearRound(round: 8);
                     context.SetUserValue(triggerId: 910008, key: "StartRound8", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound8", value: 0);
-                    context.State = new StateWaitRound9(context);
-                    return;
+                    return new StateWaitRound9(context);
                 }
 
                 if (context.GetUserValue(key: "StartRound8") == 3) {
                     context.SetUserValue(triggerId: 910008, key: "StartRound8", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound8", value: 0);
-                    context.State = new State7RoundClear(context);
-                    return;
+                    return new State7RoundClear(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -473,12 +474,13 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910009, key: "StartRound9", value: 1);
-                    context.State = new StateResultRound9(context);
-                    return;
+                    return new StateResultRound9(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -489,21 +491,21 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartRound9") == 2) {
                     context.DungeonClearRound(round: 9);
                     context.SetUserValue(triggerId: 910009, key: "StartRound9", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound9", value: 0);
-                    context.State = new StateWaitRound10(context);
-                    return;
+                    return new StateWaitRound10(context);
                 }
 
                 if (context.GetUserValue(key: "StartRound9") == 3) {
                     context.SetUserValue(triggerId: 910009, key: "StartRound9", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound9", value: 0);
-                    context.State = new State8RoundClear(context);
-                    return;
+                    return new State8RoundClear(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -514,12 +516,13 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 910010, key: "StartRound10", value: 1);
-                    context.State = new StateResultRound10(context);
-                    return;
+                    return new StateResultRound10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -530,21 +533,21 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartRound10") == 2) {
                     context.DungeonClearRound(round: 10);
                     context.SetUserValue(triggerId: 910010, key: "StartRound10", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound10", value: 0);
-                    context.State = new StateAllRoundClear(context);
-                    return;
+                    return new StateAllRoundClear(context);
                 }
 
                 if (context.GetUserValue(key: "StartRound10") == 3) {
                     context.SetUserValue(triggerId: 910010, key: "StartRound10", value: 0);
                     context.SetUserValue(triggerId: 900001, key: "StartRound10", value: 0);
-                    context.State = new State9RoundClear(context);
-                    return;
+                    return new State9RoundClear(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -557,11 +560,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -574,11 +578,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -591,11 +596,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -608,11 +614,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -625,11 +632,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -642,11 +650,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -659,11 +668,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -676,11 +686,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -693,11 +704,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear(uiType: "None");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -710,11 +722,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonClear();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -727,11 +740,12 @@ namespace Maple2.Trigger._83000002_colosseum {
                 context.DungeonFail();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

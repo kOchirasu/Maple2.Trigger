@@ -7,11 +7,12 @@ namespace Maple2.Trigger._99999841 {
                 context.SetUserValue(triggerId: 99990005, key: "BadMob", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 903) == true) {
-                    context.State = new State몬스터스폰(context);
-                    return;
+                    return new State몬스터스폰(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._99999841 {
                 context.CreateMonster(arg1: new[] {993}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {991, 992, 993})) {
-                    context.State = new State신호쏴주기(context);
-                    return;
+                    return new State신호쏴주기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +43,8 @@ namespace Maple2.Trigger._99999841 {
                 context.SetUserValue(triggerId: 99990005, key: "BadMob", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -56,11 +55,12 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 903) == false) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

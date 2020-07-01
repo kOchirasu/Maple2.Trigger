@@ -7,16 +7,16 @@ namespace Maple2.Trigger._52000002_qd {
                 context.SetEffect(arg1: new[] {615}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000615}, arg2: 0)) {
-                    context.State = new StateNPC교체(context);
-                    return;
+                    return new StateNPC교체(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
-                    context.State = new StateNPC소멸(context);
-                    return;
+                    return new StateNPC소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,17 +30,17 @@ namespace Maple2.Trigger._52000002_qd {
                 context.CreateMonster(arg1: new[] {1095});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
                     context.SetInteractObject(arg1: new[] {10000615}, arg2: 2);
-                    context.State = new StateNPC이동(context);
-                    return;
+                    return new StateNPC이동(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
-                    context.State = new StateNPC소멸(context);
-                    return;
+                    return new StateNPC소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,16 +56,16 @@ namespace Maple2.Trigger._52000002_qd {
                 context.SetConversation(arg1: 1, arg2: 1095, arg3: "$52000002_QD__SHEEP_05__0$", arg4: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "6")) {
-                    context.State = new StateNPC소멸(context);
-                    return;
+                    return new StateNPC소멸(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
-                    context.State = new StateNPC소멸(context);
-                    return;
+                    return new StateNPC소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -78,11 +78,8 @@ namespace Maple2.Trigger._52000002_qd {
                 context.DestroyMonster(arg1: new[] {1095});
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State시작대기중(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State시작대기중(context);
             }
 
             public override void OnExit() { }

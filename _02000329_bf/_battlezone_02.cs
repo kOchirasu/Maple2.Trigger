@@ -9,16 +9,16 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetMesh(arg1: new[] {19992}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {702})) {
-                    context.State = new State애플몽키소환(context);
-                    return;
+                    return new State애플몽키소환(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1103, 1104})) {
-                    context.State = new State섹터개방(context);
-                    return;
+                    return new State섹터개방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -34,11 +34,12 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetEffect(arg1: new[] {6603, 6604}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1103, 1104})) {
-                    context.State = new State섹터개방(context);
-                    return;
+                    return new State섹터개방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -57,11 +58,12 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetMesh(arg1: new[] {1511, 1512, 1513, 1514, 1515, 1516, 1517, 1518, 1519, 1520}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -74,7 +76,9 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

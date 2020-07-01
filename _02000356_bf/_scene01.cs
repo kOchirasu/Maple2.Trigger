@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetEffect(arg1: new[] {401, 601, 602, 603, 604, 605, 606, 607, 608, 609}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SetSkillA") == 1) {
-                    context.State = new State연출시작딜레이(context);
-                    return;
+                    return new State연출시작딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._02000356_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State연출시작(context);
-                    return;
+                    return new State연출시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State데보라크대사(context);
-                    return;
+                    return new State데보라크대사(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,11 +64,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetConversation(arg1: 2, arg2: 23000007, arg3: "$02000213_BF__SCENE01__0$", arg4: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State레논등장(context);
-                    return;
+                    return new State레논등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,11 +83,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetTimer(arg1: "1", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State레논대사1(context);
-                    return;
+                    return new State레논대사1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,11 +103,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000213_BF__SCENE01__1$", arg4: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라등장(context);
-                    return;
+                    return new State벨라등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -117,11 +123,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetTimer(arg1: "1", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라대사1(context);
-                    return;
+                    return new State벨라대사1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -137,11 +144,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$02000213_BF__SCENE01__2$", arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라대사2(context);
-                    return;
+                    return new State벨라대사2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -156,11 +164,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$02000213_BF__SCENE01__3$", arg4: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State알론등장(context);
-                    return;
+                    return new State알론등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -174,11 +183,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State알론대사1(context);
-                    return;
+                    return new State알론대사1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -193,11 +203,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$02000213_BF__SCENE01__4$", arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라대사3(context);
-                    return;
+                    return new State벨라대사3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -212,11 +223,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$02000213_BF__SCENE01__5$", arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라대사4(context);
-                    return;
+                    return new State벨라대사4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -231,11 +243,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$02000213_BF__SCENE01__6$", arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라대사5(context);
-                    return;
+                    return new State벨라대사5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -250,11 +263,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$02000213_BF__SCENE01__7$", arg4: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라사라짐이펙트(context);
-                    return;
+                    return new State벨라사라짐이펙트(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -268,11 +282,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetEffect(arg1: new[] {407}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라사라짐(context);
-                    return;
+                    return new State벨라사라짐(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -290,11 +305,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.CreateMonster(arg1: new[] {205});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State알론대사2(context);
-                    return;
+                    return new State알론대사2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -309,11 +325,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetConversation(arg1: 1, arg2: 205, arg3: "$02000213_BF__SCENE01__8$", arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State알론대사3(context);
-                    return;
+                    return new State알론대사3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -328,11 +345,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetConversation(arg1: 1, arg2: 205, arg3: "$02000213_BF__SCENE01__9$", arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State연출끝(context);
-                    return;
+                    return new State연출끝(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -346,11 +364,12 @@ namespace Maple2.Trigger._02000356_bf {
                 context.SetTimer(arg1: "1", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State끝(context);
-                    return;
+                    return new State끝(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -361,7 +380,9 @@ namespace Maple2.Trigger._02000356_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

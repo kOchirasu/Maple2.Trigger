@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000522_bf {
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {201})) {
-                    context.State = new State몹생성(context);
-                    return;
+                    return new State몹생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02000522_bf {
                 context.CreateMonster(arg1: new[] {301}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {301})) {
-                    context.State = new State클리어처리(context);
-                    return;
+                    return new State클리어처리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,12 +41,13 @@ namespace Maple2.Trigger._02000522_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     context.DungeonClear();
-                    context.State = new State종료처리(context);
-                    return;
+                    return new State종료처리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,7 +61,9 @@ namespace Maple2.Trigger._02000522_bf {
                 context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

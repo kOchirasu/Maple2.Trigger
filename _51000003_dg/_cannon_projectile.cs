@@ -7,36 +7,32 @@ namespace Maple2.Trigger._51000003_dg {
                 context.DestroyMonster(arg1: new[] {111, 112, 113, 114, 115, 116, 117, 118});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round_01") == 1) {
-                    context.State = new StateRound_01(context);
-                    return;
+                    return new StateRound_01(context);
                 }
 
                 if (context.GetUserValue(key: "Round_02") == 1) {
-                    context.State = new StateRound_02(context);
-                    return;
+                    return new StateRound_02(context);
                 }
 
                 if (context.GetUserValue(key: "Round_03") == 1) {
-                    context.State = new StateRound_03(context);
-                    return;
+                    return new StateRound_03(context);
                 }
 
                 if (context.GetUserValue(key: "Round_04") == 1) {
-                    context.State = new StateRound_04(context);
-                    return;
+                    return new StateRound_04(context);
                 }
 
                 if (context.GetUserValue(key: "Round_05") == 1) {
-                    context.State = new StateRound_05(context);
-                    return;
+                    return new StateRound_05(context);
                 }
 
                 if (context.GetUserValue(key: "Round_06") == 1) {
-                    context.State = new StateRound_06(context);
-                    return;
+                    return new StateRound_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -50,16 +46,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.CreateMonster(arg1: new[] {118}, arg2: true, arg3: 1500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round_02") == 1) {
-                    context.State = new StateRound_02(context);
-                    return;
+                    return new StateRound_02(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,16 +69,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.CreateMonster(arg1: new[] {117}, arg2: true, arg3: 1100);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round_03") == 1) {
-                    context.State = new StateRound_03(context);
-                    return;
+                    return new StateRound_03(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,16 +92,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.CreateMonster(arg1: new[] {116}, arg2: true, arg3: 1300);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round_04") == 1) {
-                    context.State = new StateRound_04(context);
-                    return;
+                    return new StateRound_04(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -119,16 +115,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.CreateMonster(arg1: new[] {115}, arg2: true, arg3: 900);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round_05") == 1) {
-                    context.State = new StateRound_05(context);
-                    return;
+                    return new StateRound_05(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -149,16 +145,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.CreateMonster(arg1: new[] {108}, arg2: true, arg3: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round_06") == 1) {
-                    context.State = new StateRound_check(context);
-                    return;
+                    return new StateRound_check(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -173,16 +169,17 @@ namespace Maple2.Trigger._51000003_dg {
                 context.CreateMonster(arg1: new[] {123}, arg2: true, arg3: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    // context.State = new StateRound_06_02(context);
-                    return;
+                    // return new StateRound_06_02(context);
+                    return null;
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -195,7 +192,9 @@ namespace Maple2.Trigger._51000003_dg {
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 116, 117, 118});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

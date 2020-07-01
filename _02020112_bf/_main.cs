@@ -26,11 +26,12 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetPortal(arg1: 14, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    context.State = new State중력방_대기(context);
-                    return;
+                    return new State중력방_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +42,12 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {915})) {
-                    context.State = new State중력방_발판(context);
-                    return;
+                    return new State중력방_발판(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +60,12 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetUserValue(triggerId: 99990020, key: "GravityRoom", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "GravityRoom") == 2) {
-                    context.State = new State중력방_전투(context);
-                    return;
+                    return new State중력방_전투(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,11 +76,12 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {141, 142, 143, 144})) {
-                    context.State = new State카메라_발판점프대(context);
-                    return;
+                    return new State카메라_발판점프대(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,11 +100,12 @@ namespace Maple2.Trigger._02020112_bf {
                 context.CameraSelectPath(arg1: new[] {611, 612}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State카메라_종료(context);
-                    return;
+                    return new State카메라_종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -117,13 +122,14 @@ namespace Maple2.Trigger._02020112_bf {
                 context.CreateMonster(arg1: new[] {120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130})) {
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.SetPortal(arg1: 13, arg2: true, arg3: true, arg4: false);
-                    context.State = new State격리방_지하(context);
-                    return;
+                    return new State격리방_지하(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -134,11 +140,12 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterDead") == 1) {
-                    context.State = new State격리방_대기(context);
-                    return;
+                    return new State격리방_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -151,11 +158,12 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {932})) {
-                    context.State = new State격리방_전투(context);
-                    return;
+                    return new State격리방_전투(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -169,7 +177,7 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetUserValue(triggerId: 99990008, key: "Start", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {191})) {
                     context.SetPortal(arg1: 7, arg2: true, arg3: true, arg4: true);
                     context.SetUserValue(triggerId: 99990008, key: "Start", value: 2);
@@ -177,6 +185,8 @@ namespace Maple2.Trigger._02020112_bf {
                     context.SetUserValue(triggerId: 99990014, key: "EliteDead", value: 1);
                     context.SetUserValue(triggerId: 99990015, key: "EliteDead", value: 1);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

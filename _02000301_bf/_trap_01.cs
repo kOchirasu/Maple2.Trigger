@@ -12,16 +12,16 @@ namespace Maple2.Trigger._02000301_bf {
                 context.SetMesh(arg1: new[] {4101, 4102, 4103, 4104}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    context.State = new State경보(context);
-                    return;
+                    return new State경보(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000511}, arg2: 0)) {
-                    context.State = new State해제(context);
-                    return;
+                    return new State해제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,15 +42,16 @@ namespace Maple2.Trigger._02000301_bf {
                 context.SetMesh(arg1: new[] {4101, 4102, 4103, 4104}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2002})) {
                     context.HideGuideSummary(entityId: 20003001);
                     context.SetEffect(arg1: new[] {610}, arg2: false);
                     context.SetActor(arg1: 202, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 203, arg2: true, arg3: "sf_quest_light_A01_Off");
-                    context.State = new State해제(context);
-                    return;
+                    return new State해제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,7 +66,9 @@ namespace Maple2.Trigger._02000301_bf {
                 context.SetMesh(arg1: new[] {4101, 4102, 4103, 4104}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

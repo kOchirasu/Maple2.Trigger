@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000483_bf {
                 context.SetUserValue(key: "MobWave", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MobWave") == 1) {
-                    context.State = new StateMobSpawn01(context);
-                    return;
+                    return new StateMobSpawn01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._02000483_bf {
                 context.CreateMonster(arg1: new[] {930}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateMobSpawn02(context);
-                    return;
+                    return new StateMobSpawn02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,12 @@ namespace Maple2.Trigger._02000483_bf {
                 context.CreateMonster(arg1: new[] {931}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateMobSpawn03(context);
-                    return;
+                    return new StateMobSpawn03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +62,12 @@ namespace Maple2.Trigger._02000483_bf {
                 context.CreateMonster(arg1: new[] {932}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateMobSpawn04(context);
-                    return;
+                    return new StateMobSpawn04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -76,7 +80,9 @@ namespace Maple2.Trigger._02000483_bf {
                 context.CreateMonster(arg1: new[] {933}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

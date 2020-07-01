@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    context.State = new State전투시작(context);
-                    return;
+                    return new State전투시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02100009_bf {
                 context.CreateMonster(arg1: new[] {100000002}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {100000002})) {
-                    context.State = new State버프(context);
-                    return;
+                    return new State버프(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,11 +42,12 @@ namespace Maple2.Trigger._02100009_bf {
                 context.AddBuff(arg1: new[] {100000002}, arg2: 50000202, arg3: 1, arg4: true, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State체력조건달성(context);
-                    return;
+                    return new State체력조건달성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,11 +58,12 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 100000002) <= 0.5f) {
-                    context.State = new State몬스터기절_2(context);
-                    return;
+                    return new State몬스터기절_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -76,11 +80,12 @@ namespace Maple2.Trigger._02100009_bf {
                 context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "02100009_1");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6800)) {
-                    context.State = new State몬스터부활(context);
-                    return;
+                    return new State몬스터부활(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -95,11 +100,12 @@ namespace Maple2.Trigger._02100009_bf {
                 context.AddBuff(arg1: new[] {100000002}, arg2: 50000202, arg3: 1, arg4: true, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State체력조건미달(context);
-                    return;
+                    return new State체력조건미달(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -110,11 +116,12 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 100000002) > 0.5f) {
-                    context.State = new State몬스터부활_2(context);
-                    return;
+                    return new State몬스터부활_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -129,11 +136,12 @@ namespace Maple2.Trigger._02100009_bf {
                 context.SetUserValue(key: "MonsterDown2", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State체력조건달성(context);
-                    return;
+                    return new State체력조건달성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

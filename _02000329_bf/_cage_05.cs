@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000329_bf {
                 context.CreateMonster(arg1: new[] {1005, 1105}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1105})) {
-                    context.State = new State닭생성(context);
-                    return;
+                    return new State닭생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +30,12 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetEffect(arg1: new[] {6805}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State닭이동(context);
-                    return;
+                    return new State닭이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +49,12 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetTimer(arg1: "4", arg2: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new State닭소멸(context);
-                    return;
+                    return new State닭소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,7 +67,9 @@ namespace Maple2.Trigger._02000329_bf {
                 context.DestroyMonster(arg1: new[] {1005});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

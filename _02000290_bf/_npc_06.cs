@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000290_bf {
                 context.CreateMonster(arg1: new[] {906});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000463}, arg2: 0)) {
-                    context.State = new StateNPC대사(context);
-                    return;
+                    return new StateNPC대사(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._02000290_bf {
                 context.SetConversation(arg1: 1, arg2: 906, arg3: "$02000290_BF__NPC_06__0$", arg4: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new StateNPC이동(context);
-                    return;
+                    return new StateNPC이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._02000290_bf {
                 context.SetConversation(arg1: 1, arg2: 906, arg3: "$02000290_BF__NPC_06__1$", arg4: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateNPC소멸(context);
-                    return;
+                    return new StateNPC소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,7 +65,9 @@ namespace Maple2.Trigger._02000290_bf {
                 context.DestroyMonster(arg1: new[] {906});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

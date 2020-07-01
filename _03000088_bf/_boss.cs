@@ -7,12 +7,13 @@ namespace Maple2.Trigger._03000088_bf {
                 context.SetInteractObject(arg1: new[] {11000009}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
                     context.CreateMonster(arg1: new[] {2001}, arg2: false);
-                    context.State = new State보스등장(context);
-                    return;
+                    return new State보스등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,19 +26,19 @@ namespace Maple2.Trigger._03000088_bf {
                 context.ShowGuideSummary(entityId: 23000001, textId: 23000001, duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State보스등장(context);
-                    return;
+                    return new State보스등장(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {2001})) {
                     context.HideGuideSummary(entityId: 23000001);
                     context.SetInteractObject(arg1: new[] {11000009}, arg2: 1);
                     context.SetEventUI(arg1: 7, arg3: 2000, arg4: "0");
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,7 +49,9 @@ namespace Maple2.Trigger._03000088_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._61000010_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    context.State = new State업적(context);
-                    return;
+                    return new State업적(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,7 +23,9 @@ namespace Maple2.Trigger._61000010_me {
                 context.SetAchievement(arg1: 102, arg2: "trigger", arg3: "WinSanghaiRunners");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

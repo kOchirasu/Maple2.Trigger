@@ -21,11 +21,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetEffect(arg1: new[] {5001, 5002, 5100, 5101, 5003, 5200, 5201, 5004, 5300, 5301, 5005, 5400, 5401, 5006, 5500, 5501, 5007, 5008, 5009}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new StateLoadingDelay(context);
-                    return;
+                    return new StateLoadingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -36,11 +37,12 @@ namespace Maple2.Trigger._02000511_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateDungeonStart(context);
-                    return;
+                    return new StateDungeonStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -51,11 +53,12 @@ namespace Maple2.Trigger._02000511_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new StateStageEnter(context);
-                    return;
+                    return new StateStageEnter(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -70,11 +73,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStage01MobSpawn(context);
-                    return;
+                    return new StateStage01MobSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -88,11 +92,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetAgent(arg1: new[] {8100, 8101, 8102, 8103, 8104, 8105, 8106, 8107, 8108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103, 104, 105, 106, 111, 112, 113, 114, 115, 116, 121, 122, 123, 124, 125, 126})) {
-                    context.State = new StateStage01DoorOpen(context);
-                    return;
+                    return new StateStage01DoorOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -109,11 +114,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetEffect(arg1: new[] {5002, 5100, 5101}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStage02MobSpawn(context);
-                    return;
+                    return new StateStage02MobSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -127,11 +133,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetAgent(arg1: new[] {8200, 8201, 8202, 8203, 8204, 8205, 8206, 8207, 8208, 8209, 8210, 8211, 8212}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 211, 212, 213, 214, 215, 216, 221, 222, 223, 224, 225, 226})) {
-                    context.State = new StateStage02DoorOpen(context);
-                    return;
+                    return new StateStage02DoorOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -148,11 +155,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetEffect(arg1: new[] {5003, 5200, 5201}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStage03MobSpawn(context);
-                    return;
+                    return new StateStage03MobSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -166,11 +174,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetAgent(arg1: new[] {8300, 8301, 8302, 8303, 8304, 8305, 8306, 8307, 8308, 8309, 8310, 8311, 8312}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 311, 312, 313, 314, 315, 316, 321, 322, 323, 324, 325, 326})) {
-                    context.State = new StateStage03DoorOpen(context);
-                    return;
+                    return new StateStage03DoorOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -187,11 +196,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetEffect(arg1: new[] {5004, 5300, 5301}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStage04MobSpawn(context);
-                    return;
+                    return new StateStage04MobSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -205,11 +215,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetAgent(arg1: new[] {8400, 8401, 8402, 8403, 8404, 8405, 8406, 8407, 8408, 8409, 8410, 8411, 8412}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {401, 402, 403, 404, 405, 406, 407, 408, 411, 412, 413, 414, 415, 416, 421, 422, 423, 424, 425, 426})) {
-                    context.State = new StateStage04DoorOpen(context);
-                    return;
+                    return new StateStage04DoorOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -226,11 +237,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetEffect(arg1: new[] {5005, 5400, 5401}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateStage05MobSpawn(context);
-                    return;
+                    return new StateStage05MobSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -244,11 +256,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetAgent(arg1: new[] {8500, 8501, 8502, 8503, 8504, 8505, 8506, 8507, 8508, 8509, 8510, 8511, 8512}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 511, 512, 513, 514, 515, 516, 521, 522, 523, 524, 525, 526})) {
-                    context.State = new StateStage05DoorOpen(context);
-                    return;
+                    return new StateStage05DoorOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -265,11 +278,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetEffect(arg1: new[] {5006, 5500, 5501}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateBossStagePortalOpen(context);
-                    return;
+                    return new StateBossStagePortalOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -286,7 +300,9 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

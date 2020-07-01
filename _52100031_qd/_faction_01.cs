@@ -8,11 +8,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetInteractObject(arg1: new[] {10002058, 10002059, 10002067}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "faction01") == 1) {
-                    context.State = new State석궁준비(context);
-                    return;
+                    return new State석궁준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52100031_QD__FACTION_01__1$", arg4: 5, arg5: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State퀘스트(context);
-                    return;
+                    return new State퀘스트(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetInteractObject(arg1: new[] {10002067}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State종료체크(context);
-                    return;
+                    return new State종료체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,14 +63,15 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2901})) {
                     context.SetInteractObject(arg1: new[] {10002058, 10002059, 10002067}, arg2: 0);
                     context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52100031_QD__FACTION_01__2$", arg4: 5, arg5: 0);
                     context.RemoveBuff(arg1: 199, arg2: 99910150);
-                    context.State = new StateNPC삭제대기(context);
-                    return;
+                    return new StateNPC삭제대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -78,12 +82,13 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "DungeonClear") == 1) {
                     context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005}, arg2: false);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -94,7 +99,9 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

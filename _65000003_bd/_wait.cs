@@ -7,11 +7,12 @@ namespace Maple2.Trigger._65000003_bd {
                 context.SetTimer(arg1: "60", arg2: 60, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {104})) {
-                    context.State = new State어나운스01(context);
-                    return;
+                    return new State어나운스01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,21 +25,20 @@ namespace Maple2.Trigger._65000003_bd {
                 context.ShowGuideSummary(entityId: 26500301, textId: 26500301, duration: 4500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State어나운스01(context);
-                    return;
+                    return new State어나운스01(context);
                 }
 
                 if (context.GetUserCount(boxId: 104) == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.TimeExpired(arg1: "60")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -51,7 +51,9 @@ namespace Maple2.Trigger._65000003_bd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

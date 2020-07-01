@@ -5,11 +5,12 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "2Round_C") == 1) {
-                    context.State = new StateSpawn_Start_Ready(context);
-                    return;
+                    return new StateSpawn_Start_Ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._61000009_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSpawn_Start(context);
-                    return;
+                    return new StateSpawn_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +39,12 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetEffect(arg1: new[] {7101}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State2Round_Spawn_C_01_Ready(context);
-                    return;
+                    return new State2Round_Spawn_C_01_Ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,11 +58,12 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetEffect(arg1: new[] {7001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2300)) {
-                    context.State = new State2Round_Spawn_C_01(context);
-                    return;
+                    return new State2Round_Spawn_C_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -72,11 +76,12 @@ namespace Maple2.Trigger._61000009_me {
                 context.CreateMonster(arg1: new[] {104}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {104})) {
-                    context.State = new State2Round_Spawn_C_End(context);
-                    return;
+                    return new State2Round_Spawn_C_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -91,7 +96,9 @@ namespace Maple2.Trigger._61000009_me {
                 context.SetUserValue(triggerId: 2037401, key: "2Round_C", value: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

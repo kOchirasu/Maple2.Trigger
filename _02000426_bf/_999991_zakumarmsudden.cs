@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000426_bf {
                 context.SetUserValue(key: "SummonZakumArmMany", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    context.State = new State대기중(context);
-                    return;
+                    return new State대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SummonZakumArmRegenCheck") == 1) {
-                    context.State = new State자쿰몸통무적버프로직_시작대기중(context);
-                    return;
+                    return new State자쿰몸통무적버프로직_시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,11 +40,12 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State자쿰몸통무적버프로직_작동(context);
-                    return;
+                    return new State자쿰몸통무적버프로직_작동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,11 +59,12 @@ namespace Maple2.Trigger._02000426_bf {
                 context.AddBuff(arg1: new[] {2012}, arg2: 50000265, arg3: 1, arg4: true, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SummonZakumArmMany") == 0) {
-                    context.State = new State자쿰몸통무적버프_제거대기(context);
-                    return;
+                    return new State자쿰몸통무적버프_제거대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -71,11 +75,12 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State자쿰몸통무적버프_제거작업(context);
-                    return;
+                    return new State자쿰몸통무적버프_제거작업(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,11 +95,12 @@ namespace Maple2.Trigger._02000426_bf {
                 context.SetUserValue(key: "SummonZakumArmRegenCheck", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
-                    context.State = new State대기중(context);
-                    return;
+                    return new State대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -105,7 +111,9 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -7,7 +7,9 @@ namespace Maple2.Trigger._02020028_bf {
                 context.CreateMonster(arg1: new[] {201});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -20,7 +22,9 @@ namespace Maple2.Trigger._02020028_bf {
                 context.AddCinematicTalk(npcId: 24120001, illustId: "Neirin_normal", msg: "$02020028_BF__main__1$", duration: 5000, align: "left");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

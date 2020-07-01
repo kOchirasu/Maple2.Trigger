@@ -7,12 +7,13 @@ namespace Maple2.Trigger._64000001_gd {
                 context.SetEffect(arg1: new[] {701, 702}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (true) {
                     context.SetPvpZone(arg1: 101, arg2: 30, arg3: 120, arg4: 90001002, arg5: 4, arg6: new byte[] {102, 103, 112, 113, 10, 11, 1, 3});
-                    context.State = new StatePvP종료(context);
-                    return;
+                    return new StatePvP종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._64000001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.PvpZoneEnded(arg1: 101)) {
-                    context.State = new State게임종료(context);
-                    return;
+                    return new State게임종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,11 +42,12 @@ namespace Maple2.Trigger._64000001_gd {
                 context.SetTimer(arg1: "999", arg2: 4, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "999")) {
-                    context.State = new State완료(context);
-                    return;
+                    return new State완료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -59,10 +62,12 @@ namespace Maple2.Trigger._64000001_gd {
                 context.SetTimer(arg1: "1", arg2: 60);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
                     context.MoveUser(arg1: 0, arg2: 0);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

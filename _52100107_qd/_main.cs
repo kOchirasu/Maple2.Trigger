@@ -5,21 +5,20 @@ namespace Maple2.Trigger._52100107_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000890}, arg3: new byte[] {3})) {
-                    context.State = new StateNPC소환(context);
-                    return;
+                    return new StateNPC소환(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000900}, arg3: new byte[] {1})) {
-                    context.State = new StateNPC소환(context);
-                    return;
+                    return new StateNPC소환(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000900}, arg3: new byte[] {2})) {
-                    context.State = new StateNPC소환(context);
-                    return;
+                    return new StateNPC소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -32,7 +31,9 @@ namespace Maple2.Trigger._52100107_qd {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

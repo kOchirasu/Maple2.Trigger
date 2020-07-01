@@ -16,11 +16,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetMesh(arg1: new[] {3224, 3225, 3226}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {198})) {
-                    context.State = new State암호체크(context);
-                    return;
+                    return new State암호체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -34,106 +35,88 @@ namespace Maple2.Trigger._02000298_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1279})) {
-                    context.State = new State입력대기중_1279(context);
-                    return;
+                    return new State입력대기중_1279(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1238})) {
-                    context.State = new State입력대기중_1238(context);
-                    return;
+                    return new State입력대기중_1238(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1358})) {
-                    context.State = new State입력대기중_1358(context);
-                    return;
+                    return new State입력대기중_1358(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1489})) {
-                    context.State = new State입력대기중_1489(context);
-                    return;
+                    return new State입력대기중_1489(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1567})) {
-                    context.State = new State입력대기중_1567(context);
-                    return;
+                    return new State입력대기중_1567(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1679})) {
-                    context.State = new State입력대기중_1679(context);
-                    return;
+                    return new State입력대기중_1679(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2389})) {
-                    context.State = new State입력대기중_2389(context);
-                    return;
+                    return new State입력대기중_2389(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2347})) {
-                    context.State = new State입력대기중_2347(context);
-                    return;
+                    return new State입력대기중_2347(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2478})) {
-                    context.State = new State입력대기중_2478(context);
-                    return;
+                    return new State입력대기중_2478(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2456})) {
-                    context.State = new State입력대기중_2456(context);
-                    return;
+                    return new State입력대기중_2456(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2569})) {
-                    context.State = new State입력대기중_2569(context);
-                    return;
+                    return new State입력대기중_2569(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2678})) {
-                    context.State = new State입력대기중_2678(context);
-                    return;
+                    return new State입력대기중_2678(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {3458})) {
-                    context.State = new State입력대기중_3458(context);
-                    return;
+                    return new State입력대기중_3458(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {3589})) {
-                    context.State = new State입력대기중_3589(context);
-                    return;
+                    return new State입력대기중_3589(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {3679})) {
-                    context.State = new State입력대기중_3679(context);
-                    return;
+                    return new State입력대기중_3679(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {3789})) {
-                    context.State = new State입력대기중_3789(context);
-                    return;
+                    return new State입력대기중_3789(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {4567})) {
-                    context.State = new State입력대기중_4567(context);
-                    return;
+                    return new State입력대기중_4567(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {4578})) {
-                    context.State = new State입력대기중_4578(context);
-                    return;
+                    return new State입력대기중_4578(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {4689})) {
-                    context.State = new State입력대기중_4689(context);
-                    return;
+                    return new State입력대기중_4689(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {4789})) {
-                    context.State = new State입력대기중_4789(context);
-                    return;
+                    return new State입력대기중_4789(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -146,36 +129,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000001, 12000002, 12000007, 12000009}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000003}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000004}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000005}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000006}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000008}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -188,36 +167,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000001, 12000002, 12000003, 12000008}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000004}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000005}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000006}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000007}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000009}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -230,36 +205,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000001, 12000003, 12000005, 12000008}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000002}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000004}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000006}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000007}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000009}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -272,36 +243,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000001, 12000004, 12000008, 12000009}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000002}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000003}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000005}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000006}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000007}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -314,36 +281,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000001, 12000005, 12000006, 12000007}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000002}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000003}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000004}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000008}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000009}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -356,36 +319,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000001, 12000006, 12000007, 12000009}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000002}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000003}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000004}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000005}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000008}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -398,36 +357,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000002, 12000003, 12000008, 12000009}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000004}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000005}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000006}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000007}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -440,36 +395,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000002, 12000003, 12000004, 12000007}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000005}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000006}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000008}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000009}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -482,36 +433,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000002, 12000004, 12000007, 12000008}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000003}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000005}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000006}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000009}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -524,36 +471,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000002, 12000004, 12000005, 12000006}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000003}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000007}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000008}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000009}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -566,36 +509,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000002, 12000005, 12000006, 12000009}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000003}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000004}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000007}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000008}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -608,36 +547,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000002, 12000006, 12000007, 12000008}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000003}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000004}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000005}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000009}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -650,36 +585,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000003, 12000004, 12000005, 12000008}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000002}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000006}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000007}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000009}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -692,36 +623,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000003, 12000005, 12000008, 12000009}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000002}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000004}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000006}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000007}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -734,36 +661,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000003, 12000006, 12000007, 12000009}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000002}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000004}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000005}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000008}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -776,36 +699,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000003, 12000007, 12000008, 12000009}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000002}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000004}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000005}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000006}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -818,36 +737,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000004, 12000005, 12000006, 12000007}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000002}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000003}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000008}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000009}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -860,36 +775,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000004, 12000005, 12000007, 12000008}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000002}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000003}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000006}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000009}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -902,36 +813,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000004, 12000006, 12000008, 12000009}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000002}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000003}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000005}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000007}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -944,36 +851,32 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000004, 12000007, 12000008, 12000009}, arg2: 0)) {
-                    context.State = new State정답(context);
-                    return;
+                    return new State정답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000001}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000002}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000003}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000005}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000006}, arg2: 0)) {
-                    context.State = new State오답(context);
-                    return;
+                    return new State오답(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -989,12 +892,13 @@ namespace Maple2.Trigger._02000298_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.HideGuideSummary(entityId: 20002983);
-                    context.State = new State문열림(context);
-                    return;
+                    return new State문열림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1012,12 +916,13 @@ namespace Maple2.Trigger._02000298_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
                     context.HideGuideSummary(entityId: 20002984);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1035,12 +940,13 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.HideGuideSummary(entityId: 20002985);
-                    context.State = new State방어모드(context);
-                    return;
+                    return new State방어모드(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1064,7 +970,7 @@ namespace Maple2.Trigger._02000298_bf {
                 context.CreateMonster(arg1: new[] {1098, 1099}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1098, 1099})) {
                     context.HideGuideSummary(entityId: 20002986);
                     context.SetActor(arg1: 292, arg2: true, arg3: "sf_quest_light_A01_Off");
@@ -1076,9 +982,10 @@ namespace Maple2.Trigger._02000298_bf {
                     context.SetActor(arg1: 298, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetEffect(arg1: new[] {611}, arg2: false);
-                    context.State = new State암호체크(context);
-                    return;
+                    return new State암호체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1089,7 +996,9 @@ namespace Maple2.Trigger._02000298_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

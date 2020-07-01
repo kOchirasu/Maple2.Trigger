@@ -7,16 +7,16 @@ namespace Maple2.Trigger._64000001_gd {
                 context.SetTimer(arg1: "10", arg2: 10, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 104) == 6) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.TimeExpired(arg1: "10")) {
-                    context.State = new State시간표확인(context);
-                    return;
+                    return new State시간표확인(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +29,12 @@ namespace Maple2.Trigger._64000001_gd {
                 context.SetTimer(arg1: "88", arg2: 1200, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "88")) {
-                    context.State = new State시간표확인(context);
-                    return;
+                    return new State시간표확인(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

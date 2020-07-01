@@ -10,11 +10,12 @@ namespace Maple2.Trigger._02010054_bf {
                 context.SetMesh(arg1: new[] {3125}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    context.State = new State생성(context);
-                    return;
+                    return new State생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02010054_bf {
                 context.SetMesh(arg1: new[] {3306, 3307, 3308, 3309}, arg2: true, arg3: 0, arg4: 500, arg5: 3f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    context.State = new State몬스터생성(context);
-                    return;
+                    return new State몬스터생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,12 +49,13 @@ namespace Maple2.Trigger._02010054_bf {
                 context.CreateMonster(arg1: new[] {2004}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2004})) {
                     context.SetInteractObject(arg1: new[] {10000860}, arg2: 1);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,7 +66,9 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

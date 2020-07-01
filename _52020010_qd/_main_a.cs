@@ -8,11 +8,12 @@ namespace Maple2.Trigger._52020010_qd {
                 context.SetActor(arg1: 8001, arg2: false, arg3: "Event_01_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200045}, arg3: new byte[] {2})) {
-                    context.State = new StateEvent_01(context);
-                    return;
+                    return new StateEvent_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._52020010_qd {
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateEvent_02(context);
-                    return;
+                    return new StateEvent_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._52020010_qd {
                 context.SetActor(arg1: 8001, arg2: true, arg3: "Event_03_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateEvent_End(context);
-                    return;
+                    return new StateEvent_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,7 +65,9 @@ namespace Maple2.Trigger._52020010_qd {
                 context.CameraReset(interpolationTime: 1f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

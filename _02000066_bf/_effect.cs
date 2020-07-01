@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetEffect(arg1: new[] {6001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 103, arg2: new[] {99})) {
-                    context.State = new State이펙트생성(context);
-                    return;
+                    return new State이펙트생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State이펙트소멸(context);
-                    return;
+                    return new State이펙트소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetEffect(arg1: new[] {6001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

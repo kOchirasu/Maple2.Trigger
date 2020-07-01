@@ -12,11 +12,12 @@ namespace Maple2.Trigger._02000351_bf {
                 context.SetMesh(arg1: new[] {6007}, arg2: false, arg4: 0, arg5: 10f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
-                    return;
+                    return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -32,11 +33,12 @@ namespace Maple2.Trigger._02000351_bf {
                 context.CameraSelectPath(arg1: new[] {80001, 80002}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateStart(context);
-                    return;
+                    return new StateStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -56,11 +58,12 @@ namespace Maple2.Trigger._02000351_bf {
                 context.SetMesh(arg1: new[] {6900}, arg2: false, arg4: 0, arg5: 10f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 702) == 1) {
-                    context.State = new State관문_01_개방(context);
-                    return;
+                    return new State관문_01_개방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,11 +76,12 @@ namespace Maple2.Trigger._02000351_bf {
                 context.SetInteractObject(arg1: new[] {10000818}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 703) == 1) {
-                    context.State = new State관문_02_개방(context);
-                    return;
+                    return new State관문_02_개방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,11 +96,12 @@ namespace Maple2.Trigger._02000351_bf {
                 context.SetInteractObject(arg1: new[] {10000819, 10000820}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 704) == 1) {
-                    context.State = new State관문_03_시작(context);
-                    return;
+                    return new State관문_03_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -111,11 +116,12 @@ namespace Maple2.Trigger._02000351_bf {
                 context.CreateMonster(arg1: new[] {33}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {31, 32})) {
-                    context.State = new State관문_03_개방(context);
-                    return;
+                    return new State관문_03_개방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -131,7 +137,9 @@ namespace Maple2.Trigger._02000351_bf {
                 context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() {
                 context.HideGuideSummary(entityId: 112);

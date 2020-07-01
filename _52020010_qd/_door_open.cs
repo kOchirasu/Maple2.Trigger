@@ -8,16 +8,16 @@ namespace Maple2.Trigger._52020010_qd {
                 context.SetBreakable(arg1: new[] {10001, 10002}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2005}, arg2: new[] {60200050}, arg3: new byte[] {2})) {
-                    context.State = new StateCheck(context);
-                    return;
+                    return new StateCheck(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2005}, arg2: new[] {60200050}, arg3: new byte[] {3})) {
-                    context.State = new StateCheck(context);
-                    return;
+                    return new StateCheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +28,12 @@ namespace Maple2.Trigger._52020010_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001275}, arg2: 0)) {
-                    context.State = new StateDoorOpen(context);
-                    return;
+                    return new StateDoorOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,7 +47,9 @@ namespace Maple2.Trigger._52020010_qd {
                 context.SetBreakable(arg1: new[] {10001, 10002}, arg2: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

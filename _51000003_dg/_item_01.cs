@@ -14,11 +14,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991112, key: "item_717_spawn", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Round_01") == 1) {
-                    context.State = new StateRound_01_Ready(context);
-                    return;
+                    return new StateRound_01_Ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +30,12 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateRound_01_Start(context);
-                    return;
+                    return new StateRound_01_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,51 +46,44 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new Stateitem_710(context);
-                    return;
+                    return new Stateitem_710(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new Stateitem_711(context);
-                    return;
+                    return new Stateitem_711(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new Stateitem_712(context);
-                    return;
+                    return new Stateitem_712(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new Stateitem_713(context);
-                    return;
+                    return new Stateitem_713(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new Stateitem_714(context);
-                    return;
+                    return new Stateitem_714(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new Stateitem_715(context);
-                    return;
+                    return new Stateitem_715(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new Stateitem_716(context);
-                    return;
+                    return new Stateitem_716(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new Stateitem_717(context);
-                    return;
+                    return new Stateitem_717(context);
                 }
 
                 if (context.GetUserValue(key: "Round_01") == 0) {
-                    context.State = new StateRound_check(context);
-                    return;
+                    return new StateRound_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -99,16 +94,16 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateRound_01_Start(context);
-                    return;
+                    return new StateRound_01_Start(context);
                 }
 
                 if (context.GetUserValue(key: "Round_01") == 0) {
-                    context.State = new StateRound_check(context);
-                    return;
+                    return new StateRound_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -119,16 +114,16 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {710})) {
-                    context.State = new Stateitem_710_spawn(context);
-                    return;
+                    return new Stateitem_710_spawn(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateRound_01_Start(context);
-                    return;
+                    return new StateRound_01_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -139,16 +134,16 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {711})) {
-                    context.State = new Stateitem_711_spawn(context);
-                    return;
+                    return new Stateitem_711_spawn(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateRound_01_Start(context);
-                    return;
+                    return new StateRound_01_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -159,16 +154,16 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {712})) {
-                    context.State = new Stateitem_712_spawn(context);
-                    return;
+                    return new Stateitem_712_spawn(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateRound_01_Start(context);
-                    return;
+                    return new StateRound_01_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -179,16 +174,16 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {713})) {
-                    context.State = new Stateitem_713_spawn(context);
-                    return;
+                    return new Stateitem_713_spawn(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateRound_01_Start(context);
-                    return;
+                    return new StateRound_01_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -199,16 +194,16 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {714})) {
-                    context.State = new Stateitem_714_spawn(context);
-                    return;
+                    return new Stateitem_714_spawn(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateRound_01_Start(context);
-                    return;
+                    return new StateRound_01_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -219,16 +214,16 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {715})) {
-                    context.State = new Stateitem_715_spawn(context);
-                    return;
+                    return new Stateitem_715_spawn(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateRound_01_Start(context);
-                    return;
+                    return new StateRound_01_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -239,16 +234,16 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {716})) {
-                    context.State = new Stateitem_716_spawn(context);
-                    return;
+                    return new Stateitem_716_spawn(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateRound_01_Start(context);
-                    return;
+                    return new StateRound_01_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -259,16 +254,16 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {717})) {
-                    context.State = new Stateitem_717_spawn(context);
-                    return;
+                    return new Stateitem_717_spawn(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateRound_01_Start(context);
-                    return;
+                    return new StateRound_01_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -281,11 +276,8 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991119, key: "item_710_spawn", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNextSpawn(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNextSpawn(context);
             }
 
             public override void OnExit() { }
@@ -298,11 +290,8 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991118, key: "item_711_spawn", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNextSpawn(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNextSpawn(context);
             }
 
             public override void OnExit() { }
@@ -315,11 +304,8 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991117, key: "item_712_spawn", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNextSpawn(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNextSpawn(context);
             }
 
             public override void OnExit() { }
@@ -332,11 +318,8 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991116, key: "item_713_spawn", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNextSpawn(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNextSpawn(context);
             }
 
             public override void OnExit() { }
@@ -349,11 +332,8 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991115, key: "item_714_spawn", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNextSpawn(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNextSpawn(context);
             }
 
             public override void OnExit() { }
@@ -366,11 +346,8 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991114, key: "item_715_spawn", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNextSpawn(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNextSpawn(context);
             }
 
             public override void OnExit() { }
@@ -383,11 +360,8 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991113, key: "item_716_spawn", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNextSpawn(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNextSpawn(context);
             }
 
             public override void OnExit() { }
@@ -400,11 +374,8 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991112, key: "item_717_spawn", value: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNextSpawn(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNextSpawn(context);
             }
 
             public override void OnExit() { }

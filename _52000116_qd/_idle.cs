@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52000116_qd {
                 context.CreateMonster(arg1: new[] {101});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statenelftalk(context);
-                    return;
+                    return new Statenelftalk(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._52000116_qd {
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000116_QD__IdLE__0$", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statenelfmove(context);
-                    return;
+                    return new Statenelfmove(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,7 +43,9 @@ namespace Maple2.Trigger._52000116_qd {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_3001");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

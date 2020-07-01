@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000397_bf {
                 context.DestroyMonster(arg1: new[] {920, 921});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9100})) {
-                    context.State = new StateLoadingDelay(context);
-                    return;
+                    return new StateLoadingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02000397_bf {
                 context.CreateMonster(arg1: new[] {920, 921}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePickRandomRoute(context);
-                    return;
+                    return new StatePickRandomRoute(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,16 +44,16 @@ namespace Maple2.Trigger._02000397_bf {
                 context.ShowGuideSummary(entityId: 20039702, textId: 20039702, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateBehindWoodbox(context);
-                    return;
+                    return new StateBehindWoodbox(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateBehindWardrope(context);
-                    return;
+                    return new StateBehindWardrope(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,7 +67,9 @@ namespace Maple2.Trigger._02000397_bf {
                 context.SetUserValue(triggerId: 3700, key: "HiddenRouteOpen", value: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -78,7 +82,9 @@ namespace Maple2.Trigger._02000397_bf {
                 context.SetUserValue(triggerId: 3700, key: "HiddenRouteOpen", value: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

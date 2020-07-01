@@ -7,7 +7,9 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetInteractObject(arg1: new[] {11000018, 11000019, 11000020, 11000021}, arg2: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

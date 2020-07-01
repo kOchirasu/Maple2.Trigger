@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetInteractObject(arg1: new[] {12000107}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectStart") == 1) {
-                    context.State = new State레버1_가이드메시지(context);
-                    return;
+                    return new State레버1_가이드메시지(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,17 +27,17 @@ namespace Maple2.Trigger._02020062_bf {
                 context.CreateMonster(arg1: new[] {721}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectStart") == 2) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {9011})) {
                     context.SetEventUI(arg1: 1, arg2: "$02020062_BF__OBJECT1__0$", arg3: 5000, arg4: "9011");
-                    context.State = new State레버1_체크(context);
-                    return;
+                    return new State레버1_체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,16 +48,16 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectStart") == 2) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {711})) {
-                    context.State = new State레버1_발동(context);
-                    return;
+                    return new State레버1_발동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -71,21 +72,20 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02020062_BF__OBJECT1__1$", arg3: 5000, arg4: "9011");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectStart") == 2) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {701})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000107}, arg2: 0)) {
-                    context.State = new State레버1_몬스터등장(context);
-                    return;
+                    return new State레버1_몬스터등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,21 +98,20 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetUserValue(triggerId: 99990014, key: "EliteSpawn", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectStart") == 2) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {701})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new State레버1_재활성(context);
-                    return;
+                    return new State레버1_재활성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -125,16 +124,16 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetInteractObject(arg1: new[] {12000107}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectStart") == 2 && context.MonsterDead(arg1: new[] {701})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000107}, arg2: 0)) {
-                    context.State = new State레버1_재활성_대기(context);
-                    return;
+                    return new State레버1_재활성_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -145,16 +144,16 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectStart") == 2 && context.MonsterDead(arg1: new[] {701})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new State레버1_재활성(context);
-                    return;
+                    return new State레버1_재활성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -170,7 +169,9 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetInteractObject(arg1: new[] {12000107}, arg2: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

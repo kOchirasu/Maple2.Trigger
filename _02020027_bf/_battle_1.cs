@@ -5,11 +5,8 @@ namespace Maple2.Trigger._02020027_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State전투시작_2(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State전투시작_2(context);
             }
 
             public override void OnExit() { }
@@ -20,11 +17,12 @@ namespace Maple2.Trigger._02020027_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "summon_1_1") == 1) {
-                    context.State = new State몬스터소환(context);
-                    return;
+                    return new State몬스터소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +39,12 @@ namespace Maple2.Trigger._02020027_bf {
                 context.SetConversation(arg1: 1, arg2: 305, arg3: "$02020027_BF__battle_1__3$", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {301, 302, 303, 304, 305, 306})) {
-                    context.State = new State버프(context);
-                    return;
+                    return new State버프(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,8 +58,10 @@ namespace Maple2.Trigger._02020027_bf {
                 context.AddBuff(arg1: new[] {201}, arg2: 51200002, arg3: 1, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (true) { }
+
+                return null;
             }
 
             public override void OnExit() { }

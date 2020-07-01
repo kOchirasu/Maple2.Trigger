@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetInteractObject(arg1: new[] {10002118}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {903})) {
-                    context.State = new State안전장치_활성화(context);
-                    return;
+                    return new State안전장치_활성화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetInteractObject(arg1: new[] {10002118}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002118}, arg2: 0)) {
-                    context.State = new State안전장치_작동(context);
-                    return;
+                    return new State안전장치_작동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,7 +47,9 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetUserValue(triggerId: 99990017, key: "Safe", value: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

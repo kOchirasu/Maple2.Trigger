@@ -9,11 +9,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016, 6017, 6018, 6019, 6020, 6021, 6022, 6023, 6024, 6025, 6026, 6027, 6028, 6029, 6030, 6031, 6032, 6033, 6034, 6035, 6036, 6037, 6038, 6039, 6040, 6041, 6042, 6043, 6044, 6045, 6046, 6047, 6048, 6049, 6050, 6051, 6052, 6053, 6054, 6055, 6056, 6057, 6058, 6059, 6060, 6061, 6062, 6063, 6064, 6065, 6066, 6067, 6068, 6069, 6070, 6071, 6072, 6073, 6074, 6075, 6076, 6077, 6078, 6079, 6080, 6081, 6082, 6083, 6084, 6085, 6086, 6087, 6088, 6089, 6090, 6091, 6092, 6093, 6094, 6095, 6096, 6097, 6098, 6099, 6100, 6201, 6202, 6203, 6204, 6205, 6206, 6207, 6208, 6209, 6210, 6211, 6212, 6213, 6214, 6215, 6216, 6217, 6218, 6219, 6220, 6221, 6222, 6223, 6224, 6225, 6226, 6227, 6228, 6229, 6230, 6231, 6232, 6233, 6234, 6235, 6236, 6237, 6238, 6239, 6240, 6241, 6242, 6243, 6244, 6245, 6246, 6247, 6248, 6249, 6250, 6251, 6252, 6253, 6254, 6255, 6256, 6257, 6258, 6259, 6260, 6261, 6262, 6263, 6264, 6265, 6266, 6267, 6268, 6269, 6270, 6271, 6272, 6273, 6274, 6275, 6276, 6277, 6278, 6279, 6280, 6281, 6282, 6283, 6284, 6285, 6286, 6287, 6288, 6289, 6290, 6291, 6292, 6293, 6294, 6295, 6296, 6297, 6298, 6299, 6300}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    context.State = new StateTutorial(context);
-                    return;
+                    return new StateTutorial(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -31,11 +32,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.CameraSelectPath(arg1: new[] {8100, 8101, 8104, 8106, 8103, 8105, 8107, 8108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new StateTutorial_01(context);
-                    return;
+                    return new StateTutorial_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +50,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetSkip(arg1: "Tutorial_02");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9500)) {
-                    context.State = new StateTutorial_02(context);
-                    return;
+                    return new StateTutorial_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,11 +78,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.AddBuff(arg1: new[] {701}, arg2: 70000087, arg3: 1, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateStart(context);
-                    return;
+                    return new StateStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -111,11 +115,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 70000085, score: 1000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateStep_01(context);
-                    return;
+                    return new StateStep_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -130,16 +135,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.PlaySystemSoundInBox(arg2: "System_Fruit_Throw_Loop_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_02(context);
-                    return;
+                    return new StateStep_02(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -154,16 +159,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 2, roundDuration: 20000, timeScoreRate: 1033);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_03(context);
-                    return;
+                    return new StateStep_03(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -179,16 +184,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 3, roundDuration: 20000, timeScoreRate: 1033);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_04(context);
-                    return;
+                    return new StateStep_04(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -208,16 +213,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 4, roundDuration: 20000, timeScoreRate: 1550);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_05(context);
-                    return;
+                    return new StateStep_05(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -234,16 +239,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991104, key: "Round_01", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_06(context);
-                    return;
+                    return new StateStep_06(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -257,16 +262,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 6, roundDuration: 20000, timeScoreRate: 1550);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_07(context);
-                    return;
+                    return new StateStep_07(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -282,16 +287,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991102, key: "Treasure_box", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_08(context);
-                    return;
+                    return new StateStep_08(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -306,16 +311,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991121, key: "Round_01", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_09(context);
-                    return;
+                    return new StateStep_09(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -330,16 +335,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991122, key: "Round_01", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_10(context);
-                    return;
+                    return new StateStep_10(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -358,11 +363,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991106, key: "Round_01", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_11(context);
-                    return;
+                    return new StateStep_11(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -377,16 +383,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991106, key: "Round_02", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_12(context);
-                    return;
+                    return new StateStep_12(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -401,16 +407,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991106, key: "Round_03", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_13(context);
-                    return;
+                    return new StateStep_13(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -426,16 +432,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991105, key: "Round_01", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_14(context);
-                    return;
+                    return new StateStep_14(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -451,16 +457,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991108, key: "Round_03", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_15(context);
-                    return;
+                    return new StateStep_15(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -474,16 +480,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 15, roundDuration: 20000, timeScoreRate: 3100);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_16(context);
-                    return;
+                    return new StateStep_16(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -501,16 +507,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991105, key: "Round_02", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_17(context);
-                    return;
+                    return new StateStep_17(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -525,16 +531,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991106, key: "Round_05", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_18(context);
-                    return;
+                    return new StateStep_18(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -550,16 +556,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991122, key: "Round_02", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_19(context);
-                    return;
+                    return new StateStep_19(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -574,16 +580,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991107, key: "Round_06", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_20(context);
-                    return;
+                    return new StateStep_20(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -598,16 +604,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991123, key: "Round_04", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_21(context);
-                    return;
+                    return new StateStep_21(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -621,16 +627,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 21, roundDuration: 20000, timeScoreRate: 1125);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_22(context);
-                    return;
+                    return new StateStep_22(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -644,16 +650,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 22, roundDuration: 20000, timeScoreRate: 900);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_23(context);
-                    return;
+                    return new StateStep_23(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -667,16 +673,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 23, roundDuration: 20000, timeScoreRate: 900);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_24(context);
-                    return;
+                    return new StateStep_24(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -690,16 +696,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 24, roundDuration: 20000, timeScoreRate: 900);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new StateStep_25(context);
-                    return;
+                    return new StateStep_25(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -713,16 +719,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 25, roundDuration: 20000, timeScoreRate: 562);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 120000)) {
-                    context.State = new StateStep_26(context);
-                    return;
+                    return new StateStep_26(context);
                 }
 
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -736,11 +742,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "boomocean_10min");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -753,7 +760,9 @@ namespace Maple2.Trigger._51000003_dg {
                 context.ArcadeBoomBoomOcean(type: "EndGame");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

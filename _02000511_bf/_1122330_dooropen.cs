@@ -26,11 +26,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetUserValue(key: "StageClear05", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new StateLoadingDelay(context);
-                    return;
+                    return new StateLoadingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +42,12 @@ namespace Maple2.Trigger._02000511_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateDungeonStart(context);
-                    return;
+                    return new StateDungeonStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,11 +58,12 @@ namespace Maple2.Trigger._02000511_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new StateStageEnter(context);
-                    return;
+                    return new StateStageEnter(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -76,11 +79,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StageClear01") == 1) {
-                    context.State = new StateStageClear01(context);
-                    return;
+                    return new StateStageClear01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,11 +102,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetEffect(arg1: new[] {5002, 5100, 5101}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StageClear02") == 1) {
-                    context.State = new StateStageClear02(context);
-                    return;
+                    return new StateStageClear02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -120,11 +125,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetEffect(arg1: new[] {5003, 5200, 5201}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StageClear03") == 1) {
-                    context.State = new StateStageClear03(context);
-                    return;
+                    return new StateStageClear03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -142,11 +148,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetEffect(arg1: new[] {5004, 5300, 5301}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StageClear04") == 1) {
-                    context.State = new StateStageClear04(context);
-                    return;
+                    return new StateStageClear04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -164,11 +171,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetEffect(arg1: new[] {5005, 5400, 5401}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StageClear05") == 1) {
-                    context.State = new StateStageClear05(context);
-                    return;
+                    return new StateStageClear05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -186,11 +194,12 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetEffect(arg1: new[] {5006, 5500, 5501}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateBossStagePortalOpen(context);
-                    return;
+                    return new StateBossStagePortalOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -207,7 +216,9 @@ namespace Maple2.Trigger._02000511_bf {
                 context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

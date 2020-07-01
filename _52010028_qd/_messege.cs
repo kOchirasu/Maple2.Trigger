@@ -5,41 +5,36 @@ namespace Maple2.Trigger._52010028_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2003})) {
-                    context.State = new Statemessege(context);
-                    return;
+                    return new Statemessege(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {2004})) {
-                    context.State = new Statemessege(context);
-                    return;
+                    return new Statemessege(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {2005})) {
-                    context.State = new Statemessege(context);
-                    return;
+                    return new Statemessege(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {2006})) {
-                    context.State = new Statemessege(context);
-                    return;
+                    return new Statemessege(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {2007})) {
-                    context.State = new Statemessege(context);
-                    return;
+                    return new Statemessege(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {2008})) {
-                    context.State = new Statemessege(context);
-                    return;
+                    return new Statemessege(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {2009})) {
-                    context.State = new Statemessege(context);
-                    return;
+                    return new Statemessege(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -53,11 +48,12 @@ namespace Maple2.Trigger._52010028_qd {
                 context.SetEventUI(arg1: 1, arg2: "$52010028_QD__MESSEGE__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

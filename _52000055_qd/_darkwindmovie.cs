@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.CreateMonster(arg1: new[] {101, 104, 200, 201, 202, 203, 204, 205}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60100235}, arg3: new byte[] {1})) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.MoveUser(arg1: 52000055, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new StateCameraEffect01(context);
-                    return;
+                    return new StateCameraEffect01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetProductionUI(arg1: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCameraEffect02(context);
-                    return;
+                    return new StateCameraEffect02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +62,12 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCameraEffect03(context);
-                    return;
+                    return new StateCameraEffect03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,11 +84,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetSceneSkip(arg1: "Quit", arg2: "exit");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCameraEffect4(context);
-                    return;
+                    return new StateCameraEffect4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,11 +102,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.CameraSelect(arg1: 102, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateCameraEffect5(context);
-                    return;
+                    return new StateCameraEffect5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -114,11 +120,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCameraEffect6(context);
-                    return;
+                    return new StateCameraEffect6(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -132,11 +139,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.CameraSelect(arg1: 103, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateCameraEffect7(context);
-                    return;
+                    return new StateCameraEffect7(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -149,11 +157,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.CameraSelect(arg1: 104, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7500)) {
-                    context.State = new StateCameraEffect8(context);
-                    return;
+                    return new StateCameraEffect8(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -168,11 +177,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetProductionUI(arg1: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateCameraEffect9(context);
-                    return;
+                    return new StateCameraEffect9(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -189,11 +199,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11001896, arg3: "$52000055_QD__DARKWINDMOVIE__0$", arg4: 7);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateCityWarfareTalk2(context);
-                    return;
+                    return new StateCityWarfareTalk2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -208,11 +219,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.CameraSelectPath(arg1: new[] {106, 128}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk3(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk3(context);
             }
 
             public override void OnExit() { }
@@ -226,11 +234,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__1$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    context.State = new StateCityWarfareTalk4(context);
-                    return;
+                    return new StateCityWarfareTalk4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -244,11 +253,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.CameraSelectPath(arg1: new[] {105, 127}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk5(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk5(context);
             }
 
             public override void OnExit() { }
@@ -262,11 +268,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11000259, arg3: "$52000055_QD__DARKWINDMOVIE__2$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    context.State = new StateCityWarfareTalk6(context);
-                    return;
+                    return new StateCityWarfareTalk6(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -280,11 +287,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.CameraSelectPath(arg1: new[] {107, 129}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk7(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk7(context);
             }
 
             public override void OnExit() { }
@@ -297,11 +301,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11000259, arg3: "$52000055_QD__DARKWINDMOVIE__3$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5500)) {
-                    context.State = new StateCityWarfareTalk8(context);
-                    return;
+                    return new StateCityWarfareTalk8(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -315,11 +320,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.CameraSelectPath(arg1: new[] {109, 110, 111}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCameraEffect109(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCameraEffect109(context);
             }
 
             public override void OnExit() { }
@@ -334,11 +336,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11001896, arg3: "$52000055_QD__DARKWINDMOVIE__4$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6500)) {
-                    context.State = new StateCityWarfareTalk10(context);
-                    return;
+                    return new StateCityWarfareTalk10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -352,11 +355,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetOnetimeEffect(id: 11100103, enable: false, path: @"BG/Common/Sound/Eff_Object_CityWar_SystemErrorAlarm_01.xml");
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk11(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk11(context);
             }
 
             public override void OnExit() { }
@@ -370,11 +370,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11000259, arg3: "$52000055_QD__DARKWINDMOVIE__5$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk12(context);
-                    return;
+                    return new StateCityWarfareTalk12(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -387,11 +388,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCameraEffect13(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCameraEffect13(context);
             }
 
             public override void OnExit() { }
@@ -407,11 +405,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__6$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateCityWarfareTalk14(context);
-                    return;
+                    return new StateCityWarfareTalk14(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -424,11 +423,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk15(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk15(context);
             }
 
             public override void OnExit() { }
@@ -443,11 +439,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11000259, arg3: "$52000055_QD__DARKWINDMOVIE__7$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk16(context);
-                    return;
+                    return new StateCityWarfareTalk16(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -460,11 +457,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk17(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk17(context);
             }
 
             public override void OnExit() { }
@@ -477,11 +471,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11000215, arg3: "$52000055_QD__DARKWINDMOVIE__8$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    context.State = new StateCityWarfareTalk18(context);
-                    return;
+                    return new StateCityWarfareTalk18(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -495,11 +490,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.CameraSelectPath(arg1: new[] {117, 118}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk19(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk19(context);
             }
 
             public override void OnExit() { }
@@ -513,11 +505,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__9$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    context.State = new StateCityWarfareTalk20(context);
-                    return;
+                    return new StateCityWarfareTalk20(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -531,11 +524,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__10$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateCityWarfareTalk20b(context);
-                    return;
+                    return new StateCityWarfareTalk20b(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -548,11 +542,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk21(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk21(context);
             }
 
             public override void OnExit() { }
@@ -566,11 +557,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.CameraSelectPath(arg1: new[] {121, 122}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateCityWarfareTalk22(context);
-                    return;
+                    return new StateCityWarfareTalk22(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -583,11 +575,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk23(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk23(context);
             }
 
             public override void OnExit() { }
@@ -602,11 +591,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__11$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk24(context);
-                    return;
+                    return new StateCityWarfareTalk24(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -619,11 +609,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk25(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk25(context);
             }
 
             public override void OnExit() { }
@@ -637,11 +624,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11000215, arg3: "$52000055_QD__DARKWINDMOVIE__12$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk26(context);
-                    return;
+                    return new StateCityWarfareTalk26(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -654,11 +642,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk27(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk27(context);
             }
 
             public override void OnExit() { }
@@ -673,11 +658,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__13$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk28(context);
-                    return;
+                    return new StateCityWarfareTalk28(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -690,11 +676,8 @@ namespace Maple2.Trigger._52000055_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk29(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk29(context);
             }
 
             public override void OnExit() { }
@@ -709,11 +692,12 @@ namespace Maple2.Trigger._52000055_qd {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -730,7 +714,9 @@ namespace Maple2.Trigger._52000055_qd {
                 context.MoveUser(arg1: 52000067, arg2: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

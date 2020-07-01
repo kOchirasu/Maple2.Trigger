@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
-                    context.State = new State타이머(context);
-                    return;
+                    return new State타이머(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,13 +23,14 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 28000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02000410_BF__BARRICADE_GIVEUP_0$", arg3: 5000);
                     context.DungeonEnableGiveUp(isEnable: true);
-                    context.State = new State입구포탈제거(context);
-                    return;
+                    return new State입구포탈제거(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,12 +41,13 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
                     context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
-                    context.State = new State보스HP체크(context);
-                    return;
+                    return new State보스HP체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,14 +58,15 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (Math.Abs(context.GetNpcDamageRate(spawnPointId: 102) - 1.0) < 0.00001f) {
                     context.AddBuff(arg1: new[] {102}, arg2: 50004522, arg3: 1, arg4: true);
                     context.DungeonMissionComplete(feature: "DungeonRankBalance_01", missionId: 24090004);
                     context.DungeonMissionComplete(feature: "DungeonRankBalance_02", missionId: 24090014);
-                    context.State = new State메시지알림(context);
-                    return;
+                    return new State메시지알림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,11 +79,12 @@ namespace Maple2.Trigger._02000410_bf {
                 context.ShowGuideSummary(entityId: 20041005, textId: 20041005);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -92,7 +97,9 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

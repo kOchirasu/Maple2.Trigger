@@ -5,18 +5,18 @@ namespace Maple2.Trigger._02000298_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {109})) {
                     context.CreateMonster(arg1: new[] {1008}, arg2: false);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {110})) {
                     context.CreateMonster(arg1: new[] {1008}, arg2: false);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +29,13 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetTimer(arg1: "1800000", arg2: 1800000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1800000")) {
-                    // context.State = new State종료2(context);
-                    return;
+                    // return new State종료2(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

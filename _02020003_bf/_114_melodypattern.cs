@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetUserValue(key: "Reset", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "PatternPick") == 1) {
-                    context.State = new StateMelodyPlay01_Start(context);
-                    return;
+                    return new StateMelodyPlay01_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetActor(arg1: 11005, arg2: true, arg3: "ks_quest_musical_B01_blue");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMelodyPlay01_End(context);
-                    return;
+                    return new StateMelodyPlay01_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetActor(arg1: 11005, arg2: true, arg3: "ks_quest_musical_B01_off");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMelodyPlay02_Start(context);
-                    return;
+                    return new StateMelodyPlay02_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +66,12 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetActor(arg1: 11003, arg2: true, arg3: "ks_quest_musical_B01_yellow");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMelodyPlay02_End(context);
-                    return;
+                    return new StateMelodyPlay02_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,11 +84,12 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetActor(arg1: 11003, arg2: true, arg3: "ks_quest_musical_B01_off");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMelodyPlay03_Start(context);
-                    return;
+                    return new StateMelodyPlay03_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,11 +103,12 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetActor(arg1: 11005, arg2: true, arg3: "ks_quest_musical_B01_blue");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMelodyPlay03_End(context);
-                    return;
+                    return new StateMelodyPlay03_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,11 +121,12 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetActor(arg1: 11005, arg2: true, arg3: "ks_quest_musical_B01_off");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMelodyPlay04_Start(context);
-                    return;
+                    return new StateMelodyPlay04_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -133,11 +140,12 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetActor(arg1: 11003, arg2: true, arg3: "ks_quest_musical_B01_yellow");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMelodyPlay04_End(context);
-                    return;
+                    return new StateMelodyPlay04_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -150,11 +158,12 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetActor(arg1: 11003, arg2: true, arg3: "ks_quest_musical_B01_off");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMelodyPlay05_Start(context);
-                    return;
+                    return new StateMelodyPlay05_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -168,11 +177,12 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetActor(arg1: 11002, arg2: true, arg3: "ks_quest_musical_B01_orange");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMelodyPlay05_End(context);
-                    return;
+                    return new StateMelodyPlay05_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -185,11 +195,12 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetActor(arg1: 11002, arg2: true, arg3: "ks_quest_musical_B01_off");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCheckAnswer01_Start(context);
-                    return;
+                    return new StateCheckAnswer01_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -218,51 +229,44 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetUserValue(triggerId: 11008, key: "PlayHighC", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000058}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000059}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000060}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000061}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000062}, arg2: 0)) {
-                    context.State = new StateCheckAnswer01_Delay(context);
-                    return;
+                    return new StateCheckAnswer01_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000063}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000064}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000065}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -273,16 +277,16 @@ namespace Maple2.Trigger._02020003_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateCheckAnswer02_Start(context);
-                    return;
+                    return new StateCheckAnswer02_Start(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -295,51 +299,44 @@ namespace Maple2.Trigger._02020003_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000058}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000059}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000060}, arg2: 0)) {
-                    context.State = new StateCheckAnswer02_Delay(context);
-                    return;
+                    return new StateCheckAnswer02_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000061}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000062}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000063}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000064}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000065}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -350,16 +347,16 @@ namespace Maple2.Trigger._02020003_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateCheckAnswer03_Start(context);
-                    return;
+                    return new StateCheckAnswer03_Start(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -372,51 +369,44 @@ namespace Maple2.Trigger._02020003_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000058}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000059}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000060}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000061}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000062}, arg2: 0)) {
-                    context.State = new StateCheckAnswer03_Delay(context);
-                    return;
+                    return new StateCheckAnswer03_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000063}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000064}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000065}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -427,16 +417,16 @@ namespace Maple2.Trigger._02020003_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateCheckAnswer04_Start(context);
-                    return;
+                    return new StateCheckAnswer04_Start(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -449,51 +439,44 @@ namespace Maple2.Trigger._02020003_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000058}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000059}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000060}, arg2: 0)) {
-                    context.State = new StateCheckAnswer04_Delay(context);
-                    return;
+                    return new StateCheckAnswer04_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000061}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000062}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000063}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000064}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000065}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -504,16 +487,16 @@ namespace Maple2.Trigger._02020003_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateCheckAnswer05_Start(context);
-                    return;
+                    return new StateCheckAnswer05_Start(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -526,51 +509,44 @@ namespace Maple2.Trigger._02020003_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000058}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000059}, arg2: 0)) {
-                    context.State = new StateCheckAnswer05_Delay(context);
-                    return;
+                    return new StateCheckAnswer05_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000060}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000061}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000062}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000063}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000064}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000065}, arg2: 0)) {
-                    context.State = new StateAnswerIsWrong_Delay(context);
-                    return;
+                    return new StateAnswerIsWrong_Delay(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -581,16 +557,16 @@ namespace Maple2.Trigger._02020003_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateAnswerIsRight(context);
-                    return;
+                    return new StateAnswerIsRight(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -614,11 +590,12 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetInteractObject(arg1: new[] {12000058, 12000059, 12000060, 12000061, 12000062, 12000063, 12000064, 12000065}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -639,16 +616,16 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetUserValue(triggerId: 11008, key: "PlayHighC", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateAnswerIsWrong(context);
-                    return;
+                    return new StateAnswerIsWrong(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -662,16 +639,16 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetInteractObject(arg1: new[] {12000058, 12000059, 12000060, 12000061, 12000062, 12000063, 12000064, 12000065}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
 
                 if (context.GetUserValue(key: "Reset") == 0) {
-                    context.State = new StateMelodyPlay01_ReStartDelay01(context);
-                    return;
+                    return new StateMelodyPlay01_ReStartDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -682,16 +659,16 @@ namespace Maple2.Trigger._02020003_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMelodyPlay01_ReStartDelay02(context);
-                    return;
+                    return new StateMelodyPlay01_ReStartDelay02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -712,16 +689,16 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetActor(arg1: 11008, arg2: true, arg3: "ks_quest_musical_B01_pink");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateStartMelodyQuiz_Delay03(context);
-                    return;
+                    return new StateStartMelodyQuiz_Delay03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -741,16 +718,16 @@ namespace Maple2.Trigger._02020003_bf {
                 context.SetActor(arg1: 11008, arg2: true, arg3: "ks_quest_musical_B01_off");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Reset") == 1) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateMelodyPlay01_Start(context);
-                    return;
+                    return new StateMelodyPlay01_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -761,11 +738,12 @@ namespace Maple2.Trigger._02020003_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

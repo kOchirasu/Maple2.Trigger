@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn_phase_1") == 1) {
-                    context.State = new State전투페이즈(context);
-                    return;
+                    return new State전투페이즈(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._52020016_qd {
                 context.CreateMonster(arg1: new[] {4000006}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {4000006})) {
-                    context.State = new State몬스터리젠(context);
-                    return;
+                    return new State몬스터리젠(context);
                 }
 
                 if (context.GetUserValue(key: "respawn_phase_1_end") == 1) {
-                    context.State = new State끝(context);
-                    return;
+                    return new State끝(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,16 +45,16 @@ namespace Maple2.Trigger._52020016_qd {
                 context.CreateMonster(arg1: new[] {4000008}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {4000008})) {
-                    context.State = new State전투페이즈(context);
-                    return;
+                    return new State전투페이즈(context);
                 }
 
                 if (context.GetUserValue(key: "respawn_phase_1_end") == 1) {
-                    context.State = new State끝(context);
-                    return;
+                    return new State끝(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -67,8 +68,10 @@ namespace Maple2.Trigger._52020016_qd {
                 context.DestroyMonster(arg1: new[] {4000008}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) { }
+
+                return null;
             }
 
             public override void OnExit() { }

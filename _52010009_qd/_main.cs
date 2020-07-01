@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52010009_qd {
                 context.SetInteractObject(arg1: new[] {10000866, 10000880, 10000915}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {20002091}, arg3: new byte[] {1})) {
-                    context.State = new StateEvent_01_Idle(context);
-                    return;
+                    return new StateEvent_01_Idle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._52010009_qd {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateEvent_01(context);
-                    return;
+                    return new StateEvent_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._52010009_qd {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new StateEvent_02(context);
-                    return;
+                    return new StateEvent_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -64,11 +67,12 @@ namespace Maple2.Trigger._52010009_qd {
                 context.ShowGuideSummary(entityId: 111, textId: 25201901);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000866}, arg2: 0)) {
-                    context.State = new StateEvent_03(context);
-                    return;
+                    return new StateEvent_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -88,11 +92,12 @@ namespace Maple2.Trigger._52010009_qd {
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {102})) {
-                    context.State = new StateEvent_04(context);
-                    return;
+                    return new StateEvent_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -109,11 +114,12 @@ namespace Maple2.Trigger._52010009_qd {
                 context.ShowGuideSummary(entityId: 111, textId: 25201901);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000880}, arg2: 0)) {
-                    context.State = new StateEvent_05(context);
-                    return;
+                    return new StateEvent_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -133,11 +139,12 @@ namespace Maple2.Trigger._52010009_qd {
                 context.CreateMonster(arg1: new[] {103}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {103})) {
-                    context.State = new StateEvent_06(context);
-                    return;
+                    return new StateEvent_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -154,11 +161,12 @@ namespace Maple2.Trigger._52010009_qd {
                 context.ShowGuideSummary(entityId: 111, textId: 25201901);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000915}, arg2: 0)) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -176,7 +184,9 @@ namespace Maple2.Trigger._52010009_qd {
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "findrepairman");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

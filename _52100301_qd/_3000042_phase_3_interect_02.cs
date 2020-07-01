@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52100301_qd {
                 context.SetEffect(arg1: new[] {200011, 200012, 200013, 200014}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Phase_3_Interect_02") == 1) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._52100301_qd {
                 context.AddBuff(arg1: new[] {1003}, arg2: 62100168, arg3: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State인터렉트_설정(context);
-                    return;
+                    return new State인터렉트_설정(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,16 +44,16 @@ namespace Maple2.Trigger._52100301_qd {
                 context.SetInteractObject(arg1: new[] {10003121}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10003121}, arg2: 0)) {
-                    context.State = new State인터렉트_동작(context);
-                    return;
+                    return new State인터렉트_동작(context);
                 }
 
                 if (context.GetUserValue(key: "Phase_3_Interect_02") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,16 +67,16 @@ namespace Maple2.Trigger._52100301_qd {
                 context.SetAiExtraData(key: "Shoot_Cannon_2", value: 1, isModify: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State인터렉트_리셋(context);
-                    return;
+                    return new State인터렉트_리셋(context);
                 }
 
                 if (context.GetUserValue(key: "Phase_3_Interect_02") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -87,16 +89,16 @@ namespace Maple2.Trigger._52100301_qd {
                 context.SetAiExtraData(key: "Shoot_Cannon_2", value: 0, isModify: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new State인터렉트_설정(context);
-                    return;
+                    return new State인터렉트_설정(context);
                 }
 
                 if (context.GetUserValue(key: "Phase_3_Interect_02") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

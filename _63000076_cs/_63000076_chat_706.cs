@@ -5,11 +5,12 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {706})) {
-                    context.State = new State706잡담_01(context);
-                    return;
+                    return new State706잡담_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._63000076_cs {
                 context.AddBalloonTalk(spawnPointId: 118, msg: "$63000076_CS__63000076_CHAT_706__0$", duration: 2500, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,7 +39,9 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000498_bf {
                 context.SetEffect(arg1: new[] {640, 650, 6501, 6502}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {105})) {
-                    context.State = new State시작대기(context);
-                    return;
+                    return new State시작대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._02000498_bf {
                 context.DarkStream(type: "StartRound", round: 21, uiDuration: 3000, damagePenalty: 100);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State21라운드(context);
-                    return;
+                    return new State21라운드(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,13 +48,14 @@ namespace Maple2.Trigger._02000498_bf {
                 context.DarkStream(type: "SpawnMonster", spawnId: new[] {121001}, score: 110000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {121001})) {
                     context.DarkStream(type: "ClearRound", round: 21);
                     context.SetAchievement(arg1: 105, arg2: "trigger", arg3: "21roundpass");
-                    context.State = new State22라운드대기(context);
-                    return;
+                    return new State22라운드대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -67,11 +70,12 @@ namespace Maple2.Trigger._02000498_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State22라운드(context);
-                    return;
+                    return new State22라운드(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -84,13 +88,14 @@ namespace Maple2.Trigger._02000498_bf {
                 context.DarkStream(type: "SpawnMonster", spawnId: new[] {122001, 122002, 122003}, score: 70000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {122001, 122002, 122003})) {
                     context.DarkStream(type: "ClearRound", round: 22);
                     context.SetAchievement(arg1: 105, arg2: "trigger", arg3: "22roundpass");
-                    context.State = new State23라운드대기(context);
-                    return;
+                    return new State23라운드대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -105,11 +110,12 @@ namespace Maple2.Trigger._02000498_bf {
                 context.DarkStream(type: "StartRound", round: 23, uiDuration: 3000, damagePenalty: 100);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State23라운드(context);
-                    return;
+                    return new State23라운드(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -122,13 +128,14 @@ namespace Maple2.Trigger._02000498_bf {
                 context.DarkStream(type: "SpawnMonster", spawnId: new[] {123001}, score: 80000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {123001})) {
                     context.DarkStream(type: "ClearRound", round: 23);
                     context.SetAchievement(arg1: 105, arg2: "trigger", arg3: "23roundpass");
-                    context.State = new State24라운드대기(context);
-                    return;
+                    return new State24라운드대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -144,11 +151,12 @@ namespace Maple2.Trigger._02000498_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State24라운드(context);
-                    return;
+                    return new State24라운드(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -162,15 +170,16 @@ namespace Maple2.Trigger._02000498_bf {
                 context.CreateMonster(arg1: new[] {124099}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "30")) {
                     context.DestroyMonster(arg1: new[] {124099});
                     context.ResetTimer(arg1: "30");
                     context.DarkStream(type: "ClearRound", round: 24);
                     context.SetAchievement(arg1: 105, arg2: "trigger", arg3: "24roundpass");
-                    context.State = new State25라운드대기(context);
-                    return;
+                    return new State25라운드대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -186,11 +195,12 @@ namespace Maple2.Trigger._02000498_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State25라운드(context);
-                    return;
+                    return new State25라운드(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -203,13 +213,14 @@ namespace Maple2.Trigger._02000498_bf {
                 context.DarkStream(type: "SpawnMonster", spawnId: new[] {125001, 125002}, score: 750000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {125001, 125002})) {
                     context.DarkStream(type: "ClearRound", round: 25);
                     context.SetAchievement(arg1: 105, arg2: "trigger", arg3: "25roundpass");
-                    context.State = new State바닥부심(context);
-                    return;
+                    return new State바닥부심(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -223,14 +234,15 @@ namespace Maple2.Trigger._02000498_bf {
                 context.SetEffect(arg1: new[] {600}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.SetEffect(arg1: new[] {650}, arg2: true);
                     context.SetSkill(arg1: new[] {706}, arg2: true);
                     context.SetMesh(arg1: new[] {3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416, 3417, 3418, 3419, 3420, 3421, 3422, 3423, 3424}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -241,7 +253,9 @@ namespace Maple2.Trigger._02000498_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

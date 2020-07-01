@@ -5,16 +5,16 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 90099, arg2: new[] {150})) {
-                    context.State = new State1차타이머(context);
-                    return;
+                    return new State1차타이머(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {999})) {
-                    context.State = new State게임오버(context);
-                    return;
+                    return new State게임오버(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +27,12 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetTimer(arg1: "30", arg2: 30);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "30")) {
-                    context.State = new State돌격(context);
-                    return;
+                    return new State돌격(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +49,12 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State카메라복구(context);
-                    return;
+                    return new State카메라복구(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -69,7 +71,9 @@ namespace Maple2.Trigger._02000334_bf {
                 context.CameraSelectPath(arg1: new[] {8017}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -79,7 +83,9 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

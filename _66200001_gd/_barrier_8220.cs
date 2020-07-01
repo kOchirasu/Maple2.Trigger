@@ -9,31 +9,28 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001190, 10001206}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Barrier22") == 1) {
-                    context.State = new StateSensor7221(context);
-                    return;
+                    return new StateSensor7221(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 2) {
-                    context.State = new StateSensor7222(context);
-                    return;
+                    return new StateSensor7222(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 3) {
-                    context.State = new StateSensor7223(context);
-                    return;
+                    return new StateSensor7223(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 4) {
-                    context.State = new StateSensor7224(context);
-                    return;
+                    return new StateSensor7224(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 5) {
-                    context.State = new StateSensor7225(context);
-                    return;
+                    return new StateSensor7225(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,16 +43,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) == 1) {
-                    context.State = new StateActivate7221(context);
-                    return;
+                    return new StateActivate7221(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -68,16 +65,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) != 1) {
-                    context.State = new StateSensor7221(context);
-                    return;
+                    return new StateSensor7221(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -93,16 +90,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001190, 10001206}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) == 2) {
-                    context.State = new StateSafeGreen7222(context);
-                    return;
+                    return new StateSafeGreen7222(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,21 +112,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) == 2) {
-                    context.State = new StateCheckSameUserTag7222(context);
-                    return;
+                    return new StateCheckSameUserTag7222(context);
                 }
 
                 if (context.GetUserCount(boxId: 9220) != 2) {
-                    context.State = new StateSensor7222(context);
-                    return;
+                    return new StateSensor7222(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -140,26 +136,24 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckSameUserTag(triggerBoxId: 9220) && context.GetUserCount(boxId: 9220) == 2) {
-                    context.State = new StateEnable7222(context);
-                    return;
+                    return new StateEnable7222(context);
                 }
 
                 if (context.GetUserCount(boxId: 9220) != 2) {
-                    context.State = new StateSensor7222(context);
-                    return;
+                    return new StateSensor7222(context);
                 }
 
                 if (!context.CheckSameUserTag(triggerBoxId: 9220)) {
-                    context.State = new StateSafeGreen7222(context);
-                    return;
+                    return new StateSafeGreen7222(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -173,21 +167,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001190}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001190}, arg2: 0)) {
-                    context.State = new StateActivate7222(context);
-                    return;
+                    return new StateActivate7222(context);
                 }
 
                 if (context.GetUserCount(boxId: 9220) != 2) {
-                    context.State = new StateSensor7222(context);
-                    return;
+                    return new StateSensor7222(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -202,21 +195,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001190}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) != 2) {
-                    context.State = new StateSensor7222(context);
-                    return;
+                    return new StateSensor7222(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDelay7222(context);
-                    return;
+                    return new StateDelay7222(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -229,21 +221,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001206}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) != 2) {
-                    context.State = new StateSensor7222(context);
-                    return;
+                    return new StateSensor7222(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001206}, arg2: 0)) {
-                    context.State = new StateDeActivate7222(context);
-                    return;
+                    return new StateDeActivate7222(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -257,16 +248,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSensor7222(context);
-                    return;
+                    return new StateSensor7222(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -282,16 +273,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001190, 10001206}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) == 3) {
-                    context.State = new StateSafeGreen7223(context);
-                    return;
+                    return new StateSafeGreen7223(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -304,21 +295,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) == 3) {
-                    context.State = new StateCheckSameUserTag7223(context);
-                    return;
+                    return new StateCheckSameUserTag7223(context);
                 }
 
                 if (context.GetUserCount(boxId: 9220) != 3) {
-                    context.State = new StateSensor7223(context);
-                    return;
+                    return new StateSensor7223(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -329,26 +319,24 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckSameUserTag(triggerBoxId: 9220) && context.GetUserCount(boxId: 9220) == 3) {
-                    context.State = new StateEnable7223(context);
-                    return;
+                    return new StateEnable7223(context);
                 }
 
                 if (context.GetUserCount(boxId: 9220) != 3) {
-                    context.State = new StateSensor7223(context);
-                    return;
+                    return new StateSensor7223(context);
                 }
 
                 if (!context.CheckSameUserTag(triggerBoxId: 9220)) {
-                    context.State = new StateSafeGreen7223(context);
-                    return;
+                    return new StateSafeGreen7223(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -362,21 +350,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001190}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001190}, arg2: 0)) {
-                    context.State = new StateActivate7223(context);
-                    return;
+                    return new StateActivate7223(context);
                 }
 
                 if (context.GetUserCount(boxId: 9220) != 3) {
-                    context.State = new StateSensor7223(context);
-                    return;
+                    return new StateSensor7223(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -391,21 +378,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001190}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) != 3) {
-                    context.State = new StateSensor7223(context);
-                    return;
+                    return new StateSensor7223(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDelay7223(context);
-                    return;
+                    return new StateDelay7223(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -418,21 +404,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001206}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) != 3) {
-                    context.State = new StateSensor7223(context);
-                    return;
+                    return new StateSensor7223(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001206}, arg2: 0)) {
-                    context.State = new StateDeActivate7223(context);
-                    return;
+                    return new StateDeActivate7223(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -446,16 +431,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSensor7223(context);
-                    return;
+                    return new StateSensor7223(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -471,16 +456,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001190, 10001206}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) == 4) {
-                    context.State = new StateSafeGreen7224(context);
-                    return;
+                    return new StateSafeGreen7224(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -493,21 +478,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) == 4) {
-                    context.State = new StateCheckSameUserTag7224(context);
-                    return;
+                    return new StateCheckSameUserTag7224(context);
                 }
 
                 if (context.GetUserCount(boxId: 9220) != 4) {
-                    context.State = new StateSensor7224(context);
-                    return;
+                    return new StateSensor7224(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -518,26 +502,24 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckSameUserTag(triggerBoxId: 9220) && context.GetUserCount(boxId: 9220) == 4) {
-                    context.State = new StateEnable7224(context);
-                    return;
+                    return new StateEnable7224(context);
                 }
 
                 if (context.GetUserCount(boxId: 9220) != 4) {
-                    context.State = new StateSensor7224(context);
-                    return;
+                    return new StateSensor7224(context);
                 }
 
                 if (!context.CheckSameUserTag(triggerBoxId: 9220)) {
-                    context.State = new StateSafeGreen7224(context);
-                    return;
+                    return new StateSafeGreen7224(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -551,21 +533,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001190}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001190}, arg2: 0)) {
-                    context.State = new StateActivate7224(context);
-                    return;
+                    return new StateActivate7224(context);
                 }
 
                 if (context.GetUserCount(boxId: 9220) != 4) {
-                    context.State = new StateSensor7224(context);
-                    return;
+                    return new StateSensor7224(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -580,21 +561,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001190}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) != 4) {
-                    context.State = new StateSensor7224(context);
-                    return;
+                    return new StateSensor7224(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDelay7224(context);
-                    return;
+                    return new StateDelay7224(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -607,21 +587,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001206}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) != 4) {
-                    context.State = new StateSensor7224(context);
-                    return;
+                    return new StateSensor7224(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001206}, arg2: 0)) {
-                    context.State = new StateDeActivate7224(context);
-                    return;
+                    return new StateDeActivate7224(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -635,16 +614,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSensor7224(context);
-                    return;
+                    return new StateSensor7224(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -660,16 +639,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001190, 10001206}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) == 5) {
-                    context.State = new StateSafeGreen7225(context);
-                    return;
+                    return new StateSafeGreen7225(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -682,21 +661,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 7220, key: "Color22", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) == 5) {
-                    context.State = new StateCheckSameUserTag7225(context);
-                    return;
+                    return new StateCheckSameUserTag7225(context);
                 }
 
                 if (context.GetUserCount(boxId: 9220) != 5) {
-                    context.State = new StateSensor7225(context);
-                    return;
+                    return new StateSensor7225(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -707,26 +685,24 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.CheckSameUserTag(triggerBoxId: 9220) && context.GetUserCount(boxId: 9220) == 5) {
-                    context.State = new StateEnable7225(context);
-                    return;
+                    return new StateEnable7225(context);
                 }
 
                 if (context.GetUserCount(boxId: 9220) != 5) {
-                    context.State = new StateSensor7225(context);
-                    return;
+                    return new StateSensor7225(context);
                 }
 
                 if (!context.CheckSameUserTag(triggerBoxId: 9220)) {
-                    context.State = new StateSafeGreen7225(context);
-                    return;
+                    return new StateSafeGreen7225(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -740,21 +716,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001190}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001190}, arg2: 0)) {
-                    context.State = new StateActivate7225(context);
-                    return;
+                    return new StateActivate7225(context);
                 }
 
                 if (context.GetUserCount(boxId: 9220) != 5) {
-                    context.State = new StateSensor7225(context);
-                    return;
+                    return new StateSensor7225(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -769,21 +744,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001190}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) != 5) {
-                    context.State = new StateSensor7225(context);
-                    return;
+                    return new StateSensor7225(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDelay7225(context);
-                    return;
+                    return new StateDelay7225(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -796,21 +770,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetInteractObject(arg1: new[] {10001206}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9220) != 5) {
-                    context.State = new StateSensor7225(context);
-                    return;
+                    return new StateSensor7225(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001206}, arg2: 0)) {
-                    context.State = new StateDeActivate7225(context);
-                    return;
+                    return new StateDeActivate7225(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -824,16 +797,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetMesh(arg1: new[] {8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSensor7225(context);
-                    return;
+                    return new StateSensor7225(context);
                 }
 
                 if (context.GetUserValue(key: "Barrier22") == 10) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -849,11 +822,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "Barrier22", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

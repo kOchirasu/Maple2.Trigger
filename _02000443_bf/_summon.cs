@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000443_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "special_1") == 1) {
-                    context.State = new Statespecial_1_2(context);
-                    return;
+                    return new Statespecial_1_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statespecial_2_1(context);
-                    return;
+                    return new Statespecial_2_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "special_2") == 1) {
-                    context.State = new Statespecial_2_2(context);
-                    return;
+                    return new Statespecial_2_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,11 +59,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new Statespecial_3_1(context);
-                    return;
+                    return new Statespecial_3_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,11 +77,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "special_3") == 1) {
-                    context.State = new Statespecial_3_2(context);
-                    return;
+                    return new Statespecial_3_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,11 +95,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new Statespecial_4_1(context);
-                    return;
+                    return new Statespecial_4_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -107,11 +113,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "special_4") == 1) {
-                    context.State = new Statespecial_4_2(context);
-                    return;
+                    return new Statespecial_4_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -124,11 +131,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new Statespecial_5_1(context);
-                    return;
+                    return new Statespecial_5_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -141,11 +149,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "special_5") == 1) {
-                    context.State = new Statespecial_5_2(context);
-                    return;
+                    return new Statespecial_5_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -158,11 +167,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -175,8 +185,10 @@ namespace Maple2.Trigger._02000443_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) { }
+
+                return null;
             }
 
             public override void OnExit() { }

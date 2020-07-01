@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02010087_bf {
                 context.SetEffect(arg1: new[] {7310}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    context.State = new State폭발01(context);
-                    return;
+                    return new State폭발01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02010087_bf {
                 context.SetSkill(arg1: new[] {8301}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 702) == 1) {
-                    context.State = new State폭발02(context);
-                    return;
+                    return new State폭발02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._02010087_bf {
                 context.SetSkill(arg1: new[] {8302}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 703) == 1) {
-                    context.State = new State폭발03(context);
-                    return;
+                    return new State폭발03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +66,12 @@ namespace Maple2.Trigger._02010087_bf {
                 context.SetSkill(arg1: new[] {8303, 8304}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 704) == 1) {
-                    context.State = new State폭발04(context);
-                    return;
+                    return new State폭발04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,11 +85,12 @@ namespace Maple2.Trigger._02010087_bf {
                 context.SetSkill(arg1: new[] {8305}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 705) == 1) {
-                    context.State = new State폭발04(context);
-                    return;
+                    return new State폭발04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

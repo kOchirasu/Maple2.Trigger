@@ -15,11 +15,12 @@ namespace Maple2.Trigger._02000390_bf {
                 context.SetLocalCamera(cameraId: 8001, enable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {701})) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,16 +31,16 @@ namespace Maple2.Trigger._02000390_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    context.State = new StatedungeonReady(context);
-                    return;
+                    return new StatedungeonReady(context);
                 }
 
                 if (!context.IsDungeonRoom()) {
-                    context.State = new StatequestReady(context);
-                    return;
+                    return new StatequestReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -57,11 +58,12 @@ namespace Maple2.Trigger._02000390_bf {
                 context.EnableSpawnPointPc(spawnPointId: 11002, isEnable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statescene_01(context);
-                    return;
+                    return new Statescene_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,21 +81,20 @@ namespace Maple2.Trigger._02000390_bf {
                 context.EnableSpawnPointPc(spawnPointId: 11002, isEnable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statescene_01(context);
-                    return;
+                    return new Statescene_01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001517}, arg3: new byte[] {2})) {
-                    context.State = new StateQuestEnd(context);
-                    return;
+                    return new StateQuestEnd(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518}, arg3: new byte[] {1})) {
-                    context.State = new StateQuestEnd(context);
-                    return;
+                    return new StateQuestEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -106,7 +107,9 @@ namespace Maple2.Trigger._02000390_bf {
                 context.DestroyMonster(arg1: new[] {210, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -119,11 +122,12 @@ namespace Maple2.Trigger._02000390_bf {
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000390_BF__MAIN__1$", arg4: 2, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statescene_02(context);
-                    return;
+                    return new Statescene_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -139,7 +143,9 @@ namespace Maple2.Trigger._02000390_bf {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2006");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

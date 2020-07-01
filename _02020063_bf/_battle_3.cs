@@ -13,11 +13,12 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SetUserValue(triggerId: 99990014, key: "Battle3_TurretSpawn_4", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_3_Start") == 1) {
-                    context.State = new State보스_추가대사(context);
-                    return;
+                    return new State보스_추가대사(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,12 +29,13 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02020063_BF__BATTLE_3__0$", arg3: 5000);
-                    context.State = new State보스소환(context);
-                    return;
+                    return new State보스소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,21 +48,20 @@ namespace Maple2.Trigger._02020063_bf {
                 context.CreateMonster(arg1: new[] {921}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_3_Start") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {921})) {
-                    context.State = new State보스군단_클리어(context);
-                    return;
+                    return new State보스군단_클리어(context);
                 }
 
                 if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {921})) {
-                    context.State = new State보스_무적페이즈(context);
-                    return;
+                    return new State보스_무적페이즈(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,21 +81,20 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SetUserValue(triggerId: 99990006, key: "Battle_3_SpawnStart", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_3_Start") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {921})) {
-                    context.State = new State보스군단_클리어(context);
-                    return;
+                    return new State보스군단_클리어(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State보스_추가대사1(context);
-                    return;
+                    return new State보스_추가대사1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -107,21 +107,20 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020063_BF__BATTLE_3__2$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_3_Start") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {921})) {
-                    context.State = new State보스군단_클리어(context);
-                    return;
+                    return new State보스군단_클리어(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State보스_추가대사2(context);
-                    return;
+                    return new State보스_추가대사2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -134,16 +133,16 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020063_BF__BATTLE_3__3$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_3_Start") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {921})) {
-                    context.State = new State보스군단_클리어(context);
-                    return;
+                    return new State보스군단_클리어(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -163,7 +162,9 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SetUserValue(triggerId: 99990014, key: "Battle3_TurretSpawn_4", value: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

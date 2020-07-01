@@ -5,11 +5,12 @@ namespace Maple2.Trigger._99999844 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CubeOff") == 1) {
-                    context.State = new StateOff_1(context);
-                    return;
+                    return new StateOff_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._99999844 {
                 context.SetMesh(arg1: new[] {5028}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new StateOn_1(context);
-                    return;
+                    return new StateOn_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._99999844 {
                 context.SetMesh(arg1: new[] {5028}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new StateOff_2(context);
-                    return;
+                    return new StateOff_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,11 +59,12 @@ namespace Maple2.Trigger._99999844 {
                 context.SetMesh(arg1: new[] {5028}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new StateOn_2(context);
-                    return;
+                    return new StateOn_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,11 +77,12 @@ namespace Maple2.Trigger._99999844 {
                 context.SetMesh(arg1: new[] {5028}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new StateOff_3(context);
-                    return;
+                    return new StateOff_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,11 +95,12 @@ namespace Maple2.Trigger._99999844 {
                 context.SetMesh(arg1: new[] {5028}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new StateOn_3(context);
-                    return;
+                    return new StateOn_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -107,11 +113,12 @@ namespace Maple2.Trigger._99999844 {
                 context.SetMesh(arg1: new[] {5028}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new StateOff_4(context);
-                    return;
+                    return new StateOff_4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -124,11 +131,12 @@ namespace Maple2.Trigger._99999844 {
                 context.SetMesh(arg1: new[] {5028}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 150)) {
-                    context.State = new StateOn_4(context);
-                    return;
+                    return new StateOn_4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -141,11 +149,12 @@ namespace Maple2.Trigger._99999844 {
                 context.SetMesh(arg1: new[] {5028}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 150)) {
-                    context.State = new StateOff_5(context);
-                    return;
+                    return new StateOff_5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -158,11 +167,12 @@ namespace Maple2.Trigger._99999844 {
                 context.SetMesh(arg1: new[] {5028}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 150)) {
-                    context.State = new StateOn_5(context);
-                    return;
+                    return new StateOn_5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -175,11 +185,12 @@ namespace Maple2.Trigger._99999844 {
                 context.SetMesh(arg1: new[] {5028}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 150)) {
-                    context.State = new StateOff_6(context);
-                    return;
+                    return new StateOff_6(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -192,11 +203,12 @@ namespace Maple2.Trigger._99999844 {
                 context.SetMesh(arg1: new[] {5028}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 150)) {
-                    context.State = new StateOn_6(context);
-                    return;
+                    return new StateOn_6(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -209,11 +221,12 @@ namespace Maple2.Trigger._99999844 {
                 context.SetMesh(arg1: new[] {5028}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 150)) {
-                    context.State = new StateOff_7(context);
-                    return;
+                    return new StateOff_7(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -226,13 +239,14 @@ namespace Maple2.Trigger._99999844 {
                 context.SetMesh(arg1: new[] {5028}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 200)) {
                     context.SetUserValue(triggerId: 920016, key: "CubeOff", value: 0);
                     context.SetUserValue(triggerId: 910016, key: "Cube", value: 2);
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

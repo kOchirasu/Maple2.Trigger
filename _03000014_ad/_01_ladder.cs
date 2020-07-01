@@ -18,11 +18,12 @@ namespace Maple2.Trigger._03000014_ad {
                 context.SetLadder(arg1: 142, arg2: false, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000066}, arg2: 0)) {
-                    context.State = new State사다리생성101(context);
-                    return;
+                    return new State사다리생성101(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,11 +39,12 @@ namespace Maple2.Trigger._03000014_ad {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State사다리생성102(context);
-                    return;
+                    return new State사다리생성102(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +60,12 @@ namespace Maple2.Trigger._03000014_ad {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State사다리생성111(context);
-                    return;
+                    return new State사다리생성111(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -78,11 +81,12 @@ namespace Maple2.Trigger._03000014_ad {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State사다리생성112(context);
-                    return;
+                    return new State사다리생성112(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,11 +102,12 @@ namespace Maple2.Trigger._03000014_ad {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State사다리생성121(context);
-                    return;
+                    return new State사다리생성121(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -118,11 +123,12 @@ namespace Maple2.Trigger._03000014_ad {
                 context.SetTimer(arg1: "1", arg2: 60);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State유저감지(context);
-                    return;
+                    return new State유저감지(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -136,11 +142,12 @@ namespace Maple2.Trigger._03000014_ad {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State사다리생성131(context);
-                    return;
+                    return new State사다리생성131(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -154,11 +161,12 @@ namespace Maple2.Trigger._03000014_ad {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State사다리생성132(context);
-                    return;
+                    return new State사다리생성132(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -172,11 +180,12 @@ namespace Maple2.Trigger._03000014_ad {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State사다리생성141(context);
-                    return;
+                    return new State사다리생성141(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -190,11 +199,12 @@ namespace Maple2.Trigger._03000014_ad {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State사다리생성142(context);
-                    return;
+                    return new State사다리생성142(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -208,11 +218,12 @@ namespace Maple2.Trigger._03000014_ad {
                 context.SetTimer(arg1: "1", arg2: 120);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State유저감지(context);
-                    return;
+                    return new State유저감지(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

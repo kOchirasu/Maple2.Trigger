@@ -12,11 +12,12 @@ namespace Maple2.Trigger._99999841 {
                 context.SetUserValue(triggerId: 99990015, key: "Start", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9001) == 3) {
-                    context.State = new State세팅(context);
-                    return;
+                    return new State세팅(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +30,12 @@ namespace Maple2.Trigger._99999841 {
                 context.SetEventUI(arg1: 1, arg2: "잠시 후 경기가 시작됩니다.", arg3: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -52,11 +54,12 @@ namespace Maple2.Trigger._99999841 {
                 context.SetUserValue(triggerId: 99990015, key: "Start", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State메시지1(context);
-                    return;
+                    return new State메시지1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -69,16 +72,16 @@ namespace Maple2.Trigger._99999841 {
                 context.SetEventUI(arg1: 1, arg2: @"검은 군단을 해치우고 자원을 획득하세요.\n획득한 자원을 20개 모아서 보스를 불러내세요.\n한번에 최대 9개의 자원을 들 수 있습니다.", arg3: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new StateA팀승리(context);
-                    return;
+                    return new StateA팀승리(context);
                 }
 
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    context.State = new StateB팀승리(context);
-                    return;
+                    return new StateB팀승리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -91,11 +94,8 @@ namespace Maple2.Trigger._99999841 {
                 context.SetEventUI(arg1: 1, arg2: "A팀이 승리했습니다!", arg3: 4000);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -108,11 +108,8 @@ namespace Maple2.Trigger._99999841 {
                 context.SetEventUI(arg1: 1, arg2: "B팀이 승리했습니다!", arg3: 4000);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -132,7 +129,9 @@ namespace Maple2.Trigger._99999841 {
                 context.SetInteractObject(arg1: new[] {10002182}, arg2: 0, arg3: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

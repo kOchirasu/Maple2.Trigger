@@ -11,11 +11,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.SetEffect(arg1: new[] {601, 602, 603, 604}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new State인트로(context);
-                    return;
+                    return new State인트로(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -32,11 +33,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 1000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State인트로00(context);
-                    return;
+                    return new State인트로00(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -52,11 +54,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_B", arg3: 2500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2600)) {
-                    context.State = new State인트로01(context);
-                    return;
+                    return new State인트로01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -72,11 +75,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Emotion_A", arg3: 2400);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2700)) {
-                    context.State = new State인트로02(context);
-                    return;
+                    return new State인트로02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,11 +96,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State인트로03(context);
-                    return;
+                    return new State인트로03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -113,11 +118,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Emotion_D", arg3: 2400);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State게임시작_대기(context);
-                    return;
+                    return new State게임시작_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -135,16 +141,16 @@ namespace Maple2.Trigger._51000005_dg {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new State게임시작_대기(context);
-                    return;
+                    return new State게임시작_대기(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new State연출종료(context);
-                    return;
+                    return new State연출종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -163,11 +169,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Start_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State라운드준비(context);
-                    return;
+                    return new State라운드준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -180,16 +187,16 @@ namespace Maple2.Trigger._51000005_dg {
                 context.SetEffect(arg1: new[] {601, 602, 603, 604}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new State완전끝(context);
-                    return;
+                    return new State완전끝(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State라운드시작(context);
-                    return;
+                    return new State라운드시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -204,16 +211,16 @@ namespace Maple2.Trigger._51000005_dg {
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_ArrowPopup_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new State완전끝(context);
-                    return;
+                    return new State완전끝(context);
                 }
 
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State라운드진행(context);
-                    return;
+                    return new State라운드진행(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -226,21 +233,20 @@ namespace Maple2.Trigger._51000005_dg {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "$51000005_DG__51000005_MAIN__5$", duration: 1800);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new State01_좌로돌아(context);
-                    return;
+                    return new State01_좌로돌아(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new State02_뒤로돌아(context);
-                    return;
+                    return new State02_뒤로돌아(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new State03_우로돌아(context);
-                    return;
+                    return new State03_우로돌아(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -255,11 +261,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Turning_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State결과연출(context);
-                    return;
+                    return new State결과연출(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -274,11 +281,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Turning_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State결과연출(context);
-                    return;
+                    return new State결과연출(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -293,11 +301,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Turning_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State결과연출(context);
-                    return;
+                    return new State결과연출(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -312,7 +321,7 @@ namespace Maple2.Trigger._51000005_dg {
                 context.SetEffect(arg1: new[] {601, 602, 603, 604}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ThreeTwoOneResult") == 1) {
                     context.SetNpcEmotionSequence(arg1: 101, arg2: "Emotion_B", arg3: 4000);
                     context.SetPcEmotionLoop(arg1: "Emotion_Dance_X", arg2: 2450f);
@@ -320,8 +329,7 @@ namespace Maple2.Trigger._51000005_dg {
                     context.AddBalloonTalk(spawnPointId: 101, msg: "$51000005_DG__51000005_MAIN__6$", duration: 3000);
                     context.AddBalloonTalk(msg: "$51000005_DG__51000005_MAIN__7$", duration: 3000);
                     context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Correct_01");
-                    context.State = new State결과정산(context);
-                    return;
+                    return new State결과정산(context);
                 }
 
                 if (context.GetUserValue(key: "ThreeTwoOneResult") == 0) {
@@ -331,9 +339,10 @@ namespace Maple2.Trigger._51000005_dg {
                     context.AddBalloonTalk(spawnPointId: 101, msg: "$51000005_DG__51000005_MAIN__8$", duration: 3000);
                     context.AddBalloonTalk(msg: "$51000005_DG__51000005_MAIN__9$", duration: 2700);
                     context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Wrong_01");
-                    context.State = new State결과정산(context);
-                    return;
+                    return new State결과정산(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -346,11 +355,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.ArcadeThreeTwoOne2(type: "ResultRound2", round: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2300)) {
-                    context.State = new State라운드결과(context);
-                    return;
+                    return new State라운드결과(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -363,11 +373,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.ArcadeThreeTwoOne2(type: "ClearRound", round: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State라운드준비(context);
-                    return;
+                    return new State라운드준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -381,11 +392,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.MoveUser(arg1: 51000005, arg2: 44);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State진짜끝(context);
-                    return;
+                    return new State진짜끝(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -401,11 +413,12 @@ namespace Maple2.Trigger._51000005_dg {
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Result_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State완전끝(context);
-                    return;
+                    return new State완전끝(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -416,7 +429,9 @@ namespace Maple2.Trigger._51000005_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

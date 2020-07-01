@@ -5,11 +5,12 @@ namespace Maple2.Trigger._80000007_bonus {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {303})) {
-                    context.State = new State막힘(context);
-                    return;
+                    return new State막힘(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,7 +23,9 @@ namespace Maple2.Trigger._80000007_bonus {
                 context.SetMesh(arg1: new[] {401, 402, 403, 404, 405, 406, 407, 408, 409}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

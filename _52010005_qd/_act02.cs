@@ -5,12 +5,13 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
                     context.SetInteractObject(arg1: new[] {10000872}, arg2: 0);
-                    context.State = new State퀘스트조건02(context);
-                    return;
+                    return new State퀘스트조건02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -21,11 +22,12 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002821}, arg3: new byte[] {2})) {
-                    context.State = new StateQ2_미카등장01(context);
-                    return;
+                    return new StateQ2_미카등장01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,11 +40,8 @@ namespace Maple2.Trigger._52010005_qd {
                 context.CreateMonster(arg1: new[] {401}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateQ2_딜레이01(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateQ2_딜레이01(context);
             }
 
             public override void OnExit() { }
@@ -58,11 +57,12 @@ namespace Maple2.Trigger._52010005_qd {
                 context.SetProductionUI(arg1: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11")) {
-                    context.State = new StateQ2_미카대화01(context);
-                    return;
+                    return new StateQ2_미카대화01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,11 +77,12 @@ namespace Maple2.Trigger._52010005_qd {
                 context.SetSkip(arg1: "Q2_미카대화02대기");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "12")) {
-                    context.State = new StateQ2_미카대화02대기(context);
-                    return;
+                    return new StateQ2_미카대화02대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -94,11 +95,8 @@ namespace Maple2.Trigger._52010005_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateQ2_미카대화02(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateQ2_미카대화02(context);
             }
 
             public override void OnExit() { }
@@ -113,11 +111,12 @@ namespace Maple2.Trigger._52010005_qd {
                 context.SetSkip(arg1: "Q2_미카대화종료");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "13")) {
-                    context.State = new StateQ2_미카대화종료(context);
-                    return;
+                    return new StateQ2_미카대화종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -133,7 +132,9 @@ namespace Maple2.Trigger._52010005_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

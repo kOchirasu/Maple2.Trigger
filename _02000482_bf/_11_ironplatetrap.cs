@@ -11,11 +11,12 @@ namespace Maple2.Trigger._02000482_bf {
                 context.SetUserValue(key: "TrapOn", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TrapOn") == 1) {
-                    context.State = new StateLeverOnDelay(context);
-                    return;
+                    return new StateLeverOnDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._02000482_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateLeverOn(context);
-                    return;
+                    return new StateLeverOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._02000482_bf {
                 context.SetEffect(arg1: new[] {5200, 5201, 5202, 5203}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002028}, arg2: 0)) {
-                    context.State = new StateTrapOn(context);
-                    return;
+                    return new StateTrapOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +66,12 @@ namespace Maple2.Trigger._02000482_bf {
                 context.SetEffect(arg1: new[] {5200, 5201, 5202, 5203}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateRemove(context);
-                    return;
+                    return new StateRemove(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,7 +84,9 @@ namespace Maple2.Trigger._02000482_bf {
                 context.DestroyMonster(arg1: new[] {202, 302});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

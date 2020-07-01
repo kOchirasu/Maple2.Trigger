@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000245_bf {
                 context.SetMesh(arg1: new[] {701, 702}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000302}, arg2: 0)) {
-                    context.State = new State개봉(context);
-                    return;
+                    return new State개봉(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,7 +27,9 @@ namespace Maple2.Trigger._02000245_bf {
                 context.SetTimer(arg1: "1", arg2: 180);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

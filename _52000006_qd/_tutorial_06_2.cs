@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    context.State = new State오픈대기중(context);
-                    return;
+                    return new State오픈대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000016})) {
-                    context.State = new State화면효과(context);
-                    return;
+                    return new State화면효과(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +39,12 @@ namespace Maple2.Trigger._52000006_qd {
                 context.SetTimer(arg1: "1", arg2: 7);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State화면효과2(context);
-                    return;
+                    return new State화면효과2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -57,11 +60,12 @@ namespace Maple2.Trigger._52000006_qd {
                 context.SetEffect(arg1: new[] {401}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State화면효과3(context);
-                    return;
+                    return new State화면효과3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -76,11 +80,12 @@ namespace Maple2.Trigger._52000006_qd {
                 context.SetEffect(arg1: new[] {402}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State맵이동(context);
-                    return;
+                    return new State맵이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -94,7 +99,9 @@ namespace Maple2.Trigger._52000006_qd {
                 context.MoveUser(arg1: 52000007, arg2: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

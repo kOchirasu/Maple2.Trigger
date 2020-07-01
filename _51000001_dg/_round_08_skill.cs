@@ -7,11 +7,12 @@ namespace Maple2.Trigger._51000001_dg {
                 context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {108})) {
-                    context.State = new State지역랜덤(context);
-                    return;
+                    return new State지역랜덤(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,41 +23,37 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {108})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
                     context.SetMesh(arg1: new[] {3801}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new StateA지역(context);
-                    return;
+                    return new StateA지역(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
                     context.SetMesh(arg1: new[] {3802}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new StateB지역(context);
-                    return;
+                    return new StateB지역(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
                     context.SetMesh(arg1: new[] {3803}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new StateC지역(context);
-                    return;
+                    return new StateC지역(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
                     context.SetMesh(arg1: new[] {3804}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new StateD지역(context);
-                    return;
+                    return new StateD지역(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
                     context.SetMesh(arg1: new[] {3805}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new StateE지역(context);
-                    return;
+                    return new StateE지역(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -67,11 +64,12 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10801})) {
-                    context.State = new State스킬랜덤(context);
-                    return;
+                    return new State스킬랜덤(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,11 +80,12 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10802})) {
-                    context.State = new State스킬랜덤(context);
-                    return;
+                    return new State스킬랜덤(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,11 +96,12 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10803})) {
-                    context.State = new State스킬랜덤(context);
-                    return;
+                    return new State스킬랜덤(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -112,11 +112,12 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10804})) {
-                    context.State = new State스킬랜덤(context);
-                    return;
+                    return new State스킬랜덤(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -127,11 +128,12 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10805})) {
-                    context.State = new State스킬랜덤(context);
-                    return;
+                    return new State스킬랜덤(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -144,35 +146,32 @@ namespace Maple2.Trigger._51000001_dg {
                 context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "random_buff_box");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {108})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.RandomCondition(arg1: 40f)) {
                     context.AddBuff(arg1: new[] {199}, arg2: 49179051, arg3: 1, arg4: false, arg5: false);
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
 
                 if (context.RandomCondition(arg1: 30f)) {
                     context.AddBuff(arg1: new[] {199}, arg2: 70000085, arg3: 1, arg5: false);
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
                     context.AddBuff(arg1: new[] {199}, arg2: 49179061, arg3: 1, arg4: false, arg5: false);
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
                     context.AddBuff(arg1: new[] {199}, arg2: 49179071, arg3: 1, arg4: false, arg5: false);
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -185,11 +184,12 @@ namespace Maple2.Trigger._51000001_dg {
                 context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804, 3805}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -200,7 +200,9 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

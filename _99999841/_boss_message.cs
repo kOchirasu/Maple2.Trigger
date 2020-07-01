@@ -5,11 +5,12 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 100) == true) {
-                    context.State = new State메시지1(context);
-                    return;
+                    return new State메시지1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,8 @@ namespace Maple2.Trigger._99999841 {
                 context.SetEventUI(arg1: 1, arg2: "A팀의 보스가 등장했습니다!", arg3: 4000);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -37,7 +35,9 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

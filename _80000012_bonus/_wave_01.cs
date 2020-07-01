@@ -5,11 +5,12 @@ namespace Maple2.Trigger._80000012_bonus {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 702, arg2: new[] {199})) {
-                    context.State = new State생성랜덤(context);
-                    return;
+                    return new State생성랜덤(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._80000012_bonus {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 702, arg2: new[] {199})) {
-                    context.State = new State1차타이머(context);
-                    return;
+                    return new State1차타이머(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,16 +37,16 @@ namespace Maple2.Trigger._80000012_bonus {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State생성랜덤(context);
-                    return;
+                    return new State생성랜덤(context);
                 }
 
                 if (!context.NpcDetected(arg1: 702, arg2: new[] {199})) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,46 +57,40 @@ namespace Maple2.Trigger._80000012_bonus {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 13f)) {
-                    context.State = new State1번생성(context);
-                    return;
-                }
-
-                if (context.RandomCondition(arg1: 13f)) {
-                    context.State = new State2번생성(context);
-                    return;
-                }
-
-                if (context.RandomCondition(arg1: 12f)) {
-                    context.State = new State3번생성(context);
-                    return;
-                }
-
-                if (context.RandomCondition(arg1: 12f)) {
-                    context.State = new State4번생성(context);
-                    return;
-                }
-
-                if (context.RandomCondition(arg1: 12f)) {
-                    context.State = new State5번생성(context);
-                    return;
-                }
-
-                if (context.RandomCondition(arg1: 12f)) {
-                    context.State = new State6번생성(context);
-                    return;
+                    return new State1번생성(context);
                 }
 
                 if (context.RandomCondition(arg1: 13f)) {
-                    context.State = new State7번생성(context);
-                    return;
+                    return new State2번생성(context);
+                }
+
+                if (context.RandomCondition(arg1: 12f)) {
+                    return new State3번생성(context);
+                }
+
+                if (context.RandomCondition(arg1: 12f)) {
+                    return new State4번생성(context);
+                }
+
+                if (context.RandomCondition(arg1: 12f)) {
+                    return new State5번생성(context);
+                }
+
+                if (context.RandomCondition(arg1: 12f)) {
+                    return new State6번생성(context);
                 }
 
                 if (context.RandomCondition(arg1: 13f)) {
-                    context.State = new State8번생성(context);
-                    return;
+                    return new State7번생성(context);
                 }
+
+                if (context.RandomCondition(arg1: 13f)) {
+                    return new State8번생성(context);
+                }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -107,11 +103,8 @@ namespace Maple2.Trigger._80000012_bonus {
                 context.CreateMonster(arg1: new[] {101}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }
@@ -124,11 +117,8 @@ namespace Maple2.Trigger._80000012_bonus {
                 context.CreateMonster(arg1: new[] {102}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }
@@ -141,11 +131,8 @@ namespace Maple2.Trigger._80000012_bonus {
                 context.CreateMonster(arg1: new[] {103}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }
@@ -158,11 +145,8 @@ namespace Maple2.Trigger._80000012_bonus {
                 context.CreateMonster(arg1: new[] {104}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }
@@ -175,11 +159,8 @@ namespace Maple2.Trigger._80000012_bonus {
                 context.CreateMonster(arg1: new[] {105}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }
@@ -192,11 +173,8 @@ namespace Maple2.Trigger._80000012_bonus {
                 context.CreateMonster(arg1: new[] {106}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }
@@ -209,11 +187,8 @@ namespace Maple2.Trigger._80000012_bonus {
                 context.CreateMonster(arg1: new[] {107}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }
@@ -226,11 +201,8 @@ namespace Maple2.Trigger._80000012_bonus {
                 context.CreateMonster(arg1: new[] {108}, arg2: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }

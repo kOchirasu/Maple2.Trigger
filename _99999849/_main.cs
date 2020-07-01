@@ -5,11 +5,13 @@ namespace Maple2.Trigger._99999849 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Test") == 2) {
-                    // context.State = new State두번(context);
-                    return;
+                    // return new State두번(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

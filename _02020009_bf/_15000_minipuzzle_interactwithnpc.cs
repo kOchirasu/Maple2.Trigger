@@ -16,11 +16,12 @@ namespace Maple2.Trigger._02020009_bf {
                 context.SetEffect(arg1: new[] {15300, 15301, 15302, 15303, 15304}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimeEventOn") == 1) {
-                    context.State = new StateSettingDelay(context);
-                    return;
+                    return new StateSettingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,12 +32,13 @@ namespace Maple2.Trigger._02020009_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.EnableLocalCamera(isEnable: true);
-                    context.State = new StateInteractWithNpc_NpcTypeRandomPick(context);
-                    return;
+                    return new StateInteractWithNpc_NpcTypeRandomPick(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -51,16 +53,16 @@ namespace Maple2.Trigger._02020009_bf {
                 context.SetUserValue(triggerId: 15001, key: "PortalOn", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateInteractWithNpc_NpcTypeA_Setting(context);
-                    return;
+                    return new StateInteractWithNpc_NpcTypeA_Setting(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateInteractWithNpc_NpcTypeB_Setting(context);
-                    return;
+                    return new StateInteractWithNpc_NpcTypeB_Setting(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,17 +75,17 @@ namespace Maple2.Trigger._02020009_bf {
                 context.SetInteractObject(arg1: new[] {12000078}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000078}, arg2: 0)) {
                     context.SetTimer(arg1: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
-                    context.State = new StateInteractWithNpc_NpcTypeA_NpcSpawn(context);
-                    return;
+                    return new StateInteractWithNpc_NpcTypeA_NpcSpawn(context);
                 }
 
                 if (context.GetUserValue(key: "TimeEventOn") == 0) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,17 +100,17 @@ namespace Maple2.Trigger._02020009_bf {
                 context.SetUserValue(triggerId: 1000051, key: "NPCTalk", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StandAsideTypeA") == 1) {
                     context.SetUserValue(triggerId: 1000051, key: "NPCTalk", value: 0);
-                    context.State = new StateInteractWithNpc_NpcTypeA_NpcChange(context);
-                    return;
+                    return new StateInteractWithNpc_NpcTypeA_NpcChange(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateInteractWithNpc_Fail(context);
-                    return;
+                    return new StateInteractWithNpc_Fail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -128,11 +130,12 @@ namespace Maple2.Trigger._02020009_bf {
                 context.SetUserValue(triggerId: 151001, key: "NPCKill", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateInteractWithNpc_NpcTypeA_StandAside(context);
-                    return;
+                    return new StateInteractWithNpc_NpcTypeA_StandAside(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -146,11 +149,8 @@ namespace Maple2.Trigger._02020009_bf {
                 context.MoveNpc(arg1: 15402, arg2: "MS2PatrolData_15600");
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateInteractWithNpc_Success(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateInteractWithNpc_Success(context);
             }
 
             public override void OnExit() { }
@@ -163,17 +163,17 @@ namespace Maple2.Trigger._02020009_bf {
                 context.SetInteractObject(arg1: new[] {12000093}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000093}, arg2: 0)) {
                     context.SetTimer(arg1: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
-                    context.State = new StateInteractWithNpc_NpcTypeB_NpcSpawn(context);
-                    return;
+                    return new StateInteractWithNpc_NpcTypeB_NpcSpawn(context);
                 }
 
                 if (context.GetUserValue(key: "TimeEventOn") == 0) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -188,17 +188,17 @@ namespace Maple2.Trigger._02020009_bf {
                 context.SetUserValue(triggerId: 1000052, key: "NPCTalk", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StandAsideTypeB") == 1) {
                     context.SetUserValue(triggerId: 1000052, key: "NPCTalk", value: 0);
-                    context.State = new StateInteractWithNpc_NpcTypeB_NpcChange(context);
-                    return;
+                    return new StateInteractWithNpc_NpcTypeB_NpcChange(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateInteractWithNpc_Fail(context);
-                    return;
+                    return new StateInteractWithNpc_Fail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -218,11 +218,12 @@ namespace Maple2.Trigger._02020009_bf {
                 context.SetUserValue(triggerId: 151001, key: "NPCKill", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateInteractWithNpc_NpcTypeB_StandAside(context);
-                    return;
+                    return new StateInteractWithNpc_NpcTypeB_StandAside(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -236,11 +237,8 @@ namespace Maple2.Trigger._02020009_bf {
                 context.MoveNpc(arg1: 15502, arg2: "MS2PatrolData_15600");
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateInteractWithNpc_Success(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateInteractWithNpc_Success(context);
             }
 
             public override void OnExit() { }
@@ -256,16 +254,16 @@ namespace Maple2.Trigger._02020009_bf {
                 context.SetInteractObject(arg1: new[] {12000251}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000251}, arg2: 0)) {
-                    context.State = new StateInteractWithNpc_SuccessDelay(context);
-                    return;
+                    return new StateInteractWithNpc_SuccessDelay(context);
                 }
 
                 if (context.TimeExpired(arg1: "10")) {
-                    context.State = new StateInteractWithNpc_Fail(context);
-                    return;
+                    return new StateInteractWithNpc_Fail(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -276,11 +274,12 @@ namespace Maple2.Trigger._02020009_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateInteractWithNpc_Quit(context);
-                    return;
+                    return new StateInteractWithNpc_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -293,11 +292,12 @@ namespace Maple2.Trigger._02020009_bf {
                 context.SetInteractObject(arg1: new[] {12000251, 12000078, 12000093}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateInteractWithNpc_Quit(context);
-                    return;
+                    return new StateInteractWithNpc_Quit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -313,11 +313,12 @@ namespace Maple2.Trigger._02020009_bf {
                 context.DestroyMonster(arg1: new[] {15401, 15402, 15501, 15502});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

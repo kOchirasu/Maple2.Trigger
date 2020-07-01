@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.DestroyMonster(arg1: new[] {109});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "GuideNpcSpawn") == 1) {
-                    context.State = new StateNpcSpawn(context);
-                    return;
+                    return new StateNpcSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._02100002_bf {
                 context.MoveNpc(arg1: 109, arg2: "MS2PatrolData_GuideNpc");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 60000)) {
-                    context.State = new StateCheckUser(context);
-                    return;
+                    return new StateCheckUser(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +43,12 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9900})) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,7 +61,9 @@ namespace Maple2.Trigger._02100002_bf {
                 context.DestroyMonster(arg1: new[] {109});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

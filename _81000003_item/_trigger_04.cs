@@ -8,11 +8,12 @@ namespace Maple2.Trigger._81000003_item {
                 context.SetEffect(arg1: new[] {701, 702}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {401})) {
-                    context.State = new State끝(context);
-                    return;
+                    return new State끝(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._81000003_item {
                 context.SetTimer(arg1: "11", arg2: 6);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11")) {
-                    context.State = new State폭죽끄기(context);
-                    return;
+                    return new State폭죽끄기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,12 @@ namespace Maple2.Trigger._81000003_item {
                 context.SetEffect(arg1: new[] {701, 702}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "12")) {
-                    context.State = new State레버(context);
-                    return;
+                    return new State레버(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

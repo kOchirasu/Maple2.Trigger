@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "5Phase") == 1) {
-                    context.State = new State크림슨발록스폰체크(context);
-                    return;
+                    return new State크림슨발록스폰체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,11 +36,12 @@ namespace Maple2.Trigger._02020019_bf {
                 context.AddBuff(feature: "FameChallengeBuff_02", arg1: new[] {247}, arg2: 49218002, arg3: 1, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {242})) {
-                    context.State = new State크림슨스피어죽음(context);
-                    return;
+                    return new State크림슨스피어죽음(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -50,11 +52,12 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {241})) {
-                    context.State = new State발록에게신호쏴주기(context);
-                    return;
+                    return new State발록에게신호쏴주기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -67,7 +70,9 @@ namespace Maple2.Trigger._02020019_bf {
                 context.SetAiExtraData(key: "SpearDead", value: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

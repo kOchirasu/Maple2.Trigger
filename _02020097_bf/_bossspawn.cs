@@ -11,11 +11,12 @@ namespace Maple2.Trigger._02020097_bf {
                 context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 201, 202, 203, 204, 205, 206, 207, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10})) {
-                    context.State = new State보스등장(context);
-                    return;
+                    return new State보스등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._02020097_bf {
                 context.CreateMonster(arg1: new[] {99}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State대기상태(context);
-                    return;
+                    return new State대기상태(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,26 +45,24 @@ namespace Maple2.Trigger._02020097_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StairsOk") == 1) {
-                    context.State = new State계단생성시작중(context);
-                    return;
+                    return new State계단생성시작중(context);
                 }
 
                 if (context.GetUserValue(key: "StairsOk2nd") == 1) {
-                    context.State = new State계단생성시작중2nd(context);
-                    return;
+                    return new State계단생성시작중2nd(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {11})) {
-                    context.State = new State플레이어3페이지전투판으로오기(context);
-                    return;
+                    return new State플레이어3페이지전투판으로오기(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State연출딜레이(context);
-                    return;
+                    return new State연출딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,11 +73,12 @@ namespace Maple2.Trigger._02020097_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State계단생성(context);
-                    return;
+                    return new State계단생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,11 +93,12 @@ namespace Maple2.Trigger._02020097_bf {
                 context.SetUserValue(key: "StairsOk", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State대기상태(context);
-                    return;
+                    return new State대기상태(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -107,11 +109,12 @@ namespace Maple2.Trigger._02020097_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State계단생성2nd(context);
-                    return;
+                    return new State계단생성2nd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -125,11 +128,12 @@ namespace Maple2.Trigger._02020097_bf {
                 context.SetUserValue(key: "StairsOk2nd", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State칸막이제거2nd(context);
-                    return;
+                    return new State칸막이제거2nd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -142,11 +146,12 @@ namespace Maple2.Trigger._02020097_bf {
                 context.SetMesh(arg1: new[] {302}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State대기상태(context);
-                    return;
+                    return new State대기상태(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -160,16 +165,17 @@ namespace Maple2.Trigger._02020097_bf {
                 context.SetPortal(arg1: 28, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State연출딜레이(context);
-                    return;
+                    return new State연출딜레이(context);
                 }
 
                 if (context.GetUserValue(key: "StairsOk") == 1) {
-                    // context.State = new State사다리생성(context);
-                    return;
+                    // return new State사다리생성(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -182,11 +188,12 @@ namespace Maple2.Trigger._02020097_bf {
                 context.SetAchievement(arg3: "BalrogKritiasClear");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new State연출종료(context);
-                    return;
+                    return new State연출종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -202,7 +209,9 @@ namespace Maple2.Trigger._02020097_bf {
                 context.DungeonClear();
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

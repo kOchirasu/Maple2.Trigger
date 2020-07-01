@@ -5,11 +5,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "GameGuide") == 1) {
-                    context.State = new StateGameGuide_20(context);
-                    return;
+                    return new StateGameGuide_20(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,8 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetTimer(arg1: "1", arg2: 19, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNormalGameGuide_01(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNormalGameGuide_01(context);
             }
 
             public override void OnExit() { }
@@ -39,11 +37,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.ShowGuideSummary(entityId: 26620104, textId: 26620104, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateNormalGameGuide_02(context);
-                    return;
+                    return new StateNormalGameGuide_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,16 +55,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.ShowGuideSummary(entityId: 26620105, textId: 26620105, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateNormalGameGuide_03(context);
-                    return;
+                    return new StateNormalGameGuide_03(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -78,16 +77,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.ShowGuideSummary(entityId: 26620104, textId: 26620104, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateNormalGameGuide_04(context);
-                    return;
+                    return new StateNormalGameGuide_04(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -100,11 +99,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.ShowGuideSummary(entityId: 26620105, textId: 26620105, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -118,11 +118,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.ResetTimer(arg1: "1");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

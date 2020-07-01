@@ -10,11 +10,12 @@ namespace Maple2.Trigger._99999909 {
                 context.SetTimer(arg1: "60", arg2: 60, arg3: false, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    context.State = new State보물상자(context);
-                    return;
+                    return new State보물상자(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._99999909 {
                 context.SetInteractObject(arg1: new[] {11000001}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {105})) {
-                    context.State = new State랜덤블록1(context);
-                    return;
+                    return new State랜덤블록1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._99999909 {
                 context.SetRandomMesh(arg1: new[] {3047, 3048, 3049, 3050, 3051, 3052, 3053, 3054}, arg2: true, arg3: 4, arg4: 0, arg5: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {106})) {
-                    context.State = new State랜덤블록2(context);
-                    return;
+                    return new State랜덤블록2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,11 +64,12 @@ namespace Maple2.Trigger._99999909 {
                 context.SetRandomMesh(arg1: new[] {3055, 3056, 3057, 3058, 3059, 3060, 3061, 3062, 3063}, arg2: true, arg3: 4, arg4: 0, arg5: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {107})) {
-                    context.State = new State랜덤블록3(context);
-                    return;
+                    return new State랜덤블록3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -78,11 +82,12 @@ namespace Maple2.Trigger._99999909 {
                 context.SetRandomMesh(arg1: new[] {3064, 3065, 3066, 3067, 3068, 3069, 3070, 3071, 3072}, arg2: true, arg3: 4, arg4: 0, arg5: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {108})) {
-                    context.State = new State랜덤블록4(context);
-                    return;
+                    return new State랜덤블록4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -95,11 +100,12 @@ namespace Maple2.Trigger._99999909 {
                 context.SetRandomMesh(arg1: new[] {3073, 3074, 3075, 3076, 3077, 3078, 3079, 3080}, arg2: true, arg3: 4, arg4: 0, arg5: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {109})) {
-                    context.State = new State랜덤블록5(context);
-                    return;
+                    return new State랜덤블록5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -112,11 +118,13 @@ namespace Maple2.Trigger._99999909 {
                 context.SetRandomMesh(arg1: new[] {3080, 3081, 3082, 3083, 3084, 3085}, arg2: true, arg3: 4, arg4: 0, arg5: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {110})) {
-                    // context.State = new State랜덤블록6(context);
-                    return;
+                    // return new State랜덤블록6(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -11,11 +11,12 @@ namespace Maple2.Trigger._63000030_cs {
                 context.SetUserValue(key: "PushStart", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "PushStart") == 1) {
-                    context.State = new StateEnter01(context);
-                    return;
+                    return new StateEnter01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +30,12 @@ namespace Maple2.Trigger._63000030_cs {
                 context.SetAgent(arg1: new[] {8100, 8101, 8102, 8103, 8104, 8105, 8106, 8107, 8108, 8109, 8110, 8111, 8112}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9100})) {
-                    context.State = new StatePush01(context);
-                    return;
+                    return new StatePush01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,11 +48,12 @@ namespace Maple2.Trigger._63000030_cs {
                 context.SetSkill(arg1: new[] {7000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateNpcTalkRandom(context);
-                    return;
+                    return new StateNpcTalkRandom(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,16 +64,16 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateJuntaTalk01(context);
-                    return;
+                    return new StateJuntaTalk01(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new StateTinChaiTalk01(context);
-                    return;
+                    return new StateTinChaiTalk01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -86,11 +89,12 @@ namespace Maple2.Trigger._63000030_cs {
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000030_CS__PUSH02__0$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateDelay01(context);
-                    return;
+                    return new StateDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -106,11 +110,12 @@ namespace Maple2.Trigger._63000030_cs {
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__PUSH02__1$", arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateDelay01(context);
-                    return;
+                    return new StateDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -123,11 +128,12 @@ namespace Maple2.Trigger._63000030_cs {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateReset01(context);
-                    return;
+                    return new StateReset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -141,11 +147,12 @@ namespace Maple2.Trigger._63000030_cs {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9100})) {
-                    context.State = new StatePush01(context);
-                    return;
+                    return new StatePush01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

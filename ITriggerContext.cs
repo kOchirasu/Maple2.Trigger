@@ -2,8 +2,6 @@
 
 namespace Maple2.Trigger {
     public interface ITriggerContext {
-        public TriggerState State { get; set; }
-
         #region Actions
         public void AddBalloonTalk(int spawnPointId = 0, string msg = "", int duration = 0, int delayTick = 0, bool npcId = false);
         public void AddBuff(int[] arg1 = default, int arg2 = 0, byte arg3 = 0, bool arg4 = false, bool arg5 = false, string feature = "");
@@ -220,7 +218,7 @@ namespace Maple2.Trigger {
         public float GetNpcHpRate(int spawnPointId);
         public int GetScoreBoardScore();
         public int GetShadowExpeditionPoints();
-        public int GetUserCount(int boxId = -1, int userTagId = 0);
+        public int GetUserCount(int boxId = 0, int userTagId = 0);
         public int GetUserValue(string key);
         #endregion
     }

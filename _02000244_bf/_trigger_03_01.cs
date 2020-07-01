@@ -7,7 +7,9 @@ namespace Maple2.Trigger._02000244_bf {
                 context.SetMesh(arg1: new[] {705, 706}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

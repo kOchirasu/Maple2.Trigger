@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {60002})) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._02000347_bf {
                 context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    context.State = new State랜덤몬스터소환(context);
-                    return;
+                    return new State랜덤몬스터소환(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,66 +43,56 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new State1번소환(context);
-                    return;
+                    return new State1번소환(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new State2번소환(context);
-                    return;
+                    return new State2번소환(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new State3번소환(context);
-                    return;
+                    return new State3번소환(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new State4번소환(context);
-                    return;
+                    return new State4번소환(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new State5번소환(context);
-                    return;
+                    return new State5번소환(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new State6번소환(context);
-                    return;
+                    return new State6번소환(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new State7번소환(context);
-                    return;
+                    return new State7번소환(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new State8번소환(context);
-                    return;
+                    return new State8번소환(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new State9번소환(context);
-                    return;
+                    return new State9번소환(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new State10번소환(context);
-                    return;
+                    return new State10번소환(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 1)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,21 +106,20 @@ namespace Maple2.Trigger._02000347_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State랜덤몬스터소환(context);
-                    return;
+                    return new State랜덤몬스터소환(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 1)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -143,21 +133,20 @@ namespace Maple2.Trigger._02000347_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State랜덤몬스터소환(context);
-                    return;
+                    return new State랜덤몬스터소환(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 1)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -171,21 +160,20 @@ namespace Maple2.Trigger._02000347_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State랜덤몬스터소환(context);
-                    return;
+                    return new State랜덤몬스터소환(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 1)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -199,21 +187,20 @@ namespace Maple2.Trigger._02000347_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State랜덤몬스터소환(context);
-                    return;
+                    return new State랜덤몬스터소환(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 1)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -227,21 +214,20 @@ namespace Maple2.Trigger._02000347_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State랜덤몬스터소환(context);
-                    return;
+                    return new State랜덤몬스터소환(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 1)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -255,21 +241,20 @@ namespace Maple2.Trigger._02000347_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State랜덤몬스터소환(context);
-                    return;
+                    return new State랜덤몬스터소환(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 1)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -283,21 +268,20 @@ namespace Maple2.Trigger._02000347_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State랜덤몬스터소환(context);
-                    return;
+                    return new State랜덤몬스터소환(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 1)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -311,21 +295,20 @@ namespace Maple2.Trigger._02000347_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State랜덤몬스터소환(context);
-                    return;
+                    return new State랜덤몬스터소환(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 1)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -339,21 +322,20 @@ namespace Maple2.Trigger._02000347_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State랜덤몬스터소환(context);
-                    return;
+                    return new State랜덤몬스터소환(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 1)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -367,21 +349,20 @@ namespace Maple2.Trigger._02000347_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State랜덤몬스터소환(context);
-                    return;
+                    return new State랜덤몬스터소환(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 1)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -394,7 +375,9 @@ namespace Maple2.Trigger._02000347_bf {
                 context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -7,126 +7,104 @@ namespace Maple2.Trigger._52000025_qd {
                 context.SetEffect(arg1: new[] {7001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002942}, arg3: new byte[] {1}, arg4: 30)) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002942}, arg3: new byte[] {2}, arg4: 30)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002942}, arg3: new byte[] {3}, arg4: 30)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002951}, arg3: new byte[] {1}, arg4: 40)) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002951}, arg3: new byte[] {2}, arg4: 40)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002951}, arg3: new byte[] {3}, arg4: 40)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002961}, arg3: new byte[] {1}, arg4: 20)) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002961}, arg3: new byte[] {2}, arg4: 20)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002961}, arg3: new byte[] {3}, arg4: 20)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002971}, arg3: new byte[] {1}, arg4: 50)) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002971}, arg3: new byte[] {2}, arg4: 50)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002971}, arg3: new byte[] {3}, arg4: 50)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {1}, arg4: 10)) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {2}, arg4: 10)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {3}, arg4: 10)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {1}, arg4: 01)) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {2}, arg4: 01)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002981}, arg3: new byte[] {3}, arg4: 01)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002991}, arg3: new byte[] {1}, arg4: 60)) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002991}, arg3: new byte[] {2}, arg4: 60)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002991}, arg3: new byte[] {3}, arg4: 60)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003001}, arg3: new byte[] {1}, arg4: 70)) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003001}, arg3: new byte[] {2}, arg4: 70)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10003001}, arg3: new byte[] {3}, arg4: 70)) {
-                    context.State = new Statestart_B(context);
-                    return;
+                    return new Statestart_B(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -140,7 +118,9 @@ namespace Maple2.Trigger._52000025_qd {
                 context.DestroyMonster(arg1: new[] {203, 204, 205});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -152,11 +132,12 @@ namespace Maple2.Trigger._52000025_qd {
                 context.CreateMonster(arg1: new[] {201, 203, 204, 101, 102}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102})) {
-                    context.State = new Statestart_02(context);
-                    return;
+                    return new Statestart_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -172,11 +153,12 @@ namespace Maple2.Trigger._52000025_qd {
                 context.SetConversation(arg1: 1, arg2: 201, arg3: "$52000025_QD__MAIN_ETC__1$", arg4: 2, arg5: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {111, 112, 113, 114, 115, 116})) {
-                    context.State = new Statestart_03(context);
-                    return;
+                    return new Statestart_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -192,11 +174,12 @@ namespace Maple2.Trigger._52000025_qd {
                 context.SetEffect(arg1: new[] {7001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statestart_04(context);
-                    return;
+                    return new Statestart_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -211,11 +194,12 @@ namespace Maple2.Trigger._52000025_qd {
                 context.SetEffect(arg1: new[] {7003}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statestart_05(context);
-                    return;
+                    return new Statestart_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -230,11 +214,12 @@ namespace Maple2.Trigger._52000025_qd {
                 context.DestroyMonster(arg1: new[] {203, 204, 205});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateStart_06(context);
-                    return;
+                    return new StateStart_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -256,11 +241,12 @@ namespace Maple2.Trigger._52000025_qd {
                 context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateStart_07(context);
-                    return;
+                    return new StateStart_07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -273,11 +259,12 @@ namespace Maple2.Trigger._52000025_qd {
                 context.SetConversation(arg1: 2, arg2: 11001575, arg3: "$52000025_QD__MAIN_ETC__4$", arg4: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateStart_08(context);
-                    return;
+                    return new StateStart_08(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -291,11 +278,12 @@ namespace Maple2.Trigger._52000025_qd {
                 context.SetEffect(arg1: new[] {7002}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateStart_09(context);
-                    return;
+                    return new StateStart_09(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -308,11 +296,12 @@ namespace Maple2.Trigger._52000025_qd {
                 context.SetConversation(arg1: 2, arg2: 11001575, arg3: "$52000025_QD__MAIN_ETC__6$", arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateStart_10(context);
-                    return;
+                    return new StateStart_10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -325,11 +314,12 @@ namespace Maple2.Trigger._52000025_qd {
                 context.SetConversation(arg1: 2, arg2: 11001575, arg3: "$52000025_QD__MAIN_ETC__7$", arg4: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateStart_11(context);
-                    return;
+                    return new StateStart_11(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -348,7 +338,9 @@ namespace Maple2.Trigger._52000025_qd {
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "SweepthePriates");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

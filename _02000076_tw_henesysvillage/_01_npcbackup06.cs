@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {1001}, arg2: new[] {10002041}, arg3: new byte[] {1})) {
-                    context.State = new State지원군생성(context);
-                    return;
+                    return new State지원군생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
                 context.MoveNpc(arg1: 106, arg2: "MS2PatrolData_16");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 3006, arg2: new[] {106})) {
-                    context.State = new State지원군이동(context);
-                    return;
+                    return new State지원군이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,11 +42,12 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
                 context.MoveNpc(arg1: 106, arg2: "MS2PatrolData_106");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 2001, arg2: new[] {106})) {
-                    context.State = new State지원군소멸(context);
-                    return;
+                    return new State지원군소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +61,12 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
                 context.SetTimer(arg1: "6", arg2: 120);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "6")) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

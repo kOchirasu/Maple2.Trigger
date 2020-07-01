@@ -9,11 +9,12 @@ namespace Maple2.Trigger._99999913 {
                 context.SetInteractObject(arg1: new[] {11000038}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RareBoxOnCount") == 1) {
-                    context.State = new StateDelay(context);
-                    return;
+                    return new StateDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._99999913 {
                 context.SetInteractObject(arg1: new[] {11000038}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 180000)) {
-                    context.State = new StateBoxOn(context);
-                    return;
+                    return new StateBoxOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._99999913 {
                 context.SetInteractObject(arg1: new[] {11000038}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RareBoxOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,11 +64,12 @@ namespace Maple2.Trigger._99999913 {
                 context.SetInteractObject(arg1: new[] {11000038}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateSetting(context);
-                    return;
+                    return new StateSetting(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

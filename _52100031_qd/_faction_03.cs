@@ -8,11 +8,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetInteractObject(arg1: new[] {10002064, 10002065, 10002069}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "faction03") == 1) {
-                    context.State = new State탱크준비(context);
-                    return;
+                    return new State탱크준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,11 +36,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetInteractObject(arg1: new[] {10002069}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State퀘스트(context);
-                    return;
+                    return new State퀘스트(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,11 +57,12 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State종료체크(context);
-                    return;
+                    return new State종료체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -74,14 +77,15 @@ namespace Maple2.Trigger._52100031_qd {
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "DungeonClear") == 1) {
                     context.DestroyMonster(arg1: new[] {1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208}, arg2: false);
                     context.SetInteractObject(arg1: new[] {10002064, 10002065, 10002069}, arg2: 0);
                     context.RemoveBuff(arg1: 199, arg2: 99910130);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,7 +96,9 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

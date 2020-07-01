@@ -22,11 +22,12 @@ namespace Maple2.Trigger._02020063_bf {
                 context.ResetTimer(arg1: "1");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9001}) || context.UserDetected(arg1: new[] {9003})) {
-                    context.State = new State유저카운트(context);
-                    return;
+                    return new State유저카운트(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,16 +41,16 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SetEffect(arg1: new[] {10001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "FieldGameStart") == 1) {
-                    context.State = new State딜레이(context);
-                    return;
+                    return new State딜레이(context);
                 }
 
                 if (context.GetUserValue(key: "FieldGameStart") == 2) {
-                    context.State = new State방폭(context);
-                    return;
+                    return new State방폭(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +65,12 @@ namespace Maple2.Trigger._02020063_bf {
                 context.CameraSelect(arg1: 998, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,11 +83,12 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02020063_BF__MAIN__1$", arg3: 10000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State내보내기(context);
-                    return;
+                    return new State내보내기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,11 +101,8 @@ namespace Maple2.Trigger._02020063_bf {
                 context.MoveUser(arg1: 0, arg2: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -124,20 +124,20 @@ namespace Maple2.Trigger._02020063_bf {
                 context.EnableSpawnPointPc(spawnPointId: 2, isEnable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_Clear") == 1) {
                     context.SetUserValue(triggerId: 99990002, key: "Battle_1_SpawnStart", value: 0);
-                    context.State = new State포탑페이즈(context);
-                    return;
+                    return new State포탑페이즈(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {801})) {
                     context.SetActor(arg1: 4002, arg2: true, arg3: "ks_quest_fusiondevice_A01_off");
                     context.SetEffect(arg1: new[] {10001}, arg2: false);
                     context.SetEffect(arg1: new[] {10002}, arg2: true);
-                    context.State = new State실패_세팅(context);
-                    return;
+                    return new State실패_세팅(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -154,20 +154,20 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02020063_BF__MAIN__3$", arg3: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_2_Clear") == 1) {
                     context.SetUserValue(triggerId: 99990005, key: "Battle_2_SpawnStart", value: 0);
-                    context.State = new State보스페이즈(context);
-                    return;
+                    return new State보스페이즈(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {801})) {
                     context.SetActor(arg1: 4002, arg2: true, arg3: "ks_quest_fusiondevice_A01_off");
                     context.SetEffect(arg1: new[] {10001}, arg2: false);
                     context.SetEffect(arg1: new[] {10002}, arg2: true);
-                    context.State = new State실패_세팅(context);
-                    return;
+                    return new State실패_세팅(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -184,25 +184,24 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SetTimer(arg1: "1", arg2: 180, arg3: true, arg4: true, arg5: 60);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_3_Clear") == 1) {
-                    context.State = new State성공_세팅(context);
-                    return;
+                    return new State성공_세팅(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {801})) {
                     context.SetActor(arg1: 4002, arg2: true, arg3: "ks_quest_fusiondevice_A01_off");
                     context.SetEffect(arg1: new[] {10001}, arg2: false);
                     context.SetEffect(arg1: new[] {10002}, arg2: true);
-                    context.State = new State실패_세팅(context);
-                    return;
+                    return new State실패_세팅(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
                     context.SetActor(arg1: 4002, arg2: true, arg3: "ks_quest_fusiondevice_A01_off");
-                    context.State = new State실패_세팅(context);
-                    return;
+                    return new State실패_세팅(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -222,11 +221,12 @@ namespace Maple2.Trigger._02020063_bf {
                 context.ResetTimer(arg1: "2");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State성공_추가대사(context);
-                    return;
+                    return new State성공_추가대사(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -239,11 +239,12 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_smile", duration: 5000, script: "$02020063_BF__MAIN__6$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State성공(context);
-                    return;
+                    return new State성공(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -264,11 +265,12 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SetMesh(arg1: new[] {4001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State실패(context);
-                    return;
+                    return new State실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -281,11 +283,12 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020063_BF__MAIN__8$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State실패(context);
-                    return;
+                    return new State실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -300,11 +303,8 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SetAchievement(arg2: "trigger", arg3: "FieldwarAchieve_2");
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -318,11 +318,8 @@ namespace Maple2.Trigger._02020063_bf {
                 context.FieldWarEnd(isClear: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State종료(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State종료(context);
             }
 
             public override void OnExit() { }
@@ -337,7 +334,9 @@ namespace Maple2.Trigger._02020063_bf {
                 context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

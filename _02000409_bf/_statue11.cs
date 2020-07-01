@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000409_bf {
                 context.SetMesh(arg1: new[] {11}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    context.State = new State수신대기(context);
-                    return;
+                    return new State수신대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,12 +23,13 @@ namespace Maple2.Trigger._02000409_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StatueHuman02Death") == 1) {
                     context.SetMesh(arg1: new[] {11}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,7 +42,9 @@ namespace Maple2.Trigger._02000409_bf {
                 context.SetMesh(arg1: new[] {11}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -21,11 +21,12 @@ namespace Maple2.Trigger._52010018_qd {
                 context.SetActor(arg1: 211, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002853}, arg3: new byte[] {1})) {
-                    context.State = new State미카이동02(context);
-                    return;
+                    return new State미카이동02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +44,12 @@ namespace Maple2.Trigger._52010018_qd {
                 context.MoveNpc(arg1: 1007, arg2: "MS2PatrolData_1007_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 104, arg2: new[] {1007})) {
-                    context.State = new State다리생성대기(context);
-                    return;
+                    return new State다리생성대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,15 +60,16 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                     context.SetMesh(arg1: new[] {3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.SetMesh(arg1: new[] {3004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new State다리생성(context);
-                    return;
+                    return new State다리생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,7 +80,7 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetActor(arg1: 201, arg2: true, arg3: "Eff_MassiveEvent_Door_Opened");
                     context.SetActor(arg1: 202, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
@@ -90,9 +93,10 @@ namespace Maple2.Trigger._52010018_qd {
                     context.SetActor(arg1: 209, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                     context.SetActor(arg1: 210, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
                     context.SetActor(arg1: 211, arg2: true, arg3: "Eff_MassiveEvent_Stair_Opened");
-                    context.State = new State미카대사02(context);
-                    return;
+                    return new State미카대사02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -105,11 +109,12 @@ namespace Maple2.Trigger._52010018_qd {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010018_QD__MAIN_2__0$", arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    context.State = new State에레브대사02(context);
-                    return;
+                    return new State에레브대사02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -122,11 +127,12 @@ namespace Maple2.Trigger._52010018_qd {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010018_QD__MAIN_2__1$", arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    context.State = new State미카대사03(context);
-                    return;
+                    return new State미카대사03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -139,12 +145,13 @@ namespace Maple2.Trigger._52010018_qd {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010018_QD__MAIN_2__2$", arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     context.MoveNpc(arg1: 1007, arg2: "MS2PatrolData_1007_B");
-                    context.State = new State미카소멸(context);
-                    return;
+                    return new State미카소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -155,16 +162,17 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
                     context.SetProductionUI(arg1: 0);
                     context.SetProductionUI(arg1: 2);
                     context.CameraSelect(arg1: 302, arg2: false);
                     context.DestroyMonster(arg1: new[] {1007});
                     context.SetAchievement(arg1: 100, arg2: "trigger", arg3: "BacktoDrakenheim");
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -175,7 +183,7 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetActor(arg1: 201, arg2: false, arg3: "Eff_MassiveEvent_Door_Vanished");
                     context.SetActor(arg1: 202, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
@@ -188,9 +196,10 @@ namespace Maple2.Trigger._52010018_qd {
                     context.SetActor(arg1: 209, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
                     context.SetActor(arg1: 210, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
                     context.SetActor(arg1: 211, arg2: false, arg3: "Eff_MassiveEvent_Stair_Closed");
-                    context.State = new State종료2(context);
-                    return;
+                    return new State종료2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -201,7 +210,9 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

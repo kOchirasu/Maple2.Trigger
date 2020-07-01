@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000244_bf {
                 context.DestroyMonster(arg1: new[] {622, 623, 624, 625, 626, 627, 628, 629, 630});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {202})) {
-                    context.State = new State몹생성(context);
-                    return;
+                    return new State몹생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,16 +26,16 @@ namespace Maple2.Trigger._02000244_bf {
                 context.CreateMonster(arg1: new[] {622, 623, 624, 625, 626, 627, 628, 629, 630}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {622, 623, 624, 625, 626, 627, 628, 629, 630})) {
-                    context.State = new State통과(context);
-                    return;
+                    return new State통과(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000302}, arg2: 0)) {
-                    context.State = new State통과(context);
-                    return;
+                    return new State통과(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,7 +49,9 @@ namespace Maple2.Trigger._02000244_bf {
                 context.SetTimer(arg1: "1", arg2: 180);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

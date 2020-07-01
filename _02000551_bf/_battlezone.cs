@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,101 +21,84 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 13, arg2: new[] {101})) {
-                    context.State = new State중앙전투판신호(context);
-                    return;
+                    return new State중앙전투판신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 12, arg2: new[] {101})) {
-                    context.State = new State12시전투판신호(context);
-                    return;
+                    return new State12시전투판신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 3, arg2: new[] {101})) {
-                    context.State = new State3시전투판신호(context);
-                    return;
+                    return new State3시전투판신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 6, arg2: new[] {101})) {
-                    context.State = new State6시전투판신호(context);
-                    return;
+                    return new State6시전투판신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 9, arg2: new[] {101})) {
-                    context.State = new State9시전투판신호(context);
-                    return;
+                    return new State9시전투판신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 122, arg2: new[] {101})) {
-                    context.State = new State봄컨셉도로신호(context);
-                    return;
+                    return new State봄컨셉도로신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 45, arg2: new[] {101})) {
-                    context.State = new State여름컨셉도로신호(context);
-                    return;
+                    return new State여름컨셉도로신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 78, arg2: new[] {101})) {
-                    context.State = new State가을컨셉도로신호(context);
-                    return;
+                    return new State가을컨셉도로신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 1011, arg2: new[] {101})) {
-                    context.State = new State겨울컨셉도로신호(context);
-                    return;
+                    return new State겨울컨셉도로신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 13, arg2: new[] {102})) {
-                    context.State = new State중앙전투판신호(context);
-                    return;
+                    return new State중앙전투판신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 12, arg2: new[] {102})) {
-                    context.State = new State12시전투판신호(context);
-                    return;
+                    return new State12시전투판신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 3, arg2: new[] {102})) {
-                    context.State = new State3시전투판신호(context);
-                    return;
+                    return new State3시전투판신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 6, arg2: new[] {102})) {
-                    context.State = new State6시전투판신호(context);
-                    return;
+                    return new State6시전투판신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 9, arg2: new[] {102})) {
-                    context.State = new State9시전투판신호(context);
-                    return;
+                    return new State9시전투판신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 122, arg2: new[] {102})) {
-                    context.State = new State봄컨셉도로신호(context);
-                    return;
+                    return new State봄컨셉도로신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 45, arg2: new[] {102})) {
-                    context.State = new State여름컨셉도로신호(context);
-                    return;
+                    return new State여름컨셉도로신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 78, arg2: new[] {102})) {
-                    context.State = new State가을컨셉도로신호(context);
-                    return;
+                    return new State가을컨셉도로신호(context);
                 }
 
                 if (context.NpcDetected(arg1: 1011, arg2: new[] {102})) {
-                    context.State = new State겨울컨셉도로신호(context);
-                    return;
+                    return new State겨울컨셉도로신호(context);
                 }
 
                 if (context.WaitTick(waitTick: 2200)) {
-                    context.State = new State시간경과대기(context);
-                    return;
+                    return new State시간경과대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -125,11 +109,12 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -142,11 +127,12 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 13);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -159,11 +145,12 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 12);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -176,11 +163,12 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -193,11 +181,12 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 6);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -210,11 +199,12 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 9);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -227,11 +217,12 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 122);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -244,11 +235,12 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 45);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -261,11 +253,12 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 78);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -278,11 +271,12 @@ namespace Maple2.Trigger._02000551_bf {
                 context.SetAiExtraData(key: "BattleZonePosition", value: 1011);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -293,7 +287,9 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

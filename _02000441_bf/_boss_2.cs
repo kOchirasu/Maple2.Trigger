@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000441_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "monster_respawn") == 1) {
-                    context.State = new State몬스터체력_75(context);
-                    return;
+                    return new State몬스터체력_75(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02000441_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 209) <= 0.75f) {
-                    context.State = new State몬스터체력_35(context);
-                    return;
+                    return new State몬스터체력_35(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -37,11 +39,12 @@ namespace Maple2.Trigger._02000441_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 209) <= 0.35f) {
-                    context.State = new State몬스터_마지막_리스폰(context);
-                    return;
+                    return new State몬스터_마지막_리스폰(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -54,8 +57,10 @@ namespace Maple2.Trigger._02000441_bf {
                 context.CreateMonster(arg1: new[] {214, 215, 216, 217}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (true) { }
+
+                return null;
             }
 
             public override void OnExit() { }

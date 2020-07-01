@@ -9,11 +9,12 @@ namespace Maple2.Trigger._99999878 {
                 context.SetVisibleBreakableObject(arg1: new[] {2000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new StateOpenDelay(context);
-                    return;
+                    return new StateOpenDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._99999878 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateOpen(context);
-                    return;
+                    return new StateOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,11 +45,12 @@ namespace Maple2.Trigger._99999878 {
                 context.SetVisibleBreakableObject(arg1: new[] {2000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateOffDelay(context);
-                    return;
+                    return new StateOffDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +61,12 @@ namespace Maple2.Trigger._99999878 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateOff(context);
-                    return;
+                    return new StateOff(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,11 +81,12 @@ namespace Maple2.Trigger._99999878 {
                 context.SetVisibleBreakableObject(arg1: new[] {2000}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

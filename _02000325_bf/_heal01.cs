@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000325_bf {
                 context.SetSkill(arg1: new[] {701}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000739}, arg2: 0)) {
-                    context.State = new State스킬작동(context);
-                    return;
+                    return new State스킬작동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,12 +27,13 @@ namespace Maple2.Trigger._02000325_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
                     context.SetSkill(arg1: new[] {701}, arg2: false);
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,12 +46,13 @@ namespace Maple2.Trigger._02000325_bf {
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
                     context.SetInteractObject(arg1: new[] {10000739}, arg2: 2);
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

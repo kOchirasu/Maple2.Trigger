@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000213_bf {
                 context.SetMesh(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 102, arg2: new[] {1099})) {
-                    context.State = new State카운트(context);
-                    return;
+                    return new State카운트(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02000213_bf {
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State차단(context);
-                    return;
+                    return new State차단(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +43,12 @@ namespace Maple2.Trigger._02000213_bf {
                 context.SetMesh(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515}, arg2: true, arg3: 0, arg4: 200, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1099})) {
-                    context.State = new State차단해제(context);
-                    return;
+                    return new State차단해제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,7 +61,9 @@ namespace Maple2.Trigger._02000213_bf {
                 context.SetMesh(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -9,11 +9,12 @@ namespace Maple2.Trigger._99999985_plantest_08 {
                 context.Weather(weatherType: "HeavyRain");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State오브젝트반응(context);
-                    return;
+                    return new State오브젝트반응(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +29,12 @@ namespace Maple2.Trigger._99999985_plantest_08 {
                 context.Weather(weatherType: "None");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

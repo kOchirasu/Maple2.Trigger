@@ -10,11 +10,12 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
-                    context.State = new State전투시작_인페르녹전함(context);
-                    return;
+                    return new State전투시작_인페르녹전함(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +30,12 @@ namespace Maple2.Trigger._02000410_bf {
                 context.DungeonSetLapTime(id: 2, lapTime: 720000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State첫번째페이즈_인페르녹전함(context);
-                    return;
+                    return new State첫번째페이즈_인페르녹전함(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SecondPhase") == 1) {
-                    context.State = new State두번째페이즈_인페르녹전함(context);
-                    return;
+                    return new State두번째페이즈_인페르녹전함(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +66,12 @@ namespace Maple2.Trigger._02000410_bf {
                 context.DungeonMissionComplete(feature: "DungeonRankBalance_02", missionId: 24090017);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ThirdPhase") == 1) {
-                    context.State = new State세번째페이즈_인페르녹등장(context);
-                    return;
+                    return new State세번째페이즈_인페르녹등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,11 +86,12 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SetSound(arg1: 8410, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BalrogMagicBursterBattlePhase") == 1) {
-                    context.State = new State인페르녹전투시작(context);
-                    return;
+                    return new State인페르녹전투시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -99,11 +104,12 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SetAiExtraData(key: "Phase", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonPlayTime() == 720) {
-                    context.State = new State네번째페이즈_인페르녹광폭화(context);
-                    return;
+                    return new State네번째페이즈_인페르녹광폭화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -116,11 +122,12 @@ namespace Maple2.Trigger._02000410_bf {
                 context.SetAiExtraData(key: "Phase", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -131,7 +138,9 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

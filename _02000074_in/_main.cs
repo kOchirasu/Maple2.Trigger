@@ -8,51 +8,44 @@ namespace Maple2.Trigger._02000074_in {
                 context.DestroyMonster(arg1: new[] {101, 102});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001592}, arg3: new byte[] {3})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001592}, arg3: new byte[] {2})) {
-                    context.State = new State쪽지스폰(context);
-                    return;
+                    return new State쪽지스폰(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001592}, arg3: new byte[] {1})) {
-                    context.State = new State쪽지스폰(context);
-                    return;
+                    return new State쪽지스폰(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001591}, arg3: new byte[] {3})) {
-                    context.State = new State쪽지스폰(context);
-                    return;
+                    return new State쪽지스폰(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001591}, arg3: new byte[] {2})) {
-                    context.State = new State쪽지스폰(context);
-                    return;
+                    return new State쪽지스폰(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001589}, arg3: new byte[] {2})) {
-                    context.State = new State케이틀린스폰(context);
-                    return;
+                    return new State케이틀린스폰(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001589}, arg3: new byte[] {1})) {
-                    context.State = new State케이틀린스폰(context);
-                    return;
+                    return new State케이틀린스폰(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001588}, arg3: new byte[] {3})) {
-                    context.State = new State케이틀린스폰(context);
-                    return;
+                    return new State케이틀린스폰(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001588}, arg3: new byte[] {2})) {
-                    context.State = new State케이틀린스폰(context);
-                    return;
+                    return new State케이틀린스폰(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +58,12 @@ namespace Maple2.Trigger._02000074_in {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,11 +77,12 @@ namespace Maple2.Trigger._02000074_in {
                 context.SetMesh(arg1: new[] {4000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,7 +93,9 @@ namespace Maple2.Trigger._02000074_in {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

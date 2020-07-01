@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new State발사01(context);
-                    return;
+                    return new State발사01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.CreateMonster(arg1: new[] {550}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State초기화(context);
-                    return;
+                    return new State초기화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,11 +42,8 @@ namespace Maple2.Trigger._52000014_qd {
                 context.DestroyMonster(arg1: new[] {550});
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State발사01(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State발사01(context);
             }
 
             public override void OnExit() { }

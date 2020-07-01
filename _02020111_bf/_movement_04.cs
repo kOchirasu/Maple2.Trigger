@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1001})) {
-                    context.State = new State환경변화_4(context);
-                    return;
+                    return new State환경변화_4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Movement") == 0) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.GetUserValue(key: "dark") == 7) {
-                    context.State = new State페이드아웃_4(context);
-                    return;
+                    return new State페이드아웃_4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +49,12 @@ namespace Maple2.Trigger._02020111_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State조명변경_4(context);
-                    return;
+                    return new State조명변경_4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -69,16 +71,16 @@ namespace Maple2.Trigger._02020111_bf {
                 context.AddBuff(arg1: new[] {1001}, arg2: 75000001, arg3: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    context.State = new State페이드인_4(context);
-                    return;
+                    return new State페이드인_4(context);
                 }
 
                 if (context.GetUserValue(key: "Movement") == 0) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -91,11 +93,12 @@ namespace Maple2.Trigger._02020111_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State유저이동_4(context);
-                    return;
+                    return new State유저이동_4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -106,11 +109,12 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State조명리셋_4(context);
-                    return;
+                    return new State조명리셋_4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -138,16 +142,16 @@ namespace Maple2.Trigger._02020111_bf {
                 context.SetPortal(arg1: 8, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Movement") == 0) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.GetUserValue(key: "dark") == 8) {
-                    context.State = new State중앙지역이동_4(context);
-                    return;
+                    return new State중앙지역이동_4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -162,11 +166,12 @@ namespace Maple2.Trigger._02020111_bf {
                 context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State중앙지역이동_4_페이드인(context);
-                    return;
+                    return new State중앙지역이동_4_페이드인(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -177,11 +182,12 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State포탈설정_4(context);
-                    return;
+                    return new State포탈설정_4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -197,11 +203,12 @@ namespace Maple2.Trigger._02020111_bf {
                 context.SetPortal(arg1: 8, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Movement") == 0) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

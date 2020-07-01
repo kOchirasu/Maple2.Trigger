@@ -10,11 +10,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetSkill(arg1: new[] {1212}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 199) == 1) {
-                    context.State = new State낮밤변환신호대기(context);
-                    return;
+                    return new State낮밤변환신호대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,26 +26,24 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "DayNightChange") == 1) {
-                    context.State = new State낮시간으로변화대기단계(context);
-                    return;
+                    return new State낮시간으로변화대기단계(context);
                 }
 
                 if (context.GetUserValue(key: "DayNightChange") == 2) {
-                    context.State = new State밤시간으로변화대기단계(context);
-                    return;
+                    return new State밤시간으로변화대기단계(context);
                 }
 
                 if (context.GetUserValue(key: "DayNightChange") == 3) {
-                    context.State = new State디버프모조리제거(context);
-                    return;
+                    return new State디버프모조리제거(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonReset") == 1) {
-                    context.State = new State낮시간으로변화하기_맵초기화(context);
-                    return;
+                    return new State낮시간으로변화하기_맵초기화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,11 +54,12 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1400)) {
-                    context.State = new State낮시간으로변화하기(context);
-                    return;
+                    return new State낮시간으로변화하기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,11 +77,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetUserValue(key: "DayNightChange", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State낮밤변환신호대기(context);
-                    return;
+                    return new State낮밤변환신호대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -101,11 +102,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetSkill(arg1: new[] {1212}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State낮밤변환신호대기(context);
-                    return;
+                    return new State낮밤변환신호대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -116,11 +118,12 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1400)) {
-                    context.State = new State밤시간으로변화하기(context);
-                    return;
+                    return new State밤시간으로변화하기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -138,11 +141,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetUserValue(key: "DayNightChange", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State낮밤변환신호대기(context);
-                    return;
+                    return new State낮밤변환신호대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -156,11 +160,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetUserValue(key: "DayNightChange", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1100)) {
-                    context.State = new State낮밤변환신호대기(context);
-                    return;
+                    return new State낮밤변환신호대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -171,7 +176,9 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

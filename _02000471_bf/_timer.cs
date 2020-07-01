@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetUserValue(triggerId: 2040301, key: "TimerEnd", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 1) {
-                    context.State = new Statestart(context);
-                    return;
+                    return new Statestart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,16 +26,16 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000471_BF__TIMER__0$", arg3: 5000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "Timer")) {
-                    context.State = new Stateend_fail(context);
-                    return;
+                    return new Stateend_fail(context);
                 }
 
                 if (context.GetUserValue(key: "InteractClear") == 1) {
-                    context.State = new Stateend_clear(context);
-                    return;
+                    return new Stateend_clear(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,7 +49,9 @@ namespace Maple2.Trigger._02000471_bf {
                 context.ResetTimer(arg1: "Timer");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -61,7 +64,9 @@ namespace Maple2.Trigger._02000471_bf {
                 context.ResetTimer(arg1: "Timer");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

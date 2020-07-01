@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02020142_bf {
                 context.SetUserValue(key: "MarbleTurkaSupportMany", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new State트리거작동신호받기대기중(context);
-                    return;
+                    return new State트리거작동신호받기대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "2PhaseTubeStep") >= 1) {
-                    context.State = new State트리거작동대기중(context);
-                    return;
+                    return new State트리거작동대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,11 +40,12 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State트리거작동시작(context);
-                    return;
+                    return new State트리거작동시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -53,16 +56,16 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "2PhaseTubeStep") == 1) {
-                    context.State = new State튜브대미지필드_1단계진행(context);
-                    return;
+                    return new State튜브대미지필드_1단계진행(context);
                 }
 
                 if (context.GetUserValue(key: "2PhaseTubeStep") == 2) {
-                    context.State = new State튜브대미지필드_2단계전환_우선1단계제거(context);
-                    return;
+                    return new State튜브대미지필드_2단계전환_우선1단계제거(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,16 +76,16 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MarbleTurkaSupportMany") >= 1) {
-                    context.State = new State1단계_튜브대미지필드_생성(context);
-                    return;
+                    return new State1단계_튜브대미지필드_생성(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State1단계_튜브대미지필드_제거(context);
-                    return;
+                    return new State1단계_튜브대미지필드_제거(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -95,16 +98,16 @@ namespace Maple2.Trigger._02020142_bf {
                 context.AddBuff(arg1: new[] {102}, arg2: 50004566, arg3: 1, arg4: true, arg5: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "2PhaseTubeStep") == 2) {
-                    context.State = new State튜브대미지필드_2단계전환_우선1단계제거(context);
-                    return;
+                    return new State튜브대미지필드_2단계전환_우선1단계제거(context);
                 }
 
                 if (context.GetUserValue(key: "MarbleTurkaSupportMany") == 0) {
-                    context.State = new State1단계_튜브대미지필드_제거(context);
-                    return;
+                    return new State1단계_튜브대미지필드_제거(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -117,16 +120,16 @@ namespace Maple2.Trigger._02020142_bf {
                 context.NpcRemoveAdditionalEffect(spawnPointId: 102, additionalEffectId: 50004566);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "2PhaseTubeStep") == 2) {
-                    context.State = new State튜브대미지필드_2단계전환_우선1단계제거(context);
-                    return;
+                    return new State튜브대미지필드_2단계전환_우선1단계제거(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State튜브대미지필드_1단계진행(context);
-                    return;
+                    return new State튜브대미지필드_1단계진행(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -140,11 +143,12 @@ namespace Maple2.Trigger._02020142_bf {
                 context.SetUserValue(key: "TubeLeveStep", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new State2단계_튜브대미지필드_처음단계(context);
-                    return;
+                    return new State2단계_튜브대미지필드_처음단계(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -155,16 +159,16 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MarbleTurkaSupportMany") >= 1) {
-                    context.State = new State2단계_튜브대미지필드_1Lv생성(context);
-                    return;
+                    return new State2단계_튜브대미지필드_1Lv생성(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State2단계_튜브대미지필드_제거(context);
-                    return;
+                    return new State2단계_튜브대미지필드_제거(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -177,11 +181,12 @@ namespace Maple2.Trigger._02020142_bf {
                 context.AddBuff(arg1: new[] {102}, arg2: 50004563, arg3: 1, arg4: true, arg5: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State2단계_튜브대미지필드_TubeLeveStep_더하기(context);
-                    return;
+                    return new State2단계_튜브대미지필드_TubeLeveStep_더하기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -195,11 +200,12 @@ namespace Maple2.Trigger._02020142_bf {
                 context.AddBuff(arg1: new[] {102}, arg2: 50004564, arg3: 1, arg4: true, arg5: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State2단계_튜브대미지필드_TubeLeveStep_더하기(context);
-                    return;
+                    return new State2단계_튜브대미지필드_TubeLeveStep_더하기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -213,11 +219,12 @@ namespace Maple2.Trigger._02020142_bf {
                 context.AddBuff(arg1: new[] {102}, arg2: 50004565, arg3: 1, arg4: true, arg5: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State2단계_튜브대미지필드_TubeLeveStep_더하기(context);
-                    return;
+                    return new State2단계_튜브대미지필드_TubeLeveStep_더하기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -230,11 +237,12 @@ namespace Maple2.Trigger._02020142_bf {
                 context.AddUserValue(key: "TubeLeveStep", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State2단계_튜브대미지필드_TubeLeveStep_체크(context);
-                    return;
+                    return new State2단계_튜브대미지필드_TubeLeveStep_체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -245,26 +253,24 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TubeLeveStep") == 10) {
-                    context.State = new State2단계_튜브대미지필드_2Lv생성(context);
-                    return;
+                    return new State2단계_튜브대미지필드_2Lv생성(context);
                 }
 
                 if (context.GetUserValue(key: "TubeLeveStep") == 20) {
-                    context.State = new State2단계_튜브대미지필드_3Lv생성(context);
-                    return;
+                    return new State2단계_튜브대미지필드_3Lv생성(context);
                 }
 
                 if (context.GetUserValue(key: "MarbleTurkaSupportMany") >= 1) {
-                    context.State = new State2단계_튜브대미지필드_TubeLeveStep_더하기(context);
-                    return;
+                    return new State2단계_튜브대미지필드_TubeLeveStep_더하기(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State2단계_튜브대미지필드_제거(context);
-                    return;
+                    return new State2단계_튜브대미지필드_제거(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -280,11 +286,12 @@ namespace Maple2.Trigger._02020142_bf {
                 context.SetUserValue(key: "TubeLeveStep", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State2단계_튜브대미지필드_처음단계(context);
-                    return;
+                    return new State2단계_튜브대미지필드_처음단계(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -295,7 +302,9 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

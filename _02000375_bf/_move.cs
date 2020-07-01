@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000375_bf {
                 context.SetInteractObject(arg1: new[] {10001024}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001024}, arg2: 0)) {
-                    context.State = new State이동(context);
-                    return;
+                    return new State이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02000375_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000375_BF__move__0$", arg3: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 60000)) {
-                    context.State = new State레버삭제(context);
-                    return;
+                    return new State레버삭제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,11 +48,12 @@ namespace Maple2.Trigger._02000375_bf {
                 context.SetInteractObject(arg1: new[] {10001024}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleEnd") == 1) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,7 +64,9 @@ namespace Maple2.Trigger._02000375_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

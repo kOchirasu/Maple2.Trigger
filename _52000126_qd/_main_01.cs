@@ -5,26 +5,24 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100210}, arg3: new byte[] {2})) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100210}, arg3: new byte[] {3})) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100215}, arg3: new byte[] {1})) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100215}, arg3: new byte[] {2})) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +40,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetSceneSkip(arg1: "endwaiting", arg2: "exit");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statemove(context);
-                    return;
+                    return new Statemove(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,11 +59,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__0$", duration: 7000, delayTick: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new Statetalk(context);
-                    return;
+                    return new Statetalk(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -78,11 +78,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__1$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Stateendtalk(context);
-                    return;
+                    return new Stateendtalk(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -95,11 +96,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__2$", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Stateendwaiting(context);
-                    return;
+                    return new Stateendwaiting(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -116,11 +118,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.CreateMonster(arg1: new[] {202}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -134,7 +137,9 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

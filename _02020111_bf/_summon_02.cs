@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1001})) {
-                    context.State = new State소환준비(context);
-                    return;
+                    return new State소환준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,16 +21,16 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon_Enemy_1") == 0) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.GetUserValue(key: "Summon_Enemy_1") == 1) {
-                    context.State = new State몬스터등장(context);
-                    return;
+                    return new State몬스터등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,16 +43,16 @@ namespace Maple2.Trigger._02020111_bf {
                 context.CreateMonster(arg1: new[] {121, 122, 123, 124, 131, 132, 133, 134});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon_Enemy_1") == 0) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.GetUserValue(key: "Summon_Enemy_2") == 1) {
-                    context.State = new State몬스터등장_2(context);
-                    return;
+                    return new State몬스터등장_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +65,12 @@ namespace Maple2.Trigger._02020111_bf {
                 context.CreateMonster(arg1: new[] {121, 122, 123, 124, 131, 132, 133, 134});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon_Enemy_1") == 0) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

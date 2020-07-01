@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {900})) {
-                    context.State = new State타임(context);
-                    return;
+                    return new State타임(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,13 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {900}) || context.MonsterDead(arg1: new[] {901})) {
-                    // context.State = new StateMove01(context);
-                    return;
+                    // return new StateMove01(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,8 +38,10 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) { }
+
+                return null;
             }
 
             public override void OnExit() { }

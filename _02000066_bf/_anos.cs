@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    context.State = new StateNPC생성(context);
-                    return;
+                    return new StateNPC생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {98}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +39,12 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State말풍선랜덤(context);
-                    return;
+                    return new State말풍선랜덤(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -52,26 +55,24 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateNPC대사01(context);
-                    return;
+                    return new StateNPC대사01(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateNPC대사02(context);
-                    return;
+                    return new StateNPC대사02(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateNPC대사03(context);
-                    return;
+                    return new StateNPC대사03(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new StateNPC대사04(context);
-                    return;
+                    return new StateNPC대사04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -84,11 +85,8 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetConversation(arg1: 1, arg2: 98, arg3: "$02000066_BF__ANOS__0$", arg4: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }
@@ -101,11 +99,8 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetConversation(arg1: 1, arg2: 98, arg3: "$02000066_BF__ANOS__1$", arg4: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }
@@ -118,11 +113,8 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetConversation(arg1: 1, arg2: 98, arg3: "$02000066_BF__ANOS__2$", arg4: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }
@@ -135,11 +127,8 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetConversation(arg1: 1, arg2: 98, arg3: "$02000066_BF__ANOS__3$", arg4: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }

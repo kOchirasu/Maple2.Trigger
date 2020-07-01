@@ -8,11 +8,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100210}, arg3: new byte[] {1})) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -33,11 +34,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetSceneSkip(arg1: "battle_ready", arg2: "nextState");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statetalk_01(context);
-                    return;
+                    return new Statetalk_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -53,11 +55,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.CreateMonster(arg1: new[] {301, 302, 303}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statetalk_02(context);
-                    return;
+                    return new Statetalk_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,11 +78,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.MoveNpc(arg1: 303, arg2: "MS2PatrolData_3004");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new Statescene_01(context);
-                    return;
+                    return new Statescene_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -93,11 +97,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.AddCinematicTalk(npcId: 11003214, msg: "$52000126_QD__MAIN__2$", duration: 3000, align: "Left");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statescene_02(context);
-                    return;
+                    return new Statescene_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -112,11 +117,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.AddCinematicTalk(npcId: 11003214, msg: "$52000126_QD__MAIN__3$", duration: 3000, align: "Left");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statescene_03(context);
-                    return;
+                    return new Statescene_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -130,11 +136,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.AddCinematicTalk(npcId: 11003214, msg: "$52000126_QD__MAIN__4$", duration: 4000, align: "Left");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statescene_04(context);
-                    return;
+                    return new Statescene_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -150,11 +157,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/Sound/Eff_Object_Explosion_Debris_01.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statescene_05(context);
-                    return;
+                    return new Statescene_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -171,11 +179,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.AddCinematicTalk(npcId: 11003213, msg: "$52000126_QD__MAIN__6$", duration: 2000, align: "Left");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statescene_06(context);
-                    return;
+                    return new Statescene_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -191,11 +200,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statebattle_ready(context);
-                    return;
+                    return new Statebattle_ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -208,11 +218,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statebattle(context);
-                    return;
+                    return new Statebattle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -230,11 +241,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.CreateMonster(arg1: new[] {601, 602, 603}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatebattleMsg(context);
-                    return;
+                    return new StatebattleMsg(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -248,11 +260,12 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetEventUI(arg1: 1, arg2: "$52000126_QD__MAIN__8$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {601, 602, 603})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -270,7 +283,9 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

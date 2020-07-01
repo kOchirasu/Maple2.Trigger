@@ -10,11 +10,8 @@ namespace Maple2.Trigger._84000016_wd {
                 context.SetPortal(arg1: 99, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State결혼식연출시작요청대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State결혼식연출시작요청대기(context);
             }
 
             public override void OnExit() { }
@@ -28,13 +25,14 @@ namespace Maple2.Trigger._84000016_wd {
                 context.HideGuideSummary(entityId: 28400140);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Weddingceremonystarts") == 1) {
                     context.SetUserValue(key: "Weddingceremonystarts", value: 0);
                     context.LockMyPc(isLock: true);
-                    context.State = new State시작알림(context);
-                    return;
+                    return new State시작알림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +45,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.ShowGuideSummary(entityId: 28400134, textId: 28400134);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State연출시작(context);
-                    return;
+                    return new State연출시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -72,11 +71,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.SetPortal(arg1: 99, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State주례줌인01(context);
-                    return;
+                    return new State주례줌인01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,11 +90,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.CameraSelectPath(arg1: new[] {8002, 8001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State주례줌인02(context);
-                    return;
+                    return new State주례줌인02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -108,11 +109,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.AddCinematicTalk(npcId: 11004711, msg: "$84000016_WD__84000016_MAIN__0$", duration: 3500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State시선돌리기01(context);
-                    return;
+                    return new State시선돌리기01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -125,11 +127,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State세레나데(context);
-                    return;
+                    return new State세레나데(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -142,11 +145,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateUI테스트(context);
-                    return;
+                    return new StateUI테스트(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -161,11 +165,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State입장준비01(context);
-                    return;
+                    return new State입장준비01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -180,11 +185,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.SetProductionUI(arg1: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State입장준비02(context);
-                    return;
+                    return new State입장준비02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -198,11 +204,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.WeddingSetUserEmotion(entryType: "Groom", id: 6);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State입장01(context);
-                    return;
+                    return new State입장01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -217,11 +224,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.WeddingUserToPatrol(patrolName: "MS2PatrolData_2002", entryType: "Bride", patrolIndex: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State카메라이동01(context);
-                    return;
+                    return new State카메라이동01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -232,11 +240,12 @@ namespace Maple2.Trigger._84000016_wd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 17000)) {
-                    context.State = new State카메라이동02(context);
-                    return;
+                    return new State카메라이동02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -249,11 +258,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.DestroyMonster(arg1: new[] {102});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State주례사(context);
-                    return;
+                    return new State주례사(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -269,11 +279,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.AddCinematicTalk(npcId: 11004711, msg: "$84000016_WD__84000016_MAIN__1$", duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    context.State = new State성혼타이핑결과확인(context);
-                    return;
+                    return new State성혼타이핑결과확인(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -286,28 +297,26 @@ namespace Maple2.Trigger._84000016_wd {
                 context.WeddingMutualAgree(agreeType: "partnerName");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
                     context.WeddingMutualCancel(agreeType: "partnerName");
-                    context.State = new State미입력으로중단01(context);
-                    return;
+                    return new State미입력으로중단01(context);
                 }
 
                 if (context.WeddingEntryInField(entryType: "GroomBride", isInField: false)) {
                     context.WeddingMutualCancel(agreeType: "partnerName");
-                    context.State = new State탈주로중단(context);
-                    return;
+                    return new State탈주로중단(context);
                 }
 
                 if (context.WeddingMutualAgreeResult(agreeType: "partnerName", success: false)) {
-                    context.State = new State탈주로중단(context);
-                    return;
+                    return new State탈주로중단(context);
                 }
 
                 if (context.WeddingMutualAgreeResult(agreeType: "partnerName", success: true)) {
-                    context.State = new State성혼발표(context);
-                    return;
+                    return new State성혼발표(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -320,11 +329,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.AddCinematicTalk(npcId: 11004711, msg: "$84000016_WD__84000016_MAIN__2$", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State탈주로중단선언(context);
-                    return;
+                    return new State탈주로중단선언(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -337,11 +347,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.AddCinematicTalk(npcId: 11004711, msg: "$84000016_WD__84000016_MAIN__3$", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State탈주로중단선언리셋(context);
-                    return;
+                    return new State탈주로중단선언리셋(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -354,11 +365,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.AddCinematicTalk(npcId: 11004711, msg: "$84000016_WD__84000016_MAIN__4$", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new State미입력으로중단선언(context);
-                    return;
+                    return new State미입력으로중단선언(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -371,11 +383,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.AddCinematicTalk(npcId: 11004711, msg: "$84000016_WD__84000016_MAIN__5$", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new State탈주로중단선언리셋(context);
-                    return;
+                    return new State탈주로중단선언리셋(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -392,11 +405,8 @@ namespace Maple2.Trigger._84000016_wd {
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State결혼식연출시작요청대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State결혼식연출시작요청대기(context);
             }
 
             public override void OnExit() { }
@@ -413,11 +423,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.WeddingSetUserLookAt(entryType: "Groom", lookAtEntryType: "Bride", immediate: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State환호성(context);
-                    return;
+                    return new State환호성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -433,11 +444,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.PlaySystemSoundInBox(arg2: "System_WeddingAudience_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State뒷풀이01(context);
-                    return;
+                    return new State뒷풀이01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -452,11 +464,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State보상과결혼상태마지막체크(context);
-                    return;
+                    return new State보상과결혼상태마지막체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -469,16 +482,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.LockMyPc(isLock: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WeddingHallState(hallState: "weddingComplete", success: true)) {
-                    context.State = new State뒷풀이02(context);
-                    return;
+                    return new State뒷풀이02(context);
                 }
 
-                if (true) {
-                    context.State = new State보상결혼상태체크실패(context);
-                    return;
-                }
+                return new State보상결혼상태체크실패(context);
             }
 
             public override void OnExit() { }
@@ -493,11 +502,8 @@ namespace Maple2.Trigger._84000016_wd {
                 context.ShowGuideSummary(entityId: 28400140);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State결혼식연출시작요청대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State결혼식연출시작요청대기(context);
             }
 
             public override void OnExit() { }
@@ -511,11 +517,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.SetPortal(arg1: 99, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State뒷풀이03(context);
-                    return;
+                    return new State뒷풀이03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -531,11 +538,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.SetUserValue(key: "EndWedding", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "EndWedding") == 1) {
-                    context.State = new State결혼종료확인(context);
-                    return;
+                    return new State결혼종료확인(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -550,21 +558,20 @@ namespace Maple2.Trigger._84000016_wd {
                 context.WeddingMutualAgree(agreeType: "endActing");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WeddingEntryInField(entryType: "GroomBride", isInField: false)) {
-                    context.State = new State종료알림(context);
-                    return;
+                    return new State종료알림(context);
                 }
 
                 if (context.WeddingMutualAgreeResult(agreeType: "endActing", success: true)) {
-                    context.State = new State종료알림(context);
-                    return;
+                    return new State종료알림(context);
                 }
 
                 if (context.WeddingMutualAgreeResult(agreeType: "endActing", success: false)) {
-                    context.State = new State뒷풀이03(context);
-                    return;
+                    return new State뒷풀이03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -577,11 +584,12 @@ namespace Maple2.Trigger._84000016_wd {
                 context.ShowGuideSummary(entityId: 28400137, textId: 28400137);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new State끄읏(context);
-                    return;
+                    return new State끄읏(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -596,7 +604,9 @@ namespace Maple2.Trigger._84000016_wd {
                 context.MoveUser(arg1: 0, arg2: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

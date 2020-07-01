@@ -20,11 +20,12 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetInteractObject(arg1: new[] {10000494, 10000495, 10000496, 10000497, 10000498, 10000499}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {104})) {
-                    context.State = new State클리어체크(context);
-                    return;
+                    return new State클리어체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +38,12 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetEffect(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 610}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    context.State = new State클리어체크2(context);
-                    return;
+                    return new State클리어체크2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -54,31 +56,28 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1010})) {
-                    context.State = new State타임머신중지(context);
-                    return;
+                    return new State타임머신중지(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1011})) {
-                    context.State = new State타임머신중지(context);
-                    return;
+                    return new State타임머신중지(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1012})) {
-                    context.State = new State타임머신중지(context);
-                    return;
+                    return new State타임머신중지(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1013})) {
-                    context.State = new State타임머신중지(context);
-                    return;
+                    return new State타임머신중지(context);
                 }
 
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State정황설명(context);
-                    return;
+                    return new State정황설명(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,11 +91,12 @@ namespace Maple2.Trigger._02000299_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State시간반응대기(context);
-                    return;
+                    return new State시간반응대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -111,16 +111,16 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetInteractObject(arg1: new[] {10000494, 10000495}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000494}, arg2: 0)) {
-                    context.State = new State미래시간(context);
-                    return;
+                    return new State미래시간(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000495}, arg2: 0)) {
-                    context.State = new State과거시간(context);
-                    return;
+                    return new State과거시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -137,26 +137,24 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetInteractObject(arg1: new[] {10000496, 10000497, 10000498, 10000499}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000496}, arg2: 0)) {
-                    context.State = new State그런거없음(context);
-                    return;
+                    return new State그런거없음(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000497}, arg2: 0)) {
-                    context.State = new State미래엘리니아(context);
-                    return;
+                    return new State미래엘리니아(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000498}, arg2: 0)) {
-                    context.State = new State그런거없음(context);
-                    return;
+                    return new State그런거없음(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000499}, arg2: 0)) {
-                    context.State = new State미래커닝시티(context);
-                    return;
+                    return new State미래커닝시티(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -177,26 +175,24 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetInteractObject(arg1: new[] {10000496, 10000497, 10000498, 10000499}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000496}, arg2: 0)) {
-                    context.State = new State과거헤네니스(context);
-                    return;
+                    return new State과거헤네니스(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000497}, arg2: 0)) {
-                    context.State = new State그런거없음(context);
-                    return;
+                    return new State그런거없음(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000498}, arg2: 0)) {
-                    context.State = new State과거페리온(context);
-                    return;
+                    return new State과거페리온(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000499}, arg2: 0)) {
-                    context.State = new State그런거없음(context);
-                    return;
+                    return new State그런거없음(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -216,12 +212,13 @@ namespace Maple2.Trigger._02000299_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.HideGuideSummary(entityId: 20002989);
-                    context.State = new State미래엘리니아2(context);
-                    return;
+                    return new State미래엘리니아2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -248,11 +245,12 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_On");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State미래엘리니아이동(context);
-                    return;
+                    return new State미래엘리니아이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -268,7 +266,7 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetEffect(arg1: new[] {605}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
                     context.MoveUser(arg1: 02000302, arg2: 1, arg3: 104);
                     context.SetActor(arg1: 290, arg2: true, arg3: "sf_quest_light_A01_Off");
@@ -281,9 +279,10 @@ namespace Maple2.Trigger._02000299_bf {
                     context.SetActor(arg1: 297, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 298, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_Off");
-                    context.State = new State클리어체크(context);
-                    return;
+                    return new State클리어체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -303,12 +302,13 @@ namespace Maple2.Trigger._02000299_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.HideGuideSummary(entityId: 20002989);
-                    context.State = new State미래커닝시티2(context);
-                    return;
+                    return new State미래커닝시티2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -336,11 +336,12 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_On");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State미래커닝시티이동(context);
-                    return;
+                    return new State미래커닝시티이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -356,7 +357,7 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetEffect(arg1: new[] {605}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
                     context.MoveUser(arg1: 02000301, arg2: 1, arg3: 104);
                     context.SetActor(arg1: 290, arg2: true, arg3: "sf_quest_light_A01_Off");
@@ -369,9 +370,10 @@ namespace Maple2.Trigger._02000299_bf {
                     context.SetActor(arg1: 297, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 298, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_Off");
-                    context.State = new State클리어체크(context);
-                    return;
+                    return new State클리어체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -391,12 +393,13 @@ namespace Maple2.Trigger._02000299_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.HideGuideSummary(entityId: 20002989);
-                    context.State = new State과거헤네니스2(context);
-                    return;
+                    return new State과거헤네니스2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -424,11 +427,12 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_On");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State과거헤네니스이동(context);
-                    return;
+                    return new State과거헤네니스이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -444,7 +448,7 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetEffect(arg1: new[] {605}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
                     context.MoveUser(arg1: 02000303, arg2: 1, arg3: 104);
                     context.SetActor(arg1: 290, arg2: true, arg3: "sf_quest_light_A01_Off");
@@ -457,9 +461,10 @@ namespace Maple2.Trigger._02000299_bf {
                     context.SetActor(arg1: 297, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 298, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_Off");
-                    context.State = new State클리어체크(context);
-                    return;
+                    return new State클리어체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -479,12 +484,13 @@ namespace Maple2.Trigger._02000299_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.HideGuideSummary(entityId: 20002989);
-                    context.State = new State과거페리온2(context);
-                    return;
+                    return new State과거페리온2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -512,11 +518,12 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_On");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State과거페리온이동(context);
-                    return;
+                    return new State과거페리온이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -532,7 +539,7 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetEffect(arg1: new[] {605}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
                     context.MoveUser(arg1: 02000300, arg2: 1, arg3: 104);
                     context.SetActor(arg1: 290, arg2: true, arg3: "sf_quest_light_A01_Off");
@@ -545,9 +552,10 @@ namespace Maple2.Trigger._02000299_bf {
                     context.SetActor(arg1: 297, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 298, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_Off");
-                    context.State = new State클리어체크(context);
-                    return;
+                    return new State클리어체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -567,12 +575,13 @@ namespace Maple2.Trigger._02000299_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.HideGuideSummary(entityId: 20002989);
-                    context.State = new State그런거없음2(context);
-                    return;
+                    return new State그런거없음2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -589,12 +598,13 @@ namespace Maple2.Trigger._02000299_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
                     context.HideGuideSummary(entityId: 20002994);
-                    context.State = new State방어모드(context);
-                    return;
+                    return new State방어모드(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -620,7 +630,7 @@ namespace Maple2.Trigger._02000299_bf {
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1001, 1002, 1003, 1004})) {
                     context.HideGuideSummary(entityId: 20002995);
                     context.SetEffect(arg1: new[] {610}, arg2: false);
@@ -634,9 +644,10 @@ namespace Maple2.Trigger._02000299_bf {
                     context.SetActor(arg1: 297, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 298, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_Off");
-                    context.State = new State방어모드종료(context);
-                    return;
+                    return new State방어모드종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -651,12 +662,13 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
                     context.HideGuideSummary(entityId: 20002996);
-                    context.State = new State시간반응대기(context);
-                    return;
+                    return new State시간반응대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -667,11 +679,12 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {104})) {
-                    context.State = new State보스방이동준비(context);
-                    return;
+                    return new State보스방이동준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -698,12 +711,13 @@ namespace Maple2.Trigger._02000299_bf {
                 context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_On");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
                     context.HideGuideSummary(entityId: 20002997);
-                    context.State = new State보스방이동(context);
-                    return;
+                    return new State보스방이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -718,12 +732,13 @@ namespace Maple2.Trigger._02000299_bf {
                 context.ShowCountUI(text: "$02000299_BF__MAIN__15$", stage: 1, count: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
                     context.MoveUser(arg1: 02000304, arg2: 1);
-                    context.State = new State반복체크(context);
-                    return;
+                    return new State반복체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -739,12 +754,13 @@ namespace Maple2.Trigger._02000299_bf {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
                     context.HideGuideSummary(entityId: 20002997);
-                    context.State = new State보스방이동(context);
-                    return;
+                    return new State보스방이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -755,7 +771,9 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

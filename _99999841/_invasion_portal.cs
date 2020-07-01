@@ -8,7 +8,9 @@ namespace Maple2.Trigger._99999841 {
                 context.SetInteractObject(arg1: new[] {10002184}, arg2: 2, arg3: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -21,22 +23,21 @@ namespace Maple2.Trigger._99999841 {
                 context.SetInteractObject(arg1: new[] {10002184}, arg2: 1, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
                     context.ResetTimer(arg1: "1");
-                    context.State = new State포탈닫힘(context);
-                    return;
+                    return new State포탈닫힘(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002184}, arg2: 2)) {
-                    context.State = new State유저이동(context);
-                    return;
+                    return new State유저이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,16 +50,16 @@ namespace Maple2.Trigger._99999841 {
                 context.SetUserValue(triggerId: 99990010, key: "PCmove", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetDungeonVariable(id: 1000) == true) {
-                    context.State = new State포탈열림(context);
-                    return;
+                    return new State포탈열림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,17 +74,17 @@ namespace Maple2.Trigger._99999841 {
                 context.SetInteractObject(arg1: new[] {10002184}, arg2: 2, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 2) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.TimeExpired(arg1: "2")) {
                     context.ResetTimer(arg1: "2");
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,7 +97,9 @@ namespace Maple2.Trigger._99999841 {
                 context.SetInteractObject(arg1: new[] {10002184}, arg2: 2, arg3: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

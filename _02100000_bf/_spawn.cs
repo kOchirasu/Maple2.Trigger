@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterSpawn") == 1) {
-                    context.State = new State끝_1(context);
-                    return;
+                    return new State끝_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -22,11 +23,13 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {82001})) {
-                    // context.State = new State성공(context);
-                    return;
+                    // return new State성공(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() {

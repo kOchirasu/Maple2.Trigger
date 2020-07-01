@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Main") == 1) {
-                    context.State = new State포션사용_준비(context);
-                    return;
+                    return new State포션사용_준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._02020051_bf {
                 context.SetUserValue(triggerId: 101, key: "Potion", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 720000)) {
-                    context.State = new State포션사용(context);
-                    return;
+                    return new State포션사용(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,11 +42,12 @@ namespace Maple2.Trigger._02020051_bf {
                 context.SetInteractObject(arg1: new[] {10002131}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002131}, arg2: 0)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -57,11 +60,12 @@ namespace Maple2.Trigger._02020051_bf {
                 context.SetUserValue(triggerId: 101, key: "Potion", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Main") == 2) {
-                    context.State = new State준비(context);
-                    return;
+                    return new State준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

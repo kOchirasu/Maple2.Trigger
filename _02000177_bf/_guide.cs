@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000177_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 702) == 1) {
-                    context.State = new StateGuide_Climb(context);
-                    return;
+                    return new StateGuide_Climb(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._02000177_bf {
                 context.ShowGuideSummary(entityId: 20001771, textId: 20001771, duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 703) == 1) {
-                    context.State = new StateGuide_Climb_02(context);
-                    return;
+                    return new StateGuide_Climb_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,7 +43,9 @@ namespace Maple2.Trigger._02000177_bf {
                 context.ShowGuideSummary(entityId: 20001771, textId: 20001771, duration: 4000);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

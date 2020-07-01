@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetBreakable(arg1: new[] {6300}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9630})) {
-                    context.State = new State침몰01(context);
-                    return;
+                    return new State침몰01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetBreakable(arg1: new[] {6300}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

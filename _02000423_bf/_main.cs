@@ -5,11 +5,8 @@ namespace Maple2.Trigger._02000423_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State기본셋팅시작(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State기본셋팅시작(context);
             }
 
             public override void OnExit() { }
@@ -20,21 +17,20 @@ namespace Maple2.Trigger._02000423_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "PortalHidden") == 1) {
-                    context.State = new State보스사냥후포탈생성(context);
-                    return;
+                    return new State보스사냥후포탈생성(context);
                 }
 
                 if (context.NpcDetected(arg1: 101, arg2: new[] {100})) {
-                    context.State = new State포탈감추기(context);
-                    return;
+                    return new State포탈감추기(context);
                 }
 
                 if (!context.NpcDetected(arg1: 101, arg2: new[] {100})) {
-                    context.State = new State디폴트포탈생성(context);
-                    return;
+                    return new State디폴트포탈생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,11 +56,12 @@ namespace Maple2.Trigger._02000423_bf {
                 context.SetPortal(arg1: 14, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State포탈다시체크대기(context);
-                    return;
+                    return new State포탈다시체크대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,11 +89,12 @@ namespace Maple2.Trigger._02000423_bf {
                 context.ShowGuideSummary(entityId: 20043001, textId: 20043001);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State포탈다시체크대기이전(context);
-                    return;
+                    return new State포탈다시체크대기이전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -124,11 +122,8 @@ namespace Maple2.Trigger._02000423_bf {
                 context.SetPortal(arg1: 14, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State포탈다시체크대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State포탈다시체크대기(context);
             }
 
             public override void OnExit() { }
@@ -139,11 +134,12 @@ namespace Maple2.Trigger._02000423_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -154,11 +150,12 @@ namespace Maple2.Trigger._02000423_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetMesh(arg1: new[] {2146, 2147, 2148, 2149, 2150, 2151, 2152, 2153, 2154, 2155, 2156, 2157, 2158, 2159, 2160, 2161, 2162, 2163, 2164, 2165, 2166}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 903) == 1) {
-                    context.State = new State딜레이(context);
-                    return;
+                    return new State딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetMesh(arg1: new[] {2146, 2147, 2148, 2149, 2150, 2151, 2152, 2153, 2154, 2155, 2156, 2157, 2158, 2159, 2160, 2161, 2162, 2163, 2164, 2165, 2166}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 903) == 1) {
-                    context.State = new State딜레이2(context);
-                    return;
+                    return new State딜레이2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetTimer(arg1: "1", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라(context);
-                    return;
+                    return new State벨라(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,11 +64,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetTimer(arg1: "1", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라2(context);
-                    return;
+                    return new State벨라2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,11 +83,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.CreateMonster(arg1: new[] {1002}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라대사(context);
-                    return;
+                    return new State벨라대사(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,11 +102,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.CreateMonster(arg1: new[] {1002}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라대사2(context);
-                    return;
+                    return new State벨라대사2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,11 +121,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetConversation(arg1: 1, arg2: 1002, arg3: "$02000252_BF__ELITE_01__0$", arg4: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라스킬(context);
-                    return;
+                    return new State벨라스킬(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -133,11 +140,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetConversation(arg1: 1, arg2: 1002, arg3: "$02000252_BF__ELITE_01__1$", arg4: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라스킬2(context);
-                    return;
+                    return new State벨라스킬2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -151,11 +159,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_2");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State이동(context);
-                    return;
+                    return new State이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -169,11 +178,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_2");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State이동2(context);
-                    return;
+                    return new State이동2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -188,11 +198,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetMesh(arg1: new[] {2146, 2147, 2148, 2149, 2150, 2151, 2152, 2153, 2154, 2155, 2156, 2157, 2158, 2159, 2160, 2161, 2162, 2163, 2164, 2165, 2166}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라삭제(context);
-                    return;
+                    return new State벨라삭제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -206,11 +217,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetMesh(arg1: new[] {2146, 2147, 2148, 2149, 2150, 2151, 2152, 2153, 2154, 2155, 2156, 2157, 2158, 2159, 2160, 2161, 2162, 2163, 2164, 2165, 2166}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State벨라삭제(context);
-                    return;
+                    return new State벨라삭제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -223,11 +235,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.DestroyMonster(arg1: new[] {1002});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {201})) {
-                    context.State = new State개봉(context);
-                    return;
+                    return new State개봉(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -241,7 +254,9 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetMesh(arg1: new[] {2146, 2147, 2148, 2149, 2150, 2151, 2152, 2153, 2154, 2155, 2156, 2157, 2158, 2159, 2160, 2161, 2162, 2163, 2164, 2165, 2166, 2119, 2120, 2121, 2122, 2123, 2124}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

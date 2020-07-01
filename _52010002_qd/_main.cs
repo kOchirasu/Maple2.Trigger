@@ -5,16 +5,16 @@ namespace Maple2.Trigger._52010002_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002789}, arg3: new byte[] {1})) {
-                    context.State = new StateEvent_01(context);
-                    return;
+                    return new StateEvent_01(context);
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002789}, arg3: new byte[] {1})) {
-                    context.State = new StateEvent_02(context);
-                    return;
+                    return new StateEvent_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,11 +31,12 @@ namespace Maple2.Trigger._52010002_qd {
                 context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103})) {
-                    context.State = new StateEvent_03(context);
-                    return;
+                    return new StateEvent_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -52,7 +53,9 @@ namespace Maple2.Trigger._52010002_qd {
                 context.CreateMonster(arg1: new[] {111, 112, 113}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -66,7 +69,9 @@ namespace Maple2.Trigger._52010002_qd {
                 context.SetMesh(arg1: new[] {1003, 1004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -76,7 +81,9 @@ namespace Maple2.Trigger._52010002_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

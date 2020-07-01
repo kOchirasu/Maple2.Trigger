@@ -8,11 +8,12 @@ namespace Maple2.Trigger._99999912 {
                 context.UserTagSymbol(symbol1: "guild_game_red", symbol2: "guild_game_blue");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9000, userTagId: 1) >= 1) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._99999912 {
                 context.SetInteractObject(arg1: new[] {10001129, 10001130, 10001131}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001129}, arg2: 0)) {
-                    context.State = new StateMove01(context);
-                    return;
+                    return new StateMove01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +60,12 @@ namespace Maple2.Trigger._99999912 {
                 context.GuildVsGameLogWonByDefault(teamId: 1, desc: "1팀의 부전승 보상 로그를 남긴다.");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePrintWinnerTeam(context);
-                    return;
+                    return new StatePrintWinnerTeam(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,24 +76,23 @@ namespace Maple2.Trigger._99999912 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GuildVsGameScoredTeam(teamId: 1)) {
                     context.DebugString(message: "1팀이 득점 했습니다");
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.GuildVsGameScoredTeam(teamId: 2)) {
                     context.DebugString(message: "2팀이 득점 했습니다");
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
 
                 if (context.GuildVsGameScoredTeam(teamId: 0)) {
                     context.DebugString(message: "아직 득점한 팀이 없습니다.");
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -103,11 +105,12 @@ namespace Maple2.Trigger._99999912 {
                 context.DebugString(message: "트리거 초기화");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

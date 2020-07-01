@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetUserValue(key: "Stage03", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    context.State = new State스테이지3_시작(context);
-                    return;
+                    return new State스테이지3_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,41 +24,36 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Stage03") == 11) {
-                    context.State = new State스테이지3_왼쪽_왼쪽진행(context);
-                    return;
+                    return new State스테이지3_왼쪽_왼쪽진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage03") == 12) {
-                    context.State = new State스테이지3_왼쪽_가운데진행(context);
-                    return;
+                    return new State스테이지3_왼쪽_가운데진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage03") == 21) {
-                    context.State = new State스테이지3_가운데_왼쪽진행(context);
-                    return;
+                    return new State스테이지3_가운데_왼쪽진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage03") == 22) {
-                    context.State = new State스테이지3_가운데_가운데진행(context);
-                    return;
+                    return new State스테이지3_가운데_가운데진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage03") == 23) {
-                    context.State = new State스테이지3_가운데_오른쪽진행(context);
-                    return;
+                    return new State스테이지3_가운데_오른쪽진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage03") == 31) {
-                    context.State = new State스테이지3_오른쪽_가운데진행(context);
-                    return;
+                    return new State스테이지3_오른쪽_가운데진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage03") == 32) {
-                    context.State = new State스테이지3_오른쪽_오른쪽진행(context);
-                    return;
+                    return new State스테이지3_오른쪽_오른쪽진행(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -71,11 +67,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(arg1: 3102, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State혹시모를_던전리셋신호_대기(context);
-                    return;
+                    return new State혹시모를_던전리셋신호_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -89,11 +86,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(arg1: 3104, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State혹시모를_던전리셋신호_대기(context);
-                    return;
+                    return new State혹시모를_던전리셋신호_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -106,11 +104,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(arg1: 3201, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State혹시모를_던전리셋신호_대기(context);
-                    return;
+                    return new State혹시모를_던전리셋신호_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -123,11 +122,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(arg1: 3202, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State혹시모를_던전리셋신호_대기(context);
-                    return;
+                    return new State혹시모를_던전리셋신호_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -140,11 +140,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(arg1: 3203, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State혹시모를_던전리셋신호_대기(context);
-                    return;
+                    return new State혹시모를_던전리셋신호_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -159,11 +160,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(arg1: 3303, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State혹시모를_던전리셋신호_대기(context);
-                    return;
+                    return new State혹시모를_던전리셋신호_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -178,11 +180,12 @@ namespace Maple2.Trigger._02020120_bf {
                 context.SetPortal(arg1: 3306, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State혹시모를_던전리셋신호_대기(context);
-                    return;
+                    return new State혹시모를_던전리셋신호_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -193,11 +196,12 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "DungeonReset") == 1) {
-                    context.State = new StateReady(context);
-                    return;
+                    return new StateReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

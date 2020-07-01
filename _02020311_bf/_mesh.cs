@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {701})) {
-                    context.State = new State첫번째길막(context);
-                    return;
+                    return new State첫번째길막(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,12 +21,13 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Mesh") == 2) {
                     context.SetMesh(arg1: new[] {4002}, arg2: true);
-                    context.State = new State이페이즈(context);
-                    return;
+                    return new State이페이즈(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,13 +40,14 @@ namespace Maple2.Trigger._02020311_bf {
                 context.CreateMonster(arg1: new[] {111}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Mesh") == 3) {
                     context.SetAiExtraData(key: "Thunder", value: 2);
                     context.SetMesh(arg1: new[] {4003}, arg2: true);
-                    context.State = new State삼페이즈(context);
-                    return;
+                    return new State삼페이즈(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,13 +58,14 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Mesh") == 4) {
                     context.SetMesh(arg1: new[] {4004}, arg2: true);
                     context.DestroyMonster(arg1: new[] {111});
-                    context.State = new State진짜마지막(context);
-                    return;
+                    return new State진짜마지막(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -72,7 +76,9 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

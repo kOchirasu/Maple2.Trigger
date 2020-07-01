@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000177_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
-                    return;
+                    return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02000177_bf {
                 context.SetMesh(arg1: new[] {741, 742, 743, 744, 745, 746, 747, 748, 749, 750}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateStart(context);
-                    return;
+                    return new StateStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +50,12 @@ namespace Maple2.Trigger._02000177_bf {
                 context.SetMesh(arg1: new[] {1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateStart_02(context);
-                    return;
+                    return new StateStart_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -71,11 +74,12 @@ namespace Maple2.Trigger._02000177_bf {
                 context.MoveNpc(arg1: 999, arg2: "MS2PatrolData_2001");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001058}, arg2: 0)) {
-                    context.State = new StateStep_2(context);
-                    return;
+                    return new StateStep_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -91,11 +95,12 @@ namespace Maple2.Trigger._02000177_bf {
                 context.SetMesh(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012}, arg2: true, arg3: 0, arg4: 100, arg5: 10f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001059}, arg2: 0)) {
-                    context.State = new StateStep_3(context);
-                    return;
+                    return new StateStep_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -111,11 +116,12 @@ namespace Maple2.Trigger._02000177_bf {
                 context.SetMesh(arg1: new[] {1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032}, arg2: true, arg3: 0, arg4: 100, arg5: 10f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001060}, arg2: 0)) {
-                    context.State = new StateStep_4(context);
-                    return;
+                    return new StateStep_4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -131,7 +137,9 @@ namespace Maple2.Trigger._02000177_bf {
                 context.SetMesh(arg1: new[] {1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059, 1060}, arg2: true, arg3: 0, arg4: 100, arg5: 10f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

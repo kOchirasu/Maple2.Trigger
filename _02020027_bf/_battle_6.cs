@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02020027_bf {
                 context.SetUserValue(triggerId: 99990009, key: "summon_2", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1003})) {
-                    context.State = new State스킬사용(context);
-                    return;
+                    return new State스킬사용(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02020027_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "summon_2") == 1) {
-                    context.State = new State몬스터소환(context);
-                    return;
+                    return new State몬스터소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,13 @@ namespace Maple2.Trigger._02020027_bf {
                 context.CreateMonster(arg1: new[] {202}, arg2: false, arg3: 1000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (true) {
-                    // context.State = new State길막삭제(context);
-                    return;
+                    // return new State길막삭제(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

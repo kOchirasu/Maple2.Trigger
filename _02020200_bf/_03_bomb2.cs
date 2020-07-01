@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020200_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BombOn") == 1) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._02020200_bf {
                 context.CreateMonster(arg1: new[] {112}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BombOn") == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {112})) {
-                    context.State = new State폭탄_터짐(context);
-                    return;
+                    return new State폭탄_터짐(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,16 +45,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetMesh(arg1: new[] {2002}, arg2: false, arg3: 1500, arg5: 3f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BombOn") == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }
@@ -64,17 +61,17 @@ namespace Maple2.Trigger._02020200_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BombOn") == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 40000)) {
                     context.SetMesh(arg1: new[] {2002}, arg2: true, arg5: 3f);
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -88,7 +85,9 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetMesh(arg1: new[] {2002}, arg2: false, arg3: 1500, arg5: 3f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

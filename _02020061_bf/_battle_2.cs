@@ -11,11 +11,12 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SetUserValue(triggerId: 99990007, key: "ObjectStart", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 1) {
-                    context.State = new State오브젝트소환(context);
-                    return;
+                    return new State오브젝트소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -32,21 +33,20 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SetUserValue(triggerId: 99990007, key: "ObjectStart", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 2) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {701})) {
-                    context.State = new State오브젝트소환_클리어(context);
-                    return;
+                    return new State오브젝트소환_클리어(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State대사용_1(context);
-                    return;
+                    return new State대사용_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,21 +59,20 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020061_BF__BATTLE_2__0$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 2) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {701})) {
-                    context.State = new State오브젝트소환_클리어(context);
-                    return;
+                    return new State오브젝트소환_클리어(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State대사용_2(context);
-                    return;
+                    return new State대사용_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -86,21 +85,20 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020061_BF__BATTLE_2__1$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 2) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {701})) {
-                    context.State = new State오브젝트소환_클리어(context);
-                    return;
+                    return new State오브젝트소환_클리어(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State대사용_3(context);
-                    return;
+                    return new State대사용_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -113,16 +111,16 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020061_BF__BATTLE_2__2$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 2) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {701})) {
-                    context.State = new State오브젝트소환_클리어(context);
-                    return;
+                    return new State오브젝트소환_클리어(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -139,7 +137,9 @@ namespace Maple2.Trigger._02020061_bf {
                 context.SetUserValue(triggerId: 99990007, key: "ObjectStart", value: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

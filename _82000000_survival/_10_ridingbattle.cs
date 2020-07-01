@@ -9,11 +9,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.SetUserValue(key: "BattleRidingOff", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleRidingOnCount") == 1) {
-                    context.State = new StateOnOffRandom(context);
-                    return;
+                    return new StateOnOffRandom(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,16 +25,16 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 40f)) {
-                    context.State = new StateBattleRidingOn(context);
-                    return;
+                    return new StateBattleRidingOn(context);
                 }
 
                 if (context.RandomCondition(arg1: 60f)) {
-                    context.State = new StateBattleRidingOff(context);
-                    return;
+                    return new StateBattleRidingOff(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +45,12 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,16 +61,16 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateDelayRandom(context);
-                    return;
+                    return new StateDelayRandom(context);
                 }
 
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,41 +81,36 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateDelay_5min00sec(context);
-                    return;
+                    return new StateDelay_5min00sec(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateDelay_5min20sec(context);
-                    return;
+                    return new StateDelay_5min20sec(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateDelay_5min40sec(context);
-                    return;
+                    return new StateDelay_5min40sec(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateDelay_6min00sec(context);
-                    return;
+                    return new StateDelay_6min00sec(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateDelay_6min20sec(context);
-                    return;
+                    return new StateDelay_6min20sec(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateDelay_6min40sec(context);
-                    return;
+                    return new StateDelay_6min40sec(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateDelay_7min00sec(context);
-                    return;
+                    return new StateDelay_7min00sec(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -124,16 +121,16 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300000)) {
-                    context.State = new StateRidingSpawn(context);
-                    return;
+                    return new StateRidingSpawn(context);
                 }
 
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -144,16 +141,16 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 320000)) {
-                    context.State = new StateRidingSpawn(context);
-                    return;
+                    return new StateRidingSpawn(context);
                 }
 
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -164,16 +161,16 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 340000)) {
-                    context.State = new StateRidingSpawn(context);
-                    return;
+                    return new StateRidingSpawn(context);
                 }
 
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -184,16 +181,16 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 360000)) {
-                    context.State = new StateRidingSpawn(context);
-                    return;
+                    return new StateRidingSpawn(context);
                 }
 
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -204,16 +201,16 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 380000)) {
-                    context.State = new StateRidingSpawn(context);
-                    return;
+                    return new StateRidingSpawn(context);
                 }
 
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -224,16 +221,16 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 400000)) {
-                    context.State = new StateRidingSpawn(context);
-                    return;
+                    return new StateRidingSpawn(context);
                 }
 
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -244,16 +241,16 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 420000)) {
-                    context.State = new StateRidingSpawn(context);
-                    return;
+                    return new StateRidingSpawn(context);
                 }
 
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -267,61 +264,52 @@ namespace Maple2.Trigger._82000000_survival {
                 context.SideNpcTalk(npcId: 23000110, illust: "Mushking_normal", duration: 5000, script: "$82000000_survival__10_RIdINGBATTLE__0$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateRidingSpawn_Extra_none(context);
-                    return;
+                    return new StateRidingSpawn_Extra_none(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateRidingSpawn_Extra_north(context);
-                    return;
+                    return new StateRidingSpawn_Extra_north(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateRidingSpawn_Extra_south(context);
-                    return;
+                    return new StateRidingSpawn_Extra_south(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateRidingSpawn_Extra_east(context);
-                    return;
+                    return new StateRidingSpawn_Extra_east(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateRidingSpawn_Extra_west(context);
-                    return;
+                    return new StateRidingSpawn_Extra_west(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateRidingSpawn_Extra_northsouth(context);
-                    return;
+                    return new StateRidingSpawn_Extra_northsouth(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateRidingSpawn_Extra_northeast(context);
-                    return;
+                    return new StateRidingSpawn_Extra_northeast(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateRidingSpawn_Extra_northwest(context);
-                    return;
+                    return new StateRidingSpawn_Extra_northwest(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateRidingSpawn_Extra_eastwest(context);
-                    return;
+                    return new StateRidingSpawn_Extra_eastwest(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateRidingSpawn_Extra_southeast(context);
-                    return;
+                    return new StateRidingSpawn_Extra_southeast(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateRidingSpawn_Extra_southwest(context);
-                    return;
+                    return new StateRidingSpawn_Extra_southwest(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -332,11 +320,12 @@ namespace Maple2.Trigger._82000000_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -349,11 +338,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000338}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -366,11 +356,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000340}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -383,11 +374,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000339}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -400,11 +392,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000341}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -417,11 +410,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000338, 10000340}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -434,11 +428,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000338, 10000339}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -451,11 +446,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000338, 10000341}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -468,11 +464,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000339, 10000341}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -485,11 +482,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000339, 10000340}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -502,11 +500,12 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000341, 10000340}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BattleRidingOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -519,7 +518,9 @@ namespace Maple2.Trigger._82000000_survival {
                 context.StartCombineSpawn(groupId: new[] {10000330, 10000331, 10000332, 10000333, 10000334, 10000335, 10000336, 10000337, 10000338, 10000339, 10000340, 10000341}, isStart: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

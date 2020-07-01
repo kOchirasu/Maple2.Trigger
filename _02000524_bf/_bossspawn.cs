@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000524_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    context.State = new State난이도별보스등장(context);
-                    return;
+                    return new State난이도별보스등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,21 +21,20 @@ namespace Maple2.Trigger._02000524_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonId() == 23046003) {
-                    context.State = new State일반난이도_보스등장(context);
-                    return;
+                    return new State일반난이도_보스등장(context);
                 }
 
                 if (context.GetDungeonId() == 23047003) {
-                    context.State = new State어려움난이도_보스등장(context);
-                    return;
+                    return new State어려움난이도_보스등장(context);
                 }
 
                 if (context.WaitTick(waitTick: 1100)) {
-                    context.State = new State일반난이도_보스등장(context);
-                    return;
+                    return new State일반난이도_보스등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +48,12 @@ namespace Maple2.Trigger._02000524_bf {
                 context.CreateMonster(arg1: new[] {98}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {98})) {
-                    context.State = new State클리어처리(context);
-                    return;
+                    return new State클리어처리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,11 +67,12 @@ namespace Maple2.Trigger._02000524_bf {
                 context.CreateMonster(arg1: new[] {99}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    context.State = new State클리어처리(context);
-                    return;
+                    return new State클리어처리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,12 +83,13 @@ namespace Maple2.Trigger._02000524_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     context.DungeonClear();
-                    context.State = new State종료처리(context);
-                    return;
+                    return new State종료처리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -100,7 +103,9 @@ namespace Maple2.Trigger._02000524_bf {
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

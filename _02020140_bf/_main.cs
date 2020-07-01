@@ -43,11 +43,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetUserValue(key: "TurkaTwoPhaseEnd", value: 99);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {99})) {
-                    context.State = new State연출용보스등장(context);
-                    return;
+                    return new State연출용보스등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,11 +61,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.CreateMonster(arg1: new[] {100}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State투르카대사연출(context);
-                    return;
+                    return new State투르카대사연출(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,11 +79,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SideNpcTalk(npcId: 23000120, illust: "Turka_normal", duration: 9000, script: "$02020140_BF__PopUpCinema__0$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State1페이즈보스등장대기(context);
-                    return;
+                    return new State1페이즈보스등장대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,21 +95,20 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "1PhaseSpawnStart") == 1) {
-                    context.State = new State1페이즈보스등장(context);
-                    return;
+                    return new State1페이즈보스등장(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -119,21 +121,20 @@ namespace Maple2.Trigger._02020140_bf {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    context.State = new State1페이즈전투진행(context);
-                    return;
+                    return new State1페이즈전투진행(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -146,21 +147,20 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetPortal(arg1: 108, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "2PhaseSpawnStart") == 1) {
-                    context.State = new State1페이즈전투완료_2페이즈투르카등장(context);
-                    return;
+                    return new State1페이즈전투완료_2페이즈투르카등장(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -174,21 +174,20 @@ namespace Maple2.Trigger._02020140_bf {
                 context.RemoveBuff(arg1: 98, arg2: 50004418);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State졸구간시작연출딜레이(context);
-                    return;
+                    return new State졸구간시작연출딜레이(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -204,11 +203,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.ChangeBackground(dds: "BG_Turka_D.dds");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StageOpen") == 1) {
-                    context.State = new State최초졸구간몬스터등장(context);
-                    return;
+                    return new State최초졸구간몬스터등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -224,11 +224,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115, 1201, 1202, 1203, 1204, 1205, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new State졸구간본격진행(context);
-                    return;
+                    return new State졸구간본격진행(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -250,11 +251,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetPortal(arg1: 9328, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State졸구간진행체크중(context);
-                    return;
+                    return new State졸구간진행체크중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -265,61 +267,52 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TriggerMesh11") == 0) {
-                    context.State = new State두번째왼쪽진행01(context);
-                    return;
+                    return new State두번째왼쪽진행01(context);
                 }
 
                 if (context.GetUserValue(key: "TriggerMesh12") == 0) {
-                    context.State = new State두번째가운데진행01(context);
-                    return;
+                    return new State두번째가운데진행01(context);
                 }
 
                 if (context.GetUserValue(key: "TriggerMesh13") == 0) {
-                    context.State = new State두번째오른쪽진행01(context);
-                    return;
+                    return new State두번째오른쪽진행01(context);
                 }
 
                 if (context.GetUserValue(key: "TriggerMesh22") == 0) {
-                    context.State = new State세번째가운데진행01(context);
-                    return;
+                    return new State세번째가운데진행01(context);
                 }
 
                 if (context.GetUserValue(key: "TriggerMesh21") == 0) {
-                    context.State = new State왼쪽지점보스방가는포탈생성(context);
-                    return;
+                    return new State왼쪽지점보스방가는포탈생성(context);
                 }
 
                 if (context.GetUserValue(key: "TriggerMesh32") == 0) {
-                    context.State = new State가운데지점보스방가는포탈생성(context);
-                    return;
+                    return new State가운데지점보스방가는포탈생성(context);
                 }
 
                 if (context.GetUserValue(key: "TriggerMesh23") == 0) {
-                    context.State = new State오른쪽지점보스방가는포탈생성(context);
-                    return;
+                    return new State오른쪽지점보스방가는포탈생성(context);
                 }
 
                 if (context.GetUserValue(key: "2PhaseStartOk") == 1) {
-                    context.State = new State모든졸구간지형과포탈생성(context);
-                    return;
+                    return new State모든졸구간지형과포탈생성(context);
                 }
 
                 if (context.GetUserValue(key: "TurkaTwoPhaseEnd") == 1) {
-                    context.State = new State이맵에서진행끝내고다음맵으로이동(context);
-                    return;
+                    return new State이맵에서진행끝내고다음맵으로이동(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -334,11 +327,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.CreateMonster(arg1: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119, 2120}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3199)) {
-                    context.State = new State두번째왼쪽진행02(context);
-                    return;
+                    return new State두번째왼쪽진행02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -351,11 +345,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetPortal(arg1: 218, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 799)) {
-                    context.State = new State졸구간진행체크중(context);
-                    return;
+                    return new State졸구간진행체크중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -370,11 +365,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.CreateMonster(arg1: new[] {2201, 2202, 2203, 2204, 2205}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3199)) {
-                    context.State = new State두번째가운데진행02(context);
-                    return;
+                    return new State두번째가운데진행02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -387,11 +383,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetPortal(arg1: 228, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 799)) {
-                    context.State = new State졸구간진행체크중(context);
-                    return;
+                    return new State졸구간진행체크중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -406,11 +403,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.CreateMonster(arg1: new[] {3201, 3202, 3203, 3204, 3205}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3199)) {
-                    context.State = new State세번째가운데진행02(context);
-                    return;
+                    return new State세번째가운데진행02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -423,11 +421,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetPortal(arg1: 328, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 799)) {
-                    context.State = new State졸구간진행체크중(context);
-                    return;
+                    return new State졸구간진행체크중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -442,11 +441,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.CreateMonster(arg1: new[] {2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3199)) {
-                    context.State = new State두번째오른쪽진행02(context);
-                    return;
+                    return new State두번째오른쪽진행02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -459,11 +459,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetPortal(arg1: 238, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 799)) {
-                    context.State = new State졸구간진행체크중(context);
-                    return;
+                    return new State졸구간진행체크중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -478,11 +479,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetAiExtraData(key: "TwoPhaseMainBattle", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State2페이즈복격진행_안내메시지출력(context);
-                    return;
+                    return new State2페이즈복격진행_안내메시지출력(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -497,11 +499,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetAiExtraData(key: "TwoPhaseMainBattle", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State2페이즈복격진행_안내메시지출력(context);
-                    return;
+                    return new State2페이즈복격진행_안내메시지출력(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -516,11 +519,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetAiExtraData(key: "TwoPhaseMainBattle", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State2페이즈복격진행_안내메시지출력(context);
-                    return;
+                    return new State2페이즈복격진행_안내메시지출력(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -534,11 +538,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.ShowGuideSummary(entityId: 29200003, textId: 29200003);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6500)) {
-                    context.State = new State졸구간진행체크중(context);
-                    return;
+                    return new State졸구간진행체크중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -565,11 +570,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.DestroyMonster(arg1: new[] {1201, 1202, 1203, 1204, 1205, 2201, 2202, 2203, 2204, 2205, 3201, 3202, 3203, 3204, 3205, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 800)) {
-                    context.State = new State졸구간진행체크중(context);
-                    return;
+                    return new State졸구간진행체크중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -597,21 +603,20 @@ namespace Maple2.Trigger._02020140_bf {
                 context.DestroyMonster(arg1: new[] {1201, 1202, 1203, 1204, 1205, 2201, 2202, 2203, 2204, 2205, 3201, 3202, 3203, 3204, 3205, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    context.State = new State종료안내메시지_대기(context);
-                    return;
+                    return new State종료안내메시지_대기(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -622,11 +627,12 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {97})) {
-                    context.State = new State종료안내메시지(context);
-                    return;
+                    return new State종료안내메시지(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -641,11 +647,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.ShowGuideSummary(entityId: 29200004, textId: 29200004);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15500)) {
-                    context.State = new State종료_메시지대기(context);
-                    return;
+                    return new State종료_메시지대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -658,21 +665,20 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State종료안내메시지_다시출력_대기(context);
-                    return;
+                    return new State종료안내메시지_다시출력_대기(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -683,11 +689,12 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {97})) {
-                    context.State = new State종료안내메시지_다시출력(context);
-                    return;
+                    return new State종료안내메시지_다시출력(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -700,21 +707,20 @@ namespace Maple2.Trigger._02020140_bf {
                 context.ShowGuideSummary(entityId: 29200004, textId: 29200004);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15500)) {
-                    context.State = new State종료_메시지대기(context);
-                    return;
+                    return new State종료_메시지대기(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패(context);
-                    return;
+                    return new State던전실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -732,12 +738,13 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
                     context.DungeonFail();
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -750,7 +757,9 @@ namespace Maple2.Trigger._02020140_bf {
                 context.DungeonEnableGiveUp(isEnable: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -9,24 +9,23 @@ namespace Maple2.Trigger._99999845 {
                 context.SetInteractObject(arg1: new[] {12000319, 12000320, 12000321}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Block") == 1) {
                     context.SetUserValue(triggerId: 900005, key: "Block", value: 0);
-                    context.State = new StateBlock_1(context);
-                    return;
+                    return new StateBlock_1(context);
                 }
 
                 if (context.GetUserValue(key: "Block") == 2) {
                     context.SetUserValue(triggerId: 900005, key: "Block", value: 0);
-                    context.State = new StateBlock_2(context);
-                    return;
+                    return new StateBlock_2(context);
                 }
 
                 if (context.GetUserValue(key: "Block") == 3) {
                     context.SetUserValue(triggerId: 900005, key: "Block", value: 0);
-                    context.State = new StateBlock_3(context);
-                    return;
+                    return new StateBlock_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,14 +36,15 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1114})) {
                     context.SetVisibleBreakableObject(arg1: new[] {1019}, arg2: true);
                     context.SetInteractObject(arg1: new[] {12000319}, arg2: 1);
                     context.CreateMonster(arg1: new[] {1117}, arg2: false);
-                    context.State = new StateCableOn_19(context);
-                    return;
+                    return new StateCableOn_19(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,14 +55,15 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1115})) {
                     context.SetVisibleBreakableObject(arg1: new[] {1020}, arg2: true);
                     context.SetInteractObject(arg1: new[] {12000320}, arg2: 1);
                     context.CreateMonster(arg1: new[] {1117}, arg2: false);
-                    context.State = new StateCableOn_20(context);
-                    return;
+                    return new StateCableOn_20(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,14 +74,15 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1116})) {
                     context.SetVisibleBreakableObject(arg1: new[] {1021}, arg2: true);
                     context.SetInteractObject(arg1: new[] {12000321}, arg2: 1);
                     context.CreateMonster(arg1: new[] {1117}, arg2: false);
-                    context.State = new StateCableOn_21(context);
-                    return;
+                    return new StateCableOn_21(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -91,13 +93,14 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000319}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000319}, arg2: 2);
                     context.MoveUserToPos(pos: new Vector3(1974.56885f, 372.1966f, 289f), rot: new Vector3(0f, 0f, 0f));
-                    context.State = new StateCableDelay_19(context);
-                    return;
+                    return new StateCableDelay_19(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -108,13 +111,14 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000320}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000320}, arg2: 2);
                     context.MoveUserToPos(pos: new Vector3(3971.3916f, -4325.10742f, 1492f), rot: new Vector3(0f, 0f, 0f));
-                    context.State = new StateCableDelay_20(context);
-                    return;
+                    return new StateCableDelay_20(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -125,13 +129,14 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000321}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {12000321}, arg2: 2);
                     context.MoveUserToPos(pos: new Vector3(3528.33643f, 2824.1394f, 2528f), rot: new Vector3(0f, 0f, 0f));
-                    context.State = new StateCableDelay_21(context);
-                    return;
+                    return new StateCableDelay_21(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -142,12 +147,13 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetBreakable(arg1: new[] {1019}, arg2: true);
-                    context.State = new StateCableOff_19(context);
-                    return;
+                    return new StateCableOff_19(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -158,12 +164,13 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetBreakable(arg1: new[] {1020}, arg2: true);
-                    context.State = new StateCableOff_20(context);
-                    return;
+                    return new StateCableOff_20(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -174,12 +181,13 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetBreakable(arg1: new[] {1021}, arg2: true);
-                    context.State = new StateCableOff_21(context);
-                    return;
+                    return new StateCableOff_21(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -190,12 +198,13 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900006, key: "Block", value: 1);
-                    context.State = new StateEnd_04(context);
-                    return;
+                    return new StateEnd_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -206,12 +215,13 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900006, key: "Block", value: 1);
-                    context.State = new StateEnd_04(context);
-                    return;
+                    return new StateEnd_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -222,12 +232,13 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
                     context.SetUserValue(triggerId: 900006, key: "Block", value: 1);
-                    context.State = new StateEnd_04(context);
-                    return;
+                    return new StateEnd_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -238,11 +249,12 @@ namespace Maple2.Trigger._99999845 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

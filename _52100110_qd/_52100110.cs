@@ -8,11 +8,12 @@ namespace Maple2.Trigger._52100110_qd {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1000})) {
-                    context.State = new State퀘스트체크(context);
-                    return;
+                    return new State퀘스트체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,31 +24,28 @@ namespace Maple2.Trigger._52100110_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101040}, arg3: new byte[] {1})) {
-                    context.State = new State화이트박스제거(context);
-                    return;
+                    return new State화이트박스제거(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {3})) {
-                    context.State = new State52100105로텔레포트(context);
-                    return;
+                    return new State52100105로텔레포트(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {2})) {
-                    context.State = new State퀘스트용몬스터스폰(context);
-                    return;
+                    return new State퀘스트용몬스터스폰(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {1})) {
-                    context.State = new State퀘스트용몬스터스폰(context);
-                    return;
+                    return new State퀘스트용몬스터스폰(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101020}, arg3: new byte[] {3})) {
-                    context.State = new State퀘스트용몬스터스폰(context);
-                    return;
+                    return new State퀘스트용몬스터스폰(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,16 +56,17 @@ namespace Maple2.Trigger._52100110_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101040}, arg3: new byte[] {1})) {
-                    context.State = new State화이트박스제거(context);
-                    return;
+                    return new State화이트박스제거(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {3})) {
-                    // context.State = new State(context);
-                    return;
+                    // return new State(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,11 +80,13 @@ namespace Maple2.Trigger._52100110_qd {
                 context.MoveUser(arg1: 52100105, arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    // context.State = new State(context);
-                    return;
+                    // return new State(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,11 +99,12 @@ namespace Maple2.Trigger._52100110_qd {
                 context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State화이트박스생성2(context);
-                    return;
+                    return new State화이트박스생성2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,11 +117,12 @@ namespace Maple2.Trigger._52100110_qd {
                 context.SetMesh(arg1: new[] {10000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State퀘스트체크2(context);
-                    return;
+                    return new State퀘스트체크2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -132,11 +135,13 @@ namespace Maple2.Trigger._52100110_qd {
                 context.SetMesh(arg1: new[] {10000}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    // context.State = new State(context);
-                    return;
+                    // return new State(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

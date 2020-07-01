@@ -7,11 +7,12 @@ namespace Maple2.Trigger._64000001_gd {
                 context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {105})) {
-                    context.State = new State링아웃(context);
-                    return;
+                    return new State링아웃(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,12 +25,13 @@ namespace Maple2.Trigger._64000001_gd {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.MoveUser(arg1: 64000001, arg2: 2, arg3: 105);
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

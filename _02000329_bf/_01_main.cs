@@ -11,11 +11,12 @@ namespace Maple2.Trigger._02000329_bf {
                 context.CreateMonster(arg1: new[] {5001, 5002, 1301, 1302, 1303, 1304}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 101) == 1) {
-                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
-                    return;
+                    return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,11 +32,12 @@ namespace Maple2.Trigger._02000329_bf {
                 context.CameraSelectPath(arg1: new[] {80001, 80002, 80003, 80004}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statescene_01(context);
-                    return;
+                    return new Statescene_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,11 +51,12 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetConversation(arg1: 1, arg2: 1301, arg3: "$02000329_BF__01_MAIN__0$", arg4: 2, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statescene_02(context);
-                    return;
+                    return new Statescene_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -76,11 +79,12 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetMesh(arg1: new[] {10000, 11001, 11002, 11003, 19999}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 105) == 1) {
-                    context.State = new Statenpc_talk(context);
-                    return;
+                    return new Statenpc_talk(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,11 +100,12 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetConversation(arg1: 1, arg2: 1301, arg3: "$02000329_BF__01_MAIN__2$", arg4: 2, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statenpc_talk_02(context);
-                    return;
+                    return new Statenpc_talk_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -114,7 +119,9 @@ namespace Maple2.Trigger._02000329_bf {
                 context.SetConversation(arg1: 1, arg2: 1301, arg3: "$02000329_BF__01_MAIN__3$", arg4: 2, arg5: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

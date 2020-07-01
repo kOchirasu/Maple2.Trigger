@@ -7,16 +7,16 @@ namespace Maple2.Trigger._52000090_qd {
                 context.DestroyMonster(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {50100470}, arg3: new byte[] {1})) {
-                    context.State = new State20002272진행중일때(context);
-                    return;
+                    return new State20002272진행중일때(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {20002272}, arg3: new byte[] {1})) {
-                    context.State = new State20002272진행중일때(context);
-                    return;
+                    return new State20002272진행중일때(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +29,12 @@ namespace Maple2.Trigger._52000090_qd {
                 context.SpawnNpcRange(rangeId: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010}, isAutoTargeting: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State20002272진행중일때02(context);
-                    return;
+                    return new State20002272진행중일때02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,11 +47,12 @@ namespace Maple2.Trigger._52000090_qd {
                 context.SpawnNpcRange(rangeId: new[] {1011, 1012, 1013, 1014, 1015}, isAutoTargeting: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State20002272진행중일때03(context);
-                    return;
+                    return new State20002272진행중일때03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +65,12 @@ namespace Maple2.Trigger._52000090_qd {
                 context.SpawnNpcRange(rangeId: new[] {1016, 1017, 1018, 1019, 1020}, isAutoTargeting: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State20002272진행중일때04(context);
-                    return;
+                    return new State20002272진행중일때04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,11 +83,12 @@ namespace Maple2.Trigger._52000090_qd {
                 context.SpawnNpcRange(rangeId: new[] {1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029}, isAutoTargeting: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -95,7 +99,9 @@ namespace Maple2.Trigger._52000090_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

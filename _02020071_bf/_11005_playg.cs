@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02020071_bf {
                 context.SetUserValue(key: "PlayG", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "PlayG") == 1) {
-                    context.State = new StateActorOff(context);
-                    return;
+                    return new StateActorOff(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,16 +25,16 @@ namespace Maple2.Trigger._02020071_bf {
                 context.SetActor(arg1: 11005, arg2: true, arg3: "ks_quest_musical_B01_off");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000062}, arg2: 0)) {
-                    context.State = new StateActorOn(context);
-                    return;
+                    return new StateActorOn(context);
                 }
 
                 if (context.GetUserValue(key: "PlayG") == 0) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,16 +47,16 @@ namespace Maple2.Trigger._02020071_bf {
                 context.SetActor(arg1: 11005, arg2: true, arg3: "ks_quest_musical_B01_blue");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 700)) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
 
                 if (context.GetUserValue(key: "PlayG") == 0) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -68,16 +69,16 @@ namespace Maple2.Trigger._02020071_bf {
                 context.SetActor(arg1: 11005, arg2: true, arg3: "ks_quest_musical_B01_off");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new StateActorOff(context);
-                    return;
+                    return new StateActorOff(context);
                 }
 
                 if (context.GetUserValue(key: "PlayG") == 0) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

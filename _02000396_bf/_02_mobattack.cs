@@ -14,11 +14,12 @@ namespace Maple2.Trigger._02000396_bf {
                 context.SetUserValue(key: "MobAttack", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MobSpawn") == 1) {
-                    context.State = new StateMobSpawn01(context);
-                    return;
+                    return new StateMobSpawn01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,11 +32,12 @@ namespace Maple2.Trigger._02000396_bf {
                 context.CreateMonster(arg1: new[] {910, 911, 920, 921, 930, 931}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MobAttack") == 1) {
-                    context.State = new StateMobAttackDelay(context);
-                    return;
+                    return new StateMobAttackDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,11 +48,12 @@ namespace Maple2.Trigger._02000396_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9001})) {
-                    context.State = new StateMobAttack01(context);
-                    return;
+                    return new StateMobAttack01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +68,12 @@ namespace Maple2.Trigger._02000396_bf {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateMobAttack02(context);
-                    return;
+                    return new StateMobAttack02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -84,11 +88,12 @@ namespace Maple2.Trigger._02000396_bf {
                 context.SetEffect(arg1: new[] {5002}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateMobAttack03(context);
-                    return;
+                    return new StateMobAttack03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -103,11 +108,12 @@ namespace Maple2.Trigger._02000396_bf {
                 context.SetEffect(arg1: new[] {5003}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {910, 911, 920, 921, 930, 931, 901, 902, 903})) {
-                    context.State = new StateMobClear(context);
-                    return;
+                    return new StateMobClear(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -120,7 +126,9 @@ namespace Maple2.Trigger._02000396_bf {
                 context.SetUserValue(triggerId: 1, key: "MobClear", value: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

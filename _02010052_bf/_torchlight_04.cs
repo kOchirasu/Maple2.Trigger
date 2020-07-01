@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetEffect(arg1: new[] {7004}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 707) == 1) {
-                    context.State = new StateEvent_04(context);
-                    return;
+                    return new StateEvent_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,11 +31,12 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetConversation(arg1: 1, arg2: 994, arg3: "$02010052_BF__MAIN__6$", arg4: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {104})) {
-                    context.State = new Stateburn_state(context);
-                    return;
+                    return new Stateburn_state(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -51,11 +53,12 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetTimer(arg1: "1", arg2: 1, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new Statespawn_state(context);
-                    return;
+                    return new Statespawn_state(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -74,11 +77,12 @@ namespace Maple2.Trigger._02010052_bf {
                 context.SetSkip(arg1: "run");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new Staterun(context);
-                    return;
+                    return new Staterun(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -95,11 +99,12 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 707) == 1) {
-                    context.State = new Staterun_01(context);
-                    return;
+                    return new Staterun_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,7 +120,9 @@ namespace Maple2.Trigger._02010052_bf {
                 context.CreateMonster(arg1: new[] {501, 502, 503, 504, 505, 506}, arg2: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

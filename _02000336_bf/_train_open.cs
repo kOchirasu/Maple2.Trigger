@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000336_bf {
                 context.SetInteractObject(arg1: new[] {10000805}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 706) == 1) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._02000336_bf {
                 context.ShowGuideSummary(entityId: 113, textId: 20003363);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000805}, arg2: 0)) {
-                    context.State = new State작동_01(context);
-                    return;
+                    return new State작동_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -48,11 +50,12 @@ namespace Maple2.Trigger._02000336_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State작동_02(context);
-                    return;
+                    return new State작동_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -71,11 +74,12 @@ namespace Maple2.Trigger._02000336_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 702) == 1) {
-                    context.State = new State작동_03(context);
-                    return;
+                    return new State작동_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -88,7 +92,9 @@ namespace Maple2.Trigger._02000336_bf {
                 context.CreateMonster(arg1: new[] {305, 306, 307, 308}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

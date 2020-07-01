@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000025_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {702})) {
-                    context.State = new Statetalk_01(context);
-                    return;
+                    return new Statetalk_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._52000025_qd {
                 context.SetConversation(arg1: 1, arg2: 201, arg3: "$52000025_QD__TALK_EVENT__0$", arg4: 3, arg5: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statetalk_02(context);
-                    return;
+                    return new Statetalk_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,7 +41,9 @@ namespace Maple2.Trigger._52000025_qd {
                 context.SetConversation(arg1: 1, arg2: 201, arg3: "$52000025_QD__TALK_EVENT__1$", arg4: 2, arg5: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

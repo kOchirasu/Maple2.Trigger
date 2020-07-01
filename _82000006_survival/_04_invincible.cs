@@ -5,11 +5,12 @@ namespace Maple2.Trigger._82000006_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new StateMakeInvincible(context);
-                    return;
+                    return new StateMakeInvincible(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._82000006_survival {
                 context.AddBuff(arg1: new[] {9000}, arg2: 71000049, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateMakeInvincible(context);
-                    return;
+                    return new StateMakeInvincible(context);
                 }
 
                 if (context.GetUserValue(key: "InvincibleOff") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,7 +43,9 @@ namespace Maple2.Trigger._82000006_survival {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -5,11 +5,8 @@ namespace Maple2.Trigger._02000487_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State보스등장대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State보스등장대기(context);
             }
 
             public override void OnExit() { }
@@ -22,11 +19,12 @@ namespace Maple2.Trigger._02000487_bf {
                 context.CreateMonster(arg1: new[] {111, 121, 131}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "EventNpcAppearance") == 1) {
-                    context.State = new State우호적NPC등장(context);
-                    return;
+                    return new State우호적NPC등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +40,12 @@ namespace Maple2.Trigger._02000487_bf {
                 context.CreateMonster(arg1: new[] {11, 21, 31}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -57,11 +56,12 @@ namespace Maple2.Trigger._02000487_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "EventNpcAppearance") == 2) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

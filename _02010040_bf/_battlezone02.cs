@@ -12,11 +12,12 @@ namespace Maple2.Trigger._02010040_bf {
                 context.SetAgent(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9200})) {
-                    context.State = new State전투시작(context);
-                    return;
+                    return new State전투시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +30,12 @@ namespace Maple2.Trigger._02010040_bf {
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305, 306, 401, 402, 403, 404, 405, 406, 407, 408}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {301, 302, 303, 304, 305, 306, 401, 402, 403, 404, 405, 406, 407, 408})) {
-                    context.State = new State문열기(context);
-                    return;
+                    return new State문열기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -51,7 +53,9 @@ namespace Maple2.Trigger._02010040_bf {
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

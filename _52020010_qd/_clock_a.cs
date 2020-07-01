@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52020010_qd {
                 context.SetEffect(arg1: new[] {5002}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2002})) {
-                    context.State = new StateReady(context);
-                    return;
+                    return new StateReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._52020010_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001271}, arg2: 0)) {
-                    context.State = new StateEvent_Start(context);
-                    return;
+                    return new StateEvent_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,11 +42,12 @@ namespace Maple2.Trigger._52020010_qd {
                 context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateEvent_01(context);
-                    return;
+                    return new StateEvent_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -57,11 +60,12 @@ namespace Maple2.Trigger._52020010_qd {
                 context.AddBalloonTalk(spawnPointId: 102, msg: "엄마! 나 이 빵 먹어도 돼요?", duration: 2500, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEvent_02(context);
-                    return;
+                    return new StateEvent_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -74,11 +78,12 @@ namespace Maple2.Trigger._52020010_qd {
                 context.AddBalloonTalk(spawnPointId: 103, msg: "안돼! 금방 밥먹을거야.", duration: 2500, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEvent_03(context);
-                    return;
+                    return new StateEvent_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -91,11 +96,12 @@ namespace Maple2.Trigger._52020010_qd {
                 context.AddBalloonTalk(spawnPointId: 102, msg: "힝... 아빠 나 이거 먹으면 안돼요?", duration: 2500, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEvent_04(context);
-                    return;
+                    return new StateEvent_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -109,11 +115,12 @@ namespace Maple2.Trigger._52020010_qd {
                 context.AddBalloonTalk(spawnPointId: 103, msg: "여보!", duration: 2500, delayTick: 500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEvent_05(context);
-                    return;
+                    return new StateEvent_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -127,11 +134,12 @@ namespace Maple2.Trigger._52020010_qd {
                 context.AddBalloonTalk(spawnPointId: 102, msg: "와! 신난다!", duration: 2500, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEvent_06(context);
-                    return;
+                    return new StateEvent_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -144,11 +152,12 @@ namespace Maple2.Trigger._52020010_qd {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "당연하지! 왕국 제일의 기술자인 내가 못할 일은 없어!", duration: 2800, delayTick: 1500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEvent_07(context);
-                    return;
+                    return new StateEvent_07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -161,11 +170,12 @@ namespace Maple2.Trigger._52020010_qd {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "그런데 말이야. 일이 끝나갈 수록 기분이 영 찝찝해.", duration: 2800, delayTick: 1500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateEvent_08(context);
-                    return;
+                    return new StateEvent_08(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -178,11 +188,12 @@ namespace Maple2.Trigger._52020010_qd {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "도대체 왕은 무슨 생각을 하고 있는건지...", duration: 3000, delayTick: 1500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateEvent_End(context);
-                    return;
+                    return new StateEvent_End(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -196,7 +207,9 @@ namespace Maple2.Trigger._52020010_qd {
                 context.DestroyMonster(arg1: new[] {101, 102, 103});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

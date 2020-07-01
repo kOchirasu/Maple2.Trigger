@@ -5,16 +5,16 @@ namespace Maple2.Trigger._52000054_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50001745}, arg3: new byte[] {3})) {
-                    context.State = new StateCameraEffect0(context);
-                    return;
+                    return new StateCameraEffect0(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50001745}, arg3: new byte[] {2})) {
-                    context.State = new StateReturnMapReady0(context);
-                    return;
+                    return new StateReturnMapReady0(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +27,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateReturnMapReady(context);
-                    return;
+                    return new StateReturnMapReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,11 +47,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetProductionUI(arg1: 9, arg2: "$52000054_QD__EPILOGUE_K__0$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateReturnMap(context);
-                    return;
+                    return new StateReturnMap(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,7 +65,9 @@ namespace Maple2.Trigger._52000054_qd {
                 context.MoveUser(arg1: 02000025, arg2: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -79,11 +83,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CreateMonster(arg1: new[] {1000}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateCameraEffect1(context);
-                    return;
+                    return new StateCameraEffect1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -97,11 +102,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {100, 101}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new StateCameraEffect2(context);
-                    return;
+                    return new StateCameraEffect2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -114,11 +120,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateCityWarfareTalk1(context);
-                    return;
+                    return new StateCityWarfareTalk1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -138,11 +145,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk2");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateCityWarfareTalk2(context);
-                    return;
+                    return new StateCityWarfareTalk2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -156,11 +164,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk3(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk3(context);
             }
 
             public override void OnExit() { }
@@ -175,11 +180,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk4");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk4(context);
-                    return;
+                    return new StateCityWarfareTalk4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -193,11 +199,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk5(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk5(context);
             }
 
             public override void OnExit() { }
@@ -215,11 +218,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk6");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
-                    context.State = new StateCityWarfareTalk6(context);
-                    return;
+                    return new StateCityWarfareTalk6(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -233,11 +237,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk7(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk7(context);
             }
 
             public override void OnExit() { }
@@ -254,11 +255,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk8");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk8(context);
-                    return;
+                    return new StateCityWarfareTalk8(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -272,11 +274,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk9(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk9(context);
             }
 
             public override void OnExit() { }
@@ -291,11 +290,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk10");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk10(context);
-                    return;
+                    return new StateCityWarfareTalk10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -309,11 +309,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk11(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk11(context);
             }
 
             public override void OnExit() { }
@@ -329,11 +326,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk12");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 13000)) {
-                    context.State = new StateCityWarfareTalk12(context);
-                    return;
+                    return new StateCityWarfareTalk12(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -347,11 +345,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk13(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk13(context);
             }
 
             public override void OnExit() { }
@@ -366,11 +361,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk14");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new StateCityWarfareTalk14(context);
-                    return;
+                    return new StateCityWarfareTalk14(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -384,11 +380,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk15(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk15(context);
             }
 
             public override void OnExit() { }
@@ -404,11 +397,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk16");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk16(context);
-                    return;
+                    return new StateCityWarfareTalk16(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -422,11 +416,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk17(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk17(context);
             }
 
             public override void OnExit() { }
@@ -442,11 +433,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk18");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    context.State = new StateCityWarfareTalk18(context);
-                    return;
+                    return new StateCityWarfareTalk18(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -460,11 +452,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk19(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk19(context);
             }
 
             public override void OnExit() { }
@@ -480,11 +469,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk20");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk20(context);
-                    return;
+                    return new StateCityWarfareTalk20(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -498,11 +488,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk21(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk21(context);
             }
 
             public override void OnExit() { }
@@ -518,11 +505,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk22");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateCityWarfareTalk22(context);
-                    return;
+                    return new StateCityWarfareTalk22(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -536,11 +524,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk23(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk23(context);
             }
 
             public override void OnExit() { }
@@ -556,11 +541,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk24");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk24(context);
-                    return;
+                    return new StateCityWarfareTalk24(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -574,11 +560,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk25(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk25(context);
             }
 
             public override void OnExit() { }
@@ -594,11 +577,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk26");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new StateCityWarfareTalk26(context);
-                    return;
+                    return new StateCityWarfareTalk26(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -612,11 +596,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk27(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk27(context);
             }
 
             public override void OnExit() { }
@@ -630,11 +611,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk28");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk28(context);
-                    return;
+                    return new StateCityWarfareTalk28(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -648,11 +630,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk29(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk29(context);
             }
 
             public override void OnExit() { }
@@ -667,11 +646,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk30");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk30(context);
-                    return;
+                    return new StateCityWarfareTalk30(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -685,11 +665,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk31(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk31(context);
             }
 
             public override void OnExit() { }
@@ -705,11 +682,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk32");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
-                    context.State = new StateCityWarfareTalk32(context);
-                    return;
+                    return new StateCityWarfareTalk32(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -723,11 +701,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk33(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk33(context);
             }
 
             public override void OnExit() { }
@@ -743,11 +718,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk34");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new StateCityWarfareTalk34(context);
-                    return;
+                    return new StateCityWarfareTalk34(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -761,11 +737,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk35(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk35(context);
             }
 
             public override void OnExit() { }
@@ -780,11 +753,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk36");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk36(context);
-                    return;
+                    return new StateCityWarfareTalk36(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -798,11 +772,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk37(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk37(context);
             }
 
             public override void OnExit() { }
@@ -818,11 +789,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk38");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateCityWarfareTalk38(context);
-                    return;
+                    return new StateCityWarfareTalk38(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -836,11 +808,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk39(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk39(context);
             }
 
             public override void OnExit() { }
@@ -855,11 +824,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk40");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateCityWarfareTalk40(context);
-                    return;
+                    return new StateCityWarfareTalk40(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -873,11 +843,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk41(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk41(context);
             }
 
             public override void OnExit() { }
@@ -893,11 +860,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk42");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateCityWarfareTalk42(context);
-                    return;
+                    return new StateCityWarfareTalk42(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -911,11 +879,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk43(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk43(context);
             }
 
             public override void OnExit() { }
@@ -931,11 +896,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk44");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new StateCityWarfareTalk44(context);
-                    return;
+                    return new StateCityWarfareTalk44(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -949,11 +915,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk45(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk45(context);
             }
 
             public override void OnExit() { }
@@ -969,11 +932,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk46");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 13000)) {
-                    context.State = new StateCityWarfareTalk46(context);
-                    return;
+                    return new StateCityWarfareTalk46(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -987,11 +951,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk47(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk47(context);
             }
 
             public override void OnExit() { }
@@ -1008,11 +969,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk48");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk48(context);
-                    return;
+                    return new StateCityWarfareTalk48(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1026,11 +988,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk49(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk49(context);
             }
 
             public override void OnExit() { }
@@ -1047,11 +1006,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk50");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateCityWarfareTalk50(context);
-                    return;
+                    return new StateCityWarfareTalk50(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1065,11 +1025,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk51(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk51(context);
             }
 
             public override void OnExit() { }
@@ -1084,11 +1041,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk52");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateCityWarfareTalk52(context);
-                    return;
+                    return new StateCityWarfareTalk52(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1102,11 +1060,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk53(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk53(context);
             }
 
             public override void OnExit() { }
@@ -1122,11 +1077,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk54");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateCityWarfareTalk54(context);
-                    return;
+                    return new StateCityWarfareTalk54(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1140,11 +1096,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk55(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk55(context);
             }
 
             public override void OnExit() { }
@@ -1160,11 +1113,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk56");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    context.State = new StateCityWarfareTalk56(context);
-                    return;
+                    return new StateCityWarfareTalk56(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1178,11 +1132,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk57(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk57(context);
             }
 
             public override void OnExit() { }
@@ -1199,11 +1150,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip(arg1: "CityWarfareTalk58");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk58(context);
-                    return;
+                    return new StateCityWarfareTalk58(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1217,11 +1169,8 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSkip();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateCityWarfareTalk59(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateCityWarfareTalk59(context);
             }
 
             public override void OnExit() { }
@@ -1235,11 +1184,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCityWarfareTalk60(context);
-                    return;
+                    return new StateCityWarfareTalk60(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1252,11 +1202,12 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1271,7 +1222,9 @@ namespace Maple2.Trigger._52000054_qd {
                 context.MoveUser(arg1: 02000025, arg2: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

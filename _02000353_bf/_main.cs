@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 6001, 6002, 6003, 6004, 6101, 6301, 6302}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    context.State = new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
-                    return;
+                    return new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateStart(context);
-                    return;
+                    return new StateStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +43,12 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State시작_03(context);
-                    return;
+                    return new State시작_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +62,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "2", arg2: 2, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State시작_04(context);
-                    return;
+                    return new State시작_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,11 +81,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetSkill(arg1: new[] {2020}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 702) == 1) {
-                    context.State = new State시작_05(context);
-                    return;
+                    return new State시작_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -102,11 +107,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.CreateMonster(arg1: new[] {11, 12, 13, 14, 15, 101, 102, 103, 104, 105, 106, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {11, 12, 13, 14, 15})) {
-                    context.State = new State관문_01_개방전(context);
-                    return;
+                    return new State관문_01_개방전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -122,11 +128,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State관문_01_개방(context);
-                    return;
+                    return new State관문_01_개방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -143,11 +150,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State관문_01_개방_이벤트_00(context);
-                    return;
+                    return new State관문_01_개방_이벤트_00(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -161,11 +169,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State관문_01_개방_이벤트_01(context);
-                    return;
+                    return new State관문_01_개방_이벤트_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -179,11 +188,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State관문_01_개방_이벤트_02(context);
-                    return;
+                    return new State관문_01_개방_이벤트_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -197,11 +207,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State관문_01_개방_이벤트_03(context);
-                    return;
+                    return new State관문_01_개방_이벤트_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -215,11 +226,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State관문_02_시작(context);
-                    return;
+                    return new State관문_02_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -240,12 +252,13 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
                     context.RemoveBuff(arg1: 199, arg2: 70000107);
-                    context.State = new State관문_02_시작(context);
-                    return;
+                    return new State관문_02_시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -260,11 +273,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.ShowGuideSummary(entityId: 103, textId: 40011);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 703) == 1) {
-                    context.State = new State관문_02_시작_02(context);
-                    return;
+                    return new State관문_02_시작_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -286,11 +300,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.CreateMonster(arg1: new[] {21, 22, 23, 24, 25, 26, 27}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {21, 22, 23, 24, 25, 26, 27})) {
-                    context.State = new State관문_02_개방전(context);
-                    return;
+                    return new State관문_02_개방전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -306,11 +321,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State관문_02_개방(context);
-                    return;
+                    return new State관문_02_개방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -324,11 +340,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State관문_02_개방_이벤트_01(context);
-                    return;
+                    return new State관문_02_개방_이벤트_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -342,11 +359,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State관문_02_개방_이벤트_02(context);
-                    return;
+                    return new State관문_02_개방_이벤트_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -360,11 +378,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State관문_02_개방_이벤트_03(context);
-                    return;
+                    return new State관문_02_개방_이벤트_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -378,11 +397,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State관문_03_시작_01(context);
-                    return;
+                    return new State관문_03_시작_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -396,11 +416,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.ShowGuideSummary(entityId: 103, textId: 40011);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 704) == 1) {
-                    context.State = new State관문_03_시작_02(context);
-                    return;
+                    return new State관문_03_시작_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -420,11 +441,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.CreateMonster(arg1: new[] {31, 32, 33}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {31, 32, 33})) {
-                    context.State = new State관문_03_개방전(context);
-                    return;
+                    return new State관문_03_개방전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -440,11 +462,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State관문_03_개방(context);
-                    return;
+                    return new State관문_03_개방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -458,11 +481,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State관문_03_개방_이벤트_01(context);
-                    return;
+                    return new State관문_03_개방_이벤트_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -476,11 +500,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State관문_03_개방_이벤트_02(context);
-                    return;
+                    return new State관문_03_개방_이벤트_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -494,11 +519,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State관문_03_개방_이벤트_03(context);
-                    return;
+                    return new State관문_03_개방_이벤트_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -512,11 +538,12 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State지역클리어(context);
-                    return;
+                    return new State지역클리어(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -533,7 +560,9 @@ namespace Maple2.Trigger._02000353_bf {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

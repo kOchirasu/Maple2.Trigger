@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020020_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "battlesetting") == 1) {
-                    context.State = new State전투_1라운드세팅(context);
-                    return;
+                    return new State전투_1라운드세팅(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02020020_bf {
                 context.SideNpcTalk(npcId: 24100101, illust: "Neirin_normal", duration: 5000, script: "$02020020_BF__02020020_battle__0$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State전투_1라운드시작(context);
-                    return;
+                    return new State전투_1라운드시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._02020020_bf {
                 context.CreateMonster(arg1: new[] {102});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {102})) {
-                    context.State = new State전투_1라운드종료(context);
-                    return;
+                    return new State전투_1라운드종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,11 +59,12 @@ namespace Maple2.Trigger._02020020_bf {
                 context.DestroyMonster(arg1: new[] {102});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State전투_2라운드세팅(context);
-                    return;
+                    return new State전투_2라운드세팅(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,11 +77,12 @@ namespace Maple2.Trigger._02020020_bf {
                 context.SideNpcTalk(npcId: 24100101, illust: "Neirin_normal", duration: 5000, script: "$02020020_BF__02020020_battle__2$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State전투_2라운드시작(context);
-                    return;
+                    return new State전투_2라운드시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,11 +95,12 @@ namespace Maple2.Trigger._02020020_bf {
                 context.CreateMonster(arg1: new[] {103}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {103})) {
-                    context.State = new State전투_2라운드종료(context);
-                    return;
+                    return new State전투_2라운드종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -107,11 +113,12 @@ namespace Maple2.Trigger._02020020_bf {
                 context.DestroyMonster(arg1: new[] {103});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State전투_종료(context);
-                    return;
+                    return new State전투_종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -125,7 +132,9 @@ namespace Maple2.Trigger._02020020_bf {
                 context.SideNpcTalk(npcId: 24100101, illust: "Neirin_normal", duration: 5000, script: "$02020020_BF__02020020_battle__3$");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

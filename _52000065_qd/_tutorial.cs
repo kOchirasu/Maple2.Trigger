@@ -17,11 +17,12 @@ namespace Maple2.Trigger._52000065_qd {
                 context.CreateWidget(arg1: "Guide");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9002})) {
-                    context.State = new State영상준비_01(context);
-                    return;
+                    return new State영상준비_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,11 +36,12 @@ namespace Maple2.Trigger._52000065_qd {
                 context.SetProductionUI(arg1: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State영상재생_01(context);
-                    return;
+                    return new State영상재생_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -54,16 +56,16 @@ namespace Maple2.Trigger._52000065_qd {
                 context.PlaySceneMovie(fileName: @"common\Common_Opening.usm", movieId: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    context.State = new State영상완료_01(context);
-                    return;
+                    return new State영상완료_01(context);
                 }
 
                 if (context.WaitTick(waitTick: 190000)) {
-                    context.State = new State영상완료_01(context);
-                    return;
+                    return new State영상완료_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,11 +79,12 @@ namespace Maple2.Trigger._52000065_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "Guide", arg2: "IsTriggerEvent", arg3: "251")) {
-                    context.State = new State몬스터소환(context);
-                    return;
+                    return new State몬스터소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -94,11 +97,12 @@ namespace Maple2.Trigger._52000065_qd {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State해제(context);
-                    return;
+                    return new State해제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -112,7 +116,7 @@ namespace Maple2.Trigger._52000065_qd {
                 context.GuideEvent(eventId: 260);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9001}, arg2: 90)) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.StartTutorial();
@@ -164,6 +168,8 @@ namespace Maple2.Trigger._52000065_qd {
                 if (context.UserDetected(arg1: new[] {9001}, arg2: 80)) {
                     context.SetPortal(arg1: 80, arg2: true, arg3: true, arg4: true);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -174,7 +180,9 @@ namespace Maple2.Trigger._52000065_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

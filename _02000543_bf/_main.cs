@@ -22,11 +22,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SetOnetimeEffect(id: 106, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {703}, arg2: 0)) {
-                    context.State = new State뒤큐브날리기전(context);
-                    return;
+                    return new State뒤큐브날리기전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +42,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State뒤큐브날리기(context);
-                    return;
+                    return new State뒤큐브날리기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +61,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 3000, script: "$02000543_BF__MAIN__0$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {701}, arg2: 0)) {
-                    context.State = new State게임안내(context);
-                    return;
+                    return new State게임안내(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,11 +82,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SetMesh(arg1: new[] {5000, 5001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State게임안내2(context);
-                    return;
+                    return new State게임안내2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -101,11 +105,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.CreateMonster(arg1: new[] {111}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State카메라리셋(context);
-                    return;
+                    return new State카메라리셋(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -121,11 +126,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "$02000543_BF__MAIN__4$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State게임설정(context);
-                    return;
+                    return new State게임설정(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -140,11 +146,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SetEffect(arg1: new[] {3002}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State조건체크몬스터스폰1(context);
-                    return;
+                    return new State조건체크몬스터스폰1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -159,11 +166,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SetOnetimeEffect(id: 104, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "main") == 4) {
-                    context.State = new State조건체크몬스터스폰2(context);
-                    return;
+                    return new State조건체크몬스터스폰2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -174,11 +182,12 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State조건체크몬스터스폰3(context);
-                    return;
+                    return new State조건체크몬스터스폰3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -191,11 +200,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.CreateMonster(arg1: new[] {108}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {108})) {
-                    context.State = new State2단계가기전1(context);
-                    return;
+                    return new State2단계가기전1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -206,11 +216,12 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State2단계가기전2(context);
-                    return;
+                    return new State2단계가기전2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -223,12 +234,13 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000543_BF__MAIN__7$", arg3: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetAiExtraData(key: "phaseSecond", value: 1);
-                    context.State = new State2단계(context);
-                    return;
+                    return new State2단계(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -241,11 +253,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SetEffect(arg1: new[] {3000}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "main") == 5) {
-                    context.State = new State2단계시작(context);
-                    return;
+                    return new State2단계시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -258,11 +271,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State2단계조건체크몬스터(context);
-                    return;
+                    return new State2단계조건체크몬스터(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -276,11 +290,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.AddBalloonTalk(spawnPointId: 107, msg: "$02000543_BF__MAIN__8$", duration: 3500, delayTick: 500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {109})) {
-                    context.State = new State3단계시작전1(context);
-                    return;
+                    return new State3단계시작전1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -291,11 +306,12 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State3단계시작전2(context);
-                    return;
+                    return new State3단계시작전2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -306,13 +322,14 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetAiExtraData(key: "phaseSecond", value: 5);
                     context.SetAiExtraData(key: "phase", value: 5);
-                    context.State = new State3단계(context);
-                    return;
+                    return new State3단계(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -325,11 +342,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000543_BF__MAIN__9$", arg3: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State조건체크몬스터스폰(context);
-                    return;
+                    return new State조건체크몬스터스폰(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -342,11 +360,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SideNpcTalk(npcId: 21450036, illust: "DesertDragonMagicGreen_normal", duration: 4000, script: "$02000543_BF__MAIN__10$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "main") == 8) {
-                    context.State = new State응접실문열기전몬스터스폰(context);
-                    return;
+                    return new State응접실문열기전몬스터스폰(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -359,11 +378,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.CreateMonster(arg1: new[] {101, 102}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102})) {
-                    context.State = new State응접실문대기(context);
-                    return;
+                    return new State응접실문대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -379,11 +399,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.DestroyMonster(arg1: new[] {106, 107});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State응접실문열기1(context);
-                    return;
+                    return new State응접실문열기1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -398,11 +419,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SideNpcTalk(npcId: 21450036, illust: "DesertDragonMagicGreen_normal", duration: 3000, script: "$02000543_BF__MAIN__12$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State응접실문열기11(context);
-                    return;
+                    return new State응접실문열기11(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -417,11 +439,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SideNpcTalk(npcId: 21450036, illust: "DesertDragonMagicGreen_normal", duration: 4000, script: "$02000543_BF__MAIN__13$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State응접실문열기31(context);
-                    return;
+                    return new State응접실문열기31(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -437,11 +460,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.LockMyPc(isLock: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State응접실문열기4(context);
-                    return;
+                    return new State응접실문열기4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -458,11 +482,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.AddBalloonTalk(spawnPointId: 105, msg: "$02000543_BF__MAIN__16$", duration: 3500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State응접실문열고나서처리(context);
-                    return;
+                    return new State응접실문열고나서처리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -478,11 +503,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {702}, arg2: 0)) {
-                    context.State = new State보스스폰(context);
-                    return;
+                    return new State보스스폰(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -496,11 +522,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State보스스폰2(context);
-                    return;
+                    return new State보스스폰2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -514,11 +541,12 @@ namespace Maple2.Trigger._02000543_bf {
                 context.CreateMonster(arg1: new[] {103}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {103})) {
-                    context.State = new State포탈열기(context);
-                    return;
+                    return new State포탈열기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -531,7 +559,9 @@ namespace Maple2.Trigger._02000543_bf {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

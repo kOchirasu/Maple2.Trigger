@@ -16,11 +16,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetUserValue(key: "BlockEnable", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BlockEnable") == 1) {
-                    context.State = new StateBlockEnable(context);
-                    return;
+                    return new StateBlockEnable(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -33,11 +34,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetInteractObject(arg1: new[] {10002104}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002104}, arg2: 0)) {
-                    context.State = new StateBlockStart(context);
-                    return;
+                    return new StateBlockStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -52,11 +54,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetVisibleBreakableObject(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateBlockIng(context);
-                    return;
+                    return new StateBlockIng(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -70,11 +73,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetAgent(arg1: new[] {8000, 8001, 8002}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateBlockEnd(context);
-                    return;
+                    return new StateBlockEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -89,11 +93,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetVisibleBreakableObject(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateBlockDisable(context);
-                    return;
+                    return new StateBlockDisable(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -106,11 +111,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetInteractObject(arg1: new[] {10002105}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002105}, arg2: 0)) {
-                    context.State = new StateBlockOffStart(context);
-                    return;
+                    return new StateBlockOffStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -125,11 +131,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetVisibleBreakableObject(arg1: new[] {6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateBlockOffIng(context);
-                    return;
+                    return new StateBlockOffIng(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -143,11 +150,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetAgent(arg1: new[] {8000, 8001, 8002}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateBlockOffEnd(context);
-                    return;
+                    return new StateBlockOffEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -162,11 +170,12 @@ namespace Maple2.Trigger._52100053_qd {
                 context.SetVisibleBreakableObject(arg1: new[] {6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateBlockEnable(context);
-                    return;
+                    return new StateBlockEnable(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

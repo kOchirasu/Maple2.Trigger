@@ -7,11 +7,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetEffect(arg1: new[] {7713}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "item_713_spawn") == 1) {
-                    context.State = new StateSpawnItem(context);
-                    return;
+                    return new StateSpawnItem(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,16 +26,16 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetEffect(arg1: new[] {7723}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {723})) {
-                    context.State = new StateGetItem_Random(context);
-                    return;
+                    return new StateGetItem_Random(context);
                 }
 
                 if (context.GetUserValue(key: "item_713_spawn") == 0) {
-                    context.State = new StateSpawn_check(context);
-                    return;
+                    return new StateSpawn_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +48,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetUserValue(triggerId: 991116, key: "item_713_spawn", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateSpawn_check(context);
-                    return;
+                    return new StateSpawn_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,31 +68,28 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetEffect(arg1: new[] {7723}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StateBuff_01(context);
-                    return;
+                    return new StateBuff_01(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StateBuff_02(context);
-                    return;
+                    return new StateBuff_02(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StateBuff_03(context);
-                    return;
+                    return new StateBuff_03(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StateBuff_04(context);
-                    return;
+                    return new StateBuff_04(context);
                 }
 
                 if (context.RandomCondition(arg1: 1f)) {
-                    context.State = new StateBuff_05(context);
-                    return;
+                    return new StateBuff_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -103,11 +102,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.AddBuff(arg1: new[] {701}, arg2: 70000080, arg3: 1, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSpawn_check(context);
-                    return;
+                    return new StateSpawn_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -122,11 +122,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.AddBuff(arg1: new[] {701}, arg2: 70000081, arg3: 1, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSpawn_check(context);
-                    return;
+                    return new StateSpawn_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -141,11 +142,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.AddBuff(arg1: new[] {701}, arg2: 70000082, arg3: 1, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSpawn_check(context);
-                    return;
+                    return new StateSpawn_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -160,11 +162,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.AddBuff(arg1: new[] {701}, arg2: 70000083, arg3: 1, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSpawn_check(context);
-                    return;
+                    return new StateSpawn_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -179,11 +182,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.AddBuff(arg1: new[] {701}, arg2: 70000085, arg3: 1, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateSpawn_check(context);
-                    return;
+                    return new StateSpawn_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {

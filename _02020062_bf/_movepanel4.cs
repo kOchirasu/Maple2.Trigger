@@ -10,11 +10,12 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetInteractObject(arg1: new[] {12000118}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MovePanel04") == 1) {
-                    context.State = new State레버생성(context);
-                    return;
+                    return new State레버생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetInteractObject(arg1: new[] {12000118}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000118}, arg2: 0)) {
-                    context.State = new State발판이동(context);
-                    return;
+                    return new State발판이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,12 +47,13 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetInteractObject(arg1: new[] {12000118}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9203})) {
                     context.SetBreakable(arg1: new[] {2300, 2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308}, arg2: true);
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +66,12 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetBreakable(arg1: new[] {2300, 2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State발판이동(context);
-                    return;
+                    return new State발판이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

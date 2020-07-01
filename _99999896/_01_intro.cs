@@ -5,11 +5,12 @@ namespace Maple2.Trigger._99999896 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    context.State = new State멘트대기(context);
-                    return;
+                    return new State멘트대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._99999896 {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State멘트_1(context);
-                    return;
+                    return new State멘트_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._99999896 {
                 context.SetEventUI(arg1: 1, arg2: "$99999896__01_INTRO__0$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State멘트_2(context);
-                    return;
+                    return new State멘트_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -64,11 +67,12 @@ namespace Maple2.Trigger._99999896 {
                 context.SetEventUI(arg1: 1, arg2: "$99999896__01_INTRO__1$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State멘트_3(context);
-                    return;
+                    return new State멘트_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -85,11 +89,12 @@ namespace Maple2.Trigger._99999896 {
                 context.CreateItem(arg1: new[] {1, 2, 3});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State완료(context);
-                    return;
+                    return new State완료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -102,7 +107,9 @@ namespace Maple2.Trigger._99999896 {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

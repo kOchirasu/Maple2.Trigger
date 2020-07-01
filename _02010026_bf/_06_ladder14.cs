@@ -14,11 +14,12 @@ namespace Maple2.Trigger._02010026_bf {
                 context.SetLadder(arg1: 207, arg2: false, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000909}, arg2: 0)) {
-                    context.State = new State사다리생성01(context);
-                    return;
+                    return new State사다리생성01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,11 +32,12 @@ namespace Maple2.Trigger._02010026_bf {
                 context.SetLadder(arg1: 201, arg2: true, arg3: true, arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 200)) {
-                    context.State = new State사다리생성02(context);
-                    return;
+                    return new State사다리생성02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +50,12 @@ namespace Maple2.Trigger._02010026_bf {
                 context.SetLadder(arg1: 202, arg2: true, arg3: true, arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 200)) {
-                    context.State = new State사다리생성03(context);
-                    return;
+                    return new State사다리생성03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +68,12 @@ namespace Maple2.Trigger._02010026_bf {
                 context.SetLadder(arg1: 203, arg2: true, arg3: true, arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 200)) {
-                    context.State = new State사다리생성04(context);
-                    return;
+                    return new State사다리생성04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,11 +86,12 @@ namespace Maple2.Trigger._02010026_bf {
                 context.SetLadder(arg1: 204, arg2: true, arg3: true, arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 200)) {
-                    context.State = new State사다리생성05(context);
-                    return;
+                    return new State사다리생성05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -99,11 +104,12 @@ namespace Maple2.Trigger._02010026_bf {
                 context.SetLadder(arg1: 205, arg2: true, arg3: true, arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 200)) {
-                    context.State = new State사다리생성06(context);
-                    return;
+                    return new State사다리생성06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -116,11 +122,12 @@ namespace Maple2.Trigger._02010026_bf {
                 context.SetLadder(arg1: 206, arg2: true, arg3: true, arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 200)) {
-                    context.State = new State사다리생성07(context);
-                    return;
+                    return new State사다리생성07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -134,11 +141,12 @@ namespace Maple2.Trigger._02010026_bf {
                 context.SetTimer(arg1: "1", arg2: 10, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "FirstBattleEnd", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 601) == 1) {
-                    context.State = new State보스의저주디버프사용신호대기(context);
-                    return;
+                    return new State보스의저주디버프사용신호대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,21 +25,20 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SkillDebuffCheck_1Phase") == 1) {
-                    context.State = new State소환몹활성화될때까지잠시기다리기(context);
-                    return;
+                    return new State소환몹활성화될때까지잠시기다리기(context);
                 }
 
                 if (context.GetUserValue(key: "FirstBattleEnd") == 1) {
-                    context.State = new State폭발저주디버프제거잠시대기(context);
-                    return;
+                    return new State폭발저주디버프제거잠시대기(context);
                 }
 
                 if (context.GetUserValue(key: "FirstBattleEnd") == 99) {
-                    context.State = new State폭발저주디버프제거하고종료(context);
-                    return;
+                    return new State폭발저주디버프제거하고종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,11 +49,12 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5200)) {
-                    context.State = new State소환몹전멸할때까지대기(context);
-                    return;
+                    return new State소환몹전멸할때까지대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,21 +65,20 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") == 0) {
-                    context.State = new State폭발저주디버프제거잠시대기(context);
-                    return;
+                    return new State폭발저주디버프제거잠시대기(context);
                 }
 
                 if (context.GetUserValue(key: "FirstBattleEnd") == 1) {
-                    context.State = new State폭발저주디버프제거잠시대기(context);
-                    return;
+                    return new State폭발저주디버프제거잠시대기(context);
                 }
 
                 if (context.GetUserValue(key: "FirstBattleEnd") == 99) {
-                    context.State = new State폭발저주디버프제거하고종료(context);
-                    return;
+                    return new State폭발저주디버프제거하고종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,11 +92,12 @@ namespace Maple2.Trigger._02020130_bf {
                 context.SetUserValue(key: "FirstBattleEnd", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
-                    context.State = new State폭발저주디버프제거(context);
-                    return;
+                    return new State폭발저주디버프제거(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -109,11 +110,12 @@ namespace Maple2.Trigger._02020130_bf {
                 context.AddBuff(arg1: new[] {601}, arg2: 50001413, arg3: 1, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1800)) {
-                    context.State = new State보스의저주디버프사용신호대기(context);
-                    return;
+                    return new State보스의저주디버프사용신호대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -126,11 +128,12 @@ namespace Maple2.Trigger._02020130_bf {
                 context.AddBuff(arg1: new[] {601}, arg2: 50001413, arg3: 1, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -141,7 +144,9 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

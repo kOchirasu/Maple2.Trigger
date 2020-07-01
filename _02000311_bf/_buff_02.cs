@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000311_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Buff_02") == 1) {
-                    context.State = new StateBuff_02_Ready(context);
-                    return;
+                    return new StateBuff_02_Ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02000311_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {702})) {
-                    context.State = new StateBuff_02(context);
-                    return;
+                    return new StateBuff_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,11 +37,12 @@ namespace Maple2.Trigger._02000311_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {702})) {
-                    context.State = new StateBuff_02_Start(context);
-                    return;
+                    return new StateBuff_02_Start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -52,11 +55,12 @@ namespace Maple2.Trigger._02000311_bf {
                 context.AddBuff(arg1: new[] {702}, arg2: 50003006, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateBuff_02(context);
-                    return;
+                    return new StateBuff_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -7,13 +7,14 @@ namespace Maple2.Trigger._99999949 {
                 context.CreateMonster(arg1: new[] {11000064}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9051})) {
                     context.AddEffectNif(spawnPointId: 11000064, nifPath: @"Map\Royalcity\Indoor\ry_in_cubric_mat_A01.nif", isOutline: true, scale: 0.5f, rotateZ: 45);
                     context.FaceEmotion(emotionName: "Ride_Idle_000");
-                    context.State = new StateWait2(context);
-                    return;
+                    return new StateWait2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "AddEffectNif 테스트");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateGuide(context);
-                    return;
+                    return new StateGuide(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -46,11 +48,12 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "40002673퀘스트 완료가능 or 완료 상태를 만들고 6번 영역안에 들어가보세요.");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9050}, arg2: new[] {40002673, 40002674, 40002675, 40002676, 40002677, 40002678, 40002679}, arg3: new byte[] {1})) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +67,12 @@ namespace Maple2.Trigger._99999949 {
                 context.CreateMonster(arg1: new[] {11000044}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,11 +86,12 @@ namespace Maple2.Trigger._99999949 {
                 context.DebugString(message: "5초 후에 트리거가 리셋됩니다. 6번 영역 밖으로 나가세요.");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

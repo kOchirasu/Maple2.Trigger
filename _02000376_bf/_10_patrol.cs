@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "PatrolStart", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "PatrolStart") == 1) {
-                    context.State = new StateDelay01(context);
-                    return;
+                    return new StateDelay01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateNpcChange01(context);
-                    return;
+                    return new StateNpcChange01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,11 +42,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.CreateMonster(arg1: new[] {101, 201}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9301, arg2: new[] {101})) {
-                    context.State = new StatePatrol01(context);
-                    return;
+                    return new StatePatrol01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +61,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9302, arg2: new[] {101})) {
-                    context.State = new StatePatrol02(context);
-                    return;
+                    return new StatePatrol02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -76,11 +80,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_202");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9303, arg2: new[] {101})) {
-                    context.State = new StatePatrol03(context);
-                    return;
+                    return new StatePatrol03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -94,11 +99,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_203");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9304, arg2: new[] {101})) {
-                    context.State = new StatePatrol04(context);
-                    return;
+                    return new StatePatrol04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -112,11 +118,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_204");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9305, arg2: new[] {101})) {
-                    context.State = new StatePatrol05Air(context);
-                    return;
+                    return new StatePatrol05Air(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -131,11 +138,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_205");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateNpcChange02(context);
-                    return;
+                    return new StateNpcChange02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -150,11 +158,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.RemoveBalloonTalk(spawnPointId: 201);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -167,7 +176,9 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 1, key: "PatrolEnd", value: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

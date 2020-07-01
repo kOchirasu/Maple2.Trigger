@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02010086_bf {
                 context.SetMesh(arg1: new[] {1161, 1162, 1163}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000897}, arg2: 1)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02010086_bf {
                 context.ShowGuideSummary(entityId: 113, textId: 20003363);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000897}, arg2: 0)) {
-                    context.State = new State작동_01(context);
-                    return;
+                    return new State작동_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -49,11 +51,12 @@ namespace Maple2.Trigger._02010086_bf {
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State작동_02(context);
-                    return;
+                    return new State작동_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -69,11 +72,12 @@ namespace Maple2.Trigger._02010086_bf {
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State벽제거(context);
-                    return;
+                    return new State벽제거(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -86,7 +90,9 @@ namespace Maple2.Trigger._02010086_bf {
                 context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.DestroyMonster(arg1: new[] {404});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new StateMobSpawn(context);
-                    return;
+                    return new StateMobSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,16 +26,16 @@ namespace Maple2.Trigger._02100001_bf {
                 context.CreateMonster(arg1: new[] {404}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {404})) {
-                    context.State = new StateDelay01(context);
-                    return;
+                    return new StateDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "RemoveAll") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +46,12 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 60000)) {
-                    context.State = new StateMobSpawn(context);
-                    return;
+                    return new StateMobSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,7 +64,9 @@ namespace Maple2.Trigger._02100001_bf {
                 context.DestroyMonster(arg1: new[] {404});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

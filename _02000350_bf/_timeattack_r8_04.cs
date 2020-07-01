@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000350_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 140, arg2: new[] {108099})) {
-                    context.State = new State몹스폰(context);
-                    return;
+                    return new State몹스폰(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,17 +23,17 @@ namespace Maple2.Trigger._02000350_bf {
                 context.DarkStream(type: "SpawnMonster", spawnId: new[] {108004}, score: 8000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {108099})) {
                     context.DestroyMonster(arg1: new[] {108004});
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {108004})) {
-                    context.State = new State몹스폰(context);
-                    return;
+                    return new State몹스폰(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,7 +44,9 @@ namespace Maple2.Trigger._02000350_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

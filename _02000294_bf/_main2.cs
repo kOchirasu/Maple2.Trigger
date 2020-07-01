@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000294_bf {
                 context.DestroyMonster(arg1: new[] {10001, 10002, 10003, 10004});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_01") == 1) {
-                    context.State = new State트리거01진행(context);
-                    return;
+                    return new State트리거01진행(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02000294_bf {
                 context.CreateMonster(arg1: new[] {10001, 10002, 10003, 10004}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State트리거02시작(context);
-                    return;
+                    return new State트리거02시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,7 +46,9 @@ namespace Maple2.Trigger._02000294_bf {
                 context.MoveNpc(arg1: 10004, arg2: "MS2PatrolData3");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

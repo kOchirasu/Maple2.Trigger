@@ -5,16 +5,16 @@ namespace Maple2.Trigger._02000300_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {1099})) {
-                    context.State = new State랜덤생성조건(context);
-                    return;
+                    return new State랜덤생성조건(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1099})) {
-                    context.State = new State소멸(context);
-                    return;
+                    return new State소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,26 +25,24 @@ namespace Maple2.Trigger._02000300_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new State40초(context);
-                    return;
+                    return new State40초(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new State35초(context);
-                    return;
+                    return new State35초(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new State30초(context);
-                    return;
+                    return new State30초(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    context.State = new State45초(context);
-                    return;
+                    return new State45초(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -57,16 +55,16 @@ namespace Maple2.Trigger._02000300_bf {
                 context.SetTimer(arg1: "45", arg2: 45);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "45")) {
-                    context.State = new State생성(context);
-                    return;
+                    return new State생성(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1099})) {
-                    context.State = new State소멸(context);
-                    return;
+                    return new State소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,16 +77,16 @@ namespace Maple2.Trigger._02000300_bf {
                 context.SetTimer(arg1: "50", arg2: 50);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "50")) {
-                    context.State = new State생성(context);
-                    return;
+                    return new State생성(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1099})) {
-                    context.State = new State소멸(context);
-                    return;
+                    return new State소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -101,16 +99,16 @@ namespace Maple2.Trigger._02000300_bf {
                 context.SetTimer(arg1: "55", arg2: 55);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "55")) {
-                    context.State = new State생성(context);
-                    return;
+                    return new State생성(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1099})) {
-                    context.State = new State소멸(context);
-                    return;
+                    return new State소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -123,16 +121,16 @@ namespace Maple2.Trigger._02000300_bf {
                 context.SetTimer(arg1: "60", arg2: 60);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "60")) {
-                    context.State = new State생성(context);
-                    return;
+                    return new State생성(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1099})) {
-                    context.State = new State소멸(context);
-                    return;
+                    return new State소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -147,16 +145,16 @@ namespace Maple2.Trigger._02000300_bf {
                 context.CreateMonster(arg1: new[] {1097, 1098}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1097, 1098})) {
-                    context.State = new State랜덤생성조건(context);
-                    return;
+                    return new State랜덤생성조건(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1099})) {
-                    context.State = new State소멸(context);
-                    return;
+                    return new State소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -169,7 +167,9 @@ namespace Maple2.Trigger._02000300_bf {
                 context.DestroyMonster(arg1: new[] {1098, 1097});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetUserValue(triggerId: 2040323, key: "Warp", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Boss") == 1) {
-                    context.State = new Statewarp_condition(context);
-                    return;
+                    return new Statewarp_condition(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,16 +24,16 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1999})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.GetNpcHpRate(spawnPointId: 1999) <= 0.70f) {
-                    context.State = new Statewarp_1st(context);
-                    return;
+                    return new Statewarp_1st(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,26 +49,24 @@ namespace Maple2.Trigger._02000471_bf {
                 context.AddBuff(arg1: new[] {720}, arg2: 70002061, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1999})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new Statewarp_go(context);
-                    return;
+                    return new Statewarp_go(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002106}, arg2: 0)) {
-                    context.State = new Statewarp_cancel(context);
-                    return;
+                    return new Statewarp_cancel(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002107}, arg2: 0)) {
-                    context.State = new Statewarp_cancel(context);
-                    return;
+                    return new Statewarp_cancel(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,16 +82,16 @@ namespace Maple2.Trigger._02000471_bf {
                 context.AddBuff(arg1: new[] {720}, arg2: 70002062, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1999})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.GetNpcHpRate(spawnPointId: 1999) <= 0.30f) {
-                    context.State = new Statewarp_2nd(context);
-                    return;
+                    return new Statewarp_2nd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -108,16 +107,16 @@ namespace Maple2.Trigger._02000471_bf {
                 context.AddBuff(arg1: new[] {720}, arg2: 70002062, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1999})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.GetNpcHpRate(spawnPointId: 1999) <= 0.30f) {
-                    context.State = new Statewarp_2nd(context);
-                    return;
+                    return new Statewarp_2nd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -133,26 +132,24 @@ namespace Maple2.Trigger._02000471_bf {
                 context.AddBuff(arg1: new[] {720}, arg2: 70002061, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1999})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new Statewarp_go2(context);
-                    return;
+                    return new Statewarp_go2(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002106}, arg2: 0)) {
-                    context.State = new Statewarp2_cancel(context);
-                    return;
+                    return new Statewarp2_cancel(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002107}, arg2: 0)) {
-                    context.State = new Statewarp2_cancel(context);
-                    return;
+                    return new Statewarp2_cancel(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -168,16 +165,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.AddBuff(arg1: new[] {720}, arg2: 70002062, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1999})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
-                if (true) {
-                    context.State = new Stateend(context);
-                    return;
-                }
+                return new Stateend(context);
             }
 
             public override void OnExit() { }
@@ -193,16 +186,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.AddBuff(arg1: new[] {720}, arg2: 70002062, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1999})) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
-                if (true) {
-                    context.State = new Stateend(context);
-                    return;
-                }
+                return new Stateend(context);
             }
 
             public override void OnExit() { }
@@ -213,7 +202,9 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

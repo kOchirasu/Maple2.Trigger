@@ -7,12 +7,13 @@ namespace Maple2.Trigger._61000004_me {
                 context.SetInteractObject(arg1: new[] {10000130}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000130}, arg2: 0)) {
                     context.SetMesh(arg1: new[] {801, 802, 803, 804, 805, 806}, arg2: false, arg3: 0, arg4: 0);
-                    context.State = new State완료(context);
-                    return;
+                    return new State완료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,12 +26,13 @@ namespace Maple2.Trigger._61000004_me {
                 context.SetTimer(arg1: "130", arg2: 5, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "130")) {
                     context.SetMesh(arg1: new[] {801, 802, 803, 804, 805, 806}, arg2: true, arg3: 0, arg4: 0);
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {

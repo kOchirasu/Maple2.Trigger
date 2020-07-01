@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 1) {
-                    context.State = new Statewarp_1st(context);
-                    return;
+                    return new Statewarp_1st(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,36 +21,32 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new Statewarp_1(context);
-                    return;
+                    return new Statewarp_1(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new Statewarp_2(context);
-                    return;
+                    return new Statewarp_2(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new Statewarp_3(context);
-                    return;
+                    return new Statewarp_3(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new Statewarp_4(context);
-                    return;
+                    return new Statewarp_4(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new Statewarp_5(context);
-                    return;
+                    return new Statewarp_5(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new Statewarp_6(context);
-                    return;
+                    return new Statewarp_6(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +60,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 2) {
-                    context.State = new Statewarp_2nd(context);
-                    return;
+                    return new Statewarp_2nd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,11 +79,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 2) {
-                    context.State = new Statewarp_2nd(context);
-                    return;
+                    return new Statewarp_2nd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -99,11 +98,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 2) {
-                    context.State = new Statewarp_2nd(context);
-                    return;
+                    return new Statewarp_2nd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -117,11 +117,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 2) {
-                    context.State = new Statewarp_2nd(context);
-                    return;
+                    return new Statewarp_2nd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -135,11 +136,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 2) {
-                    context.State = new Statewarp_2nd(context);
-                    return;
+                    return new Statewarp_2nd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -153,11 +155,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 2) {
-                    context.State = new Statewarp_2nd(context);
-                    return;
+                    return new Statewarp_2nd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -168,36 +171,32 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new Statewarp2_1(context);
-                    return;
+                    return new Statewarp2_1(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new Statewarp2_2(context);
-                    return;
+                    return new Statewarp2_2(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new Statewarp2_3(context);
-                    return;
+                    return new Statewarp2_3(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new Statewarp2_4(context);
-                    return;
+                    return new Statewarp2_4(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    context.State = new Statewarp2_5(context);
-                    return;
+                    return new Statewarp2_5(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    context.State = new Statewarp2_6(context);
-                    return;
+                    return new Statewarp2_6(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -211,7 +210,9 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -224,7 +225,9 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -237,7 +240,9 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -250,7 +255,9 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -263,7 +270,9 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -276,7 +285,9 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

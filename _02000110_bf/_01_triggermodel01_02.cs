@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000110_bf {
                 context.SetEffect(arg1: new[] {202}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000064}, arg2: 0)) {
-                    context.State = new State몬스터와전투(context);
-                    return;
+                    return new State몬스터와전투(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +30,12 @@ namespace Maple2.Trigger._02000110_bf {
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State몬스터전투(context);
-                    return;
+                    return new State몬스터전투(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,16 +46,16 @@ namespace Maple2.Trigger._02000110_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {102})) {
-                    context.State = new State트리거초기화(context);
-                    return;
+                    return new State트리거초기화(context);
                 }
 
                 if (!context.MonsterInCombat(arg1: new[] {102})) {
-                    context.State = new State몬스터소멸(context);
-                    return;
+                    return new State몬스터소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,20 +68,20 @@ namespace Maple2.Trigger._02000110_bf {
                 context.SetTimer(arg1: "1", arg2: 30);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {102})) {
                     context.ResetTimer(arg1: "1");
                 }
 
                 if (context.MonsterDead(arg1: new[] {102})) {
-                    context.State = new State소멸대기(context);
-                    return;
+                    return new State소멸대기(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State소멸대기(context);
-                    return;
+                    return new State소멸대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,16 +94,16 @@ namespace Maple2.Trigger._02000110_bf {
                 context.SetTimer(arg1: "1", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State트리거초기화(context);
-                    return;
+                    return new State트리거초기화(context);
                 }
 
                 if (context.MonsterInCombat(arg1: new[] {102})) {
-                    context.State = new State몬스터소멸(context);
-                    return;
+                    return new State몬스터소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,11 +117,12 @@ namespace Maple2.Trigger._02000110_bf {
                 context.SetTimer(arg1: "2", arg2: 20);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {

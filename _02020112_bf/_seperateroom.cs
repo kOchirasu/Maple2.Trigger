@@ -11,11 +11,12 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetUserValue(triggerId: 99990015, key: "Extinction", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Start") == 1) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 191) <= 0.70f) {
-                    context.State = new State격리조치_1_준비(context);
-                    return;
+                    return new State격리조치_1_준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,16 +45,16 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetUserValue(triggerId: 99990013, key: "Extinction", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Start") == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetNpcHpRate(spawnPointId: 191) <= 0.45f) {
-                    context.State = new State격리조치_2_준비(context);
-                    return;
+                    return new State격리조치_2_준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,16 +67,16 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetUserValue(triggerId: 99990014, key: "Extinction", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Start") == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetNpcHpRate(spawnPointId: 191) <= 0.20f) {
-                    context.State = new State격리조치_2_준비(context);
-                    return;
+                    return new State격리조치_2_준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -87,11 +89,12 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetUserValue(triggerId: 99990015, key: "Extinction", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Start") == 2) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -109,7 +112,9 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetMesh(arg1: new[] {1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1817, 1818, 1819, 1820, 1821, 1822, 1823, 1824, 1825, 1826, 1827}, arg2: true, arg3: 0, arg4: 0, arg5: 3f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

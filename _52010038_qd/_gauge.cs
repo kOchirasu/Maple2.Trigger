@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "GaugeOpen") == 1) {
-                    context.State = new State게이지시작(context);
-                    return;
+                    return new State게이지시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,21 +29,20 @@ namespace Maple2.Trigger._52010038_qd {
                 context.ShadowExpedition(type: "OpenBossGauge", title: "$52010038_QD__gauge__2$", maxGaugePoint: 1000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 1000) {
-                    context.State = new State성공(context);
-                    return;
+                    return new State성공(context);
                 }
 
                 if (context.GetUserValue(key: "CoreIsDead") == 1) {
-                    context.State = new State실패(context);
-                    return;
+                    return new State실패(context);
                 }
 
                 if (context.GetUserValue(key: "EngineIsDead") == 1) {
-                    context.State = new State실패(context);
-                    return;
+                    return new State실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -64,11 +64,12 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetEventUI(arg1: 7, arg2: "$52010038_QD__GAUGE__0$", arg3: 2500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State정리(context);
-                    return;
+                    return new State정리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,12 +82,13 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetEventUI(arg1: 5, arg2: "$52010038_QD__GAUGE__1$", arg3: 2500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.MoveUser(arg1: 02000092, arg2: 20);
-                    context.State = new State정리(context);
-                    return;
+                    return new State정리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -104,11 +106,12 @@ namespace Maple2.Trigger._52010038_qd {
                 context.MoveUser(arg1: 52010039, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -119,7 +122,9 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

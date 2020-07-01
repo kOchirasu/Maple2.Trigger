@@ -15,11 +15,12 @@ namespace Maple2.Trigger._02020098_bf {
                 context.SetPortal(arg1: 50, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10})) {
-                    context.State = new State포탈체크시작(context);
-                    return;
+                    return new State포탈체크시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,11 +31,12 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State포탈체크대기중(context);
-                    return;
+                    return new State포탈체크대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,16 +47,16 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BossOnePhaseEnd") == 1) {
-                    context.State = new State순간이동포탈OFF(context);
-                    return;
+                    return new State순간이동포탈OFF(context);
                 }
 
                 if (context.GetUserValue(key: "BossDead") == 1) {
-                    context.State = new State나가기포탈생성잠시대기(context);
-                    return;
+                    return new State나가기포탈생성잠시대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -69,11 +71,12 @@ namespace Maple2.Trigger._02020098_bf {
                 context.SetUserValue(key: "BossOnePhaseEnd", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State포탈체크대기중(context);
-                    return;
+                    return new State포탈체크대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -84,11 +87,12 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9500)) {
-                    context.State = new State나가기포탈생성(context);
-                    return;
+                    return new State나가기포탈생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -99,26 +103,24 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "PhasePortar") == 0) {
-                    context.State = new State졸구간만포탈생성(context);
-                    return;
+                    return new State졸구간만포탈생성(context);
                 }
 
                 if (context.GetUserValue(key: "PhasePortar") == 1) {
-                    context.State = new State1페이지전투판포탈생성(context);
-                    return;
+                    return new State1페이지전투판포탈생성(context);
                 }
 
                 if (context.GetUserValue(key: "PhasePortar") == 2) {
-                    context.State = new State2페이지전투판포탈생성(context);
-                    return;
+                    return new State2페이지전투판포탈생성(context);
                 }
 
                 if (context.GetUserValue(key: "PhasePortar") == 3) {
-                    context.State = new State3페이지전투판포탈생성(context);
-                    return;
+                    return new State3페이지전투판포탈생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -131,11 +133,12 @@ namespace Maple2.Trigger._02020098_bf {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State트리거종료(context);
-                    return;
+                    return new State트리거종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -149,11 +152,12 @@ namespace Maple2.Trigger._02020098_bf {
                 context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State트리거종료(context);
-                    return;
+                    return new State트리거종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -169,11 +173,12 @@ namespace Maple2.Trigger._02020098_bf {
                 context.SetPortal(arg1: 6, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State트리거종료(context);
-                    return;
+                    return new State트리거종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -187,11 +192,12 @@ namespace Maple2.Trigger._02020098_bf {
                 context.SetPortal(arg1: 7, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State트리거종료(context);
-                    return;
+                    return new State트리거종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -202,7 +208,9 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

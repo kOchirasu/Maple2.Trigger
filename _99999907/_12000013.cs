@@ -7,16 +7,16 @@ namespace Maple2.Trigger._99999907 {
                 context.SetInteractObject(arg1: new[] {12000013}, arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new State반응대기(context);
-                    return;
+                    return new State반응대기(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +29,12 @@ namespace Maple2.Trigger._99999907 {
                 context.SetInteractObject(arg1: new[] {12000013}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000013}, arg2: 0)) {
-                    context.State = new State랜덤버프(context);
-                    return;
+                    return new State랜덤버프(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,24 +45,23 @@ namespace Maple2.Trigger._99999907 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 30f)) {
                     context.AddBuff(arg1: new[] {199}, arg2: 70000008, arg3: 1, arg4: false, arg5: false);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.RandomCondition(arg1: 30f)) {
                     context.AddBuff(arg1: new[] {199}, arg2: 70000008, arg3: 1, arg4: false, arg5: false);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.RandomCondition(arg1: 40f)) {
                     context.AddBuff(arg1: new[] {199}, arg2: 70000008, arg3: 1, arg4: false, arg5: false);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -72,7 +72,9 @@ namespace Maple2.Trigger._99999907 {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -5,7 +5,9 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -17,11 +19,12 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
                 context.SetTimer(arg1: "115", arg2: 115);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "115")) {
-                    context.State = new State클로즈중1(context);
-                    return;
+                    return new State클로즈중1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -36,11 +39,12 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
                 context.SetTimer(arg1: "5", arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State클로즈중2(context);
-                    return;
+                    return new State클로즈중2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -55,11 +59,12 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
                 context.SetTimer(arg1: "6", arg2: 60);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "6")) {
-                    context.State = new State클로즈대기중(context);
-                    return;
+                    return new State클로즈대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {

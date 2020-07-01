@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 712) == 1) {
-                    context.State = new State레이저_02(context);
-                    return;
+                    return new State레이저_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 707) == 1) {
-                    context.State = new State레이저_02_생성(context);
-                    return;
+                    return new State레이저_02_생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._02010086_bf {
                 context.CreateMonster(arg1: new[] {998}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 708) == 1) {
-                    context.State = new State레이저_03_생성(context);
-                    return;
+                    return new State레이저_03_생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -56,7 +59,9 @@ namespace Maple2.Trigger._02010086_bf {
                 context.CreateMonster(arg1: new[] {995}, arg2: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

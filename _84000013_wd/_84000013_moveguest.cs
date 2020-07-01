@@ -8,11 +8,8 @@ namespace Maple2.Trigger._84000013_wd {
                 context.SetUserValue(key: "Weddingceremonyfail", value: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State시작(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State시작(context);
             }
 
             public override void OnExit() { }
@@ -23,17 +20,17 @@ namespace Maple2.Trigger._84000013_wd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WeddingHallState(hallState: "weddingComplete")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetUserValue(key: "Weddingceremonystartsready") == 1) {
                     context.SetUserValue(key: "Weddingceremonystartsready", value: 0);
-                    context.State = new State새로운하객있는지감지(context);
-                    return;
+                    return new State새로운하객있는지감지(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,22 +41,21 @@ namespace Maple2.Trigger._84000013_wd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WeddingHallState(hallState: "weddingComplete")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetUserValue(key: "Weddingceremonyfail") == 1) {
                     context.SetUserValue(key: "Weddingceremonyfail", value: 0);
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State방금입장한하객은하객석으로위치이동(context);
-                    return;
+                    return new State방금입장한하객은하객석으로위치이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -72,11 +68,8 @@ namespace Maple2.Trigger._84000013_wd {
                 context.WeddingMoveUser(entryType: "Guest", arg1: 84000013, arg2: new byte[] {22, 23}, arg3: 701);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State새로운하객있는지감지(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State새로운하객있는지감지(context);
             }
 
             public override void OnExit() { }
@@ -89,11 +82,8 @@ namespace Maple2.Trigger._84000013_wd {
                 context.WeddingMoveUser(entryType: "Guest", arg1: 84000013, arg2: new byte[] {22, 23}, arg3: 701);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State새로운하객있는지감지(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State새로운하객있는지감지(context);
             }
 
             public override void OnExit() { }
@@ -104,7 +94,9 @@ namespace Maple2.Trigger._84000013_wd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

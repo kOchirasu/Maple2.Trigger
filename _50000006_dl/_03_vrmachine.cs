@@ -9,11 +9,12 @@ namespace Maple2.Trigger._50000006_dl {
                 context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "machineon") == 1) {
-                    context.State = new StateMachineOn(context);
-                    return;
+                    return new StateMachineOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._50000006_dl {
                 context.SetInteractObject(arg1: new[] {10001246}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001246}, arg2: 0)) {
-                    context.State = new StatePortalOn(context);
-                    return;
+                    return new StatePortalOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._50000006_dl {
                 context.SetPortal(arg1: 3, arg2: false, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateResetDelay(context);
-                    return;
+                    return new StateResetDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +62,12 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,11 +81,12 @@ namespace Maple2.Trigger._50000006_dl {
                 context.SetInteractObject(arg1: new[] {10001246}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001246}, arg2: 0)) {
-                    context.State = new StatePortalOn(context);
-                    return;
+                    return new StatePortalOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

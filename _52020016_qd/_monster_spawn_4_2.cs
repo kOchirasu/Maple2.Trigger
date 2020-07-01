@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn_phase_4") == 1) {
-                    context.State = new State전투페이즈(context);
-                    return;
+                    return new State전투페이즈(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._52020016_qd {
                 context.SetConversation(arg1: 1, arg2: 4000403, arg3: "왜 저만 죽어야 하죠?", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 4000403) <= 0.20f) {
-                    context.State = new State몬스터소멸(context);
-                    return;
+                    return new State몬스터소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,8 +42,10 @@ namespace Maple2.Trigger._52020016_qd {
                 context.DestroyMonster(arg1: new[] {4000403}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) { }
+
+                return null;
             }
 
             public override void OnExit() { }

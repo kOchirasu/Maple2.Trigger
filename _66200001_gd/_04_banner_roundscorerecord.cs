@@ -8,11 +8,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetMesh(arg1: new[] {1001, 1002, 1003, 1100, 1101, 1102, 1103}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new StateEnter(context);
-                    return;
+                    return new StateEnter(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -33,11 +34,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "RedteamScore", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RoundScoreRecord") == 1) {
-                    context.State = new StateR01BannerUpdate(context);
-                    return;
+                    return new StateR01BannerUpdate(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -54,11 +56,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RoundScoreRecord") == 2) {
-                    context.State = new StateR02BannerUpdate(context);
-                    return;
+                    return new StateR02BannerUpdate(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,11 +78,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RoundScoreRecord") == 3) {
-                    context.State = new StateR03BannerUpdate(context);
-                    return;
+                    return new StateR03BannerUpdate(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,21 +100,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BlueteamScore") == 3) {
-                    context.State = new StateBlueTeamWin(context);
-                    return;
+                    return new StateBlueTeamWin(context);
                 }
 
                 if (context.GetUserValue(key: "RedteamScore") == 3) {
-                    context.State = new StateRedTeamWin(context);
-                    return;
+                    return new StateRedTeamWin(context);
                 }
 
                 if (context.GetUserValue(key: "RoundScoreRecord") == 4) {
-                    context.State = new StateR04BannerUpdate(context);
-                    return;
+                    return new StateR04BannerUpdate(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -127,21 +130,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BlueteamScore") == 3) {
-                    context.State = new StateBlueTeamWin(context);
-                    return;
+                    return new StateBlueTeamWin(context);
                 }
 
                 if (context.GetUserValue(key: "RedteamScore") == 3) {
-                    context.State = new StateRedTeamWin(context);
-                    return;
+                    return new StateRedTeamWin(context);
                 }
 
                 if (context.GetUserValue(key: "RoundScoreRecord") == 5) {
-                    context.State = new StateR05BannerUpdate(context);
-                    return;
+                    return new StateR05BannerUpdate(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -158,21 +160,20 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BlueteamScore") == 3) {
-                    context.State = new StateBlueTeamWin(context);
-                    return;
+                    return new StateBlueTeamWin(context);
                 }
 
                 if (context.GetUserValue(key: "RedteamScore") == 3) {
-                    context.State = new StateRedTeamWin(context);
-                    return;
+                    return new StateRedTeamWin(context);
                 }
 
                 if (context.GetUserValue(key: "RoundScoreRecord") == 5) {
-                    context.State = new StateEndGame(context);
-                    return;
+                    return new StateEndGame(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -185,7 +186,9 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 1, key: "WinnerTeam", value: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -197,7 +200,9 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 1, key: "WinnerTeam", value: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -207,7 +212,9 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -12,11 +12,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SetEffect(arg1: new[] {3000, 3001, 3002}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new StateEntryDelay(context);
-                    return;
+                    return new StateEntryDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,16 +31,16 @@ namespace Maple2.Trigger._84000006_wd {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new Stateopeningscene_start(context);
-                    return;
+                    return new Stateopeningscene_start(context);
                 }
 
                 if (context.GetUserCount(boxId: 9000) == 70) {
-                    context.State = new Stateopeningscene_start(context);
-                    return;
+                    return new Stateopeningscene_start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -55,11 +56,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.CameraSelectPath(arg1: new[] {5004, 5003}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new Stateopeningscene_1_1(context);
-                    return;
+                    return new Stateopeningscene_1_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -74,11 +76,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__1$", duration: 3000, delayTick: 3500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6500)) {
-                    context.State = new Stateopeningscene_1_2(context);
-                    return;
+                    return new Stateopeningscene_1_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,11 +95,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.AddBalloonTalk(spawnPointId: 101, msg: "$84000006_WD__84000006_WD_MAIN__2$", duration: 3000, delayTick: 500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new Stateopeningscene_1_3(context);
-                    return;
+                    return new Stateopeningscene_1_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -115,11 +119,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__4$", duration: 4000, delayTick: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    context.State = new StateGameGuide01(context);
-                    return;
+                    return new StateGameGuide01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -138,11 +143,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 20000f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateGameGuide02(context);
-                    return;
+                    return new StateGameGuide02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -155,11 +161,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000, script: "$84000006_WD__84000006_WD_MAIN__6$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateGameGuide03(context);
-                    return;
+                    return new StateGameGuide03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -172,11 +179,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000, script: "$84000006_WD__84000006_WD_MAIN__7$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateGameGuide04(context);
-                    return;
+                    return new StateGameGuide04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -189,11 +197,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000, script: "$84000006_WD__84000006_WD_MAIN__8$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateGameGuide05(context);
-                    return;
+                    return new StateGameGuide05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -206,11 +215,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000, script: "$84000006_WD__84000006_WD_MAIN__9$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StateGameGuide06(context);
-                    return;
+                    return new StateGameGuide06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -223,11 +233,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SetEventUI(arg1: 2, arg2: "$84000006_WD__84000006_WD_MAIN__10$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePinata_Ready(context);
-                    return;
+                    return new StatePinata_Ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -245,11 +256,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.ShowGuideSummary(entityId: 28500010, textId: 28500010, duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Steal") == 1) {
-                    context.State = new StatePinata_Fight(context);
-                    return;
+                    return new StatePinata_Fight(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -262,11 +274,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000, script: "$84000006_WD__84000006_WD_MAIN__12$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new StatePinata_Fight2(context);
-                    return;
+                    return new StatePinata_Fight2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -280,20 +293,20 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SetEventUI(arg1: 1, arg2: "$84000006_WD__84000006_WD_MAIN__13$", arg3: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {201})) {
                     context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__14$", duration: 3000, delayTick: 1000);
                     context.SetTimer(arg1: "4", arg2: 20, arg3: false, arg4: false);
-                    context.State = new StatePinata_Kill(context);
-                    return;
+                    return new StatePinata_Kill(context);
                 }
 
                 if (context.TimeExpired(arg1: "3")) {
                     context.AddBalloonTalk(spawnPointId: 201, msg: "$84000006_WD__84000006_WD_MAIN__15$", duration: 3000, delayTick: 1000);
                     context.SetTimer(arg1: "4", arg2: 20, arg3: false, arg4: false);
-                    context.State = new StatePinata_noKill(context);
-                    return;
+                    return new StatePinata_noKill(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -309,11 +322,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.AddBuff(arg1: new[] {9001}, arg2: 70000019, arg3: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new StatePinata_Revive(context);
-                    return;
+                    return new StatePinata_Revive(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -328,11 +342,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.EndMiniGame(winnerBoxId: 9002, gameName: "PinataWD");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new StatePinata_Revive2(context);
-                    return;
+                    return new StatePinata_Revive2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -353,11 +368,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SetAmbientLight(arg1: new Vector3(255f, 255f, 255f));
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StatePinata_Fireworks(context);
-                    return;
+                    return new StatePinata_Fireworks(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -377,11 +393,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.AddBalloonTalk(spawnPointId: 103, msg: "$84000006_WD__84000006_WD_MAIN__23$", duration: 20000, delayTick: 1000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StatePinata_Fireworks(context);
-                    return;
+                    return new StatePinata_Fireworks(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -395,11 +412,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SetUserValue(triggerId: 1002, key: "Fireworks", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
-                    context.State = new StateFinale(context);
-                    return;
+                    return new StateFinale(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -421,11 +439,12 @@ namespace Maple2.Trigger._84000006_wd {
                 context.SetPhotoStudio(isEnable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new StateReturn(context);
-                    return;
+                    return new StateReturn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -436,12 +455,13 @@ namespace Maple2.Trigger._84000006_wd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.RoomExpire();
-                    context.State = new StateEndGame(context);
-                    return;
+                    return new StateEndGame(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -452,7 +472,9 @@ namespace Maple2.Trigger._84000006_wd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

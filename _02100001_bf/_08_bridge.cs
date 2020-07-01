@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetMesh(arg1: new[] {3500, 3501}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9500}) && context.UserDetected(arg1: new[] {9501})) {
-                    context.State = new StateBridgeOn(context);
-                    return;
+                    return new StateBridgeOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetMesh(arg1: new[] {3500, 3501}, arg2: true, arg3: 300, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateBridgeOff(context);
-                    return;
+                    return new StateBridgeOff(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +43,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetMesh(arg1: new[] {3500, 3501}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

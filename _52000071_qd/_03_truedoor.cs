@@ -9,11 +9,12 @@ namespace Maple2.Trigger._52000071_qd {
                 context.SetInteractObject(arg1: new[] {10001105}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001105}, arg2: 0)) {
-                    context.State = new StateMobSpawn(context);
-                    return;
+                    return new StateMobSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,7 +27,9 @@ namespace Maple2.Trigger._52000071_qd {
                 context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

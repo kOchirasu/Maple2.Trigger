@@ -12,11 +12,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "PickThirdPiece") == 1) {
-                    context.State = new StateRandomPick(context);
-                    return;
+                    return new StateRandomPick(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,56 +28,48 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StatePattern01_Pick(context);
-                    return;
+                    return new StatePattern01_Pick(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StatePattern02_Pick(context);
-                    return;
+                    return new StatePattern02_Pick(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StatePattern03_Pick(context);
-                    return;
+                    return new StatePattern03_Pick(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StatePattern04_Pick(context);
-                    return;
+                    return new StatePattern04_Pick(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StatePattern05_Pick(context);
-                    return;
+                    return new StatePattern05_Pick(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StatePattern06_Pick(context);
-                    return;
+                    return new StatePattern06_Pick(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StatePattern07_Pick(context);
-                    return;
+                    return new StatePattern07_Pick(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StatePattern08_Pick(context);
-                    return;
+                    return new StatePattern08_Pick(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StatePattern09_Pick(context);
-                    return;
+                    return new StatePattern09_Pick(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    context.State = new StatePattern10_Pick(context);
-                    return;
+                    return new StatePattern10_Pick(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,11 +83,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 8, key: "PickFourthPieceExceptA01", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern01_Check(context);
-                    return;
+                    return new StatePattern01_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -105,16 +99,16 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000565)) {
-                    context.State = new StatePattern01_CorrectAnswer(context);
-                    return;
+                    return new StatePattern01_CorrectAnswer(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000565)) {
-                    context.State = new StatePattern01_WrongAnswer(context);
-                    return;
+                    return new StatePattern01_WrongAnswer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -128,16 +122,16 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3310}, arg2: true, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ResetThirdPiece") == 1) {
-                    context.State = new StatePattern01_Reset01(context);
-                    return;
+                    return new StatePattern01_Reset01(context);
                 }
 
                 if (context.GetUserValue(key: "LockThirdPiece") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -150,11 +144,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 4, key: "CorrectThirdPiece", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StatePattern01_Reset01(context);
-                    return;
+                    return new StatePattern01_Reset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -170,11 +165,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "LockThirdPiece", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePattern01_Reset02(context);
-                    return;
+                    return new StatePattern01_Reset02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -187,11 +183,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3310}, arg2: false, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern01_Check(context);
-                    return;
+                    return new StatePattern01_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -205,11 +202,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 8, key: "PickFourthPieceExceptA02", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern02_Check(context);
-                    return;
+                    return new StatePattern02_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -220,16 +218,16 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000566)) {
-                    context.State = new StatePattern02_CorrectAnswer(context);
-                    return;
+                    return new StatePattern02_CorrectAnswer(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000566)) {
-                    context.State = new StatePattern02_WrongAnswer(context);
-                    return;
+                    return new StatePattern02_WrongAnswer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -243,16 +241,16 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3311}, arg2: true, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ResetThirdPiece") == 1) {
-                    context.State = new StatePattern02_Reset01(context);
-                    return;
+                    return new StatePattern02_Reset01(context);
                 }
 
                 if (context.GetUserValue(key: "LockThirdPiece") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -265,11 +263,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 4, key: "CorrectThirdPiece", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StatePattern02_Reset01(context);
-                    return;
+                    return new StatePattern02_Reset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -285,11 +284,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "LockThirdPiece", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePattern02_Reset02(context);
-                    return;
+                    return new StatePattern02_Reset02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -302,11 +302,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3311}, arg2: false, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern02_Check(context);
-                    return;
+                    return new StatePattern02_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -320,11 +321,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 8, key: "PickFourthPieceExceptA03", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern03_Check(context);
-                    return;
+                    return new StatePattern03_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -335,16 +337,16 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000567)) {
-                    context.State = new StatePattern03_CorrectAnswer(context);
-                    return;
+                    return new StatePattern03_CorrectAnswer(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000567)) {
-                    context.State = new StatePattern03_WrongAnswer(context);
-                    return;
+                    return new StatePattern03_WrongAnswer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -358,16 +360,16 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3312}, arg2: true, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ResetThirdPiece") == 1) {
-                    context.State = new StatePattern03_Reset01(context);
-                    return;
+                    return new StatePattern03_Reset01(context);
                 }
 
                 if (context.GetUserValue(key: "LockThirdPiece") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -380,11 +382,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 4, key: "CorrectThirdPiece", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StatePattern03_Reset01(context);
-                    return;
+                    return new StatePattern03_Reset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -400,11 +403,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "LockThirdPiece", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePattern03_Reset02(context);
-                    return;
+                    return new StatePattern03_Reset02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -417,11 +421,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3312}, arg2: false, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern03_Check(context);
-                    return;
+                    return new StatePattern03_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -435,11 +440,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 8, key: "PickFourthPieceExceptB01", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern04_Check(context);
-                    return;
+                    return new StatePattern04_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -450,16 +456,16 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000568)) {
-                    context.State = new StatePattern04_CorrectAnswer(context);
-                    return;
+                    return new StatePattern04_CorrectAnswer(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000568)) {
-                    context.State = new StatePattern04_WrongAnswer(context);
-                    return;
+                    return new StatePattern04_WrongAnswer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -473,16 +479,16 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3313}, arg2: true, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ResetThirdPiece") == 1) {
-                    context.State = new StatePattern04_Reset01(context);
-                    return;
+                    return new StatePattern04_Reset01(context);
                 }
 
                 if (context.GetUserValue(key: "LockThirdPiece") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -495,11 +501,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 4, key: "CorrectThirdPiece", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StatePattern04_Reset01(context);
-                    return;
+                    return new StatePattern04_Reset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -515,11 +522,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "LockThirdPiece", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePattern04_Reset02(context);
-                    return;
+                    return new StatePattern04_Reset02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -532,11 +540,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3313}, arg2: false, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern04_Check(context);
-                    return;
+                    return new StatePattern04_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -550,11 +559,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 8, key: "PickFourthPieceExceptB02", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern05_Check(context);
-                    return;
+                    return new StatePattern05_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -565,16 +575,16 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000569)) {
-                    context.State = new StatePattern05_CorrectAnswer(context);
-                    return;
+                    return new StatePattern05_CorrectAnswer(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000569)) {
-                    context.State = new StatePattern05_WrongAnswer(context);
-                    return;
+                    return new StatePattern05_WrongAnswer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -588,16 +598,16 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3314}, arg2: true, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ResetThirdPiece") == 1) {
-                    context.State = new StatePattern05_Reset01(context);
-                    return;
+                    return new StatePattern05_Reset01(context);
                 }
 
                 if (context.GetUserValue(key: "LockThirdPiece") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -610,11 +620,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 4, key: "CorrectThirdPiece", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StatePattern05_Reset01(context);
-                    return;
+                    return new StatePattern05_Reset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -630,11 +641,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "LockThirdPiece", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePattern05_Reset02(context);
-                    return;
+                    return new StatePattern05_Reset02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -647,11 +659,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3314}, arg2: false, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern05_Check(context);
-                    return;
+                    return new StatePattern05_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -665,11 +678,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 8, key: "PickFourthPieceExceptC01", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern06_Check(context);
-                    return;
+                    return new StatePattern06_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -680,16 +694,16 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000570)) {
-                    context.State = new StatePattern06_CorrectAnswer(context);
-                    return;
+                    return new StatePattern06_CorrectAnswer(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000570)) {
-                    context.State = new StatePattern06_WrongAnswer(context);
-                    return;
+                    return new StatePattern06_WrongAnswer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -703,16 +717,16 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3315}, arg2: true, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ResetThirdPiece") == 1) {
-                    context.State = new StatePattern06_Reset01(context);
-                    return;
+                    return new StatePattern06_Reset01(context);
                 }
 
                 if (context.GetUserValue(key: "LockThirdPiece") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -725,11 +739,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 4, key: "CorrectThirdPiece", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StatePattern06_Reset01(context);
-                    return;
+                    return new StatePattern06_Reset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -745,11 +760,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "LockThirdPiece", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePattern06_Reset02(context);
-                    return;
+                    return new StatePattern06_Reset02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -762,11 +778,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3315}, arg2: false, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern06_Check(context);
-                    return;
+                    return new StatePattern06_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -780,11 +797,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 8, key: "PickFourthPieceExceptD01", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern07_Check(context);
-                    return;
+                    return new StatePattern07_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -795,16 +813,16 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000571)) {
-                    context.State = new StatePattern07_CorrectAnswer(context);
-                    return;
+                    return new StatePattern07_CorrectAnswer(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000571)) {
-                    context.State = new StatePattern07_WrongAnswer(context);
-                    return;
+                    return new StatePattern07_WrongAnswer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -818,16 +836,16 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3316}, arg2: true, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ResetThirdPiece") == 1) {
-                    context.State = new StatePattern07_Reset01(context);
-                    return;
+                    return new StatePattern07_Reset01(context);
                 }
 
                 if (context.GetUserValue(key: "LockThirdPiece") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -840,11 +858,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 4, key: "CorrectThirdPiece", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StatePattern07_Reset01(context);
-                    return;
+                    return new StatePattern07_Reset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -860,11 +879,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "LockThirdPiece", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePattern07_Reset02(context);
-                    return;
+                    return new StatePattern07_Reset02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -877,11 +897,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3316}, arg2: false, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern07_Check(context);
-                    return;
+                    return new StatePattern07_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -895,11 +916,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 8, key: "PickFourthPieceExceptD02", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern08_Check(context);
-                    return;
+                    return new StatePattern08_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -910,16 +932,16 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000572)) {
-                    context.State = new StatePattern08_CorrectAnswer(context);
-                    return;
+                    return new StatePattern08_CorrectAnswer(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000572)) {
-                    context.State = new StatePattern08_WrongAnswer(context);
-                    return;
+                    return new StatePattern08_WrongAnswer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -933,16 +955,16 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3317}, arg2: true, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ResetThirdPiece") == 1) {
-                    context.State = new StatePattern08_Reset01(context);
-                    return;
+                    return new StatePattern08_Reset01(context);
                 }
 
                 if (context.GetUserValue(key: "LockThirdPiece") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -955,11 +977,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 4, key: "CorrectThirdPiece", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StatePattern08_Reset01(context);
-                    return;
+                    return new StatePattern08_Reset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -975,11 +998,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "LockThirdPiece", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePattern08_Reset02(context);
-                    return;
+                    return new StatePattern08_Reset02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -992,11 +1016,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3317}, arg2: false, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern08_Check(context);
-                    return;
+                    return new StatePattern08_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1010,11 +1035,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 8, key: "PickFourthPieceExceptE01", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern09_Check(context);
-                    return;
+                    return new StatePattern09_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1025,16 +1051,16 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000573)) {
-                    context.State = new StatePattern09_CorrectAnswer(context);
-                    return;
+                    return new StatePattern09_CorrectAnswer(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000573)) {
-                    context.State = new StatePattern09_WrongAnswer(context);
-                    return;
+                    return new StatePattern09_WrongAnswer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1048,16 +1074,16 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3318}, arg2: true, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ResetThirdPiece") == 1) {
-                    context.State = new StatePattern09_Reset01(context);
-                    return;
+                    return new StatePattern09_Reset01(context);
                 }
 
                 if (context.GetUserValue(key: "LockThirdPiece") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1070,11 +1096,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 4, key: "CorrectThirdPiece", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StatePattern09_Reset01(context);
-                    return;
+                    return new StatePattern09_Reset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1090,11 +1117,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "LockThirdPiece", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePattern09_Reset02(context);
-                    return;
+                    return new StatePattern09_Reset02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1107,11 +1135,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3318}, arg2: false, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern09_Check(context);
-                    return;
+                    return new StatePattern09_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1125,11 +1154,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 8, key: "PickFourthPieceExceptE02", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern10_Check(context);
-                    return;
+                    return new StatePattern10_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1140,16 +1170,16 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000574)) {
-                    context.State = new StatePattern10_CorrectAnswer(context);
-                    return;
+                    return new StatePattern10_CorrectAnswer(context);
                 }
 
                 if (!context.DetectLiftableObject(triggerBoxIds: new[] {2003}, itemId: 30000574)) {
-                    context.State = new StatePattern10_WrongAnswer(context);
-                    return;
+                    return new StatePattern10_WrongAnswer(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1163,16 +1193,16 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3319}, arg2: true, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ResetThirdPiece") == 1) {
-                    context.State = new StatePattern10_Reset01(context);
-                    return;
+                    return new StatePattern10_Reset01(context);
                 }
 
                 if (context.GetUserValue(key: "LockThirdPiece") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1185,11 +1215,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(triggerId: 4, key: "CorrectThirdPiece", value: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StatePattern10_Reset01(context);
-                    return;
+                    return new StatePattern10_Reset01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1205,11 +1236,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetUserValue(key: "LockThirdPiece", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePattern10_Reset02(context);
-                    return;
+                    return new StatePattern10_Reset02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1222,11 +1254,12 @@ namespace Maple2.Trigger._02000376_bf {
                 context.SetMesh(arg1: new[] {3319}, arg2: false, arg3: 100, arg4: 0, arg5: 5f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheckThirdPiece") == 1) {
-                    context.State = new StatePattern10_Check(context);
-                    return;
+                    return new StatePattern10_Check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1237,7 +1270,9 @@ namespace Maple2.Trigger._02000376_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

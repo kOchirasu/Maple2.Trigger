@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000315_bf {
                 context.SetInteractObject(arg1: new[] {10001036}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001036}, arg2: 0)) {
-                    context.State = new StateWakeUp(context);
-                    return;
+                    return new StateWakeUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,21 +27,20 @@ namespace Maple2.Trigger._02000315_bf {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BridgeOpen") == 1) {
-                    context.State = new StatePatrol01(context);
-                    return;
+                    return new StatePatrol01(context);
                 }
 
                 if (context.GetUserValue(key: "BridgeOpen") == 2) {
-                    context.State = new StatePatrol02(context);
-                    return;
+                    return new StatePatrol02(context);
                 }
 
                 if (context.GetUserValue(key: "BridgeOpen") == 3) {
-                    context.State = new StatePatrol03(context);
-                    return;
+                    return new StatePatrol03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -53,11 +53,12 @@ namespace Maple2.Trigger._02000315_bf {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1011");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BridgeOpen") == 2) {
-                    context.State = new StatePatrol02(context);
-                    return;
+                    return new StatePatrol02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -70,11 +71,12 @@ namespace Maple2.Trigger._02000315_bf {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1012");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BridgeOpen") == 3) {
-                    context.State = new StatePatrol03(context);
-                    return;
+                    return new StatePatrol03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -87,7 +89,9 @@ namespace Maple2.Trigger._02000315_bf {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1013");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

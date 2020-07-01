@@ -5,16 +5,16 @@ namespace Maple2.Trigger._84000007_wd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Fireworks") == 1) {
-                    context.State = new StateVolley_Ready(context);
-                    return;
+                    return new StateVolley_Ready(context);
                 }
 
                 if (context.GetUserValue(key: "Fireworks") == 2) {
-                    context.State = new StateVolley_Ready2(context);
-                    return;
+                    return new StateVolley_Ready2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +27,12 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetEventUI(arg1: 1, arg2: "$84000007_WD__09_FIREWORKS__0$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateVolley_Fire(context);
-                    return;
+                    return new StateVolley_Fire(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +45,12 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetEventUI(arg1: 1, arg2: "$84000007_WD__09_FIREWORKS__1$", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateVolley_Fire(context);
-                    return;
+                    return new StateVolley_Fire(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,8 +63,10 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetEffect(arg1: new[] {8002}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 14000)) { }
+
+                return null;
             }
 
             public override void OnExit() { }

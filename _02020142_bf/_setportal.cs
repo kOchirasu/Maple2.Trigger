@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new State대기99(context);
-                    return;
+                    return new State대기99(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,7 +21,9 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -41,16 +44,16 @@ namespace Maple2.Trigger._02020142_bf {
                 context.SetPortal(arg1: 428, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
-                    context.State = new State포탈생성(context);
-                    return;
+                    return new State포탈생성(context);
                 }
 
                 if (context.GetUserValue(key: "SetLight") == 1) {
-                    context.State = new State포탈생성(context);
-                    return;
+                    return new State포탈생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -72,11 +75,12 @@ namespace Maple2.Trigger._02020142_bf {
                 context.SetPortal(arg1: 428, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -87,7 +91,9 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

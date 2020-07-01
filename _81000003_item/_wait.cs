@@ -7,11 +7,12 @@ namespace Maple2.Trigger._81000003_item {
                 context.SetTimer(arg1: "60", arg2: 175, arg3: true, arg4: false); // wait.xml 시작 타이머 설정
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {402})) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,16 +27,16 @@ namespace Maple2.Trigger._81000003_item {
                 context.ShowGuideSummary(entityId: 26100001, textId: 26100001);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State대기2(context);
-                    return;
+                    return new State대기2(context);
                 }
 
                 if (context.TimeExpired(arg1: "60")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -51,16 +52,16 @@ namespace Maple2.Trigger._81000003_item {
                 context.ShowGuideSummary(entityId: 26100002, textId: 26100002);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.TimeExpired(arg1: "60")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -73,7 +74,9 @@ namespace Maple2.Trigger._81000003_item {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {99993})) {
-                    context.State = new State전투시작(context);
-                    return;
+                    return new State전투시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9030, arg2: new[] {999})) {
-                    context.State = new State전투중(context);
-                    return;
+                    return new State전투중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,11 +37,12 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {999})) {
-                    context.State = new State생존체크01(context);
-                    return;
+                    return new State생존체크01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -50,16 +53,16 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 99997, arg2: new[] {601})) {
-                    context.State = new State생존체크02(context);
-                    return;
+                    return new State생존체크02(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {601})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -70,16 +73,16 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 99997, arg2: new[] {602})) {
-                    context.State = new State생존체크03(context);
-                    return;
+                    return new State생존체크03(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {602})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,16 +93,16 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 99997, arg2: new[] {603})) {
-                    context.State = new State생존체크04(context);
-                    return;
+                    return new State생존체크04(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {603})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -110,16 +113,16 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 99997, arg2: new[] {604})) {
-                    context.State = new State생존체크05(context);
-                    return;
+                    return new State생존체크05(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {604})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -130,16 +133,16 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 99997, arg2: new[] {605})) {
-                    context.State = new State업적발생(context);
-                    return;
+                    return new State업적발생(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {605})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -152,7 +155,9 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetAchievement(arg1: 99996, arg2: "trigger", arg3: "defence_child");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -162,7 +167,9 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

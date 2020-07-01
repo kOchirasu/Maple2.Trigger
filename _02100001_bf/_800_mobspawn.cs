@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetMesh(arg1: new[] {3200}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new StateMobSpawn(context);
-                    return;
+                    return new StateMobSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,16 +28,16 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetMesh(arg1: new[] {3200}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {800})) {
-                    context.State = new StateDelay01(context);
-                    return;
+                    return new StateDelay01(context);
                 }
 
                 if (context.GetUserValue(key: "RemoveAll") == 1) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,11 +50,12 @@ namespace Maple2.Trigger._02100001_bf {
                 context.SetMesh(arg1: new[] {3200}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 180000)) {
-                    context.State = new StateMobSpawn(context);
-                    return;
+                    return new StateMobSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,7 +68,9 @@ namespace Maple2.Trigger._02100001_bf {
                 context.DestroyMonster(arg1: new[] {800});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

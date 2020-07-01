@@ -16,11 +16,12 @@ namespace Maple2.Trigger._02020065_bf {
                 context.ResetTimer(arg1: "3");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 1) {
-                    context.State = new State스폰_1_SE(context);
-                    return;
+                    return new State스폰_1_SE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,16 +36,16 @@ namespace Maple2.Trigger._02020065_bf {
                 context.StartCombineSpawn(groupId: new[] {505}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State스폰_1(context);
-                    return;
+                    return new State스폰_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,16 +59,16 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020065_BF__BATTLE_1__0$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State스폰_1_추가대사1(context);
-                    return;
+                    return new State스폰_1_추가대사1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -80,16 +81,16 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020065_BF__BATTLE_1__1$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State스폰_1_추가대사2(context);
-                    return;
+                    return new State스폰_1_추가대사2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -102,16 +103,16 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020065_BF__BATTLE_1__2$");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State스폰_2_SE(context);
-                    return;
+                    return new State스폰_2_SE(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -124,16 +125,16 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State스폰_2(context);
-                    return;
+                    return new State스폰_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -148,16 +149,16 @@ namespace Maple2.Trigger._02020065_bf {
                 context.StartCombineSpawn(groupId: new[] {506}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1") || context.GetScoreBoardScore() >= 150) {
-                    context.State = new State스폰_3_SE(context);
-                    return;
+                    return new State스폰_3_SE(context);
                 }
 
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -170,16 +171,16 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State스폰_3(context);
-                    return;
+                    return new State스폰_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -194,16 +195,16 @@ namespace Maple2.Trigger._02020065_bf {
                 context.StartCombineSpawn(groupId: new[] {507}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2") || context.GetScoreBoardScore() >= 300) {
-                    context.State = new State스폰_4_SE(context);
-                    return;
+                    return new State스폰_4_SE(context);
                 }
 
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -216,16 +217,16 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State스폰_4(context);
-                    return;
+                    return new State스폰_4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -240,16 +241,16 @@ namespace Maple2.Trigger._02020065_bf {
                 context.StartCombineSpawn(groupId: new[] {508}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3") || context.GetScoreBoardScore() >= 450) {
-                    context.State = new State스폰_5_SE(context);
-                    return;
+                    return new State스폰_5_SE(context);
                 }
 
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -262,16 +263,16 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State스폰_5(context);
-                    return;
+                    return new State스폰_5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -285,16 +286,16 @@ namespace Maple2.Trigger._02020065_bf {
                 context.StartCombineSpawn(groupId: new[] {509}, isStart: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetScoreBoardScore() >= 800) {
-                    context.State = new State포탑페이즈(context);
-                    return;
+                    return new State포탑페이즈(context);
                 }
 
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -313,11 +314,12 @@ namespace Maple2.Trigger._02020065_bf {
                 context.ScoreBoardRemove();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000207_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {2001})) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,16 @@ namespace Maple2.Trigger._02000207_bf {
                 context.SetEffect(arg1: new[] {600}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "LavaflowRight") == 1) {
-                    context.State = new State오른쪽용암생성(context);
-                    return;
+                    return new State오른쪽용암생성(context);
                 }
 
                 if (context.GetUserValue(key: "BattleEnd2") == 1) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,16 +49,16 @@ namespace Maple2.Trigger._02000207_bf {
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "LavaflowRightStop") == 1) {
-                    context.State = new State오른쪽용암내려가기(context);
-                    return;
+                    return new State오른쪽용암내려가기(context);
                 }
 
                 if (context.GetUserValue(key: "BattleEnd2") == 1) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -72,12 +73,13 @@ namespace Maple2.Trigger._02000207_bf {
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003C");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.DestroyMonster(arg1: new[] {1003});
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -90,7 +92,9 @@ namespace Maple2.Trigger._02000207_bf {
                 context.DestroyMonster(arg1: new[] {1003});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

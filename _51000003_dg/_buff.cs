@@ -5,11 +5,12 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Tutorial") == 1) {
-                    context.State = new StateTutorial_buff(context);
-                    return;
+                    return new StateTutorial_buff(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,16 +21,16 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Tutorial") == 0) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {701})) {
-                    context.State = new Statebuff(context);
-                    return;
+                    return new Statebuff(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,16 +43,12 @@ namespace Maple2.Trigger._51000003_dg {
                 context.AddBuff(arg1: new[] {701}, arg2: 70000085, arg3: 1, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Tutorial") == 0) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
 
-                if (true) {
-                    context.State = new StateTutorial_buff(context);
-                    return;
-                }
+                return new StateTutorial_buff(context);
             }
 
             public override void OnExit() { }

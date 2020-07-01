@@ -8,11 +8,8 @@ namespace Maple2.Trigger._02000146_bf {
                 context.SetActor(arg1: 202, arg2: true, arg3: "Attack_Idle_A");
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State오브젝트반응(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State오브젝트반응(context);
             }
 
             public override void OnExit() { }
@@ -23,11 +20,12 @@ namespace Maple2.Trigger._02000146_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000177}, arg2: 0)) {
-                    context.State = new StateNPC등장(context);
-                    return;
+                    return new StateNPC등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -43,11 +41,12 @@ namespace Maple2.Trigger._02000146_bf {
                 context.SetConversation(arg1: 1, arg2: 402, arg3: "$02000146_BF__IA_102__0$", arg4: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {402})) {
-                    context.State = new State딜레이(context);
-                    return;
+                    return new State딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,11 +59,12 @@ namespace Maple2.Trigger._02000146_bf {
                 context.SetTimer(arg1: "2", arg2: 8);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

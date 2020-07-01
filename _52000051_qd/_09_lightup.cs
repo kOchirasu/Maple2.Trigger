@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52000051_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "FindLotus") == 1) {
-                    context.State = new StateLoadingDelay(context);
-                    return;
+                    return new StateLoadingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._52000051_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateLightOff01(context);
-                    return;
+                    return new StateLightOff01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,16 +39,16 @@ namespace Maple2.Trigger._52000051_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9200, arg2: new[] {900})) {
-                    context.State = new StateLightOff02(context);
-                    return;
+                    return new StateLightOff02(context);
                 }
 
                 if (!context.NpcDetected(arg1: 9200, arg2: new[] {900})) {
-                    context.State = new StateRemoveTotem01(context);
-                    return;
+                    return new StateRemoveTotem01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +64,12 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetDirectionalLight(arg1: new Vector3(0f, 0f, 0f), arg2: new Vector3(0f, 0f, 0f));
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateLoadingDelay(context);
-                    return;
+                    return new StateLoadingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,11 +85,12 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetDirectionalLight(arg1: new Vector3(193f, 180f, 137f), arg2: new Vector3(100f, 100f, 100f));
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateLoadingDelay(context);
-                    return;
+                    return new StateLoadingDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

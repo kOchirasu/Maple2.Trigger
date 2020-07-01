@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52020027_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Boss") == 1) {
-                    context.State = new State1페이즈(context);
-                    return;
+                    return new State1페이즈(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -20,11 +21,12 @@ namespace Maple2.Trigger._52020027_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SerihaAI") == 1) {
-                    context.State = new State도약(context);
-                    return;
+                    return new State도약(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -35,11 +37,12 @@ namespace Maple2.Trigger._52020027_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 903, arg2: new[] {111})) {
-                    context.State = new State2페이즈(context);
-                    return;
+                    return new State2페이즈(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -53,11 +56,12 @@ namespace Maple2.Trigger._52020027_qd {
                 context.CreateMonster(arg1: new[] {112, 113, 114, 115}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateNPC애니세팅(context);
-                    return;
+                    return new StateNPC애니세팅(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -71,7 +75,9 @@ namespace Maple2.Trigger._52020027_qd {
                 context.SetNpcEmotionLoop(arg1: 115, arg2: "Attack_01_A", arg3: 2000f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

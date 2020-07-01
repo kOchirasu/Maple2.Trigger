@@ -15,16 +15,16 @@ namespace Maple2.Trigger._02000397_bf {
                 context.SetUserValue(key: "HiddenRouteOpen", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "HiddenRouteOpen") == 1) {
-                    context.State = new StateOpened(context);
-                    return;
+                    return new StateOpened(context);
                 }
 
                 if (context.GetUserValue(key: "HiddenRouteOpen") == 2) {
-                    context.State = new StateClosed(context);
-                    return;
+                    return new StateClosed(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -38,11 +38,12 @@ namespace Maple2.Trigger._02000397_bf {
                 context.SetInteractObject(arg1: new[] {10001141}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001141}, arg2: 0)) {
-                    context.State = new StateLadderOn(context);
-                    return;
+                    return new StateLadderOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,7 +64,9 @@ namespace Maple2.Trigger._02000397_bf {
                 context.SetMesh(arg1: new[] {3201}, arg2: false, arg3: 0, arg4: 0, arg5: 3f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -76,11 +79,12 @@ namespace Maple2.Trigger._02000397_bf {
                 context.SetInteractObject(arg1: new[] {10001141}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001141}, arg2: 0)) {
-                    context.State = new StateNothingHappened(context);
-                    return;
+                    return new StateNothingHappened(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -93,7 +97,9 @@ namespace Maple2.Trigger._02000397_bf {
                 context.SetMesh(arg1: new[] {3202}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

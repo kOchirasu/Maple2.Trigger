@@ -8,26 +8,24 @@ namespace Maple2.Trigger._99999841 {
                 context.SetInteractObject(arg1: new[] {10002179}, arg2: 0, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetDungeonVariable(id: 902) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetDungeonVariable(id: 903) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetUserValue(key: "Start") == 1) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -43,26 +41,24 @@ namespace Maple2.Trigger._99999841 {
                 context.SetInteractObject(arg1: new[] {10002182}, arg2: 1, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetDungeonVariable(id: 902) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetDungeonVariable(id: 903) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002179}, arg2: 0)) {
-                    context.State = new State애디셔널_중첩1(context);
-                    return;
+                    return new State애디셔널_중첩1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -76,26 +72,24 @@ namespace Maple2.Trigger._99999841 {
                 context.AddBuff(arg1: new[] {9001}, arg2: 70002531, arg3: 1, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetDungeonVariable(id: 902) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetDungeonVariable(id: 903) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State애디셔널_중첩2(context);
-                    return;
+                    return new State애디셔널_중첩2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -108,26 +102,24 @@ namespace Maple2.Trigger._99999841 {
                 context.AddBuff(arg1: new[] {9001}, arg2: 70002531, arg3: 1, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetDungeonVariable(id: 902) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetDungeonVariable(id: 903) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State애디셔널_중첩3(context);
-                    return;
+                    return new State애디셔널_중첩3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -140,26 +132,24 @@ namespace Maple2.Trigger._99999841 {
                 context.AddBuff(arg1: new[] {9001}, arg2: 70002531, arg3: 1, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 901) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetDungeonVariable(id: 902) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.GetDungeonVariable(id: 903) == true) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -172,11 +162,12 @@ namespace Maple2.Trigger._99999841 {
                 context.SetInteractObject(arg1: new[] {10002179}, arg2: 0, arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BadMob") == 1) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

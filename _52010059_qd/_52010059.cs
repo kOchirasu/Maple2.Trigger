@@ -21,7 +21,9 @@ namespace Maple2.Trigger._52010059_qd {
                 context.SetActor(arg1: 514, arg2: true, arg3: "sf_quest_light_A01_Off");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

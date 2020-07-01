@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000443_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.State = new Statebuff_1(context);
-                    return;
+                    return new Statebuff_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,16 +23,17 @@ namespace Maple2.Trigger._02000443_bf {
                 context.AddBuff(arg1: new[] {701}, arg2: 49200002, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 60000)) {
-                    context.State = new Statebuff_2(context);
-                    return;
+                    return new Statebuff_2(context);
                 }
 
                 if (context.GetUserValue(key: "debuff") == 1) {
-                    // context.State = new State끝(context);
-                    return;
+                    // return new State끝(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._02000443_bf {
                 context.AddBuff(arg1: new[] {701}, arg2: 49200002, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 60000)) {
-                    context.State = new Statebuff_1(context);
-                    return;
+                    return new Statebuff_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

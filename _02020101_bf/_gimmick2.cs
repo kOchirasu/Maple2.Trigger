@@ -5,16 +5,16 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Plant") == 1) {
-                    context.State = new State몬스터소환(context);
-                    return;
+                    return new State몬스터소환(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,16 +27,16 @@ namespace Maple2.Trigger._02020101_bf {
                 context.CreateMonster(arg1: new[] {301, 302, 303, 304}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State힌트(context);
-                    return;
+                    return new State힌트(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,16 +49,16 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02020101_BF__GIMMICK2__0$", arg3: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State알림(context);
-                    return;
+                    return new State알림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -69,23 +69,22 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 25000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {301, 302, 303, 304})) {
                     context.SetUserValue(triggerId: 900009, key: "Seed", value: 1);
                     context.SetUserValue(triggerId: 900004, key: "Plant", value: 0);
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -100,11 +99,8 @@ namespace Maple2.Trigger._02020101_bf {
                 context.SetUserValue(triggerId: 900009, key: "Seed", value: 0);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기(context);
             }
 
             public override void OnExit() { }

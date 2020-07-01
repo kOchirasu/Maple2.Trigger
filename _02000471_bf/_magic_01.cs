@@ -10,11 +10,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetUserValue(triggerId: 2040322, key: "10002019clear", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002019}, arg2: 0)) {
-                    context.State = new StateReady(context);
-                    return;
+                    return new StateReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,11 +32,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.AddBuff(arg1: new[] {201}, arg2: 70002001, arg3: 1, arg4: true, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {201})) {
-                    context.State = new StateEvent_01(context);
-                    return;
+                    return new StateEvent_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -53,11 +55,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.CreateMonster(arg1: new[] {161, 162, 163}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateEvent_01_b(context);
-                    return;
+                    return new StateEvent_01_b(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,11 +78,12 @@ namespace Maple2.Trigger._02000471_bf {
                 context.SetConversation(arg1: 1, arg2: 163, arg3: "$02000471_BF__MAGIC_01__2$", arg4: 3, arg5: 6);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new StateEvent_01_c(context);
-                    return;
+                    return new StateEvent_01_c(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,7 +96,9 @@ namespace Maple2.Trigger._02000471_bf {
                 context.DestroyMonster(arg1: new[] {161, 162, 163});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

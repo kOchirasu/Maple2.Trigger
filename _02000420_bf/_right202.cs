@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000420_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {202})) {
-                    context.State = new State오른쪽지점견제(context);
-                    return;
+                    return new State오른쪽지점견제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._02000420_bf {
                 context.SetAiExtraData(key: "RightPositionCheck", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {202})) {
-                    context.State = new State오른쪽지점견제풀기(context);
-                    return;
+                    return new State오른쪽지점견제풀기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +41,12 @@ namespace Maple2.Trigger._02000420_bf {
                 context.SetAiExtraData(key: "RightPositionCheck", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

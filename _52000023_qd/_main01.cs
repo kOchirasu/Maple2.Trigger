@@ -10,11 +10,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetInteractObject(arg1: new[] {10000617, 10000618, 10000619}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {20002230}, arg3: new byte[] {1})) {
-                    context.State = new State연출준비(context);
-                    return;
+                    return new State연출준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -32,11 +33,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State유저이동01(context);
-                    return;
+                    return new State유저이동01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -53,11 +55,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetProductionUI(arg1: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State유저이동02(context);
-                    return;
+                    return new State유저이동02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -70,11 +73,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.MoveUserPath(arg1: "MS2PatrolData_100");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9001})) {
-                    context.State = new State유저이동03(context);
-                    return;
+                    return new State유저이동03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -87,11 +91,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.CameraSelectPath(arg1: new[] {601, 602}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State전투준비01(context);
-                    return;
+                    return new State전투준비01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -106,11 +111,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetSkip(arg1: "전투준비02");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State전투준비02(context);
-                    return;
+                    return new State전투준비02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -128,11 +134,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetSkip(arg1: "전투시작");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State전투시작(context);
-                    return;
+                    return new State전투시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -150,11 +157,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8100, 8101, 8102, 8103, 8104, 8105, 8106, 8107, 8108, 8109}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910})) {
-                    context.State = new State대화준비01(context);
-                    return;
+                    return new State대화준비01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -171,11 +179,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State대화준비02(context);
-                    return;
+                    return new State대화준비02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -188,11 +197,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.MoveUserPath(arg1: "MS2PatrolData_200");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9002})) {
-                    context.State = new State대화준비03(context);
-                    return;
+                    return new State대화준비03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -203,11 +213,12 @@ namespace Maple2.Trigger._52000023_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State이슈라대화01(context);
-                    return;
+                    return new State이슈라대화01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -222,11 +233,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetSkip(arg1: "이슈라대화02");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State이슈라대화02(context);
-                    return;
+                    return new State이슈라대화02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -244,11 +256,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetSkip(arg1: "이슈라대화03");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.State = new State이슈라대화03(context);
-                    return;
+                    return new State이슈라대화03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -266,11 +279,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetSkip(arg1: "이슈라대화04");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new State이슈라대화04(context);
-                    return;
+                    return new State이슈라대화04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -288,11 +302,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetSkip(arg1: "수색준비");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State수색준비(context);
-                    return;
+                    return new State수색준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -312,11 +327,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetInteractObject(arg1: new[] {10000617, 10000618, 10000619}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State수색시작(context);
-                    return;
+                    return new State수색시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -331,11 +347,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_101");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000617}, arg2: 0)) {
-                    context.State = new State수색종료01(context);
-                    return;
+                    return new State수색종료01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -352,11 +369,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.HideGuideSummary(entityId: 25200231);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State수색종료02(context);
-                    return;
+                    return new State수색종료02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -371,11 +389,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetConversation(arg1: 1, arg2: 103, arg3: "$52000023_QD__MAIN01__6$", arg4: 3, arg5: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    context.State = new State정리준비01(context);
-                    return;
+                    return new State정리준비01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -391,11 +410,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.CameraSelect(arg1: 604, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9003, arg2: new[] {103})) {
-                    context.State = new State정리준비02(context);
-                    return;
+                    return new State정리준비02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -408,11 +428,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetEffect(arg1: new[] {6007}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State정리대화01(context);
-                    return;
+                    return new State정리대화01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -427,11 +448,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetSkip(arg1: "정리대화02");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    context.State = new State정리대화02(context);
-                    return;
+                    return new State정리대화02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -449,11 +471,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetSkip(arg1: "퇴장준비");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State퇴장준비(context);
-                    return;
+                    return new State퇴장준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -470,11 +493,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State퇴장중(context);
-                    return;
+                    return new State퇴장중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -488,11 +512,12 @@ namespace Maple2.Trigger._52000023_qd {
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_103");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9004, arg2: new[] {103})) {
-                    context.State = new State퇴장완료(context);
-                    return;
+                    return new State퇴장완료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -507,7 +532,9 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetEffect(arg1: new[] {6009}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -12,11 +12,12 @@ namespace Maple2.Trigger._99999913 {
                 context.SightRange(enable: true, range: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new StateWait01(context);
-                    return;
+                    return new StateWait01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -33,16 +34,16 @@ namespace Maple2.Trigger._99999913 {
                 context.WriteLog(arg1: "Survival", arg3: "Waiting_Start");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait02(context);
-                    return;
+                    return new StateWait02(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateCheckTheNumberOfPlayers(context);
-                    return;
+                    return new StateCheckTheNumberOfPlayers(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -53,16 +54,16 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new StateWait01(context);
-                    return;
+                    return new StateWait01(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateCheckTheNumberOfPlayers(context);
-                    return;
+                    return new StateCheckTheNumberOfPlayers(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -73,16 +74,16 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9000) < 20) {
-                    context.State = new StateGameCancel01(context);
-                    return;
+                    return new StateGameCancel01(context);
                 }
 
                 if (context.GetUserCount(boxId: 9000) >= 20) {
-                    context.State = new StateStartPositionRandomPick(context);
-                    return;
+                    return new StateStartPositionRandomPick(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -96,46 +97,40 @@ namespace Maple2.Trigger._99999913 {
                 context.SetEventUI(arg1: 1, arg2: "시작점으로 이동합니다.", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap01_North(context);
-                    return;
+                    return new StatePCRemap01_North(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap02_South(context);
-                    return;
+                    return new StatePCRemap02_South(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap03_East(context);
-                    return;
+                    return new StatePCRemap03_East(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap04_West(context);
-                    return;
+                    return new StatePCRemap04_West(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap05_NorthWest(context);
-                    return;
+                    return new StatePCRemap05_NorthWest(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap06_NorthEast(context);
-                    return;
+                    return new StatePCRemap06_NorthEast(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap07_SouthWest(context);
-                    return;
+                    return new StatePCRemap07_SouthWest(context);
                 }
 
                 if (context.RandomCondition(arg1: 12.5f)) {
-                    context.State = new StatePCRemap08_SouthEast(context);
-                    return;
+                    return new StatePCRemap08_SouthEast(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -149,11 +144,12 @@ namespace Maple2.Trigger._99999913 {
                 context.WriteLog(arg1: "Survival", arg3: "Waiting_PositionPick");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePVPReady(context);
-                    return;
+                    return new StatePVPReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -168,11 +164,12 @@ namespace Maple2.Trigger._99999913 {
                 context.MoveUser(arg1: 82000001, arg2: 102, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePVPReady(context);
-                    return;
+                    return new StatePVPReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -187,11 +184,12 @@ namespace Maple2.Trigger._99999913 {
                 context.MoveUser(arg1: 82000001, arg2: 103, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePVPReady(context);
-                    return;
+                    return new StatePVPReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -206,11 +204,12 @@ namespace Maple2.Trigger._99999913 {
                 context.MoveUser(arg1: 82000001, arg2: 104, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePVPReady(context);
-                    return;
+                    return new StatePVPReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -225,11 +224,12 @@ namespace Maple2.Trigger._99999913 {
                 context.MoveUser(arg1: 82000001, arg2: 105, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePVPReady(context);
-                    return;
+                    return new StatePVPReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -244,11 +244,12 @@ namespace Maple2.Trigger._99999913 {
                 context.MoveUser(arg1: 82000001, arg2: 106, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePVPReady(context);
-                    return;
+                    return new StatePVPReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -263,11 +264,12 @@ namespace Maple2.Trigger._99999913 {
                 context.MoveUser(arg1: 82000001, arg2: 107, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePVPReady(context);
-                    return;
+                    return new StatePVPReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -282,11 +284,12 @@ namespace Maple2.Trigger._99999913 {
                 context.MoveUser(arg1: 82000001, arg2: 108, arg3: 9000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StatePVPReady(context);
-                    return;
+                    return new StatePVPReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -301,11 +304,12 @@ namespace Maple2.Trigger._99999913 {
                 context.SetEventUI(arg1: 1, arg2: @"space 키를 누르면  수레에 탈 수 있습니다.\nspace 키를 다시 누르면 수레에서 내립니다.", arg3: 3000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StatePVPStart(context);
-                    return;
+                    return new StatePVPStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -320,11 +324,12 @@ namespace Maple2.Trigger._99999913 {
                 context.CreateFieldGame(type: "MapleSurvive");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateCountdown(context);
-                    return;
+                    return new StateCountdown(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -337,11 +342,12 @@ namespace Maple2.Trigger._99999913 {
                 context.ShowCountUI(text: "경기 시작!", count: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateAreaOpen(context);
-                    return;
+                    return new StateAreaOpen(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -370,11 +376,12 @@ namespace Maple2.Trigger._99999913 {
                 context.WriteLog(arg1: "Survival", arg3: "Start");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.State = new StateGameStart(context);
-                    return;
+                    return new StateGameStart(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -390,11 +397,12 @@ namespace Maple2.Trigger._99999913 {
                 context.WriteLog(arg1: "Survival", arg3: "StormStart");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -410,7 +418,9 @@ namespace Maple2.Trigger._99999913 {
                 context.DestroyMonster(arg1: new[] {-1});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -422,11 +432,12 @@ namespace Maple2.Trigger._99999913 {
                 context.SetEventUI(arg1: 1, arg2: "참가자 부족으로 인해 경기를 취소합니다.", arg3: 4000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateGameCancel02(context);
-                    return;
+                    return new StateGameCancel02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -439,11 +450,12 @@ namespace Maple2.Trigger._99999913 {
                 context.SetEventUI(arg1: 1, arg2: "잠시 후 원래 있던 곳으로 돌아갑니다.", arg3: 4000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateGameCancel03(context);
-                    return;
+                    return new StateGameCancel03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -458,7 +470,9 @@ namespace Maple2.Trigger._99999913 {
                 context.MoveUser(arg1: 0, arg2: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

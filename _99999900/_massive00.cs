@@ -9,31 +9,28 @@ namespace Maple2.Trigger._99999900 {
                 context.SetTimer(arg1: "1001", arg2: 7);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    context.State = new State중지버튼(context);
-                    return;
+                    return new State중지버튼(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {900})) {
-                    context.State = new State일부패턴시작(context);
-                    return;
+                    return new State일부패턴시작(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {902})) {
-                    context.State = new State모든패턴순차시작(context);
-                    return;
+                    return new State모든패턴순차시작(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {903})) {
-                    context.State = new State모든패턴랜덤시작(context);
-                    return;
+                    return new State모든패턴랜덤시작(context);
                 }
 
                 if (context.TimeExpired(arg1: "1001")) {
-                    context.State = new State재생버튼(context);
-                    return;
+                    return new State재생버튼(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -50,11 +47,12 @@ namespace Maple2.Trigger._99999900 {
                 context.SetTimer(arg1: "1002", arg2: 7);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1002")) {
-                    context.State = new State퍼즐단계(context);
-                    return;
+                    return new State퍼즐단계(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -71,11 +69,12 @@ namespace Maple2.Trigger._99999900 {
                 context.SetTimer(arg1: "1003", arg2: 7);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1003")) {
-                    context.State = new State퍼즐단계(context);
-                    return;
+                    return new State퍼즐단계(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -92,11 +91,12 @@ namespace Maple2.Trigger._99999900 {
                 context.SetTimer(arg1: "1004", arg2: 7);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1004")) {
-                    context.State = new State퍼즐단계(context);
-                    return;
+                    return new State퍼즐단계(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -112,11 +112,12 @@ namespace Maple2.Trigger._99999900 {
                 context.SetEventUI(arg1: 1, arg2: "$99999900__MASSIVE00__5$", arg3: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1005")) {
-                    context.State = new State퍼즐단계(context);
-                    return;
+                    return new State퍼즐단계(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -133,11 +134,12 @@ namespace Maple2.Trigger._99999900 {
                 context.UseState(arg1: 1, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "99")) {
-                    context.State = new State퍼즐단계정리(context);
-                    return;
+                    return new State퍼즐단계정리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -153,16 +155,16 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State퍼즐단계종료(context);
-                    return;
+                    return new State퍼즐단계종료(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {901})) {
-                    context.State = new State중지버튼(context);
-                    return;
+                    return new State중지버튼(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -177,11 +179,12 @@ namespace Maple2.Trigger._99999900 {
                 context.SetEventUI(arg1: 1, arg2: "$99999900__MASSIVE00__6$", arg3: 1000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {901})) {
-                    context.State = new State퍼즐단계대기(context);
-                    return;
+                    return new State퍼즐단계대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -195,11 +198,12 @@ namespace Maple2.Trigger._99999900 {
                 context.SetTimer(arg1: "1000", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1000")) {
-                    context.State = new State재생버튼(context);
-                    return;
+                    return new State재생버튼(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -215,7 +219,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -228,7 +234,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 12, 13, 14, 15, 16, 17, 18, 19, 29, 39, 49, 59, 69, 79, 89, 88, 87, 86, 85, 84, 83, 82, 72, 62, 52, 42, 32, 22, 23, 24, 25, 26, 27, 28, 38, 48, 58, 68, 78, 77, 76, 75, 74, 73, 63, 53, 43, 33, 34, 35, 36, 37, 47, 57, 67, 66, 65, 64, 54, 44}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -241,7 +249,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 31, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 60, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 71, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 100}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -254,7 +264,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -267,7 +279,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -282,7 +296,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {45, 46, 55, 56}, arg2: false, arg3: 5600, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -295,7 +311,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 19, 28, 37, 46, 55, 64, 73, 82, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 89, 78, 67, 56, 45, 34, 23, 12, 11, 21, 31, 41, 51, 61, 71, 81, 83, 84, 85, 86, 87, 88, 90, 80, 70, 60, 50, 40, 30, 20, 18, 17, 16, 15, 14, 13, 22, 32, 42, 52, 62, 72, 74, 75, 76, 77, 79, 69, 59, 49, 39, 29, 27, 26, 25, 24}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -308,7 +326,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 19, 28, 37, 46, 55, 64, 73, 82, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 90, 80, 70, 60, 50, 40, 30, 20, 18, 17, 16, 15, 14, 13, 12, 11, 21, 31, 41, 51, 61, 71, 81, 83, 84, 85, 86, 87, 88, 89, 79, 69, 59, 49, 39, 29, 27, 26, 25, 24, 23, 22, 32, 42, 52, 62, 72, 74, 75, 76, 77, 78, 68, 58, 48, 38, 36, 35, 34, 33, 43, 53, 63, 65, 66, 67}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -322,7 +342,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true, arg3: 1200, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -336,7 +358,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -350,7 +374,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 61, 71, 81, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 90, 80, 70, 69, 68, 67, 66, 65, 64, 63, 62, 72, 82, 83, 84, 85, 86, 87, 88, 89, 79}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -364,7 +390,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 61, 71, 81, 91, 92, 82, 72, 62, 63, 73, 83, 93, 94, 84, 74, 64, 65, 75, 85, 95, 96, 86, 76, 66, 67, 77, 87, 97, 98, 88, 78, 68, 69, 79, 89, 99}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -378,7 +406,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 61, 71, 81, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 90, 89, 88, 87, 86, 85, 84, 83, 82, 72, 73, 74, 75, 76, 77, 78, 79, 80, 70}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -392,7 +422,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -408,7 +440,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true, arg3: 1200, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -431,7 +465,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {91}, arg2: false, arg3: 4500, arg4: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -453,7 +489,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {5, 25, 45, 65, 85}, arg2: false, arg3: 4500, arg4: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -475,7 +513,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {11, 31, 51, 71, 91}, arg2: false, arg3: 4500, arg4: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -525,7 +565,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {91}, arg2: true, arg3: 10500, arg4: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -555,7 +597,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {91}, arg2: false, arg3: 0, arg4: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -591,7 +635,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {83, 93}, arg2: false, arg3: 4300, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -627,7 +673,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {65, 66}, arg2: false, arg3: 4300, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -657,7 +705,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {57, 59}, arg2: false, arg3: 3600, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -679,7 +729,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {1, 11, 21, 31, 41, 51, 61, 71, 81}, arg2: false, arg3: 4500, arg4: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -692,7 +744,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {46, 56, 55, 45, 35, 36, 37, 47, 57, 67, 66, 65, 64, 54, 44, 34, 24, 25, 26, 27, 28, 38, 48, 58, 68, 78, 77, 76, 75, 74, 73, 63, 53, 43, 33, 23, 13, 14, 15, 16, 17, 18, 19, 29, 39, 49, 59, 69, 79, 89, 88, 87, 86, 85, 84, 83, 82, 72, 62, 52, 42, 32, 22, 12}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -705,7 +759,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {46, 56, 55, 45, 25, 26, 27, 28, 38, 48, 58, 68, 78, 77, 76, 75, 74, 73, 63, 53, 43, 33, 23, 24, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -718,7 +774,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {46, 56, 55, 45, 35, 25, 15, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 12, 13, 14, 15, 16, 17, 18, 19, 29, 39, 49, 59, 69, 79, 89, 88, 87, 86, 85, 84, 83, 82, 72, 62, 52, 42, 32, 22, 23, 24, 25, 26, 27, 28, 38, 48, 58, 68, 78, 77, 76, 75, 74, 73, 63, 53, 43, 33, 34, 35, 36, 37, 47, 57, 67, 66, 65, 64, 54, 44}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -731,7 +789,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {46, 56, 55, 45, 64, 54, 44, 34, 35, 36, 37, 47, 57, 67, 28, 38, 48, 58, 68, 78, 77, 76, 75, 74, 73, 63, 53, 43, 33, 23, 82, 72, 62, 52, 42, 32, 22, 12, 13, 14, 15, 16, 17, 18, 19, 29, 39, 49, 59, 69, 79, 89, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 1}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -771,7 +831,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {52, 61}, arg2: false, arg3: 3500, arg4: 200);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -831,7 +893,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {90}, arg2: false, arg3: 2500, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -852,7 +916,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {2, 11, 90, 99}, arg2: false, arg3: 4000, arg4: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -867,7 +933,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {92, 93, 94, 95, 96, 97, 98, 99, 100, 90, 80, 70, 60, 50, 40, 30, 20, 29, 38, 47, 56, 65, 74, 83, 84, 85, 86, 87, 88, 89, 79, 69, 59, 49, 39, 48, 57, 66, 75, 76, 77, 78}, arg2: false, arg3: 1000, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -881,7 +949,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {81, 71, 61, 51, 41, 31, 21, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 20, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 72, 62, 52, 42, 32, 22, 12, 13, 14, 15, 16, 17, 18, 29, 39, 49, 59, 69, 79, 89, 88, 87, 86, 85, 84, 83, 63, 53, 43, 33, 23, 24, 25, 26, 27, 38, 48, 58, 68, 78, 77, 76, 75, 74, 54, 44, 34, 35, 36, 47, 57, 67, 66, 65}, arg2: false, arg3: 1000, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -911,7 +981,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {11, 22, 33, 44, 55, 66, 77, 88, 99}, arg2: false, arg3: 8100, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -947,7 +1019,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {65, 66}, arg2: false, arg3: 9400, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -968,7 +1042,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {29, 39, 49, 59, 69, 79, 89, 88, 87, 86, 85, 84, 83, 82, 72, 62, 52, 42, 32, 22}, arg2: false, arg3: 6400, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -985,7 +1061,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {64, 63, 73, 74, 75, 65, 55, 54, 53, 52, 62, 72, 82, 83, 84, 85}, arg2: false, arg3: 4800, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1003,7 +1081,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {17, 27, 37, 47, 57, 67, 77, 87, 88, 89, 79, 69, 59, 49, 39, 29, 19, 18, 28, 38, 48, 58, 68, 78, 88}, arg2: false, arg3: 6100, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1021,7 +1101,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {9, 19, 29, 39, 49, 59, 69, 79, 89, 88, 87, 86, 85, 84, 83, 82, 72, 73, 74, 75, 76, 77, 78, 68, 67, 66, 65, 64, 63, 62}, arg2: false, arg3: 5800, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1049,7 +1131,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {83, 93}, arg2: false, arg3: 8200, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1069,7 +1153,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {55, 45, 46, 56}, arg2: false, arg3: 6500, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1090,7 +1176,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {66, 65, 54, 44, 35, 36, 47, 57}, arg2: false, arg3: 8100, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1111,7 +1199,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {55}, arg2: false, arg3: 8400, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1132,7 +1222,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {52, 42, 43, 53, 63, 62, 61, 51, 41, 31, 32, 33, 34, 44, 54, 64}, arg2: false, arg3: 6900, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1151,7 +1243,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {57, 58, 68, 67, 66, 56, 46, 47, 48, 44, 43, 33, 34, 35, 45, 55, 54, 53}, arg2: false, arg3: 7000, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1170,7 +1264,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {46, 55}, arg2: false, arg3: 8600, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1183,7 +1279,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 12, 13, 14, 15, 16, 17, 18, 19, 29, 69, 79, 89, 88, 87, 84, 83, 82, 72, 62, 22, 25, 26, 38, 48, 58, 78, 76, 75, 73, 53, 43, 33, 34, 37, 47, 57, 67, 66, 65, 64, 54, 44, 45, 46, 56, 55}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1196,7 +1294,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 8, 9, 10, 20, 30, 40, 50, 90, 100, 99, 92, 91, 81, 41, 31, 21, 11, 12, 13, 14, 17, 18, 19, 29, 39, 59, 69, 79, 88, 87, 86, 85, 84, 83, 72, 62, 52, 32, 22, 23, 26, 27, 28, 48, 58, 68, 78, 77, 74, 73, 63, 53, 43, 34, 35, 47, 67, 66, 65, 64, 44, 45, 46, 56, 55}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1209,7 +1309,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 12, 13, 14, 15, 16, 17, 18, 29, 39, 49, 59, 69, 79, 89, 88, 87, 86, 85, 84, 83, 72, 62, 52, 42, 32, 22, 23, 25, 26, 48, 58, 78, 77, 76, 75, 53, 43, 33, 34, 37, 67, 66, 64, 44, 46, 55}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1222,7 +1324,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {1, 2, 6, 7, 8, 9, 10, 20, 30, 40, 50, 90, 100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 81, 71, 61, 51, 41, 31, 21, 11, 13, 14, 15, 17, 18, 19, 29, 39, 59, 69, 79, 78, 77, 76, 75, 74, 73, 23, 24, 25, 27, 28, 38, 58, 68, 67, 66, 65, 64, 63, 53, 43, 33, 34, 35, 37, 57, 67, 66, 65, 64, 54, 44, 45, 56, 55}, arg2: false, arg3: 0, arg4: 100);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -1253,7 +1357,9 @@ namespace Maple2.Trigger._99999900 {
                 context.SetMesh(arg1: new[] {91}, arg2: false, arg3: 0, arg4: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

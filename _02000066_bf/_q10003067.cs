@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {103}, arg2: new[] {50001642}, arg3: new byte[] {2})) {
-                    context.State = new State포털활성화(context);
-                    return;
+                    return new State포털활성화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,13 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "woodsoflife") == 1) {
-                    // context.State = new State포털비활성화(context);
-                    return;
+                    // return new State포털비활성화(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -39,11 +42,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.GuideEvent(eventId: 10003067);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -54,7 +58,9 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

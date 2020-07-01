@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003086, 10003087}, arg3: new byte[] {2})) {
-                    context.State = new StateNpcSpawn(context);
-                    return;
+                    return new StateNpcSpawn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,7 +25,9 @@ namespace Maple2.Trigger._52010032_qd {
                 context.SetNpcEmotionSequence(arg1: 602, arg2: "Idle_A");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

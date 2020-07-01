@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000441_bf {
                 context.SetMesh(arg1: new[] {1505, 1506, 1507, 1508, 1509}, arg2: true, arg3: 0, arg4: 0, arg5: 10f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001098}, arg2: 0)) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,7 +25,9 @@ namespace Maple2.Trigger._02000441_bf {
                 context.SetMesh(arg1: new[] {1505, 1506, 1507, 1508, 1509}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

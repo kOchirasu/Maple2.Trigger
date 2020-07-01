@@ -8,16 +8,16 @@ namespace Maple2.Trigger._02000492_bf {
                 context.SetSkill(arg1: new[] {7401}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1001})) {
-                    context.State = new State전투01(context);
-                    return;
+                    return new State전투01(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {1002})) {
-                    context.State = new State전투01(context);
-                    return;
+                    return new State전투01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,11 +30,12 @@ namespace Maple2.Trigger._02000492_bf {
                 context.CreateMonster(arg1: new[] {401, 411}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {401, 411})) {
-                    context.State = new State전투02(context);
-                    return;
+                    return new State전투02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +48,12 @@ namespace Maple2.Trigger._02000492_bf {
                 context.CreateMonster(arg1: new[] {402}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {402})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,7 +64,9 @@ namespace Maple2.Trigger._02000492_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

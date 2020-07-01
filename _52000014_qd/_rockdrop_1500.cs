@@ -8,11 +8,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetEffect(arg1: new[] {1501, 1503, 1505}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new State낙하01시작(context);
-                    return;
+                    return new State낙하01시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetEffect(arg1: new[] {1501}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
-                    context.State = new State낙하01완료(context);
-                    return;
+                    return new State낙하01완료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetSkill(arg1: new[] {1500}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 800)) {
-                    context.State = new State낙하02시작(context);
-                    return;
+                    return new State낙하02시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +62,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetEffect(arg1: new[] {1503}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
-                    context.State = new State낙하02완료(context);
-                    return;
+                    return new State낙하02완료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,11 +81,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetSkill(arg1: new[] {1502}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State낙하03시작(context);
-                    return;
+                    return new State낙하03시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -94,11 +99,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetEffect(arg1: new[] {1505}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
-                    context.State = new State낙하03완료(context);
-                    return;
+                    return new State낙하03완료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -112,11 +118,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetSkill(arg1: new[] {1504}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new State초기화(context);
-                    return;
+                    return new State초기화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -131,11 +138,12 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetEffect(arg1: new[] {1501, 1503, 1505}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State낙하01시작(context);
-                    return;
+                    return new State낙하01시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

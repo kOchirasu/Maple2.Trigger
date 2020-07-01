@@ -9,11 +9,12 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetUserValue(key: "AnotherGuide", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ToWallFalse") == 1) {
-                    context.State = new StateToWallFalse(context);
-                    return;
+                    return new StateToWallFalse(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetInteractObject(arg1: new[] {10002085}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002085}, arg2: 0)) {
-                    context.State = new StateNoticeDelay(context);
-                    return;
+                    return new StateNoticeDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetUserValue(triggerId: 7, key: "AnotherGuide", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new StateNoticeOn(context);
-                    return;
+                    return new StateNoticeOn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,16 +65,16 @@ namespace Maple2.Trigger._52100052_qd {
                 context.ShowGuideSummary(entityId: 20039603, textId: 20039603);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new StateCloseGuide02(context);
-                    return;
+                    return new StateCloseGuide02(context);
                 }
 
                 if (context.GetUserValue(key: "AnotherGuide") == 1) {
-                    context.State = new StateCloseGuide01(context);
-                    return;
+                    return new StateCloseGuide01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -82,11 +85,12 @@ namespace Maple2.Trigger._52100052_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    context.State = new StateCloseGuide02(context);
-                    return;
+                    return new StateCloseGuide02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -101,7 +105,9 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetUserValue(triggerId: 7, key: "AnotherGuide", value: 0);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

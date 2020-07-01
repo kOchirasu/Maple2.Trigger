@@ -5,16 +5,16 @@ namespace Maple2.Trigger._52000050_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 702, arg2: new[] {121})) {
-                    context.State = new Statenpc_exit_01(context);
-                    return;
+                    return new Statenpc_exit_01(context);
                 }
 
                 if (context.NpcDetected(arg1: 702, arg2: new[] {122})) {
-                    context.State = new Statenpc_exit_02(context);
-                    return;
+                    return new Statenpc_exit_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +27,12 @@ namespace Maple2.Trigger._52000050_qd {
                 context.DestroyMonster(arg1: new[] {121});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +45,12 @@ namespace Maple2.Trigger._52000050_qd {
                 context.DestroyMonster(arg1: new[] {122});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

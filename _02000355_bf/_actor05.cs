@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000355_bf {
                 context.SetActor(arg1: 205, arg2: true, arg3: "Damg_B");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1501})) {
-                    context.State = new State몬스터소환대기(context);
-                    return;
+                    return new State몬스터소환대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._02000355_bf {
                 context.SetEffect(arg1: new[] {605}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new State몬스터소환(context);
-                    return;
+                    return new State몬스터소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +44,12 @@ namespace Maple2.Trigger._02000355_bf {
                 context.CreateMonster(arg1: new[] {2005}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State더미해제(context);
-                    return;
+                    return new State더미해제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,16 +62,16 @@ namespace Maple2.Trigger._02000355_bf {
                 context.SetActor(arg1: 205, arg2: false, arg3: "Damg_B");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2005})) {
-                    context.State = new State소멸(context);
-                    return;
+                    return new State소멸(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {2099})) {
-                    context.State = new State소멸(context);
-                    return;
+                    return new State소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -79,16 +82,16 @@ namespace Maple2.Trigger._02000355_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new State리젠준비(context);
-                    return;
+                    return new State리젠준비(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {2099})) {
-                    context.State = new State소멸(context);
-                    return;
+                    return new State소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -101,11 +104,12 @@ namespace Maple2.Trigger._02000355_bf {
                 context.SetActor(arg1: 205, arg2: true, arg3: "Regen_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -118,7 +122,9 @@ namespace Maple2.Trigger._02000355_bf {
                 context.DestroyMonster(arg1: new[] {2005});
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

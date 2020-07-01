@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52000005_qd {
                 context.CreateMonster(arg1: new[] {103, 202}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002781}, arg3: new byte[] {1})) {
-                    context.State = new State딜레이01(context);
-                    return;
+                    return new State딜레이01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -26,11 +27,12 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetTimer(arg1: "1", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State영감대화준비(context);
-                    return;
+                    return new State영감대화준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,11 +47,8 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetProductionUI(arg1: 3);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State영감대화01(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State영감대화01(context);
             }
 
             public override void OnExit() { }
@@ -64,11 +63,12 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetSkip(arg1: "영감대화02대기");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State영감대화02대기(context);
-                    return;
+                    return new State영감대화02대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,11 +81,8 @@ namespace Maple2.Trigger._52000005_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State영감대화02(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State영감대화02(context);
             }
 
             public override void OnExit() { }
@@ -101,11 +98,12 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetSkip(arg1: "여제입장01");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State여제입장01(context);
-                    return;
+                    return new State여제입장01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -120,11 +118,12 @@ namespace Maple2.Trigger._52000005_qd {
                 context.CameraSelect(arg1: 601, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    context.State = new State딜레이03(context);
-                    return;
+                    return new State딜레이03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -137,11 +136,12 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetTimer(arg1: "12", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "12")) {
-                    context.State = new State여제대화01(context);
-                    return;
+                    return new State여제대화01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -156,11 +156,12 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetSkip(arg1: "영상준비");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "20")) {
-                    context.State = new State영상준비(context);
-                    return;
+                    return new State영상준비(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -175,11 +176,12 @@ namespace Maple2.Trigger._52000005_qd {
                 context.CameraSelectPath(arg1: new[] {601, 602}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "21")) {
-                    context.State = new State영상재생(context);
-                    return;
+                    return new State영상재생(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -198,11 +200,12 @@ namespace Maple2.Trigger._52000005_qd {
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    context.State = new State영상종료(context);
-                    return;
+                    return new State영상종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -219,11 +222,12 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetSkip(arg1: "연출종료");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "31")) {
-                    context.State = new State연출종료(context);
-                    return;
+                    return new State연출종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -236,11 +240,8 @@ namespace Maple2.Trigger._52000005_qd {
                 context.RemoveCinematicTalk();
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State업적발생(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State업적발생(context);
             }
 
             public override void OnExit() { }
@@ -257,7 +258,9 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

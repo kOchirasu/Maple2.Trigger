@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000242_bf {
                 context.SetMesh(arg1: new[] {703, 704}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {402})) {
-                    context.State = new State버튼눌림(context);
-                    return;
+                    return new State버튼눌림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,7 +28,9 @@ namespace Maple2.Trigger._02000242_bf {
                 context.SetTimer(arg1: "1", arg2: 180);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -5,16 +5,16 @@ namespace Maple2.Trigger._02000389_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Error") == 1) {
-                    context.State = new Stateend(context);
-                    return;
+                    return new Stateend(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {702})) {
-                    context.State = new Stateerror(context);
-                    return;
+                    return new Stateerror(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +27,12 @@ namespace Maple2.Trigger._02000389_bf {
                 context.MoveRandomUser(arg1: 02000389, arg2: 5, arg3: 702, arg4: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,7 +43,9 @@ namespace Maple2.Trigger._02000389_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

@@ -10,21 +10,20 @@ namespace Maple2.Trigger._52020009_qd {
                 context.SetEffect(arg1: new[] {5100, 5101, 5102}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200020}, arg3: new byte[] {1})) {
-                    context.State = new StateReady(context);
-                    return;
+                    return new StateReady(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200020}, arg3: new byte[] {2})) {
-                    context.State = new StateMeshOff(context);
-                    return;
+                    return new StateMeshOff(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200020}, arg3: new byte[] {3})) {
-                    context.State = new StateMeshOff(context);
-                    return;
+                    return new StateMeshOff(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,11 +39,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.AddBalloonTalk(spawnPointId: 0, msg: "!", duration: 3000, delayTick: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {201, 202, 203, 204, 205, 206, 207})) {
-                    context.State = new StateEvent_01(context);
-                    return;
+                    return new StateEvent_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +58,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.SetMesh(arg1: new[] {8001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000449}, arg2: 0)) {
-                    context.State = new StateMeshOff(context);
-                    return;
+                    return new StateMeshOff(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,11 +76,12 @@ namespace Maple2.Trigger._52020009_qd {
                 context.SetMesh(arg1: new[] {8001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200020}, arg3: new byte[] {1})) {
-                    context.State = new StateEvent_01(context);
-                    return;
+                    return new StateEvent_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -5,36 +5,32 @@ namespace Maple2.Trigger._52000045_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 702, arg2: new[] {301})) {
-                    context.State = new Statenpc_exit_01(context);
-                    return;
+                    return new Statenpc_exit_01(context);
                 }
 
                 if (context.NpcDetected(arg1: 702, arg2: new[] {302})) {
-                    context.State = new Statenpc_exit_02(context);
-                    return;
+                    return new Statenpc_exit_02(context);
                 }
 
                 if (context.NpcDetected(arg1: 702, arg2: new[] {303})) {
-                    context.State = new Statenpc_exit_03(context);
-                    return;
+                    return new Statenpc_exit_03(context);
                 }
 
                 if (context.NpcDetected(arg1: 702, arg2: new[] {304})) {
-                    context.State = new Statenpc_exit_04(context);
-                    return;
+                    return new Statenpc_exit_04(context);
                 }
 
                 if (context.NpcDetected(arg1: 702, arg2: new[] {305})) {
-                    context.State = new Statenpc_exit_05(context);
-                    return;
+                    return new Statenpc_exit_05(context);
                 }
 
                 if (context.NpcDetected(arg1: 702, arg2: new[] {306})) {
-                    context.State = new Statenpc_exit_06(context);
-                    return;
+                    return new Statenpc_exit_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +43,12 @@ namespace Maple2.Trigger._52000045_qd {
                 context.DestroyMonster(arg1: new[] {301});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +61,12 @@ namespace Maple2.Trigger._52000045_qd {
                 context.DestroyMonster(arg1: new[] {302});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,11 +79,12 @@ namespace Maple2.Trigger._52000045_qd {
                 context.DestroyMonster(arg1: new[] {303});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,11 +97,12 @@ namespace Maple2.Trigger._52000045_qd {
                 context.DestroyMonster(arg1: new[] {304});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,11 +115,12 @@ namespace Maple2.Trigger._52000045_qd {
                 context.DestroyMonster(arg1: new[] {305});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -132,11 +133,12 @@ namespace Maple2.Trigger._52000045_qd {
                 context.DestroyMonster(arg1: new[] {306});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

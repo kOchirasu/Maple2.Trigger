@@ -5,11 +5,12 @@ namespace Maple2.Trigger._61000005_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {196})) {
-                    context.State = new State퍼즐대기중(context);
-                    return;
+                    return new State퍼즐대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -34,16 +35,16 @@ namespace Maple2.Trigger._61000005_me {
                 context.DestroyMonster(arg1: new[] {202}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 90000)) {
-                    context.State = new State시작대기멘트1(context);
-                    return;
+                    return new State시작대기멘트1(context);
                 }
 
                 if (context.GetUserCount(boxId: 196) == 20) {
-                    context.State = new State시작대기멘트1(context);
-                    return;
+                    return new State시작대기멘트1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -57,11 +58,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetEventUI(arg1: 1, arg2: "$61000005_ME__MAINPROCESS__0$", arg3: 4500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State시작대기멘트2(context);
-                    return;
+                    return new State시작대기멘트2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,11 +77,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetEventUI(arg1: 1, arg2: "$61000005_ME__MAINPROCESS__1$", arg3: 4500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State시작대기멘트3(context);
-                    return;
+                    return new State시작대기멘트3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -93,11 +96,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetEventUI(arg1: 1, arg2: "$61000005_ME__MAINPROCESS__2$", arg3: 4500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State시작대기멘트4(context);
-                    return;
+                    return new State시작대기멘트4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -111,11 +115,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetEventUI(arg1: 1, arg2: "$61000005_ME__MAINPROCESS__3$", arg3: 4500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State시작대기멘트5(context);
-                    return;
+                    return new State시작대기멘트5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -129,11 +134,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetEventUI(arg1: 1, arg2: "$61000005_ME__MAINPROCESS__4$", arg3: 4500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State시작대기(context);
-                    return;
+                    return new State시작대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -158,11 +164,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetTimer(arg1: "1", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State멘트1(context);
-                    return;
+                    return new State멘트1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -177,11 +184,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.ShowCountUI(text: "$61000005_ME__MAINPROCESS__6$", stage: 1, count: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State퍼즐단계1(context);
-                    return;
+                    return new State퍼즐단계1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -195,11 +203,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.UseState(arg1: 1, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "99")) {
-                    context.State = new State퍼즐단계1정리(context);
-                    return;
+                    return new State퍼즐단계1정리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -213,16 +222,16 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State퍼즐단계1종료(context);
-                    return;
+                    return new State퍼즐단계1종료(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {197, 198, 199})) {
-                    context.State = new State모두실패(context);
-                    return;
+                    return new State모두실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -233,11 +242,12 @@ namespace Maple2.Trigger._61000005_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {197, 198, 199})) {
-                    context.State = new State퍼즐단계2대기(context);
-                    return;
+                    return new State퍼즐단계2대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -252,11 +262,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.ShowCountUI(text: "$61000005_ME__MAINPROCESS__7$", stage: 2, count: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State퍼즐단계2(context);
-                    return;
+                    return new State퍼즐단계2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -272,11 +283,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.UseState(arg1: 1, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "99")) {
-                    context.State = new State퍼즐단계2정리(context);
-                    return;
+                    return new State퍼즐단계2정리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -292,16 +304,16 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State퍼즐단계2종료(context);
-                    return;
+                    return new State퍼즐단계2종료(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {197, 198, 199})) {
-                    context.State = new State모두실패(context);
-                    return;
+                    return new State모두실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -312,11 +324,12 @@ namespace Maple2.Trigger._61000005_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {197, 198, 199})) {
-                    context.State = new State퍼즐단계3대기(context);
-                    return;
+                    return new State퍼즐단계3대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -331,11 +344,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.ShowCountUI(text: "$61000005_ME__MAINPROCESS__8$", stage: 3, count: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State퍼즐단계3(context);
-                    return;
+                    return new State퍼즐단계3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -351,11 +365,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.UseState(arg1: 1, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "99")) {
-                    context.State = new State퍼즐단계3정리(context);
-                    return;
+                    return new State퍼즐단계3정리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -369,16 +384,16 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State퍼즐단계3종료(context);
-                    return;
+                    return new State퍼즐단계3종료(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {197, 198, 199})) {
-                    context.State = new State모두실패(context);
-                    return;
+                    return new State모두실패(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -389,12 +404,13 @@ namespace Maple2.Trigger._61000005_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {197, 198, 199})) {
                     context.SetMesh(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176}, arg2: true);
-                    context.State = new State보상단계(context);
-                    return;
+                    return new State보상단계(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -409,11 +425,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetEventUI(arg1: 1, arg2: "$61000005_ME__MAINPROCESS__9$", arg3: 5000, arg4: "0");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State돈벼락(context);
-                    return;
+                    return new State돈벼락(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -430,11 +447,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.CreateItem(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059, 1060, 1061, 1062, 1063, 1064, 1065, 1066, 1067, 1068, 1069, 1070, 1071, 1072, 1073, 1074, 1075});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State퍼즐종료처리(context);
-                    return;
+                    return new State퍼즐종료처리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -449,11 +467,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetEventUI(arg1: 5, arg2: "$61000005_ME__MAINPROCESS__11$", arg3: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State퍼즐종료처리(context);
-                    return;
+                    return new State퍼즐종료처리(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -480,11 +499,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetTimer(arg1: "1", arg2: 6);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State강제종료(context);
-                    return;
+                    return new State강제종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -497,11 +517,12 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetTimer(arg1: "1", arg2: 30);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State유저이동(context);
-                    return;
+                    return new State유저이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -512,12 +533,13 @@ namespace Maple2.Trigger._61000005_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (true) {
                     context.MoveUser(arg1: 63000001, arg2: 5, arg3: 0);
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -546,7 +568,9 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetMesh(arg1: new[] {155, 145, 135}, arg2: false, arg3: 6500, arg4: 300);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -567,7 +591,9 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetMesh(arg1: new[] {159, 150, 140, 130, 120, 111}, arg2: false, arg3: 9500, arg4: 300);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -593,7 +619,9 @@ namespace Maple2.Trigger._61000005_me {
                 context.SetMesh(arg1: new[] {112, 117, 165, 160}, arg2: false, arg3: 6500, arg4: 300);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -603,7 +631,9 @@ namespace Maple2.Trigger._61000005_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

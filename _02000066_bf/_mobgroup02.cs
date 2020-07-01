@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000066_bf {
                 context.DestroyMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,66 +23,56 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 102, arg2: new[] {900})) {
-                    context.State = new State1차타이머(context);
-                    return;
+                    return new State1차타이머(context);
                 }
 
                 if (context.NpcDetected(arg1: 102, arg2: new[] {901})) {
-                    context.State = new State2차타이머(context);
-                    return;
+                    return new State2차타이머(context);
                 }
 
                 if (context.NpcDetected(arg1: 102, arg2: new[] {902})) {
-                    context.State = new State3차타이머(context);
-                    return;
+                    return new State3차타이머(context);
                 }
 
                 if (context.NpcDetected(arg1: 102, arg2: new[] {904})) {
-                    context.State = new State4차타이머(context);
-                    return;
+                    return new State4차타이머(context);
                 }
 
                 if (context.NpcDetected(arg1: 102, arg2: new[] {905})) {
-                    context.State = new State5차타이머(context);
-                    return;
+                    return new State5차타이머(context);
                 }
 
                 if (context.NpcDetected(arg1: 102, arg2: new[] {906})) {
-                    context.State = new State6차타이머(context);
-                    return;
+                    return new State6차타이머(context);
                 }
 
                 if (context.NpcDetected(arg1: 102, arg2: new[] {908})) {
-                    context.State = new State7차타이머(context);
-                    return;
+                    return new State7차타이머(context);
                 }
 
                 if (context.NpcDetected(arg1: 102, arg2: new[] {909})) {
-                    context.State = new State8차타이머(context);
-                    return;
+                    return new State8차타이머(context);
                 }
 
                 if (context.NpcDetected(arg1: 102, arg2: new[] {910})) {
-                    context.State = new State9차타이머(context);
-                    return;
+                    return new State9차타이머(context);
                 }
 
                 if (context.NpcDetected(arg1: 102, arg2: new[] {912})) {
-                    context.State = new State10차타이머(context);
-                    return;
+                    return new State10차타이머(context);
                 }
 
                 if (context.NpcDetected(arg1: 102, arg2: new[] {913})) {
-                    context.State = new State11차타이머(context);
-                    return;
+                    return new State11차타이머(context);
                 }
 
                 if (context.NpcDetected(arg1: 102, arg2: new[] {914})) {
-                    context.State = new State12차타이머(context);
-                    return;
+                    return new State12차타이머(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -95,16 +86,16 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {900})) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
 
                 if (context.TimeExpired(arg1: "45")) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -118,16 +109,16 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {901})) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
 
                 if (context.TimeExpired(arg1: "22")) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -141,16 +132,16 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {902})) {
-                    context.State = new State소멸(context);
-                    return;
+                    return new State소멸(context);
                 }
 
                 if (context.TimeExpired(arg1: "40")) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -164,16 +155,16 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {904})) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
 
                 if (context.TimeExpired(arg1: "33")) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -187,16 +178,16 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {905})) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
 
                 if (context.TimeExpired(arg1: "16")) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -210,16 +201,16 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {906})) {
-                    context.State = new State소멸(context);
-                    return;
+                    return new State소멸(context);
                 }
 
                 if (context.TimeExpired(arg1: "28")) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -233,16 +224,16 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {908})) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
 
                 if (context.TimeExpired(arg1: "25")) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -256,16 +247,16 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {909})) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
 
                 if (context.TimeExpired(arg1: "13")) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -279,16 +270,16 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {910})) {
-                    context.State = new State소멸(context);
-                    return;
+                    return new State소멸(context);
                 }
 
                 if (context.TimeExpired(arg1: "22")) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -302,16 +293,16 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {912})) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
 
                 if (context.TimeExpired(arg1: "20")) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -325,16 +316,16 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {913})) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
 
                 if (context.TimeExpired(arg1: "10")) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -348,16 +339,16 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {914})) {
-                    context.State = new State소멸(context);
-                    return;
+                    return new State소멸(context);
                 }
 
                 if (context.TimeExpired(arg1: "16")) {
-                    context.State = new State대기시간(context);
-                    return;
+                    return new State대기시간(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -370,11 +361,8 @@ namespace Maple2.Trigger._02000066_bf {
                 context.DestroyMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108});
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State대기시간(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State대기시간(context);
             }
 
             public override void OnExit() { }

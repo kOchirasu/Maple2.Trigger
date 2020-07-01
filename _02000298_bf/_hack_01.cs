@@ -7,16 +7,16 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {10000369}, arg2: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {106})) {
-                    context.State = new State스폰(context);
-                    return;
+                    return new State스폰(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {107})) {
-                    context.State = new State스폰(context);
-                    return;
+                    return new State스폰(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -30,11 +30,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetInteractObject(arg1: new[] {10000369}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000369}, arg2: 0)) {
-                    context.State = new State코드체크(context);
-                    return;
+                    return new State코드체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -45,106 +46,88 @@ namespace Maple2.Trigger._02000298_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1279})) {
-                    context.State = new State코드_1279(context);
-                    return;
+                    return new State코드_1279(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1238})) {
-                    context.State = new State코드_1238(context);
-                    return;
+                    return new State코드_1238(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1358})) {
-                    context.State = new State코드_1358(context);
-                    return;
+                    return new State코드_1358(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1489})) {
-                    context.State = new State코드_1489(context);
-                    return;
+                    return new State코드_1489(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1567})) {
-                    context.State = new State코드_1567(context);
-                    return;
+                    return new State코드_1567(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1679})) {
-                    context.State = new State코드_1679(context);
-                    return;
+                    return new State코드_1679(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2389})) {
-                    context.State = new State코드_2389(context);
-                    return;
+                    return new State코드_2389(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2347})) {
-                    context.State = new State코드_2347(context);
-                    return;
+                    return new State코드_2347(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2478})) {
-                    context.State = new State코드_2478(context);
-                    return;
+                    return new State코드_2478(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2456})) {
-                    context.State = new State코드_2456(context);
-                    return;
+                    return new State코드_2456(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2569})) {
-                    context.State = new State코드_2569(context);
-                    return;
+                    return new State코드_2569(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2678})) {
-                    context.State = new State코드_2678(context);
-                    return;
+                    return new State코드_2678(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {3458})) {
-                    context.State = new State코드_3458(context);
-                    return;
+                    return new State코드_3458(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {3589})) {
-                    context.State = new State코드_3589(context);
-                    return;
+                    return new State코드_3589(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {3679})) {
-                    context.State = new State코드_3679(context);
-                    return;
+                    return new State코드_3679(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {3789})) {
-                    context.State = new State코드_3789(context);
-                    return;
+                    return new State코드_3789(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {4567})) {
-                    context.State = new State코드_4567(context);
-                    return;
+                    return new State코드_4567(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {4578})) {
-                    context.State = new State코드_4578(context);
-                    return;
+                    return new State코드_4578(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {4689})) {
-                    context.State = new State코드_4689(context);
-                    return;
+                    return new State코드_4689(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {4789})) {
-                    context.State = new State코드_4789(context);
-                    return;
+                    return new State코드_4789(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -158,11 +141,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__0$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -176,11 +160,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__1$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -194,11 +179,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__2$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -212,11 +198,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__3$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -230,11 +217,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__4$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -248,11 +236,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__5$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -266,11 +255,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__6$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -284,11 +274,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__7$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -302,11 +293,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__8$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -320,11 +312,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__9$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -338,11 +331,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__10$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -356,11 +350,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__11$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -374,11 +369,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__12$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -392,11 +388,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__13$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -410,11 +407,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__14$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -428,11 +426,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__15$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -446,11 +445,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__16$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -464,11 +464,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__17$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -482,11 +483,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__18$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -500,11 +502,12 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000298_BF__HACK_01__19$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -517,11 +520,13 @@ namespace Maple2.Trigger._02000298_bf {
                 context.SetTimer(arg1: "1800000", arg2: 1800000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1800000")) {
-                    // context.State = new State종료2(context);
-                    return;
+                    // return new State종료2(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

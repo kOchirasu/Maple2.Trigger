@@ -8,11 +8,12 @@ namespace Maple2.Trigger._02000049_bf {
                 context.SetActor(arg1: 502, arg2: true, arg3: "Idle_A");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000330}, arg2: 0)) {
-                    context.State = new State오브젝트반응(context);
-                    return;
+                    return new State오브젝트반응(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,8 @@ namespace Maple2.Trigger._02000049_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNPC이동(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNPC이동(context);
             }
 
             public override void OnExit() {
@@ -44,11 +42,12 @@ namespace Maple2.Trigger._02000049_bf {
                 context.SetTimer(arg1: "1", arg2: 10);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateNPC소멸(context);
-                    return;
+                    return new StateNPC소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -62,11 +61,12 @@ namespace Maple2.Trigger._02000049_bf {
                 context.SetTimer(arg1: "2", arg2: 50);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52020035_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {30000315, 30000316}, arg3: new byte[] {2})) {
-                    context.State = new State연출시작(context);
-                    return;
+                    return new State연출시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State연출시작_02(context);
-                    return;
+                    return new State연출시작_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -44,11 +46,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.CreateMonster(arg1: new[] {102}, arg2: false, arg3: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State라딘이야기01(context);
-                    return;
+                    return new State라딘이야기01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +66,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.ShowCaption(type: "VerticalCaption", title: "라딘의 막사", desc: "$MyPCName$$pp:가,이$ 떠난 직후", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State라딘이야기01_01(context);
-                    return;
+                    return new State라딘이야기01_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,11 +85,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003750, msg: "…이런 일이 있었다고 합니다.", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State라딘이야기01_02(context);
-                    return;
+                    return new State라딘이야기01_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -99,11 +104,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003753, msg: "흠… 크리티아스가 다시 나타난 것은 어둠의 세력과 관련이 있을지도 모르겠군…", duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State라딘이야기01_03(context);
-                    return;
+                    return new State라딘이야기01_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -117,11 +123,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003753, msg: "그렇다는 것은 확실히 이곳에 중요한 무언가가 있다는 얘기겠지.", duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State라딘이야기01_04(context);
-                    return;
+                    return new State라딘이야기01_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -136,11 +143,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003750, msg: "이런 상황을 예측하신 라딘님께서 미리 지시해주신 덕분입니다.", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new State라딘이야기02(context);
-                    return;
+                    return new State라딘이야기02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -155,11 +163,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003753, msg: "가질, 아무래도 그 자들과 다시 한번 거래를 해야할 것 같으니 연락 좀 해주게.", duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State라딘이야기02_01(context);
-                    return;
+                    return new State라딘이야기02_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -174,11 +183,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003750, msg: "그 자들이라면… 설마 흑성회 녀석들과 다시 거래하실 생각이신겁니까?", duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State라딘이야기02_02(context);
-                    return;
+                    return new State라딘이야기02_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -192,11 +202,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003753, msg: @"분명 신뢰할 수 없는 자들이지만 아직은 이용할 가치가 있어.\n원하는 것을 손에 넣을때까지는 장단을 맞춰줘야지.", duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State라딘이야기02_03(context);
-                    return;
+                    return new State라딘이야기02_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -212,11 +223,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003750, msg: "넵, 분부대로 하겠습니다.", duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State화면암전(context);
-                    return;
+                    return new State화면암전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -229,11 +241,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.SetProductionUI(arg1: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State흑성회입장전(context);
-                    return;
+                    return new State흑성회입장전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -248,11 +261,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.DestroyMonster(arg1: new[] {101, 102});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State흑성회등장직전(context);
-                    return;
+                    return new State흑성회등장직전(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -265,11 +279,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.SetProductionUI(arg1: 9, arg2: "잠시 후, 라딘의 막사", arg3: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State흑성회입장(context);
-                    return;
+                    return new State흑성회입장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -289,11 +304,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.CreateMonster(arg1: new[] {123}, arg2: false, arg3: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State흑성회입장_02(context);
-                    return;
+                    return new State흑성회입장_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -308,11 +324,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003754, msg: "이런곳까지 불러내다니... 다시봤구만, 나으리.", duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State손님맞이(context);
-                    return;
+                    return new State손님맞이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -325,11 +342,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.MoveNpc(arg1: 109, arg2: "MS2PatrolData_3001");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State손님맞이_01(context);
-                    return;
+                    return new State손님맞이_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -343,11 +361,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003758, msg: @"이곳이 바로 역사에서 사라졌던 크리티아스…\n빨리 구경해보고 싶어요!", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State손님맞이_01_01(context);
-                    return;
+                    return new State손님맞이_01_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -360,11 +379,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.MoveNpc(arg1: 116, arg2: "MS2PatrolData_3002");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    context.State = new State손님맞이_02(context);
-                    return;
+                    return new State손님맞이_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -378,11 +398,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003757, msg: @"우린 여기 놀러온게 아니야.\n흑성회의 간부답게 행동해라.", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State손님맞이_03(context);
-                    return;
+                    return new State손님맞이_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -395,11 +416,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.CameraSelectPath(arg1: new[] {4017}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State손님맞이_03_01(context);
-                    return;
+                    return new State손님맞이_03_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -414,11 +436,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003758, msg: @"형… 알았어요.\n대신 일이 끝나면 꼭 같이…", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State흑성회와이야기시작01_1(context);
-                    return;
+                    return new State흑성회와이야기시작01_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -433,11 +456,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.SetNpcRotation(arg1: 109, arg2: -360);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State흑성회와이야기시작02(context);
-                    return;
+                    return new State흑성회와이야기시작02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -452,11 +476,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003758, msg: @"칭찬해주셔서 감사합니다. 당신이 바로 라딘님이시군요.\n과거 트라이아의 검은 사자라고 불리웠던 제1왕위계승자…", duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State흑성회와이야기시작02_01(context);
-                    return;
+                    return new State흑성회와이야기시작02_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -470,11 +495,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003757, msg: "민, 상대의 도발에 일일이 반응하지마라.", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State흑성회와이야기시작02_02(context);
-                    return;
+                    return new State흑성회와이야기시작02_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -488,11 +514,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003753, msg: @"이런, 거기에 루델리 아레나 최강의 챔피언 바사라 첸이라니.\n이런 귀빈들이 올 줄 알았다면 좀 더 손님맞이를 잘 준비했을텐데.", duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State흑성회와이야기시작03(context);
-                    return;
+                    return new State흑성회와이야기시작03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -509,11 +536,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003754, msg: @"그나저나 내가 당신을 너무 높게 평가했던 것 같군.\n천하의 라딘 비드블라임님께서 먼저 꼬리를 말고 기어올 줄이야.", duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 14000)) {
-                    context.State = new State흑성회와이야기시작03_01(context);
-                    return;
+                    return new State흑성회와이야기시작03_01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -528,11 +556,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.DestroyMonster(arg1: new[] {109});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State흑성회와이야기시작04(context);
-                    return;
+                    return new State흑성회와이야기시작04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -548,11 +577,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003753, msg: "이제라도 제대로 손을 잡고 일 해보는 게 어떤가?", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
-                    context.State = new State흑성회와이야기시작04_라딘과웨이홍(context);
-                    return;
+                    return new State흑성회와이야기시작04_라딘과웨이홍(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -567,11 +597,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003754, msg: @"장사 한 두 번 하는 것도 아니고, 그런 말에 내가 속아 넘어갈 것으로 보이시나 보지?\n두 번이나 당할 정도로 이 웨이 홍이 어리석진 않은데 말이야.", duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new State흑성회와이야기시작04_라딘과웨이홍_02(context);
-                    return;
+                    return new State흑성회와이야기시작04_라딘과웨이홍_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -589,11 +620,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003753, msg: "그 덕에 $MyPCName$ 녀석이 일을 이 모양으로 망쳐놓았고 말이야.", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 17000)) {
-                    context.State = new State흑성회와이야기시작04_라딘과웨이홍_03(context);
-                    return;
+                    return new State흑성회와이야기시작04_라딘과웨이홍_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -611,11 +643,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003754, msg: @"우리 입장에서도 보험 하나 정도는 있어야 하는게 당연하지 않나?\n게다가 그 여자가 당신의 말대로 정말 크리티아스의 왕녀라는 보장도 없고 말이야.", duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    context.State = new State흑성회와이야기시작04_라딘과웨이홍_04(context);
-                    return;
+                    return new State흑성회와이야기시작04_라딘과웨이홍_04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -632,11 +665,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003753, msg: @"게다가 내가 손을 쓰지 않았다면 벌써 이곳은 이미 수호군의 손아귀에 넘어갔을 걸세.\n이 정도면 나를 믿어줄 이유는 충분하다고 보는데, 어떤가?", duration: 5000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 13000)) {
-                    context.State = new State흑성회와이야기시작04_라딘과웨이홍_05(context);
-                    return;
+                    return new State흑성회와이야기시작04_라딘과웨이홍_05(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -652,11 +686,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003754, msg: @"$MyPCName$ 녀석 하나 제대로 못 막아준 덕분에\n공들여 키운 장기말을 써먹을 수가 없는 상황이 되었는데?", duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new State흑성회와이야기시작04_라딘과웨이홍_06(context);
-                    return;
+                    return new State흑성회와이야기시작04_라딘과웨이홍_06(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -672,11 +707,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003753, msg: "애당초 자네나 나나 이곳에 원하는 것이 있어서 함께 손을 잡았던 것 아닌가?", duration: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    context.State = new State흑성회와이야기시작04_라딘과웨이홍_07(context);
-                    return;
+                    return new State흑성회와이야기시작04_라딘과웨이홍_07(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -692,11 +728,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003754, msg: "좋소. 어디 원하는 바를 말해보시지 그래.", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    context.State = new State흑성회와이야기시작04_라딘과웨이홍_08(context);
-                    return;
+                    return new State흑성회와이야기시작04_라딘과웨이홍_08(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -712,11 +749,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.AddCinematicTalk(npcId: 11003753, msg: "그럼, 계획에 대해서 이야기해 보도록 하지…", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State흑성회와이야기시작04_1(context);
-                    return;
+                    return new State흑성회와이야기시작04_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -729,11 +767,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State장면전환(context);
-                    return;
+                    return new State장면전환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -746,11 +785,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State장면전환_02(context);
-                    return;
+                    return new State장면전환_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -764,11 +804,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.DestroyMonster(arg1: new[] {103, 104, 109, 122, 123, 116});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State마을로이동(context);
-                    return;
+                    return new State마을로이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -783,11 +824,12 @@ namespace Maple2.Trigger._52020035_qd {
                 context.DestroyMonster(arg1: new[] {103, 104, 109, 122, 123, 116});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new State마을로이동(context);
-                    return;
+                    return new State마을로이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -803,7 +845,9 @@ namespace Maple2.Trigger._52020035_qd {
                 context.MoveUser(arg1: 02020014, arg2: 4);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

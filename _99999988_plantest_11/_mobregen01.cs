@@ -5,11 +5,12 @@ namespace Maple2.Trigger._99999988_plantest_11 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    context.State = new State웜리젠91(context);
-                    return;
+                    return new State웜리젠91(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,11 +23,12 @@ namespace Maple2.Trigger._99999988_plantest_11 {
                 context.CreateMonster(arg1: new[] {1, 2, 3});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1, 2, 3})) {
-                    context.State = new State웜리젠91쿨타임(context);
-                    return;
+                    return new State웜리젠91쿨타임(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,12 +42,13 @@ namespace Maple2.Trigger._99999988_plantest_11 {
                 context.SetTimer(arg1: "9", arg2: 30);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "9")) {
                     context.ResetTimer(arg1: "9");
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

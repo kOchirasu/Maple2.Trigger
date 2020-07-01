@@ -7,11 +7,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetEffect(arg1: new[] {8201, 8202, 8203, 8204, 8205, 8206, 8207, 8208, 8209, 8210, 8211, 8212, 8213, 8214, 8215, 8216, 8217, 8218}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 902) == 1) {
-                    context.State = new State바닥삭제(context);
-                    return;
+                    return new State바닥삭제(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetEffect(arg1: new[] {8201, 8202, 8203, 8204, 8205, 8206, 8207, 8208, 8209, 8210, 8211, 8212, 8213, 8214, 8215, 8216, 8217, 8218}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State스킬01(context);
-                    return;
+                    return new State스킬01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,11 +48,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316, 1317, 1318}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬02대기(context);
-                    return;
+                    return new State스킬02대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -63,11 +66,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316, 1317, 1318}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬02(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬02(context);
             }
 
             public override void OnExit() { }
@@ -81,11 +81,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬03대기(context);
-                    return;
+                    return new State스킬03대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,11 +99,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬03(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬03(context);
             }
 
             public override void OnExit() { }
@@ -116,11 +114,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1313, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1328, 1330}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬04대기(context);
-                    return;
+                    return new State스킬04대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -133,11 +132,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1313, 1314, 1315, 1316, 1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1328, 1330}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬04(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬04(context);
             }
 
             public override void OnExit() { }
@@ -151,11 +147,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1328, 1330, 1331, 1332, 1333, 1334, 1335, 1336}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬05대기(context);
-                    return;
+                    return new State스킬05대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -168,11 +165,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1328, 1330, 1331, 1332, 1333, 1334, 1335, 1336}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬05(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬05(context);
             }
 
             public override void OnExit() { }
@@ -186,11 +180,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1325, 1326, 1327, 1328, 1328, 1330, 1331, 1332, 1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬06대기(context);
-                    return;
+                    return new State스킬06대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -203,11 +198,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1325, 1326, 1327, 1328, 1328, 1330, 1331, 1332, 1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬06(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬06(context);
             }
 
             public override void OnExit() { }
@@ -221,11 +213,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1331, 1332, 1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬07대기(context);
-                    return;
+                    return new State스킬07대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -238,11 +231,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1331, 1332, 1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬07(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬07(context);
             }
 
             public override void OnExit() { }
@@ -256,11 +246,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬08대기(context);
-                    return;
+                    return new State스킬08대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -273,11 +264,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬08(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬08(context);
             }
 
             public override void OnExit() { }
@@ -291,11 +279,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬09대기(context);
-                    return;
+                    return new State스킬09대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -308,11 +297,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1343, 1344, 1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬09(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬09(context);
             }
 
             public override void OnExit() { }
@@ -326,11 +312,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬10대기(context);
-                    return;
+                    return new State스킬10대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -343,11 +330,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬10(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬10(context);
             }
 
             public override void OnExit() { }
@@ -361,11 +345,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371, 1372}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬11대기(context);
-                    return;
+                    return new State스킬11대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -378,11 +363,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371, 1372}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬11(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬11(context);
             }
 
             public override void OnExit() { }
@@ -396,11 +378,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371, 1372, 1373, 1374, 1375, 1376, 1377, 1378}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬12대기(context);
-                    return;
+                    return new State스킬12대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -413,11 +396,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371, 1372, 1373, 1374, 1375, 1376, 1377, 1378}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬12(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬12(context);
             }
 
             public override void OnExit() { }
@@ -431,11 +411,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1367, 1368, 1369, 1370, 1371, 1372, 1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬13대기(context);
-                    return;
+                    return new State스킬13대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -448,11 +429,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1367, 1368, 1369, 1370, 1371, 1372, 1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬13(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬13(context);
             }
 
             public override void OnExit() { }
@@ -466,11 +444,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬14대기(context);
-                    return;
+                    return new State스킬14대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -483,11 +462,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬14(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬14(context);
             }
 
             public override void OnExit() { }
@@ -501,11 +477,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬15대기(context);
-                    return;
+                    return new State스킬15대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -518,11 +495,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬15(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬15(context);
             }
 
             public override void OnExit() { }
@@ -536,11 +510,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬16대기(context);
-                    return;
+                    return new State스킬16대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -553,11 +528,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬16(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬16(context);
             }
 
             public override void OnExit() { }
@@ -571,11 +543,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬17대기(context);
-                    return;
+                    return new State스킬17대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -588,11 +561,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬17(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬17(context);
             }
 
             public override void OnExit() { }
@@ -606,11 +576,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬18대기(context);
-                    return;
+                    return new State스킬18대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -623,11 +594,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬18(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬18(context);
             }
 
             public override void OnExit() { }
@@ -641,11 +609,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬19대기(context);
-                    return;
+                    return new State스킬19대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -658,11 +627,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬19(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬19(context);
             }
 
             public override void OnExit() { }
@@ -676,11 +642,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1409, 1410, 1411, 1412, 1413, 1414}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬20대기(context);
-                    return;
+                    return new State스킬20대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -693,11 +660,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬20(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬20(context);
             }
 
             public override void OnExit() { }
@@ -711,11 +675,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬21대기(context);
-                    return;
+                    return new State스킬21대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -728,11 +693,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬21(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬21(context);
             }
 
             public override void OnExit() { }
@@ -746,11 +708,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬22대기(context);
-                    return;
+                    return new State스킬22대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -763,11 +726,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1415, 1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬22(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬22(context);
             }
 
             public override void OnExit() { }
@@ -781,11 +741,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬23대기(context);
-                    return;
+                    return new State스킬23대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -798,11 +759,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬23(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬23(context);
             }
 
             public override void OnExit() { }
@@ -816,11 +774,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬24대기(context);
-                    return;
+                    return new State스킬24대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -833,11 +792,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1427, 1428, 1429, 1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬24(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬24(context);
             }
 
             public override void OnExit() { }
@@ -851,11 +807,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬25대기(context);
-                    return;
+                    return new State스킬25대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -868,11 +825,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬25(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬25(context);
             }
 
             public override void OnExit() { }
@@ -886,11 +840,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬26대기(context);
-                    return;
+                    return new State스킬26대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -903,11 +858,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬26(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬26(context);
             }
 
             public override void OnExit() { }
@@ -921,11 +873,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬27대기(context);
-                    return;
+                    return new State스킬27대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -938,11 +891,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬27(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬27(context);
             }
 
             public override void OnExit() { }
@@ -956,11 +906,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬28대기(context);
-                    return;
+                    return new State스킬28대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -973,11 +924,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬28(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬28(context);
             }
 
             public override void OnExit() { }
@@ -991,11 +939,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1474}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬29대기(context);
-                    return;
+                    return new State스킬29대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1008,11 +957,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1474}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬29(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬29(context);
             }
 
             public override void OnExit() { }
@@ -1026,11 +972,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1463, 1464, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1474, 1475, 1476, 1477, 1478, 1479, 1480}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬30대기(context);
-                    return;
+                    return new State스킬30대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1043,11 +990,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1463, 1464, 1465, 1466, 1467, 1468, 1469, 1470, 1471, 1472, 1473, 1475, 1474, 1476, 1477, 1478, 1479, 1480}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬30(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬30(context);
             }
 
             public override void OnExit() { }
@@ -1061,11 +1005,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1469, 1470, 1471, 1472, 1473, 1474, 1475, 1476, 1477, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 1486}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬31대기(context);
-                    return;
+                    return new State스킬31대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1078,11 +1023,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1469, 1470, 1471, 1472, 1473, 1474, 1475, 1476, 1477, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 1486}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬31(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬31(context);
             }
 
             public override void OnExit() { }
@@ -1096,11 +1038,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1475, 1476, 1477, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1491, 1492}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬32대기(context);
-                    return;
+                    return new State스킬32대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1113,11 +1056,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1475, 1476, 1477, 1478, 1479, 1480, 1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1491, 1492}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬32(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬32(context);
             }
 
             public override void OnExit() { }
@@ -1131,11 +1071,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬33대기(context);
-                    return;
+                    return new State스킬33대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1148,11 +1089,8 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498}, arg2: false);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State스킬33(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State스킬33(context);
             }
 
             public override void OnExit() { }
@@ -1166,11 +1104,12 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1487, 1488, 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498, 1499, 1500, 1501, 1502, 1503, 1504}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State스킬34대기(context);
-                    return;
+                    return new State스킬34대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -1183,7 +1122,9 @@ namespace Maple2.Trigger._02000252_bf {
                 context.SetSkill(arg1: new[] {1487, 1488, 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498, 1499, 1500, 1501, 1502, 1503, 1504}, arg2: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

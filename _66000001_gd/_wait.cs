@@ -7,11 +7,12 @@ namespace Maple2.Trigger._66000001_gd {
                 context.SetTimer(arg1: "60", arg2: 30, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,21 +25,20 @@ namespace Maple2.Trigger._66000001_gd {
                 context.ShowGuideSummary(entityId: 26100001, textId: 26100001);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 301) == 50) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State대기2(context);
-                    return;
+                    return new State대기2(context);
                 }
 
                 if (context.TimeExpired(arg1: "60")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -53,21 +53,20 @@ namespace Maple2.Trigger._66000001_gd {
                 context.ShowGuideSummary(entityId: 26100002, textId: 26100002);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 301) == 50) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State대기(context);
-                    return;
+                    return new State대기(context);
                 }
 
                 if (context.TimeExpired(arg1: "60")) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() {
@@ -80,7 +79,9 @@ namespace Maple2.Trigger._66000001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

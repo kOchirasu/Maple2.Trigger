@@ -19,11 +19,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    context.State = new Statequestcheck(context);
-                    return;
+                    return new Statequestcheck(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,21 +38,20 @@ namespace Maple2.Trigger._63000069_cs {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {3})) {
-                    context.State = new Statefin(context);
-                    return;
+                    return new Statefin(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {2})) {
-                    context.State = new Statescene1_ready(context);
-                    return;
+                    return new Statescene1_ready(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {1})) {
-                    context.State = new Statesearching_check(context);
-                    return;
+                    return new Statesearching_check(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +64,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.ShowGuideSummary(entityId: 26300691, textId: 26300691);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {2})) {
-                    context.State = new Statescene1_ready(context);
-                    return;
+                    return new Statescene1_ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -85,11 +86,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_03_girlmaid_out");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.State = new Statescene1_set(context);
-                    return;
+                    return new Statescene1_set(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -103,16 +105,16 @@ namespace Maple2.Trigger._63000069_cs {
                 context.SetMesh(arg1: new[] {4001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356}, arg3: new byte[] {2})) {
-                    context.State = new Statequestcheck(context);
-                    return;
+                    return new Statequestcheck(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statescene1_start(context);
-                    return;
+                    return new Statescene1_start(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -127,11 +129,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.CameraSelectPath(arg1: new[] {8000, 8001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new Statescene1_girlmonologue0(context);
-                    return;
+                    return new Statescene1_girlmonologue0(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -145,11 +148,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statescene1_girlmonologue1(context);
-                    return;
+                    return new Statescene1_girlmonologue1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -164,11 +168,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.AddCinematicTalk(npcId: 11004308, msg: "$63000069_CS__63000069_MAIN__0$", duration: 3000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statescene1_girlmonologue2(context);
-                    return;
+                    return new Statescene1_girlmonologue2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -183,11 +188,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statescene1_girlmonologue3(context);
-                    return;
+                    return new Statescene1_girlmonologue3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -201,11 +207,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.SetNpcEmotionLoop(arg1: 150, arg2: "Bore_B", arg3: 5500f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5500)) {
-                    context.State = new Statescene1_girlrealize0(context);
-                    return;
+                    return new Statescene1_girlrealize0(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -220,11 +227,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.SetNpcEmotionLoop(arg1: 150, arg2: "Damg_A", arg3: 100f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new Statescene1_girlrealize1(context);
-                    return;
+                    return new Statescene1_girlrealize1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -240,11 +248,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.MoveNpc(arg1: 150, arg2: "MS2PatrolData_51_marienne1");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.State = new Statescene1_girlrealize2(context);
-                    return;
+                    return new Statescene1_girlrealize2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -258,11 +267,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.SetNpcEmotionLoop(arg1: 150, arg2: "Talk_A", arg3: 4500f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new Statescene1_girlmonologue5(context);
-                    return;
+                    return new Statescene1_girlmonologue5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -277,11 +287,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.SetEffect(arg1: new[] {602}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new Statescene_readytoend(context);
-                    return;
+                    return new Statescene_readytoend(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -296,11 +307,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statescene_fin_ready(context);
-                    return;
+                    return new Statescene_fin_ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -317,11 +329,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.SetProductionUI(arg1: 4);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statescene_fin_ready(context);
-                    return;
+                    return new Statescene_fin_ready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -337,11 +350,12 @@ namespace Maple2.Trigger._63000069_cs {
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_03_girlmaid");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statescene_fin(context);
-                    return;
+                    return new Statescene_fin(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -357,7 +371,9 @@ namespace Maple2.Trigger._63000069_cs {
                 context.SetProductionUI(arg1: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -367,7 +383,9 @@ namespace Maple2.Trigger._63000069_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

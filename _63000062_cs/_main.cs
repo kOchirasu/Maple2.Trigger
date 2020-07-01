@@ -5,16 +5,16 @@ namespace Maple2.Trigger._63000062_cs {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DayOfWeek(dayOfWeeks: new byte[] {4}, desc: "1(일)-7(토)")) {
-                    context.State = new State만남(context);
-                    return;
+                    return new State만남(context);
                 }
 
                 if (context.DayOfWeek(dayOfWeeks: new byte[] {1, 2, 3, 5, 6, 7}, desc: "1(일)-7(토)")) {
-                    context.State = new State헤어짐(context);
-                    return;
+                    return new State헤어짐(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +28,12 @@ namespace Maple2.Trigger._63000062_cs {
                 context.CreateMonster(arg1: new[] {121, 122}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DayOfWeek(dayOfWeeks: new byte[] {1, 2, 3, 5, 6, 7}, desc: "1(일)-7(토)")) {
-                    context.State = new State헤어짐(context);
-                    return;
+                    return new State헤어짐(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,11 +47,12 @@ namespace Maple2.Trigger._63000062_cs {
                 context.CreateMonster(arg1: new[] {111, 112}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DayOfWeek(dayOfWeeks: new byte[] {4}, desc: "1(일)-7(토)")) {
-                    context.State = new State만남(context);
-                    return;
+                    return new State만남(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -7,11 +7,8 @@ namespace Maple2.Trigger._02000087_bf {
                 context.SetInteractObject(arg1: new[] {10000135}, arg2: 1);
             }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new State오브젝트반응(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new State오브젝트반응(context);
             }
 
             public override void OnExit() { }
@@ -22,11 +19,12 @@ namespace Maple2.Trigger._02000087_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000135}, arg2: 0)) {
-                    context.State = new StateNPC이동(context);
-                    return;
+                    return new StateNPC이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +39,12 @@ namespace Maple2.Trigger._02000087_bf {
                 context.SetTimer(arg1: "4", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new State대화(context);
-                    return;
+                    return new State대화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -59,11 +58,12 @@ namespace Maple2.Trigger._02000087_bf {
                 context.SetTimer(arg1: "4", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new StateNPC소멸(context);
-                    return;
+                    return new StateNPC소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -77,11 +77,12 @@ namespace Maple2.Trigger._02000087_bf {
                 context.SetTimer(arg1: "4", arg2: 10);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

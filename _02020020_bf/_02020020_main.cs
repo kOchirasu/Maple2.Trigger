@@ -9,7 +9,9 @@ namespace Maple2.Trigger._02020020_bf {
                 context.AddCinematicTalk(npcId: 24100001, illustId: "Neirin_normal", msg: "$02020020_BF__02020020_main__2$", duration: 5000, align: "left");
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }
@@ -19,7 +21,9 @@ namespace Maple2.Trigger._02020020_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

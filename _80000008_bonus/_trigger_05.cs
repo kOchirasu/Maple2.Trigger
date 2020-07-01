@@ -9,11 +9,12 @@ namespace Maple2.Trigger._80000008_bonus {
                 context.SetInteractObject(arg1: new[] {10000212}, arg2: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000212}, arg2: 0)) {
-                    context.State = new State소환(context);
-                    return;
+                    return new State소환(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -27,11 +28,12 @@ namespace Maple2.Trigger._80000008_bonus {
                 context.MoveNpc(arg1: 105, arg2: "MS2PatrolData_301");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 401, arg2: new[] {105})) {
-                    context.State = new State몬스터소멸(context);
-                    return;
+                    return new State몬스터소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +49,12 @@ namespace Maple2.Trigger._80000008_bonus {
                 context.SetEffect(arg1: new[] {801, 802, 803, 804, 805, 806, 807, 808, 809, 810}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new State꽝(context);
-                    return;
+                    return new State꽝(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,7 +69,9 @@ namespace Maple2.Trigger._80000008_bonus {
                 context.SetInteractObject(arg1: new[] {10000208, 10000209, 10000210, 10000211, 10000212}, arg2: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

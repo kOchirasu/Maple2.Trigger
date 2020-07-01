@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    context.State = new State칸막이대기시작(context);
-                    return;
+                    return new State칸막이대기시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -23,11 +24,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetMesh(arg1: new[] {608, 609}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State칸막이대기알림(context);
-                    return;
+                    return new State칸막이대기알림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,21 +43,20 @@ namespace Maple2.Trigger._02020140_bf {
                 context.DungeonEnableGiveUp(isEnable: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패종료(context);
-                    return;
+                    return new State던전실패종료(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패종료(context);
-                    return;
+                    return new State던전실패종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 30000)) {
-                    context.State = new State칸막이막기(context);
-                    return;
+                    return new State칸막이막기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -69,16 +70,16 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetMesh(arg1: new[] {608, 609}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DungeonTimeOut()) {
-                    context.State = new State던전실패종료(context);
-                    return;
+                    return new State던전실패종료(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    context.State = new State던전실패종료(context);
-                    return;
+                    return new State던전실패종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,7 +93,9 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetMesh(arg1: new[] {608, 609}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

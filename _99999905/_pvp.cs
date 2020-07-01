@@ -8,16 +8,16 @@ namespace Maple2.Trigger._99999905 {
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 4001, 4002, 4003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 104) == 1) {
-                    context.State = new StatePvP(context);
-                    return;
+                    return new StatePvP(context);
                 }
 
                 if (context.TimeExpired(arg1: "30")) {
-                    context.State = new StatePvP(context);
-                    return;
+                    return new StatePvP(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,11 +31,12 @@ namespace Maple2.Trigger._99999905 {
                 context.SetPvpZone(arg1: 104, arg2: 3, arg3: 600, arg4: 90001002, arg5: 3, arg6: new byte[] {1, 2, 101, 102, 103});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State어나운스0(context);
-                    return;
+                    return new State어나운스0(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,11 +50,12 @@ namespace Maple2.Trigger._99999905 {
                 context.SetEventUI(arg1: 1, arg2: "$99999905__PVP__0$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State어나운스1(context);
-                    return;
+                    return new State어나운스1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -67,11 +69,12 @@ namespace Maple2.Trigger._99999905 {
                 context.SetEventUI(arg1: 1, arg2: "$99999905__PVP__1$", arg3: 4000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new State어나운스2(context);
-                    return;
+                    return new State어나운스2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -85,11 +88,12 @@ namespace Maple2.Trigger._99999905 {
                 context.SetEventUI(arg1: 1, arg2: "$99999905__PVP__2$", arg3: 2000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.State = new State어나운스3(context);
-                    return;
+                    return new State어나운스3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -103,11 +107,12 @@ namespace Maple2.Trigger._99999905 {
                 context.ShowCountUI(text: "$99999905__PVP__3$", stage: 1, count: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new State문열림(context);
-                    return;
+                    return new State문열림(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -118,12 +123,13 @@ namespace Maple2.Trigger._99999905 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {105})) {
                     context.SetMesh(arg1: new[] {3001, 3002, 3003, 4001, 4002, 4003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.State = new StatePvP종료(context);
-                    return;
+                    return new StatePvP종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -134,11 +140,12 @@ namespace Maple2.Trigger._99999905 {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.PvpZoneEnded(arg1: 104)) {
-                    context.State = new State게임종료(context);
-                    return;
+                    return new State게임종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -151,11 +158,13 @@ namespace Maple2.Trigger._99999905 {
                 context.SetTimer(arg1: "10", arg2: 10);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    // context.State = new State보상(context);
-                    return;
+                    // return new State보상(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

@@ -5,11 +5,13 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    // context.State = new State시작(context);
-                    return;
+                    // return new State시작(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

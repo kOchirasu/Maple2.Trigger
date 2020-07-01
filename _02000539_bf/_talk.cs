@@ -5,16 +5,16 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {703}, arg2: 0)) {
-                    context.State = new State말풍선1(context);
-                    return;
+                    return new State말풍선1(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {704}, arg2: 0)) {
-                    context.State = new State말풍선2(context);
-                    return;
+                    return new State말풍선2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,11 +28,12 @@ namespace Maple2.Trigger._02000539_bf {
                 context.AddBalloonTalk(spawnPointId: 201, msg: "$02000539_BF__TALK__1$", duration: 3500, delayTick: 3500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -47,11 +48,12 @@ namespace Maple2.Trigger._02000539_bf {
                 context.AddBalloonTalk(spawnPointId: 202, msg: "$02000539_BF__TALK__4$", duration: 3500, delayTick: 7000);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    context.State = new Stateidle(context);
-                    return;
+                    return new Stateidle(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

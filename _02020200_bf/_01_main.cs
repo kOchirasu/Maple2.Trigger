@@ -27,11 +27,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetUserValue(triggerId: 99990010, key: "BombOn", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    context.State = new State시작(context);
-                    return;
+                    return new State시작(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -42,11 +43,12 @@ namespace Maple2.Trigger._02020200_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {908})) {
-                    context.State = new State가이드메시지(context);
-                    return;
+                    return new State가이드메시지(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -60,11 +62,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.ShowGuideSummary(entityId: 111, textId: 20110001);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {911}, itemId: 30001286)) {
-                    context.State = new State엘리베이터_1(context);
-                    return;
+                    return new State엘리베이터_1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,11 +86,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetEffect(arg1: new[] {11001}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State엘리베이터_1_활성화_대기(context);
-                    return;
+                    return new State엘리베이터_1_활성화_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -100,11 +104,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetEffect(arg1: new[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 11002}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State엘리베이터_1_활성화(context);
-                    return;
+                    return new State엘리베이터_1_활성화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -119,11 +124,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetBreakable(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {902})) {
-                    context.State = new State2번방(context);
-                    return;
+                    return new State2번방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -141,11 +147,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetUserValue(triggerId: 99990004, key: "BombOn", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103, 104})) {
-                    context.State = new State2번방_클리어(context);
-                    return;
+                    return new State2번방_클리어(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -164,11 +171,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetRandomMesh(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032}, arg2: false, arg3: 32, arg5: 50);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {912}, itemId: 30001286)) {
-                    context.State = new State엘리베이터_2(context);
-                    return;
+                    return new State엘리베이터_2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -187,11 +195,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetEffect(arg1: new[] {11003}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State엘리베이터_2_활성화_대기(context);
-                    return;
+                    return new State엘리베이터_2_활성화_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -204,11 +213,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetEffect(arg1: new[] {10010, 10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018, 11004}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State엘리베이터_2_활성화(context);
-                    return;
+                    return new State엘리베이터_2_활성화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -223,11 +233,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetBreakable(arg1: new[] {5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {903})) {
-                    context.State = new State3번방(context);
-                    return;
+                    return new State3번방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -245,11 +256,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetUserValue(triggerId: 99990007, key: "BombOn", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {201, 202, 203, 204, 205})) {
-                    context.State = new State3번방_클리어(context);
-                    return;
+                    return new State3번방_클리어(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -268,11 +280,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetRandomMesh(arg1: new[] {1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059, 1060, 1061, 1062, 1063, 1064}, arg2: false, arg3: 32, arg5: 50);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {913}, itemId: 30001286)) {
-                    context.State = new State엘리베이터_3(context);
-                    return;
+                    return new State엘리베이터_3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -291,11 +304,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetEffect(arg1: new[] {11005}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State엘리베이터_3_활성화_대기(context);
-                    return;
+                    return new State엘리베이터_3_활성화_대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -308,11 +322,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetEffect(arg1: new[] {10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027, 11006}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State엘리베이터_3_활성화(context);
-                    return;
+                    return new State엘리베이터_3_활성화(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -327,11 +342,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetBreakable(arg1: new[] {5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5210, 5211, 5212, 5213, 5214}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {904})) {
-                    context.State = new State4번방(context);
-                    return;
+                    return new State4번방(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -348,11 +364,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetUserValue(triggerId: 99990010, key: "BombOn", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {301, 302, 303, 304, 305})) {
-                    context.State = new State4번방_클리어(context);
-                    return;
+                    return new State4번방_클리어(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -371,11 +388,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetRandomMesh(arg1: new[] {1065, 1066, 1067, 1068, 1069, 1070, 1071, 1072, 1073, 1074, 1075, 1076, 1077, 1078, 1079, 1080, 1081, 1082, 1083, 1084, 1085, 1086, 1087, 1088, 1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096}, arg2: false, arg3: 32, arg5: 50);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.DetectLiftableObject(triggerBoxIds: new[] {914}, itemId: 30001286)) {
-                    context.State = new State딜레이(context);
-                    return;
+                    return new State딜레이(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -392,11 +410,12 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetEffect(arg1: new[] {11007}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -410,7 +429,9 @@ namespace Maple2.Trigger._02020200_bf {
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

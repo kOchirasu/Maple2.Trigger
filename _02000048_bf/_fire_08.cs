@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000048_bf {
                 context.SetEffect(arg1: new[] {308}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000313}, arg2: 0)) {
-                    context.State = new State오브젝트반응(context);
-                    return;
+                    return new State오브젝트반응(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,8 @@ namespace Maple2.Trigger._02000048_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
-                if (true) {
-                    context.State = new StateNPC이동(context);
-                    return;
-                }
+            public override TriggerState Execute() {
+                return new StateNPC이동(context);
             }
 
             public override void OnExit() {
@@ -46,11 +44,12 @@ namespace Maple2.Trigger._02000048_bf {
                 context.SetTimer(arg1: "1", arg2: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State몬스터와전투(context);
-                    return;
+                    return new State몬스터와전투(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -61,16 +60,16 @@ namespace Maple2.Trigger._02000048_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {408})) {
-                    context.State = new State딜레이(context);
-                    return;
+                    return new State딜레이(context);
                 }
 
                 if (!context.MonsterInCombat(arg1: new[] {408})) {
-                    context.State = new State몬스터소멸(context);
-                    return;
+                    return new State몬스터소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -83,20 +82,20 @@ namespace Maple2.Trigger._02000048_bf {
                 context.SetTimer(arg1: "1", arg2: 10);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {408})) {
                     context.ResetTimer(arg1: "1");
                 }
 
                 if (context.MonsterDead(arg1: new[] {408})) {
-                    context.State = new State소멸대기(context);
-                    return;
+                    return new State소멸대기(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State소멸대기(context);
-                    return;
+                    return new State소멸대기(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -109,16 +108,16 @@ namespace Maple2.Trigger._02000048_bf {
                 context.SetTimer(arg1: "1", arg2: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State딜레이(context);
-                    return;
+                    return new State딜레이(context);
                 }
 
                 if (context.MonsterInCombat(arg1: new[] {408})) {
-                    context.State = new State몬스터소멸(context);
-                    return;
+                    return new State몬스터소멸(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -132,11 +131,12 @@ namespace Maple2.Trigger._02000048_bf {
                 context.SetTimer(arg1: "1", arg2: 3);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new State시작대기중(context);
-                    return;
+                    return new State시작대기중(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

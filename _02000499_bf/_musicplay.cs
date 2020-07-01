@@ -9,11 +9,12 @@ namespace Maple2.Trigger._02000499_bf {
                 context.DestroyMonster(arg1: new[] {210});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {11000093}, arg2: 0)) {
-                    context.State = new Stateready(context);
-                    return;
+                    return new Stateready(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +30,12 @@ namespace Maple2.Trigger._02000499_bf {
                 context.SetNpcEmotionLoop(arg1: 203, arg2: "Play_A", arg3: 30500f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StatePCPlayMusic02(context);
-                    return;
+                    return new StatePCPlayMusic02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -50,11 +52,12 @@ namespace Maple2.Trigger._02000499_bf {
                 context.SetNpcEmotionLoop(arg1: 203, arg2: "Play_A", arg3: 30500f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30500)) {
-                    context.State = new StateEnd(context);
-                    return;
+                    return new StateEnd(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -68,11 +71,12 @@ namespace Maple2.Trigger._02000499_bf {
                 context.DestroyMonster(arg1: new[] {210});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statewait(context);
-                    return;
+                    return new Statewait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

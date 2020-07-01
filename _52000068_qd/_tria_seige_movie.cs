@@ -5,11 +5,12 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "tria_seige") == 1) {
-                    context.State = new StateLoadingDelayB0(context);
-                    return;
+                    return new StateLoadingDelayB0(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -46,11 +47,12 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetSound(arg1: 90000, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new StateLoadingDelayB1(context);
-                    return;
+                    return new StateLoadingDelayB1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -64,11 +66,12 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.State = new State원경카메라01(context);
-                    return;
+                    return new State원경카메라01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -81,11 +84,12 @@ namespace Maple2.Trigger._52000068_qd {
                 context.CameraSelectPath(arg1: new[] {12000, 12001}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State원경카메라02(context);
-                    return;
+                    return new State원경카메라02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -98,11 +102,12 @@ namespace Maple2.Trigger._52000068_qd {
                 context.CameraSelectPath(arg1: new[] {12002, 12003}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State원경카메라03(context);
-                    return;
+                    return new State원경카메라03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -115,11 +120,12 @@ namespace Maple2.Trigger._52000068_qd {
                 context.CameraSelectPath(arg1: new[] {12004, 12005}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.State = new State프레이대사(context);
-                    return;
+                    return new State프레이대사(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -132,11 +138,12 @@ namespace Maple2.Trigger._52000068_qd {
                 context.AddCinematicTalk(npcId: 11000064, illustId: "Lennon_closeEye", msg: "$52000068_QD__TRIA_SEIGE_MOVIE__0$", duration: 5000, align: "center");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State알론대사(context);
-                    return;
+                    return new State알론대사(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -149,11 +156,12 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE__1$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State근위대원등장(context);
-                    return;
+                    return new State근위대원등장(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -168,11 +176,12 @@ namespace Maple2.Trigger._52000068_qd {
                 context.MoveNpc(arg1: 11008, arg2: "MS2PatrolData_soldier");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State근위대대사01(context);
-                    return;
+                    return new State근위대대사01(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -185,11 +194,12 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetConversation(arg1: 2, arg2: 11001968, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE__2$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State근위대대사02(context);
-                    return;
+                    return new State근위대대사02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -202,11 +212,12 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetConversation(arg1: 2, arg2: 11001968, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE__3$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State근위대대사03(context);
-                    return;
+                    return new State근위대대사03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -219,11 +230,12 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetConversation(arg1: 2, arg2: 11000601, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE__4$", arg4: 5);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new State근위대대사04(context);
-                    return;
+                    return new State근위대대사04(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -236,11 +248,12 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetSceneSkip();
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateNPC이동(context);
-                    return;
+                    return new StateNPC이동(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -265,11 +278,13 @@ namespace Maple2.Trigger._52000068_qd {
                 context.MoveNpc(arg1: 11007, arg2: "MS2PatrolData_GoToJody_pray");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    // context.State = new State지원군등장(context);
-                    return;
+                    // return new State지원군등장(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

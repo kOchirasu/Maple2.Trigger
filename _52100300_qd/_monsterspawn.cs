@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52100300_qd {
                 context.SetUserValue(triggerId: 99990001, key: "SpawnRoomEnd", value: 0);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Spawn") == 1) {
-                    context.State = new State스폰1(context);
-                    return;
+                    return new State스폰1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -24,11 +25,12 @@ namespace Maple2.Trigger._52100300_qd {
                 context.CreateMonster(arg1: new[] {111, 121, 131, 141}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new State스폰2(context);
-                    return;
+                    return new State스폰2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -41,11 +43,12 @@ namespace Maple2.Trigger._52100300_qd {
                 context.CreateMonster(arg1: new[] {112, 122, 132, 142}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    context.State = new State스폰5(context);
-                    return;
+                    return new State스폰5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -58,11 +61,12 @@ namespace Maple2.Trigger._52100300_qd {
                 context.CreateMonster(arg1: new[] {113, 123, 133, 143}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new State스폰4(context);
-                    return;
+                    return new State스폰4(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -75,11 +79,12 @@ namespace Maple2.Trigger._52100300_qd {
                 context.CreateMonster(arg1: new[] {114, 124, 134, 144}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 13000)) {
-                    context.State = new State스폰5(context);
-                    return;
+                    return new State스폰5(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -92,11 +97,12 @@ namespace Maple2.Trigger._52100300_qd {
                 context.CreateMonster(arg1: new[] {115, 125, 135, 145}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {111, 112, 113, 114, 115, 121, 122, 123, 124, 125, 131, 132, 133, 134, 135, 141, 142, 143, 144, 145})) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -109,7 +115,9 @@ namespace Maple2.Trigger._52100300_qd {
                 context.SetUserValue(triggerId: 99990001, key: "SpawnRoomEnd", value: 1);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

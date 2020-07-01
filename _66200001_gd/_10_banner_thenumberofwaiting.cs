@@ -5,11 +5,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BannerCheckIn") == 1) {
-                    context.State = new StateBannerCheckIn(context);
-                    return;
+                    return new StateBannerCheckIn(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -25,11 +26,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.UserValueToNumberMesh(key: "BannerNumberOfRed", startMeshId: 2500, digitCount: 2);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateNextWait(context);
-                    return;
+                    return new StateNextWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -40,16 +42,16 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BannerCheckIn") == 1) {
-                    context.State = new StateBannerCheckIn(context);
-                    return;
+                    return new StateBannerCheckIn(context);
                 }
 
                 if (context.GetUserValue(key: "BannerCheckIn") == 0) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,7 +67,9 @@ namespace Maple2.Trigger._66200001_gd {
                 context.UserValueToNumberMesh(key: "BannerNumberOfRed", startMeshId: 2500, digitCount: 2);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

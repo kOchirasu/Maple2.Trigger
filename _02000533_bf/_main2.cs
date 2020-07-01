@@ -5,11 +5,12 @@ namespace Maple2.Trigger._02000533_bf {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {703}, arg2: 0)) {
-                    context.State = new State서브몬스터1(context);
-                    return;
+                    return new State서브몬스터1(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -31,11 +32,12 @@ namespace Maple2.Trigger._02000533_bf {
                 context.AddBalloonTalk(spawnPointId: 607, msg: "$02000533_BF__MAIN2__3$", duration: 3500, delayTick: 500);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    context.State = new State서브몬스터2(context);
-                    return;
+                    return new State서브몬스터2(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +50,12 @@ namespace Maple2.Trigger._02000533_bf {
                 context.DestroyMonster(arg1: new[] {601, 602, 607, 608, 609, 610});
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    context.State = new State서브몬스터3(context);
-                    return;
+                    return new State서브몬스터3(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,11 +68,13 @@ namespace Maple2.Trigger._02000533_bf {
                 context.CreateMonster(arg1: new[] {6601, 6602, 6607, 6608, 6609, 6610}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {6601, 6602, 6607, 6608, 6609, 6610})) {
-                    // context.State = new State(context);
-                    return;
+                    // return new State(context);
+                    return null;
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

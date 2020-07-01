@@ -10,11 +10,12 @@ namespace Maple2.Trigger._02000403_bf {
                 context.SetMesh(arg1: new[] {1806}, arg2: false, arg3: 0, arg4: 200, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {705})) {
-                    context.State = new StateReady(context);
-                    return;
+                    return new StateReady(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -29,11 +30,12 @@ namespace Maple2.Trigger._02000403_bf {
                 context.SetMesh(arg1: new[] {1805}, arg2: false, arg3: 0, arg4: 200, arg5: 0f);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    context.State = new StateReady_02(context);
-                    return;
+                    return new StateReady_02(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,11 +51,12 @@ namespace Maple2.Trigger._02000403_bf {
                 context.SetAchievement(arg1: 705, arg2: "trigger", arg3: "Hauntedmansion");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateReady_03(context);
-                    return;
+                    return new StateReady_03(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -66,7 +69,9 @@ namespace Maple2.Trigger._02000403_bf {
                 context.SetMesh(arg1: new[] {1806}, arg2: false, arg3: 0, arg4: 200, arg5: 5f);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

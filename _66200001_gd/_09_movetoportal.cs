@@ -8,11 +8,12 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetPortal(arg1: 6, arg2: false, arg3: false, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MoveToTeamPortal") == 1) {
-                    context.State = new StateMoveUserbyTag(context);
-                    return;
+                    return new StateMoveUserbyTag(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -28,16 +29,16 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetUserValue(triggerId: 13, key: "BannerCheckIn", value: 1);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9900})) {
-                    context.State = new StateMoveUserbyTag(context);
-                    return;
+                    return new StateMoveUserbyTag(context);
                 }
 
                 if (context.GetUserValue(key: "MoveToTeamPortal") == 2) {
-                    context.State = new StateQuitDelay(context);
-                    return;
+                    return new StateQuitDelay(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -48,11 +49,12 @@ namespace Maple2.Trigger._66200001_gd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.State = new StateQuit(context);
-                    return;
+                    return new StateQuit(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -65,7 +67,9 @@ namespace Maple2.Trigger._66200001_gd {
                 context.SetPortal(arg1: 6, arg2: false, arg3: true, arg4: false);
             }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

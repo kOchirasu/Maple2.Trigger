@@ -5,26 +5,24 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "CheerUpTimer") == 1) {
-                    context.State = new StateCheerUpTimer_30(context);
-                    return;
+                    return new StateCheerUpTimer_30(context);
                 }
 
                 if (context.GetUserValue(key: "CheerUpTimer") == 2) {
-                    context.State = new StateCheerUpTimer_20(context);
-                    return;
+                    return new StateCheerUpTimer_20(context);
                 }
 
                 if (context.GetUserValue(key: "CheerUpTimer") == 3) {
-                    context.State = new StateCheerUpTimer_15(context);
-                    return;
+                    return new StateCheerUpTimer_15(context);
                 }
 
                 if (context.GetUserValue(key: "CheerUpTimer") == 4) {
-                    context.State = new StateCheerUpTimer_10(context);
-                    return;
+                    return new StateCheerUpTimer_10(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -37,11 +35,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetTimer(arg1: "1", arg2: 30, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 26000)) {
-                    context.State = new StateGiveCheerUp(context);
-                    return;
+                    return new StateGiveCheerUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -54,11 +53,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetTimer(arg1: "1", arg2: 20, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 16000)) {
-                    context.State = new StateGiveCheerUp(context);
-                    return;
+                    return new StateGiveCheerUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -71,11 +71,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetTimer(arg1: "1", arg2: 15, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
-                    context.State = new StateGiveCheerUp(context);
-                    return;
+                    return new StateGiveCheerUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -88,11 +89,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetTimer(arg1: "1", arg2: 10, arg3: true, arg4: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.State = new StateGiveCheerUp(context);
-                    return;
+                    return new StateGiveCheerUp(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -105,11 +107,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.AddBuff(arg1: new[] {9001}, arg2: 70000086, arg3: 1, arg4: false, arg5: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.State = new StateReset(context);
-                    return;
+                    return new StateReset(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -123,11 +126,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.ResetTimer(arg1: "1");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new StateWait(context);
-                    return;
+                    return new StateWait(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }

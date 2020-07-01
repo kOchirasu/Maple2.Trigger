@@ -7,11 +7,12 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetEffect(arg1: new[] {6204}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.GetUserValue(key: "GaugeStart") == 1) {
-                    context.State = new Statenpc체크(context);
-                    return;
+                    return new Statenpc체크(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -22,21 +23,20 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {1804})) {
-                    context.State = new State이펙트(context);
-                    return;
+                    return new State이펙트(context);
                 }
 
                 if (!context.MonsterInCombat(arg1: new[] {1804})) {
-                    context.State = new State생성(context);
-                    return;
+                    return new State생성(context);
                 }
 
                 if (context.GetUserValue(key: "GaugeClosed") == 1) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -49,11 +49,12 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetEffect(arg1: new[] {6204}, arg2: true);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (!context.MonsterInCombat(arg1: new[] {1804})) {
-                    context.State = new State생성(context);
-                    return;
+                    return new State생성(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -68,16 +69,16 @@ namespace Maple2.Trigger._52010038_qd {
                 context.CreateMonster(arg1: new[] {4000}, arg2: false);
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.State = new Statenpc체크(context);
-                    return;
+                    return new Statenpc체크(context);
                 }
 
                 if (context.GetUserValue(key: "GaugeClosed") == 1) {
-                    context.State = new State종료(context);
-                    return;
+                    return new State종료(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
@@ -88,7 +89,9 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() { }
 
-            public override void Execute() { }
+            public override TriggerState Execute() {
+                return null;
+            }
 
             public override void OnExit() { }
         }

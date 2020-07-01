@@ -7,11 +7,12 @@ namespace Maple2.Trigger._82000003_survival {
                 context.NpcToPatrolInBox(boxId: 9514, npcId: 11400001, spawnId: "interactObject", patrolName: "MS2PatrolData_214");
             }
 
-            public override void Execute() {
+            public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 200)) {
-                    context.State = new StateBoatPatrol(context);
-                    return;
+                    return new StateBoatPatrol(context);
                 }
+
+                return null;
             }
 
             public override void OnExit() { }
